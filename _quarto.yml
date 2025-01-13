@@ -33,6 +33,15 @@ bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: [cosmo, scss/style.scss]
+      dark: [cosmo, scss/style-dark.scss]
+    code-link: true
+    lightbox: 
+      match: auto
+      loop: false
+    fig-dpi: 300
+    fig-show: hold
+    fig-align: center
   pdf:
     documentclass: scrreprt

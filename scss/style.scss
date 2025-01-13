@@ -1,0 +1,393 @@
+/*
+Tomado y adaptado de Introduction to Modern Statistics
+https://github.com/OpenIntroStat/ims/tree/main/scss
+12/1/25
+*/
+
+/* paleta de colores personalizada
+https://coolors.co/214e34-8dab7f-cfee9e-dd6e42-f28f3b
+*/
+$cal-poly-green: #214e34ff;
+$olivine: #8dab7fff;
+$mindaro: #cfee9eff;
+$burnt-sienna: #dd6e42ff;
+$tangerine: #f28f3bff;
+$tangerineclaro: #eba96f;
+
+/*-- scss:defaults --*/
+
+/* pasaje de colores
+#569BBD   $olivine
+rgba(0,0,0,.15)    $mindaro
+#6C6C6C    $cal-poly-green
+#666   $cal-poly-green
+#f8f8f8    $tangerineclaro
+#F05133 $olivine
+#F3CED4 $mindaro
+#f5f5f5 $tangerineclaro
+#E97583 $burnt-sienna
+#D9D9D9  $tangerine
+#d5e6ef $midaron
+*/
+
+/*
+@import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap';
+
+$font-family: "Atkinson Hyperlegible", sans-serif;
+$font-family-monospace: "Source Code Pro";
+*/
+
+$primary: $olivine !default;
+
+/*-- scss:rules --*/
+
+.sidebar-title {
+  color: $olivine;
+}
+
+div.sidebar-item-container .active {
+  font-weight: bold;
+}
+
+.sidebar nav[role=doc-toc] ul>li>a.active, .sidebar nav[role=doc-toc] ul>li>ul>li>a.active{
+  font-weight: bold;
+}
+
+img.quarto-cover-image {
+  box-shadow: 0 .5rem 1rem $mindaro;
+}
+
+/* Headings ------------------------------------------------------ */
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+h3 { margin-top: 1.5em; font-size: 1.2rem; }
+h4 { margin-top: 1.5em; font-size: 1.1rem; }
+h5 { margin-top: 1.5em; font-size: 1rem; }
+
+h1, h2, h3, h4, h5 {
+  line-height: 1.3;
+}
+
+.quarto-section-identifier {
+  color: $cal-poly-green;
+  font-weight: normal;
+}
+
+/* Printing ------------------------------------------------ */
+
+@media print {
+  :root {
+    font-size: 11pt;
+  }
+  #quarto-sidebar, #TOC, .nav-page {
+    display: none;
+  }
+  .page-columns .content {
+    grid-column-start: page-start;
+  }
+  .fixed-top {
+    position: relative;
+  }
+  .panel-caption, .figure-caption, figcaption {
+    color: $cal-poly-green;
+  }
+}
+
+/* OpenIntro custom environments --------------------------- */
+
+
+/* chapterintro */
+
+.chapterintro {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: $mindaro 5px center/3em no-repeat;
+  border-top: 3px solid $olivine;    /* openintro::COL[1,1] */ 
+  border-bottom: 3px solid $olivine; /* openintro::COL[1,1] */ 
+  background-image: url("imagenes/iconos/chapterintro.png");
+  background-position: 0.5em 1.5em;
+}
+
+/* guidedpractice */
+
+.guidedpractice {
+  padding: 1em 1em 1em 4em;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: $tangerineclaro 5px center/3em no-repeat;  
+  border-top: 1px solid $olivine;    /* openintro::COL[1,1] */ 
+  border-bottom: 1px solid $olivine; /* openintro::COL[1,1] */ 
+  background-image: url("imagenes/iconos/guided-practice.png");
+  background-position: 0.5em 1em;
+}
+
+.guidedpractice:before {
+  content: "Guided practice";
+  clear: right;
+  display: block;
+  font-weight: bold;
+  font-variant: small-caps;
+  color: $olivine;
+}
+
+/* workedexample */
+
+.workedexample{
+  padding: 1em 1em 1em 4em;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: $tangerineclaro 5px center/3em no-repeat; 
+  border-top: 1px solid $olivine;    /* openintro::COL[1,1] */ 
+  border-bottom: 1px solid $olivine; /* openintro::COL[1,1] */ 
+  background-image: url("imagenes/iconos/worked-example.png");
+  background-position: 0.5em 1em;
+}
+
+.workedexample:before {
+  content: "Example:";
+  clear: right;
+  display: block;
+  font-weight: bold;
+  font-variant: small-caps;
+  color: $olivine;
+}
+
+/* important */
+
+.important {
+  padding: 1em 1em 1em 4em;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: $tangerineclaro 5px center/3em no-repeat;
+  border-top: 1px solid $burnt-sienna;   
+  border-bottom: 1px solid $burnt-sienna;  
+  background-image: url("imagenes/iconos/important.png");
+  background-position: 0.5em 1em;
+}
+
+.important strong {
+  color: $burnt-sienna; 
+}
+
+/* tip */
+
+.tip {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: $tangerineclaro 5px center/3em no-repeat;
+  border-top: 1px solid $tangerine;    /* openintro::COL[6,1] */ 
+  border-bottom: 1px solid $tangerine; /* openintro::COL[6,1] */ 
+  background-image: url("imagenes/iconos/tip.png");
+  background-position: 0.5em 1em;
+}
+
+/* cautionbox */
+
+.caution {
+  padding: 1em 1em 1em 4em;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: $tangerineclaro 5px center/3em no-repeat;
+  border-top: 1px solid $burnt-sienna;
+  border-bottom: 1px solid $burnt-sienna;
+  background-image: url("imagenes/iconos/stop-sign.png");
+  background-position: 0.5em 1em;
+}
+
+/* data - datasets in package */
+
+.data { 
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background: $tangerineclaro 5px center/3em no-repeat;
+  border-top: 1px solid $tangerine;    /* openintro::COL[6,1] */ 
+  border-bottom: 1px solid $tangerine; /* openintro::COL[6,1] */ 
+  background-image: url("imagenes/iconos/data.png");
+}
+
+/* pronunciation - terms and Greek letters */
+
+.pronunciation { 
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  background: $tangerineclaro 5px center/3em no-repeat;
+  border-top: 1px solid $tangerine;    /* openintro::COL[1,1] */ 
+  border-bottom: 1px solid $tangerine; /* openintro::COL[1,1] */ 
+  background-image: url("imagenes/iconos/pronunciation.png");
+}
+
+/* tutorials */
+
+.singletutorial {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 5px;
+  margin-left: 30px;
+  background: #ffffff 5px center/3em no-repeat;
+  background-image: url("imagenes/iconos/singletutorial.png");
+}
+
+.alltutorials {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: #ffffff 5px center/3em no-repeat;
+  background-image: url("imagenes/iconos/alltutorials.png");
+}
+
+/* labs */
+
+.singlelab {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: #ffffff 5px center/3em no-repeat;
+  background-image: url("imagenes/iconos/singlelab.png");
+}
+
+/* underconstruction - for chapters under construction */
+
+.underconstruction { 
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  font-weight: bold;
+  background: $mindaro 5px center/3em no-repeat; 
+  border-top: 1px solid $olivine;    /* COL["red", "full"] */
+  border-bottom: 1px solid $olivine; /* COL["red", "full"] */
+  background-image: url("imagenes/iconos/under-construction.png");
+}
+
+
+
+/* Counting exercises */
+
+.exercises ol ol { 
+  list-style-type: lower-alpha !important; 
+}
+
+.exercises ol ol ol { 
+  list-style-type: lower-roman !important; 
+}
+
+.exercises strong {
+  color: $olivine; /* openintro::COL[1,1] */ 
+}
+
+/* Counting exercise solutions - odd numbers only */
+
+.exercises-solution ol {
+  counter-reset: odd-numbers -1;
+  list-style-type: none !important;
+}
+.exercises-solution li {
+  counter-increment: odd-numbers 2;
+}
+.exercises-solution li:before {
+  content: counter(odd-numbers) ". ";
+}
+.exercises-solution p {
+  display: inline;
+}
+
+/* Other formatting */
+
+p.caption {
+  color: #777;
+  margin-top: 10px;
+  text-align: left;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+p.flushright {
+  text-align: right;
+}
+blockquote > p:last-child {
+  text-align: right;
+}
+blockquote > p:first-child {
+  text-align: inherit;
+}
+
+/* Headings */
+
+.header-section-number {
+  padding-right: .2em;
+  font-weight: 500;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: $olivine; /* openintro::COL[1,1] */ 
+}
+h1.title {
+  font-weight: 700;
+}
+h1 {
+  border-bottom: 3px solid;
+  border-top: 3px solid;
+}
+h2 {
+  border-bottom: 3px solid $burnt-sienna;
+  border-top: 3px solid $burnt-sienna;
+}
+h3 {
+  border-top: 1px solid $tangerine; /* openintro::COL[7,1] */
+}
+
+.welcome h1 {
+  border-bottom: 0px solid;
+  border-top: 0px solid;
+}
+
+.welcome h2 {
+  border-bottom: 0px solid;
+  border-top: 0px solid;
+}
+
+
+/* Fonts */
+
+.smallcaps {
+  font-variant: small-caps;
+}
+.book .book-body .page-wrapper .page-inner section.normal strong {
+  font-weight: 600;
+}
+
+/* moved this out of Chp 1 but not sure if it's being used anywhere */
+
+.column-left{
+  float: left;
+  width: 49%;
+  text-align: left;
+}
+.column-right{
+  float: right;
+  width: 49%;
+  text-align: left;
+}
+
+/* authorinfo */
+
+.authorinfo {
+  padding: 0em 0em 0em 0em;
+}
+
+/* lightbox captions */
+
+.gslide-description {
+  font-size: 1.5em
+}
+

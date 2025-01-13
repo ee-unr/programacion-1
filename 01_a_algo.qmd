@@ -5,3 +5,26 @@ In summary, this book has no content whatsoever.
 ```{r}
 1 + 1
 ```
+
+
+::: chapterintro
+ver
+:::
+
+::: chapterintro
+## ver titulo
+
+ver
+:::
+
+
+::: {.chapterintro}
+ver ahora
+:::
+
+
+::: {.chapterintro}
+# ver titulo
+
+ver ahora
+:::
