@@ -1,0 +1,1 @@
+Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) and by [juicy_fish](https://www.flaticon.com/free-icons/code-review) from [Flaticon](https://www.flaticon.com/).

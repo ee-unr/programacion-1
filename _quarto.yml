@@ -22,6 +22,7 @@ book:
         - 02_a_algo.qmd
         - 02_b_algo.qmd
         - 02_practica.qmd
+    - 98_tp.qmd
     - 99_bibliografia.qmd
   appendices:
     - 01_practica_resuelta.qmd
@@ -35,7 +36,7 @@ format:
   html:
     theme:
       light: [cosmo, scss/style.scss]
-      dark: [cosmo, scss/style-dark.scss]
+      dark: [cosmo, scss/style.scss]
     code-link: true
     lightbox: 
       match: auto

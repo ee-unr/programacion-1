@@ -6,14 +6,6 @@ https://github.com/OpenIntroStat/ims/tree/main/scss
 
 /*-- scss:defaults --*/
 
-/*
-@import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
-@import 'https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap';
-
-$font-family: "Atkinson Hyperlegible", sans-serif;
-$font-family-monospace: "Source Code Pro";
-*/
-
 $primary: #214e34ff !default;
 
 /*-- scss:rules --*/
@@ -98,7 +90,7 @@ h5 { margin-top: 1.5em; font-size: 1rem; }
   background: #cfee9eff 5px center/3em no-repeat;  
   border-top: 1px solid #5A764D;    
   border-bottom: 1px solid #5A764D;
-  background-image: url("imagenes/iconos/guided-practice.png");
+  background-image: url("imagenes/iconos/code-review.png");
   background-position: 0.5em 1em;
 }
 
@@ -118,7 +110,7 @@ h5 { margin-top: 1.5em; font-size: 1rem; }
   background: #f7ddc6 5px center/3em no-repeat;
   border-top: 1px solid #dd6e42ff;   
   border-bottom: 1px solid #dd6e42ff;  
-  background-image: url("imagenes/iconos/important.png");
+  background-image: url("imagenes/iconos/008-edit-code.png");
   background-position: 0.5em 1em;
 }
 
@@ -151,7 +143,7 @@ h5 { margin-top: 1.5em; font-size: 1rem; }
 
 .concepto {
   @extend .nota-base;
-  background-image: url("imagenes/iconos/important.png");
+  background-image: url("imagenes/iconos/001-anchor.png");
 }
 
 .concepto:before {
@@ -160,7 +152,7 @@ h5 { margin-top: 1.5em; font-size: 1rem; }
 
 .info {
   @extend .nota-base;
-  background-image: url("imagenes/iconos/important.png");
+  background-image: url("imagenes/iconos/010-review.png");
 }
 
 .info:before {
@@ -169,7 +161,7 @@ h5 { margin-top: 1.5em; font-size: 1rem; }
 
 .comentario {
   @extend .nota-base;
-  background-image: url("imagenes/iconos/important.png");
+  background-image: url("imagenes/iconos/007-browser.png");
 }
 
 .comentario:before {
@@ -182,7 +174,7 @@ h5 { margin-top: 1.5em; font-size: 1rem; }
   background: #cfee9eff 5px center/3em no-repeat;
   border-top: 3px solid #5A764D;    
   border-bottom: 3px solid #5A764D; 
-  background-image: url("imagenes/iconos/chapterintro.png");
+  background-image: url("imagenes/iconos/006-clean-code.png");
   background-position: 0.5em 1.5em;
 }
 
@@ -193,7 +185,7 @@ h5 { margin-top: 1.5em; font-size: 1rem; }
   background: #ffb9b9 5px center/3em no-repeat; 
   border-top: 1px solid #870000;    /* COL["red", "full"] */
   border-bottom: 1px solid #870000; /* COL["red", "full"] */
-  background-image: url("imagenes/iconos/under-construction.png");
+  background-image: url("imagenes/iconos/003-website.png");
 }
 
 
@@ -264,6 +256,14 @@ blockquote > p:first-child {
 }
 
 /* OTRAS CONFIGURACIONES QUE ESTABAN EN EL ORIGINAL PERO LAS SACO, NO SE SI SIRVEN  */
+
+/*
+@import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap';
+
+$font-family: "Atkinson Hyperlegible", sans-serif;
+$font-family-monospace: "Source Code Pro";
+*/
 
 /* moved this out of Chp 1 but not sure if it's being used anywhere */
 
