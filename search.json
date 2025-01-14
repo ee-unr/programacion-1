@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Programación 1",
     "section": "",
-    "text": "Bienvenida\nLibro en construcción…\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "Bienvenida\n\n\nPágina en construcción.",
     "crumbs": [
       "Bienvenida"
     ]
@@ -14,7 +14,7 @@
     "href": "00_info.html",
     "title": "Información general sobre la asignatura",
     "section": "",
-    "text": "Cursado\nThis is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\nModalidad, comisiones, horarios",
+    "text": "Cursado\nModalidad, comisiones, horarios",
     "crumbs": [
       "Información general sobre la asignatura"
     ]
@@ -54,7 +54,7 @@
     "href": "00_info.html#código-de-conducta",
     "title": "Información general sobre la asignatura",
     "section": "Código de conducta",
-    "text": "Código de conducta\n\n\n\n\nKnuth, Donald E. 1984. «Literate Programming». Comput. J. 27 (2): 97-111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "Código de conducta",
     "crumbs": [
       "Información general sobre la asignatura"
     ]
@@ -64,7 +64,7 @@
     "href": "01.html",
     "title": "Unidad 1",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "text": "Presentación de la Unidad 1.\n\nPágina en construcción.",
     "crumbs": [
       "Unidad 1"
     ]
@@ -74,54 +74,21 @@
     "href": "01_a_algo.html",
     "title": "1  Primera sección de la Unidad 1",
     "section": "",
-    "text": "1.1 ver titulo\nIn summary, this book has no content whatsoever.\nver",
+    "text": "1.1 Listado de ambientes definidos",
     "crumbs": [
       "Unidad 1",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Primera sección de la Unidad 1</span>"
     ]
   },
   {
-    "objectID": "01_b_algo.html",
-    "href": "01_b_algo.html",
-    "title": "2  Segunda sección de la Unidad 1",
+    "objectID": "01_a_algo.html#listado-de-ambientes-definidos",
+    "href": "01_a_algo.html#listado-de-ambientes-definidos",
+    "title": "1  Primera sección de la Unidad 1",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "text": "Contenido del ejemplo\n\n1+1\n\n[1] 2\n\n\n\n\nContenido del ejercicio\n\n1+1\n\n[1] 2\n\n\n\n\nconcepto\n\n\ninfo\n\n\ncomentario",
     "crumbs": [
       "Unidad 1",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Segunda sección de la Unidad 1</span>"
-    ]
-  },
-  {
-    "objectID": "01_practica.html",
-    "href": "01_practica.html",
-    "title": "3  Práctica de la Unidad 1",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
-    "crumbs": [
-      "Unidad 1",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
-    ]
-  },
-  {
-    "objectID": "01_practica_resuelta.html",
-    "href": "01_practica_resuelta.html",
-    "title": "Apéndice A — Práctica resuelta de la Unidad 1",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
-    "crumbs": [
-      "Apéndices",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Práctica resuelta de la Unidad 1</span>"
-    ]
-  },
-  {
-    "objectID": "02_practica_resuelta.html",
-    "href": "02_practica_resuelta.html",
-    "title": "Apéndice B — Práctica resuelta de la Unidad 2",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
-    "crumbs": [
-      "Apéndices",
-      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Práctica resuelta de la Unidad 2</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Primera sección de la Unidad 1</span>"
     ]
   }
 ]

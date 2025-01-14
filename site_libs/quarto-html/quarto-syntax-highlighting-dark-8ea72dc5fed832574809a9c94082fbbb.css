@@ -37,10 +37,6 @@
   --quarto-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-:root {
-  --quarto-font-monospace: "Source Code Pro";
-}
-
 code span.al {
   background-color: #2a0f15;
   font-weight: bold;
@@ -190,4 +186,4 @@ code span.wa {
   content: "</";
 }
 
-/*# sourceMappingURL=2f6a90194098554e67c4dc49c9797829.css.map */
+/*# sourceMappingURL=74548907a2aa49896d8738a3cf5e8124.css.map */
