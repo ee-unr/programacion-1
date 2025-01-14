@@ -1,4 +1,8 @@
-# References {.unnumbered}
+# Bibliografía {.unnumbered}
+
+::: en-construccion
+Página en construcción.
+:::
 
 ::: {#refs}
 :::

@@ -13,16 +13,16 @@ book:
     - index.qmd
     - 00_info.qmd
     - part: 01.qmd
-      chapters: 
+      chapters:
         - 01_a_algo.qmd
         - 01_b_algo.qmd
         - 01_practica.qmd
-    # - part: 02.qmd
-    #   chapters: 
-    #     - 02_a_algo.qmd
-    #     - 02_b_algo.qmd
-    #     - 02_practica.qmd
-    # - 99_bibliografia.qmd
+    - part: 02.qmd
+      chapters:
+        - 02_a_algo.qmd
+        - 02_b_algo.qmd
+        - 02_practica.qmd
+    - 99_bibliografia.qmd
   appendices:
     - 01_practica_resuelta.qmd
     - 02_practica_resuelta.qmd

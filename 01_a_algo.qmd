@@ -1,30 +1,48 @@
 # Primera sección de la Unidad 1
 
-In summary, this book has no content whatsoever.
+::: en-construccion
+Página en construcción.
+:::
+
+::: presentacion-capitulo
+Resumen o presentación del contenido de esta sección de la unidad.
+:::
+
+## Listado de ambientes definidos
+
+::: ejemplo
+Contenido del ejemplo
 
 ```{r}
-1 + 1
+1+1
 ```
-
-
-::: chapterintro
-ver
 :::
 
-::: chapterintro
-## ver titulo
+::: ejercicio
+Contenido del ejercicio
 
-ver
-:::
-
-
-::: {.chapterintro}
-ver ahora
+```{r}
+1+1
+```
 :::
 
 
-::: {.chapterintro}
-# ver titulo
-
-ver ahora
+::: concepto
+concepto
 :::
+
+
+::: info
+info
+:::
+
+
+::: comentario
+comentario
+:::
+
+
+
+
+
+

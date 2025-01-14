@@ -1,7 +1,5 @@
 # Práctica de la Unidad 2
 
-In summary, this book has no content whatsoever.
-
-```{r}
-1 + 1
-```
+::: en-construccion
+Página en construcción.
+:::

@@ -1,7 +1,7 @@
 # Unidad 2
 
-In summary, this book has no content whatsoever.
+Presentación de la Unidad 2.
 
-```{r}
-1 + 1
-```
+::: en-construccion
+Página en construcción.
+:::
