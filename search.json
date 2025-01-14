@@ -85,10 +85,117 @@
     "href": "01_a_algo.html#listado-de-ambientes-definidos",
     "title": "1  Primera sección de la Unidad 1",
     "section": "",
-    "text": "Contenido del ejemplo\n\n1+1\n\n[1] 2\n\n\n\n\nContenido del ejercicio\n\n1+1\n\n[1] 2\n\n\n\n\nconcepto\n\n\ninfo\n\n\ncomentario",
+    "text": "Contenido del ejemplo, prueba en negrita.\n\n1+1\n\n[1] 2\n\n\n\n\nContenido del ejercicio\n\n1+1\n\n[1] 2\n\n\n\n\nconcepto negrita\n\n\ninfo negrita\n\n\ncomentario negrita",
     "crumbs": [
       "Unidad 1",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Primera sección de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "01_b_algo.html",
+    "href": "01_b_algo.html",
+    "title": "2  Segunda sección de la Unidad 1",
+    "section": "",
+    "text": "Página en construcción.",
+    "crumbs": [
+      "Unidad 1",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Segunda sección de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "01_practica.html",
+    "href": "01_practica.html",
+    "title": "3  Práctica de la Unidad 1",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "Unidad 1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "02.html",
+    "href": "02.html",
+    "title": "Unidad 2",
+    "section": "",
+    "text": "Presentación de la Unidad 2.\n\nPágina en construcción.",
+    "crumbs": [
+      "Unidad 2"
+    ]
+  },
+  {
+    "objectID": "02_a_algo.html",
+    "href": "02_a_algo.html",
+    "title": "4  Primera sección de la Unidad 2",
+    "section": "",
+    "text": "Página en construcción.",
+    "crumbs": [
+      "Unidad 2",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Primera sección de la Unidad 2</span>"
+    ]
+  },
+  {
+    "objectID": "02_b_algo.html",
+    "href": "02_b_algo.html",
+    "title": "5  Segunda sección de la Unidad 2",
+    "section": "",
+    "text": "Página en construcción.",
+    "crumbs": [
+      "Unidad 2",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Segunda sección de la Unidad 2</span>"
+    ]
+  },
+  {
+    "objectID": "02_practica.html",
+    "href": "02_practica.html",
+    "title": "6  Práctica de la Unidad 2",
+    "section": "",
+    "text": "Página en construcción.",
+    "crumbs": [
+      "Unidad 2",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Práctica de la Unidad 2</span>"
+    ]
+  },
+  {
+    "objectID": "98_tp.html",
+    "href": "98_tp.html",
+    "title": "Trabajo Práctico",
+    "section": "",
+    "text": "Página en construcción.",
+    "crumbs": [
+      "Trabajo Práctico"
+    ]
+  },
+  {
+    "objectID": "99_bibliografia.html",
+    "href": "99_bibliografia.html",
+    "title": "Bibliografía",
+    "section": "",
+    "text": "Página en construcción.\n\nIcons made by Smashicons and by juicy_fish from Flaticon.",
+    "crumbs": [
+      "Bibliografía"
+    ]
+  },
+  {
+    "objectID": "01_practica_resuelta.html",
+    "href": "01_practica_resuelta.html",
+    "title": "Apéndice A — Práctica resuelta de la Unidad 1",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "Apéndices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Práctica resuelta de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "02_practica_resuelta.html",
+    "href": "02_practica_resuelta.html",
+    "title": "Apéndice B — Práctica resuelta de la Unidad 2",
+    "section": "",
+    "text": "Página en construcción.",
+    "crumbs": [
+      "Apéndices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Práctica resuelta de la Unidad 2</span>"
     ]
   }
 ]
