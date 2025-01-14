@@ -15,18 +15,18 @@ book:
     - part: 01.qmd
       chapters:
         - 01_a_algo.qmd
-  #       - 01_b_algo.qmd
-  #       - 01_practica.qmd
-  #   - part: 02.qmd
-  #     chapters:
-  #       - 02_a_algo.qmd
-  #       - 02_b_algo.qmd
-  #       - 02_practica.qmd
-  #   - 98_tp.qmd
-  #   - 99_bibliografia.qmd
-  # appendices:
-  #   - 01_practica_resuelta.qmd
-  #   - 02_practica_resuelta.qmd
+        - 01_b_algo.qmd
+        - 01_practica.qmd
+    - part: 02.qmd
+      chapters:
+        - 02_a_algo.qmd
+        - 02_b_algo.qmd
+        - 02_practica.qmd
+    - 98_tp.qmd
+    - 99_bibliografia.qmd
+  appendices:
+    - 01_practica_resuelta.qmd
+    - 02_practica_resuelta.qmd
     
 lang: es
 
@@ -36,7 +36,7 @@ format:
   html:
     theme:
       light: [cosmo, scss/style.scss]
-      dark: [darkly]
+      dark: [darkly, scss/style-dark.scss]
     code-link: true
     lightbox: 
       match: auto

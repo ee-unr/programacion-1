@@ -11,7 +11,7 @@ Resumen o presentación del contenido de esta sección de la unidad.
 ## Listado de ambientes definidos
 
 ::: ejemplo
-Contenido del ejemplo
+Contenido del ejemplo, prueba en **negrita**.
 
 ```{r}
 1+1
@@ -19,7 +19,7 @@ Contenido del ejemplo
 :::
 
 ::: ejercicio
-Contenido del ejercicio
+Contenido del **ejercicio**
 
 ```{r}
 1+1
@@ -28,21 +28,15 @@ Contenido del ejercicio
 
 
 ::: concepto
-concepto
+concepto **negrita**
 :::
 
 
 ::: info
-info
+info **negrita**
 :::
 
 
 ::: comentario
-comentario
+comentario **negrita**
 :::
-
-
-
-
-
-

@@ -94,6 +94,11 @@ h5 { margin-top: 1.5em; font-size: 1rem; }
   background-position: 0.5em 1em;
 }
 
+.ejercicio strong {
+  color: #5A764D; 
+}
+
+
 .ejemplo:before {
   content: "Ejemplo";
   clear: right;
@@ -112,6 +117,10 @@ h5 { margin-top: 1.5em; font-size: 1rem; }
   border-bottom: 1px solid #dd6e42ff;  
   background-image: url("imagenes/iconos/008-edit-code.png");
   background-position: 0.5em 1em;
+}
+
+.ejercicio strong {
+  color: #dd6e42ff; 
 }
 
 .ejercicio:before {
@@ -139,6 +148,10 @@ h5 { margin-top: 1.5em; font-size: 1rem; }
   font-weight: bold;
   font-variant: small-caps;
   color: #766714;
+}
+
+.nota-base strong {
+  color: #766714; 
 }
 
 .concepto {
