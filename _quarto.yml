@@ -22,15 +22,15 @@ book:
         - 02_a_algo.qmd
         - 02_b_algo.qmd
         - 02_practica.qmd
+  appendices:
     - 98_tp.qmd
     - 99_bibliografia.qmd
-  appendices:
     - 01_practica_resuelta.qmd
     - 02_practica_resuelta.qmd
     
 lang: es
 
-bibliography: references.bib
+# bibliography: references.bib
 
 format:
   html:
@@ -44,5 +44,8 @@ format:
     fig-dpi: 300
     fig-show: hold
     fig-align: center
-  # pdf:
-  #   documentclass: scrreprt
+  pdf:
+    documentclass: scrreprt
+    latex-output-dir: _book
+    output-file: "programacion1"
+    keep-tex: false
