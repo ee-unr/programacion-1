@@ -1,9 +1,26 @@
 ---
 nocite: |
-  @knuth84
+  @*
 ---
 
-<!-- Lo de notice es para que no genere un error LaTeX, tiene que ver con que cada qmd se renderiza por separado, me olvidé de copiar el enlace del que saqué esta solución -->
+<!-- 
+Para que se incluyan todas las entradas del bib sin que estén citadas en el texto, en este documento hay que poner en el YAML:
+
+nocite: |
+  @*
+
+y dejar sin contenido el div de abajo en este doc de referencias. 
+
+Se supone que esto no debería hacer falta, pero es necesario por un error en Pandoc que hace que si no está, salta error. Ya fue solucionado en Pandoc y cuando alguna nueva versión de Quarto empiece a usar la nueva de Pandoc, va a funcionar.
+
+https://github.com/quarto-dev/quarto-cli/issues/6819
+https://github.com/quarto-dev/quarto-cli/discussions/11785
+
+Si quiero poner uno o varios que no están citados tengo que poner (esto sí funciona):
+
+nocite: |
+  @item1, @item2
+-->
 
 # Bibliografía {.unnumbered}
 
@@ -11,7 +28,7 @@ nocite: |
 Página en construcción.
 :::
 
-Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) and by [juicy_fish](https://www.flaticon.com/free-icons/code-review) from [Flaticon](https://www.flaticon.com/).
+Íconos creados por [Smashicons](https://www.flaticon.com/authors/smashicons) and by [juicy_fish](https://www.flaticon.com/free-icons/code-review) y tomados de [Flaticon](https://www.flaticon.com/).
 
 ::: {#refs}
 :::
