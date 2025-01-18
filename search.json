@@ -128,7 +128,7 @@
     "href": "02_a_algo.html",
     "title": "4  Primera sección de la Unidad 2",
     "section": "",
-    "text": "Página en construcción.",
+    "text": "Página en construcción.\n\nKnuth (1984) bla\n\n\n\n\nKnuth, Donald E. 1984. «Literate Programming». Comput. J. 27 (2): 97-111. https://doi.org/10.1093/comjnl/27.2.97.",
     "crumbs": [
       "Unidad 2",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Primera sección de la Unidad 2</span>"
@@ -163,6 +163,7 @@
     "section": "",
     "text": "Página en construcción.",
     "crumbs": [
+      "Apéndices",
       "Trabajo Práctico"
     ]
   },
@@ -171,8 +172,9 @@
     "href": "99_bibliografia.html",
     "title": "Bibliografía",
     "section": "",
-    "text": "Página en construcción.\n\nIcons made by Smashicons and by juicy_fish from Flaticon.",
+    "text": "Página en construcción.\n\nIcons made by Smashicons and by juicy_fish from Flaticon.\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
     "crumbs": [
+      "Apéndices",
       "Bibliografía"
     ]
   },
