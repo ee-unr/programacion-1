@@ -1,6 +1,6 @@
 ---
 nocite: |
-  @*
+  @knuth84
 ---
 
 <!-- Lo de notice es para que no genere un error LaTeX, tiene que ver con que cada qmd se renderiza por separado, me olvidé de copiar el enlace del que saqué esta solución -->

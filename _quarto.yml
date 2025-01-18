@@ -30,7 +30,7 @@ book:
     
 lang: es
 
-# bibliography: references.bib
+bibliography: references.bib
 
 format:
   html:
