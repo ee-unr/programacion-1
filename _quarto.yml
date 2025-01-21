@@ -20,13 +20,13 @@ book:
     - part: 02.qmd
       chapters:
         - 02_a_algo.qmd
-        - 02_b_algo.qmd
-        - 02_practica.qmd
-  appendices:
-    - 98_tp.qmd
-    - 99_bibliografia.qmd
-    - 01_practica_resuelta.qmd
-    - 02_practica_resuelta.qmd
+  #       - 02_b_algo.qmd
+  #       - 02_practica.qmd
+  # appendices:
+  #   - 98_tp.qmd
+  #   - 99_bibliografia.qmd
+  #   - 01_practica_resuelta.qmd
+  #   - 02_practica_resuelta.qmd
     
 lang: es
 

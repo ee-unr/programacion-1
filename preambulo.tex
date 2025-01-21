@@ -1,0 +1,21 @@
+% Encabezado
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhead[L]{Métodos Numéricos}
+\fancyhead[R]{\unidadNpracticaN}
+\fancyhead[C]{\unidadNombre}
+\fancyfoot[C]{\thepage}
+
+% para que la primera pagina no tenga el header pero si el footer como el resto
+\fancypagestyle{primerapagina}{%
+	\fancyhead{}
+	\renewcommand{\headrulewidth}{0pt}
+}
+
+% fuente
+\usepackage[T1]{fontenc}
+\usepackage{carlito}
+\renewcommand*\oldstylenums[1]{\carlitoOsF #1}
+\renewcommand{\familydefault}{\sfdefault}
