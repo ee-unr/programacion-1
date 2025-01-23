@@ -1,3 +1,5 @@
+\thispagestyle{primerapagina}
+
 # Práctica resuelta de la Unidad 2
 
 ::: en-construccion

@@ -1,3 +1,5 @@
+\thispagestyle{primerapagina}
+
 # Trabajo Práctico {.unnumbered}
 
 ::: en-construccion

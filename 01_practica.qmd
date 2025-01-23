@@ -1,3 +1,5 @@
+\thispagestyle{primerapagina}
+
 # Práctica de la Unidad 1
 
 In summary, this book has no content whatsoever.

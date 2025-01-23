@@ -1,7 +1,9 @@
+\thispagestyle{primerapagina}
+
 # Segunda sección de la Unidad 1
 
 ::: en-construccion
 Página en construcción.
 :::
 
-{{< lipsum 8 >}}
+{{< lipsum 13 >}}

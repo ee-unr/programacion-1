@@ -3,6 +3,8 @@ nocite: |
   @*
 ---
 
+\thispagestyle{primerapagina}
+
 <!-- 
 Para que se incluyan todas las entradas del bib sin que estén citadas en el texto, en este documento hay que poner en el YAML:
 

@@ -1,3 +1,5 @@
+\thispagestyle{primerapagina}
+
 # Información general sobre la asignatura  {.unnumbered}
 
 ::: en-construccion
