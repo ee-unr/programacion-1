@@ -11,32 +11,32 @@ book:
   date-format: long
   chapters:
     - index.qmd
-    - 00_info.qmd
-    - part: 01.qmd
+    - capitulos/00_info.qmd
+    - part: capitulos/01.qmd
       chapters:
-        - 01_a_algo.qmd
-        - 01_b_algo.qmd
-        - 01_practica.qmd
-    - part: 02.qmd
+        - capitulos/01_a_algo.qmd
+        - capitulos/01_b_algo.qmd
+        - capitulos/01_practica.qmd
+    - part: capitulos/02.qmd
       chapters:
-        - 02_a_algo.qmd
-  #       - 02_b_algo.qmd
-  #       - 02_practica.qmd
+        - capitulos/02_a_algo.qmd
+  #       - capitulos/02_b_algo.qmd
+  #       - capitulos/02_practica.qmd
   # appendices:
-  #   - 98_tp.qmd
-  #   - 99_bibliografia.qmd
-  #   - 01_practica_resuelta.qmd
-  #   - 02_practica_resuelta.qmd
+  #   - capitulos/98_tp.qmd
+  #   - capitulos/99_bibliografia.qmd
+  #   - capitulos/01_practica_resuelta.qmd
+  #   - capitulos/02_practica_resuelta.qmd
     
 lang: es
 
-bibliography: references.bib
+bibliography: capitulos/references.bib
 
 format:
   html:
     theme:
-      light: [cosmo, scss/style.scss]
-      dark: [darkly, scss/style-dark.scss]
+      light: [cosmo, estilo/style.estilo]
+      dark: [darkly, estilo/style-dark.estilo]
     code-link: true
     lightbox: 
       match: auto
@@ -50,8 +50,8 @@ format:
     output-file: "programacion1"
     keep-tex: false
     colorlinks: true
-    include-in-header: preambulo.tex
-    include-before-body: cuerpo.tex
+    include-in-header: estilo/preambulo.tex
+    include-before-body: estilo/cuerpo.tex
     template-partials:
-      - title.tex
+      - estilo/title.tex
     
