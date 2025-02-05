@@ -51,5 +51,7 @@ format:
     keep-tex: false
     colorlinks: true
     include-in-header: preambulo.tex
-    # include-before-bodyr: cuerpo.tex
+    include-before-body: cuerpo.tex
+    template-partials:
+      - title.tex
     

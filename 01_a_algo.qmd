@@ -1,4 +1,6 @@
+```{=latex}
 \thispagestyle{primerapagina}
+```
 
 # Primera sección de la Unidad 1
 

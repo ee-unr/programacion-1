@@ -1,25 +1,30 @@
-% VARIAS CONFIGURACIONESS  ----------------------------------------------------
+% PAQUETES -------------------------------------------------------------------
 
 \usepackage{fontspec}
-
-% Colores
 \usepackage{colortbl, xcolor}
-\definecolor{oiB}{HTML}{000000}            % COL["blue","full"]
-\definecolor{oiLB}{HTML}{e0e0e0}           % lighter version of oiB
+\usepackage[explicit]{titlesec}     % para formato de titulos
+\usepackage{fancyhdr}
+\usepackage{lipsum}
 
-\definecolor{oiY}{HTML}{000000}            % COL["yellow","full"]
-\definecolor{oiLY}{HTML}{e0e0e0}           % lighter version of oiY
-
-\definecolor{oiR}{HTML}{000000}            % COL["red","full"]
-\definecolor{oiLR}{HTML}{e0e0e0}           % lighter version of oiR
-
-\definecolor{oiGray}{HTML}{808080}         % COL["gray","full"]
-\definecolor{oiLGray}{HTML}{f8f8f8}        % lighter version of oiR
-
-\definecolor{oiGB}{rgb}{0.5,0.5,.5}        % from OS4 - for footnotes
+% VARIAS CONFIGURACIONESS  ----------------------------------------------------
 
 % Márgenes 
-\usepackage[top=3cm,bottom=3cm,left=1.5cm,right=3cm]{geometry}
+\usepackage[top=3cm,bottom=3cm,left=3cm,right=1.5cm]{geometry}
+ 
+% Colores
+\definecolor{oiB}{HTML}{569BBD}            % COL["blue","full"]
+\definecolor{oiLB}{HTML}{e3eef4}           % lighter version of oiB
+
+\definecolor{oiY}{HTML}{f4dc00}            % COL["yellow","full"]
+\definecolor{oiLY}{HTML}{fffacd}           % lighter version of oiY
+
+\definecolor{oiR}{HTML}{E97583}            % COL["red","full"]
+\definecolor{oiLR}{HTML}{F3CED4}           % lighter version of oiR
+
+\definecolor{oiGray}{HTML}{808080}         % COL["gray","full"]
+\definecolor{oiLGray}{HTML}{f8f8f8}        % lighter version of oiGray
+
+\definecolor{oiGB}{rgb}{0.5,0.5,.5}        % from OS4 - for footnotes
 
 % TOC
 % que no tenga el nro de parte, porque eso se lo pongo yo en el título
@@ -27,35 +32,18 @@
 % \renewcommand{\thepart}{\relax}
 % ESO NO, LO SACA DE TODOS LADOS
 
-% Redefinir el comando \part para evitar la carátula 
-\usepackage[explicit]{titlesec}
+% % Redefinir el comando \part para evitar la carátula 
 % esto hace que el texto de la parte este a continuacion del titulo
 \titleclass{\part}{top}
 % esto modifica el formato del titulo
 \titleformat{\part}[display]
 {\color{oiR}\titlerule[5pt]\vspace{3pt}\color{oiLR}\titlerule[2pt]\color{oiB}\normalfont\Huge\bfseries\scshape}
 {}{0em}{#1 \\ \noindent \vspace{3pt}\color{oiR}\titlerule[5pt]}
-\titlespacing*{\part}{0pt}{*0}{2em}
-
-
-% \makeatletter
-% \renewcommand\part{\cleardoublepage
-%   \thispagestyle{plain}% Usar un estilo de página sencillo
-%   \if@twocolumn
-%     \onecolumn
-%     \@tempswatrue
-%   \else
-%     \@tempswafalse
-%   \fi
-%   \secdef\@part\@spart}
-% \makeatother
+\titlespacing*{\part}{0pt}{*0}{15em}
 
 % Encabezado y pie de página --------------------------------------------------
 
 % Paquete para personalizar encabezados y pies de página
-\usepackage{fancyhdr}
-\usepackage{lipsum} % Para texto de ejemplo
-
 % Configuración de fancyhdr
 \pagestyle{fancy}
 
@@ -73,40 +61,18 @@
 
 % para que la primera pagina no tenga el header pero si el footer como el resto
 \fancypagestyle{primerapagina}{
-  \fancyhead[LO, RE]{Unidad \thepart}
-  \fancyhead[RO, LE]{\nouppercase{\leftmark}}
   \fancyfoot[LO, RE]{Programación 1}
   \fancyfoot[RO, LE]{\thepage}
-	% \fancyhead{}
-	% \fancyfoot{}
-	% \renewcommand{\headrulewidth}{0pt}
+	\fancyhead{}
+	\renewcommand{\headrulewidth}{0pt}
 }
-
-% Para que diga "Unidad" antes del nro y nombre de la unidad
-% \usepackage{titlesec}
-% \titleformat{\chapter}{\normalfont\LARGE\bfseries}{Unidad \thechapter.}{0em}{}
-
-% Para que haya encabezado en la primera hoja de cada cap tmb
-% \usepackage{etoolbox}
-% \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
-
-% Pero lo anterior agrega encabezad en la tabla de contenidos, esto lo evita
-% \AtBeginDocument{%
-% 	\addtocontents{toc}{\protect\thispagestyle{empty}}
-% }
-
-% fuente ESETO NO FUNCIONO Y NO SEGUI PROBANDO ---------------------------------
-% \usepackage[T1]{fontenc}
-% \usepackage{carlito}
-% \renewcommand*\oldstylenums[1]{\carlitoOsF #1}
-% \renewcommand{\familydefault}{\sfdefault}
 
 % Formato de títulos ----------------------------------------------------------
 
 % Basado en IMS https://github.com/OpenIntroStat/ims/blob/main/latex/ims-style.tex
 \titleformat{\chapter}[display]
 {\color{oiB}\normalfont\Huge\bfseries}
-{\color{oiB}Chapter \thechapter}{1em}{#1}
+{\color{oiB}Capítulo \thechapter}{1em}{#1}
 
 \titleformat{\section}
 {\color{oiB}\normalfont\Large\bfseries}
@@ -119,3 +85,7 @@
 \titleformat{\subsubsection}
 {\color{oiB}\normalfont\normalsize\bfseries}
 {\color{oiB}\thesubsubsection}{1em}{#1}
+
+
+
+

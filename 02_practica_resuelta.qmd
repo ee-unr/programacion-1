@@ -1,4 +1,6 @@
+```{=latex}
 \thispagestyle{primerapagina}
+```
 
 # Práctica resuelta de la Unidad 2
 

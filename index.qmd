@@ -1,3 +1,7 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
 ::: welcome
 # Bienvenida {.unnumbered .unlisted}
 :::

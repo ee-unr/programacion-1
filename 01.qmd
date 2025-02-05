@@ -1,4 +1,6 @@
-<!-- \thispagestyle{primerapagina} -->
+```{=latex}
+\thispagestyle{primerapagina}
+```
 
 # Unidad 1. Nombre de la unidad.
 

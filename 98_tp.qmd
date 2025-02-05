@@ -1,4 +1,6 @@
+```{=latex}
 \thispagestyle{primerapagina}
+```
 
 # Trabajo Práctico {.unnumbered}
 

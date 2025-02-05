@@ -1,4 +1,6 @@
+```{=latex}
 \thispagestyle{primerapagina}
+```
 
 # Segunda sección de la Unidad 2
 
