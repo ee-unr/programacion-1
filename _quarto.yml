@@ -5,10 +5,19 @@ book:
   title: "Programación 1"
   subtitle: "Ciclo de Formación Técnica - Estadística y Ciencia de Datos"
   author: 
-    - "Marcos Prunello"
-    - "Continuar"
+    - "Mgs. Lic. Marcos Prunello"
+    - "Tec. Cesar Mignoni"
+    - "Lic. Gino Bartolelli"
+    - "Lic. Iván Millanes"
+    - "Julián L'Heureux"
   date: today
   date-format: long
+  search: true
+  repo-url: https://github.com/mpru/programacion1
+  repo-actions: [edit, issue, source]
+  downloads: [pdf]
+  page-footer: "Developed by Marcos Prunello"
+  back-to-top-navigation: true
   chapters:
     - index.qmd
     - capitulos/00_info.qmd
@@ -27,7 +36,10 @@ book:
   #   - capitulos/99_bibliografia.qmd
   #   - capitulos/01_practica_resuelta.qmd
   #   - capitulos/02_practica_resuelta.qmd
-    
+
+comments:
+  hypothesis: true
+
 lang: es
 
 bibliography: capitulos/references.bib
@@ -35,8 +47,8 @@ bibliography: capitulos/references.bib
 format:
   html:
     theme:
-      light: [cosmo, estilo/style.estilo]
-      dark: [darkly, estilo/style-dark.estilo]
+      light: [cosmo, estilo/style.scss]
+      dark: [darkly, estilo/style-dark.scss]
     code-link: true
     lightbox: 
       match: auto

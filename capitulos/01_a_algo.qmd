@@ -4,17 +4,17 @@
 
 # Primera sección de la Unidad 1
 
-::: en-construccion
+::: {.en-construccion data-latex=""}
 Página en construcción.
 :::
 
-::: presentacion-capitulo
+::: {.presentacion-capitulo data-latex=""}
 Resumen o presentación del contenido de esta sección de la unidad.
 :::
 
 ## Listado de ambientes definidos
 
-::: ejemplo
+::: {.ejemplo data-latex=""}
 Contenido del ejemplo, prueba en **negrita**.
 
 ```{r}
@@ -22,25 +22,24 @@ Contenido del ejemplo, prueba en **negrita**.
 ```
 :::
 
-::: ejercicio
-Contenido del **ejercicio**
-
+::: {.ejercicio data-latex=""}
+Contenido del **ejercicio** 
 ```{r}
 1+1
 ```
 :::
 
 
-::: concepto
+::: {.concepto data-latex=""}
 concepto **negrita**
 :::
 
 
-::: info
+::: {.info data-latex=""}
 info **negrita**
 :::
 
 
-::: comentario
+::: {.comentario data-latex=""}
 comentario **negrita**
 :::
