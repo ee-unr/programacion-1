@@ -37,9 +37,6 @@ book:
   #   - capitulos/01_practica_resuelta.qmd
   #   - capitulos/02_practica_resuelta.qmd
 
-comments:
-  hypothesis: true
-
 lang: es
 
 bibliography: capitulos/references.bib
