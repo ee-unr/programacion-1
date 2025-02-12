@@ -4,7 +4,7 @@
 
 # Trabajo Práctico {.unnumbered}
 
-::: en-construccion
+::: {.en-construccion data-latex=""}
 Página en construcción.
 :::
 

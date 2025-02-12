@@ -1,6 +1,12 @@
+```{=latex}
 \thispagestyle{primerapagina}
+```
 
 # Práctica de la Unidad 1
+
+::: {.en-construccion data-latex=""}
+Página en construcción.
+:::
 
 In summary, this book has no content whatsoever.
 

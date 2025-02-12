@@ -4,6 +4,6 @@
 
 # Práctica resuelta de la Unidad 2
 
-::: en-construccion
+::: {.en-construccion data-latex=""}
 Página en construcción.
 :::

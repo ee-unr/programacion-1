@@ -28,7 +28,7 @@ nocite: |
 
 # Bibliografía {.unnumbered}
 
-::: en-construccion
+::: {.en-construccion data-latex=""}
 Página en construcción.
 :::
 

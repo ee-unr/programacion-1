@@ -2,7 +2,7 @@
 
 # Información general sobre la asignatura  {.unnumbered}
 
-::: en-construccion
+::: {.en-construccion data-latex=""}
 Página en construcción.
 :::
 

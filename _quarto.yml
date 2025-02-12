@@ -29,6 +29,7 @@ book:
     - part: capitulos/02.qmd
       chapters:
         - capitulos/02_a_algo.qmd
+        - capitulos/webexercises.qmd
   #       - capitulos/02_b_algo.qmd
   #       - capitulos/02_practica.qmd
   # appendices:
@@ -46,6 +47,8 @@ format:
     theme:
       light: [cosmo, estilo/style.scss]
       dark: [darkly, estilo/style-dark.scss]
+    css: webexercises/webex.css
+    include-after-body: webexercises/webex.js
     code-link: true
     lightbox: 
       match: auto

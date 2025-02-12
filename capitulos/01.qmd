@@ -6,6 +6,6 @@
 
 Presentación de la Unidad 1.
 
-::: en-construccion
+::: {.en-construccion data-latex=""}
 Página en construcción.
 :::
