@@ -31,7 +31,7 @@ book:
         - capitulos/02_a_algo.qmd
         - capitulos/webexercises.qmd
   #       - capitulos/02_b_algo.qmd
-  #       - capitulos/02_practica.qmd
+        - capitulos/02_practica.qmd
   # appendices:
   #   - capitulos/98_tp.qmd
   #   - capitulos/99_bibliografia.qmd
