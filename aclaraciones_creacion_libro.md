@@ -91,3 +91,12 @@
 ## Pendientes
 
 - Poner una licencia.
+
+## Pasos para Agregar una Práctica
+
+1. Crear una branch desde `main`.
+1. Crear `{numero unidad}_practica.qmd` en la carpeta `capitulos`. En el caso que la unidad sea menor a `10`, `{numero unidad}` debe comenzar con cero (por ejemplo, `01`).
+2. Usar [NN_practica.qmd](templates/NN_practica.qmd) como referencia para completar `{numero unidad}_practica.qmd`. Los ejercicios consisten en un enunciado y una solución que por defecto está escondida.
+3. Agregar `- capitulos/{numero unidad}_practica.qmd` dentro de la `part` correspondiente en [_quarto.yml](_quarto.yml).
+4. Corroborar que la práctica fue agregada correctamente ejecutando `quarto preview` en la `Terminal`. Nota: Para cerrar `quarto preview`, en RStudio se puede usar el shortcut `Ctrl + C`.
+5. Una vez completada la práctica, hacer un PR desde la branch a `main`. Tener en cuenta que el libro se debería actualizar automáticamente cuando la branch sea integrada a `main`.
