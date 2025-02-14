@@ -1,0 +1,22 @@
+---
+format:
+  html:
+    embed-resources: false
+---
+
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Práctica de la Unidad NN
+
+## Ejercicio 1
+
+Enunciado Ejercicio 1...
+
+```{r, echo = TRUE, eval = FALSE}
+#| webex.hide: "Ver Solución"
+for (i in 1:10) {
+  print(i)
+}
+```
