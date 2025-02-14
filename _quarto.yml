@@ -35,8 +35,6 @@ book:
   # appendices:
   #   - capitulos/98_tp.qmd
   #   - capitulos/99_bibliografia.qmd
-  #   - capitulos/01_practica_resuelta.qmd
-  #   - capitulos/02_practica_resuelta.qmd
 
 lang: es
 
