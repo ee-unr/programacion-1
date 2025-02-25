@@ -1,0 +1,9 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Soluciones de la Práctica {.unnumbered}
+
+::: {.en-construccion data-latex=""}
+Página en construcción.
+:::

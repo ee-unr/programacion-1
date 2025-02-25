@@ -36,6 +36,9 @@ book:
         - capitulos/webexercises.qmd
   #       - capitulos/02_b_algo.qmd
         - capitulos/02_practica.qmd
+    - part: capitulos/90.qmd
+      chapters:
+        - capitulos/90_soluciones_01.qmd
   # appendices:
   #   - capitulos/98_tp.qmd
   #   - capitulos/99_bibliografia.qmd
