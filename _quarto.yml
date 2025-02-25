@@ -23,8 +23,12 @@ book:
     - capitulos/00_info.qmd
     - part: capitulos/01.qmd
       chapters:
-        - capitulos/01_a_algo.qmd
-        - capitulos/01_b_algo.qmd
+        - capitulos/01_a_intro.qmd
+        - capitulos/01_b_primeros_pasos.qmd
+        - capitulos/01_c_objetos.qmd
+        - capitulos/01_d_varios.qmd
+        - capitulos/01_e_ejemplo_ambientes.qmd
+        - capitulos/01_f_ejemplo_texto.qmd
         - capitulos/01_practica.qmd
     - part: capitulos/02.qmd
       chapters:

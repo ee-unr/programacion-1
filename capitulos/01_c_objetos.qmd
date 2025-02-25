@@ -2,10 +2,10 @@
 \thispagestyle{primerapagina}
 ```
 
-# Unidad 1. Introducción a la programación con R
-
-Presentación de la Unidad 1.
+# Objetos, ambiente y operadores
 
 ::: {.en-construccion data-latex=""}
 Página en construcción.
 :::
+
+objetos, ambiente, tipos de datos, operadores

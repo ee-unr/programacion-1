@@ -2,10 +2,10 @@
 \thispagestyle{primerapagina}
 ```
 
-# Unidad 1. Introducción a la programación con R
-
-Presentación de la Unidad 1.
+# Primeros pasos con R y RStudio
 
 ::: {.en-construccion data-latex=""}
 Página en construcción.
 :::
+
+uso general de R y RStudio, scripts,, funciones
