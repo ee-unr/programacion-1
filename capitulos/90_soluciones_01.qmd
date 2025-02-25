@@ -1,0 +1,17 @@
+---
+number-sections: false
+---
+
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Soluciones de la Práctica de la Unidad 1
+
+## Solución Ejercicio 1
+
+Solución Ejercicio 1...
+
+## Solución Ejercicio 2
+
+Solución Ejercicio 2...

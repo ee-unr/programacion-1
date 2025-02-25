@@ -1,3 +1,7 @@
+---
+number-sections: false
+---
+
 ```{=latex}
 \thispagestyle{primerapagina}
 ```
@@ -8,8 +12,10 @@
 Página en construcción.
 :::
 
-In summary, this book has no content whatsoever.
+## Ejercicio 1
 
-```{r}
-1 + 1
-```
+Enunciado Ejercicio 1...
+
+## Ejercicio 2
+
+Enunciado Ejercicio 2...
