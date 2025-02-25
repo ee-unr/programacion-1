@@ -2,7 +2,7 @@
 \thispagestyle{primerapagina}
 ```
 
-# Primera sección de la Unidad 1
+# Ejemplos de cuadritos
 
 ::: {.en-construccion data-latex=""}
 Página en construcción.

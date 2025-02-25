@@ -2,10 +2,11 @@
 \thispagestyle{primerapagina}
 ```
 
-# Segunda sección de la Unidad 1
+# Otras nociones fundamentales sobre R
 
 ::: {.en-construccion data-latex=""}
 Página en construcción.
 :::
 
-{{< lipsum 13 >}}
+
+proyecto, directorio de trabajo, errores, estilo, paquete

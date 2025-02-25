@@ -1,0 +1,17 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Programación: de qué se trata y para qué nos sirve
+
+::: {.en-construccion data-latex=""}
+Página en construcción.
+:::
+
+::: {.presentacion-capitulo data-latex=""}
+Resumen o presentación del contenido de esta sección de la unidad.
+:::
+
+## primera subsección
+
+programacion, algoritmo, lenguajes, R, instalación
