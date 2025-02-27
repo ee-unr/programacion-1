@@ -14,4 +14,4 @@ Resumen o presentación del contenido de esta sección de la unidad.
 
 ## primera subsección
 
-programacion, algoritmo, lenguajes, R, instalación
+programacion, algoritmo, lenguajes, 

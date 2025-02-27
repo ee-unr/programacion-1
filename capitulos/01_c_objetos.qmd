@@ -2,10 +2,254 @@
 \thispagestyle{primerapagina}
 ```
 
-# Objetos, ambiente y operadores
+# Objetos y ambiente
 
-::: {.en-construccion data-latex=""}
-Página en construcción.
+::: {.presentacion-capitulo data-latex=""}
+En este capítulo exploramos los fundamentos de R como un lenguaje basado en **objetos**. Aprenderemos qué es un objeto, los diferentes tipos de datos que R maneja y cómo se organizan dentro de **vectores atómicos**. También veremos cómo crear nuevos objetos en R y cómo estos componenen al **ambiente global**. Estos conceptos son esenciales para trabajar de manera eficiente y comprender el comportamiento del lenguaje en futuras aplicaciones.
 :::
 
-objetos, ambiente, tipos de datos, operadores
+## Objetos
+
+Anteriormente usamos R para realizar cálculos matemáticos como:
+
+```{r}
+5 * 6
+```
+
+Los operandos en ese cálculo y su resultado no están guardados en ningún lugar de nuestra computadora. Podríamos decir que lo que vemos ahí son las huellas de algunos números que existieron brevemente en la memoria de nuestra computadora pero ya desaparecieron. Si queremos usar ese resultado para realizar otro cálculo, tendremos que pedirle a R que calcule `5 * 6` de nuevo.
+
+Claramente, al resolver problemas complejos no podemos trabajar con resultados o valores efímeros. Tenemos que guardarlos en algún lugar para poder reutilizarlos. En R podemos hacer:
+
+```{r}
+x <- 5 * 6
+```
+
+En este caso que estamos analizando, `x` es un ejemplo de un objeto creado por nosotros.
+
+::: {.concepto data-latex=""}
+Los **objetos** son estructuras capaces de almacenar las distintas piezas de información, (o *datos*), que podemos manipular para resolver una tarea de programación. Dependiendo de las características de un objeto en particular, podemos hacer con él diferentes operaciones. Nuestro programa, a lo largo de su ejecución, va creando o modificando los objetos existentes.
+:::
+
+Un nuevo objeto se crea con el **operador de asignación** (`<-`, "operador flecha"). Como lo vamos a usar muchísimas veces, es conveniente recordar su atajo para escribirlo rápidamente con el teclado: `Alt + -` (teclas `Alt` y guión medio). De esta forma, informalmente la línea `x <- 5 * 6` puede ser leída así: "creamos un objeto llamado `x` que contiene al resultado de la operación `5 * 6` (30).
+
+Una vez que almacenamos un valor en `x`, podemos utilizarlo en nuevos cálculos:
+
+```{r}
+x * 100
+80 - x
+```
+
+Hay distintos tipos de objetos, algunos con estructuras muy simples (como aquellos que sólo almacenan un único valor, al igual que `x` en el ejemplo) y otros mucho más complejos (como aquellos que sirven para representar conjuntos de datos completos o resultados de algún análisis). Cada lenguaje de programación propone su propio catálogo de tipos de objetos y cada programador puede crear otros tipos nuevos. Durante las primeras unidades sólo emplearemos el tipo de objeto más sencillo que R ofrece.
+
+## Vectores atómicos de R
+
+El **tipo de objeto más simple y básico en R** se llama **vector atómico** (*atomic vector*). De hecho, en el ejemplo, `x` es un vector atómico que hospeda un único valor numérico. En Matemática, la palabra "vector" hace referencia a un conjunto de números ordenados. Los vectores atómicos de R también pueden contener más de un valor, pero por ahora sólo consideraremos situaciones donde cada vector atómico contiene un sólo valor (como `x`). A los objetos que se usan para almacenar un solo valor a veces también se les dice **variables** (porque suele ocurrir que ese valor va cambiando a lo largo del programa). 
+
+Un vector atómico puede guardar otras cosas además de números. R define seis tipos básicos de vectores atómicos dependiendo de cómo son los datos que guardan: *doubles*, *integers*, *characters*, *logicals*, *complex* y *raw*^[los nombramos en inglés puesto que esos son sus nombres formales]. Los últimos dos sirven para guardar números complejos y *bytes* en crudo, respectivamente y muy rara vez son usados para tareas de análisis de datos, por lo cual no los volveremos a nombrar. Vamos a ver a los otros, uno por uno.
+
+### *Doubles* (dobles)
+
+Un vector atómico de tipo *double* almacena números reales (positivos o negativos, grandes o chicos, con decimales o sin decimales). Casi siempre que usamos números para analizar datos en R, empleamos este tipo de vector. Con estos objetos podemos realizar operaciones aritméticas comunes, como en los ejemplos que ya vimos antes. 
+
+La función `typeof()` se usa para preguntar a R de qué tipo es un objeto:
+
+```{r}
+typeof(x)
+```
+
+### *Integers* (enteros)
+
+Un vector atómico de tipo *integer* también almacena números, pero sólo números enteros. Muchos lenguajes de programación tratan a los números enteros de forma diferente al resto de los números porque utilizan estrategias especiales para almacenarlos en la memoria de la compu (ocupan menos espacio y su representación tiene mayor precisión). 
+
+Para distinguir a los *integers* de los *doubles*, R los muestra con una `L` al costado. De hecho, podemos crear un vector atómico de tipo *integer* agregando la `L`
+
+```{r}
+y <- 1L
+typeof(y)
+```
+
+En aplicaciones de análisis de datos, es raro que los números con los que se trabaja sean sólo enteros, por lo que podemos prestarle poca atención a esto por ahora. Es bueno saber que existen, porque en algunas salidas a veces aparece esa `L` y ahora sabemos de qué se trata.
+
+En algunos contextos, R directamente les dice *numeric* tanto a los *doubles* como a los *integers*.
+
+### *Characters* (caracteres)
+
+Un vector atómico de tipo *character* almacena texto, es decir, una cadena de caracteres (una palabra o palabras). No es posible hacer operaciones matemáticas con este tipo de vector. Para crear un vector de tipo *character* debemos encerrar entre comillas el texto que será almacenado en él:
+
+```{r}
+z <- "Hola, ¿cómo estás?"
+z
+typeof(z)
+```
+
+### *Logicals* (lógicos)
+
+Un vector atómico de tipo *logical* puede almacenar el valor lógico `TRUE` (verdadero) o el valor lógico `FALSE` (falso). Si bien es poco común que este tipo de valores aparezca de forma natural en conjuntos de datos a analizar, son sumamente importantes. Permiten hacer comparaciones y entender su resultado, así como también evaluar condiciones para decidir o no implementar algunas acciones en el proceso que estamos llevando adelante.
+
+Podemos crear un vector *logical* así:
+
+```{r}
+v <- TRUE
+v
+typeof(v)
+```
+
+Notar que los valores lógicos no se escriben entre comillas, puesto que no son cadenas de texto. Tal vez crear vectores lógicos no es lo más común; es más frecuente que los valores lógicos surjan como resultado de algunas operaciones. Por ejemplo:
+
+```{r}
+x > y
+x < y
+is.logical(x)
+is.logical(v)
+is.numeric(x)
+```
+
+¿Para qué necesitamos distintos tipos de vectores atómicos? Para poder establecer qué operaciones se pueden realizar con unos y otros, y que todo tenga sentido. Por ejemplo, podemos hacer sumas aritméticas con vectores numéricos pero no con vectores carácter:
+
+```{r}
+#| error: true
+# Se puede:
+x * 100
+x + y
+# No se puede:
+x + z
+```
+
+::: {.ejercicio data-latex=""}
+**Seleccionar la respuesta correcta.**
+
+¿Cuál de los siguientes es un valor numérico?
+
+`r webexercises::longmcq(c('"dos"', '"2"', answer = 2))`
+
+¿Cuál de los siguientes es un valor lógico?
+
+`r webexercises::longmcq(c(answer = FALSE, '"FALSE"'))`
+:::
+
+## Nombres de los objetos
+
+De manera general, al nombre de un objeto se le dice **identificador**, ya que se trata de secuencia de caracteres que sirve para identificarlo a lo largo de un programa. Nombrar los objetos hace posible referirse a los mismos. La elección de los identificadores es una tarea del programador, pero cada lenguaje tiene sus propias reglas. Por ejemplo, en R los nombres de los objetos:
+
+- deben empezar con una letra o un punto (no pueden empezar con un número);
+- sólo pueden contener letras, números, guiones bajos y puntos; y
+- no se pueden usar las siguientes palabras como nombres, ya que son están reservadas por el lenguaje: `break`, `else`, `FALSE`, `for`, `function`, `if`, `Inf`, `NA`, `NaN`, `next`, `repeat`, `return`, `TRUE`, `while`.
+
+Es aconsejable elegir un nombre que sea representativo de la información que va a guardar el objeto, ya que esto facilita la lectura y la comprensión tanto del algoritmo como del programa. Por ejemplo, si se necesita un objeto para guardar el valor numérico del precio de algún producto, el identificador `p` sería una mala elección, mientras que `precio` sería mejor. Si se necesitan varios identificadores para distinguir los precios de diversos productos, podríamos usar algo como `precio_manzana`, `precio_banana`, etc. No sería posible usar como identificador a `precio manazana`, puesto que un nombre no puede tener espacios. Otra opción podría ser `preciomanzana` o `precioManzana`, pero en este curso seguimos la convención de usar guiones bajos para facilitar la lectura de nombres compuestos por más de una palabra (esto se conoce como *snake case*). 
+
+Es importar que R distingue entre mayúsculas y minúsculas, por lo que `precio` y `Precio` pueden referirse a distintos objetos, con diferentes valores almacenados. No es aconsejable tener objetos cuyos nombres sólo difieran en mayúsculas o minúsculas, puesto que sirve para confusión. En general, preferimos evitar usar mayúsculas.
+
+## Actualizar la información guardada en un objeto
+
+El valor guardado en un objeto puede cambiar en cualquier momento del programa. Además, podemos usar otros objetos para calcular el valor que será guardado. Por ejemplo, imaginemos que un programa contabiliza el stock disponible de un artículo en un comercio. Inicialmente había 43 artículos, pero en el día se vendieron 29 y se compraron otros 12 al proveedor para reponer. Al finalizar la jornada, para saber cuántos hay en stock hay que tomar la cantidad disponible original, restar la cantidad que se vendió y sumar la cantidad que se compró. El código podría lucir así:
+
+```{r}
+stock <- 43
+ventas <- 29
+compras <- 12
+stock <- stock - ventas + compras
+stock
+cat("Hay un stock de", stock, "artículos disponibles.")
+```
+
+```{r}
+#| echo: false
+rm(stock, ventas, compras)
+```
+
+::: {.info data-latex=""}
+En el ejemplo anterior usamos por primera vez la función `cat()` para emitir un mensaje, concatenando cadenas de texto encerradas entre comillas y el valor de una variable a la cual hacemos referencia por su nombre (`stock`).
+:::
+
+El valor `43` que originalmente estaba guardado en `stock` se perdió para siempre en el preciso momento cuando se ejecutó la línea `stock <- stock - ventas + compras`, que "sobrescribió" su valor. Es importante sobrescribir el valor de un objeto sólo si estamos seguros de que es lo correcto.
+
+También se debe tener en cuenta que podemos reemplazar el objeto representado con un nombre por otro de un tipo diferente, y a R no le va a molestar:
+
+```{r}
+# x es un vector atómico de tipo numeric:
+x <- 100
+x
+# ahora x pasa a ser un vector atómico de tipo caracter:
+x <- "hola"
+x
+```
+
+Otros lenguajes no admiten este comportamiento. Por el contrario, requieren se "declare" el nombre y el tipo de cada objeto antes de ser usados y, si bien se puede actualizar su valor, éste siempre debe ser del mismo tipo. R es un lenguaje dinámico que no tiene este recaudo.
+
+::: {.comentario data-latex=""}
+Expresiones como "crear un objeto llamado `x` que contiene el valor `100`" o "sobreescribir, actualizar o reemplazar su valor" nos permiten imaginar lo que sucede y encarar tareas generales de programación en R, pero en realidad son formas simplificadas y poco precisas de describir procesos más complejos relacionados al funcionamiento de R. Estudiantes con experiencia en programación pueden opcionalmente referirse a [este material](https://adv-r.hadley.nz/names-values.html#names-values) para leer más.
+:::
+
+## Ambiente
+
+::: {.concepto data-latex=""}
+En R, un **environment** (**entorno** o **ambiente**) es un espacio donde se almacenan los objetos creados durante una sesión de trabajo. Se trata una estructura clave en la gestión de variables y funciones dentro de un programa en R.
+:::
+
+Durante la evaluación de un programa coexisten muchos *environments*. Vamos a hablar un poco más de esto cuando aprendamos a crear nuevas funciones, pero en general podemos programa en R sin preocuparnos por este tema, que es bastante complejo y avanzado.
+
+Lo fundamental es saber que el conjunto de objetos que vamos creando en nuestro programa forman parte de un ambiente llamado *Global Environment* y es el que vemos en la pestaña *Environment* del panel superior derecho de RStudio:
+
+![Captura de pantalla del *Global Environment*.](../imagenes/teoria_unidad_1/ambiente.png){width="100%" fig-align="center"}
+
+También podemos ver en la consola un listado de todos los nombres de los objetos que existen en el ambiente con la función `ls()`:
+
+```{r}
+#| echo: false
+# que este object que aparece??
+rm(object)
+```
+
+```{r}
+ls()
+```
+
+Los objetos que aparecen listados en esta salida o en el panel *Environment* son los que podemos usar para programar, porque están disponibles en nuestro ambiente. Si por error queremos usar un objeto que aún no fue definido en el ambiente global, obtenemos un error así:
+
+```{r}
+#| error: true
+w * 10
+```
+
+Si necesitamos borrar un objeto del ambiente global podemos usar `rm()` indicando como argumento el nombre del objeto a eliminar:
+
+```{r}
+rm(x)
+```
+
+Si necesitamos borrar todos los objetos del ambiente podemos usar el ícono de la escoba en la pestaña *Environment* o ejecutar:
+
+```{r}
+rm(list = ls())
+```
+
+Todos los objetos generados viven temporalmente en la memoria de la computadora mientras dure la sesión de R en la que estamos trabajando. Si cerramos R, toda esa información desaparecerá. Muchas veces eso es algo deseable: una vez finalizado el programa, guardamos algún resultado que nos interese (por ejemplo, un conjunto de datos en un archivo de Excel, gráficos en archivos *png*, etc.) y todos los objetos del ambiente que fuimos necesitando en el camino pueden descartados. 
+
+En otros casos puede ocurrir que por alguna rara razón al terminar de trabajar nos interese guardar de forma permanente en un archivo de la computadora una copia de todo lo que se encuentra en el ambiente global. Los archivos que contienen los objetos creados en R tienen extensión `.RData`. Se generan con el ícono de guardar en la pestaña *Environment* o usando la función `save.image()`, que necesita que escribamos entre los paréntesis el nombre elegido para el archivo a crear, por ejemplo:
+
+```{r}
+#| eval: false
+save.image("objetos_del_ambiente.RData")
+```
+
+El archivo `objetos_del_ambiente.RData` se genera en el directorio de trabajo actual. Si estamos trabajando dentro de un *RProject*, se guardará en la carpeta del proyecto. Si queremos que se guarde en cualquier otro lugar de nuestra compu, debemos indicar la ruta informática completa hasta la ubicación deseada:
+
+```{r}
+#| eval: false
+save.image("C:/Users/Documentos/facultad/programacion1/objetos_del_ambiente.RData")
+```
+
+La acción contraria es *importar* a nuestro ambiente global objetos que estén guardados en algún lugar de nuestra computadora en un archivo `.RData`. Para esto podemos usar el ícono de abrir en la pestaña *Environment* o la función `load()`:
+
+```{r}
+#| eval: false
+load("objetos_del_ambiente.RData")
+```
+
+Para que lo anterior funcione, el archivo debe estar en el directorio de trabajo actual. Si está guardado en otro lugar, se debe especificar la ruta:
+
+```{r}
+#| eval: false
+save.image("C:/Users/Documentos/facultad/programacion1/objetos_del_ambiente.RData")
+```
+

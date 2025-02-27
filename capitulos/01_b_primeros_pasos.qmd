@@ -8,4 +8,21 @@
 Página en construcción.
 :::
 
+R, instalación
+
 uso general de R y RStudio, scripts,, funciones
+
+acá tiene que ir proyectos, ruta informática, directorio de trabajo
+
+## Funciones
+
+ Todavía no hemos definido formalmente a las *funciones*, pero por ahora nos alcanza con saber que son otro tipo de objetos que cuando las usamos se encargan de cumplir con alguna tarea específica. Las funciones también tienen un nombre (*identificador*) y están seguidas por un par de paréntesis, dentro de los cuales se escriben opciones para que ellas operen. La función `class()` es la que nos dice qué tipo de dato hay en una variable:
+
+```{r}
+var1 <- 2
+var2 <- "Hola Mundo"
+var3 <- TRUE
+class(var1)
+class(var2)
+class(var3)
+```

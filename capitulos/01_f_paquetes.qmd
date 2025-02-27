@@ -2,11 +2,9 @@
 \thispagestyle{primerapagina}
 ```
 
-# Otras nociones fundamentales sobre R
+# Paquetes
 
 ::: {.en-construccion data-latex=""}
 Página en construcción.
 :::
 
-
-proyecto, directorio de trabajo, errores, estilo, paquete

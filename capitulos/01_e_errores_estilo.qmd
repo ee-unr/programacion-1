@@ -1,0 +1,10 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Errores y guía de estilo
+
+::: {.en-construccion data-latex=""}
+Página en construcción.
+:::
+
