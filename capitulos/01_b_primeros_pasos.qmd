@@ -29,7 +29,7 @@ Para instalar estos programas, se debe visitar las páginas oficiales de [R](htt
 Cuando se abre RStudio se pueden visualizar cuatro paneles: 
 
 ```{r, out.width='100%', fig.cap='Captura de pantalla de RStudio', echo=FALSE, fig.align="center"}
-knitr::include_graphics('images/intro/12_AbrirRStudio.png')
+knitr::include_graphics('../imagenes/teoria_unidad_1/12_AbrirRStudio.png')
 ```
 
 - A la izquierda:

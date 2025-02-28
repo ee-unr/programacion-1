@@ -15,13 +15,13 @@ La historia de la programación está vinculada directamente con la de la comput
 En 1617 el matemático escocés John Napier (el mismo que definió los logaritmos) inventó un sistema conocido como *los huesos de Napier* o *huesos neperianos* que facilitaba la tarea de multiplicar, dividir y tomar raíces cuadradas, usando unas barras de hueso o marfil que tenían dígitos grabados. Esta fue la base para otras ideas más avanzadas, entre ellas la que dio origen a la primera calculadora mecánica, inventada por el alemán Wilhelm Schickard en 1623, capaz de realizar cómputos aritméticos sencillos funcionando a base de ruedas y engranajes. Se componía de dos mecanismos diferenciados, un ábaco de Napier de forma cilíndrica en la parte superior y un mecanismo en la inferior para realizar sumas parciales de los resultados obtenidos con el aparato de la parte superior. Fue llamado *reloj calculador*. A partir de aquí se fueron desarrollando otros modelos, todos ellos teniendo en común el hecho de ser puramente mecánicos, sin motores ni otras fuentes de energía. El operador ingresaba números ubicando ruedas de metal en posiciones particulares y al girarlas otras partes de la máquina se movían y mostraban el resultado. Algunos ejemplos son las calculadoras del inglés William Oughtred en 1624, de Blaise Pascal en 1645 (llamada *pascalina*), la de Samuel Morland en 1666 y las de Leibniz, en 1673 y 1694.
 
 ```{r calculadora, out.width='100%', fig.show='hold', fig.cap='De izquierda a derecha: los huesos de Napier (Museo Arqueológico Nacional de España), el reloj calculador de Schickard (Museo de la Ciencia de la Universidad Pública de Navarra) y una pascalina del año 1952', echo=FALSE, fig.align="center"}
-knitr::include_graphics('images/historia/calculadoras.png')
+knitr::include_graphics('../imagenes/teoria_unidad_1/calculadoras.png')
 ```
 
 El siglo XVIII trajo consigo algunos otros diseños, pero un gran salto se dio a comienzos del siglo XIX de mano de un tejedor y comerciante francés, Joseph Jacquard. En 1801 creó un telar que tenía un sistema de tarjetas perforadas para controlar las puntadas del tejido, de forma que fuera posible *programar* una gran diversidad de tramas y figuras. Sin saberlo, Jacquard sentó una idea fundamental para la creación de las computadoras.
 
 ```{r , out.width='50%', fig.show='hold', fig.cap='Un telar de Jacquard y sus tarjetas perforadas en el Museo de la ciencia y la industria en Mánchester.', echo=FALSE, fig.align="center"}
-knitr::include_graphics('images/historia/telar.png')
+knitr::include_graphics('../imagenes/teoria_unidad_1/telar.png')
 ```
 
 En 1822 el matemático británico Charles Babbage publicó un diseño para la construcción de una *máquina diferencial*, que podía calcular valores de funciones polinómicas mediante el método de las diferencias. Este complejo sistema de ruedas y engranajes era el primero que podía trabajar automáticamente utilizando resultados de operaciones previas. Si bien el diseño era viable, por motivos técnicos y económicos no lo pudo concretar (sólo construyó un modelo de menor escala). Sin embargo, Babbage no se dio por vencido y en 1837 presentó el diseño de una *máquina analítica*, un aparato capaz de ejecutar cualquier tipo de cálculo matemático y que, por lo tanto, se podría utilizar con cualquier propósito. Tal como el telar de Jacquard, la operación de esta máquina sería controlada por un patrón de perforaciones hechas sobre una tarjetas que la misma podría leer. Al cambiar el patrón de las perforaciones, se podría cambiar el comportamiento de la máquina para que resuelva diferentes tipos de cálculos. Para la salida de resultados, la máquina sería capaz de perforar tarjetas. Además, funcionaría con un motor a vapor y su tamaño hubiese sido de 30 metros de largo por 10 de ancho. Si bien Babbage tampoco llegó a concretar en vida este diseño que dejó plasmado en más de 300 dibujos y 2200 páginas por motivos políticos, se lo considera como la primera conceptualización de lo que hoy conocemos como computadora, por lo cual Babbage es conocido como *el padre de la computación*. 
@@ -29,7 +29,7 @@ En 1822 el matemático británico Charles Babbage publicó un diseño para la co
 En 1843 Lady Ada Lovelace, una matemática y escritora británica, publicó una serie de notas sobre la máquina analítica de Babbage, en las que resaltaba sus potenciales aplicaciones prácticas, incluyendo la descripción detallada de tarjetas perforadas para que sea capaz de calcular los números de Bernoulli. Al haber señalado los pasos para que la máquina pueda cumplir con estas y otras tareas, Ada es considerada actualmente como la primera programadora del mundo, a pesar de que en la época no fue tomada en serio por la comunidad científica, principalmente por su condición de mujer.
 
 ```{r , out.width='100%', fig.show='hold', fig.cap='Charles Babbage, Ada Lovelace y el algoritmo que publicó Ada para calcular los números de Bernoulli con la máquina analítica de Charles.', echo=FALSE, fig.align="center"}
-knitr::include_graphics('images/historia/babbage_ada.png')
+knitr::include_graphics('../imagenes/teoria_unidad_1/babbage_ada.png')
 ```
 
 La utilidad de las tarjetas perforadas quedó confirmada en 1890, cuando Herman Hollerith las utilizó para automatizar la tabulación de datos en el censo de Estados Unidos. Las perforaciones en determinados lugares representaban información como el sexo o la edad de las personas, logrando que se pudieran lograr clasificaciones y conteos de forma muy veloz. Así, se tardaron sólo 3 años en procesar la información del censo, cinco años menos que en el anterior de 1880. Con el fin de comercializar esta tecnología, Hollerith fundó una compañía que terminaría siendo la famosa International Business Machine (IBM), empresa líder en informática hasta el día de hoy. 
@@ -44,7 +44,7 @@ También ya había experimentado con esta idea el alemán Konrad Zuse, quien ent
 El modelo original de la Z3 fue destruido en Berlín por un bombardeo durante la segunda guerra mundial.
 
 ```{r berry, out.width='100%', fig.show='hold', fig.cap='De izquierda a derecha: las computadoras ABC, ENIAC y Z3', echo=FALSE, fig.align="center"}
-knitr::include_graphics('images/historia/berry_eniac_z3.png')
+knitr::include_graphics('../imagenes/teoria_unidad_1/berry_eniac_z3.png')
 ```
 
 Este nuevo paradigma cambió la historia de la computación, como también lo hizo la invención del *transistor* en 1947 en los Laboratorios Bell. Un *transistor* es un dispositivo electrónico semiconductor que entrega una señal de salida en respuesta a una señal de entrada, mucho más pequeño que los tubos de vacío y que consumen menos energía eléctrica. Así, una computadora podía tener cientos de miles de transistores, no obstante ocupando mucho espacio. 
@@ -57,7 +57,7 @@ Desde entonces, la computación ha evolucionado muy rápidamente, con la introdu
 - *Cuarta generación* (aprox. 1971-presente): los avances tecnológicos permitieron construir la unidad entera de procesamiento de una computadora sobre un único chip de silicio (*microprocesador*), incluyendo la memoria y los controles de entrada y salida de datos. Todo lo que en una computadora de la primera generación ocupaba una habitación entera, fue capaz de entrar en la palma de una mano. El primer microprocesador fue el Intel 4004 de 1971, mientras que la primera computadora de uso doméstico fue desarrollada por IBM en 1981. Surgieron también en esta generación el ratón (*mouse*) y las interfaces gráficas de usuario (como Windows, en 1985). 
 
 ```{r evolucion, out.width='50%', fig.show='hold', fig.cap='De derecha a izquierda: un tubo de vacío, un transistor y un chip.', echo=FALSE, fig.align="center"}
-knitr::include_graphics('images/historia/05_tubovacio_transistor_chip.jpg')
+knitr::include_graphics('../imagenes/teoria_unidad_1/05_tubovacio_transistor_chip.jpg')
 ```
 
 ## Software y hardware
@@ -65,7 +65,7 @@ knitr::include_graphics('images/historia/05_tubovacio_transistor_chip.jpg')
 Como podemos ver, en la historia de la computación hubo dos aspectos que fueron evolucionando: las máquinas y los programas que las dirigen. Hacemos referencia a estos elementos como *hardware* y *software* respectivamente, y es la conjunción de ambos la que le da vida a la computación y hace posible la programación.
 
 ```{r hardvssoft, out.width='50%', fig.show='hold', fig.cap='Representación de la diferencia entre hardware y software.', echo=FALSE, fig.align="center"}
-knitr::include_graphics('images/intro/06_hardsoft.jpg')
+knitr::include_graphics('../imagenes/teoria_unidad_1/06_hardsoft.jpg')
 ```
 
 El *hardware* es el conjunto de piezas físicas y tangibles de la computadora. Existen diversas formas de clasificar a los elementos que componene al hardware, según distintos criterios:

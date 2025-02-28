@@ -15,7 +15,7 @@ Apenas iniciemos nuestro camino en el mundo de la programación nos daremos cuen
 A los errores en programación se los suele llamar *bugs* (insecto o bicho en inglés) y el proceso de la corrección de los mismos se conoce como *debugging* (depuración)^[Algunos usan el término bug para referirse exclusivamente a errores lógicos]. Se dice que esta terminología proviene de 1947, cuando una computadora en la Universidad de Harvard (la *Mark II*) dejó de funcionar y finalmente se descubrió que la causa del problema era la presencia de una polilla en un relé electromagnético de la máquina. Sin embargo, otros historiadores sostienen que el término ya se usaba desde antes.
 
 ```{r, out.width='70%', fig.show='hold', fig.cap='La polilla (bug) encontrada por la científica de la computación Grace Hooper en la Mark II fue pegada con cinta en un reporte sobre el malfuncionamiento de la máquina.', echo=FALSE, fig.align="center"}
-knitr::include_graphics('images/intro/First_Computer_Bug.jpg')
+knitr::include_graphics('../imagenes/teoria_unidad_1/First_Computer_Bug.jpg')
 ```
 
 A continuación se presenta una de las posibles clasificaciones de los errores que se pueden cometer en programación:
@@ -29,7 +29,7 @@ A continuación se presenta una de las posibles clasificaciones de los errores q
 Los errores en la programación son tan comunes, que un científico de la computación muy reconocido, Edsger Dijkstra, dijo una vez: "si la depuración es el proceso de eliminar errores, entonces la programación es el proceso de generarlos". Ante la presencia de uno, no hay más que respirar profundo y con paciencia revisar hasta encontrarlo y solucionarlo.
 
 ```{r bug, out.width='50%', fig.show='hold', fig.cap='Encontrando un bug en un programa.', echo=FALSE, fig.align="center"}
-knitr::include_graphics('images/intro/08_bug.jpg')
+knitr::include_graphics('../imagenes/teoria_unidad_1/08_bug.jpg')
 ```
 
 ## Guía de estilo

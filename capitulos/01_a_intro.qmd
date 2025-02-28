@@ -88,9 +88,6 @@ Es importante destacar la presencia de sangrías (*sangrado*) en el ejemplo ante
 
 Los algoritmos suelen ser representados también mediante *diagramas de flujo*, como el que se muestra en la siguiente figura^[En este curso no emplearemos diagramas de flujo]. 
 
-```{r algoritmo, out.width='70%', fig.show='hold', fig.cap='Ejemplo del algoritmo "Arrancar el auto" representado gráficamente con un diagrama de flujo.', echo=FALSE, fig.align="center"}
-knitr::include_graphics('images/intro/flujo.png')
-```
 
 ### Codificación
 
@@ -101,7 +98,7 @@ Si bien hay distintos lenguajes de programación, una computadora en definitiva 
 Programar en lenguaje de máquina es muy complejo y lento, y es fácil cometer errores pero es difícil arreglarlos. Por eso a principios de la década de 1950 se inventaron los *lenguaje ensambladores*, que usan palabras para representar simbólicamente las operaciones que debe realizar la computadora. Cada una de estas palabras reemplaza un código de máquina binario, siendo un poco más fácil programar. Imaginemos que deseamos crear un programa que permita sumar dos números elegidos por una persona. La computadora puede hacer esto si se lo comunicamos mediante un mensaje compuesto por una larga cadena de ceros y unos (lenguaje de máquina) que a simple vista no podríamos entender. Sin embargo, escrito en lenguaje ensamblador, el programa se vería así (por ejemplo):
 
 ```{r out.width='100%', fig.show='hold', fig.cap='Programa en lenguaje ensamblador para leer dos números, sumarlos y mostrar el resultado. Al final de cada línea hay una descripción de la operación realizada.', echo=FALSE, fig.align="center"}
-knitr::include_graphics('images/intro/ensamblador.png')
+knitr::include_graphics('../imagenes/teoria_unidad_1/ensamblador.png')
 ```
 
 El programa que se encarga de traducir esto al código de máquina se llama *ensamblador*. A pesar de que no haya ceros y unos como en el lenguaje de máquina, probablemente el código anterior tampoco sea fácil de entender. Aparecen instrucciones que tal vez podemos interpretar, como *add* por sumar o *sub* por substraer, pero está lleno de cálculos hexadecimales, referencias a posiciones en la memoria de la computadora y movimientos de valores que no lo hacen muy amigable. Por eso, a pesar de que la existencia de los lenguajes ensambladores simplificó mucho la comunicación con la computadora, se hizo necesario desarrollar lenguajes que sean aún más sencillos de usar.
@@ -125,7 +122,7 @@ En programación, la idea de simplificar un proceso complejo ignorando algunas d
 - *Lenguajes de nivel medio de abstracción*: son lenguajes con características mixtas entre ambos grupos anteriores.
 
 ```{r lenguajes, out.width='70%', fig.show='hold', fig.cap='Distintos lenguajes de programación y sus logos.', echo=FALSE, fig.align="center"}
-knitr::include_graphics('images/intro/07_lenguajes.jpg')
+knitr::include_graphics('../imagenes/teoria_unidad_1/07_lenguajes.jpg')
 ```
 
 Si bien podemos programar usando un lenguaje de alto nivel para que nos resulte más sencillo, *alguien* o *algo* debe traducirlo a lenguaje de máquina para que la computadora, que sólo entiende de ceros y unos, pueda realizar las tareas. Esto también es necesario incluso si programáramos en lenguaje ensamblador. Para estos procesos de traducción se crearon los *compiladores* e *intérpretes*.

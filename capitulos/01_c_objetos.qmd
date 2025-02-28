@@ -135,9 +135,19 @@ De manera general, al nombre de un objeto se le dice **identificador**, ya que s
 - sólo pueden contener letras, números, guiones bajos y puntos; y
 - no se pueden usar las siguientes palabras como nombres, ya que son están reservadas por el lenguaje: `break`, `else`, `FALSE`, `for`, `function`, `if`, `Inf`, `NA`, `NaN`, `next`, `repeat`, `return`, `TRUE`, `while`.
 
-Es aconsejable elegir un nombre que sea representativo de la información que va a guardar el objeto, ya que esto facilita la lectura y la comprensión tanto del algoritmo como del programa. Por ejemplo, si se necesita un objeto para guardar el valor numérico del precio de algún producto, el identificador `p` sería una mala elección, mientras que `precio` sería mejor. Si se necesitan varios identificadores para distinguir los precios de diversos productos, podríamos usar algo como `precio_manzana`, `precio_banana`, etc. No sería posible usar como identificador a `precio manazana`, puesto que un nombre no puede tener espacios. Otra opción podría ser `preciomanzana` o `precioManzana`, pero en este curso seguimos la convención de usar guiones bajos para facilitar la lectura de nombres compuestos por más de una palabra (esto se conoce como *snake case*). 
+Es aconsejable elegir un nombre que sea representativo de la información que va a guardar el objeto, ya que esto facilita la lectura y la comprensión tanto del algoritmo como del programa. Por ejemplo, si se necesita un objeto para guardar el valor numérico del precio de algún producto, el identificador `p` sería una mala elección, mientras que `precio` sería mejor. Si se necesitan varios identificadores para distinguir los precios de diversos productos, podríamos usar algo como `precio_manzana`, `precio_banana`, etc. 
 
-Es importar que R distingue entre mayúsculas y minúsculas, por lo que `precio` y `Precio` pueden referirse a distintos objetos, con diferentes valores almacenados. No es aconsejable tener objetos cuyos nombres sólo difieran en mayúsculas o minúsculas, puesto que sirve para confusión. En general, preferimos evitar usar mayúsculas.
+Por otro lado, no es posible usar como identificador a `precio manazana`, puesto que un nombre no puede tener espacios. Otra opción podría ser `preciomanzana` o `precioManzana`, pero en este curso seguimos la convención de usar guiones bajos para facilitar la lectura de nombres compuestos por más de una palabra (esto se conoce como *snake case*). 
+
+Es importar que R distingue entre mayúsculas y minúsculas, por lo que `precio` y `Precio` pueden referirse a distintos objetos, con diferentes valores almacenados:
+
+```{r}
+precio <- 15
+Precio <- 2
+precio + Precio
+```
+
+No es aconsejable tener objetos cuyos nombres sólo difieran en mayúsculas o minúsculas como en el ejemplo anterior, puesto que sirve para confusión. En general, preferimos evitar usar mayúsculas.
 
 ## Actualizar la información guardada en un objeto
 
