@@ -38,6 +38,27 @@ Es sumamente importante mantener la prolijidad en la escritura tanto del pseudoc
 
 Es por eso que se establecen conjuntos de reglas para controlar y unificar la forma de escribir programas, que se conocen como **guía de estilo**. Estas reglas cubren aspectos como, por ejemplo, la forma de escribir comentarios en el código, la utilización de espacios o renglones en blanco, el formato de los nombres para los elementos que creamos nosotros mismos (como las funciones) y para los archivos que generamos, etc. Una *guía de estilo* no indica la única forma de escribir código, ni siquiera la forma correcta de hacerlo, sino que establece una convención para que todos trabajen de la misma forma, basándose en costumbres que sí se ha visto que pueden tener más ventajas que otras.
 
-Por ejemplo, para programar en R, existe una guía de estilo llamada [The tidyverse style guide](https://style.tidyverse.org/), que es la que utilizan la gente de Google y de RStudio. En este curso vamos a adherir a sus recomendaciones. Si bien es una lectura muy interesante, particularmente si tenés intenciones de profundizar tus conocimientos sobre programación en R, no es necesario que lean dicha guía completa. Por ahora es suficiente con que imiten con atención el estilo que usamos en los ejemplos provistos en esta guía.
+Para programar en R existe una guía de estilo muy popular llamada [The tidyverse style guide](https://style.tidyverse.org/), creada por los desarrolladores de RStudio (Posit). En este curso vamos a adherir a sus recomendaciones. Si bien es una lectura muy interesante, particularmente si tenés intenciones de profundizar tus conocimientos sobre programación en R, no es necesario que lean dicha guía completa. Por ahora es suficiente con que imiten con atención el estilo que usamos en los ejemplos provistos en esta guía y sigan algunas recomendaciones generales como las siguientes:
 
-Recordemos siempre que seguir un buen estilo para programar es como hacer uso de una correcta puntuación cuando escribimos, podemos entendernos sin ella, peroesmuchomasdificilleerloqueescribimossinolarespetamosno?
+- Como dijimos antes, escribimos nos los nombres de nuevos objetos con *snake case* y en minúscula: 
+  
+  - Ok: `mi_objeto`.
+  - Evitar: `MIOBJETO`, `miObjeto`.
+  
+- En R los espacios en blanco son ignorados, colocarlos o no no produce errores en el código. Sin embargo, se recomienda hacer uso de los mismos para facilitar la lectura. Se sugiere colocar espacios alrededor del operador de asignación `<-` y de los operadores matemáticos (excepto la potencia). No colocamos espacio después de abrir o antes de cerrar un paréntesis.
+
+  - Ok: `z <- (a + b)^2 / d`
+  - Evitar: `z<-( a + b ) ^ 2/d`
+  
+- Usamos un espacio después de poner una coma y entre el signo igual que se usa para definir argumentos en una función:
+
+  - Ok: `log(100, base = 10)`
+  - Evitar: `log(100 ,base=10)`
+
+- Los nombres de archivo deben describir su contenido y evitar espacios, símbolos y caracteres especiales, y preferentemente estar escritos en minúsculas. 
+
+
+  - Ok: `analisis_exploratorio.R`
+  - Evitar: `Análisis exploratorio.R`, `codigo.r`
+
+Recordemos siempre que seguir un buen estilo para programar es como hacer uso de una correcta puntuación cuando escribimos, podemos entendernos sin ella, peroesmuchomasdificilleersinolarespetamosno?^[Frase tomada de [acá](https://r4ds.hadley.nz/workflow-style.html).]
