@@ -27,8 +27,8 @@ book:
         # - capitulos/01_b_primeros_pasos.qmd
         # - capitulos/01_c_objetos.qmd
         # - capitulos/01_d_operadores.qmd
-        - capitulos/01_e_errores_estilo.qmd
-        # - capitulos/01_f_paquetes.qmd
+        # - capitulos/01_e_errores_estilo.qmd
+        - capitulos/01_f_paquetes.qmd
         # - capitulos/01_g_opcional.qmd
         # - capitulos/01_practica.qmd
   #   - part: capitulos/02.qmd

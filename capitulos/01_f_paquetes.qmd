@@ -4,19 +4,47 @@
 
 # Paquetes
 
-::: {.en-construccion data-latex=""}
-Página en construcción.
+::: {.presentacion-capitulo data-latex=""}
+En este capítulo exploraremos el sistema de paquetes en R, una de sus características más poderosas. Veremos cómo R está compuesto por una base fundamental y un ecosistema de paquetes adicionales que amplían sus funcionalidades. Aprenderemos a instalar y cargar paquetes.
 :::
 
-### Diseño del sistema R
+## Diseño del sistema R
 
-R Se divide en dos partes:
+R está diseñado como un sistema modular, dividido en dos partes principales:  
 
-- La **base** (*R Base*), que se instala cuando descargamos el programa desde [CRAN](https://cran.r-project.org/) ("Comprehensive R Archive Network"). Contiene, entre otras cosas, una serie de herramientas básicas y fundamentales de R.
+- **R Base**: Se instala automáticamente cuando descargamos R desde [CRAN](https://cran.r-project.org) (Comprehensive R Archive Network). Incluye las funciones fundamentales del lenguaje, como operadores matemáticos, herramientas para manipular datos y funciones estadísticas básicas.  
 
-- **Paquetes adicionales**. Un paquete es un conjunto de archivos que se descarga de forma opcional desde CRAN u otros repositorios y que sirven para hacer alguna tarea especial. Por ejemplo, para poder hacer gráficos lindos, se puede usar un paquete que se llama `ggplot2`.
+- **Paquetes adicionales**: Son extensiones opcionales que amplían las funcionalidades de R. Cada paquete es un conjunto de funciones y datos diseñados para tareas específicas, como visualización de datos, modelado estadístico o manipulación avanzada de estructuras de datos.  
 
-Como dijimos antes, en la pestaña *Packages* del panel de abajo a la derecha tiene el listado de todos los paquetes que ya están instalados (muchos vienen con R Base). Allí también hay un botón para instalar nuevos, aunque otra opción es correr la instrucción `install.packages("nombredelpaquete")`, por ejemplo, `install.packages("ggplot2")`. También es posible instalar paquetes publicados en otros repositorios^[Por ejemplo, es muy común descargar paquetes en desarrollo o en experimentación que estén disponibles en la plataforma Github. Estos paquetes se instalan especificando el nombre de la cuenta de Github de quien lo haya publicado y el nombre del paquete, por ejemplo: `devtools::install_github("mpru/karel")`. Para esto previamente hay que haber instalado desde CRAN el paquete `devtools` con `install.packages("devtools")`.].
+## Instalación de paquetes  
 
-Un paquete se instala una sola vez, pero cada vez que lo queramos usar debemos *cargarlo* para que las herramientas que trae queden a nuestra disposición. Eso se hace con la instrucción `library("nombredelpaquete")`, por ejemplo, `library("ggplot2")`.
+Para utilizar un paquete en R, primero debemos instalarlo. La mayoría de los paquetes están disponibles en CRAN y, teniendo conexión a internet, se pueden descargar directamente con el siguiente comando:  
 
+```r
+install.packages("nombre-del-paquete")
+```  
+
+Esto descargará e instalará el paquete en la computadora, permitiéndolo usarlo en futuras sesiones.
+
+## Carga de paquetes  
+
+Después de instalar un paquete, es necesario **cargarlo en la sesión de R** para poder utilizar sus funciones. Es como abrirlo para sacar las funciones que están guardadas dentro. Para hacerlo, usamos la función `library()`:  
+
+```r
+library("nombre-del-paquete")
+```  
+Si intentás usar una función de un paquete sin haberlo cargado previamente, R mostrará un error indicando que el objeto no fue encontrado.  
+
+Es importante recordar que **la instalación de un paquete solo se hace una vez**, pero **debemos cargarlo en cada nueva sesión de R** en la que queramos utilizarlo. Cuando cerramos RStudio, los paquetes se descargan de la memoria, por lo que es necesario volver a llamarlos con `library()` la próxima vez que los necesitemos.  
+
+Este sistema modular permite que R sea altamente flexible, permitiendo a los usuarios instalar solo las herramientas que realmente necesitan para sus análisis.  
+
+## Creación de paquetes en R  
+
+Los paquetes en R no solo son desarrollados por expertos en estadística y computación, sino también por cualquier persona que quiera compartir herramientas útiles con la comunidad. Investigadores, analistas de datos y programadores contribuyen a la expansión del ecosistema de R creando paquetes que facilitan tareas específicas.  
+
+Si bien algunos paquetes pueden ser muy sofisticados, la creación de uno no es algo exclusivo de grandes desarrolladores. De hecho, al finalizar esta materia, contarás con los conocimientos necesarios para construir tu propio paquete desde cero. Esto te permitirá organizar y compartir funciones de manera eficiente, facilitando su reutilización en distintos proyectos.
+
+## Paquetes utilizados en esta materia
+
+Como estaremos aprendiendo nociones de programación, no necesitaremos usar paquetes adicionales en el contexto de esta asignatura, pero sí usarás muchos en otras materias.
