@@ -5,4 +5,22 @@ format: html
 
 # Práctica de la Unidad 2
 
-## Ejercicio 1
+## Ejercicio 1 (falta referenciar)
+
+En R, crear la función `combinatorio(m, n)` para calcular el número combinatorio `m` tomado de a `n` (también llamado *coeficiente binomial*), siendo estos números naturales tales que `m >= n`. Recordar que un número combinatorio se define como:
+
+$$
+C(m, n) = {m \choose n} = \frac{m!}{(m-n)!n!}
+$$
+
+Observaciones:
+
+- Se debe utilizar la función `fact()` para el cálculo de factoriales tal como fue definida en el material de estudio (REFERENCIAR, le decimos material de estudio?) 
+- El número combinatorio para naturales tales que $n > m$ no está definido. En este caso la función `combinatorio(m, n)` debe devolver `NULL`.
+- Una vez definida la función, utilizarla para ejemplificar las siguientes propiedades de los número combinatorios, para los valores `m = 5` y `n = 2`:
+
+	1. ${m \choose 0} = 1$
+	2. ${m \choose m} = 1$
+	3. ${m \choose 1} = m$
+	4. ${m \choose n} = {m \choose m - n}$
+	5. ${m \choose n} = {m - 1 \choose n - 1} + {m - 1 \choose n}$
