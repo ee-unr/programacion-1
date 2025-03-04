@@ -1,0 +1,8 @@
+---
+title: "03_practica"
+format: html
+---
+
+# Práctica de la Unidad 2
+
+## Ejercicio 1
