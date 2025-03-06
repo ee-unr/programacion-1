@@ -8,12 +8,6 @@
 Página en construcción.
 :::
 
-R, instalación
-
-uso general de R y RStudio, scripts,, funciones
-
-acá tiene que ir proyectos, ruta informática, directorio de trabajo
-
 ## R y RStudio
 
 Para poner en práctica los conceptos sobre Programación que aprenderemos, vamos a emplear un lenguaje que ha sido desarrollado específicamente para realizar tareas estadísticas, llamado *R*. Sin embargo, debemos resaltar que éste no es un curso sobre R, es decir, no nos dedicaremos a aprender las herramientas que este lenguaje brinda para el análisis de datos. De hecho, frente a variados problemas vamos a dedicarnos a crear soluciones que ya existen y están disponibles en R, pero lo haremos con el fin de utilizar dicho lenguaje para aprender y ejercitar nociones básicas de programación.
@@ -22,50 +16,202 @@ Como dijimos anteriormente, pondremos en práctica los conceptos sobre programac
 
 Si bien R será nuestro medio de comunicación con la computadora, vamos a usar otro programa que brinda algunas herramientas para facilitar nuestro trabajo de programación, es decir, vamos a usar un **entorno de desarrollo integrado** (o *IDE*, por *integrated development environment*). Un IDE es un programa que hace que la codificación sea más sencilla porque permite manejar varios archivos de código, visualizar el *ambiente* de trabajo, utilizar resaltado con colores para distintas partes del código, emplear autocompletado para escribir más rápido, explorar páginas de ayuda, implementar estrategias de depuración e incluso intercalar la ejecución de instrucciones con la visualización de los resultados mientras avanzamos en el análisis o solución del problema. El IDE más popularmente empleado para programar con R es **RStudio** y será el programa que estaremos usando todo el tiempo. 
 
-Para instalar estos programas, se debe visitar las páginas oficiales de [R](https://www.r-project.org/) y de [RStudio](https://www.rstudio.org/), descargar los instaladores y ejecutarlos. En este [enlace](https://www.youtube.com/watch?v=D9Bp11iZssc) se presenta un video con la instalación completa. 
+ver:
+R es un lenguaje de programación ampliamente utilizado en Ciencia de Datos y Estadística debido a su potencia en el análisis de datos, modelado estadístico y visualización. RStudio es un entorno de desarrollo integrado (IDE) que facilita su uso, proporcionando una interfaz amigable y herramientas organizadas para escribir, ejecutar y gestionar código en R.
 
-### Organización de RStudio
+## Instalación
 
-Cuando se abre RStudio se pueden visualizar cuatro paneles: 
+Para instalar estos programas, se deben visitar las páginas oficiales de [R](https://www.r-project.org/) y de [RStudio](https://posit.co/), descargar los instaladores y ejecutarlos. En [este documento](https://github.com/ee-unr/programacion-1/blob/main/archivos/instalacion_r_rstudio.pdf) encontrarás una guía paso a paso, o también podés mirar [este video](https://www.youtube.com/watch?v=hbgzW3Cvda4) con las indicaciones.
 
-```{r, out.width='100%', fig.cap='Captura de pantalla de RStudio', echo=FALSE, fig.align="center"}
-knitr::include_graphics('../imagenes/teoria_unidad_1/12_AbrirRStudio.png')
-```
+Si experimentás algún problema con la instalación, hay una alternativa para que no pierdas tiempo hasta que los docentes puedan ayudarte a resolverlo. RStudio puede ser usado online sin que lo tengas que instalar. Sólo necesitás conexión a internet. Si necesitás usar esto porque la instalación falló, seguí las instrucciones de [este archivo](https://github.com/ee-unr/programacion-1/blob/main/archivos/posit_cloud.pdf).
 
-- A la izquierda:
-	
-	- Arriba está el **editor de archivos**. Es el lugar donde escribiremos y editaremos nuestros programas, para luego guardarlos (una especie de *Bloc de Notas* o de un *Word* muy simple). La primera vez que se abre RStudio después de su instalación puede ser que este panel no esté presente, pero aparece si vamos a `File > New File > R Script`, con el atajo `Ctrl + Shift + N` o haciendo clic en el primer ícono de la barra de herramientas. Podemos abrir varios archivos a la vez.
-	- Abajo está la **consola**. Es la ventana que se comunica con R. A través de ella se envían las instrucciones a R para que las evalúe (también decimos, que las ejecute o corra) y se visualizan los resultados.
+## Paneles de RStudio
 
-- Arriba a la derecha hay un panel con algunas pestañas:
+Cuando se abre RStudio se pueden visualizar tres paneles principales (@fig-rstudio):
 
-  - **Environment** (*ambiente*): muestra todos los elementos que componen al ambiente o entorno. 
-  - **History** (*historial*): lista todas las instrucciones que R ha corrido anteriormente.
-  - **Otras más que no nos interesan por ahora**
+- En el panel de la izquierda la pestaña más importante es **Console** (*consola*), que es donde se ejecutan las instrucciones de R en tiempo real. Es la ventana que usamos para comunicarnos con R. Ahí se escriben las instrucciones para que R las *evalúe* (también decimos, que las *ejecute* o *corra*) y también es el lugar donde se visualizan los resultados.
 
-- Abajo a la derecha hay otro panel con más pestañas:
+- En el panel de arriba a la derecha la pestaña más importante es **Environment** (*entorno* o *ambiente*), que se encarga de mostrar los elementos que tenemos a disposición para programar. Al inicio de la sesión de trabajo, se encuentra vacío.
 
-	- **Files**: explorador de archivos de la computadora
-	- **Plots**: ventana donde aparecen los gráficos si es que nuestro código produce alguno
-	- **Packages**: listado de los "paquetes" que tenemos instalados (ver más adelante)
-	- **Help**: manual de ayuda sobre todas las funciones de R
-	- **Viewer**: espacio para ver salidas de los programas con algún componente dinámico o interactivo.
+- En el panel de abajo a la derecha, las pestañas más importantes son:
 
-### Uso de la consola
+	- **Files**: explorador de archivos de la computadora.
+	- **Plots**: ventana donde aparecen los gráficos si es que nuestro código produce alguno (no lo usaremos en este curso).
+	- **Packages**: listado de los "paquetes" (herramientas adicionales) que tenemos instalados.
+	- **Help**: manual de ayuda de R.
 
-Podemos usar la consola de R que encontramos en el panel de la izquierda para introducir allí nuestras instrucciones y al hacer `Enter` serán evaluadas, produciendo algún resultado. Por ejemplo, podemos hacer algunos cálculos matemáticos como dividir, multiplicar, sumar, restar, calcular potencias, logaritmos, raíces y mucho más:
+Más adelante profundizaremos en el uso de estos componentes de RStudio.
+
+![RStudio al abrirlo.](../imagenes/teoria_unidad_1/rstudio.png){width="100%" fig-align="center"}{#fig-rstudio}
+
+## Uso de la consola de R
+
+La consola de R en RStudio permite ejecutar comandos de manera inmediata. Al presionar `Enter` las instrucciones escritas serán evaluadas, produciendo algún resultado. Por ejemplo, podemos escribir expresiones matemáticas sencillas, como la suma `1 + 2`. Para esto, tenemos que hacer clic en la última línea de la consola, al lado del indicador `>` (llamado *prompt*), para asegurarnos que el cursor esté allí titilando. La presencia del *prompt* `>` en esa última línea nos indica que R está preparado para recibir una nueva instrucción. Escribimos ahí la cuenta `1 + 2` y pulsamos `Enter` (@fig-cuenta).
+
+![Ejemplo de una primera instrucción de programación en: la suma entre 1 y 2.](../imagenes/teoria_unidad_1/rstudio.png){width="100%" fig-align="center"}{#fig-cuenta}
+
+El resultado o **salida** se ve inmediatamente debajo de la instrucción, se trata del número `3`, por supuesto. Antes de la salida aparece la anotación `[1]`, que indica que la primera y única línea de la salida muestra el primer y único resultado de la instrucción evaluada. En algunas operaciones, la salida está compuesta por muchos elementos y ocupa varias líneas. En ese caso R muestra un número entre corchetes al comienzo de cada línea de la salida, para darnos una idea de cuántos elementos nos está mostrando. Por ahora podemos ignorarlo.
+
+Probemos con más cálculos matemáticos:
 
 ```{r}
 1 + 2
 5 * 3
-exp(2)
-sqrt(100)
-1 / 0
-(2 + 3i) * (3 + 6i)
-1i ^ 2
+100 / 4
+3^2
+3 - (2 * 9)
 ```
 
+::: {.info data-latex=""}
+A veces nos pasa que escribimos una instrucción de forma incompleta y presionamos `Enter`. En esta situación, la consola muestra al comienzo de la línea el símbolo `+`, señalando que falta "algo más" para que el comando esté completo y se pueda mostrar el resultado. Tenemos que completar lo que falta y presionar `Enter` otra vez, o presionar `Esc` para cancelar esa instrucción y que la consola vuelva a mostrar el *prompt* `>`, indicando que podemos escribir el código de nuevo desde cero.
+
+En el siguiente ejemplo, en la consola escribí `100 /` y presioné `Enter` dos veces. Como la cuenta quedó incompleta, la consola muestra el `+`:
+
+```{r}
+#| error: true
+#| eval: false
+> 100 /
++ 
++ 
+```
+
+La solución es apretar `Esc` para cancelar, o completar la instrucción:
+
+```{r}
+#| error: true
+#| eval: false
+> 100 /
++ 
++ 4
+```
+
+```{r}
+#| echo: false
+100 / 4
+```
+
+Es importante reconocer que no podemos escribir una nueva instrucción en la consola cuando está el `+` porque algo de lo anterior quedó incompleto. Debemos solucionarlo, ver que aparezca otra vez el `>` y entonces sí volver a escribir un comando.
+
+Por otro lado, si escribimos una instrucción que R no sabe interpretar o que presenta algún tipo de problema, la salida mostrará un mensaje de error. Por ejemplo, el símbolo para hacer divisiones es `/` y no `%`. Si lo usamos, pasa esto:
+
+```{r}
+#| error: true
+100 % 4
+```
+
+:::
+
+## Archivos de código (*scripts*)
+
+Sin embargo, para escribir programas más complejos, es recomendable usar scripts.
+
+Un script es un archivo de texto que contiene una serie de comandos de R. Esto permite guardar el código y ejecutarlo cuando sea necesario sin tener que reescribirlo. En RStudio, podemos crear un nuevo script desde Archivo > Nuevo archivo > Script R y escribir código que luego ejecutamos con Ctrl + Enter o seleccionando las líneas deseadas y haciendo clic en Ejecutar.
+
 Si bien podemos escribir nuestras instrucciones en la consola y dar `Enter` para que se ejecuten, en general queremos que queden escritas y guardadas en el archivo de código, por eso vamos a escribir nuestros programas en el panel de arriba a la izquierda. Una vez que escribimos una instrucción en el script, podemos *correrla* (es decir, enviarla a la consola para que se ejecute) haciendo clic en el ícono *Run* o con el atajo *Ctrl + Enter*. De esta forma, se *corre* la línea en la cual está el cursor o las líneas que hayamos seleccionado.
+
+	- Arriba está el **editor de archivos**. Es el lugar donde escribiremos y editaremos nuestros programas, para luego guardarlos (una especie de *Bloc de Notas* o de un *Word* muy simple). La primera vez que se abre RStudio después de su instalación puede ser que este panel no esté presente, pero aparece si vamos a `File > New File > R Script`, con el atajo `Ctrl + Shift + N` o haciendo clic en el primer ícono de la barra de herramientas. Podemos abrir varios archivos a la vez.
+
+
+## Rutas informáticas 
+
+
+Antes de terminar este capítulo vamos a presentar un concepto fundamental acerca de cómo se relaciona R con el sistema opertaivo de nuestra computadora para poder tener acceso a nuestros archivos o para generar otros nuevos.
+
+Al finalizar la sección \@ref(objetosenR) vimos ejemplos en los que se utilizó R para, en primer lugar, generar un archivo llamado `objetos.RData` con todos los objetos existentes en nuestro ambiente de trabajo y, en segundo lugar, cargar la información que dicho archivo contiene:
+
+```{r, eval = FALSE}
+save.image("C:/Users/Marcos/Documentos/Facultad/objetos.RData")
+load("C:/Users/Marcos/Documentos/Facultad/objetos.RData")
+```
+
+En ambos casos, dentro de las funciones `save.image()` y `load()` se tuvo que escribir la dirección completa que representa cuál es la ubicación exacta de dicho archivo en la computadora: `C:/Users/Marcos/Documentos/Facultad/objetos.RData`. Esto significa que el archivo se encuentra en la carpeta `Facultad`, que a su vez está dentro de la carpeta `Documentos`, dentro de `Marcos` y dentro de `Users`, en el disco C de la computadora.
+
+Expresiones como `C:/Users/Marcos/Documentos/Facultad/objetos.RData` reciben el nombre de **ruta informática** o *path* y sirven para referenciar de manera exacta la localización ya sea de una carpeta o de un archivo en particular dentro del sistema de archivos que maneja el sistema operativo de la computadora. Un *path* está compuesto por todos los nombres de los directorios que ordenadamente nos permiten llegar hasta la carpeta o archivo de interés, separados por un carácter que dependiendo del sistema operativo puede ser una barra diagonal `/` o una barra inversa `\`.
+
+
+Es importante recordar lo siguiente: al escribir *paths*, R sólo reconoce como caracteres delimitadores entre los nombres de carpetas a la barra diagonal `/` o a dos barras invertidas `\\`. Quienes usan el sistema operativo Windows notarán que en el explorador de archivos, las rutas están delimitadas con una sola barra invertida `\`. En el contexto de R, debe ser reemplazada por dos barras invertidas o por una sola barra diagonal.
+
+## Directorio de trabajo
+
+Cuando trabajamos con archivos en R, como bases de datos o scripts guardados, es importante conocer el directorio de trabajo, que es la carpeta donde R busca y guarda archivos. Podemos ver el directorio actual con:
+
+getwd()
+
+Y cambiarlo con:
+
+setwd("ruta/a/la/carpeta")
+
+Usar rutas correctamente facilita la organización y el acceso a los archivos de nuestro proyecto.
+
+R siempre está mirando a alguna carpeta en particular dentro de la computadora, la cual recibe el nombre **directorio de trabajo** (o *working directory*, *wd*). Por ejemplo, en este momento y en mi computadora, R está posando su atención en una carpeta que se llama `introprog` y cuya ruta puedo descubrir con la función `getwd()`, que significa "obtener (get) el directorio de trabajo (wd)":
+
+```{r}
+getwd()
+```
+
+Esto quiere decir que R puede ver y acceder de manera directa a todos los archivos que hay allí, sin necesidad de escribir la ruta completa. Por ejemplo, si en lugar de ejecutar:
+
+```{r, eval = FALSE}
+save.image("C:/Users/Marcos/Documentos/Facultad/objetos.RData")
+```
+
+ejecuto sencillamente:
+
+```{r, eval = FALSE}
+save.image("objetos.RData")
+```
+
+lo que ocurre es que el nuevo archivo se generará en mi directorio de trabajo (carpeta `introprog`) y no en la carpeta `Facultad`. Del mismo modo, si ejecuto:
+
+```{r, eval=FALSE}
+load("objetos.RData")
+```
+
+el software va a buscar el archivo `objetos.RData` en mi directorio de trabajo (carpeta `introprog`) y va a cargar su contenido al ambiente de trabajo. Si en dicha carpeta no existe un archivo con ese nombre, obtendremos un mensaje de error muy famoso:
+
+```
+cannot find file 'objetos.RData', probable reason 'No such file or directory'
+```
+
+El directorio de trabajo por default suele ser la carpeta *Documentos* o alguna equivalente y es la que vemos en el panel `Files` de RStudio. Podemos cambiar el directorio de trabajo por cualquier otra carpeta en la que queramos estar trabajando con la función `setwd()` ("setear el working directory"):
+
+```{r, eval=FALSE}
+setwd("/home/marcos/documents/introprog/tp1")
+getwd()
+"/home/marcos/documents/introprog/tp1"
+```
+
+Por ejemplo, si estamos resolviendo un trabajo práctico para el cual tenemos varios archivos necesarios guardados en la carpeta `tp1`, tenemos dos opciones:
+
+1. Sin importar cuál es nuestro directorio de trabajo, hacer referencia a dichos archivos con *paths* completos, por ejemplo:
+
+	```{r, eval = F}
+	load("/home/marcos/documents/introprog/tp1/objetos.RData")
+	```
+
+2. Setear como directorio de trabajo a la carpeta del trabajo práctico y hacer un uso directo de los archivos que se encuentren allí:
+
+	```{r, eval = F}
+	setwd("/home/marcos/documents/introprog/tp1")
+	load("objetos.RData")
+	```
+
+
+## Organización del trabajo en proyectos
+
+Para estructurar mejor nuestro trabajo, RStudio permite crear proyectos. Un proyecto es una carpeta que agrupa todos los archivos, scripts y bases de datos relacionados con un mismo análisis. Crear un proyecto en RStudio ayuda a mantener organizados los archivos y a evitar problemas con las rutas de trabajo.
+
+
+## Comentarios en el código
+
+Los comentarios en el código ayudan a documentar lo que hace cada parte de nuestro programa. En R, los comentarios se escriben con el símbolo #:
+
+```{r}
+# Este es un comentario explicativo
+suma <- 2 + 2  # Calculamos la suma de 2 + 2
+```
+
+Los comentarios no afectan la ejecución del código y son fundamentales para hacer que nuestro trabajo sea comprensible para nosotros y otras personas.
 
 En todo lenguaje de programación existe un caracter especial que, al ser colocado al comienzo de una línea de código, le indica al software que dicha línea no debe ser evaluada. Esto se utiliza para incluir **comentarios**, es decir, líneas que expresan en español explicaciones o aclaraciones para nosotros mismos u otros que puedan utilizar nuestro código. También se utiliza para añadir encabezados con descripciones sobre el script, o indicar distintas secciones o partes en el programa. En R, este caracter especial es el símbolo numera (`#`). Si *corremos* líneas que empiezan con `#`, R no hará nada con ellas, las salteará. Por ejemplo
 
@@ -75,6 +221,13 @@ En todo lenguaje de programación existe un caracter especial que, al ser coloca
 5^3
 ```
 
+R will ignore any text after # for that line. This allows you to write comments, text that is ignored by R but read by other humans. We’ll sometimes include comments in examples explaining what’s happening with the code.
+
+Comments can be helpful for briefly describing what the following code does.
+
+With short pieces of code like this, leaving a comment for every single line of code might not be necessary. But as the code you’re writing gets more complex, comments can save you (and your collaborators) a lot of time figuring out what was done in the code.
+
+Use comments to explain the why of your code, not the how or the what. The what and how of your code are always possible to figure out, even if it might be tedious, by carefully reading it.
 
 ## Funciones
 
@@ -87,4 +240,76 @@ var3 <- TRUE
 class(var1)
 class(var2)
 class(var3)
+```
+
+
+R has a large collection of built-in functions that are called like this:
+
+function_name(argument1 = value1, argument2 = value2, ...)
+
+R, como todo lenguaje de programación, tiene **funciones predefinidas**, es decir, sentencias que se encargan de realizar alguna actividad. Ya estuvimos usando algunas de ellas, por ejemplo, cuando hemos necesitado mostrar algún mensaje usamos las funciones `cat()` o `print()`^[Sentencias como `for`, `while` o `if` también son funciones, aunque con una estructura muy particular.]. Además, existen muchas otras funciones predefinidas, como todas aquellas que se necesitan para realizar ciertas operaciones matemáticas:
+
+```{r}
+# Raíz cuadrada
+sqrt(100)
+# Valor absoluto
+abs(100)
+# Función exponencial
+exp(100)
+# Logaritmo natural
+log(100)
+```
+
+En los ejemplos anteriores, `100` representa un valor numérico que se pasa como argumento a la función para que la misma opere. Algunas funciones predefinidas en R pueden trabajar con más de un argumento, en cuyo caso hay que enumerarlos dentro de los paréntesis, separados con comas. Por ejemplo, si en lugar de calcular el logaritmo natural (cuya base es la constante matemática $e$), queremos calcular un logaritmo en base 10, podemos hacer lo siguiente:
+
+```{r}
+# Logaritmo de 100 en base 10
+log(100, 10)
+```
+
+¿Cómo sabemos que la función `log()` se puede usar de esa forma, cambiando el valor de la base con respecto a la cual toma el logaritmo? Lo aprendemos al leer el manual de ayuda de R. Toda función predefinida de R viene con un instructivo que detalla cómo se usa, qué argumentos incluye y otras aclaraciones. Lo encontramos en la pestaña de Ayuda (*Help*) en el panel de abajo a la derecha en RStudio. Otras formas de abrir la página de ayuda sobre una función es correr en la consola alguna de estas sentencias:
+
+```{r, eval=F}
+help(log)
+?log
+```
+
+Esa página de ayuda tiene bastante información, porque reúne información sobre muchas funciones relacionadas con logaritmos y exponenciales, pero podemos detenernos en la parte resaltada que se muestra a continuación:
+
+```{r, out.width='70%', fig.show='hold', fig.cap='Captura de pantalla de la ayuda sobre la función log()', echo=FALSE, fig.align="center"}
+knitr::include_graphics('images/03_funciones/ayuda.png')
+```
+
+En la sección *Usage* ("uso") descubrimos que la función `log()` puede usarse con dos argumentos: `x` y `base`. En la sección *Arguments* entendemos que `x` es el número al cual le vamos a sacar el logaritmo y `base` es la base con respecto a la cual se toma el logaritmo. Por eso, al correr `log(100, 10)`, estamos calculando el logaritmo de `x = 100` con `base = 10`.
+
+Vemos, además, una diferencia en la forma en que `x` y `base` aparecen en la descripción: `log(x, base = exp(1))`. Cuando un argumento tiene un signo `=` significa que tiene asignado un **valor por default** y que no es necesario usarlo. Por eso, cuando corremos `log(100)` estamos calculando el logaritmo de `x = 100` con la base elegida por R por defecto: `base = exp(1)`, que es la forma que tiene R de nombrar a la constante $e = 2.718282...$ (es el logaritmo natural). Si quiero cambiar la base, debo proveer un valor, por ejemplo, `log(100, 10)`. Por el contrario, el argumento `x` no tiene asignado un valor por default. Eso significa que obligatoriamente tenemos que proveer un valor para el mismo.
+
+R también permite usar una función escribiendo los nombres de los argumentos (es decir, detallando tanto los parámetros formales como los actuales), lo cual muchas veces es muy esclarecedor:
+
+```{r}
+log(x = 100, base = 10)
+```
+
+Es más, si escribimos los nombres de los parámetros explícitamente, podemos cambiar su orden, sin alterar el resultado:
+
+```{r}
+log(base = 10, x = 100)
+```
+
+Si no escribimos los nombres, el orden importa:
+
+```{r}
+log(100, 10)
+log(10, 100)
+```
+
+Al no tener los nombres indicados explícitamente, R hace corresponder los parámetros formales `x` y `base` con los valores provistos en ese orden: en el primer caso `x` recibe el valor `100` y `base`, el valor `10`, mientras que en el segundo caso es al revés.
+
+Finalmente, se debe observar que no es necesario invocar a la función escribiendo de forma directa los valores entre los paréntesis, sino que en su lugar pueden ir variables:
+
+```{r}
+x <- 100
+y <- x / 2
+z <- 4
+log(x - y, 4)		# Log en base 4 de x - y
 ```
