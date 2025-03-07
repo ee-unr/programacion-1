@@ -107,9 +107,49 @@ Sin embargo, para escribir programas más complejos, es recomendable usar script
 
 Un script es un archivo de texto que contiene una serie de comandos de R. Esto permite guardar el código y ejecutarlo cuando sea necesario sin tener que reescribirlo. En RStudio, podemos crear un nuevo script desde Archivo > Nuevo archivo > Script R y escribir código que luego ejecutamos con Ctrl + Enter o seleccionando las líneas deseadas y haciendo clic en Ejecutar.
 
-Si bien podemos escribir nuestras instrucciones en la consola y dar `Enter` para que se ejecuten, en general queremos que queden escritas y guardadas en el archivo de código, por eso vamos a escribir nuestros programas en el panel de arriba a la izquierda. Una vez que escribimos una instrucción en el script, podemos *correrla* (es decir, enviarla a la consola para que se ejecute) haciendo clic en el ícono *Run* o con el atajo *Ctrl + Enter*. De esta forma, se *corre* la línea en la cual está el cursor o las líneas que hayamos seleccionado.
+Si bien podemos escribir nuestras instrucciones de programación en la consola y pulsar `Enter` para que se ejecuten, en general queremos que queden escritas y guardadas en  archivo de código, por eso vamos a escribir nuestros programas en el panel de arriba a la izquierda. Una vez que escribimos una instrucción en el script, podemos *correrla* (es decir, enviarla a la consola para que se ejecute) haciendo clic en el ícono *Run* o con el atajo *Ctrl + Enter*. De esta forma, se *corre* la línea en la cual está el cursor o las líneas que hayamos seleccionado.
 
 	- Arriba está el **editor de archivos**. Es el lugar donde escribiremos y editaremos nuestros programas, para luego guardarlos (una especie de *Bloc de Notas* o de un *Word* muy simple). La primera vez que se abre RStudio después de su instalación puede ser que este panel no esté presente, pero aparece si vamos a `File > New File > R Script`, con el atajo `Ctrl + Shift + N` o haciendo clic en el primer ícono de la barra de herramientas. Podemos abrir varios archivos a la vez.
+	
+## Archivos de código o *scripts*
+
+Hasta ahora hemos usado la consola de R para ejecutar comandos de manera inmediata. Sin embargo, cuando trabajamos con tareas de programación más complejas, es importante **guardar nuestro código** para poder reutilizarlo, modificarlo y compartirlo. Para esto, usamos los **scripts**.  
+::: {.concepto data-latex=""}
+Un **script** es un archivo de texto que contiene una serie de instrucciones de escritas en algún lenguaje de programación. En lugar de escribir y ejecutar los comandos uno por uno en la consola, podemos escribirlos en un script y ejecutarlos cuando sea necesario. Esto nos permite organizar mejor nuestro trabajo y evitar repetir tareas manualmente. 
+:::
+
+El uso de scripts en lugar de escribir código directamente en la consola tiene varias ventajas:  
+
+- **Reproducibilidad**: podemos volver a ejecutar nuestro programa sin necesidad de reescribirlo.  
+- **Organización**: podemos estructurar el código en secciones claras.  
+- **Depuración**: es más fácil detectar y corregir errores en un script que en la consola.  
+
+
+
+#### Creación y guardado de scripts  
+
+Para crear un nuevo script en RStudio:  
+1. Ir a **Archivo > Nuevo archivo > Script R**.  
+2. Se abrirá un editor donde podemos escribir código.  
+3. Para guardar el archivo, ir a **Archivo > Guardar como...** y elegir una ubicación en la computadora. Es recomendable guardar los scripts en una carpeta organizada dentro de un proyecto de RStudio.  
+
+Los scripts en R tienen la extensión **`.R`** (por ejemplo, `mi_analisis.R`).  
+
+#### Ejecutar código desde un script  
+
+Escribir código en un script no lo ejecuta automáticamente. Para ejecutarlo, podemos:  
+- Seleccionar una línea y presionar `Ctrl + Enter` (Windows/Linux) o `Cmd + Enter` (Mac).  
+- Seleccionar varias líneas y hacer clic en el botón **Ejecutar** en la parte superior del editor.  
+- Ejecutar todo el script con `Ctrl + Shift + S` o desde el menú **Código > Ejecutar todo**.  
+
+#### Uso de comentarios  
+
+Los comentarios permiten agregar notas en el código para explicar qué hace cada parte. Son fundamentales para que nuestro código sea comprensible para nosotros y otras personas. En R, los comentarios comienzan con `#` y no afectan la ejecución del código:  
+
+```r
+# Calculamos la suma de dos números
+suma <- 2 + 3  # Guardamos el resultado en 'suma'
+```
 
 
 ## Rutas informáticas 
