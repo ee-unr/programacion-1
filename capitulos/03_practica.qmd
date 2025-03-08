@@ -1,11 +1,10 @@
 ---
-title: "03_practica"
 format: html
 ---
 
-# Práctica de la Unidad 2
+# Práctica de la Unidad 3
 
-## Ejercicio 1 (falta referenciar)
+## Ejercicio 1
 
 Escribir un programa en R para la creación de la función `combinatorio(m, n)` que calcula el número combinatorio `m` tomado de a `n` (también llamado *coeficiente binomial*), siendo estos números naturales tales que `m >= n`. Recordar que un número combinatorio se define como:
 
@@ -15,7 +14,7 @@ $$
 
 Observaciones:
 
-- Se debe utilizar la función `fact()` para el cálculo de factoriales tal como fue definida en el material de estudio (REFERENCIAR, le decimos material de estudio?) 
+- Se debe utilizar la función `fact()` para el cálculo de factoriales tal como fue definida en esta unidad.
 - El número combinatorio para naturales tales que $n > m$ no está definido. En este caso la función `combinatorio(m, n)` debe devolver `NULL`.
 - Una vez definida la función, utilizarla para ejemplificar las siguientes propiedades de los número combinatorios, para los valores `m = 5` y `n = 2`:
 
@@ -74,7 +73,7 @@ Las soluciones son complejas        # mensaje
 NULL                                # valor NULO devuelto
 ```
 
-## Ejercicio 4 (falta agregar imagen)
+## Ejercicio 4
 
 Escribir un programa en R para la creación de la función `elipse(x, y)` que permite determinar si un punto de coordenadas $(x, y)$ está dentro o no de la elipse definida por la ecuación:
 
@@ -84,7 +83,7 @@ Si el punto está contenido en la elipse, la función devuelve el valor lógico 
 
 *Observación*: si un punto se encuentra exactamente sobre la curva definida por la elipse, la fórmula anterior evaluada en las coordenadas $(x, y)$ del punto es exactamente igual a 1. Si el punto está dentro de la elipse, da menor que 1. Si está fuera, da mayor que 1. A continuación se presenta la representación gráfica de la elipse en cuestión:
 
-IMAGEN - IMAGEN - IMAGEN
+![](../imagenes/practica_unidad_3/elipse.png){width="75%" fig-align="center"}
 
 Ejemplos del uso de la función:
 
