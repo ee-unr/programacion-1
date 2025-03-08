@@ -4,20 +4,13 @@
 
 # Primeros pasos con R y RStudio
 
-::: {.en-construccion data-latex=""}
-Página en construcción.
+::: {.presentacion-capitulo data-latex=""}
+En este capítulo daremos nuestros primeros pasos con R y RStudio, una interfaz que simplica el uso de este lenguaje de programación. Conoceremos sus características y veremos cómo instalar ambos softwares. Aprenderemos a ejecutar comandos en la consola, escribir y guardar código en *scripts*, y utilizaremos nuestras primeras funciones en R. Estos conceptos sentarán las bases para programar de manera organizada y eficiente en los próximos capítulos.
 :::
 
 ## R y RStudio
 
-Para poner en práctica los conceptos sobre Programación que aprenderemos, vamos a emplear un lenguaje que ha sido desarrollado específicamente para realizar tareas estadísticas, llamado *R*. Sin embargo, debemos resaltar que éste no es un curso sobre R, es decir, no nos dedicaremos a aprender las herramientas que este lenguaje brinda para el análisis de datos. De hecho, frente a variados problemas vamos a dedicarnos a crear soluciones que ya existen y están disponibles en R, pero lo haremos con el fin de utilizar dicho lenguaje para aprender y ejercitar nociones básicas de programación.
-
-Como dijimos anteriormente, pondremos en práctica los conceptos sobre programación utilizando **R**, un lenguaje orientado a la realización de procesos estadísticos y gráficos. A diferencia de muchos otros, este es un software libre y gratuito: se distribuye bajo la licencia *GNU GPLv2* que establece la libertad de usarlo con cualquier propósito, de ver cómo fue hecho, cómo funciona y modificarlo, de distribuir copias y crear contribuciones y agregados para que estén disponibles para otros ^[**R** tiene una comunidad de usuarios muy activa, de las más diversas áreas, con muchos blogs, portales y encuentros en persona para buscar y recibir ayuda. Por ejemplo, existe el grupo de R en Rosario: (https://renrosario.rbind.io)].
-
-Si bien R será nuestro medio de comunicación con la computadora, vamos a usar otro programa que brinda algunas herramientas para facilitar nuestro trabajo de programación, es decir, vamos a usar un **entorno de desarrollo integrado** (o *IDE*, por *integrated development environment*). Un IDE es un programa que hace que la codificación sea más sencilla porque permite manejar varios archivos de código, visualizar el *ambiente* de trabajo, utilizar resaltado con colores para distintas partes del código, emplear autocompletado para escribir más rápido, explorar páginas de ayuda, implementar estrategias de depuración e incluso intercalar la ejecución de instrucciones con la visualización de los resultados mientras avanzamos en el análisis o solución del problema. El IDE más popularmente empleado para programar con R es **RStudio** y será el programa que estaremos usando todo el tiempo. 
-
-ver:
-R es un lenguaje de programación ampliamente utilizado en Ciencia de Datos y Estadística debido a su potencia en el análisis de datos, modelado estadístico y visualización. RStudio es un entorno de desarrollo integrado (IDE) que facilita su uso, proporcionando una interfaz amigable y herramientas organizadas para escribir, ejecutar y gestionar código en R.
+Si bien R será nuestro medio de comunicación con la computadora, vamos a usarlo a través de otro programa que brinda algunas herramientas para facilitar nuestro trabajo de programación, es decir, vamos a usar un **entorno integrado de desarrollo** (o *IDE*, por *integrated development environment*). Un IDE es un programa que hace que la codificación sea más sencilla porque permite manejar varios archivos de código, visualizar el *ambiente* de trabajo, utilizar resaltado con colores para distintas partes del código, emplear autocompletado para escribir más rápido, explorar páginas de ayuda, implementar estrategias de depuración e incluso intercalar la ejecución de instrucciones con la visualización de los resultados mientras avanzamos en el análisis o solución del problema. El IDE más popularmente empleado para programar con R es **RStudio**.
 
 ## Instalación
 
@@ -135,11 +128,13 @@ Una vez creado el script, podemos escribir ahí todo nuestro código de R. Para 
 - Usar el atajo `CTRL + S`.
 - Usar el ícono de guardar en la barra de herramientas.
 
-La primera vez que guardamos el script recién creado, tendremos que elegir un nombre para el archivo (por ejemplo `analisis`) y un lugar en la computadora para su ubicación. Luego, es conveniente guardar frecuentemente los cambios añadidos.
+La primera vez que guardamos el script recién creado, tendremos que elegir un nombre para el archivo y un lugar en la computadora para su ubicación. En el caso presentado en la @fig-guardado, elegimos el nombre "ejemplos".
 
-Si buscamos el script guardado en la ubicación elegida, podremos ver que su "nombre completo" es `analisis.R`. El nombre de un archivo se compone de dos partes: la **raíz** y la **extensión**. La raíz es el nombre principal que elegimos para identificar el archivo (en el ejemplo, `analisis`), mientras que la extensión es un sufijo separado por un punto (`.`) que indica el tipo de archivo y con qué programas se puede abrir. Por ejemplo, los archivos de texto suelen tener la extensión `.txt`, las imágenes pueden ser `.jpg` o `.png`, y las hojas de cálculo de Excel suelen ser `.xlsx`. En el caso de los scripts de R, la extensión es **`.R`**, lo que indica que el archivo contiene código en el lenguaje R y puede ser ejecutado dentro de RStudio o cualquier otro entorno compatible. Guardar nuestros scripts con esta extensión, como ocurre automáticamente, nos permite organizarlos adecuadamente y asegurarnos de que R los reconozca como archivos de código.
+![El nuevo script ha sido guardado bajo el nombre `ejemplos.R.](../imagenes/teoria_unidad_1/guardado.png){width="75%" fig-align="center"}{#fig-guardado}
 
-En Windows, por defecto, el Explorador de archivos oculta las extensiones de los archivos, pero es posible mostrarlas siguiendo estos pasos:  
+Ahora la pestaña del editor de scripts muestra el nombre elegido para el archivo seguido por `.R`, es decir, vemos que dice: `ejemplos.R`. El nombre de un archivo informático se compone de dos partes: la **raíz** y la **extensión**. La raíz es el nombre principal que elegimos para identificar el archivo (`ejemplos`), mientras que la extensión es un sufijo separado por un punto que indica el tipo de archivo y con qué programas se puede abrir. Por ejemplo, los archivos de texto suelen tener la extensión `.txt`, las imágenes pueden ser `.jpg` o `.png` y las hojas de cálculo de Excel suelen ser `.xlsx`. En el caso de los scripts de R, la extensión es `.R`, lo que indica que el archivo contiene código en el lenguaje R y puede ser ejecutado dentro de RStudio o cualquier otro entorno compatible. Al guardar un archivo de código, se agrega automáticamente la extensión en el nombre y esto nos permite organizarlos adecuadamente y asegurarnos de que R los reconozca como archivos de código.
+
+Si buscamos el archivo recién creado en el Explorador de archivos de Windows, puede que en su nombre no se vea la extensión. Windows, por defecto, oculta las extensiones de los archivos, pero es posible mostrarlas siguiendo estos pasos:  
 
 1. Abrir el Explorador de archivos.
 2. Acceder a la configuración de vista:  
@@ -147,7 +142,9 @@ En Windows, por defecto, el Explorador de archivos oculta las extensiones de los
    - En **Windows 11**, si no ves la pestaña, haz clic en **Ver > Mostrar**.  
 3. Activar la visualización de extensiones: marcá la opción **"Extensiones de nombre de archivo"**.  
 
-Habilitar esta opción es útil para evitar confusiones entre tipos de archivos y asegurarse de que los scripts de R estén correctamente guardados con la extensión `.R`.
+Habilitar esta opción es útil para evitar confusiones entre tipos de archivos. Dos archivos diferentes pueden tener en su nombre la misma raíz, pero tratarse de distintas cosas porque tienen diferente extensión.
+
+A medida que seguimos editando nuestro script de código agregando nuevas instrucciones de programación, es conveniente guardar frecuentemente los cambios añadidos.
 
 ### Ejecutar código desde un script  
 
@@ -165,138 +162,88 @@ En todo lenguaje de programación existe un carácter especial que, al ser coloc
 
 ![Comentarios en el script.](../imagenes/teoria_unidad_1/comentarios.png){width="75%" fig-align="center"}{#fig-comentarios}
 
-## Rutas informáticas 
-
-En una computadora, los archivos se organizan de manera jerárquica dentro de carpetas y subcarpetas, lo que facilita el acceso y la gestión de los datos. La organización de estos archivos sigue un esquema de árbol, donde las carpetas actúan como contenedores que agrupan archivos relacionados. Este sistema permite a los usuarios almacenar y clasificar la información de forma ordenada y accesible.
-
-Cada archivo o carpeta en una computadora tiene una **ruta informática** o **path** que indica su ubicación dentro del sistema de almacenamiento. Esta ruta es como una dirección que permite encontrar un archivo o carpeta específica. La ruta se lee desde la carpeta principal (o raíz) y sigue el camino de las carpetas y subcarpetas hasta llegar al archivo deseado. 
-
-En sistemas operativos como Windows, las rutas suelen comenzar con una letra de unidad, como "C:", seguida de las carpetas y subcarpetas. Por ejemplo, una ruta podría ser `C:\Usuarios\Juan\Documentos\Trabajo\datos_encuesta.xlsx`. En este caso:
-
-- `C:` es la unidad de almacenamiento.
-- `Usuarios` es una carpeta dentro de la raíz de la unidad C.
-- `Juan` es una subcarpeta dentro de `Usuarios`.
-- `Documentos` es una subcarpeta de `Juan`.
-- `Trabajo` es una subcarpeta de `Documentos`.
-- `datos_encuesta.xlsx` es un conjunto de datos guardados en un archivo de Excel, dentro de la carpeta `Trabajo`.
-
-Cuando guardamos un archivo en algún lugar de la computadora, como cuando guardamos un nuevo script en la sección anterior, estamos definiendo cuál es su ruta informática para que distintos programas de la computadora pueden encontrarlo. Tener esta noción es fundamental a la hora de programar. Por ejemplo, puede ser que nuestro script de R necesite importar los datos del archivo `datos_encuesta.xlsx`. Para esto necesitaremos escribir una instrucción que sea capaz de hacerlo, y que incluya la ruta informática del archivo para que R pueda encontrarlo. Si no la escribimos bien, R producirá un error diciendo que el archivo no existe.
-
-Para saber con exactitud cuál es la ruta informática de un archivo en Windows, podemos seguir alguna de estas opciones:
-
-1. **Usando el Explorador de Archivos**: ubicar el archivo, hacer clic derecho y seleccionar **"Copiar como ruta"**.  Luego podemos pegar la ruta en cualquier lugar (`Ctrl + V`). 
-2. **Desde la Barra de Direcciones**: abrir la carpeta donde está el archivo, hacer clic en la barra de direcciones, copiar la ruta (`Ctrl + C`) y al pegarla donde se necesite, agregar manualmente el nombre del archivo.
-3. **Desde las Propiedades del Archivo**: hacer clic derecho sobre el archivo y seleccionar **"Propiedades"**.  En la pestaña **"General"**, copiar el contenido del campo **Ubicación** y, al pegarlo, agregar el nombre del archivo.
-
-Es importante recordar lo siguiente: al escribir *paths*, R sólo reconoce como caracteres delimitadores entre los nombres de carpetas a la barra diagonal `/` o a dos barras invertidas `\\`. Quienes usan el sistema operativo Windows notarán que en el explorador de archivos, las rutas están delimitadas con una sola barra invertida `\`. En el contexto de R, debe ser reemplazada por dos barras invertidas o por una sola barra diagonal. Es decir, si con los métodos anteriores encontraste que la ruta es `C:\Usuarios\Juan\Documentos\Trabajo\datos_encuesta.xlsx`, al usarla en R deberás escribirla como `C:/Usuarios/Juan/Documentos/Trabajo/datos_encuesta.xlsx`. 
-
-## Directorio de trabajo
-
-Como hemos visto en la sección anterior, nuestra computadora organiza todos sus archivos bajo un sistema jerárquico de carpetas y subcarpetas. Entre todas ellas, en cada sesión de trabajo R posa su mirada en una de forma particular, la cual recibe el nombre **directorio de trabajo** (o *working directory*, *wd*).
-
-El directorio de trabajo por default suele ser la carpeta *Documentos* o alguna equivalente según el sistema operativo y es la muestra R en el panel `Files` de RStudio cuando abrimos este programa. Otras formas de obtener cuál es la carpeta de la computadora que actúa como *working directory* en una sesión de trabajo son:
-
-- Leer la ruta informática que en el panel de la consola, en la parte superior, al lado del logo y la versión de R.
-- Ejecutar en la consola la instrucción `getwd()`. Por ejemplo:
-
-```{r}
-#| eval: false
-getwd()
-```
-
-```
-"C:/Usuarios/Juan/Documentos"
-```
-
-Ese resultado implica que en este momento R puede ver y acceder de manera directa a todos los archivos que hay en esa carpeta, sin necesidad de escribir la ruta informática completa para hacer referencia a cada uno de ellos. Además, si creamos un nuevo script y apretamos el ícono de guardar, la ventana emergente nos ofrece guardarlo en esa carpeta.
-
-Por esa razón, es muy útil que, al trabajar con R, el *working directory* no sea la carpeta "Documentos" que aparece por defecto, sino aquella carpeta en la que tengamos guardados todos los archivos referidos al problema que estamos resolviendo. Para poder cambiar y elegir como *working directory* a cualquier carpeta de nuestra computadora que nos interese podemos usar una instrucción que se llama `setwd()` o, mejor aún, acostumbrarnos a organizar nuestro trabajo en "proyectos", como se describe en la siguiente sección.
-
-## Organización del trabajo en proyectos
-
-Para estructurar mejor nuestro trabajo, RStudio permite crear proyectos. Un proyecto es una carpeta que agrupa todos los archivos, scripts y bases de datos relacionados con un mismo análisis. Crear un proyecto en RStudio ayuda a mantener organizados los archivos y a evitar problemas con las rutas de trabajo.
-
 ## Funciones
 
- Todavía no hemos definido formalmente a las *funciones*, pero por ahora nos alcanza con saber que son otro tipo de objetos que cuando las usamos se encargan de cumplir con alguna tarea específica. Las funciones también tienen un nombre (*identificador*) y están seguidas por un par de paréntesis, dentro de los cuales se escriben opciones para que ellas operen. La función `class()` es la que nos dice qué tipo de dato hay en una variable:
+En los ejemplos anteriores hemos realizado algunas operaciones básicas, como sumas o multiplicaciones. Otros cálculos matemáticos requieren que usemos **funciones**. Por ejemplo, para calcular una raíz cuadrada debemos usar la función `sqrt` (del inglés *sq*uared *r*oo*t*):
 
 ```{r}
-var1 <- 2
-var2 <- "Hola Mundo"
-var3 <- TRUE
-class(var1)
-class(var2)
-class(var3)
+sqrt(49)
 ```
 
+Usamos funciones como `sqrt` para pedirle a R que realice algún tipo de operación. Como resultado R nos devuelve cierta respuesta o información ("salida").
 
-R has a large collection of built-in functions that are called like this:
+Las funciones están representadas por su nombre, seguido por los paréntesis `()`. Dentro de los paréntesis se colocan las porciones de información que queremos compartir con la función, que reciben el nombre de **argumentos** o **parámetros**. Dentro de los paréntesis, una función puede depender de uno o más argumentos. Si hay más de uno, se separan con comas.
 
-function_name(argument1 = value1, argument2 = value2, ...)
-
-R, como todo lenguaje de programación, tiene **funciones predefinidas**, es decir, sentencias que se encargan de realizar alguna actividad. Ya estuvimos usando algunas de ellas, por ejemplo, cuando hemos necesitado mostrar algún mensaje usamos las funciones `cat()` o `print()`^[Sentencias como `for`, `while` o `if` también son funciones, aunque con una estructura muy particular.]. Además, existen muchas otras funciones predefinidas, como todas aquellas que se necesitan para realizar ciertas operaciones matemáticas:
+Cuando usamos una función, generalmente se dice que la estamos **llamando**, **invocando** o **corriendo**. Por ejemplo, *corremos* la función `log` con el argumento `100`. Esta función calcula, por defecto, el logaritmo natural:
 
 ```{r}
-# Raíz cuadrada
-sqrt(100)
-# Valor absoluto
-abs(100)
-# Función exponencial
-exp(100)
-# Logaritmo natural
 log(100)
 ```
 
-En los ejemplos anteriores, `100` representa un valor numérico que se pasa como argumento a la función para que la misma opere. Algunas funciones predefinidas en R pueden trabajar con más de un argumento, en cuyo caso hay que enumerarlos dentro de los paréntesis, separados con comas. Por ejemplo, si en lugar de calcular el logaritmo natural (cuya base es la constante matemática $e$), queremos calcular un logaritmo en base 10, podemos hacer lo siguiente:
+En este caso `100` representa un valor numérico que se pasa como argumento a la función para que la misma opere. Algunas funciones predefinidas en R pueden trabajar con más de un argumento, en cuyo caso hay que enumerarlos dentro de los paréntesis, separados con comas. Por ejemplo, si en lugar de calcular el logaritmo natural (cuya base es la constante matemática $e$), queremos calcular un logaritmo en base 10, podemos hacer lo siguiente:
 
 ```{r}
 # Logaritmo de 100 en base 10
 log(100, 10)
 ```
 
-¿Cómo sabemos que la función `log()` se puede usar de esa forma, cambiando el valor de la base con respecto a la cual toma el logaritmo? Lo aprendemos al leer el manual de ayuda de R. Toda función predefinida de R viene con un instructivo que detalla cómo se usa, qué argumentos incluye y otras aclaraciones. Lo encontramos en la pestaña de Ayuda (*Help*) en el panel de abajo a la derecha en RStudio. Otras formas de abrir la página de ayuda sobre una función es correr en la consola alguna de estas sentencias:
+¿Cómo sabemos que la función `log()` se puede usar de esa forma, con uno o dos argumentos, cambiando o no el valor de la base con respecto a la cual toma el logaritmo? Lo aprendemos al leer el manual de ayuda de R. 
+
+Toda función de R viene con un instructivo que detalla cómo se usa, qué argumentos incluye y otras aclaraciones. Lo encontramos en la pestaña de Ayuda (*Help*) en el panel de abajo a la derecha en RStudio. Otras formas de abrir la página de ayuda sobre una función es correr en la consola alguna de estas sentencias:
 
 ```{r, eval=F}
 help(log)
 ?log
 ```
 
-Esa página de ayuda tiene bastante información, porque reúne información sobre muchas funciones relacionadas con logaritmos y exponenciales, pero podemos detenernos en la parte resaltada que se muestra a continuación:
+Esa página de ayuda tiene bastante información, porque reúne explicaciones sobre muchas funciones relacionadas con logaritmos y exponenciales, pero podemos detenernos en algunas partes más importantes (@fig-ayuda).
 
-```{r, out.width='70%', fig.show='hold', fig.cap='Captura de pantalla de la ayuda sobre la función log()', echo=FALSE, fig.align="center"}
-knitr::include_graphics('images/03_funciones/ayuda.png')
-```
+![Captura de pantalla de la ayuda sobre la función `log()`.](../imagenes/teoria_unidad_1/ayuda.png){width="70%" fig-align="center"}{#fig-rstudio}
 
 En la sección *Usage* ("uso") descubrimos que la función `log()` puede usarse con dos argumentos: `x` y `base`. En la sección *Arguments* entendemos que `x` es el número al cual le vamos a sacar el logaritmo y `base` es la base con respecto a la cual se toma el logaritmo. Por eso, al correr `log(100, 10)`, estamos calculando el logaritmo de `x = 100` con `base = 10`.
 
-Vemos, además, una diferencia en la forma en que `x` y `base` aparecen en la descripción: `log(x, base = exp(1))`. Cuando un argumento tiene un signo `=` significa que tiene asignado un **valor por default** y que no es necesario usarlo. Por eso, cuando corremos `log(100)` estamos calculando el logaritmo de `x = 100` con la base elegida por R por defecto: `base = exp(1)`, que es la forma que tiene R de nombrar a la constante $e = 2.718282...$ (es el logaritmo natural). Si quiero cambiar la base, debo proveer un valor, por ejemplo, `log(100, 10)`. Por el contrario, el argumento `x` no tiene asignado un valor por default. Eso significa que obligatoriamente tenemos que proveer un valor para el mismo.
+Vemos, además, una diferencia en la forma en que `x` y `base` aparecen en la descripción: `log(x, base = exp(1))`. Cuando un argumento tiene un signo `=` significa que tiene asignado un **valor por defecto** y que no es obligatorio usarlo. Por eso, cuando corremos `log(100)` estamos calculando el logaritmo de `x = 100` con la base elegida por R: `base = exp(1)`, que es la forma que tiene R de nombrar a la constante $e = 2.718282...$ (es el logaritmo natural). Si quiero cambiar la base, debo proveer un valor, por ejemplo, `log(100, 10)`. Por el contrario, el argumento `x` no tiene asignado un valor por default. Eso significa que obligatoriamente tenemos que proveer un valor para el mismo.
 
-R también permite usar una función escribiendo los nombres de los argumentos (es decir, detallando tanto los parámetros formales como los actuales), lo cual muchas veces es muy esclarecedor:
+R también permite usar una función escribiendo los nombres de los argumentos, lo cual muchas veces es muy esclarecedor, en especial cuando las funciones llevan muchos argumentos:
 
 ```{r}
 log(x = 100, base = 10)
 ```
 
-Es más, si escribimos los nombres de los parámetros explícitamente, podemos cambiar su orden, sin alterar el resultado:
+Si escribimos los nombres de los parámetros explícitamente como en el caso anterior, podemos cambiar su orden, sin alterar el resultado:
 
 ```{r}
 log(base = 10, x = 100)
 ```
 
-Si no escribimos los nombres, el orden importa:
+Si no escribimos los nombres, el orden importa. R hace corresponder los valores provistos con los argumentos presentados en la ayuda sobre la función, uno por uno, en orden:
 
 ```{r}
+# Toma el logaritmo de x = 100 con base = 10
 log(100, 10)
+# Toma el logaritmo de x = 10 con base = 100
 log(10, 100)
 ```
 
-Al no tener los nombres indicados explícitamente, R hace corresponder los parámetros formales `x` y `base` con los valores provistos en ese orden: en el primer caso `x` recibe el valor `100` y `base`, el valor `10`, mientras que en el segundo caso es al revés.
-
-Finalmente, se debe observar que no es necesario invocar a la función escribiendo de forma directa los valores entre los paréntesis, sino que en su lugar pueden ir variables:
+::: {.ejemplo data-latex=""}
+Presentamos los siguientes ejemplos a modo de resumen:
 
 ```{r}
-x <- 100
-y <- x / 2
-z <- 4
-log(x - y, 4)		# Log en base 4 de x - y
+#| error: true
+# Tres usos equivalentes de la función para obtener el logaritmo de x = 100 
+# con base = 10:
+log(100, 10)
+log(x = 100, base = 10)
+log(base = 10, x = 100)
+
+# Si no indico la base, se toma el valor por defecto (logaritmo natural). Ambas
+# expresiones son equivalentes:
+log(100)
+log(x = 100)
+
+# Si no indico el argumento obligatorio x, obtengo un error:
+log(base = 10)
 ```
+:::
+
+

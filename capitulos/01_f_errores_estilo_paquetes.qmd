@@ -2,10 +2,10 @@
 \thispagestyle{primerapagina}
 ```
 
-# Errores y guía de estilo
+# Errores de programación, guías de estilo y paquetes de R
 
 ::: {.presentacion-capitulo data-latex=""}
-En este capítulo hablaremos de algo inevitable: cometer errores al programar. Veremos los errores de sintaxis, que impiden la ejecución del código, pero también los errores lógicos, que pueden pasar desapercibidos afectando los resultados. Además, destacaremos la importancia de seguir una guía de estilo para escribir código claro, legible y fácil de depurar, con algunas buenas prácticas que ayudan a reducir errores.
+En este capítulo exploraremos algunas nociones fundamentales para trabajar de manera eficiente con R. Hablaremos sobre los errores más comunes al programar, desde errores de sintaxis que impiden la ejecución del código hasta errores lógicos que pueden pasar desapercibidos y afectar los resultados. También destacaremos la importancia de seguir una guía de estilo para escribir código claro y fácil de depurar. Además, conoceremos el sistema de paquetes en R, una de sus características más poderosas, que permite ampliar sus funcionalidades mediante herramientas creadas por la comunidad. Aprenderemos cómo instalar y cargar paquetes para aprovechar al máximo este ecosistema.
 :::
 
 ## Errores de programación
@@ -27,7 +27,7 @@ A continuación se presenta una clasificación de los errores que se pueden come
 
 Los errores en la programación son tan comunes, que un científico de la computación muy reconocido, Edsger Dijkstra, dijo una vez: "si la depuración es el proceso de eliminar errores, entonces la programación es el proceso de generarlos". Ante la presencia de uno, no hay más que respirar profundo y con paciencia revisar hasta encontrarlo y solucionarlo.
 
-## Guía de estilo
+## Guías de estilo
 
 Es sumamente importante mantener la prolijidad en la escritura tanto del pseudocódigo como de los programas, para facilitar la lectura de los mismos, especialmente cuando estamos trabajando con problemas largos. Siempre hay que tener en cuenta de que cuando escribimos un programa, tenemos dos públicos potenciales: integrantes de nuestro equipo de trabajo que tienen leer el código y hacer sus propios aportes y nosotros mismos en el futuro, cuando retomemos código hecho en el pasado y necesitemos interpretar qué es lo que hicimos hacer. 
 
@@ -57,3 +57,46 @@ Para programar en R existe una guía de estilo muy popular llamada [The tidyvers
   - Evitar: `Análisis exploratorio.R`, `codigo.r`
 
 Recordemos siempre que seguir un buen estilo para programar es como hacer uso de una correcta puntuación cuando escribimos, podemos entendernos sin ella, peroesmuchomasdificilleersinolarespetamosno?^[Frase tomada de [acá](https://r4ds.hadley.nz/workflow-style.html).]
+
+## Paquetes de R
+
+### Diseño del sistema R
+
+R está diseñado como un sistema modular, dividido en dos partes principales:  
+
+- **R Base**: Se instala automáticamente cuando descargamos R desde [CRAN](https://cran.r-project.org) (Comprehensive R Archive Network). Incluye las funciones fundamentales del lenguaje, como operadores matemáticos, herramientas para manipular datos y funciones estadísticas básicas.  
+
+- **Paquetes adicionales**: Son extensiones opcionales que amplían las funcionalidades de R. Cada paquete es un conjunto de funciones y datos diseñados para tareas específicas, como visualización de datos, modelado estadístico o manipulación avanzada de estructuras de datos.  
+
+### Instalación de paquetes  
+
+Para utilizar un paquete en R, primero debemos instalarlo. La mayoría de los paquetes están disponibles en CRAN y, teniendo conexión a internet, se pueden descargar directamente con el siguiente comando:  
+
+```r
+install.packages("nombre-del-paquete")
+```  
+
+Esto descargará e instalará el paquete en la computadora, permitiéndolo usarlo en futuras sesiones.
+
+### Carga de paquetes  
+
+Después de instalar un paquete, es necesario **cargarlo en la sesión de R** para poder utilizar sus funciones. Es como abrirlo para sacar las funciones que están guardadas dentro. Para hacerlo, usamos la función `library()`:  
+
+```r
+library("nombre-del-paquete")
+```  
+Si intentás usar una función de un paquete sin haberlo cargado previamente, R mostrará un error indicando que el objeto no fue encontrado.  
+
+Es importante recordar que **la instalación de un paquete solo se hace una vez**, pero **debemos cargarlo en cada nueva sesión de R** en la que queramos utilizarlo. Cuando cerramos RStudio, los paquetes se descargan de la memoria, por lo que es necesario volver a llamarlos con `library()` la próxima vez que los necesitemos.  
+
+Este sistema modular permite que R sea altamente flexible, permitiendo a los usuarios instalar solo las herramientas que realmente necesitan para sus análisis.  
+
+### Creación de paquetes en R  
+
+Los paquetes en R no solo son desarrollados por expertos en estadística y computación, sino también por cualquier persona que quiera compartir herramientas útiles con la comunidad. Investigadores, analistas de datos y programadores contribuyen a la expansión del ecosistema de R creando paquetes que facilitan tareas específicas.  
+
+Si bien algunos paquetes pueden ser muy sofisticados, la creación de uno no es algo exclusivo de grandes desarrolladores. De hecho, al finalizar esta materia, contarás con los conocimientos necesarios para construir tu propio paquete desde cero. Esto te permitirá organizar y compartir funciones de manera eficiente, facilitando su reutilización en distintos proyectos.
+
+### Paquetes utilizados en esta materia
+
+Como estaremos aprendiendo nociones de programación, no necesitaremos usar paquetes adicionales en el contexto de esta asignatura, pero sí usarás muchos en otras materias.

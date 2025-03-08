@@ -233,33 +233,7 @@ Si necesitamos borrar todos los objetos del ambiente podemos usar el ícono de l
 rm(list = ls())
 ```
 
-Todos los objetos generados viven temporalmente en la memoria de la computadora mientras dure la sesión de R en la que estamos trabajando. Si cerramos R, toda esa información desaparecerá. Muchas veces eso es algo deseable: una vez finalizado el programa, guardamos algún resultado que nos interese (por ejemplo, un conjunto de datos en un archivo de Excel, gráficos en archivos *png*, etc.) y todos los objetos del ambiente que fuimos necesitando en el camino pueden descartados. 
+A pesar de que el ambiente nos muestre todos los objetos creados durante el trabajo o análisis, es fundamental que el código que los generó esté siempre escrito y guardado en un script. Con estos scripts siempre es posible recrear el entorno de trabajo. Para asegurar que nuestros scripts sean la referencia principal y es el respaldo de todo lo que se hace en caso de análisis de datos, se recomienda configurar RStudio para que no guarde automáticamente el ambiente cuando se cierra. Esto se logra yendo al menú `Tools > Global Options` y estableciendo las opciones de configuración tal como se observa en la @fig-config. Aunque al principio puede resultar incómodo, ya que cada vez que reinicies RStudio deberás volver a ejecutar el código para generar tus objetos, esta práctica evita problemas a largo plazo. Dejar solo los resultados en el entorno sin registrar el código que los generó puede dificultar la reproducibilidad del análisis en el futuro.
 
-En otros casos puede ocurrir que por alguna rara razón al terminar de trabajar nos interese guardar de forma permanente en un archivo de la computadora una copia de todo lo que se encuentra en el ambiente global. Los archivos que contienen los objetos creados en R tienen extensión `.RData`. Se generan con el ícono de guardar en la pestaña *Environment* o usando la función `save.image()`, que necesita que escribamos entre los paréntesis el nombre elegido para el archivo a crear, por ejemplo:
-
-```{r}
-#| eval: false
-save.image("objetos_del_ambiente.RData")
-```
-
-El archivo `objetos_del_ambiente.RData` se genera en el directorio de trabajo actual. Si estamos trabajando dentro de un *RProject*, se guardará en la carpeta del proyecto. Si queremos que se guarde en cualquier otro lugar de nuestra compu, debemos indicar la ruta informática completa hasta la ubicación deseada:
-
-```{r}
-#| eval: false
-save.image("C:/Users/Documentos/facultad/programacion1/objetos_del_ambiente.RData")
-```
-
-La acción contraria es *importar* a nuestro ambiente global objetos que estén guardados en algún lugar de nuestra computadora en un archivo `.RData`. Para esto podemos usar el ícono de abrir en la pestaña *Environment* o la función `load()`:
-
-```{r}
-#| eval: false
-load("objetos_del_ambiente.RData")
-```
-
-Para que lo anterior funcione, el archivo debe estar en el directorio de trabajo actual. Si está guardado en otro lugar, se debe especificar la ruta:
-
-```{r}
-#| eval: false
-save.image("C:/Users/Documentos/facultad/programacion1/objetos_del_ambiente.RData")
-```
+![Estas opciones garantizan que el ambiente de trabajo esté limpio cada vez que iniciamos RStudio.](../imagenes/teoria_unidad_1/opciones_rstudio.png){width="50%" fig-align="center"}{#fig-config}
 
