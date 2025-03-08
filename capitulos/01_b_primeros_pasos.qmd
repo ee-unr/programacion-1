@@ -101,21 +101,12 @@ Por otro lado, si escribimos una instrucción que R no sabe interpretar o que pr
 
 :::
 
-## Archivos de código (*scripts*)
-
-Sin embargo, para escribir programas más complejos, es recomendable usar scripts.
-
-Un script es un archivo de texto que contiene una serie de comandos de R. Esto permite guardar el código y ejecutarlo cuando sea necesario sin tener que reescribirlo. En RStudio, podemos crear un nuevo script desde Archivo > Nuevo archivo > Script R y escribir código que luego ejecutamos con Ctrl + Enter o seleccionando las líneas deseadas y haciendo clic en Ejecutar.
-
-Si bien podemos escribir nuestras instrucciones de programación en la consola y pulsar `Enter` para que se ejecuten, en general queremos que queden escritas y guardadas en  archivo de código, por eso vamos a escribir nuestros programas en el panel de arriba a la izquierda. Una vez que escribimos una instrucción en el script, podemos *correrla* (es decir, enviarla a la consola para que se ejecute) haciendo clic en el ícono *Run* o con el atajo *Ctrl + Enter*. De esta forma, se *corre* la línea en la cual está el cursor o las líneas que hayamos seleccionado.
-
-	- Arriba está el **editor de archivos**. Es el lugar donde escribiremos y editaremos nuestros programas, para luego guardarlos (una especie de *Bloc de Notas* o de un *Word* muy simple). La primera vez que se abre RStudio después de su instalación puede ser que este panel no esté presente, pero aparece si vamos a `File > New File > R Script`, con el atajo `Ctrl + Shift + N` o haciendo clic en el primer ícono de la barra de herramientas. Podemos abrir varios archivos a la vez.
-	
 ## Archivos de código o *scripts*
 
 Hasta ahora hemos usado la consola de R para ejecutar comandos de manera inmediata. Sin embargo, cuando trabajamos con tareas de programación más complejas, es importante **guardar nuestro código** para poder reutilizarlo, modificarlo y compartirlo. Para esto, usamos los **scripts**.  
+
 ::: {.concepto data-latex=""}
-Un **script** es un archivo de texto que contiene una serie de instrucciones de escritas en algún lenguaje de programación. En lugar de escribir y ejecutar los comandos uno por uno en la consola, podemos escribirlos en un script y ejecutarlos cuando sea necesario. Esto nos permite organizar mejor nuestro trabajo y evitar repetir tareas manualmente. 
+Un **archivo de código** o **script** es un archivo de texto que contiene una serie de instrucciones de escritas en algún lenguaje de programación. En lugar de escribir y ejecutar los comandos uno por uno en la consola, podemos escribirlos en un script y ejecutarlos cuando sea necesario. Esto nos permite organizar mejor nuestro trabajo y evitar repetir tareas manualmente. A veces usamos el término **programa** como sinónimo de script.
 :::
 
 El uso de scripts en lugar de escribir código directamente en la consola tiene varias ventajas:  
@@ -124,150 +115,106 @@ El uso de scripts en lugar de escribir código directamente en la consola tiene 
 - **Organización**: podemos estructurar el código en secciones claras.  
 - **Depuración**: es más fácil detectar y corregir errores en un script que en la consola.  
 
+### Crear un script
 
+Para crear un nuevo script en RStudio podemos seguir algunas de estas opciones:
 
-#### Creación y guardado de scripts  
+- Ir a `File > New > R Script`.
+- Usar el atajo `Ctrl + Shift + N`.
+- Hacer clic en el primer ícono de la barra de herramientas (hoja en blanco con signo +)
 
-Para crear un nuevo script en RStudio:  
-1. Ir a **Archivo > Nuevo archivo > Script R**.  
-2. Se abrirá un editor donde podemos escribir código.  
-3. Para guardar el archivo, ir a **Archivo > Guardar como...** y elegir una ubicación en la computadora. Es recomendable guardar los scripts en una carpeta organizada dentro de un proyecto de RStudio.  
+El sector izquierdo de RStudio se subdivide en dos paneles: abajo queda la consola y arriba aparece el editor de scripts (@fig-script). Podemos crear o abrir más de un script a la vez, cada uno aparece como una pestaña de este panel.
 
-Los scripts en R tienen la extensión **`.R`** (por ejemplo, `mi_analisis.R`).  
+![Código escrito en un nuevo script.](../imagenes/teoria_unidad_1/editor_scripts.png){width="75%" fig-align="center"}{#fig-script}
 
-#### Ejecutar código desde un script  
+### Escribir código y guardar el script
+
+Una vez creado el script, podemos escribir ahí todo nuestro código de R. Para no perder el trabajo debemos guardar este documento en nuestra computadora, con alguna de estas opciones:
+
+- Ir a `File > Save`.
+- Usar el atajo `CTRL + S`.
+- Usar el ícono de guardar en la barra de herramientas.
+
+La primera vez que guardamos el script recién creado, tendremos que elegir un nombre para el archivo (por ejemplo `analisis`) y un lugar en la computadora para su ubicación. Luego, es conveniente guardar frecuentemente los cambios añadidos.
+
+Si buscamos el script guardado en la ubicación elegida, podremos ver que su "nombre completo" es `analisis.R`. El nombre de un archivo se compone de dos partes: la **raíz** y la **extensión**. La raíz es el nombre principal que elegimos para identificar el archivo (en el ejemplo, `analisis`), mientras que la extensión es un sufijo separado por un punto (`.`) que indica el tipo de archivo y con qué programas se puede abrir. Por ejemplo, los archivos de texto suelen tener la extensión `.txt`, las imágenes pueden ser `.jpg` o `.png`, y las hojas de cálculo de Excel suelen ser `.xlsx`. En el caso de los scripts de R, la extensión es **`.R`**, lo que indica que el archivo contiene código en el lenguaje R y puede ser ejecutado dentro de RStudio o cualquier otro entorno compatible. Guardar nuestros scripts con esta extensión, como ocurre automáticamente, nos permite organizarlos adecuadamente y asegurarnos de que R los reconozca como archivos de código.
+
+En Windows, por defecto, el Explorador de archivos oculta las extensiones de los archivos, pero es posible mostrarlas siguiendo estos pasos:  
+
+1. Abrir el Explorador de archivos.
+2. Acceder a la configuración de vista:  
+   - En **Windows 10 y 11**, hacé clic en la pestaña **Vista** en la parte superior.  
+   - En **Windows 11**, si no ves la pestaña, haz clic en **Ver > Mostrar**.  
+3. Activar la visualización de extensiones: marcá la opción **"Extensiones de nombre de archivo"**.  
+
+Habilitar esta opción es útil para evitar confusiones entre tipos de archivos y asegurarse de que los scripts de R estén correctamente guardados con la extensión `.R`.
+
+### Ejecutar código desde un script  
 
 Escribir código en un script no lo ejecuta automáticamente. Para ejecutarlo, podemos:  
-- Seleccionar una línea y presionar `Ctrl + Enter` (Windows/Linux) o `Cmd + Enter` (Mac).  
-- Seleccionar varias líneas y hacer clic en el botón **Ejecutar** en la parte superior del editor.  
-- Ejecutar todo el script con `Ctrl + Shift + S` o desde el menú **Código > Ejecutar todo**.  
 
-#### Uso de comentarios  
+- Seleccionar una o varias líneas del script y presionar `Ctrl + Enter` (Windows/Linux) o `Cmd + Enter` (Mac).
+- Seleccionar una o varias líneas y hacer clic en el botón `Run`  en la parte superior del editor.
 
-Los comentarios permiten agregar notas en el código para explicar qué hace cada parte. Son fundamentales para que nuestro código sea comprensible para nosotros y otras personas. En R, los comentarios comienzan con `#` y no afectan la ejecución del código:  
+Si empleamos cualquiera de esas opciones sin tener líneas de código seleccionadas, se ejecutará una sola línea, aquella sobre la cual esté colocado el cursor.
 
-```r
-# Calculamos la suma de dos números
-suma <- 2 + 3  # Guardamos el resultado en 'suma'
-```
+![Se han ejecutado las líneas seleccionadas del script. En la consola se ven los resultados.](../imagenes/teoria_unidad_1/ejecutar.png){width="75%" fig-align="center"}{#fig-script}
+### Comentarios en el código
 
+En todo lenguaje de programación existe un carácter especial que, al ser colocado al comienzo de una línea de código, le indica al software que dicha línea no debe ser evaluada. Esto se utiliza para incluir **comentarios**, es decir, líneas escritas en español que ayudan a documentar lo que hace cada parte de nuestro programa. Los comentarios no afectan la ejecución del código y son fundamentales para hacer que nuestro trabajo sea comprensible para nosotros y otras personas. También sirven para marcar distintas partes del script. En R, los comentarios se escriben con el símbolo `#` (@fig-comentarios).
+
+![Comentarios en el script.](../imagenes/teoria_unidad_1/comentarios.png){width="75%" fig-align="center"}{#fig-comentarios}
 
 ## Rutas informáticas 
 
+En una computadora, los archivos se organizan de manera jerárquica dentro de carpetas y subcarpetas, lo que facilita el acceso y la gestión de los datos. La organización de estos archivos sigue un esquema de árbol, donde las carpetas actúan como contenedores que agrupan archivos relacionados. Este sistema permite a los usuarios almacenar y clasificar la información de forma ordenada y accesible.
 
-Antes de terminar este capítulo vamos a presentar un concepto fundamental acerca de cómo se relaciona R con el sistema opertaivo de nuestra computadora para poder tener acceso a nuestros archivos o para generar otros nuevos.
+Cada archivo o carpeta en una computadora tiene una **ruta informática** o **path** que indica su ubicación dentro del sistema de almacenamiento. Esta ruta es como una dirección que permite encontrar un archivo o carpeta específica. La ruta se lee desde la carpeta principal (o raíz) y sigue el camino de las carpetas y subcarpetas hasta llegar al archivo deseado. 
 
-Al finalizar la sección \@ref(objetosenR) vimos ejemplos en los que se utilizó R para, en primer lugar, generar un archivo llamado `objetos.RData` con todos los objetos existentes en nuestro ambiente de trabajo y, en segundo lugar, cargar la información que dicho archivo contiene:
+En sistemas operativos como Windows, las rutas suelen comenzar con una letra de unidad, como "C:", seguida de las carpetas y subcarpetas. Por ejemplo, una ruta podría ser `C:\Usuarios\Juan\Documentos\Trabajo\datos_encuesta.xlsx`. En este caso:
 
-```{r, eval = FALSE}
-save.image("C:/Users/Marcos/Documentos/Facultad/objetos.RData")
-load("C:/Users/Marcos/Documentos/Facultad/objetos.RData")
-```
+- `C:` es la unidad de almacenamiento.
+- `Usuarios` es una carpeta dentro de la raíz de la unidad C.
+- `Juan` es una subcarpeta dentro de `Usuarios`.
+- `Documentos` es una subcarpeta de `Juan`.
+- `Trabajo` es una subcarpeta de `Documentos`.
+- `datos_encuesta.xlsx` es un conjunto de datos guardados en un archivo de Excel, dentro de la carpeta `Trabajo`.
 
-En ambos casos, dentro de las funciones `save.image()` y `load()` se tuvo que escribir la dirección completa que representa cuál es la ubicación exacta de dicho archivo en la computadora: `C:/Users/Marcos/Documentos/Facultad/objetos.RData`. Esto significa que el archivo se encuentra en la carpeta `Facultad`, que a su vez está dentro de la carpeta `Documentos`, dentro de `Marcos` y dentro de `Users`, en el disco C de la computadora.
+Cuando guardamos un archivo en algún lugar de la computadora, como cuando guardamos un nuevo script en la sección anterior, estamos definiendo cuál es su ruta informática para que distintos programas de la computadora pueden encontrarlo. Tener esta noción es fundamental a la hora de programar. Por ejemplo, puede ser que nuestro script de R necesite importar los datos del archivo `datos_encuesta.xlsx`. Para esto necesitaremos escribir una instrucción que sea capaz de hacerlo, y que incluya la ruta informática del archivo para que R pueda encontrarlo. Si no la escribimos bien, R producirá un error diciendo que el archivo no existe.
 
-Expresiones como `C:/Users/Marcos/Documentos/Facultad/objetos.RData` reciben el nombre de **ruta informática** o *path* y sirven para referenciar de manera exacta la localización ya sea de una carpeta o de un archivo en particular dentro del sistema de archivos que maneja el sistema operativo de la computadora. Un *path* está compuesto por todos los nombres de los directorios que ordenadamente nos permiten llegar hasta la carpeta o archivo de interés, separados por un carácter que dependiendo del sistema operativo puede ser una barra diagonal `/` o una barra inversa `\`.
+Para saber con exactitud cuál es la ruta informática de un archivo en Windows, podemos seguir alguna de estas opciones:
 
+1. **Usando el Explorador de Archivos**: ubicar el archivo, hacer clic derecho y seleccionar **"Copiar como ruta"**.  Luego podemos pegar la ruta en cualquier lugar (`Ctrl + V`). 
+2. **Desde la Barra de Direcciones**: abrir la carpeta donde está el archivo, hacer clic en la barra de direcciones, copiar la ruta (`Ctrl + C`) y al pegarla donde se necesite, agregar manualmente el nombre del archivo.
+3. **Desde las Propiedades del Archivo**: hacer clic derecho sobre el archivo y seleccionar **"Propiedades"**.  En la pestaña **"General"**, copiar el contenido del campo **Ubicación** y, al pegarlo, agregar el nombre del archivo.
 
-Es importante recordar lo siguiente: al escribir *paths*, R sólo reconoce como caracteres delimitadores entre los nombres de carpetas a la barra diagonal `/` o a dos barras invertidas `\\`. Quienes usan el sistema operativo Windows notarán que en el explorador de archivos, las rutas están delimitadas con una sola barra invertida `\`. En el contexto de R, debe ser reemplazada por dos barras invertidas o por una sola barra diagonal.
+Es importante recordar lo siguiente: al escribir *paths*, R sólo reconoce como caracteres delimitadores entre los nombres de carpetas a la barra diagonal `/` o a dos barras invertidas `\\`. Quienes usan el sistema operativo Windows notarán que en el explorador de archivos, las rutas están delimitadas con una sola barra invertida `\`. En el contexto de R, debe ser reemplazada por dos barras invertidas o por una sola barra diagonal. Es decir, si con los métodos anteriores encontraste que la ruta es `C:\Usuarios\Juan\Documentos\Trabajo\datos_encuesta.xlsx`, al usarla en R deberás escribirla como `C:/Usuarios/Juan/Documentos/Trabajo/datos_encuesta.xlsx`. 
 
 ## Directorio de trabajo
 
-Cuando trabajamos con archivos en R, como bases de datos o scripts guardados, es importante conocer el directorio de trabajo, que es la carpeta donde R busca y guarda archivos. Podemos ver el directorio actual con:
+Como hemos visto en la sección anterior, nuestra computadora organiza todos sus archivos bajo un sistema jerárquico de carpetas y subcarpetas. Entre todas ellas, en cada sesión de trabajo R posa su mirada en una de forma particular, la cual recibe el nombre **directorio de trabajo** (o *working directory*, *wd*).
 
-getwd()
+El directorio de trabajo por default suele ser la carpeta *Documentos* o alguna equivalente según el sistema operativo y es la muestra R en el panel `Files` de RStudio cuando abrimos este programa. Otras formas de obtener cuál es la carpeta de la computadora que actúa como *working directory* en una sesión de trabajo son:
 
-Y cambiarlo con:
-
-setwd("ruta/a/la/carpeta")
-
-Usar rutas correctamente facilita la organización y el acceso a los archivos de nuestro proyecto.
-
-R siempre está mirando a alguna carpeta en particular dentro de la computadora, la cual recibe el nombre **directorio de trabajo** (o *working directory*, *wd*). Por ejemplo, en este momento y en mi computadora, R está posando su atención en una carpeta que se llama `introprog` y cuya ruta puedo descubrir con la función `getwd()`, que significa "obtener (get) el directorio de trabajo (wd)":
+- Leer la ruta informática que en el panel de la consola, en la parte superior, al lado del logo y la versión de R.
+- Ejecutar en la consola la instrucción `getwd()`. Por ejemplo:
 
 ```{r}
+#| eval: false
 getwd()
 ```
 
-Esto quiere decir que R puede ver y acceder de manera directa a todos los archivos que hay allí, sin necesidad de escribir la ruta completa. Por ejemplo, si en lugar de ejecutar:
-
-```{r, eval = FALSE}
-save.image("C:/Users/Marcos/Documentos/Facultad/objetos.RData")
+```
+"C:/Usuarios/Juan/Documentos"
 ```
 
-ejecuto sencillamente:
+Ese resultado implica que en este momento R puede ver y acceder de manera directa a todos los archivos que hay en esa carpeta, sin necesidad de escribir la ruta informática completa para hacer referencia a cada uno de ellos. Además, si creamos un nuevo script y apretamos el ícono de guardar, la ventana emergente nos ofrece guardarlo en esa carpeta.
 
-```{r, eval = FALSE}
-save.image("objetos.RData")
-```
-
-lo que ocurre es que el nuevo archivo se generará en mi directorio de trabajo (carpeta `introprog`) y no en la carpeta `Facultad`. Del mismo modo, si ejecuto:
-
-```{r, eval=FALSE}
-load("objetos.RData")
-```
-
-el software va a buscar el archivo `objetos.RData` en mi directorio de trabajo (carpeta `introprog`) y va a cargar su contenido al ambiente de trabajo. Si en dicha carpeta no existe un archivo con ese nombre, obtendremos un mensaje de error muy famoso:
-
-```
-cannot find file 'objetos.RData', probable reason 'No such file or directory'
-```
-
-El directorio de trabajo por default suele ser la carpeta *Documentos* o alguna equivalente y es la que vemos en el panel `Files` de RStudio. Podemos cambiar el directorio de trabajo por cualquier otra carpeta en la que queramos estar trabajando con la función `setwd()` ("setear el working directory"):
-
-```{r, eval=FALSE}
-setwd("/home/marcos/documents/introprog/tp1")
-getwd()
-"/home/marcos/documents/introprog/tp1"
-```
-
-Por ejemplo, si estamos resolviendo un trabajo práctico para el cual tenemos varios archivos necesarios guardados en la carpeta `tp1`, tenemos dos opciones:
-
-1. Sin importar cuál es nuestro directorio de trabajo, hacer referencia a dichos archivos con *paths* completos, por ejemplo:
-
-	```{r, eval = F}
-	load("/home/marcos/documents/introprog/tp1/objetos.RData")
-	```
-
-2. Setear como directorio de trabajo a la carpeta del trabajo práctico y hacer un uso directo de los archivos que se encuentren allí:
-
-	```{r, eval = F}
-	setwd("/home/marcos/documents/introprog/tp1")
-	load("objetos.RData")
-	```
-
+Por esa razón, es muy útil que, al trabajar con R, el *working directory* no sea la carpeta "Documentos" que aparece por defecto, sino aquella carpeta en la que tengamos guardados todos los archivos referidos al problema que estamos resolviendo. Para poder cambiar y elegir como *working directory* a cualquier carpeta de nuestra computadora que nos interese podemos usar una instrucción que se llama `setwd()` o, mejor aún, acostumbrarnos a organizar nuestro trabajo en "proyectos", como se describe en la siguiente sección.
 
 ## Organización del trabajo en proyectos
 
 Para estructurar mejor nuestro trabajo, RStudio permite crear proyectos. Un proyecto es una carpeta que agrupa todos los archivos, scripts y bases de datos relacionados con un mismo análisis. Crear un proyecto en RStudio ayuda a mantener organizados los archivos y a evitar problemas con las rutas de trabajo.
-
-
-## Comentarios en el código
-
-Los comentarios en el código ayudan a documentar lo que hace cada parte de nuestro programa. En R, los comentarios se escriben con el símbolo #:
-
-```{r}
-# Este es un comentario explicativo
-suma <- 2 + 2  # Calculamos la suma de 2 + 2
-```
-
-Los comentarios no afectan la ejecución del código y son fundamentales para hacer que nuestro trabajo sea comprensible para nosotros y otras personas.
-
-En todo lenguaje de programación existe un caracter especial que, al ser colocado al comienzo de una línea de código, le indica al software que dicha línea no debe ser evaluada. Esto se utiliza para incluir **comentarios**, es decir, líneas que expresan en español explicaciones o aclaraciones para nosotros mismos u otros que puedan utilizar nuestro código. También se utiliza para añadir encabezados con descripciones sobre el script, o indicar distintas secciones o partes en el programa. En R, este caracter especial es el símbolo numera (`#`). Si *corremos* líneas que empiezan con `#`, R no hará nada con ellas, las salteará. Por ejemplo
-
-```{r}
-5^1
-# 5^2
-5^3
-```
-
-R will ignore any text after # for that line. This allows you to write comments, text that is ignored by R but read by other humans. We’ll sometimes include comments in examples explaining what’s happening with the code.
-
-Comments can be helpful for briefly describing what the following code does.
-
-With short pieces of code like this, leaving a comment for every single line of code might not be necessary. But as the code you’re writing gets more complex, comments can save you (and your collaborators) a lot of time figuring out what was done in the code.
-
-Use comments to explain the why of your code, not the how or the what. The what and how of your code are always possible to figure out, even if it might be tedious, by carefully reading it.
 
 ## Funciones
 
