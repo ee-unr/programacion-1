@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -93,15 +127,15 @@ window.Quarto = {
 
 <section id="práctica-de-la-unidad-2" class="level1">
 <h1>Práctica de la Unidad 2</h1>
-<section id="ejercicio-1" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h2>
-<p>En R, crear la función <code>combinatorio(m, n)</code> para calcular el número combinatorio <code>m</code> tomado de a <code>n</code> (también llamado <em>coeficiente binomial</em>), siendo estos números naturales tales que <code>m &gt;= n</code>. Recordar que un número combinatorio se define como:</p>
+<section id="ejercicio-1-falta-referenciar" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-1-falta-referenciar">Ejercicio 1 (falta referenciar)</h2>
+<p>Escribir un programa en R para la creación de la función <code>combinatorio(m, n)</code> que calcula el número combinatorio <code>m</code> tomado de a <code>n</code> (también llamado <em>coeficiente binomial</em>), siendo estos números naturales tales que <code>m &gt;= n</code>. Recordar que un número combinatorio se define como:</p>
 <p><span class="math display">\[
 C(m, n) = {m \choose n} = \frac{m!}{(m-n)!n!}
 \]</span></p>
 <p>Observaciones:</p>
 <ul>
-<li><p>Se debe utilizar la función <code>fact()</code> para el cálculo de factoriales tal como fue definida en el material de estudio (REFERENCIAR)</p></li>
+<li><p>Se debe utilizar la función <code>fact()</code> para el cálculo de factoriales tal como fue definida en el material de estudio (REFERENCIAR, le decimos material de estudio?)</p></li>
 <li><p>El número combinatorio para naturales tales que <span class="math inline">\(n &gt; m\)</span> no está definido. En este caso la función <code>combinatorio(m, n)</code> debe devolver <code>NULL</code>.</p></li>
 <li><p>Una vez definida la función, utilizarla para ejemplificar las siguientes propiedades de los número combinatorios, para los valores <code>m = 5</code> y <code>n = 2</code>:</p>
 <ol type="1">
@@ -112,6 +146,166 @@ C(m, n) = {m \choose n} = \frac{m!}{(m-n)!n!}
 <li><span class="math inline">\({m \choose n} = {m - 1 \choose n - 1} + {m - 1 \choose n}\)</span></li>
 </ol></li>
 </ul>
+</section>
+<section id="ejercicio-2" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h2>
+<p>Escribir un programa en R para la creación de la función <code>triangulos(a, b, c)</code> que a partir de la longitud de los tres lados de un triángulo <code>a</code>, <code>b</code> y <code>c</code> (valores positivos) lo clasifica con los siguientes resultados posibles:</p>
+<ul>
+<li>No forman un triángulo (un lado mayor que la suma de los otros dos).</li>
+<li>Triángulo equilátero (tres lados iguales).</li>
+<li>Triángulo isósceles (dos lados iguales).</li>
+<li>Triángulo escaleno (tres lados distintos).</li>
+</ul>
+<p>Como resultado, la función devuelve uno de estos valores de tipo carácter, según corresponda: “no es triángulo”, “equilátero”, “isósceles” o “escaleno”.</p>
+<p>Ejemplos de uso:</p>
+<pre><code>triangulos(2, 3, 4)
+[1] "escaleno"
+triangulos(2, 3, 10)
+[1] "no es triángulo" </code></pre>
+</section>
+<section id="ejercicio-3" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h2>
+<p>Escribir un programa en R para la creación de la función <code>resolvente(a, b, c)</code> que muestra las soluciones de la ecuación de segundo grado <span class="math inline">\(a x^2 + b x + c = 0\)</span>, empleando la fórmula resolvente:</p>
+<p><span class="math display">\[x_{1, 2} = \frac{-b \pm \sqrt{(b^2 - 4ac)}}{2a}\]</span></p>
+<p>Observaciones:</p>
+<ul>
+<li>El programa debe emitir mensajes aclaratorios si hay una solución real doble o dos soluciones complejas (en este caso, no las calcula).</li>
+<li>La función <em>escribe</em> en pantalla las respuestas y devuelve <code>NULL</code> en todos los casos.</li>
+<li>Para calcular una raiz cuadrada, podemos usar la función <code>sqrt()</code>.</li>
+<li>Podemos asumir que <code>a</code> es distinto de cero.</li>
+</ul>
+<p>Ejemplos de uso:</p>
+<pre><code>resolvente(1, -1, -2)
+Hay dos soluciones reales -1 y 2    # mensaje
+NULL                                # valor NULO devuelto
+
+resolvente(1, 2, 1)
+Hay una solución real doble: -1     # mensaje
+NULL                                # valor NULO devuelto
+
+resolvente(1, 1, 1)
+Las soluciones son complejas        # mensaje
+NULL                                # valor NULO devuelto</code></pre>
+</section>
+<section id="ejercicio-4-falta-agregar-imagen" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-4-falta-agregar-imagen">Ejercicio 4 (falta agregar imagen)</h2>
+<p>Escribir un programa en R para la creación de la función <code>elipse(x, y)</code> que permite determinar si un punto de coordenadas <span class="math inline">\((x, y)\)</span> está dentro o no de la elipse definida por la ecuación:</p>
+<p><span class="math display">\[\frac{(x - 6) ^ 2}{36} + \frac{(y + 4) ^ 2}{16} = 1\]</span></p>
+<p>Si el punto está contenido en la elipse, la función devuelve el valor lógico <code>VERDADERO</code> y en caso contrario, <code>FALSO</code>.</p>
+<p><em>Observación</em>: si un punto se encuentra exactamente sobre la curva definida por la elipse, la fórmula anterior evaluada en las coordenadas <span class="math inline">\((x, y)\)</span> del punto es exactamente igual a 1. Si el punto está dentro de la elipse, da menor que 1. Si está fuera, da mayor que 1. A continuación se presenta la representación gráfica de la elipse en cuestión:</p>
+<p>IMAGEN - IMAGEN - IMAGEN</p>
+<p>Ejemplos del uso de la función:</p>
+<pre><code>elipse(3, 7)
+[1] FALSE
+elipse(6, -4)
+[1] TRUE</code></pre>
+</section>
+<section id="ejercicio-5" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-5">Ejercicio 5</h2>
+<p><strong>Rastreo de funciones y variables</strong></p>
+<ol type="a">
+<li><p>Sin utilizar la computadora, indique cuál es el valor devuelto por <code>g(a, b)</code> luego de que este programa sea evaluado:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(a) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a> a <span class="ot">&lt;-</span> (a <span class="sc">-</span> <span class="dv">10</span>) <span class="sc">*</span> (a <span class="sc">+</span> <span class="dv">10</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">return</span>(a)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a> b <span class="ot">&lt;-</span> x <span class="sc">-</span> y <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a> c <span class="ot">&lt;-</span> b <span class="sc">*</span> <span class="fu">f</span>(b)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a> <span class="fu">return</span>(c)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">6</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">g</span>(a, b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>Sin utilizar la computadora, indique cuál es el valor de <code>z</code> que se muestra el algoritmo y explique por qué se indica que la última línea produce un error:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f1</span>(a, b) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> x <span class="ot">&lt;-</span> a <span class="sc">+</span> b</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a> y <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">return</span>(y)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">f2</span>(x) {</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a> <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># PROGRAMA: Ejemplo de ámbito de las variables</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">f1</span>(x, y)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="fu">f2</span>(a)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(a <span class="sc">+</span> b) <span class="co"># esta línea produce un error</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>Sin usar la computadora, indique cuál es el resultado de evaluar <code>a + b + c + d</code> en la última línea del siguiente código:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">=</span> <span class="cf">function</span>(x, <span class="at">y =</span> <span class="dv">5</span>, <span class="at">z =</span> x <span class="sc">+</span> y){</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  u <span class="ot">=</span> z <span class="sc">-</span> x <span class="sc">-</span> y</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(u)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="fu">f</span>(<span class="dv">10</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> <span class="fu">f</span>(<span class="dv">10</span>,<span class="dv">10</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>c <span class="ot">=</span> <span class="fu">f</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>d <span class="ot">=</span> <span class="fu">f</span>(<span class="dv">10</span>, <span class="at">z =</span> <span class="dv">10</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>a <span class="sc">+</span> b <span class="sc">+</span> c <span class="sc">+</span> d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+</ol>
+</section>
+<section id="ejercicio-6" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-6">Ejercicio 6</h2>
+<p>Escribir un programa en R para la creación de la función <code>es_primo(n)</code> que devuelve el valor lógico <code>VERDADERO</code> si el natural <code>n</code> (mayor que 1) es un número primo o <code>FALSO</code> en caso contrario.</p>
+<p>Ejemplos de uso:</p>
+<pre><code>es_primo(47)
+[1] TRUE
+es_primo(253)
+[1] FALSE
+es_primo(2)
+[1] TRUE</code></pre>
+</section>
+<section id="ejercicio-7" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-7">Ejercicio 7</h2>
+<p>Escribir un programa en R para la creación de la función <code>cociente(dividendo, divisor)</code> que permite obtener cociente entero y resto en la división de dos números naturales (llamados <code>dividendo</code> y <code>divisor</code>) empleando únicamente operaciones aritméticas de suma y resta. La función escribe un mensaje en pantalla con los valores del dividendo, divisor, cociente y resto, mientras que devuelve el valor del cociente.</p>
+<p>Ejemplos de su uso:</p>
+<pre><code>cociente(1253, 4)
+
+Dividendo: 1253   # mensajes escritos
+Divisor: 4 
+Cociente: 313 
+Resto: 1 
+[1] 313           # valor devuelto
+
+cociente(3, 4)
+
+Dividendo: 3      # mensajes escritos
+Divisor: 4 
+Cociente: 0 
+Resto: 3 
+[1] 0             # valor devuelto</code></pre>
+</section>
+<section id="ejercicio-8" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-8">Ejercicio 8</h2>
+<p>Escribir un programa en R para la creación de la función <code>max_com_div(a, b)</code> que permite calcular el máximo común divisor (mcd) de los números naturales <code>a</code> y <code>b</code>, empleando el algoritmo de Euclides, que propone:</p>
+<ul>
+<li>Dividir al mayor por el menor.</li>
+<li>Si el resto es cero, el divisor es el máximo común divisor.</li>
+<li>Si el resto no es cero, dividir el divisor por el resto.</li>
+<li>Evaluar el nuevo resto de la misma forma y repetir hasta hallar un resto igual a cero. Cuando esto ocurre, el último divisor es el mcd.</li>
+</ul>
+<p>Ejemplos de uso:</p>
+<pre><code>max_com_div(100, 24)
+4
+
+max_com_div(25, 100)
+25
+
+max_com_div(24, 24)
+24</code></pre>
 </section>
 </section>
 

@@ -7,7 +7,7 @@ format: html
 
 ## Ejercicio 1 (falta referenciar)
 
-En R, crear la función `combinatorio(m, n)` para calcular el número combinatorio `m` tomado de a `n` (también llamado *coeficiente binomial*), siendo estos números naturales tales que `m >= n`. Recordar que un número combinatorio se define como:
+Escribir un programa en R para la creación de la función `combinatorio(m, n)` que calcula el número combinatorio `m` tomado de a `n` (también llamado *coeficiente binomial*), siendo estos números naturales tales que `m >= n`. Recordar que un número combinatorio se define como:
 
 $$
 C(m, n) = {m \choose n} = \frac{m!}{(m-n)!n!}
@@ -24,3 +24,201 @@ Observaciones:
 	3. ${m \choose 1} = m$
 	4. ${m \choose n} = {m \choose m - n}$
 	5. ${m \choose n} = {m - 1 \choose n - 1} + {m - 1 \choose n}$
+	
+## Ejercicio 2
+
+Escribir un programa en R para la creación de la función `triangulos(a, b, c)` que a partir de la longitud de los tres lados de un triángulo `a`, `b` y `c` (valores positivos) lo clasifica con los siguientes resultados posibles:
+
+- No forman un triángulo (un lado mayor que la suma de los otros dos).
+- Triángulo equilátero (tres lados iguales).
+- Triángulo isósceles (dos lados iguales).
+- Triángulo escaleno (tres lados distintos).
+
+Como resultado, la función devuelve uno de estos valores de tipo carácter, según corresponda: "no es triángulo", "equilátero", "isósceles" o "escaleno".
+
+Ejemplos de uso:
+
+```
+triangulos(2, 3, 4)
+[1] "escaleno"
+triangulos(2, 3, 10)
+[1] "no es triángulo" 
+```
+
+## Ejercicio 3
+
+Escribir un programa en R para la creación de la función `resolvente(a, b, c)` que muestra las soluciones de la ecuación de segundo grado $a x^2 + b x + c = 0$, empleando la fórmula resolvente:
+        
+$$x_{1, 2} = \frac{-b \pm \sqrt{(b^2 - 4ac)}}{2a}$$
+
+Observaciones:
+
+- El programa debe emitir mensajes aclaratorios si hay una solución real doble o dos soluciones complejas (en este caso, no las calcula).
+- La función *escribe* en pantalla las respuestas y devuelve `NULL` en todos los casos.
+- Para calcular una raiz cuadrada, podemos usar la función `sqrt()`.
+- Podemos asumir que `a` es distinto de cero.
+
+Ejemplos de uso:
+
+```
+resolvente(1, -1, -2)
+Hay dos soluciones reales -1 y 2    # mensaje
+NULL                                # valor NULO devuelto
+
+resolvente(1, 2, 1)
+Hay una solución real doble: -1     # mensaje
+NULL                                # valor NULO devuelto
+
+resolvente(1, 1, 1)
+Las soluciones son complejas        # mensaje
+NULL                                # valor NULO devuelto
+```
+
+## Ejercicio 4 (falta agregar imagen)
+
+Escribir un programa en R para la creación de la función `elipse(x, y)` que permite determinar si un punto de coordenadas $(x, y)$ está dentro o no de la elipse definida por la ecuación:
+
+$$\frac{(x - 6) ^ 2}{36} + \frac{(y + 4) ^ 2}{16} = 1$$
+
+Si el punto está contenido en la elipse, la función devuelve el valor lógico `VERDADERO` y en caso contrario, `FALSO`. 
+
+*Observación*: si un punto se encuentra exactamente sobre la curva definida por la elipse, la fórmula anterior evaluada en las coordenadas $(x, y)$ del punto es exactamente igual a 1. Si el punto está dentro de la elipse, da menor que 1. Si está fuera, da mayor que 1. A continuación se presenta la representación gráfica de la elipse en cuestión:
+
+IMAGEN - IMAGEN - IMAGEN
+
+Ejemplos del uso de la función:
+
+```
+elipse(3, 7)
+[1] FALSE
+elipse(6, -4)
+[1] TRUE
+```
+
+## Ejercicio 5
+
+**Rastreo de funciones y variables**
+
+a. Sin utilizar la computadora, indique cuál es el valor devuelto por `g(a, b)` luego de que este programa sea evaluado:
+
+   ```{r}
+   #| eval: false
+   
+   f <- function(a) {
+   	a <- (a - 10) * (a + 10)
+   	return(a)
+   }
+   
+   g <- function(x, y) {
+   	b <- x - y * 2
+   	c <- b * f(b)
+   	return(c)
+   }
+   
+   a <- 6
+   b <- 1
+   g(a, b)
+   ```
+
+b. Sin utilizar la computadora, indique cuál es el valor de `z` que se muestra el algoritmo y explique por qué se indica que la última línea produce un error:
+
+   ```{r}
+   #| eval: false
+   
+   f1(a, b) {
+    x <- a + b
+    y <- x + 2
+    return(y)
+   }
+   
+   f2(x) {
+    return(x^2)
+   }
+   
+   # PROGRAMA: Ejemplo de ámbito de las variables
+   x <- 3
+   y <- 5
+   a <- f1(x, y)
+   z <- x + f2(a)
+   print(z)
+   print(a + b) # esta línea produce un error
+   ```
+   
+c. Sin usar la computadora, indique cuál es el resultado de evaluar `a + b + c + d` en la última línea del siguiente código:
+
+   ```{r}
+   #| eval: false
+   
+   f = function(x, y = 5, z = x + y){
+     u = z - x - y
+     return(u)
+   }
+   
+   a = f(10)
+   b = f(10,10)
+   c = f(10,10,10)
+   d = f(10, z = 10)
+   
+   a + b + c + d
+   ```
+
+## Ejercicio 6
+
+Escribir un programa en R para la creación de la función `es_primo(n)` que devuelve el valor lógico `VERDADERO` si el natural `n` (mayor que 1) es un número primo o `FALSO` en caso contrario. 
+
+Ejemplos de uso:
+
+```
+es_primo(47)
+[1] TRUE
+es_primo(253)
+[1] FALSE
+es_primo(2)
+[1] TRUE
+```
+
+## Ejercicio 7
+
+Escribir un programa en R para la creación de la función `cociente(dividendo, divisor)` que permite obtener cociente entero y resto en la división de dos números naturales (llamados `dividendo` y `divisor`) empleando únicamente operaciones aritméticas de suma y resta. La función escribe un mensaje en pantalla con los valores del dividendo, divisor, cociente y resto, mientras que devuelve el valor del cociente. 
+
+Ejemplos de su uso:
+
+```
+cociente(1253, 4)
+
+Dividendo: 1253   # mensajes escritos
+Divisor: 4 
+Cociente: 313 
+Resto: 1 
+[1] 313           # valor devuelto
+
+cociente(3, 4)
+
+Dividendo: 3      # mensajes escritos
+Divisor: 4 
+Cociente: 0 
+Resto: 3 
+[1] 0             # valor devuelto
+```
+
+## Ejercicio 8
+
+Escribir un programa en R para la creación de la función `max_com_div(a, b)` que permite calcular el máximo común divisor (mcd) de los números naturales `a` y `b`, empleando el algoritmo de Euclides, que propone:
+
+- Dividir al mayor por el menor.
+- Si el resto es cero, el divisor es el máximo común divisor.
+- Si el resto no es cero, dividir el divisor por el resto.
+- Evaluar el nuevo resto de la misma forma y repetir hasta hallar un resto igual a cero. Cuando esto ocurre, el último divisor es el mcd.
+
+Ejemplos de uso:
+
+```
+max_com_div(100, 24)
+4
+
+max_com_div(25, 100)
+25
+
+max_com_div(24, 24)
+24
+```
