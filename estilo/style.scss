@@ -183,12 +183,22 @@ h5 { margin-top: 1.5em; font-size: 1rem; }
 
 .presentacion-capitulo {
   padding: 1em 1em 1em 4em;
-  margin-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   background: #cfee9eff 5px center/3em no-repeat;
   border-top: 3px solid #5A764D;    
   border-bottom: 3px solid #5A764D; 
   background-image: url("imagenes/iconos/006-clean-code.png");
   background-position: 0.5em 1.5em;
+}
+
+.presentacion-capitulo:before {
+  clear: right;
+  display: block;
+  font-weight: bold;
+  font-variant: small-caps;
+  color: #5A764D;
+  content: "Resumen";
 }
 
 .en-construccion { 
