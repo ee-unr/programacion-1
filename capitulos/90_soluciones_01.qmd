@@ -8,10 +8,170 @@ number-sections: false
 
 # Soluciones de la Práctica de la Unidad 1
 
-## Solución Ejercicio 1
+## Ejercicio 1
 
-Solución Ejercicio 1...
+|            **Operación**           | `edad <- 21`, `altura <- 1.90` | `edad <- 17` , `altura <- 1.90` | `edad <- 21`, `altura <- 1.50` |
+|:----------------------------------:|:------------------------------:|:-------------------------------:|:------------------------------:|
+|  `(edad > 18) && (altura < 1.70)`  |             `FALSE`            |             `FALSE`             |             `TRUE`             |
+| `(edad > 18)   || (altura < 1.70)` |             `TRUE`             |             `FALSE`             |             `TRUE`             |
+|           `!(edad > 18)`           |             `FALSE`            |              `TRUE`             |             `FALSE`            |
 
-## Solución Ejercicio 2
+Verificación en R:
 
-Solución Ejercicio 2...
+```{r}
+# Primera columna
+edad <- 21
+altura <- 1.90
+
+(edad > 18) && (altura < 1.70)
+(edad > 18) || (altura < 1.70)
+!(edad > 18)
+
+# Segunda columna
+edad <- 17
+altura <- 1.90
+
+(edad > 18) && (altura < 1.70)
+(edad > 18) || (altura < 1.70)
+!(edad > 18)
+
+# Tercera columna
+edad <- 21
+altura <- 1.50
+
+(edad > 18) && (altura < 1.70)
+(edad > 18) || (altura < 1.70)
+!(edad > 18)
+```
+
+## Ejercicio 2
+
+Razonamiento paso a paso:
+
+```
+1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10
+1 + 2 + (3 + 4) * ((5 * 6 * 8) - 9) - 10
+1 + 2 + (3 + 4) * (240 - 9) - 10
+1 + 2 + 7 * 231 - 10
+1 + 2 + 1617 - 10
+1610
+```
+
+Verificación en R:
+
+```{r}
+1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10
+```
+
+## Ejercicio 3
+
+Siempre es verdadera porque sea cual fuere `x`, siempre va a ser distinta a alguno de los dos, incluso si es 4, es distinta a 17 y viceversa.
+
+Recordemos que:
+
+- `!=` significa "distinto de".  
+- `||` es el operador "o" lógico (OR), que devuelve `TRUE` si al menos una de las condiciones es `TRUE`.  
+
+Luego, de la única forma para que la expresión sea `FALSE`, es que ambas condiciones sean `FALSE` al mismo tiempo. Veamos si esto es posible:  
+
+- La primera condición `(x != 4)` es `FALSE` solo cuando `x = 4`.  
+- La segunda condición `(x != 17)` es `FALSE` solo cuando `x = 17`.  
+
+Por lo visto, ambas condiciones no pueden ser `FALSE` simultáneamente, ya que un número no puede ser `4` y `17` al mismo tiempo. Dado que siempre hay al menos una condición que es `TRUE`, la expresión es **siempre verdadera**, sin importar el valor de `x`.
+
+## Ejercicio 4
+
+El primer ítem excluye a los años terminados en 00, los cuales son evaluados en la segunda regla. El segundo ítem incluye automáticamente a los divisibles por 4 porque 400 es divisible por 4. Entonces, la operación lógica que determina si un año es bisiesto es: `((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0)`.
+
+En R:
+
+```{r}
+año <- 2024
+((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0)
+
+año <- 2025
+((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0)
+```
+
+## Ejercicio 5
+
+```{r}
+x <- 6
+y <- 2
+x <- x / y + x * y
+y <- x^2 %% 10
+y <- y * 2
+y
+```
+
+## Ejercicio 6
+
+```{r}
+#| echo: false
+load("../archivos/practica1_ambiente.RData")
+```
+
+```{r}
+#| eval: false
+load("practica1_ambiente.RData")
+```
+
+a. Se incorporaron 6 objetos al ambiente:
+
+| Identificador | Tipo de vector |  Valor |
+|:-------------:|:------------:|:------:|
+|      `var1`     |    *logical*    |  `TRUE`  |
+|      `var2`     |   *double*   |   `200.12`  |
+|      `var3`     |   *character*   | `"hola"` |
+|      `var4`     |   *character*   | `"chau"` |
+|      `var5`     |   *integer*   |   `-49L`  |
+|      `var6`     |   *character*   | `"Hola"` |
+
+```{r}
+typeof(var1)
+typeof(var2)
+typeof(var3)
+typeof(var4)
+typeof(var5)
+typeof(var6)
+```
+
+
+b. 
+
+```{r}
+var2 < 0 || var5 < 0
+```
+
+c. 
+
+```{r}
+var2 < 0 && var5 < 0
+```
+
+
+d. 
+
+```{r}
+var2 %% (var5 + 100) < 10
+```
+
+e. No son iguales porque uno tiene una letra mayúscula, "H" es un caracter distinto de "h" y por lo tanto son cadenas de texto diferentes.
+
+```{r}
+var3 == var6
+```
+
+## Ejercicio 7
+
+Se pueden cambiar los valores de `a`, `b` y `h`.
+
+```{r}
+a <- 5
+b <- 4
+h <- 3
+volumen <- a * b * h
+area <- 2 * (a * b + a * h + b * h)
+cat("El área es igual a", area, "y el volumen es igual a", volumen)
+```
+
