@@ -211,8 +211,9 @@ x <- 3
 Opción incorrecta: `(x != 2) || (x != 3)`
 	
 ```{r}
-# Como la primera parte es verdadera (porque x es igual a 3), la conjunción
-# es verdadera, cuando quisiéramos que en este caso el resultado sea FALSO
+# Como la primera parte es verdadera (porque x es igual a 3), la 
+# conjunción es verdadera, cuando quisiéramos que en este caso el
+# resultado sea FALSO
 x <- 3
 (x != 2) || (x != 3)
 ```

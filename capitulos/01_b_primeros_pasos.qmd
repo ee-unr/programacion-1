@@ -35,15 +35,15 @@ Cuando se abre RStudio se pueden visualizar tres paneles principales (@fig-rstud
 
 Más adelante profundizaremos en el uso de estos componentes de RStudio.
 
-![RStudio al abrirlo.](../imagenes/teoria_unidad_1/rstudio.png){width="100%" fig-align="center"}{#fig-rstudio}
+![RStudio al abrirlo.](../imagenes/teoria_unidad_1/rstudio.png){width="100%" fig-align="center" #fig-rstudio}
 
 ## Uso de la consola de R
 
 La consola de R en RStudio permite ejecutar comandos de manera inmediata. Al presionar `Enter` las instrucciones escritas serán evaluadas, produciendo algún resultado. Por ejemplo, podemos escribir expresiones matemáticas sencillas, como la suma `1 + 2`. Para esto, tenemos que hacer clic en la última línea de la consola, al lado del indicador `>` (llamado *prompt*), para asegurarnos que el cursor esté allí titilando. La presencia del *prompt* `>` en esa última línea nos indica que R está preparado para recibir una nueva instrucción. Escribimos ahí la cuenta `1 + 2` y pulsamos `Enter` (@fig-cuenta).
 
-![Ejemplo de una primera instrucción de programación en: la suma entre 1 y 2.](../imagenes/teoria_unidad_1/rstudio.png){width="100%" fig-align="center"}{#fig-cuenta}
+![Ejemplo de una primera instrucción de programación en: la suma entre 1 y 2.](../imagenes/teoria_unidad_1/cuenta.png){width="100%" fig-align="center" #fig-cuenta}
 
-El resultado o **salida** se ve inmediatamente debajo de la instrucción, se trata del número `3`, por supuesto. Antes de la salida aparece la anotación `[1]`, que indica que la primera y única línea de la salida muestra el primer y único resultado de la instrucción evaluada. En algunas operaciones, la salida está compuesta por muchos elementos y ocupa varias líneas. En ese caso R muestra un número entre corchetes al comienzo de cada línea de la salida, para darnos una idea de cuántos elementos nos está mostrando. Por ahora podemos ignorarlo.
+El resultado o **salida** se ve inmediatamente debajo de la instrucción: se trata del número `3`, por supuesto. Antes aparece la anotación `[1]`, que indica que la primera y única línea de la salida muestra el primer y único resultado de la instrucción evaluada. En algunas operaciones, la salida está compuesta por muchos elementos y ocupa varias líneas. En ese caso R muestra un número entre corchetes al comienzo de cada línea de la salida, para darnos una idea de cuántos elementos nos está mostrando. Por ahora podemos ignorarlo.
 
 Probemos con más cálculos matemáticos:
 
@@ -74,6 +74,7 @@ La solución es apretar `Esc` para cancelar, o completar la instrucción:
 #| error: true
 #| eval: false
 > 100 /
++ 
 + 
 + 4
 ```
@@ -118,7 +119,7 @@ Para crear un nuevo script en RStudio podemos seguir algunas de estas opciones:
 
 El sector izquierdo de RStudio se subdivide en dos paneles: abajo queda la consola y arriba aparece el editor de scripts (@fig-script). Podemos crear o abrir más de un script a la vez, cada uno aparece como una pestaña de este panel.
 
-![Código escrito en un nuevo script.](../imagenes/teoria_unidad_1/editor_scripts.png){width="75%" fig-align="center"}{#fig-script}
+![Código escrito en un nuevo script.](../imagenes/teoria_unidad_1/editor_scripts.png){width="75%" fig-align="center" #fig-script}
 
 ### Escribir código y guardar el script
 
@@ -130,10 +131,11 @@ Una vez creado el script, podemos escribir ahí todo nuestro código de R. Para 
 
 La primera vez que guardamos el script recién creado, tendremos que elegir un nombre para el archivo y un lugar en la computadora para su ubicación. En el caso presentado en la @fig-guardado, elegimos el nombre "ejemplos".
 
-![El nuevo script ha sido guardado bajo el nombre `ejemplos.R.](../imagenes/teoria_unidad_1/guardado.png){width="75%" fig-align="center"}{#fig-guardado}
+![El nuevo script ha sido guardado bajo el nombre `ejemplos.R.](../imagenes/teoria_unidad_1/guardado.png){width="75%" fig-align="center" #fig-guardado}
 
 Ahora la pestaña del editor de scripts muestra el nombre elegido para el archivo seguido por `.R`, es decir, vemos que dice: `ejemplos.R`. El nombre de un archivo informático se compone de dos partes: la **raíz** y la **extensión**. La raíz es el nombre principal que elegimos para identificar el archivo (`ejemplos`), mientras que la extensión es un sufijo separado por un punto que indica el tipo de archivo y con qué programas se puede abrir. Por ejemplo, los archivos de texto suelen tener la extensión `.txt`, las imágenes pueden ser `.jpg` o `.png` y las hojas de cálculo de Excel suelen ser `.xlsx`. En el caso de los scripts de R, la extensión es `.R`, lo que indica que el archivo contiene código en el lenguaje R y puede ser ejecutado dentro de RStudio o cualquier otro entorno compatible. Al guardar un archivo de código, se agrega automáticamente la extensión en el nombre y esto nos permite organizarlos adecuadamente y asegurarnos de que R los reconozca como archivos de código.
 
+::: {.info data-latex=""}
 Si buscamos el archivo recién creado en el Explorador de archivos de Windows, puede que en su nombre no se vea la extensión. Windows, por defecto, oculta las extensiones de los archivos, pero es posible mostrarlas siguiendo estos pasos:  
 
 1. Abrir el Explorador de archivos.
@@ -143,6 +145,7 @@ Si buscamos el archivo recién creado en el Explorador de archivos de Windows, p
 3. Activar la visualización de extensiones: marcá la opción **"Extensiones de nombre de archivo"**.  
 
 Habilitar esta opción es útil para evitar confusiones entre tipos de archivos. Dos archivos diferentes pueden tener en su nombre la misma raíz, pero tratarse de distintas cosas porque tienen diferente extensión.
+:::
 
 A medida que seguimos editando nuestro script de código agregando nuevas instrucciones de programación, es conveniente guardar frecuentemente los cambios añadidos.
 
@@ -155,12 +158,13 @@ Escribir código en un script no lo ejecuta automáticamente. Para ejecutarlo, p
 
 Si empleamos cualquiera de esas opciones sin tener líneas de código seleccionadas, se ejecutará una sola línea, aquella sobre la cual esté colocado el cursor.
 
-![Se han ejecutado las líneas seleccionadas del script. En la consola se ven los resultados.](../imagenes/teoria_unidad_1/ejecutar.png){width="75%" fig-align="center"}{#fig-script}
+![Se han ejecutado las líneas seleccionadas del script. En la consola se ven los resultados.](../imagenes/teoria_unidad_1/ejecutar.png){width="75%" fig-align="center" #fig-script}
+
 ### Comentarios en el código
 
 En todo lenguaje de programación existe un carácter especial que, al ser colocado al comienzo de una línea de código, le indica al software que dicha línea no debe ser evaluada. Esto se utiliza para incluir **comentarios**, es decir, líneas escritas en español que ayudan a documentar lo que hace cada parte de nuestro programa. Los comentarios no afectan la ejecución del código y son fundamentales para hacer que nuestro trabajo sea comprensible para nosotros y otras personas. También sirven para marcar distintas partes del script. En R, los comentarios se escriben con el símbolo `#` (@fig-comentarios).
 
-![Comentarios en el script.](../imagenes/teoria_unidad_1/comentarios.png){width="75%" fig-align="center"}{#fig-comentarios}
+![Comentarios en el script. Todo el contenido del script fue evaluado, por eso se ve también en la consola. Las líneas comentadas son ignoradas, sólo se muestran resultados para las demás.](../imagenes/teoria_unidad_1/comentarios.png){width="75%" fig-align="center" #fig-comentarios}
 
 ## Funciones
 
@@ -172,7 +176,7 @@ sqrt(49)
 
 Usamos funciones como `sqrt` para pedirle a R que realice algún tipo de operación. Como resultado R nos devuelve cierta respuesta o información ("salida").
 
-Las funciones están representadas por su nombre, seguido por los paréntesis `()`. Dentro de los paréntesis se colocan las porciones de información que queremos compartir con la función, que reciben el nombre de **argumentos** o **parámetros**. Dentro de los paréntesis, una función puede depender de uno o más argumentos. Si hay más de uno, se separan con comas.
+Las funciones están representadas por su nombre, seguido por los paréntesis `()`. Dentro de los paréntesis se colocan las porciones de información que queremos compartir con la función, que reciben el nombre de **argumentos** o **parámetros**. Una función puede depender de uno o más argumentos. Si hay más de uno, se separan con comas.
 
 Cuando usamos una función, generalmente se dice que la estamos **llamando**, **invocando** o **corriendo**. Por ejemplo, *corremos* la función `log` con el argumento `100`. Esta función calcula, por defecto, el logaritmo natural:
 
@@ -198,7 +202,7 @@ help(log)
 
 Esa página de ayuda tiene bastante información, porque reúne explicaciones sobre muchas funciones relacionadas con logaritmos y exponenciales, pero podemos detenernos en algunas partes más importantes (@fig-ayuda).
 
-![Captura de pantalla de la ayuda sobre la función `log()`.](../imagenes/teoria_unidad_1/ayuda.png){width="70%" fig-align="center"}{#fig-rstudio}
+![Captura de pantalla de la ayuda sobre la función `log()`.](../imagenes/teoria_unidad_1/ayuda.png){width="70%" fig-align="center" #fig-ayuda}
 
 En la sección *Usage* ("uso") descubrimos que la función `log()` puede usarse con dos argumentos: `x` y `base`. En la sección *Arguments* entendemos que `x` es el número al cual le vamos a sacar el logaritmo y `base` es la base con respecto a la cual se toma el logaritmo. Por eso, al correr `log(100, 10)`, estamos calculando el logaritmo de `x = 100` con `base = 10`.
 
@@ -230,14 +234,14 @@ Presentamos los siguientes ejemplos a modo de resumen:
 
 ```{r}
 #| error: true
-# Tres usos equivalentes de la función para obtener el logaritmo de x = 100 
-# con base = 10:
+# Tres usos equivalentes de la función para obtener el 
+# logaritmo de x = 100 con base = 10:
 log(100, 10)
 log(x = 100, base = 10)
 log(base = 10, x = 100)
 
-# Si no indico la base, se toma el valor por defecto (logaritmo natural). Ambas
-# expresiones son equivalentes:
+# Si no indico la base, se toma el valor por defecto (logaritmo 
+# natural). Ambas expresiones son equivalentes:
 log(100)
 log(x = 100)
 

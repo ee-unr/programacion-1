@@ -5,7 +5,7 @@
 # Errores de programación, guías de estilo y paquetes de R
 
 ::: {.presentacion-capitulo data-latex=""}
-En este capítulo exploraremos algunas nociones fundamentales para trabajar de manera eficiente con R. Hablaremos sobre los errores más comunes al programar, desde errores de sintaxis que impiden la ejecución del código hasta errores lógicos que pueden pasar desapercibidos y afectar los resultados. También destacaremos la importancia de seguir una guía de estilo para escribir código claro y fácil de depurar. Además, conoceremos el sistema de paquetes en R, una de sus características más poderosas, que permite ampliar sus funcionalidades mediante herramientas creadas por la comunidad. Aprenderemos cómo instalar y cargar paquetes para aprovechar al máximo este ecosistema.
+En este capítulo hablaremos sobre la posibilidad de cometer errores al programar, desde errores de sintaxis que impiden la ejecución del código hasta errores lógicos que pueden pasar desapercibidos y afectar los resultados. También destacaremos la importancia de seguir una guía de estilo para escribir código claro y fácil de depurar. Además, conoceremos el sistema de paquetes en R, una de sus características más poderosas, que permite ampliar sus funcionalidades mediante herramientas creadas por la comunidad. Aprenderemos cómo instalar y cargar paquetes para aprovechar al máximo este ecosistema.
 :::
 
 ## Errores de programación

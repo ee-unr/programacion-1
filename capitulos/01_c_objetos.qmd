@@ -24,13 +24,13 @@ Claramente, al resolver problemas complejos no podemos trabajar con resultados o
 x <- 5 * 6
 ```
 
-En este caso que estamos analizando, `x` es un ejemplo de un objeto creado por nosotros.
+En este caso que estamos analizando, `x` es un ejemplo de un **objeto** creado por nosotros.
 
 ::: {.concepto data-latex=""}
 Los **objetos** son estructuras capaces de almacenar las distintas piezas de información, (o *datos*), que podemos manipular para resolver una tarea de programación. Dependiendo de las características de un objeto en particular, podemos hacer con él diferentes operaciones. Nuestro programa, a lo largo de su ejecución, va creando o modificando los objetos existentes.
 :::
 
-Un nuevo objeto se crea con el **operador de asignación** (`<-`, "operador flecha"). Como lo vamos a usar muchísimas veces, es conveniente recordar su atajo para escribirlo rápidamente con el teclado: `Alt + -` (teclas `Alt` y guión medio). De esta forma, informalmente la línea `x <- 5 * 6` puede ser leída así: "creamos un objeto llamado `x` que contiene al resultado de la operación `5 * 6` (30).
+Un nuevo objeto se crea con el **operador de asignación** (`<-`, "operador flecha"). Como lo vamos a usar muchísimas veces, es conveniente recordar su atajo para escribirlo rápidamente con el teclado: `Alt + -` (teclas `Alt` y guión medio). De esta forma, informalmente la línea `x <- 5 * 6` puede ser leída así: "creamos un objeto llamado `x` que contiene al resultado de la operación `5 * 6` (30)".
 
 Una vez que almacenamos un valor en `x`, podemos utilizarlo en nuevos cálculos:
 
@@ -45,7 +45,7 @@ Hay distintos tipos de objetos, algunos con estructuras muy simples (como aquell
 
 El **tipo de objeto más simple y básico en R** se llama **vector atómico** (*atomic vector*). De hecho, en el ejemplo, `x` es un vector atómico que hospeda un único valor numérico. En Matemática, la palabra "vector" hace referencia a un conjunto de números ordenados. Los vectores atómicos de R también pueden contener más de un valor, pero por ahora sólo consideraremos situaciones donde cada vector atómico contiene un sólo valor (como `x`). A los objetos que se usan para almacenar un solo valor a veces también se les dice **variables** (porque suele ocurrir que ese valor va cambiando a lo largo del programa). 
 
-Un vector atómico puede guardar otras cosas además de números. R define seis tipos básicos de vectores atómicos dependiendo de cómo son los datos que guardan: *doubles*, *integers*, *characters*, *logicals*, *complex* y *raw*^[los nombramos en inglés puesto que esos son sus nombres formales]. Los últimos dos sirven para guardar números complejos y *bytes* en crudo, respectivamente y muy rara vez son usados para tareas de análisis de datos, por lo cual no los volveremos a nombrar. Vamos a ver a los otros, uno por uno.
+Un vector atómico puede guardar otras cosas además de números. R define seis tipos básicos de vectores atómicos dependiendo de cómo son los datos que guardan: *doubles*, *integers*, *characters*, *logicals*, *complex* y *raw*^[Los nombramos en inglés puesto que esos son sus nombres formales.]. Los últimos dos sirven para guardar números complejos y *bytes* en crudo, respectivamente y muy rara vez son usados para tareas de análisis de datos, por lo cual no los volveremos a nombrar. Vamos a ver a los otros, uno por uno.
 
 ### *Doubles* (dobles)
 
@@ -104,6 +104,7 @@ is.logical(v)
 is.numeric(x)
 ```
 
+::: {.presentacion-capitulo data-latex=""}
 ¿Para qué necesitamos distintos tipos de vectores atómicos? Para poder establecer qué operaciones se pueden realizar con unos y otros, y que todo tenga sentido. Por ejemplo, podemos hacer sumas aritméticas con vectores numéricos pero no con vectores carácter:
 
 ```{r}
@@ -114,6 +115,7 @@ x + y
 # No se puede:
 x + z
 ```
+:::
 
 ::: {.ejercicio data-latex=""}
 **Seleccionar la respuesta correcta.**
@@ -184,7 +186,7 @@ x <- "hola"
 x
 ```
 
-Otros lenguajes no admiten este comportamiento. Por el contrario, requieren se "declare" el nombre y el tipo de cada objeto antes de ser usados y, si bien se puede actualizar su valor, éste siempre debe ser del mismo tipo. R es un lenguaje dinámico que no tiene este recaudo.
+Otros lenguajes no admiten este comportamiento. Por el contrario, requieren se "declare" el nombre y el tipo de cada objeto antes de ser usados y, si bien se puede actualizar su valor, éste siempre debe ser del mismo tipo. R es un **lenguaje dinámico** que no tiene este recaudo.
 
 ::: {.comentario data-latex=""}
 Expresiones como "crear un objeto llamado `x` que contiene el valor `100`" o "sobreescribir, actualizar o reemplazar su valor" nos permiten imaginar lo que sucede y encarar tareas generales de programación en R, pero en realidad son formas simplificadas y poco precisas de describir procesos más complejos relacionados al funcionamiento de R. Estudiantes con experiencia en programación pueden opcionalmente referirse a [este material](https://adv-r.hadley.nz/names-values.html#names-values) para leer más.
@@ -193,21 +195,21 @@ Expresiones como "crear un objeto llamado `x` que contiene el valor `100`" o "so
 ## Ambiente
 
 ::: {.concepto data-latex=""}
-En R, un **environment** (**entorno** o **ambiente**) es un espacio donde se almacenan los objetos creados durante una sesión de trabajo. Se trata una estructura clave en la gestión de variables y funciones dentro de un programa en R.
+En R, un **environment** (**entorno** o **ambiente**) es un espacio donde se almacenan los objetos creados durante una sesión de trabajo. Se trata una estructura clave en la gestión de variables y funciones dentro de un programa.
 :::
 
-Durante la evaluación de un programa coexisten muchos *environments*. Vamos a hablar un poco más de esto cuando aprendamos a crear nuevas funciones, pero en general podemos programa en R sin preocuparnos por este tema, que es bastante complejo y avanzado.
+Durante la evaluación de un programa coexisten muchos *environments*. Vamos a hablar un poco más de esto cuando aprendamos a crear nuevas funciones, pero en general podemos programar en R sin preocuparnos por este tema, que es bastante complejo y avanzado.
 
-Lo fundamental es saber que el conjunto de objetos que vamos creando en nuestro programa forman parte de un ambiente llamado *Global Environment* y es el que vemos en la pestaña *Environment* del panel superior derecho de RStudio:
+Lo fundamental es saber que el conjunto de objetos que vamos creando en nuestro programa forman parte de un ambiente llamado *Global Environment* y es el que vemos en la pestaña *Environment* del panel superior derecho de RStudio (@fig-globalenv).
 
-![Captura de pantalla del *Global Environment*.](../imagenes/teoria_unidad_1/ambiente.png){width="100%" fig-align="center"}
+![Captura de pantalla del *Global Environment*.](../imagenes/teoria_unidad_1/ambiente.png){width="100%" fig-align="center" #fig-globalenv}
 
 También podemos ver en la consola un listado de todos los nombres de los objetos que existen en el ambiente con la función `ls()`:
 
 ```{r}
 #| echo: false
 # que este object que aparece??
-rm(object)
+rm(object, precio, Precio)
 ```
 
 ```{r}
@@ -233,7 +235,7 @@ Si necesitamos borrar todos los objetos del ambiente podemos usar el ícono de l
 rm(list = ls())
 ```
 
-A pesar de que el ambiente nos muestre todos los objetos creados durante el trabajo o análisis, es fundamental que el código que los generó esté siempre escrito y guardado en un script. Con estos scripts siempre es posible recrear el entorno de trabajo. Para asegurar que nuestros scripts sean la referencia principal y es el respaldo de todo lo que se hace en caso de análisis de datos, se recomienda configurar RStudio para que no guarde automáticamente el ambiente cuando se cierra. Esto se logra yendo al menú `Tools > Global Options` y estableciendo las opciones de configuración tal como se observa en la @fig-config. Aunque al principio puede resultar incómodo, ya que cada vez que reinicies RStudio deberás volver a ejecutar el código para generar tus objetos, esta práctica evita problemas a largo plazo. Dejar solo los resultados en el entorno sin registrar el código que los generó puede dificultar la reproducibilidad del análisis en el futuro.
+A pesar de que el ambiente nos muestre todos los objetos creados durante el trabajo o análisis, es fundamental que el código que los generó esté siempre escrito y guardado en un script. Con un script siempre es posible recrear el entorno de trabajo, pero si sólo tenemos los objetos en el ambiente, no podemos adivinar con qué código fueron creados. Para asegurar que nuestros scripts sean la referencia principal y es el respaldo de todo lo que se hace en un análisis de datos, se recomienda configurar RStudio para que no guarde automáticamente el ambiente cuando se cierra. Esto se logra yendo al menú `Tools > Global Options` y estableciendo las opciones de configuración tal como se observa en la @fig-config. Aunque al principio puede resultar incómodo, ya que cada vez que reinicies RStudio deberás volver a ejecutar el código para generar tus objetos, esta práctica evita problemas a largo plazo. Dejar solo los resultados en el entorno sin registrar el código que los generó puede dificultar la reproducibilidad del análisis en el futuro.
 
-![Estas opciones garantizan que el ambiente de trabajo esté limpio cada vez que iniciamos RStudio.](../imagenes/teoria_unidad_1/opciones_rstudio.png){width="50%" fig-align="center"}{#fig-config}
+![Estas opciones garantizan que el ambiente de trabajo esté limpio cada vez que iniciamos RStudio.](../imagenes/teoria_unidad_1/opciones_rstudio.png){width="50%" fig-align="center" #fig-config}
 
