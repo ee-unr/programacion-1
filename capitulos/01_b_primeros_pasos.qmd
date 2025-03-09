@@ -95,7 +95,7 @@ Por otro lado, si escribimos una instrucción que R no sabe interpretar o que pr
 
 :::
 
-## Archivos de código o *scripts*
+## Archivos de código o *scripts* {#sec-scripts}
 
 Hasta ahora hemos usado la consola de R para ejecutar comandos de manera inmediata. Sin embargo, cuando trabajamos con tareas de programación más complejas, es importante **guardar nuestro código** para poder reutilizarlo, modificarlo y compartirlo. Para esto, usamos los **scripts**.  
 
