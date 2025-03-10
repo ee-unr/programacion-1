@@ -1,8 +1,3 @@
----
-nocite: |
-  @*
----
-
 ```{=latex}
 \thispagestyle{primerapagina}
 ```
@@ -24,15 +19,20 @@ Si quiero poner uno o varios que no están citados tengo que poner (esto sí fun
 
 nocite: |
   @item1, @item2
+  
+NO HAGO NADA DE ESTO PORQUE PONGO LA BIBLIOGRAFIA A MANO. DE HECHO, BORRO EL ARCHIVO references.bib y lo saco del yaml tmb.
 -->
 
 # Bibliografía {.unnumbered}
 
-::: {.en-construccion data-latex=""}
-Página en construcción.
-:::
+- Grolemund, G. (2014). Hands-On Programming with R. O'Reilly. Disponible online: <https://rstudio-education.github.io/hopr/>.
+- Moeller, J. (2013). The Windows Command Line Beginner's Guide. Azure Flame Media. 2nd Ed.
+- Paradis, E. (2005). R para Principiantes. Universit´e Montpellier II. Disponible online: <https://cran.r-project.org/doc/contrib/rdebuts_es.pdf>.
+- Peng, R.; Kross, S.; Anderson, B. (2020). Mastering Software Development in R. Leanpub. Disponible online: <https://bookdown.org/rdpeng/RProgDA/>.
+- Santana, S.; Mateos Farfán, E. (2014). El arte de programar en R: un lenguaje para la estadística. Instituto Mexicano de Tecnología del Agua, UNESCO. Disponible online: <https://cran.r-project.org/doc/contrib/Santana_El_arte_de_programar_en_R.pdf>.
+- Shotts, W. (2024). The Linux Command Line: A Complete Introduction. No Starch Press. 6th Internet Edition. Disponible online: <https://sourceforge.net/projects/linuxcommand/files/ TLCL/24.11/TLCL-24.11.pdf/download>.
+- Wickham, H. (2019). Advanced R. Chapman and Hall/CRC. 2nd Ed. Disponible online: <https://adv-r.hadley.nz/>.
+- Wickham, H.; Bryan, J. (2023). R Packages. O’Reilly. 2nd Ed. Disponible online: <https://r-pkgs.org/>.
+- Wickham, H.; Cetinkaya-Rundel, M.; Grolemund, G. (2023). R para Ciencia de Datos. O’Reilly. 2da Ed. Disponible online: <https://es.r4ds.hadley.nz/>.
 
 Íconos creados por [Smashicons](https://www.flaticon.com/authors/smashicons) and by [juicy_fish](https://www.flaticon.com/free-icons/code-review) y tomados de [Flaticon](https://www.flaticon.com/).
-
-::: {#refs}
-:::
