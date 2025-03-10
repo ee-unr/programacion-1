@@ -34,7 +34,7 @@ Los operadores aritméticos actúan con un orden de prioridad establecido, tambi
 2. Multiplicación y división (`*`, `/`)
 3. Suma y resta (`+`, `-`)
 
-Si la expresión presenta operadores con igual nivel de prioridad, se evalúan de izquierda a derecha. 
+Si la expresión presenta operadores con igual nivel de prioridad, se evalúan de izquierda a derecha.
 
 ::: {.ejemplo data-latex=""}
 
@@ -152,10 +152,9 @@ La **tabla de verdad** o **tabla de valores de verdad** se utiliza para mostrar 
 
 : Tabla de la verdad {#tbl-tablaverdad}
 
-::: {.ejemplo data-latex=""}
-
 Con estos operadores es posible construir evaluaciones lógicas algo más elaboradas como los siguientes ejemplos:
 
+::: {.ejemplo data-latex=""}
 1. Determinar si el valor numérica guardado en la variable `x` está entre 5 y 7:
 
 ```{r}
@@ -165,27 +164,33 @@ valor <- 6.4
 valor <- 2.1
 (valor > 5) && (valor < 7)
 ```
-	
+
 Tal vez tu intuición te sugiere que la expresión lógica a evaluar en este caso debe ser `5 < valor < 7`, pero esto genera un error en R. Para saber si `valor` está entre 5 y 7, se tiene que evaluar por separado que `valor` sea mayor que 5 y también menor que 7, y ambas condiciones deben ser verdaderas.
-	
+:::
+
+::: {.ejemplo data-latex=""}
 2. Establecer si el valor de tipo carácter almacenado en la variable `nacionalidad` sea igual a una de dos opciones:
-  
+
 ```{r}
 nacionalidad <- "Argentino"
 (nacionalidad == "Uruguayo") || (nacionalidad == "Chileno")
 ```
+:::
 
+::: {.ejemplo data-latex=""}
 3. Verificar que el valor guardado en `nacionalidad` no coincida con "Argentino":.
 
 ```{r}
 nacionalidad <- "Uruguayo"
 !(nacionalidad == "Argentino")
 ```
-	
+:::
+
+::: {.ejemplo data-latex=""}
 4. Chequear que el valor numérico guardado en `x` no sea igual a 2 ni a 3:
-	
+
 Opción correcta 1: `(x != 2) && (x != 3)`
-	
+
 ```{r}
 # Da verdadero porque x no es ni 2 ni 3
 x <- 10
@@ -195,9 +200,9 @@ x <- 10
 x <- 3
 (x != 2) && (x != 3)
 ```
-	
+
 Opción correcta 2: `!(x == 2 || x == 3)`
-	
+
 ```{r}
 # Da verdadero porque x no es ni 2 ni 3
 x <- 10
@@ -207,17 +212,19 @@ x <- 10
 x <- 3
 !(x == 2 || x == 3)
 ```
-	
+
 Opción incorrecta: `(x != 2) || (x != 3)`
-	
+
 ```{r}
-# Como la primera parte es verdadera (porque x es igual a 3), la 
+# Como la primera parte es verdadera (porque x es igual a 3), la
 # conjunción es verdadera, cuando quisiéramos que en este caso el
 # resultado sea FALSO
 x <- 3
 (x != 2) || (x != 3)
 ```
+:::
 
+::: {.info data-latex=""}
 Es importante notar que todos los paréntesis usados en el código de R de los ejemplos 1, 2 y 4 son innecesarios, puesto que **los operadores relacionales preceden a los lógicos en el orden de prioridad**. Sin embargo, a veces preferimos usar paréntesis para que la lectura sea más sencilla. Retomando el ejemplo 1, notemos que ambas expresiones son equivalentes:
 
 ```{r}
