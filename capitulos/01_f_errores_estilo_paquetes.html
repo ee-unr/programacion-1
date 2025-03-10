@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Ejemplo con mucho texto para ver el PDF – Programación 1</title>
+<title>6&nbsp; Errores de programación, guías de estilo y paquetes de R – Programación 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../capitulos/01_practica.html" rel="next">
-<link href="../capitulos/01_e_ejemplo_ambientes.html" rel="prev">
+<link href="../capitulos/01_g_opcional.html" rel="next">
+<link href="../capitulos/01_e_organizacion.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -41,8 +75,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-20e9d0d635e68321e0b6852ba7bd5d22.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-b46e47818598c0ec4d6624ecafab20ba.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c0d33cdaf350d5d408aab8c6a2ada2ea.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-83123365b82d3e0a114b8a4caf34d831.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -84,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/01.html">Unidad 1. Introducción a la programación con R</a></li><li class="breadcrumb-item"><a href="../capitulos/01_f_ejemplo_texto.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ejemplo con mucho texto para ver el PDF</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/01.html">Unidad 1. Introducción a la programación con R</a></li><li class="breadcrumb-item"><a href="../capitulos/01_f_errores_estilo_paquetes.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Errores de programación, guías de estilo y paquetes de R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -138,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/01_a_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Programación: de qué se trata y para qué nos sirve</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Programación</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -150,31 +187,37 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/01_c_objetos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Objetos, ambiente y operadores</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Objetos y ambiente</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/01_d_varios.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Otras nociones fundamentales sobre R</span></span></a>
+  <a href="../capitulos/01_d_operadores.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operadores</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/01_e_ejemplo_ambientes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ejemplos de cuadritos</span></span></a>
+  <a href="../capitulos/01_e_organizacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Organización de archivos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/01_f_ejemplo_texto.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ejemplo con mucho texto para ver el PDF</span></span></a>
+  <a href="../capitulos/01_f_errores_estilo_paquetes.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Errores de programación, guías de estilo y paquetes de R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../capitulos/01_g_opcional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lectura opcional</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/01_practica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Práctica de la Unidad 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Práctica de la Unidad 1</span></span></a>
   </div>
 </li>
       </ul>
@@ -182,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../capitulos/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad 2. Nombre de la unidad.</span></a>
+ <span class="menu-text">Unidad 2. Estructuras de control</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -191,19 +234,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/02_a_algo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Primera sección de la Unidad 2</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../capitulos/webexercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ejemplos para crear “Webexercises”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../capitulos/02_practica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Práctica de la Unidad 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Primer capítulo de la Unidad 2</span></span></a>
   </div>
 </li>
       </ul>
@@ -220,7 +251,24 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/90_soluciones_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 1</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Apéndices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../capitulos/99_bibliografia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
       </ul>
@@ -230,15 +278,30 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#errores-de-programación" id="toc-errores-de-programación" class="nav-link active" data-scroll-target="#errores-de-programación"><span class="header-section-number">6.1</span> Errores de programación</a></li>
+  <li><a href="#guías-de-estilo" id="toc-guías-de-estilo" class="nav-link" data-scroll-target="#guías-de-estilo"><span class="header-section-number">6.2</span> Guías de estilo</a></li>
+  <li><a href="#paquetes-de-r" id="toc-paquetes-de-r" class="nav-link" data-scroll-target="#paquetes-de-r"><span class="header-section-number">6.3</span> Paquetes de R</a>
+  <ul class="collapse">
+  <li><a href="#diseño-del-sistema-r" id="toc-diseño-del-sistema-r" class="nav-link" data-scroll-target="#diseño-del-sistema-r"><span class="header-section-number">6.3.1</span> Diseño del sistema R</a></li>
+  <li><a href="#instalación-de-paquetes" id="toc-instalación-de-paquetes" class="nav-link" data-scroll-target="#instalación-de-paquetes"><span class="header-section-number">6.3.2</span> Instalación de paquetes</a></li>
+  <li><a href="#carga-de-paquetes" id="toc-carga-de-paquetes" class="nav-link" data-scroll-target="#carga-de-paquetes"><span class="header-section-number">6.3.3</span> Carga de paquetes</a></li>
+  <li><a href="#creación-de-paquetes-en-r" id="toc-creación-de-paquetes-en-r" class="nav-link" data-scroll-target="#creación-de-paquetes-en-r"><span class="header-section-number">6.3.4</span> Creación de paquetes en R</a></li>
+  <li><a href="#paquetes-utilizados-en-esta-materia" id="toc-paquetes-utilizados-en-esta-materia" class="nav-link" data-scroll-target="#paquetes-utilizados-en-esta-materia"><span class="header-section-number">6.3.5</span> Paquetes utilizados en esta materia</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/mpru/programacion1/edit/main/capitulos/01_f_errores_estilo_paquetes.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/mpru/programacion1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/mpru/programacion1/blob/main/capitulos/01_f_errores_estilo_paquetes.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/01.html">Unidad 1. Introducción a la programación con R</a></li><li class="breadcrumb-item"><a href="../capitulos/01_f_ejemplo_texto.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ejemplo con mucho texto para ver el PDF</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/01.html">Unidad 1. Introducción a la programación con R</a></li><li class="breadcrumb-item"><a href="../capitulos/01_f_errores_estilo_paquetes.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Errores de programación, guías de estilo y paquetes de R</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ejemplo con mucho texto para ver el PDF</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Errores de programación, guías de estilo y paquetes de R</span></h1>
 </div>
 
 
@@ -255,24 +318,103 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="en-construccion">
-<p>Página en construcción.</p>
+<div class="presentacion-capitulo">
+<p>En este capítulo hablaremos sobre la posibilidad de cometer errores al programar, desde errores de sintaxis que impiden la ejecución del código hasta errores lógicos que pueden pasar desapercibidos y afectar los resultados. También destacaremos la importancia de seguir una guía de estilo para escribir código claro y fácil de depurar. Además, conoceremos el sistema de paquetes en R, una de sus características más poderosas, que permite ampliar sus funcionalidades mediante herramientas creadas por la comunidad. Aprenderemos cómo instalar y cargar paquetes para aprovechar al máximo este ecosistema.</p>
 </div>
-<p>Praesent ornare dolor turpis, sed tincidunt nisl pretium eget. Curabitur sed iaculis ex, vitae tristique sapien. Quisque nec ex dolor. Quisque ut nisl a libero egestas molestie. Nulla vel porta nulla. Phasellus id pretium arcu. Etiam sed mi pellentesque nibh scelerisque elementum sed at urna. Ut congue molestie nibh, sit amet pretium ligula consectetur eu. Integer consectetur augue justo, at placerat erat posuere at. Ut elementum urna lectus, vitae bibendum neque pulvinar quis. Suspendisse vulputate cursus eros id maximus. Duis pulvinar facilisis massa, et condimentum est viverra congue. Curabitur ornare convallis nisl. Morbi dictum scelerisque turpis quis pellentesque. Etiam lectus risus, luctus lobortis risus ut, rutrum vulputate justo. Nulla facilisi.</p>
-<p>Proin sodales neque erat, varius cursus diam tincidunt sit amet. Etiam scelerisque fringilla nisl eu venenatis. Donec sem ipsum, scelerisque ac venenatis quis, hendrerit vel mauris. Praesent semper erat sit amet purus condimentum, sit amet auctor mi feugiat. In hac habitasse platea dictumst. Nunc ac mauris in massa feugiat bibendum id in dui. Praesent accumsan urna at lacinia aliquet. Proin ultricies eu est quis pellentesque. In vel lorem at nisl rhoncus cursus eu quis mi. In eu rutrum ante, quis placerat justo. Etiam euismod nibh nibh, sed elementum nunc imperdiet in. Praesent gravida nunc vel odio lacinia, at tempus nisl placerat. Aenean id ipsum sed est sagittis hendrerit non in tortor.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-<p>Nunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti.</p>
-<p>Etiam maximus accumsan gravida. Maecenas at nunc dignissim, euismod enim ac, bibendum ipsum. Maecenas vehicula velit in nisl aliquet ultricies. Nam eget massa interdum, maximus arcu vel, pretium erat. Maecenas sit amet tempor purus, vitae aliquet nunc. Vivamus cursus urna velit, eleifend dictum magna laoreet ut. Duis eu erat mollis, blandit magna id, tincidunt ipsum. Integer massa nibh, commodo eu ex vel, venenatis efficitur ligula. Integer convallis lacus elit, maximus eleifend lacus ornare ac. Vestibulum scelerisque viverra urna id lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean eget enim at diam bibendum tincidunt eu non purus. Nullam id magna ultrices, sodales metus viverra, tempus turpis.</p>
-<p>Duis ornare ex ac iaculis pretium. Maecenas sagittis odio id erat pharetra, sit amet consectetur quam sollicitudin. Vivamus pharetra quam purus, nec sagittis risus pretium at. Nullam feugiat, turpis ac accumsan interdum, sem tellus blandit neque, id vulputate diam quam semper nisl. Donec sit amet enim at neque porttitor aliquet. Phasellus facilisis nulla eget placerat eleifend. Vestibulum non egestas eros, eget lobortis ipsum. Nulla rutrum massa eget enim aliquam, id porttitor erat luctus. Nunc sagittis quis eros eu sagittis. Pellentesque dictum, erat at pellentesque sollicitudin, justo augue pulvinar metus, quis rutrum est mi nec felis. Vestibulum efficitur mi lorem, at elementum purus tincidunt a. Aliquam finibus enim magna, vitae pellentesque erat faucibus at. Nulla mauris tellus, imperdiet id lobortis et, dignissim condimentum ipsum. Morbi nulla orci, varius at aliquet sed, facilisis id tortor. Donec ut urna nisi.</p>
-<p>Aenean placerat luctus tortor vitae molestie. Nulla at aliquet nulla. Sed efficitur tellus orci, sed fringilla lectus laoreet eget. Vivamus maximus quam sit amet arcu dignissim, sed accumsan massa ullamcorper. Sed iaculis tincidunt feugiat. Nulla in est at nunc ultricies dictum ut vitae nunc. Aenean convallis vel diam at malesuada. Suspendisse arcu libero, vehicula tempus ultrices a, placerat sit amet tortor. Sed dictum id nulla commodo mattis. Aliquam mollis, nunc eu tristique faucibus, purus lacus tincidunt nulla, ac pretium lorem nunc ut enim. Curabitur eget mattis nisl, vitae sodales augue. Nam felis massa, bibendum sit amet nulla vel, vulputate rutrum lacus. Aenean convallis odio pharetra nulla mattis consequat.</p>
-<p>Ut ut condimentum augue, nec eleifend nisl. Sed facilisis egestas odio ac pretium. Pellentesque consequat magna sed venenatis sagittis. Vivamus feugiat lobortis magna vitae accumsan. Pellentesque euismod malesuada hendrerit. Ut non mauris non arcu condimentum sodales vitae vitae dolor. Nullam dapibus, velit eget lacinia rutrum, ipsum justo malesuada odio, et lobortis sapien magna vel lacus. Nulla purus neque, hendrerit non malesuada eget, mattis vel erat. Suspendisse potenti.</p>
-<p>Nullam dapibus cursus dolor sit amet consequat. Nulla facilisi. Curabitur vel nulla non magna lacinia tincidunt. Duis porttitor quam leo, et blandit velit efficitur ut. Etiam auctor tincidunt porttitor. Phasellus sed accumsan mi. Fusce ut erat dui. Suspendisse eu augue eget turpis condimentum finibus eu non lorem. Donec finibus eros eu ante condimentum, sed pharetra sapien sagittis. Phasellus non dolor ac ante mollis auctor nec et sapien. Pellentesque vulputate at nisi eu tincidunt. Vestibulum at dolor aliquam, hendrerit purus eu, eleifend massa. Morbi consectetur eros id tincidunt gravida. Fusce ut enim quis orci hendrerit lacinia sed vitae enim.</p>
-<p>Nulla eget cursus ipsum. Vivamus porttitor leo diam, sed volutpat lectus facilisis sit amet. Maecenas et pulvinar metus. Ut at dignissim tellus. In in tincidunt elit. Etiam vulputate lobortis arcu, vel faucibus leo lobortis ac. Aliquam erat volutpat. In interdum orci ac est euismod euismod. Nunc eleifend tristique risus, at lacinia odio commodo in. Sed aliquet ligula odio, sed tempor neque ultricies sit amet.</p>
-<p>Etiam quis tortor luctus, pellentesque ante a, finibus dolor. Phasellus in nibh et magna pulvinar malesuada. Ut nisl ex, sagittis at sollicitudin et, sollicitudin id nunc. In id porta urna. Proin porta dolor dolor, vel dapibus nisi lacinia in. Pellentesque ante mauris, ornare non euismod a, fermentum ut sapien. Proin sed vehicula enim. Aliquam tortor odio, vestibulum vitae odio in, tempor molestie justo. Praesent maximus lacus nec leo maximus blandit.</p>
-<p>Maecenas turpis velit, ultricies non elementum vel, luctus nec nunc. Nulla a diam interdum, faucibus sapien viverra, finibus metus. Donec non tortor diam. In ut elit aliquet, bibendum sem et, aliquam tortor. Donec congue, sem at rhoncus ultrices, nunc augue cursus erat, quis porttitor mauris libero ut ex. Nullam quis leo urna. Donec faucibus ligula eget pellentesque interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus interdum erat ut ultricies. Aenean tempus ex non elit suscipit, quis dignissim enim efficitur. Proin laoreet enim massa, vitae laoreet nulla mollis quis.</p>
-<p>Vestibulum ultrices, tortor at mattis porta, odio nisi rutrum nulla, sit amet tincidunt eros quam facilisis tellus. Fusce eleifend lectus in elementum lacinia. Nam auctor nunc in massa ullamcorper, sit amet auctor ante accumsan. Nam ut varius metus. Curabitur eget tristique leo. Cras finibus euismod erat eget elementum. Integer vel placerat ex. Ut id eros quis lectus lacinia venenatis hendrerit vel ante.</p>
+<section id="errores-de-programación" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="errores-de-programación"><span class="header-section-number">6.1</span> Errores de programación</h2>
+<p>Apenas iniciemos nuestro camino en el mundo de la programación nos daremos cuenta que tendremos siempre ciertos compañeros de viaje: los <em>errores</em>. Muchas veces nos pasará que queremos ejecutar nuestro código y el mismo no anda o no produce el resultado esperado. No importa cuán cuidadosos seamos, ni cuánta experiencia tengamos, los errores están siempre presentes. Con el tiempo y práctica, vamos a poder identificarlos y corregirlos con mayor facilidad, pero probablemente nunca dejemos de cometerlos.</p>
+<p>A los errores en programación se los suele llamar <em>bugs</em> (insecto o bicho en inglés) y el proceso de la corrección de los mismos se conoce como <em>debugging</em> (depuración)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Se dice que esta terminología proviene de 1947, cuando una computadora en la Universidad de Harvard (la <em>Mark II</em>) dejó de funcionar y finalmente se descubrió que la causa del problema era la presencia de una polilla en un relé electromagnético de la máquina. Sin embargo, otros historiadores sostienen que el término ya se usaba desde antes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../imagenes/teoria_unidad_1/First_Computer_Bug.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="La polilla (bug) encontrada por la científica de la computación Grace Hooper en la Mark II fue pegada con cinta en un reporte sobre el malfuncionamiento de la máquina."><img src="../imagenes/teoria_unidad_1/First_Computer_Bug.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="La polilla (bug) encontrada por la científica de la computación Grace Hooper en la Mark II fue pegada con cinta en un reporte sobre el malfuncionamiento de la máquina."></a></p>
+</figure>
+</div>
+<figcaption>La polilla (bug) encontrada por la científica de la computación Grace Hooper en la Mark II fue pegada con cinta en un reporte sobre el malfuncionamiento de la máquina.</figcaption>
+</figure>
+</div>
+<p>A continuación se presenta una clasificación de los errores que se pueden cometer en programación:</p>
+<ul>
+<li><p><em>Errores de sintaxis</em>. Tal como el lenguaje humano, los lenguajes de programación tienen su propio vocabulario y su propia sintaxis, que es el conjunto de reglas gramaticales que establecen cómo se pueden combinar las distintas partes. Estas reglas sintácticas determinan que ciertas instrucciones están correctamente construidas, mientras que otras no. Cuando ejecutamos un programa, se chequea si el mismo es sintácticamente correcto. Si hemos violado alguna regla, por ejemplo, nos faltó una coma o nos sobra un paréntesis, mostrará un mensaje de error y debemos editar nuestro programa para corregirlo. En estos casos, hay que interpretar el mensaje de error, revisar el código y corregir el error.</p></li>
+<li><p><em>Errores lógicos</em>. Se presentan cuando el programa no tiene errores de sintaxis pero arroja resultados incorrectos o ningún resultado. El software no muestra mensajes de error, debido a que, por supuesto, no sabe cuál es el resultado deseado, sino que sólo se limita a hacer lo que hemos programado. En estos casos hay que revisar el programa para encontrar algún error en su lógica. Este tipo de errores suelen ser los más problemáticos. Algunas ideas para enfrentarlos incluyen volver a pensar paso por paso lo que se debería hacer para solucionar el problema y compararlo con lo que se ha programado, agregar pasos para mostrar resultados intermedios o emplear herramientas especializadas de <em>debugging</em> (llamadas <em>debuggers</em>) para explorar el código paso a paso hasta identificar el error.</p></li>
+<li><p><em>Errores en la ejecución</em> (<em>runtime errors</em>). Se presentan cuando el programa está bien escrito, sin errores lógicos ni sintácticos, pero igualmente se comporta de alguna forma incorrecta. Se dan a pesar de que el programa ande bien en el entorno de desarrollo del programador, pero no cuando algún usuario lo utiliza en algún contexto particular. Puede ser que se intente abrir un archivo que no existe, que el proceso supere la memoria disponible, que tomen lugar operaciones aritméticas no definidas como la división por cero, etc.</p></li>
+</ul>
+<p>Los errores en la programación son tan comunes, que un científico de la computación muy reconocido, Edsger Dijkstra, dijo una vez: “si la depuración es el proceso de eliminar errores, entonces la programación es el proceso de generarlos”. Ante la presencia de uno, no hay más que respirar profundo y con paciencia revisar hasta encontrarlo y solucionarlo.</p>
+</section>
+<section id="guías-de-estilo" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="guías-de-estilo"><span class="header-section-number">6.2</span> Guías de estilo</h2>
+<p>Es sumamente importante mantener la prolijidad en la escritura tanto del pseudocódigo como de los programas, para facilitar la lectura de los mismos, especialmente cuando estamos trabajando con problemas largos. Siempre hay que tener en cuenta de que cuando escribimos un programa, tenemos dos públicos potenciales: integrantes de nuestro equipo de trabajo que tienen leer el código y hacer sus propios aportes y nosotros mismos en el futuro, cuando retomemos código hecho en el pasado y necesitemos interpretar qué es lo que hicimos hacer.</p>
+<p>Es por eso que se establecen conjuntos de reglas para controlar y unificar la forma de escribir programas, que se conocen como <strong>guía de estilo</strong>. Estas reglas cubren aspectos como, por ejemplo, la forma de escribir comentarios en el código, la utilización de espacios o renglones en blanco, el formato de los nombres para los elementos que creamos nosotros mismos (como las funciones) y para los archivos que generamos, etc. Una <em>guía de estilo</em> no indica la única forma de escribir código, ni siquiera la forma correcta de hacerlo, sino que establece una convención para que todos trabajen de la misma forma, basándose en costumbres que sí se ha visto que pueden tener más ventajas que otras.</p>
+<p>Para programar en R existe una guía de estilo muy popular llamada <a href="https://style.tidyverse.org/">The tidyverse style guide</a>, creada por los desarrolladores de RStudio (Posit). En este curso vamos a adherir a sus recomendaciones. Si bien es una lectura muy interesante, particularmente si tenés intenciones de profundizar tus conocimientos sobre programación en R, no es necesario que lean dicha guía completa. Por ahora es suficiente con que imiten con atención el estilo que usamos en los ejemplos provistos en esta guía y sigan algunas recomendaciones generales como las siguientes:</p>
+<ul>
+<li><p>Como dijimos antes, escribimos nos los nombres de nuevos objetos con <em>snake case</em> y en minúscula:</p>
+<ul>
+<li>Ok: <code>mi_objeto</code>.</li>
+<li>Evitar: <code>MIOBJETO</code>, <code>miObjeto</code>.</li>
+</ul></li>
+<li><p>En R los espacios en blanco son ignorados, colocarlos o no no produce errores en el código. Sin embargo, se recomienda hacer uso de los mismos para facilitar la lectura. Se sugiere colocar espacios alrededor del operador de asignación <code>&lt;-</code> y de los operadores matemáticos (excepto la potencia). No colocamos espacio después de abrir o antes de cerrar un paréntesis.</p>
+<ul>
+<li>Ok: <code>z &lt;- (a + b)^2 / d</code></li>
+<li>Evitar: <code>z&lt;-( a + b ) ^ 2/d</code></li>
+</ul></li>
+<li><p>Usamos un espacio después de poner una coma y entre el signo igual que se usa para definir argumentos en una función:</p>
+<ul>
+<li>Ok: <code>log(100, base = 10)</code></li>
+<li>Evitar: <code>log(100 ,base=10)</code></li>
+</ul></li>
+<li><p>Los nombres de archivo deben describir su contenido y evitar espacios, símbolos y caracteres especiales, y preferentemente estar escritos en minúsculas.</p>
+<ul>
+<li>Ok: <code>analisis_exploratorio.R</code></li>
+<li>Evitar: <code>Análisis exploratorio.R</code>, <code>codigo.r</code></li>
+</ul></li>
+</ul>
+<p>Recordemos siempre que seguir un buen estilo para programar es como hacer uso de una correcta puntuación cuando escribimos, podemos entendernos sin ella, peroesmuchomasdificilleersinolarespetamosno?<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+</section>
+<section id="paquetes-de-r" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="paquetes-de-r"><span class="header-section-number">6.3</span> Paquetes de R</h2>
+<section id="diseño-del-sistema-r" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="diseño-del-sistema-r"><span class="header-section-number">6.3.1</span> Diseño del sistema R</h3>
+<p>R está diseñado como un sistema modular, dividido en dos partes principales:</p>
+<ul>
+<li><p><strong>R Base</strong>: Se instala automáticamente cuando descargamos R desde <a href="https://cran.r-project.org">CRAN</a> (Comprehensive R Archive Network). Incluye las funciones fundamentales del lenguaje, como operadores matemáticos, herramientas para manipular datos y funciones estadísticas básicas.</p></li>
+<li><p><strong>Paquetes adicionales</strong>: Son extensiones opcionales que amplían las funcionalidades de R. Cada paquete es un conjunto de funciones y datos diseñados para tareas específicas, como visualización de datos, modelado estadístico o manipulación avanzada de estructuras de datos.</p></li>
+</ul>
+</section>
+<section id="instalación-de-paquetes" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="instalación-de-paquetes"><span class="header-section-number">6.3.2</span> Instalación de paquetes</h3>
+<p>Para utilizar un paquete en R, primero debemos instalarlo. La mayoría de los paquetes están disponibles en CRAN y, teniendo conexión a internet, se pueden descargar directamente con el siguiente comando:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"nombre-del-paquete"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esto descargará e instalará el paquete en la computadora, permitiéndolo usarlo en futuras sesiones.</p>
+</section>
+<section id="carga-de-paquetes" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="carga-de-paquetes"><span class="header-section-number">6.3.3</span> Carga de paquetes</h3>
+<p>Después de instalar un paquete, es necesario <strong>cargarlo en la sesión de R</strong> para poder utilizar sus funciones. Es como abrirlo para sacar las funciones que están guardadas dentro. Para hacerlo, usamos la función <code>library()</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"nombre-del-paquete"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si intentás usar una función de un paquete sin haberlo cargado previamente, R mostrará un error indicando que el objeto no fue encontrado.</p>
+<p>Es importante recordar que <strong>la instalación de un paquete solo se hace una vez</strong>, pero <strong>debemos cargarlo en cada nueva sesión de R</strong> en la que queramos utilizarlo. Cuando cerramos RStudio, los paquetes se descargan de la memoria, por lo que es necesario volver a llamarlos con <code>library()</code> la próxima vez que los necesitemos.</p>
+<p>Este sistema modular permite que R sea altamente flexible, permitiendo a los usuarios instalar solo las herramientas que realmente necesitan para sus análisis.</p>
+</section>
+<section id="creación-de-paquetes-en-r" class="level3" data-number="6.3.4">
+<h3 data-number="6.3.4" class="anchored" data-anchor-id="creación-de-paquetes-en-r"><span class="header-section-number">6.3.4</span> Creación de paquetes en R</h3>
+<p>Los paquetes en R no solo son desarrollados por expertos en estadística y computación, sino también por cualquier persona que quiera compartir herramientas útiles con la comunidad. Investigadores, analistas de datos y programadores contribuyen a la expansión del ecosistema de R creando paquetes que facilitan tareas específicas.</p>
+<p>Si bien algunos paquetes pueden ser muy sofisticados, la creación de uno no es algo exclusivo de grandes desarrolladores. De hecho, al finalizar esta materia, contarás con los conocimientos necesarios para construir tu propio paquete desde cero. Esto te permitirá organizar y compartir funciones de manera eficiente, facilitando su reutilización en distintos proyectos.</p>
+</section>
+<section id="paquetes-utilizados-en-esta-materia" class="level3" data-number="6.3.5">
+<h3 data-number="6.3.5" class="anchored" data-anchor-id="paquetes-utilizados-en-esta-materia"><span class="header-section-number">6.3.5</span> Paquetes utilizados en esta materia</h3>
+<p>Como estaremos aprendiendo nociones de programación, no necesitaremos usar paquetes adicionales en el contexto de esta asignatura, pero sí usarás muchos en otras materias.</p>
 
 
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Algunos usan el término bug para referirse exclusivamente a errores lógicos<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Frase tomada de <a href="https://r4ds.hadley.nz/workflow-style.html">acá</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -1044,13 +1186,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../capitulos/01_e_ejemplo_ambientes.html" class="pagination-link" aria-label="Ejemplos de cuadritos">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ejemplos de cuadritos</span></span>
+      <a href="../capitulos/01_e_organizacion.html" class="pagination-link" aria-label="Organización de archivos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Organización de archivos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../capitulos/01_practica.html" class="pagination-link" aria-label="Práctica de la Unidad 1">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Práctica de la Unidad 1</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../capitulos/01_g_opcional.html" class="pagination-link" aria-label="Lectura opcional">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lectura opcional</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1062,12 +1204,44 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Developed by Marcos Prunello</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/mpru/programacion1/edit/main/capitulos/01_f_ejemplo_texto.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/mpru/programacion1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/mpru/programacion1/blob/main/capitulos/01_f_ejemplo_texto.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/mpru/programacion1/edit/main/capitulos/01_f_errores_estilo_paquetes.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/mpru/programacion1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/mpru/programacion1/blob/main/capitulos/01_f_errores_estilo_paquetes.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

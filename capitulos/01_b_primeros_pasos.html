@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -41,8 +75,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-20e9d0d635e68321e0b6852ba7bd5d22.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-b46e47818598c0ec4d6624ecafab20ba.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c0d33cdaf350d5d408aab8c6a2ada2ea.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-83123365b82d3e0a114b8a4caf34d831.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,6 +108,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../webexercises/webex.css">
 </head>
@@ -138,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/01_a_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Programación: de qué se trata y para qué nos sirve</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Programación</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -150,31 +216,37 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/01_c_objetos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Objetos, ambiente y operadores</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Objetos y ambiente</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/01_d_varios.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Otras nociones fundamentales sobre R</span></span></a>
+  <a href="../capitulos/01_d_operadores.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operadores</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/01_e_ejemplo_ambientes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ejemplos de cuadritos</span></span></a>
+  <a href="../capitulos/01_e_organizacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Organización de archivos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/01_f_ejemplo_texto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ejemplo con mucho texto para ver el PDF</span></span></a>
+  <a href="../capitulos/01_f_errores_estilo_paquetes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Errores de programación, guías de estilo y paquetes de R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../capitulos/01_g_opcional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lectura opcional</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/01_practica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Práctica de la Unidad 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Práctica de la Unidad 1</span></span></a>
   </div>
 </li>
       </ul>
@@ -182,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../capitulos/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad 2. Nombre de la unidad.</span></a>
+ <span class="menu-text">Unidad 2. Estructuras de control</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -191,19 +263,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/02_a_algo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Primera sección de la Unidad 2</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../capitulos/webexercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ejemplos para crear “Webexercises”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../capitulos/02_practica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Práctica de la Unidad 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Primer capítulo de la Unidad 2</span></span></a>
   </div>
 </li>
       </ul>
@@ -220,7 +280,24 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/90_soluciones_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 1</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Apéndices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../capitulos/99_bibliografia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
       </ul>
@@ -230,8 +307,25 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#r-y-rstudio" id="toc-r-y-rstudio" class="nav-link active" data-scroll-target="#r-y-rstudio"><span class="header-section-number">2.1</span> R y RStudio</a></li>
+  <li><a href="#instalación" id="toc-instalación" class="nav-link" data-scroll-target="#instalación"><span class="header-section-number">2.2</span> Instalación</a></li>
+  <li><a href="#paneles-de-rstudio" id="toc-paneles-de-rstudio" class="nav-link" data-scroll-target="#paneles-de-rstudio"><span class="header-section-number">2.3</span> Paneles de RStudio</a></li>
+  <li><a href="#uso-de-la-consola-de-r" id="toc-uso-de-la-consola-de-r" class="nav-link" data-scroll-target="#uso-de-la-consola-de-r"><span class="header-section-number">2.4</span> Uso de la consola de R</a></li>
+  <li><a href="#sec-scripts" id="toc-sec-scripts" class="nav-link" data-scroll-target="#sec-scripts"><span class="header-section-number">2.5</span> Archivos de código o <em>scripts</em></a>
+  <ul class="collapse">
+  <li><a href="#crear-un-script" id="toc-crear-un-script" class="nav-link" data-scroll-target="#crear-un-script"><span class="header-section-number">2.5.1</span> Crear un script</a></li>
+  <li><a href="#escribir-código-y-guardar-el-script" id="toc-escribir-código-y-guardar-el-script" class="nav-link" data-scroll-target="#escribir-código-y-guardar-el-script"><span class="header-section-number">2.5.2</span> Escribir código y guardar el script</a></li>
+  <li><a href="#ejecutar-código-desde-un-script" id="toc-ejecutar-código-desde-un-script" class="nav-link" data-scroll-target="#ejecutar-código-desde-un-script"><span class="header-section-number">2.5.3</span> Ejecutar código desde un script</a></li>
+  <li><a href="#comentarios-en-el-código" id="toc-comentarios-en-el-código" class="nav-link" data-scroll-target="#comentarios-en-el-código"><span class="header-section-number">2.5.4</span> Comentarios en el código</a></li>
+  </ul></li>
+  <li><a href="#funciones" id="toc-funciones" class="nav-link" data-scroll-target="#funciones"><span class="header-section-number">2.6</span> Funciones</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/mpru/programacion1/edit/main/capitulos/01_b_primeros_pasos.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/mpru/programacion1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/mpru/programacion1/blob/main/capitulos/01_b_primeros_pasos.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -255,12 +349,327 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="en-construccion">
-<p>Página en construcción.</p>
+<div class="presentacion-capitulo">
+<p>En este capítulo daremos nuestros primeros pasos con R y RStudio, una interfaz que simplica el uso de este lenguaje de programación. Conoceremos sus características y veremos cómo instalar ambos softwares. Aprenderemos a ejecutar comandos en la consola, escribir y guardar código en <em>scripts</em>, y utilizaremos nuestras primeras funciones en R. Estos conceptos sentarán las bases para programar de manera organizada y eficiente en los próximos capítulos.</p>
 </div>
-<p>uso general de R y RStudio, scripts,, funciones</p>
+<section id="r-y-rstudio" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="r-y-rstudio"><span class="header-section-number">2.1</span> R y RStudio</h2>
+<p>Si bien R será nuestro medio de comunicación con la computadora, vamos a usarlo a través de otro programa que brinda algunas herramientas para facilitar nuestro trabajo de programación, es decir, vamos a usar un <strong>entorno integrado de desarrollo</strong> (o <em>IDE</em>, por <em>integrated development environment</em>). Un IDE es un programa que hace que la codificación sea más sencilla porque permite manejar varios archivos de código, visualizar el <em>ambiente</em> de trabajo, utilizar resaltado con colores para distintas partes del código, emplear autocompletado para escribir más rápido, explorar páginas de ayuda, implementar estrategias de depuración e incluso intercalar la ejecución de instrucciones con la visualización de los resultados mientras avanzamos en el análisis o solución del problema. El IDE más popularmente empleado para programar con R es <strong>RStudio</strong>.</p>
+</section>
+<section id="instalación" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="instalación"><span class="header-section-number">2.2</span> Instalación</h2>
+<p>Para instalar estos programas, se deben visitar las páginas oficiales de <a href="https://www.r-project.org/">R</a> y de <a href="https://posit.co/">RStudio</a>, descargar los instaladores y ejecutarlos. En <a href="https://github.com/ee-unr/programacion-1/blob/main/archivos/instalacion_r_rstudio.pdf">este documento</a> encontrarás una guía paso a paso, o también podés mirar <a href="https://www.youtube.com/watch?v=hbgzW3Cvda4">este video</a> con las indicaciones.</p>
+<p>Si experimentás algún problema con la instalación, hay una alternativa para que no pierdas tiempo hasta que los docentes puedan ayudarte a resolverlo. RStudio puede ser usado online sin que lo tengas que instalar. Sólo necesitás conexión a internet. Si necesitás usar esto porque la instalación falló, seguí las instrucciones de <a href="https://github.com/ee-unr/programacion-1/blob/main/archivos/posit_cloud.pdf">este archivo</a>.</p>
+</section>
+<section id="paneles-de-rstudio" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="paneles-de-rstudio"><span class="header-section-number">2.3</span> Paneles de RStudio</h2>
+<p>Cuando se abre RStudio se pueden visualizar tres paneles principales (<a href="#fig-rstudio" class="quarto-xref">Figura&nbsp;<span>2.1</span></a>):</p>
+<ul>
+<li><p>En el panel de la izquierda la pestaña más importante es <strong>Console</strong> (<em>consola</em>), que es donde se ejecutan las instrucciones de R en tiempo real. Es la ventana que usamos para comunicarnos con R. Ahí se escriben las instrucciones para que R las <em>evalúe</em> (también decimos, que las <em>ejecute</em> o <em>corra</em>) y también es el lugar donde se visualizan los resultados.</p></li>
+<li><p>En el panel de arriba a la derecha la pestaña más importante es <strong>Environment</strong> (<em>entorno</em> o <em>ambiente</em>), que se encarga de mostrar los elementos que tenemos a disposición para programar. Al inicio de la sesión de trabajo, se encuentra vacío.</p></li>
+<li><p>En el panel de abajo a la derecha, las pestañas más importantes son:</p>
+<ul>
+<li><strong>Files</strong>: explorador de archivos de la computadora.</li>
+<li><strong>Plots</strong>: ventana donde aparecen los gráficos si es que nuestro código produce alguno (no lo usaremos en este curso).</li>
+<li><strong>Packages</strong>: listado de los “paquetes” (herramientas adicionales) que tenemos instalados.</li>
+<li><strong>Help</strong>: manual de ayuda de R.</li>
+</ul></li>
+</ul>
+<p>Más adelante profundizaremos en el uso de estos componentes de RStudio.</p>
+<div id="fig-rstudio" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../imagenes/teoria_unidad_1/rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figura&nbsp;2.1: RStudio al abrirlo."><img src="../imagenes/teoria_unidad_1/rstudio.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.1: RStudio al abrirlo.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="uso-de-la-consola-de-r" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="uso-de-la-consola-de-r"><span class="header-section-number">2.4</span> Uso de la consola de R</h2>
+<p>La consola de R en RStudio permite ejecutar comandos de manera inmediata. Al presionar <code>Enter</code> las instrucciones escritas serán evaluadas, produciendo algún resultado. Por ejemplo, podemos escribir expresiones matemáticas sencillas, como la suma <code>1 + 2</code>. Para esto, tenemos que hacer clic en la última línea de la consola, al lado del indicador <code>&gt;</code> (llamado <em>prompt</em>), para asegurarnos que el cursor esté allí titilando. La presencia del <em>prompt</em> <code>&gt;</code> en esa última línea nos indica que R está preparado para recibir una nueva instrucción. Escribimos ahí la cuenta <code>1 + 2</code> y pulsamos <code>Enter</code> (<a href="#fig-cuenta" class="quarto-xref">Figura&nbsp;<span>2.2</span></a>).</p>
+<div id="fig-cuenta" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cuenta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../imagenes/teoria_unidad_1/cuenta.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figura&nbsp;2.2: Ejemplo de una primera instrucción de programación en: la suma entre 1 y 2."><img src="../imagenes/teoria_unidad_1/cuenta.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cuenta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.2: Ejemplo de una primera instrucción de programación en: la suma entre 1 y 2.
+</figcaption>
+</figure>
+</div>
+<p>El resultado o <strong>salida</strong> se ve inmediatamente debajo de la instrucción: se trata del número <code>3</code>, por supuesto. Antes aparece la anotación <code>[1]</code>, que indica que la primera y única línea de la salida muestra el primer y único resultado de la instrucción evaluada. En algunas operaciones, la salida está compuesta por muchos elementos y ocupa varias líneas. En ese caso R muestra un número entre corchetes al comienzo de cada línea de la salida, para darnos una idea de cuántos elementos nos está mostrando. Por ahora podemos ignorarlo.</p>
+<p>Probemos con más cálculos matemáticos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">*</span> <span class="dv">3</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span> <span class="sc">/</span> <span class="dv">4</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">^</span><span class="dv">2</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">-</span> (<span class="dv">2</span> <span class="sc">*</span> <span class="dv">9</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -15</code></pre>
+</div>
+</div>
+<div class="info">
+<p>A veces nos pasa que escribimos una instrucción de forma incompleta y presionamos <code>Enter</code>. En esta situación, la consola muestra al comienzo de la línea el símbolo <code>+</code>, señalando que falta “algo más” para que el comando esté completo y se pueda mostrar el resultado. Tenemos que completar lo que falta y presionar <code>Enter</code> otra vez, o presionar <code>Esc</code> para cancelar esa instrucción y que la consola vuelva a mostrar el <em>prompt</em> <code>&gt;</code>, indicando que podemos escribir el código de nuevo desde cero.</p>
+<p>En el siguiente ejemplo, en la consola escribí <code>100 /</code> y presioné <code>Enter</code> dos veces. Como la cuenta quedó incompleta, la consola muestra el <code>+</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">100</span> <span class="sc">/</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>La solución es apretar <code>Esc</code> para cancelar, o completar la instrucción:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">100</span> <span class="sc">/</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="dv">4</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25</code></pre>
+</div>
+</div>
+<p>Es importante reconocer que no podemos escribir una nueva instrucción en la consola cuando está el <code>+</code> porque algo de lo anterior quedó incompleto. Debemos solucionarlo, ver que aparezca otra vez el <code>&gt;</code> y entonces sí volver a escribir un comando.</p>
+<p>Por otro lado, si escribimos una instrucción que R no sabe interpretar o que presenta algún tipo de problema, la salida mostrará un mensaje de error. Por ejemplo, el símbolo para hacer divisiones es <code>/</code> y no <code>%</code>. Si lo usamos, pasa esto:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span> % <span class="dv">4</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in parse(text = input): &lt;text&gt;:1:5: unexpected input
+1: 100 % 4
+        ^</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-scripts" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="sec-scripts"><span class="header-section-number">2.5</span> Archivos de código o <em>scripts</em></h2>
+<p>Hasta ahora hemos usado la consola de R para ejecutar comandos de manera inmediata. Sin embargo, cuando trabajamos con tareas de programación más complejas, es importante <strong>guardar nuestro código</strong> para poder reutilizarlo, modificarlo y compartirlo. Para esto, usamos los <strong>scripts</strong>.</p>
+<div class="concepto">
+<p>Un <strong>archivo de código</strong> o <strong>script</strong> es un archivo de texto que contiene una serie de instrucciones de escritas en algún lenguaje de programación. En lugar de escribir y ejecutar los comandos uno por uno en la consola, podemos escribirlos en un script y ejecutarlos cuando sea necesario. Esto nos permite organizar mejor nuestro trabajo y evitar repetir tareas manualmente. A veces usamos el término <strong>programa</strong> como sinónimo de script.</p>
+</div>
+<p>El uso de scripts en lugar de escribir código directamente en la consola tiene varias ventajas:</p>
+<ul>
+<li><strong>Reproducibilidad</strong>: podemos volver a ejecutar nuestro programa sin necesidad de reescribirlo.<br>
+</li>
+<li><strong>Organización</strong>: podemos estructurar el código en secciones claras.<br>
+</li>
+<li><strong>Depuración</strong>: es más fácil detectar y corregir errores en un script que en la consola.</li>
+</ul>
+<section id="crear-un-script" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="crear-un-script"><span class="header-section-number">2.5.1</span> Crear un script</h3>
+<p>Para crear un nuevo script en RStudio podemos seguir algunas de estas opciones:</p>
+<ul>
+<li>Ir a <code>File &gt; New &gt; R Script</code>.</li>
+<li>Usar el atajo <code>Ctrl + Shift + N</code>.</li>
+<li>Hacer clic en el primer ícono de la barra de herramientas (hoja en blanco con signo +)</li>
+</ul>
+<p>El sector izquierdo de RStudio se subdivide en dos paneles: abajo queda la consola y arriba aparece el editor de scripts (<a href="#fig-script" class="quarto-xref">Figura&nbsp;<span>2.5</span></a>). Podemos crear o abrir más de un script a la vez, cada uno aparece como una pestaña de este panel.</p>
+<div id="fig-script" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-script-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../imagenes/teoria_unidad_1/editor_scripts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figura&nbsp;2.3: Código escrito en un nuevo script."><img src="../imagenes/teoria_unidad_1/editor_scripts.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-script-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.3: Código escrito en un nuevo script.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="escribir-código-y-guardar-el-script" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="escribir-código-y-guardar-el-script"><span class="header-section-number">2.5.2</span> Escribir código y guardar el script</h3>
+<p>Una vez creado el script, podemos escribir ahí todo nuestro código de R. Para no perder el trabajo debemos guardar este documento en nuestra computadora, con alguna de estas opciones:</p>
+<ul>
+<li>Ir a <code>File &gt; Save</code>.</li>
+<li>Usar el atajo <code>CTRL + S</code>.</li>
+<li>Usar el ícono de guardar en la barra de herramientas.</li>
+</ul>
+<p>La primera vez que guardamos el script recién creado, tendremos que elegir un nombre para el archivo y un lugar en la computadora para su ubicación. En el caso presentado en la <a href="#fig-guardado" class="quarto-xref">Figura&nbsp;<span>2.4</span></a>, elegimos el nombre “ejemplos”.</p>
+<div id="fig-guardado" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-guardado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../imagenes/teoria_unidad_1/guardado.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figura&nbsp;2.4: El nuevo script ha sido guardado bajo el nombre `ejemplos.R."><img src="../imagenes/teoria_unidad_1/guardado.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-guardado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.4: El nuevo script ha sido guardado bajo el nombre `ejemplos.R.
+</figcaption>
+</figure>
+</div>
+<p>Ahora la pestaña del editor de scripts muestra el nombre elegido para el archivo seguido por <code>.R</code>, es decir, vemos que dice: <code>ejemplos.R</code>. El nombre de un archivo informático se compone de dos partes: la <strong>raíz</strong> y la <strong>extensión</strong>. La raíz es el nombre principal que elegimos para identificar el archivo (<code>ejemplos</code>), mientras que la extensión es un sufijo separado por un punto que indica el tipo de archivo y con qué programas se puede abrir. Por ejemplo, los archivos de texto suelen tener la extensión <code>.txt</code>, las imágenes pueden ser <code>.jpg</code> o <code>.png</code> y las hojas de cálculo de Excel suelen ser <code>.xlsx</code>. En el caso de los scripts de R, la extensión es <code>.R</code>, lo que indica que el archivo contiene código en el lenguaje R y puede ser ejecutado dentro de RStudio o cualquier otro entorno compatible. Al guardar un archivo de código, se agrega automáticamente la extensión en el nombre y esto nos permite organizarlos adecuadamente y asegurarnos de que R los reconozca como archivos de código.</p>
+<div class="info">
+<p>Si buscamos el archivo recién creado en el Explorador de archivos de Windows, puede que en su nombre no se vea la extensión. Windows, por defecto, oculta las extensiones de los archivos, pero es posible mostrarlas siguiendo estos pasos:</p>
+<ol type="1">
+<li>Abrir el Explorador de archivos.</li>
+<li>Acceder a la configuración de vista:
+<ul>
+<li>En <strong>Windows 10 y 11</strong>, hacé clic en la pestaña <strong>Vista</strong> en la parte superior.<br>
+</li>
+<li>En <strong>Windows 11</strong>, si no ves la pestaña, haz clic en <strong>Ver &gt; Mostrar</strong>.<br>
+</li>
+</ul></li>
+<li>Activar la visualización de extensiones: marcá la opción <strong>“Extensiones de nombre de archivo”</strong>.</li>
+</ol>
+<p>Habilitar esta opción es útil para evitar confusiones entre tipos de archivos. Dos archivos diferentes pueden tener en su nombre la misma raíz, pero tratarse de distintas cosas porque tienen diferente extensión.</p>
+</div>
+<p>A medida que seguimos editando nuestro script de código agregando nuevas instrucciones de programación, es conveniente guardar frecuentemente los cambios añadidos.</p>
+</section>
+<section id="ejecutar-código-desde-un-script" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="ejecutar-código-desde-un-script"><span class="header-section-number">2.5.3</span> Ejecutar código desde un script</h3>
+<p>Escribir código en un script no lo ejecuta automáticamente. Para ejecutarlo, podemos:</p>
+<ul>
+<li>Seleccionar una o varias líneas del script y presionar <code>Ctrl + Enter</code> (Windows/Linux) o <code>Cmd + Enter</code> (Mac).</li>
+<li>Seleccionar una o varias líneas y hacer clic en el botón <code>Run</code> en la parte superior del editor.</li>
+</ul>
+<p>Si empleamos cualquiera de esas opciones sin tener líneas de código seleccionadas, se ejecutará una sola línea, aquella sobre la cual esté colocado el cursor.</p>
+<div id="fig-script" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-script-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../imagenes/teoria_unidad_1/ejecutar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figura&nbsp;2.5: Se han ejecutado las líneas seleccionadas del script. En la consola se ven los resultados."><img src="../imagenes/teoria_unidad_1/ejecutar.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-script-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.5: Se han ejecutado las líneas seleccionadas del script. En la consola se ven los resultados.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="comentarios-en-el-código" class="level3" data-number="2.5.4">
+<h3 data-number="2.5.4" class="anchored" data-anchor-id="comentarios-en-el-código"><span class="header-section-number">2.5.4</span> Comentarios en el código</h3>
+<p>En todo lenguaje de programación existe un carácter especial que, al ser colocado al comienzo de una línea de código, le indica al software que dicha línea no debe ser evaluada. Esto se utiliza para incluir <strong>comentarios</strong>, es decir, líneas escritas en español que ayudan a documentar lo que hace cada parte de nuestro programa. Los comentarios no afectan la ejecución del código y son fundamentales para hacer que nuestro trabajo sea comprensible para nosotros y otras personas. También sirven para marcar distintas partes del script. En R, los comentarios se escriben con el símbolo <code>#</code> (<a href="#fig-comentarios" class="quarto-xref">Figura&nbsp;<span>2.6</span></a>).</p>
+<div id="fig-comentarios" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-comentarios-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../imagenes/teoria_unidad_1/comentarios.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figura&nbsp;2.6: Comentarios en el script. Todo el contenido del script fue evaluado, por eso se ve también en la consola. Las líneas comentadas son ignoradas, sólo se muestran resultados para las demás."><img src="../imagenes/teoria_unidad_1/comentarios.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-comentarios-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.6: Comentarios en el script. Todo el contenido del script fue evaluado, por eso se ve también en la consola. Las líneas comentadas son ignoradas, sólo se muestran resultados para las demás.
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="funciones" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="funciones"><span class="header-section-number">2.6</span> Funciones</h2>
+<p>En los ejemplos anteriores hemos realizado algunas operaciones básicas, como sumas o multiplicaciones. Otros cálculos matemáticos requieren que usemos <strong>funciones</strong>. Por ejemplo, para calcular una raíz cuadrada debemos usar la función <code>sqrt</code> (del inglés <em>sq</em>uared <em>r</em>oo<em>t</em>):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">49</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+</div>
+<p>Usamos funciones como <code>sqrt</code> para pedirle a R que realice algún tipo de operación. Como resultado R nos devuelve cierta respuesta o información (“salida”).</p>
+<p>Las funciones están representadas por su nombre, seguido por los paréntesis <code>()</code>. Dentro de los paréntesis se colocan las porciones de información que queremos compartir con la función, que reciben el nombre de <strong>argumentos</strong> o <strong>parámetros</strong>. Una función puede depender de uno o más argumentos. Si hay más de uno, se separan con comas.</p>
+<p>Cuando usamos una función, generalmente se dice que la estamos <strong>llamando</strong>, <strong>invocando</strong> o <strong>corriendo</strong>. Por ejemplo, <em>corremos</em> la función <code>log</code> con el argumento <code>100</code>. Esta función calcula, por defecto, el logaritmo natural:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">100</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.60517</code></pre>
+</div>
+</div>
+<p>En este caso <code>100</code> representa un valor numérico que se pasa como argumento a la función para que la misma opere. Algunas funciones predefinidas en R pueden trabajar con más de un argumento, en cuyo caso hay que enumerarlos dentro de los paréntesis, separados con comas. Por ejemplo, si en lugar de calcular el logaritmo natural (cuya base es la constante matemática <span class="math inline">\(e\)</span>), queremos calcular un logaritmo en base 10, podemos hacer lo siguiente:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Logaritmo de 100 en base 10</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">100</span>, <span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p>¿Cómo sabemos que la función <code>log()</code> se puede usar de esa forma, con uno o dos argumentos, cambiando o no el valor de la base con respecto a la cual toma el logaritmo? Lo aprendemos al leer el manual de ayuda de R.</p>
+<p>Toda función de R viene con un instructivo que detalla cómo se usa, qué argumentos incluye y otras aclaraciones. Lo encontramos en la pestaña de Ayuda (<em>Help</em>) en el panel de abajo a la derecha en RStudio. Otras formas de abrir la página de ayuda sobre una función es correr en la consola alguna de estas sentencias:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(log)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>?log</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Esa página de ayuda tiene bastante información, porque reúne explicaciones sobre muchas funciones relacionadas con logaritmos y exponenciales, pero podemos detenernos en algunas partes más importantes (<a href="#fig-ayuda" class="quarto-xref">Figura&nbsp;<span>2.7</span></a>).</p>
+<div id="fig-ayuda" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ayuda-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../imagenes/teoria_unidad_1/ayuda.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figura&nbsp;2.7: Captura de pantalla de la ayuda sobre la función log()."><img src="../imagenes/teoria_unidad_1/ayuda.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ayuda-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.7: Captura de pantalla de la ayuda sobre la función <code>log()</code>.
+</figcaption>
+</figure>
+</div>
+<p>En la sección <em>Usage</em> (“uso”) descubrimos que la función <code>log()</code> puede usarse con dos argumentos: <code>x</code> y <code>base</code>. En la sección <em>Arguments</em> entendemos que <code>x</code> es el número al cual le vamos a sacar el logaritmo y <code>base</code> es la base con respecto a la cual se toma el logaritmo. Por eso, al correr <code>log(100, 10)</code>, estamos calculando el logaritmo de <code>x = 100</code> con <code>base = 10</code>.</p>
+<p>Vemos, además, una diferencia en la forma en que <code>x</code> y <code>base</code> aparecen en la descripción: <code>log(x, base = exp(1))</code>. Cuando un argumento tiene un signo <code>=</code> significa que tiene asignado un <strong>valor por defecto</strong> y que no es obligatorio usarlo. Por eso, cuando corremos <code>log(100)</code> estamos calculando el logaritmo de <code>x = 100</code> con la base elegida por R: <code>base = exp(1)</code>, que es la forma que tiene R de nombrar a la constante <span class="math inline">\(e = 2.718282...\)</span> (es el logaritmo natural). Si quiero cambiar la base, debo proveer un valor, por ejemplo, <code>log(100, 10)</code>. Por el contrario, el argumento <code>x</code> no tiene asignado un valor por default. Eso significa que obligatoriamente tenemos que proveer un valor para el mismo.</p>
+<p>R también permite usar una función escribiendo los nombres de los argumentos, lo cual muchas veces es muy esclarecedor, en especial cuando las funciones llevan muchos argumentos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="at">x =</span> <span class="dv">100</span>, <span class="at">base =</span> <span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p>Si escribimos los nombres de los parámetros explícitamente como en el caso anterior, podemos cambiar su orden, sin alterar el resultado:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="at">base =</span> <span class="dv">10</span>, <span class="at">x =</span> <span class="dv">100</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p>Si no escribimos los nombres, el orden importa. R hace corresponder los valores provistos con los argumentos presentados en la ayuda sobre la función, uno por uno, en orden:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Toma el logaritmo de x = 100 con base = 10</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">100</span>, <span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Toma el logaritmo de x = 10 con base = 100</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">10</span>, <span class="dv">100</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5</code></pre>
+</div>
+</div>
+<div class="ejemplo">
+<p>Presentamos los siguientes ejemplos a modo de resumen:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tres usos equivalentes de la función para obtener el </span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># logaritmo de x = 100 con base = 10:</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">100</span>, <span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="at">x =</span> <span class="dv">100</span>, <span class="at">base =</span> <span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="at">base =</span> <span class="dv">10</span>, <span class="at">x =</span> <span class="dv">100</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Si no indico la base, se toma el valor por defecto (logaritmo </span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co"># natural). Ambas expresiones son equivalentes:</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">100</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.60517</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="at">x =</span> <span class="dv">100</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.60517</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Si no indico el argumento obligatorio x, obtengo un error:</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="at">base =</span> <span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: argument "x" is missing, with no default</code></pre>
+</div>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -1032,13 +1441,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../capitulos/01_a_intro.html" class="pagination-link" aria-label="Programación: de qué se trata y para qué nos sirve">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Programación: de qué se trata y para qué nos sirve</span></span>
+      <a href="../capitulos/01_a_intro.html" class="pagination-link" aria-label="Programación">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Programación</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../capitulos/01_c_objetos.html" class="pagination-link" aria-label="Objetos, ambiente y operadores">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Objetos, ambiente y operadores</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../capitulos/01_c_objetos.html" class="pagination-link" aria-label="Objetos y ambiente">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Objetos y ambiente</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1050,12 +1459,44 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Developed by Marcos Prunello</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/mpru/programacion1/edit/main/capitulos/01_b_primeros_pasos.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/mpru/programacion1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/mpru/programacion1/blob/main/capitulos/01_b_primeros_pasos.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/mpru/programacion1/edit/main/capitulos/01_b_primeros_pasos.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/mpru/programacion1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/mpru/programacion1/blob/main/capitulos/01_b_primeros_pasos.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

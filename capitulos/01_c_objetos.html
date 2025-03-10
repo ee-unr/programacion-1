@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Objetos, ambiente y operadores – Programación 1</title>
+<title>3&nbsp; Objetos y ambiente – Programación 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../capitulos/01_d_varios.html" rel="next">
+<link href="../capitulos/01_d_operadores.html" rel="next">
 <link href="../capitulos/01_b_primeros_pasos.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -41,8 +75,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-20e9d0d635e68321e0b6852ba7bd5d22.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-b46e47818598c0ec4d6624ecafab20ba.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c0d33cdaf350d5d408aab8c6a2ada2ea.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-83123365b82d3e0a114b8a4caf34d831.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -84,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/01.html">Unidad 1. Introducción a la programación con R</a></li><li class="breadcrumb-item"><a href="../capitulos/01_c_objetos.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Objetos, ambiente y operadores</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/01.html">Unidad 1. Introducción a la programación con R</a></li><li class="breadcrumb-item"><a href="../capitulos/01_c_objetos.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Objetos y ambiente</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -138,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/01_a_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Programación: de qué se trata y para qué nos sirve</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Programación</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -150,31 +187,37 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/01_c_objetos.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Objetos, ambiente y operadores</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Objetos y ambiente</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/01_d_varios.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Otras nociones fundamentales sobre R</span></span></a>
+  <a href="../capitulos/01_d_operadores.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operadores</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/01_e_ejemplo_ambientes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ejemplos de cuadritos</span></span></a>
+  <a href="../capitulos/01_e_organizacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Organización de archivos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/01_f_ejemplo_texto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ejemplo con mucho texto para ver el PDF</span></span></a>
+  <a href="../capitulos/01_f_errores_estilo_paquetes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Errores de programación, guías de estilo y paquetes de R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../capitulos/01_g_opcional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lectura opcional</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/01_practica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Práctica de la Unidad 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Práctica de la Unidad 1</span></span></a>
   </div>
 </li>
       </ul>
@@ -182,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../capitulos/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unidad 2. Nombre de la unidad.</span></a>
+ <span class="menu-text">Unidad 2. Estructuras de control</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -191,19 +234,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/02_a_algo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Primera sección de la Unidad 2</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../capitulos/webexercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ejemplos para crear “Webexercises”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../capitulos/02_practica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Práctica de la Unidad 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Primer capítulo de la Unidad 2</span></span></a>
   </div>
 </li>
       </ul>
@@ -220,7 +251,24 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/90_soluciones_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 1</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Apéndices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../capitulos/99_bibliografia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
       </ul>
@@ -230,15 +278,31 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#objetos" id="toc-objetos" class="nav-link active" data-scroll-target="#objetos"><span class="header-section-number">3.1</span> Objetos</a></li>
+  <li><a href="#vectores-atómicos-de-r" id="toc-vectores-atómicos-de-r" class="nav-link" data-scroll-target="#vectores-atómicos-de-r"><span class="header-section-number">3.2</span> Vectores atómicos de R</a>
+  <ul class="collapse">
+  <li><a href="#doubles-dobles" id="toc-doubles-dobles" class="nav-link" data-scroll-target="#doubles-dobles"><span class="header-section-number">3.2.1</span> <em>Doubles</em> (dobles)</a></li>
+  <li><a href="#integers-enteros" id="toc-integers-enteros" class="nav-link" data-scroll-target="#integers-enteros"><span class="header-section-number">3.2.2</span> <em>Integers</em> (enteros)</a></li>
+  <li><a href="#characters-caracteres" id="toc-characters-caracteres" class="nav-link" data-scroll-target="#characters-caracteres"><span class="header-section-number">3.2.3</span> <em>Characters</em> (caracteres)</a></li>
+  <li><a href="#logicals-lógicos" id="toc-logicals-lógicos" class="nav-link" data-scroll-target="#logicals-lógicos"><span class="header-section-number">3.2.4</span> <em>Logicals</em> (lógicos)</a></li>
+  </ul></li>
+  <li><a href="#nombres-de-los-objetos" id="toc-nombres-de-los-objetos" class="nav-link" data-scroll-target="#nombres-de-los-objetos"><span class="header-section-number">3.3</span> Nombres de los objetos</a></li>
+  <li><a href="#actualizar-la-información-guardada-en-un-objeto" id="toc-actualizar-la-información-guardada-en-un-objeto" class="nav-link" data-scroll-target="#actualizar-la-información-guardada-en-un-objeto"><span class="header-section-number">3.4</span> Actualizar la información guardada en un objeto</a></li>
+  <li><a href="#ambiente" id="toc-ambiente" class="nav-link" data-scroll-target="#ambiente"><span class="header-section-number">3.5</span> Ambiente</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/mpru/programacion1/edit/main/capitulos/01_c_objetos.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/mpru/programacion1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/mpru/programacion1/blob/main/capitulos/01_c_objetos.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/01.html">Unidad 1. Introducción a la programación con R</a></li><li class="breadcrumb-item"><a href="../capitulos/01_c_objetos.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Objetos, ambiente y operadores</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/01.html">Unidad 1. Introducción a la programación con R</a></li><li class="breadcrumb-item"><a href="../capitulos/01_c_objetos.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Objetos y ambiente</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Objetos, ambiente y operadores</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Objetos y ambiente</span></h1>
 </div>
 
 
@@ -255,12 +319,277 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="en-construccion">
-<p>Página en construcción.</p>
+<div class="presentacion-capitulo">
+<p>En este capítulo exploramos los fundamentos de R como un lenguaje basado en <strong>objetos</strong>. Aprenderemos qué es un objeto, los diferentes tipos de datos que R maneja y cómo se organizan dentro de <strong>vectores atómicos</strong>. También veremos cómo crear nuevos objetos en R y cómo estos componenen al <strong>ambiente global</strong>. Estos conceptos son esenciales para trabajar de manera eficiente y comprender el comportamiento del lenguaje en futuras aplicaciones.</p>
 </div>
-<p>objetos, ambiente, tipos de datos, operadores</p>
+<section id="objetos" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="objetos"><span class="header-section-number">3.1</span> Objetos</h2>
+<p>Anteriormente usamos R para realizar cálculos matemáticos como:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">*</span> <span class="dv">6</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 30</code></pre>
+</div>
+</div>
+<p>Los operandos en ese cálculo y su resultado no están guardados en ningún lugar de nuestra computadora. Podríamos decir que lo que vemos ahí son las huellas de algunos números que existieron brevemente en la memoria de nuestra computadora pero ya desaparecieron. Si queremos usar ese resultado para realizar otro cálculo, tendremos que pedirle a R que calcule <code>5 * 6</code> de nuevo.</p>
+<p>Claramente, al resolver problemas complejos no podemos trabajar con resultados o valores efímeros. Tenemos que guardarlos en algún lugar para poder reutilizarlos. En R podemos hacer:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">6</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>En este caso que estamos analizando, <code>x</code> es un ejemplo de un <strong>objeto</strong> creado por nosotros.</p>
+<div class="concepto">
+<p>Los <strong>objetos</strong> son estructuras capaces de almacenar las distintas piezas de información, (o <em>datos</em>), que podemos manipular para resolver una tarea de programación. Dependiendo de las características de un objeto en particular, podemos hacer con él diferentes operaciones. Nuestro programa, a lo largo de su ejecución, va creando o modificando los objetos existentes.</p>
+</div>
+<p>Un nuevo objeto se crea con el <strong>operador de asignación</strong> (<code>&lt;-</code>, “operador flecha”). Como lo vamos a usar muchísimas veces, es conveniente recordar su atajo para escribirlo rápidamente con el teclado: <code>Alt + -</code> (teclas <code>Alt</code> y guión medio). De esta forma, informalmente la línea <code>x &lt;- 5 * 6</code> puede ser leída así: “creamos un objeto llamado <code>x</code> que contiene al resultado de la operación <code>5 * 6</code> (30)”.</p>
+<p>Una vez que almacenamos un valor en <code>x</code>, podemos utilizarlo en nuevos cálculos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">*</span> <span class="dv">100</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">80</span> <span class="sc">-</span> x</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 50</code></pre>
+</div>
+</div>
+<p>Hay distintos tipos de objetos, algunos con estructuras muy simples (como aquellos que sólo almacenan un único valor, al igual que <code>x</code> en el ejemplo) y otros mucho más complejos (como aquellos que sirven para representar conjuntos de datos completos o resultados de algún análisis). Cada lenguaje de programación propone su propio catálogo de tipos de objetos y cada programador puede crear otros tipos nuevos. Durante las primeras unidades sólo emplearemos el tipo de objeto más sencillo que R ofrece.</p>
+</section>
+<section id="vectores-atómicos-de-r" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="vectores-atómicos-de-r"><span class="header-section-number">3.2</span> Vectores atómicos de R</h2>
+<p>El <strong>tipo de objeto más simple y básico en R</strong> se llama <strong>vector atómico</strong> (<em>atomic vector</em>). De hecho, en el ejemplo, <code>x</code> es un vector atómico que hospeda un único valor numérico. En Matemática, la palabra “vector” hace referencia a un conjunto de números ordenados. Los vectores atómicos de R también pueden contener más de un valor, pero por ahora sólo consideraremos situaciones donde cada vector atómico contiene un sólo valor (como <code>x</code>). A los objetos que se usan para almacenar un solo valor a veces también se les dice <strong>variables</strong> (porque suele ocurrir que ese valor va cambiando a lo largo del programa).</p>
+<p>Un vector atómico puede guardar otras cosas además de números. R define seis tipos básicos de vectores atómicos dependiendo de cómo son los datos que guardan: <em>doubles</em>, <em>integers</em>, <em>characters</em>, <em>logicals</em>, <em>complex</em> y <em>raw</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Los últimos dos sirven para guardar números complejos y <em>bytes</em> en crudo, respectivamente y muy rara vez son usados para tareas de análisis de datos, por lo cual no los volveremos a nombrar. Vamos a ver a los otros, uno por uno.</p>
+<section id="doubles-dobles" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="doubles-dobles"><span class="header-section-number">3.2.1</span> <em>Doubles</em> (dobles)</h3>
+<p>Un vector atómico de tipo <em>double</em> almacena números reales (positivos o negativos, grandes o chicos, con decimales o sin decimales). Casi siempre que usamos números para analizar datos en R, empleamos este tipo de vector. Con estos objetos podemos realizar operaciones aritméticas comunes, como en los ejemplos que ya vimos antes.</p>
+<p>La función <code>typeof()</code> se usa para preguntar a R de qué tipo es un objeto:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+</div>
+</section>
+<section id="integers-enteros" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="integers-enteros"><span class="header-section-number">3.2.2</span> <em>Integers</em> (enteros)</h3>
+<p>Un vector atómico de tipo <em>integer</em> también almacena números, pero sólo números enteros. Muchos lenguajes de programación tratan a los números enteros de forma diferente al resto de los números porque utilizan estrategias especiales para almacenarlos en la memoria de la compu (ocupan menos espacio y su representación tiene mayor precisión).</p>
+<p>Para distinguir a los <em>integers</em> de los <em>doubles</em>, R los muestra con una <code>L</code> al costado. De hecho, podemos crear un vector atómico de tipo <em>integer</em> agregando la <code>L</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span>L</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(y)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "integer"</code></pre>
+</div>
+</div>
+<p>En aplicaciones de análisis de datos, es raro que los números con los que se trabaja sean sólo enteros, por lo que podemos prestarle poca atención a esto por ahora. Es bueno saber que existen, porque en algunas salidas a veces aparece esa <code>L</code> y ahora sabemos de qué se trata.</p>
+<p>En algunos contextos, R directamente les dice <em>numeric</em> tanto a los <em>doubles</em> como a los <em>integers</em>.</p>
+</section>
+<section id="characters-caracteres" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="characters-caracteres"><span class="header-section-number">3.2.3</span> <em>Characters</em> (caracteres)</h3>
+<p>Un vector atómico de tipo <em>character</em> almacena texto, es decir, una cadena de caracteres (una palabra o palabras). No es posible hacer operaciones matemáticas con este tipo de vector. Para crear un vector de tipo <em>character</em> debemos encerrar entre comillas el texto que será almacenado en él:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="st">"Hola, ¿cómo estás?"</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>z</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Hola, ¿cómo estás?"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(z)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+</div>
+</section>
+<section id="logicals-lógicos" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="logicals-lógicos"><span class="header-section-number">3.2.4</span> <em>Logicals</em> (lógicos)</h3>
+<p>Un vector atómico de tipo <em>logical</em> puede almacenar el valor lógico <code>TRUE</code> (verdadero) o el valor lógico <code>FALSE</code> (falso). Si bien es poco común que este tipo de valores aparezca de forma natural en conjuntos de datos a analizar, son sumamente importantes. Permiten hacer comparaciones y entender su resultado, así como también evaluar condiciones para decidir o no implementar algunas acciones en el proceso que estamos llevando adelante.</p>
+<p>Podemos crear un vector <em>logical</em> así:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>v</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(v)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "logical"</code></pre>
+</div>
+</div>
+<p>Notar que los valores lógicos no se escriben entre comillas, puesto que no son cadenas de texto. Tal vez crear vectores lógicos no es lo más común; es más frecuente que los valores lógicos surjan como resultado de algunas operaciones. Por ejemplo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&gt;</span> y</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&lt;</span> y</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.logical</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.logical</span>(v)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.numeric</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<div class="presentacion-capitulo">
+<p>¿Para qué necesitamos distintos tipos de vectores atómicos? Para poder establecer qué operaciones se pueden realizar con unos y otros, y que todo tenga sentido. Por ejemplo, podemos hacer sumas aritméticas con vectores numéricos pero no con vectores carácter:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se puede:</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>x <span class="sc">*</span> <span class="dv">100</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">+</span> y</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 31</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># No se puede:</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>x <span class="sc">+</span> z</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in x + z: non-numeric argument to binary operator</code></pre>
+</div>
+</div>
+</div>
+<div class="ejercicio">
+<p><strong>Seleccionar la respuesta correcta.</strong></p>
+<p>¿Cuál de los siguientes es un valor numérico?</p>
+<div id="radio_UCSZDANKPR" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_UCSZDANKPR" value=""> <span>“dos”</span></label><label><input type="radio" autocomplete="off" name="radio_UCSZDANKPR" value=""> <span>“2”</span></label><label><input type="radio" autocomplete="off" name="radio_UCSZDANKPR" value="answer"> <span>2</span></label>
+</div>
+<p>¿Cuál de los siguientes es un valor lógico?</p>
+<div id="radio_FQEBHGPNVE" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_FQEBHGPNVE" value="answer"> <span>FALSE</span></label><label><input type="radio" autocomplete="off" name="radio_FQEBHGPNVE" value=""> <span>“FALSE”</span></label>
+</div>
+</div>
+</section>
+</section>
+<section id="nombres-de-los-objetos" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="nombres-de-los-objetos"><span class="header-section-number">3.3</span> Nombres de los objetos</h2>
+<p>De manera general, al nombre de un objeto se le dice <strong>identificador</strong>, ya que se trata de secuencia de caracteres que sirve para identificarlo a lo largo de un programa. Nombrar los objetos hace posible referirse a los mismos. La elección de los identificadores es una tarea del programador, pero cada lenguaje tiene sus propias reglas. Por ejemplo, en R los nombres de los objetos:</p>
+<ul>
+<li>deben empezar con una letra o un punto (no pueden empezar con un número);</li>
+<li>sólo pueden contener letras, números, guiones bajos y puntos; y</li>
+<li>no se pueden usar las siguientes palabras como nombres, ya que son están reservadas por el lenguaje: <code>break</code>, <code>else</code>, <code>FALSE</code>, <code>for</code>, <code>function</code>, <code>if</code>, <code>Inf</code>, <code>NA</code>, <code>NaN</code>, <code>next</code>, <code>repeat</code>, <code>return</code>, <code>TRUE</code>, <code>while</code>.</li>
+</ul>
+<p>Es aconsejable elegir un nombre que sea representativo de la información que va a guardar el objeto, ya que esto facilita la lectura y la comprensión tanto del algoritmo como del programa. Por ejemplo, si se necesita un objeto para guardar el valor numérico del precio de algún producto, el identificador <code>p</code> sería una mala elección, mientras que <code>precio</code> sería mejor. Si se necesitan varios identificadores para distinguir los precios de diversos productos, podríamos usar algo como <code>precio_manzana</code>, <code>precio_banana</code>, etc.</p>
+<p>Por otro lado, no es posible usar como identificador a <code>precio manazana</code>, puesto que un nombre no puede tener espacios. Otra opción podría ser <code>preciomanzana</code> o <code>precioManzana</code>, pero en este curso seguimos la convención de usar guiones bajos para facilitar la lectura de nombres compuestos por más de una palabra (esto se conoce como <em>snake case</em>).</p>
+<p>Es importar que R distingue entre mayúsculas y minúsculas, por lo que <code>precio</code> y <code>Precio</code> pueden referirse a distintos objetos, con diferentes valores almacenados:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>precio <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>Precio <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>precio <span class="sc">+</span> Precio</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 17</code></pre>
+</div>
+</div>
+<p>No es aconsejable tener objetos cuyos nombres sólo difieran en mayúsculas o minúsculas como en el ejemplo anterior, puesto que sirve para confusión. En general, preferimos evitar usar mayúsculas.</p>
+</section>
+<section id="actualizar-la-información-guardada-en-un-objeto" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="actualizar-la-información-guardada-en-un-objeto"><span class="header-section-number">3.4</span> Actualizar la información guardada en un objeto</h2>
+<p>El valor guardado en un objeto puede cambiar en cualquier momento del programa. Además, podemos usar otros objetos para calcular el valor que será guardado. Por ejemplo, imaginemos que un programa contabiliza el stock disponible de un artículo en un comercio. Inicialmente había 43 artículos, pero en el día se vendieron 29 y se compraron otros 12 al proveedor para reponer. Al finalizar la jornada, para saber cuántos hay en stock hay que tomar la cantidad disponible original, restar la cantidad que se vendió y sumar la cantidad que se compró. El código podría lucir así:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>stock <span class="ot">&lt;-</span> <span class="dv">43</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>ventas <span class="ot">&lt;-</span> <span class="dv">29</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>compras <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>stock <span class="ot">&lt;-</span> stock <span class="sc">-</span> ventas <span class="sc">+</span> compras</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>stock</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 26</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Hay un stock de"</span>, stock, <span class="st">"artículos disponibles."</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hay un stock de 26 artículos disponibles.</code></pre>
+</div>
+</div>
+<div class="info">
+<p>En el ejemplo anterior usamos por primera vez la función <code>cat()</code> para emitir un mensaje, concatenando cadenas de texto encerradas entre comillas y el valor de una variable a la cual hacemos referencia por su nombre (<code>stock</code>).</p>
+</div>
+<p>El valor <code>43</code> que originalmente estaba guardado en <code>stock</code> se perdió para siempre en el preciso momento cuando se ejecutó la línea <code>stock &lt;- stock - ventas + compras</code>, que “sobrescribió” su valor. Es importante sobrescribir el valor de un objeto sólo si estamos seguros de que es lo correcto.</p>
+<p>También se debe tener en cuenta que podemos reemplazar el objeto representado con un nombre por otro de un tipo diferente, y a R no le va a molestar:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># x es un vector atómico de tipo numeric:</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 100</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ahora x pasa a ser un vector atómico de tipo caracter:</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">"hola"</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "hola"</code></pre>
+</div>
+</div>
+<p>Otros lenguajes no admiten este comportamiento. Por el contrario, requieren se “declare” el nombre y el tipo de cada objeto antes de ser usados y, si bien se puede actualizar su valor, éste siempre debe ser del mismo tipo. R es un <strong>lenguaje dinámico</strong> que no tiene este recaudo.</p>
+<div class="comentario">
+<p>Expresiones como “crear un objeto llamado <code>x</code> que contiene el valor <code>100</code>” o “sobreescribir, actualizar o reemplazar su valor” nos permiten imaginar lo que sucede y encarar tareas generales de programación en R, pero en realidad son formas simplificadas y poco precisas de describir procesos más complejos relacionados al funcionamiento de R. Estudiantes con experiencia en programación pueden opcionalmente referirse a <a href="https://adv-r.hadley.nz/names-values.html#names-values">este material</a> para leer más.</p>
+</div>
+</section>
+<section id="ambiente" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="ambiente"><span class="header-section-number">3.5</span> Ambiente</h2>
+<div class="concepto">
+<p>En R, un <strong>environment</strong> (<strong>entorno</strong> o <strong>ambiente</strong>) es un espacio donde se almacenan los objetos creados durante una sesión de trabajo. Se trata una estructura clave en la gestión de variables y funciones dentro de un programa.</p>
+</div>
+<p>Durante la evaluación de un programa coexisten muchos <em>environments</em>. Vamos a hablar un poco más de esto cuando aprendamos a crear nuevas funciones, pero en general podemos programar en R sin preocuparnos por este tema, que es bastante complejo y avanzado.</p>
+<p>Lo fundamental es saber que el conjunto de objetos que vamos creando en nuestro programa forman parte de un ambiente llamado <em>Global Environment</em> y es el que vemos en la pestaña <em>Environment</em> del panel superior derecho de RStudio (<a href="#fig-globalenv" class="quarto-xref">Figura&nbsp;<span>3.1</span></a>).</p>
+<div id="fig-globalenv" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-globalenv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../imagenes/teoria_unidad_1/ambiente.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figura&nbsp;3.1: Captura de pantalla del Global Environment."><img src="../imagenes/teoria_unidad_1/ambiente.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-globalenv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3.1: Captura de pantalla del <em>Global Environment</em>.
+</figcaption>
+</figure>
+</div>
+<p>También podemos ver en la consola un listado de todos los nombres de los objetos que existen en el ambiente con la función <code>ls()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "pandoc_dir"      "quarto_bin_path" "v"               "x"              
+[5] "y"               "z"              </code></pre>
+</div>
+</div>
+<p>Los objetos que aparecen listados en esta salida o en el panel <em>Environment</em> son los que podemos usar para programar, porque están disponibles en nuestro ambiente. Si por error queremos usar un objeto que aún no fue definido en el ambiente global, obtenemos un error así:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>w <span class="sc">*</span> <span class="dv">10</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: object 'w' not found</code></pre>
+</div>
+</div>
+<p>Si necesitamos borrar un objeto del ambiente global podemos usar <code>rm()</code> indicando como argumento el nombre del objeto a eliminar:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Si necesitamos borrar todos los objetos del ambiente podemos usar el ícono de la escoba en la pestaña <em>Environment</em> o ejecutar:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A pesar de que el ambiente nos muestre todos los objetos creados durante el trabajo o análisis, es fundamental que el código que los generó esté siempre escrito y guardado en un script. Con un script siempre es posible recrear el entorno de trabajo, pero si sólo tenemos los objetos en el ambiente, no podemos adivinar con qué código fueron creados. Para asegurar que nuestros scripts sean la referencia principal y es el respaldo de todo lo que se hace en un análisis de datos, se recomienda configurar RStudio para que no guarde automáticamente el ambiente cuando se cierra. Esto se logra yendo al menú <code>Tools &gt; Global Options</code> y estableciendo las opciones de configuración tal como se observa en la <a href="#fig-config" class="quarto-xref">Figura&nbsp;<span>3.2</span></a>. Aunque al principio puede resultar incómodo, ya que cada vez que reinicies RStudio deberás volver a ejecutar el código para generar tus objetos, esta práctica evita problemas a largo plazo. Dejar solo los resultados en el entorno sin registrar el código que los generó puede dificultar la reproducibilidad del análisis en el futuro.</p>
+<div id="fig-config" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-config-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../imagenes/teoria_unidad_1/opciones_rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figura&nbsp;3.2: Estas opciones garantizan que el ambiente de trabajo esté limpio cada vez que iniciamos RStudio."><img src="../imagenes/teoria_unidad_1/opciones_rstudio.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-config-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3.2: Estas opciones garantizan que el ambiente de trabajo esté limpio cada vez que iniciamos RStudio.
+</figcaption>
+</figure>
+</div>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Los nombramos en inglés puesto que esos son sus nombres formales.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -1037,8 +1366,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../capitulos/01_d_varios.html" class="pagination-link" aria-label="Otras nociones fundamentales sobre R">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Otras nociones fundamentales sobre R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../capitulos/01_d_operadores.html" class="pagination-link" aria-label="Operadores">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operadores</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1050,12 +1379,44 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Developed by Marcos Prunello</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/mpru/programacion1/edit/main/capitulos/01_c_objetos.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/mpru/programacion1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/mpru/programacion1/blob/main/capitulos/01_c_objetos.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/mpru/programacion1/edit/main/capitulos/01_c_objetos.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/mpru/programacion1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/mpru/programacion1/blob/main/capitulos/01_c_objetos.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

@@ -4,7 +4,37 @@
     "href": "index.html",
     "title": "Programación 1",
     "section": "",
-    "text": "Bienvenida\n\n\nPágina en construcción.",
+    "text": "Bienvenida",
+    "crumbs": [
+      "Bienvenida"
+    ]
+  },
+  {
+    "objectID": "index.html#hola",
+    "href": "index.html#hola",
+    "title": "Programación 1",
+    "section": "¡Hola!",
+    "text": "¡Hola!\nBienvenidos a este curso introductorio de programación para estudiantes de Estadística y Ciencia de Datos. A lo largo de estas páginas, nos embarcaremos en un recorrido que tiene como objetivo fundamental desarrollar habilidades de pensamiento algorítmico y resolución de problemas computacionales. Aprender a programar no es solo escribir código: implica descomponer problemas complejos en partes más pequeñas, identificar patrones, diseñar soluciones y comprender cómo una computadora ejecuta instrucciones paso a paso.\nEn este camino utilizaremos R, un lenguaje ampliamente utilizado en Estadística y Ciencia de Datos. Sin embargo, en este curso no nos enfocaremos en sus poderosas herramientas de modelado, manipulación de datos o visualización. Aprenderás de eso en otras asignaturas, como en Laboratorio de Datos 1. En su lugar, usaremos R como vehículo para aprender los principios esenciales de la programación. Por ejemplo, veremos cómo lograr que la computadora haga una división, cuando en realidad es algo sencillo que R o cualquier otro entorno ya lo sabe hacer. Este enfoque nos permitirá desarrollar habilidades fundamentales: estructurar código de manera ordenada, depurar errores con criterio, organizar proyectos de software y escribir funciones reutilizables. Aprenderemos a pensar como programadores, lo que no solo facilitará el uso posterior de herramientas más avanzadas, sino que también brindará una base sólida para afrontar nuevos lenguajes y paradigmas de programación.\nLa idea es que desarrollemos nuestro pensamiento lógico y algorítmico, mientras nos familiarizamos con el uso de nuestra computadora y archivos, con el objetivo de que salgas listo para seguir profundizando tus conocimientos, por ejemplo, en la asignatura Programación 2, donde usarás Python.\n¡Comencemos este viaje!",
+    "crumbs": [
+      "Bienvenida"
+    ]
+  },
+  {
+    "objectID": "index.html#estructura-del-libro",
+    "href": "index.html#estructura-del-libro",
+    "title": "Programación 1",
+    "section": "Estructura del libro",
+    "text": "Estructura del libro\nEste libro se organiza en unidades, cada una de las cuales se corresponde con una unidad del programa de la asignatura y está compuesta por capítulos que abordan un tema en particular. De vez en cuando se incluyen algunos elementos especiales, que están identificados de la siguiente forma:\n\nEsto es la presentación de una unidad o un capítulo.\n\n\nEsto es un ejemplo.\n\n\nEsto es un ejercicio.\n\n\nEsto es una definición.\n\n\nEsto es una idea fundamental para tener en cuenta.\n\n\nEsto es un comentario adicional, que puede ser considerado como secundario o dejado de lado.",
+    "crumbs": [
+      "Bienvenida"
+    ]
+  },
+  {
+    "objectID": "index.html#licencia",
+    "href": "index.html#licencia",
+    "title": "Programación 1",
+    "section": "Licencia",
+    "text": "Licencia\nEste libro adhiere a la licencia Creative Commons Attribution 4.0 International (CC BY 4.0). Esto significa que podés copiar, distribuir y adaptar este material libremente, incluso con fines comerciales, siempre que otorgues el crédito correspondiente a los autores originales. No se requieren permisos adicionales siempre que se cumplan estos términos.",
     "crumbs": [
       "Bienvenida"
     ]
@@ -14,7 +44,7 @@
     "href": "capitulos/00_info.html",
     "title": "Información general sobre la asignatura",
     "section": "",
-    "text": "Cursado\nModalidad, comisiones, horarios",
+    "text": "Programa\nEn este enlace podés consultar el programa para esta asignatura.",
     "crumbs": [
       "Información general sobre la asignatura"
     ]
@@ -23,18 +53,18 @@
     "objectID": "capitulos/00_info.html#aula-virtual",
     "href": "capitulos/00_info.html#aula-virtual",
     "title": "Información general sobre la asignatura",
-    "section": "Aula virtual?",
-    "text": "Aula virtual?",
+    "section": "Aula virtual",
+    "text": "Aula virtual\nEsta asignatura posee un espacio virtual en la plataforma Comunidades 3 de la Universidad Nacional de Rosario, que será utilizado para dar anuncios y noticias, responder consultas en los foros, entregar y realizar devoluciones sobre los trabajos prácticos, informar calificaciones, etc. Es importante que visites este espacio de forma regular. Si no te ha llegado la clave para poder ingresar, contactá a los docentes.",
     "crumbs": [
       "Información general sobre la asignatura"
     ]
   },
   {
-    "objectID": "capitulos/00_info.html#programa",
-    "href": "capitulos/00_info.html#programa",
+    "objectID": "capitulos/00_info.html#cursado",
+    "href": "capitulos/00_info.html#cursado",
     "title": "Información general sobre la asignatura",
-    "section": "Programa",
-    "text": "Programa\nenlace al programa aprobado",
+    "section": "Cursado",
+    "text": "Cursado\n\nActividades semanales\nCada semana durante la extensión del cuatrimestre encontrarás las indicaciones referidas a los contenidos que debés cubrir para avanzar en tiempo y forma con esta asignatura. En este cronograma de trabajo verás de forma detallada cuáles son los capítulos del libro a estudiar y los ejercicios de las prácticas a resolver, semana a semana. Todos los materiales estarán publicados con anticipación, incluyendo las respuestas a los problemas, de modo que puedas autogestionar tus tiempos. Además, en el cronograma podrás ver todas las fechas importantes que deben ser respetadas, como las de las evaluaciones.\n\n\nClases\nComo acompañamiento a tu propio avance por la asignatura, cada semana podés asistir a dos clases:\n\nUna es virtual y se dicta los días lunes de 14:30 a 16:30 para todo el estudiantado. Estas clases tienen el objetivo de presentar los contenidos conceptuales de cada semana, mediante la exposición interactiva del tema a abordar.\nLa otra clase es presencial y se dicta en el Laboratorio de Computación de la Escuela de Estadística, para cada comisión por separado.\n\nSi por alguna razón una clase se suspende (por ejemplo, es feriado), ¡no te preocupes! Todo el material correspondiente a la semana en cuestión estará publicado y podrás resolver tus dudas en las consultas presenciales o virtuales, o en los foros del aula virtual. Tenés que tener en cuenta la semana siguiente no repasaremos el contenido de la semana en la que no tuviste clase, sino que avanzaremos con los temas que tocan esa semana, según el cronograma.\nInformación importante para las clases, como enlaces para conectarte o días y horarios de cada comisón, son publicados en el aula virtual.\n\n\nConsultas\nPodés resolver tus dudas recurriendo a estos medios:\n\nForos de consulta en el aula virtual.\nClases de consulta virtuales. Los enlaces y horarios se publican en el aula virtual. Si ningún estudiante se conecta, la clase se da por finalizada luego de 10 minutos de espera.\nClases de consulta presenciales en el laboratorio de computación. Estas clases tendrán una duración determinada. Durante ese tiempo, además de resolver dudas con los docentes, podés recurrir al laboratorio para hacer uso de las computadoras y resolver ejercicios u otros trabajos.",
     "crumbs": [
       "Información general sobre la asignatura"
     ]
@@ -44,7 +74,7 @@
     "href": "capitulos/00_info.html#evaluación",
     "title": "Información general sobre la asignatura",
     "section": "Evaluación",
-    "text": "Evaluación",
+    "text": "Evaluación\nLa evaluación de la asignatura se realiza a través de un examen parcial individual y un trabajo práctico grupal. Ambas actividades son evaluadas con una calificación entre 0 y 10 y se ponderan para obtener una nota de cursada (60% examen parcial, 40% trabajo práctico). Al finalizar el cursado, cada estudiante obtiene una de las siguientes condiciones:\n\nLibre: obtienen la condición de “libre” aquellos estudiantes con nota de cursada inferior a 6 o alguna nota individual menor a 4.\nRegular: obtienen la condición de “regular” aquellos estudiantes con nota de cursada mayor o igual a 6, siempre que no tengan ninguna nota individual menor a 4.\nPromovido: obtienen la condición de “promovido” aquellos estudiantes que con nota de cursada mayor o igual a 8, que no tengan ninguna nota individual menor a 6 y que aprueben una tarea de realización opcional e individual al final del cuatrimestre. La nota de cursada se computa como nota final de la asignatura.\n\nMás detalles sobre cada componente evaluativo pueden encontrarse en el programa o en el aula virtual.",
     "crumbs": [
       "Información general sobre la asignatura"
     ]
@@ -54,7 +84,7 @@
     "href": "capitulos/00_info.html#código-de-conducta",
     "title": "Información general sobre la asignatura",
     "section": "Código de conducta",
-    "text": "Código de conducta",
+    "text": "Código de conducta\nEn esta asignatura promovemos un ambiente de respeto, colaboración y aprendizaje mutuo. Para garantizar una experiencia positiva para todas las personas involucradas, establecemos las siguientes normas de convivencia:\n\nRespeto y trato cordial\n\nTodas las personas deben ser tratadas con respeto, independientemente de su experiencia, formación, identidad de género, origen, creencias u opiniones.\nSe espera un trato cordial y profesional entre estudiantes, docentes y personal de la facultad.\n\nNo se tolerarán expresiones de discriminación, violencia verbal, acoso o cualquier forma de descalificación personal.\n\n\n\nParticipación y comunicación\n\nSe fomenta el intercambio de ideas y el debate académico en un marco de respeto.\n\nSe debe permitir que todas las voces sean escuchadas sin interrupciones ni actitudes despectivas.\n\nEl uso de lenguaje claro y respetuoso es fundamental, tanto en interacciones presenciales como en medios digitales relacionados con la asignatura.\n\nSe valora la cooperación en actividades grupales, con una distribución equitativa de tareas y reconocimiento del aporte de cada integrante.\n\nSe invita a hacer preguntas y solicitar aclaraciones cuando sea necesario, en un clima de confianza y respeto.\n\nLos comentarios hacia otros estudiantes y docentes deben ser constructivos y enfocados en la mejora del aprendizaje.\n\n\n\nResponsabilidad y compromiso\n\nLa entrega de trabajos deben realizarse con responsabilidad. En caso de dificultades, se recomienda comunicarse con el equipo docente con anticipación.\nSe espera honestidad académica en todas las actividades del curso.\n\nEl uso de dispositivos electrónicos en clase debe estar alineado con los objetivos de la misma, evitando distracciones innecesarias.\n\n\n\nUso responsable de inteligencia artificial para resolver problemas\n\nLas herramientas de inteligencia artificial (IA) pueden ser útiles en ciertos contextos, pero su uso excesivo o inadecuado puede limitar el aprendizaje real. Es fundamental que los estudiantes realicen el esfuerzo de comprender y desarrollar las soluciones por sí mismos.\n\nPara aprender a programar y desarrollar pensamiento lógico, es necesario escribir código, enfrentar errores y corregirlos. Depender demasiado de la IA puede generar una falsa sensación de dominio sin una comprensión profunda.\n\nEn las evaluaciones y entregas, queda estrictamente prohibido el plagio y todo tipo de copia, incluyendo el uso de respuestas generadas por IA sin una comprensión real del contenido.\n\nSi se detecta plagio o copia en cualquier instancia de evaluación, o falta de comprensión de las soluciones entregadas, se aplicarán las medidas correspondientes según las normativas de la institución.\n\nEl cumplimiento de estas normas contribuye a un entorno en el que todas las personas puedan participar activamente y aprovechar al máximo la experiencia educativa. Ante cualquier inquietud o situación que afecte la convivencia, se recomienda comunicarlo al equipo docente o a las autoridades institucionales.",
     "crumbs": [
       "Información general sobre la asignatura"
     ]
@@ -64,7 +94,7 @@
     "href": "capitulos/01.html",
     "title": "Unidad 1. Introducción a la programación con R",
     "section": "",
-    "text": "Presentación de la Unidad 1.\n\nPágina en construcción.",
+    "text": "Esta unidad introduce los conceptos fundamentales para comenzar a programar en R, proporcionando las bases necesarias para desarrollar código claro, estructurado y funcional. Iniciamos con una exploración de qué significa programar, abordando las etapas del diseño algorítmico y la codificación. Luego, presentamos R y RStudio, sus características principales y su instalación, junto con los primeros comandos y estructuras esenciales del lenguaje.\nA lo largo de la unidad, aprenderemos sobre los distintos tipos de objetos y operadores en R, así como la organización eficiente del trabajo mediante archivos, proyectos y buenas prácticas. También abordaremos la gestión de errores, la importancia de seguir una guía de estilo para escribir código legible y el uso de paquetes para ampliar las capacidades del lenguaje. Finalmente, incluimos una reseña histórica de la computación y una introducción a los lenguajes de programación y sus niveles de abstracción.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R"
     ]
@@ -72,12 +102,34 @@
   {
     "objectID": "capitulos/01_a_intro.html",
     "href": "capitulos/01_a_intro.html",
-    "title": "1  Programación: de qué se trata y para qué nos sirve",
+    "title": "1  Programación",
     "section": "",
-    "text": "1.1 primera subsección\nprogramacion, algoritmo, lenguajes, R, instalación",
+    "text": "1.1 Qué es la programación\nLas computadoras son una parte esencial de nuestra vida cotidiana. Casi todos los aparatos que usamos tienen algún tipo de computadora capaz de ejecutar ciertas tareas: lavarropas con distintos modos de lavado, consolas de juegos para momentos de entretenimiento, calculadoras súper potentes, computadoras personales que se usan para un montón de propósitos, teléfonos celulares con un sinfín de aplicaciones y miles de cosas más.\nTodos estos dispositivos con computadoras de distinto tipo tienen algo en común: alguien “les dice” cómo funcionar, es decir, les indica cuáles son los pasos que deben seguir para cumplir una tarea. De eso se trata la programación: es la actividad mediante la cual las personas (o algoritmos de inteligencia artificial) le entregan a una computadora un conjunto de instrucciones para que, al ejecutarlas, ésta pueda resolver un problema. Los conjuntos de instrucciones que reciben las computadoras reciben el nombre de programas.\nLa programación es un proceso creativo: en muchas ocasiones la tarea en cuestión puede cumplirse siguiendo distintos caminos y al programar debemos imaginar cuáles son y elegir uno. Algunos de estos caminos pueden ser mejores que otros, pero en cualquier caso la computadora se limitará a seguir las instrucciones ideadas por nosotros.\nEstas instrucciones deben ser transmitidas en un idioma que la computadora pueda entender sin ambigüedad. Para eso debemos aprender algún lenguaje de programación, que no es más que un lenguaje artificial compuesto por una serie de expresiones que la computadora puede interpretar. Las computadoras interpretan nuestras instrucciones de forma muy literal, por lo tanto a la hora de programar hay que ser muy específicos. Es necesario respetar las reglas del lenguaje de programación y ser claros en las indicaciones provistas.\nAhora bien, ¿por qué debemos estudiar programación en carreras como Licenciatura en Estadística y Licenciatura en Ciencia de Datos? La actividad de los profesionales que trabajamos con datos está atravesada en su totalidad por la necesidad de manejar con soltura herramientas informáticas que nos asisten en las distintas etapas de nuestra labor: recolección y depuración de conjuntos de datos, aplicación de distintas metodologías de análisis, visualización de la información, comunicación efectiva de los resultados, despliegue y puesta en producción de modelos, etc. Por eso, en la asignatura Programación 1 estudiaremos los conceptos básicos de esta disciplina, fomentando la ejercitación del pensamiento abstracto y lógico necesario para poder entendernos hábilmente con la computadora y lograr que la misma realice las tareas que necesitamos.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Programación: de qué se trata y para qué nos sirve</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Programación</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_a_intro.html#etapas-en-la-programación",
+    "href": "capitulos/01_a_intro.html#etapas-en-la-programación",
+    "title": "1  Programación",
+    "section": "1.2 Etapas en la programación",
+    "text": "1.2 Etapas en la programación\nMencionamos anteriormente que la programación consiste en instruir a una computadora para que resuelva un problema y que la comunicación de esas instrucciones debe ser realizada de forma clara. Es por eso que, ante un problema que debe ser resuelto computacionalmente, el primer paso es pensar detalladamente cuál puede ser una forma de resolverlo, es decir, crear un algoritmo.\n\nUn algoritmo es una estrategia consistente de un conjunto ordenado de pasos que nos lleva a la solución de un problema o alcance de un objetivo. Luego, hay que traducir el algoritmo elegido al idioma de la computadora.\n\nEntonces, podemos decir que la resolución computacional de un problema consiste de dos etapas básicas:\n\n1.2.1 Diseño algorítmico\nCotidianamente, hacemos uso de algoritmos para llevar adelante casi todas las actividades que realizamos: preparar el desayuno, sacar a pasear la mascota, poner en la tele un servicio de streaming para ver una película, etc. Cada una de estas tareas requiere llevar adelante algunas acciones de forma ordenada, aunque no hagamos un listado de las mismas y procedamos casi sin pensar.\nSin embargo, cuando estamos pensando la solución para un problema que va a resolver programando, debemos pensar uno por uno cuáles son todos los pasos a seguir, para asegurarnos de que cuando la computadora los siga, llegue a la solución. Suele ser útil escribir en borrador cuáles son esos pasos, de forma clara y ordenada, e incluso hacer diagramas. Una vez que hemos imaginado como resolver el problema mediante programación, podemos pasar a la siguiente etapa.\n\n\n1.2.2 Codificación\nUna vez que tenemos diseñada la solución al problema, hay que comunicársela a la computadora para que la siga. Para que ella pueda entender nuestro algoritmo, debemos traducirlo en un lenguaje de programación, que, como dijimos antes, es un idioma artificial diseñado para expresar cómputos que puedan ser llevados a cabo por equipos electrónicos, es decir es un medio de comunicación entre el humano y la máquina.\nAl aprender sobre programación, comenzamos enfrentándonos a problemas simples para los cuales la etapa del diseño algorítmico parece sencilla, mientras que la codificación se torna dificultosa, ya que hay que aprender las reglas del lenguaje de programación. Sin embargo, mientras que con práctica rápidamente podemos ganar facilidad para la escritura de código, el diseño algorítmico se torna cada vez más desafiante al encarar problemas más complejos.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Programación</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_a_intro.html#el-lenguaje-r-y-su-importancia-en-estadística-y-ciencia-de-datos",
+    "href": "capitulos/01_a_intro.html#el-lenguaje-r-y-su-importancia-en-estadística-y-ciencia-de-datos",
+    "title": "1  Programación",
+    "section": "1.3 El lenguaje R y su importancia en Estadística y Ciencia de Datos",
+    "text": "1.3 El lenguaje R y su importancia en Estadística y Ciencia de Datos\nR es un lenguaje de programación y un entorno de software diseñado específicamente para el análisis estadístico y la visualización de datos. Fue creado por Ross Ihaka y Robert Gentleman como una implementación libre del lenguaje S, desarrollado en los laboratorios AT&T Bell. Desde su lanzamiento, R ha crecido hasta convertirse en una de las herramientas más utilizadas en Estadística, Ciencia de Datos e investigación en una amplia variedad de disciplinas. Su código es abierto y es mantenido por una comunidad activa de desarrolladores y usuarios, con actualizaciones constantes y una enorme cantidad de paquetes adicionales que amplían sus capacidades.\nUna de las principales razones por las que R es tan popular es su flexibilidad. A diferencia de herramientas de software más rígidas, que solo permiten aplicar métodos predefinidos, R ofrece un lenguaje de programación completo que permite desarrollar soluciones adaptadas a problemas específicos. Esto significa que los usuarios pueden definir sus propias funciones, automatizar procesos y realizar simulaciones personalizadas, algo fundamental cuando se trabaja con problemas complejos que requieren enfoques innovadores.\nSin embargo, esta flexibilidad también implica una curva de aprendizaje más pronunciada en comparación con herramientas en las que sólo hay apuntar con el mouse y hacer clic para elegir algunas opciones en un menú. Algunos programadores provenientes de otros lenguajes pueden encontrar a R poco intuitivo o un tanto ambiguo en algunas cuestiones, pero es que ha sido pensado como una herramienta de programación para profesionales no formados en esa disciplina.\nLa comunidad de desarrolladores y usuarios de R ha desarrollado múltiples soluciones para hacer el lenguaje cada vez más eficiente y accesible. Existen paquetes optimizados para manejar grandes volúmenes de datos con rapidez y entornos o plataformas como RStudio, Shiny y Quarto que han ampliado el alcance de R, permitiendo desde el desarrollo de aplicaciones interactivas hasta la implementación de modelos en producción. Gracias a este continuo desarrollo del ecosistema R, este software es una opción potente y versátil para la Estadística y Ciencia de Datos.\n\nEste libro, y la asignatura a la que pertenece, no se enfoca en las poderosas herramientas de análisis de datos que ofrece R, como la modelización estadística, la manipulación de datos o la visualización gráfica. En su lugar, enseñaremos fundamentos generales de programación, y los ejemplificaresmos particularemente con R. Por ejemplo, en lugar de usar funciones que ya fueron programadas por otras personas, reinventaremos la rueda y crearemos nuestras propias funciones; o en lugar de usar paquetes que nos ayudan a realizar procesos iterativos con gran eficiencia, exploraremos estructuras de control tradicionales como bucles. Es decir, frente a variados problemas vamos a dedicarnos a crear soluciones que ya existen y están disponibles en R, pero lo haremos con el fin de utilizar dicho lenguaje para aprender y ejercitar nociones básicas de programación. Esto nos ayudará a desarrollar un pensamiento algorítmico y ganar habilidad para generar soluciones propias y comprender con mayor profundidad lo que sucede “detrás de escena” en cada análisis.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Programación</span>"
     ]
   },
   {
@@ -85,7 +137,62 @@
     "href": "capitulos/01_b_primeros_pasos.html",
     "title": "2  Primeros pasos con R y RStudio",
     "section": "",
-    "text": "Página en construcción.\n\nuso general de R y RStudio, scripts,, funciones",
+    "text": "2.1 R y RStudio\nSi bien R será nuestro medio de comunicación con la computadora, vamos a usarlo a través de otro programa que brinda algunas herramientas para facilitar nuestro trabajo de programación, es decir, vamos a usar un entorno integrado de desarrollo (o IDE, por integrated development environment). Un IDE es un programa que hace que la codificación sea más sencilla porque permite manejar varios archivos de código, visualizar el ambiente de trabajo, utilizar resaltado con colores para distintas partes del código, emplear autocompletado para escribir más rápido, explorar páginas de ayuda, implementar estrategias de depuración e incluso intercalar la ejecución de instrucciones con la visualización de los resultados mientras avanzamos en el análisis o solución del problema. El IDE más popularmente empleado para programar con R es RStudio.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Primeros pasos con R y RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_b_primeros_pasos.html#instalación",
+    "href": "capitulos/01_b_primeros_pasos.html#instalación",
+    "title": "2  Primeros pasos con R y RStudio",
+    "section": "2.2 Instalación",
+    "text": "2.2 Instalación\nPara instalar estos programas, se deben visitar las páginas oficiales de R y de RStudio, descargar los instaladores y ejecutarlos. En este documento encontrarás una guía paso a paso, o también podés mirar este video con las indicaciones.\nSi experimentás algún problema con la instalación, hay una alternativa para que no pierdas tiempo hasta que los docentes puedan ayudarte a resolverlo. RStudio puede ser usado online sin que lo tengas que instalar. Sólo necesitás conexión a internet. Si necesitás usar esto porque la instalación falló, seguí las instrucciones de este archivo.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Primeros pasos con R y RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_b_primeros_pasos.html#paneles-de-rstudio",
+    "href": "capitulos/01_b_primeros_pasos.html#paneles-de-rstudio",
+    "title": "2  Primeros pasos con R y RStudio",
+    "section": "2.3 Paneles de RStudio",
+    "text": "2.3 Paneles de RStudio\nCuando se abre RStudio se pueden visualizar tres paneles principales (Figura 2.1):\n\nEn el panel de la izquierda la pestaña más importante es Console (consola), que es donde se ejecutan las instrucciones de R en tiempo real. Es la ventana que usamos para comunicarnos con R. Ahí se escriben las instrucciones para que R las evalúe (también decimos, que las ejecute o corra) y también es el lugar donde se visualizan los resultados.\nEn el panel de arriba a la derecha la pestaña más importante es Environment (entorno o ambiente), que se encarga de mostrar los elementos que tenemos a disposición para programar. Al inicio de la sesión de trabajo, se encuentra vacío.\nEn el panel de abajo a la derecha, las pestañas más importantes son:\n\nFiles: explorador de archivos de la computadora.\nPlots: ventana donde aparecen los gráficos si es que nuestro código produce alguno (no lo usaremos en este curso).\nPackages: listado de los “paquetes” (herramientas adicionales) que tenemos instalados.\nHelp: manual de ayuda de R.\n\n\nMás adelante profundizaremos en el uso de estos componentes de RStudio.\n\n\n\n\n\n\nFigura 2.1: RStudio al abrirlo.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Primeros pasos con R y RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_b_primeros_pasos.html#uso-de-la-consola-de-r",
+    "href": "capitulos/01_b_primeros_pasos.html#uso-de-la-consola-de-r",
+    "title": "2  Primeros pasos con R y RStudio",
+    "section": "2.4 Uso de la consola de R",
+    "text": "2.4 Uso de la consola de R\nLa consola de R en RStudio permite ejecutar comandos de manera inmediata. Al presionar Enter las instrucciones escritas serán evaluadas, produciendo algún resultado. Por ejemplo, podemos escribir expresiones matemáticas sencillas, como la suma 1 + 2. Para esto, tenemos que hacer clic en la última línea de la consola, al lado del indicador &gt; (llamado prompt), para asegurarnos que el cursor esté allí titilando. La presencia del prompt &gt; en esa última línea nos indica que R está preparado para recibir una nueva instrucción. Escribimos ahí la cuenta 1 + 2 y pulsamos Enter (Figura 2.2).\n\n\n\n\n\n\nFigura 2.2: Ejemplo de una primera instrucción de programación en: la suma entre 1 y 2.\n\n\n\nEl resultado o salida se ve inmediatamente debajo de la instrucción: se trata del número 3, por supuesto. Antes aparece la anotación [1], que indica que la primera y única línea de la salida muestra el primer y único resultado de la instrucción evaluada. En algunas operaciones, la salida está compuesta por muchos elementos y ocupa varias líneas. En ese caso R muestra un número entre corchetes al comienzo de cada línea de la salida, para darnos una idea de cuántos elementos nos está mostrando. Por ahora podemos ignorarlo.\nProbemos con más cálculos matemáticos:\n\n1 + 2\n\n[1] 3\n\n5 * 3\n\n[1] 15\n\n100 / 4\n\n[1] 25\n\n3^2\n\n[1] 9\n\n3 - (2 * 9)\n\n[1] -15\n\n\n\nA veces nos pasa que escribimos una instrucción de forma incompleta y presionamos Enter. En esta situación, la consola muestra al comienzo de la línea el símbolo +, señalando que falta “algo más” para que el comando esté completo y se pueda mostrar el resultado. Tenemos que completar lo que falta y presionar Enter otra vez, o presionar Esc para cancelar esa instrucción y que la consola vuelva a mostrar el prompt &gt;, indicando que podemos escribir el código de nuevo desde cero.\nEn el siguiente ejemplo, en la consola escribí 100 / y presioné Enter dos veces. Como la cuenta quedó incompleta, la consola muestra el +:\n\n&gt; 100 /\n+ \n+ \n\nLa solución es apretar Esc para cancelar, o completar la instrucción:\n\n&gt; 100 /\n+ \n+ \n+ 4\n\n\n\n[1] 25\n\n\nEs importante reconocer que no podemos escribir una nueva instrucción en la consola cuando está el + porque algo de lo anterior quedó incompleto. Debemos solucionarlo, ver que aparezca otra vez el &gt; y entonces sí volver a escribir un comando.\nPor otro lado, si escribimos una instrucción que R no sabe interpretar o que presenta algún tipo de problema, la salida mostrará un mensaje de error. Por ejemplo, el símbolo para hacer divisiones es / y no %. Si lo usamos, pasa esto:\n\n100 % 4\n\nError in parse(text = input): &lt;text&gt;:1:5: unexpected input\n1: 100 % 4\n        ^",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Primeros pasos con R y RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_b_primeros_pasos.html#sec-scripts",
+    "href": "capitulos/01_b_primeros_pasos.html#sec-scripts",
+    "title": "2  Primeros pasos con R y RStudio",
+    "section": "2.5 Archivos de código o scripts",
+    "text": "2.5 Archivos de código o scripts\nHasta ahora hemos usado la consola de R para ejecutar comandos de manera inmediata. Sin embargo, cuando trabajamos con tareas de programación más complejas, es importante guardar nuestro código para poder reutilizarlo, modificarlo y compartirlo. Para esto, usamos los scripts.\n\nUn archivo de código o script es un archivo de texto que contiene una serie de instrucciones de escritas en algún lenguaje de programación. En lugar de escribir y ejecutar los comandos uno por uno en la consola, podemos escribirlos en un script y ejecutarlos cuando sea necesario. Esto nos permite organizar mejor nuestro trabajo y evitar repetir tareas manualmente. A veces usamos el término programa como sinónimo de script.\n\nEl uso de scripts en lugar de escribir código directamente en la consola tiene varias ventajas:\n\nReproducibilidad: podemos volver a ejecutar nuestro programa sin necesidad de reescribirlo.\n\nOrganización: podemos estructurar el código en secciones claras.\n\nDepuración: es más fácil detectar y corregir errores en un script que en la consola.\n\n\n2.5.1 Crear un script\nPara crear un nuevo script en RStudio podemos seguir algunas de estas opciones:\n\nIr a File &gt; New &gt; R Script.\nUsar el atajo Ctrl + Shift + N.\nHacer clic en el primer ícono de la barra de herramientas (hoja en blanco con signo +)\n\nEl sector izquierdo de RStudio se subdivide en dos paneles: abajo queda la consola y arriba aparece el editor de scripts (Figura 2.5). Podemos crear o abrir más de un script a la vez, cada uno aparece como una pestaña de este panel.\n\n\n\n\n\n\nFigura 2.3: Código escrito en un nuevo script.\n\n\n\n\n\n2.5.2 Escribir código y guardar el script\nUna vez creado el script, podemos escribir ahí todo nuestro código de R. Para no perder el trabajo debemos guardar este documento en nuestra computadora, con alguna de estas opciones:\n\nIr a File &gt; Save.\nUsar el atajo CTRL + S.\nUsar el ícono de guardar en la barra de herramientas.\n\nLa primera vez que guardamos el script recién creado, tendremos que elegir un nombre para el archivo y un lugar en la computadora para su ubicación. En el caso presentado en la Figura 2.4, elegimos el nombre “ejemplos”.\n\n\n\n\n\n\nFigura 2.4: El nuevo script ha sido guardado bajo el nombre `ejemplos.R.\n\n\n\nAhora la pestaña del editor de scripts muestra el nombre elegido para el archivo seguido por .R, es decir, vemos que dice: ejemplos.R. El nombre de un archivo informático se compone de dos partes: la raíz y la extensión. La raíz es el nombre principal que elegimos para identificar el archivo (ejemplos), mientras que la extensión es un sufijo separado por un punto que indica el tipo de archivo y con qué programas se puede abrir. Por ejemplo, los archivos de texto suelen tener la extensión .txt, las imágenes pueden ser .jpg o .png y las hojas de cálculo de Excel suelen ser .xlsx. En el caso de los scripts de R, la extensión es .R, lo que indica que el archivo contiene código en el lenguaje R y puede ser ejecutado dentro de RStudio o cualquier otro entorno compatible. Al guardar un archivo de código, se agrega automáticamente la extensión en el nombre y esto nos permite organizarlos adecuadamente y asegurarnos de que R los reconozca como archivos de código.\n\nSi buscamos el archivo recién creado en el Explorador de archivos de Windows, puede que en su nombre no se vea la extensión. Windows, por defecto, oculta las extensiones de los archivos, pero es posible mostrarlas siguiendo estos pasos:\n\nAbrir el Explorador de archivos.\nAcceder a la configuración de vista:\n\nEn Windows 10 y 11, hacé clic en la pestaña Vista en la parte superior.\n\nEn Windows 11, si no ves la pestaña, haz clic en Ver &gt; Mostrar.\n\n\nActivar la visualización de extensiones: marcá la opción “Extensiones de nombre de archivo”.\n\nHabilitar esta opción es útil para evitar confusiones entre tipos de archivos. Dos archivos diferentes pueden tener en su nombre la misma raíz, pero tratarse de distintas cosas porque tienen diferente extensión.\n\nA medida que seguimos editando nuestro script de código agregando nuevas instrucciones de programación, es conveniente guardar frecuentemente los cambios añadidos.\n\n\n2.5.3 Ejecutar código desde un script\nEscribir código en un script no lo ejecuta automáticamente. Para ejecutarlo, podemos:\n\nSeleccionar una o varias líneas del script y presionar Ctrl + Enter (Windows/Linux) o Cmd + Enter (Mac).\nSeleccionar una o varias líneas y hacer clic en el botón Run en la parte superior del editor.\n\nSi empleamos cualquiera de esas opciones sin tener líneas de código seleccionadas, se ejecutará una sola línea, aquella sobre la cual esté colocado el cursor.\n\n\n\n\n\n\nFigura 2.5: Se han ejecutado las líneas seleccionadas del script. En la consola se ven los resultados.\n\n\n\n\n\n2.5.4 Comentarios en el código\nEn todo lenguaje de programación existe un carácter especial que, al ser colocado al comienzo de una línea de código, le indica al software que dicha línea no debe ser evaluada. Esto se utiliza para incluir comentarios, es decir, líneas escritas en español que ayudan a documentar lo que hace cada parte de nuestro programa. Los comentarios no afectan la ejecución del código y son fundamentales para hacer que nuestro trabajo sea comprensible para nosotros y otras personas. También sirven para marcar distintas partes del script. En R, los comentarios se escriben con el símbolo # (Figura 2.6).\n\n\n\n\n\n\nFigura 2.6: Comentarios en el script. Todo el contenido del script fue evaluado, por eso se ve también en la consola. Las líneas comentadas son ignoradas, sólo se muestran resultados para las demás.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Primeros pasos con R y RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_b_primeros_pasos.html#funciones",
+    "href": "capitulos/01_b_primeros_pasos.html#funciones",
+    "title": "2  Primeros pasos con R y RStudio",
+    "section": "2.6 Funciones",
+    "text": "2.6 Funciones\nEn los ejemplos anteriores hemos realizado algunas operaciones básicas, como sumas o multiplicaciones. Otros cálculos matemáticos requieren que usemos funciones. Por ejemplo, para calcular una raíz cuadrada debemos usar la función sqrt (del inglés squared root):\n\nsqrt(49)\n\n[1] 7\n\n\nUsamos funciones como sqrt para pedirle a R que realice algún tipo de operación. Como resultado R nos devuelve cierta respuesta o información (“salida”).\nLas funciones están representadas por su nombre, seguido por los paréntesis (). Dentro de los paréntesis se colocan las porciones de información que queremos compartir con la función, que reciben el nombre de argumentos o parámetros. Una función puede depender de uno o más argumentos. Si hay más de uno, se separan con comas.\nCuando usamos una función, generalmente se dice que la estamos llamando, invocando o corriendo. Por ejemplo, corremos la función log con el argumento 100. Esta función calcula, por defecto, el logaritmo natural:\n\nlog(100)\n\n[1] 4.60517\n\n\nEn este caso 100 representa un valor numérico que se pasa como argumento a la función para que la misma opere. Algunas funciones predefinidas en R pueden trabajar con más de un argumento, en cuyo caso hay que enumerarlos dentro de los paréntesis, separados con comas. Por ejemplo, si en lugar de calcular el logaritmo natural (cuya base es la constante matemática \\(e\\)), queremos calcular un logaritmo en base 10, podemos hacer lo siguiente:\n\n# Logaritmo de 100 en base 10\nlog(100, 10)\n\n[1] 2\n\n\n¿Cómo sabemos que la función log() se puede usar de esa forma, con uno o dos argumentos, cambiando o no el valor de la base con respecto a la cual toma el logaritmo? Lo aprendemos al leer el manual de ayuda de R.\nToda función de R viene con un instructivo que detalla cómo se usa, qué argumentos incluye y otras aclaraciones. Lo encontramos en la pestaña de Ayuda (Help) en el panel de abajo a la derecha en RStudio. Otras formas de abrir la página de ayuda sobre una función es correr en la consola alguna de estas sentencias:\n\nhelp(log)\n?log\n\nEsa página de ayuda tiene bastante información, porque reúne explicaciones sobre muchas funciones relacionadas con logaritmos y exponenciales, pero podemos detenernos en algunas partes más importantes (Figura 2.7).\n\n\n\n\n\n\nFigura 2.7: Captura de pantalla de la ayuda sobre la función log().\n\n\n\nEn la sección Usage (“uso”) descubrimos que la función log() puede usarse con dos argumentos: x y base. En la sección Arguments entendemos que x es el número al cual le vamos a sacar el logaritmo y base es la base con respecto a la cual se toma el logaritmo. Por eso, al correr log(100, 10), estamos calculando el logaritmo de x = 100 con base = 10.\nVemos, además, una diferencia en la forma en que x y base aparecen en la descripción: log(x, base = exp(1)). Cuando un argumento tiene un signo = significa que tiene asignado un valor por defecto y que no es obligatorio usarlo. Por eso, cuando corremos log(100) estamos calculando el logaritmo de x = 100 con la base elegida por R: base = exp(1), que es la forma que tiene R de nombrar a la constante \\(e = 2.718282...\\) (es el logaritmo natural). Si quiero cambiar la base, debo proveer un valor, por ejemplo, log(100, 10). Por el contrario, el argumento x no tiene asignado un valor por default. Eso significa que obligatoriamente tenemos que proveer un valor para el mismo.\nR también permite usar una función escribiendo los nombres de los argumentos, lo cual muchas veces es muy esclarecedor, en especial cuando las funciones llevan muchos argumentos:\n\nlog(x = 100, base = 10)\n\n[1] 2\n\n\nSi escribimos los nombres de los parámetros explícitamente como en el caso anterior, podemos cambiar su orden, sin alterar el resultado:\n\nlog(base = 10, x = 100)\n\n[1] 2\n\n\nSi no escribimos los nombres, el orden importa. R hace corresponder los valores provistos con los argumentos presentados en la ayuda sobre la función, uno por uno, en orden:\n\n# Toma el logaritmo de x = 100 con base = 10\nlog(100, 10)\n\n[1] 2\n\n# Toma el logaritmo de x = 10 con base = 100\nlog(10, 100)\n\n[1] 0.5\n\n\n\nPresentamos los siguientes ejemplos a modo de resumen:\n\n# Tres usos equivalentes de la función para obtener el \n# logaritmo de x = 100 con base = 10:\nlog(100, 10)\n\n[1] 2\n\nlog(x = 100, base = 10)\n\n[1] 2\n\nlog(base = 10, x = 100)\n\n[1] 2\n\n# Si no indico la base, se toma el valor por defecto (logaritmo \n# natural). Ambas expresiones son equivalentes:\nlog(100)\n\n[1] 4.60517\n\nlog(x = 100)\n\n[1] 4.60517\n\n# Si no indico el argumento obligatorio x, obtengo un error:\nlog(base = 10)\n\nError: argument \"x\" is missing, with no default",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Primeros pasos con R y RStudio</span>"
@@ -94,56 +201,298 @@
   {
     "objectID": "capitulos/01_c_objetos.html",
     "href": "capitulos/01_c_objetos.html",
-    "title": "3  Objetos, ambiente y operadores",
+    "title": "3  Objetos y ambiente",
     "section": "",
-    "text": "Página en construcción.\n\nobjetos, ambiente, tipos de datos, operadores",
+    "text": "3.1 Objetos\nAnteriormente usamos R para realizar cálculos matemáticos como:\n5 * 6\n\n[1] 30\nLos operandos en ese cálculo y su resultado no están guardados en ningún lugar de nuestra computadora. Podríamos decir que lo que vemos ahí son las huellas de algunos números que existieron brevemente en la memoria de nuestra computadora pero ya desaparecieron. Si queremos usar ese resultado para realizar otro cálculo, tendremos que pedirle a R que calcule 5 * 6 de nuevo.\nClaramente, al resolver problemas complejos no podemos trabajar con resultados o valores efímeros. Tenemos que guardarlos en algún lugar para poder reutilizarlos. En R podemos hacer:\nx &lt;- 5 * 6\nEn este caso que estamos analizando, x es un ejemplo de un objeto creado por nosotros.\nUn nuevo objeto se crea con el operador de asignación (&lt;-, “operador flecha”). Como lo vamos a usar muchísimas veces, es conveniente recordar su atajo para escribirlo rápidamente con el teclado: Alt + - (teclas Alt y guión medio). De esta forma, informalmente la línea x &lt;- 5 * 6 puede ser leída así: “creamos un objeto llamado x que contiene al resultado de la operación 5 * 6 (30)”.\nUna vez que almacenamos un valor en x, podemos utilizarlo en nuevos cálculos:\nx * 100\n\n[1] 3000\n\n80 - x\n\n[1] 50\nHay distintos tipos de objetos, algunos con estructuras muy simples (como aquellos que sólo almacenan un único valor, al igual que x en el ejemplo) y otros mucho más complejos (como aquellos que sirven para representar conjuntos de datos completos o resultados de algún análisis). Cada lenguaje de programación propone su propio catálogo de tipos de objetos y cada programador puede crear otros tipos nuevos. Durante las primeras unidades sólo emplearemos el tipo de objeto más sencillo que R ofrece.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Objetos, ambiente y operadores</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Objetos y ambiente</span>"
     ]
   },
   {
-    "objectID": "capitulos/01_d_varios.html",
-    "href": "capitulos/01_d_varios.html",
-    "title": "4  Otras nociones fundamentales sobre R",
+    "objectID": "capitulos/01_c_objetos.html#objetos",
+    "href": "capitulos/01_c_objetos.html#objetos",
+    "title": "3  Objetos y ambiente",
     "section": "",
-    "text": "Página en construcción.\n\nproyecto, directorio de trabajo, errores, estilo, paquete",
+    "text": "Los objetos son estructuras capaces de almacenar las distintas piezas de información, (o datos), que podemos manipular para resolver una tarea de programación. Dependiendo de las características de un objeto en particular, podemos hacer con él diferentes operaciones. Nuestro programa, a lo largo de su ejecución, va creando o modificando los objetos existentes.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Otras nociones fundamentales sobre R</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Objetos y ambiente</span>"
     ]
   },
   {
-    "objectID": "capitulos/01_e_ejemplo_ambientes.html",
-    "href": "capitulos/01_e_ejemplo_ambientes.html",
-    "title": "5  Ejemplos de cuadritos",
-    "section": "",
-    "text": "5.1 Listado de ambientes definidos",
+    "objectID": "capitulos/01_c_objetos.html#vectores-atómicos-de-r",
+    "href": "capitulos/01_c_objetos.html#vectores-atómicos-de-r",
+    "title": "3  Objetos y ambiente",
+    "section": "3.2 Vectores atómicos de R",
+    "text": "3.2 Vectores atómicos de R\nEl tipo de objeto más simple y básico en R se llama vector atómico (atomic vector). De hecho, en el ejemplo, x es un vector atómico que hospeda un único valor numérico. En Matemática, la palabra “vector” hace referencia a un conjunto de números ordenados. Los vectores atómicos de R también pueden contener más de un valor, pero por ahora sólo consideraremos situaciones donde cada vector atómico contiene un sólo valor (como x). A los objetos que se usan para almacenar un solo valor a veces también se les dice variables (porque suele ocurrir que ese valor va cambiando a lo largo del programa).\nUn vector atómico puede guardar otras cosas además de números. R define seis tipos básicos de vectores atómicos dependiendo de cómo son los datos que guardan: doubles, integers, characters, logicals, complex y raw1. Los últimos dos sirven para guardar números complejos y bytes en crudo, respectivamente y muy rara vez son usados para tareas de análisis de datos, por lo cual no los volveremos a nombrar. Vamos a ver a los otros, uno por uno.\n\n3.2.1 Doubles (dobles)\nUn vector atómico de tipo double almacena números reales (positivos o negativos, grandes o chicos, con decimales o sin decimales). Casi siempre que usamos números para analizar datos en R, empleamos este tipo de vector. Con estos objetos podemos realizar operaciones aritméticas comunes, como en los ejemplos que ya vimos antes.\nLa función typeof() se usa para preguntar a R de qué tipo es un objeto:\n\ntypeof(x)\n\n[1] \"double\"\n\n\n\n\n3.2.2 Integers (enteros)\nUn vector atómico de tipo integer también almacena números, pero sólo números enteros. Muchos lenguajes de programación tratan a los números enteros de forma diferente al resto de los números porque utilizan estrategias especiales para almacenarlos en la memoria de la compu (ocupan menos espacio y su representación tiene mayor precisión).\nPara distinguir a los integers de los doubles, R los muestra con una L al costado. De hecho, podemos crear un vector atómico de tipo integer agregando la L\n\ny &lt;- 1L\ntypeof(y)\n\n[1] \"integer\"\n\n\nEn aplicaciones de análisis de datos, es raro que los números con los que se trabaja sean sólo enteros, por lo que podemos prestarle poca atención a esto por ahora. Es bueno saber que existen, porque en algunas salidas a veces aparece esa L y ahora sabemos de qué se trata.\nEn algunos contextos, R directamente les dice numeric tanto a los doubles como a los integers.\n\n\n3.2.3 Characters (caracteres)\nUn vector atómico de tipo character almacena texto, es decir, una cadena de caracteres (una palabra o palabras). No es posible hacer operaciones matemáticas con este tipo de vector. Para crear un vector de tipo character debemos encerrar entre comillas el texto que será almacenado en él:\n\nz &lt;- \"Hola, ¿cómo estás?\"\nz\n\n[1] \"Hola, ¿cómo estás?\"\n\ntypeof(z)\n\n[1] \"character\"\n\n\n\n\n3.2.4 Logicals (lógicos)\nUn vector atómico de tipo logical puede almacenar el valor lógico TRUE (verdadero) o el valor lógico FALSE (falso). Si bien es poco común que este tipo de valores aparezca de forma natural en conjuntos de datos a analizar, son sumamente importantes. Permiten hacer comparaciones y entender su resultado, así como también evaluar condiciones para decidir o no implementar algunas acciones en el proceso que estamos llevando adelante.\nPodemos crear un vector logical así:\n\nv &lt;- TRUE\nv\n\n[1] TRUE\n\ntypeof(v)\n\n[1] \"logical\"\n\n\nNotar que los valores lógicos no se escriben entre comillas, puesto que no son cadenas de texto. Tal vez crear vectores lógicos no es lo más común; es más frecuente que los valores lógicos surjan como resultado de algunas operaciones. Por ejemplo:\n\nx &gt; y\n\n[1] TRUE\n\nx &lt; y\n\n[1] FALSE\n\nis.logical(x)\n\n[1] FALSE\n\nis.logical(v)\n\n[1] TRUE\n\nis.numeric(x)\n\n[1] TRUE\n\n\n\n¿Para qué necesitamos distintos tipos de vectores atómicos? Para poder establecer qué operaciones se pueden realizar con unos y otros, y que todo tenga sentido. Por ejemplo, podemos hacer sumas aritméticas con vectores numéricos pero no con vectores carácter:\n\n# Se puede:\nx * 100\n\n[1] 3000\n\nx + y\n\n[1] 31\n\n# No se puede:\nx + z\n\nError in x + z: non-numeric argument to binary operator\n\n\n\n\nSeleccionar la respuesta correcta.\n¿Cuál de los siguientes es un valor numérico?\n\n “dos” “2” 2\n\n¿Cuál de los siguientes es un valor lógico?\n\n FALSE “FALSE”",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ejemplos de cuadritos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Objetos y ambiente</span>"
     ]
   },
   {
-    "objectID": "capitulos/01_e_ejemplo_ambientes.html#listado-de-ambientes-definidos",
-    "href": "capitulos/01_e_ejemplo_ambientes.html#listado-de-ambientes-definidos",
-    "title": "5  Ejemplos de cuadritos",
-    "section": "",
-    "text": "Contenido del ejemplo, prueba en negrita.\n\n1+1\n\n[1] 2\n\n\n\n\nContenido del ejercicio\n\n1+1\n\n[1] 2\n\n\n\n\nconcepto negrita\n\n\ninfo negrita\n\n\ncomentario negrita",
+    "objectID": "capitulos/01_c_objetos.html#nombres-de-los-objetos",
+    "href": "capitulos/01_c_objetos.html#nombres-de-los-objetos",
+    "title": "3  Objetos y ambiente",
+    "section": "3.3 Nombres de los objetos",
+    "text": "3.3 Nombres de los objetos\nDe manera general, al nombre de un objeto se le dice identificador, ya que se trata de secuencia de caracteres que sirve para identificarlo a lo largo de un programa. Nombrar los objetos hace posible referirse a los mismos. La elección de los identificadores es una tarea del programador, pero cada lenguaje tiene sus propias reglas. Por ejemplo, en R los nombres de los objetos:\n\ndeben empezar con una letra o un punto (no pueden empezar con un número);\nsólo pueden contener letras, números, guiones bajos y puntos; y\nno se pueden usar las siguientes palabras como nombres, ya que son están reservadas por el lenguaje: break, else, FALSE, for, function, if, Inf, NA, NaN, next, repeat, return, TRUE, while.\n\nEs aconsejable elegir un nombre que sea representativo de la información que va a guardar el objeto, ya que esto facilita la lectura y la comprensión tanto del algoritmo como del programa. Por ejemplo, si se necesita un objeto para guardar el valor numérico del precio de algún producto, el identificador p sería una mala elección, mientras que precio sería mejor. Si se necesitan varios identificadores para distinguir los precios de diversos productos, podríamos usar algo como precio_manzana, precio_banana, etc.\nPor otro lado, no es posible usar como identificador a precio manazana, puesto que un nombre no puede tener espacios. Otra opción podría ser preciomanzana o precioManzana, pero en este curso seguimos la convención de usar guiones bajos para facilitar la lectura de nombres compuestos por más de una palabra (esto se conoce como snake case).\nEs importar que R distingue entre mayúsculas y minúsculas, por lo que precio y Precio pueden referirse a distintos objetos, con diferentes valores almacenados:\n\nprecio &lt;- 15\nPrecio &lt;- 2\nprecio + Precio\n\n[1] 17\n\n\nNo es aconsejable tener objetos cuyos nombres sólo difieran en mayúsculas o minúsculas como en el ejemplo anterior, puesto que sirve para confusión. En general, preferimos evitar usar mayúsculas.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ejemplos de cuadritos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Objetos y ambiente</span>"
     ]
   },
   {
-    "objectID": "capitulos/01_f_ejemplo_texto.html",
-    "href": "capitulos/01_f_ejemplo_texto.html",
-    "title": "6  Ejemplo con mucho texto para ver el PDF",
-    "section": "",
-    "text": "Página en construcción.\n\nPraesent ornare dolor turpis, sed tincidunt nisl pretium eget. Curabitur sed iaculis ex, vitae tristique sapien. Quisque nec ex dolor. Quisque ut nisl a libero egestas molestie. Nulla vel porta nulla. Phasellus id pretium arcu. Etiam sed mi pellentesque nibh scelerisque elementum sed at urna. Ut congue molestie nibh, sit amet pretium ligula consectetur eu. Integer consectetur augue justo, at placerat erat posuere at. Ut elementum urna lectus, vitae bibendum neque pulvinar quis. Suspendisse vulputate cursus eros id maximus. Duis pulvinar facilisis massa, et condimentum est viverra congue. Curabitur ornare convallis nisl. Morbi dictum scelerisque turpis quis pellentesque. Etiam lectus risus, luctus lobortis risus ut, rutrum vulputate justo. Nulla facilisi.\nProin sodales neque erat, varius cursus diam tincidunt sit amet. Etiam scelerisque fringilla nisl eu venenatis. Donec sem ipsum, scelerisque ac venenatis quis, hendrerit vel mauris. Praesent semper erat sit amet purus condimentum, sit amet auctor mi feugiat. In hac habitasse platea dictumst. Nunc ac mauris in massa feugiat bibendum id in dui. Praesent accumsan urna at lacinia aliquet. Proin ultricies eu est quis pellentesque. In vel lorem at nisl rhoncus cursus eu quis mi. In eu rutrum ante, quis placerat justo. Etiam euismod nibh nibh, sed elementum nunc imperdiet in. Praesent gravida nunc vel odio lacinia, at tempus nisl placerat. Aenean id ipsum sed est sagittis hendrerit non in tortor.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\nNunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti.\nEtiam maximus accumsan gravida. Maecenas at nunc dignissim, euismod enim ac, bibendum ipsum. Maecenas vehicula velit in nisl aliquet ultricies. Nam eget massa interdum, maximus arcu vel, pretium erat. Maecenas sit amet tempor purus, vitae aliquet nunc. Vivamus cursus urna velit, eleifend dictum magna laoreet ut. Duis eu erat mollis, blandit magna id, tincidunt ipsum. Integer massa nibh, commodo eu ex vel, venenatis efficitur ligula. Integer convallis lacus elit, maximus eleifend lacus ornare ac. Vestibulum scelerisque viverra urna id lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean eget enim at diam bibendum tincidunt eu non purus. Nullam id magna ultrices, sodales metus viverra, tempus turpis.\nDuis ornare ex ac iaculis pretium. Maecenas sagittis odio id erat pharetra, sit amet consectetur quam sollicitudin. Vivamus pharetra quam purus, nec sagittis risus pretium at. Nullam feugiat, turpis ac accumsan interdum, sem tellus blandit neque, id vulputate diam quam semper nisl. Donec sit amet enim at neque porttitor aliquet. Phasellus facilisis nulla eget placerat eleifend. Vestibulum non egestas eros, eget lobortis ipsum. Nulla rutrum massa eget enim aliquam, id porttitor erat luctus. Nunc sagittis quis eros eu sagittis. Pellentesque dictum, erat at pellentesque sollicitudin, justo augue pulvinar metus, quis rutrum est mi nec felis. Vestibulum efficitur mi lorem, at elementum purus tincidunt a. Aliquam finibus enim magna, vitae pellentesque erat faucibus at. Nulla mauris tellus, imperdiet id lobortis et, dignissim condimentum ipsum. Morbi nulla orci, varius at aliquet sed, facilisis id tortor. Donec ut urna nisi.\nAenean placerat luctus tortor vitae molestie. Nulla at aliquet nulla. Sed efficitur tellus orci, sed fringilla lectus laoreet eget. Vivamus maximus quam sit amet arcu dignissim, sed accumsan massa ullamcorper. Sed iaculis tincidunt feugiat. Nulla in est at nunc ultricies dictum ut vitae nunc. Aenean convallis vel diam at malesuada. Suspendisse arcu libero, vehicula tempus ultrices a, placerat sit amet tortor. Sed dictum id nulla commodo mattis. Aliquam mollis, nunc eu tristique faucibus, purus lacus tincidunt nulla, ac pretium lorem nunc ut enim. Curabitur eget mattis nisl, vitae sodales augue. Nam felis massa, bibendum sit amet nulla vel, vulputate rutrum lacus. Aenean convallis odio pharetra nulla mattis consequat.\nUt ut condimentum augue, nec eleifend nisl. Sed facilisis egestas odio ac pretium. Pellentesque consequat magna sed venenatis sagittis. Vivamus feugiat lobortis magna vitae accumsan. Pellentesque euismod malesuada hendrerit. Ut non mauris non arcu condimentum sodales vitae vitae dolor. Nullam dapibus, velit eget lacinia rutrum, ipsum justo malesuada odio, et lobortis sapien magna vel lacus. Nulla purus neque, hendrerit non malesuada eget, mattis vel erat. Suspendisse potenti.\nNullam dapibus cursus dolor sit amet consequat. Nulla facilisi. Curabitur vel nulla non magna lacinia tincidunt. Duis porttitor quam leo, et blandit velit efficitur ut. Etiam auctor tincidunt porttitor. Phasellus sed accumsan mi. Fusce ut erat dui. Suspendisse eu augue eget turpis condimentum finibus eu non lorem. Donec finibus eros eu ante condimentum, sed pharetra sapien sagittis. Phasellus non dolor ac ante mollis auctor nec et sapien. Pellentesque vulputate at nisi eu tincidunt. Vestibulum at dolor aliquam, hendrerit purus eu, eleifend massa. Morbi consectetur eros id tincidunt gravida. Fusce ut enim quis orci hendrerit lacinia sed vitae enim.\nNulla eget cursus ipsum. Vivamus porttitor leo diam, sed volutpat lectus facilisis sit amet. Maecenas et pulvinar metus. Ut at dignissim tellus. In in tincidunt elit. Etiam vulputate lobortis arcu, vel faucibus leo lobortis ac. Aliquam erat volutpat. In interdum orci ac est euismod euismod. Nunc eleifend tristique risus, at lacinia odio commodo in. Sed aliquet ligula odio, sed tempor neque ultricies sit amet.\nEtiam quis tortor luctus, pellentesque ante a, finibus dolor. Phasellus in nibh et magna pulvinar malesuada. Ut nisl ex, sagittis at sollicitudin et, sollicitudin id nunc. In id porta urna. Proin porta dolor dolor, vel dapibus nisi lacinia in. Pellentesque ante mauris, ornare non euismod a, fermentum ut sapien. Proin sed vehicula enim. Aliquam tortor odio, vestibulum vitae odio in, tempor molestie justo. Praesent maximus lacus nec leo maximus blandit.\nMaecenas turpis velit, ultricies non elementum vel, luctus nec nunc. Nulla a diam interdum, faucibus sapien viverra, finibus metus. Donec non tortor diam. In ut elit aliquet, bibendum sem et, aliquam tortor. Donec congue, sem at rhoncus ultrices, nunc augue cursus erat, quis porttitor mauris libero ut ex. Nullam quis leo urna. Donec faucibus ligula eget pellentesque interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus interdum erat ut ultricies. Aenean tempus ex non elit suscipit, quis dignissim enim efficitur. Proin laoreet enim massa, vitae laoreet nulla mollis quis.\nVestibulum ultrices, tortor at mattis porta, odio nisi rutrum nulla, sit amet tincidunt eros quam facilisis tellus. Fusce eleifend lectus in elementum lacinia. Nam auctor nunc in massa ullamcorper, sit amet auctor ante accumsan. Nam ut varius metus. Curabitur eget tristique leo. Cras finibus euismod erat eget elementum. Integer vel placerat ex. Ut id eros quis lectus lacinia venenatis hendrerit vel ante.",
+    "objectID": "capitulos/01_c_objetos.html#actualizar-la-información-guardada-en-un-objeto",
+    "href": "capitulos/01_c_objetos.html#actualizar-la-información-guardada-en-un-objeto",
+    "title": "3  Objetos y ambiente",
+    "section": "3.4 Actualizar la información guardada en un objeto",
+    "text": "3.4 Actualizar la información guardada en un objeto\nEl valor guardado en un objeto puede cambiar en cualquier momento del programa. Además, podemos usar otros objetos para calcular el valor que será guardado. Por ejemplo, imaginemos que un programa contabiliza el stock disponible de un artículo en un comercio. Inicialmente había 43 artículos, pero en el día se vendieron 29 y se compraron otros 12 al proveedor para reponer. Al finalizar la jornada, para saber cuántos hay en stock hay que tomar la cantidad disponible original, restar la cantidad que se vendió y sumar la cantidad que se compró. El código podría lucir así:\n\nstock &lt;- 43\nventas &lt;- 29\ncompras &lt;- 12\nstock &lt;- stock - ventas + compras\nstock\n\n[1] 26\n\ncat(\"Hay un stock de\", stock, \"artículos disponibles.\")\n\nHay un stock de 26 artículos disponibles.\n\n\n\nEn el ejemplo anterior usamos por primera vez la función cat() para emitir un mensaje, concatenando cadenas de texto encerradas entre comillas y el valor de una variable a la cual hacemos referencia por su nombre (stock).\n\nEl valor 43 que originalmente estaba guardado en stock se perdió para siempre en el preciso momento cuando se ejecutó la línea stock &lt;- stock - ventas + compras, que “sobrescribió” su valor. Es importante sobrescribir el valor de un objeto sólo si estamos seguros de que es lo correcto.\nTambién se debe tener en cuenta que podemos reemplazar el objeto representado con un nombre por otro de un tipo diferente, y a R no le va a molestar:\n\n# x es un vector atómico de tipo numeric:\nx &lt;- 100\nx\n\n[1] 100\n\n# ahora x pasa a ser un vector atómico de tipo caracter:\nx &lt;- \"hola\"\nx\n\n[1] \"hola\"\n\n\nOtros lenguajes no admiten este comportamiento. Por el contrario, requieren se “declare” el nombre y el tipo de cada objeto antes de ser usados y, si bien se puede actualizar su valor, éste siempre debe ser del mismo tipo. R es un lenguaje dinámico que no tiene este recaudo.\n\nExpresiones como “crear un objeto llamado x que contiene el valor 100” o “sobreescribir, actualizar o reemplazar su valor” nos permiten imaginar lo que sucede y encarar tareas generales de programación en R, pero en realidad son formas simplificadas y poco precisas de describir procesos más complejos relacionados al funcionamiento de R. Estudiantes con experiencia en programación pueden opcionalmente referirse a este material para leer más.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Ejemplo con mucho texto para ver el PDF</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Objetos y ambiente</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_c_objetos.html#ambiente",
+    "href": "capitulos/01_c_objetos.html#ambiente",
+    "title": "3  Objetos y ambiente",
+    "section": "3.5 Ambiente",
+    "text": "3.5 Ambiente\n\nEn R, un environment (entorno o ambiente) es un espacio donde se almacenan los objetos creados durante una sesión de trabajo. Se trata una estructura clave en la gestión de variables y funciones dentro de un programa.\n\nDurante la evaluación de un programa coexisten muchos environments. Vamos a hablar un poco más de esto cuando aprendamos a crear nuevas funciones, pero en general podemos programar en R sin preocuparnos por este tema, que es bastante complejo y avanzado.\nLo fundamental es saber que el conjunto de objetos que vamos creando en nuestro programa forman parte de un ambiente llamado Global Environment y es el que vemos en la pestaña Environment del panel superior derecho de RStudio (Figura 3.1).\n\n\n\n\n\n\nFigura 3.1: Captura de pantalla del Global Environment.\n\n\n\nTambién podemos ver en la consola un listado de todos los nombres de los objetos que existen en el ambiente con la función ls():\n\nls()\n\n[1] \"pandoc_dir\"      \"quarto_bin_path\" \"v\"               \"x\"              \n[5] \"y\"               \"z\"              \n\n\nLos objetos que aparecen listados en esta salida o en el panel Environment son los que podemos usar para programar, porque están disponibles en nuestro ambiente. Si por error queremos usar un objeto que aún no fue definido en el ambiente global, obtenemos un error así:\n\nw * 10\n\nError: object 'w' not found\n\n\nSi necesitamos borrar un objeto del ambiente global podemos usar rm() indicando como argumento el nombre del objeto a eliminar:\n\nrm(x)\n\nSi necesitamos borrar todos los objetos del ambiente podemos usar el ícono de la escoba en la pestaña Environment o ejecutar:\n\nrm(list = ls())\n\nA pesar de que el ambiente nos muestre todos los objetos creados durante el trabajo o análisis, es fundamental que el código que los generó esté siempre escrito y guardado en un script. Con un script siempre es posible recrear el entorno de trabajo, pero si sólo tenemos los objetos en el ambiente, no podemos adivinar con qué código fueron creados. Para asegurar que nuestros scripts sean la referencia principal y es el respaldo de todo lo que se hace en un análisis de datos, se recomienda configurar RStudio para que no guarde automáticamente el ambiente cuando se cierra. Esto se logra yendo al menú Tools &gt; Global Options y estableciendo las opciones de configuración tal como se observa en la Figura 3.2. Aunque al principio puede resultar incómodo, ya que cada vez que reinicies RStudio deberás volver a ejecutar el código para generar tus objetos, esta práctica evita problemas a largo plazo. Dejar solo los resultados en el entorno sin registrar el código que los generó puede dificultar la reproducibilidad del análisis en el futuro.\n\n\n\n\n\n\nFigura 3.2: Estas opciones garantizan que el ambiente de trabajo esté limpio cada vez que iniciamos RStudio.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Objetos y ambiente</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_c_objetos.html#footnotes",
+    "href": "capitulos/01_c_objetos.html#footnotes",
+    "title": "3  Objetos y ambiente",
+    "section": "",
+    "text": "Los nombramos en inglés puesto que esos son sus nombres formales.↩︎",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Objetos y ambiente</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_d_operadores.html",
+    "href": "capitulos/01_d_operadores.html",
+    "title": "4  Operadores",
+    "section": "",
+    "text": "4.1 Operadores aritméticos\nLos operadores aritméticos permiten realizar operaciones matemáticas con vectores atómicos que almacenen valores numéricos, como double o integer (Tabla 4.1).\nLos operadores aritméticos actúan con un orden de prioridad establecido, también conocido como orden de evaluación u orden de precedencia, tal como estamos acostumbrados en matemática. Las expresiones entre paréntesis se evalúan primero. Si hay paréntesis anidados se evalúan desde adentro hacia afuera. Dentro de una misma expresión, los operadores se evalúan en este orden:\nSi la expresión presenta operadores con igual nivel de prioridad, se evalúan de izquierda a derecha.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Operadores</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_d_operadores.html#operadores-aritméticos",
+    "href": "capitulos/01_d_operadores.html#operadores-aritméticos",
+    "title": "4  Operadores",
+    "section": "",
+    "text": "Tabla 4.1: Operadores aritméticos.\n\n\n\n\n\n\n\n\n\n\n\nOperación\nOperador\nEjemplo de uso\nResultado con x &lt;- 7 e y &lt;- 3\n\n\n\n\nSuma\n+\nx + y\n10\n\n\nResta\n-\nx - y\n4\n\n\nMultiplicación\n*\nx * y\n21\n\n\nDivisión\n/\nx / y\n2.33\n\n\nPotenciación\n^\nx ^ y\n343\n\n\nDivisión entera\n%/%\nx %/% y\n2\n\n\nDivisión módular (resto de la división)\n%%\nx %% y\n1\n\n\n\n\n\n\n\n\nPotenciación (^)\nDivisión entera y módulo (%/%, %%)\nMultiplicación y división (*, /)\nSuma y resta (+, -)\n\n\n\n\n\n\nTabla 4.2: Ejemplos de operaciones aritméticas según el orden de precedencia de R.\n\n\n\n\n\nOperación\nResultado\n\n\n\n\n4 + 2 * 4\n12\n\n\n23 * 2 / 5\n9.2\n\n\n3 + 5 * (10 - (2 + 4))\n23\n\n\n2.1 * 1.5 + 12.3\n15.45\n\n\n2.1 * (1.5 + 12.3)\n28.98\n\n\n1 %% 4\n1\n\n\n8 * (7 - 6 + 5) %% (1 + 8 / 2) - 1\n7\n\n\n\n\n\n\n\n\nLos operadores aritméticos también se pueden aplicar con valores lógicos. En este caso, TRUE es considerado como 1 y FALSE, como 01:\n\nTRUE + TRUE\n\n[1] 2\n\nTRUE + FALSE\n\n[1] 1",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Operadores</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_d_operadores.html#operadores-relacionales-o-de-comparación",
+    "href": "capitulos/01_d_operadores.html#operadores-relacionales-o-de-comparación",
+    "title": "4  Operadores",
+    "section": "4.2 Operadores relacionales o de comparación",
+    "text": "4.2 Operadores relacionales o de comparación\nLos operadores relacionales sirven para comparar dos valores de cualquier tipo y dan como resultado un valor lógico, TRUE o FALSE.\n\n\n\nTabla 4.3: Operadores relacionales\n\n\n\n\n\n\n\n\n\n\n\nComparación\nOperador\nEjemplo de uso\nResultado con x &lt;- 7 e y &lt;- 3\n\n\n\n\nMayor que\n&gt;\nx &gt; y\nTRUE\n\n\nMenor que\n&lt;\nx &lt; y\nFALSE\n\n\nMayor o igual que\n&gt;=\nx &gt;= y\nTRUE\n\n\nMenor o igual que\n&lt;=\nx &lt;= y\nFALSE\n\n\nIgual a\n==\nx == y\nFALSE\n\n\nDistinto a\n!=\nx != y\nTRUE\n\n\n\n\n\n\n\nEjemplos del uso de operadores relacionales:\n\na &lt;- 3\nb &lt;- 4\nd &lt;- 2\ne &lt;- 10\nf &lt;- 15\n\n(a * b) == (d + e)\n\n[1] TRUE\n\n(a * b) != (f - b)\n\n[1] TRUE\n\n\n\nEs interesante notar que primero se evalúan las operaciones a cada lado de los operadores relacionales y luego se hace la comparación. Es decir, los operadores aritméticos preceden a los relacionales en el orden de prioridad. Por eso, en los ejemplos anteriores en realidad no son necesarios los paréntesis y podríamos omitirlos:\n\na * b == d + e\n\n[1] TRUE\n\na * b != f - b\n\n[1] TRUE\n\n\n\nPara pensar… ¿en base a qué criterio se determina si un valor de tipo character es mayor qué otro? Mirá este ejemplo:\n\ntexto1 &lt;- \"Hola\"\ntexto2 &lt;- \"Chau\"\ntexto3 &lt;- \"Adiós\"\n\ntexto1 &gt; texto2\n\n[1] TRUE\n\ntexto3 &gt; texto2\n\n[1] FALSE\n\n\n\n\n¿Qué valor lógico devuelve esta operación?\n\ntexto1 == \"hola\"\n\n\n TRUE FALSE",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Operadores</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_d_operadores.html#operadores-lógicos",
+    "href": "capitulos/01_d_operadores.html#operadores-lógicos",
+    "title": "4  Operadores",
+    "section": "4.3 Operadores lógicos",
+    "text": "4.3 Operadores lógicos\nMientras que los operadores relacionales comparan cualquier tipo de valores, los operadores lógicos sólo toman operandos de tipo logical y producen también un resultado lógico.\n\n\n\nTabla 4.4: Operadores lógicos\n\n\n\n\n\n\n\n\n\n\n\nOperación\nOperador\nEjemplo de uso\nResultado con x &lt;- TRUE e y &lt;- FALSE\n\n\n\n\nConjunción\n&&\nx && y\nFALSE\n\n\nDisyunción\n||\nx || y\nTRUE\n\n\nNegación\n!\n!x\nFALSE\n\n\n\n\n\n\nVeamos uno por uno:\n\nLa operación de conjunción devuelve un valor TRUE sólo si son verdaderas ambas expresiones que vincula. Ejemplo: (3 &gt; 2) && (3 &gt; 5) resulta en TRUE && FALSE y esto es FALSE.\nLa operación de disyunción devuelve un valor TRUE si al menos una de las dos expresiones que vincula es verdadera. Ejemplo: (3 &gt; 2) || (3 &gt; 5) resulta en TRUE || FALSE y esto es TRUE.\nLa operación de negación niega un valor lógico, es decir, devuelve el opuesto. Ejemplo: !(3 &gt; 2) resulta en !TRUE y esto es FALSE.\n\nLa tabla de verdad o tabla de valores de verdad se utiliza para mostrar todos los resultados posibles de estas operaciones lógicas:\n\n\n\nTabla 4.5: Tabla de la verdad\n\n\n\n\n\nx\ny\n!x\nx && y\nx || y\n\n\n\n\nTRUE\nTRUE\nFALSE\nTRUE\nTRUE\n\n\nTRUE\nFALSE\nFALSE\nFALSE\nTRUE\n\n\nFALSE\nTRUE\nTRUE\nFALSE\nTRUE\n\n\nFALSE\nFALSE\nTRUE\nFALSE\nFALSE\n\n\n\n\n\n\n\nCon estos operadores es posible construir evaluaciones lógicas algo más elaboradas como los siguientes ejemplos:\n\nDeterminar si el valor numérica guardado en la variable x está entre 5 y 7:\n\n\nvalor &lt;- 6.4\n(valor &gt; 5) && (valor &lt; 7)\n\n[1] TRUE\n\nvalor &lt;- 2.1\n(valor &gt; 5) && (valor &lt; 7)\n\n[1] FALSE\n\n\nTal vez tu intuición te sugiere que la expresión lógica a evaluar en este caso debe ser 5 &lt; valor &lt; 7, pero esto genera un error en R. Para saber si valor está entre 5 y 7, se tiene que evaluar por separado que valor sea mayor que 5 y también menor que 7, y ambas condiciones deben ser verdaderas.\n\nEstablecer si el valor de tipo carácter almacenado en la variable nacionalidad sea igual a una de dos opciones:\n\n\nnacionalidad &lt;- \"Argentino\"\n(nacionalidad == \"Uruguayo\") || (nacionalidad == \"Chileno\")\n\n[1] FALSE\n\n\n\nVerificar que el valor guardado en nacionalidad no coincida con “Argentino”:.\n\n\nnacionalidad &lt;- \"Uruguayo\"\n!(nacionalidad == \"Argentino\")\n\n[1] TRUE\n\n\n\nChequear que el valor numérico guardado en x no sea igual a 2 ni a 3:\n\nOpción correcta 1: (x != 2) && (x != 3)\n\n# Da verdadero porque x no es ni 2 ni 3\nx &lt;- 10\n(x != 2) && (x != 3)\n\n[1] TRUE\n\n# Da falso porque x es igual a 3\nx &lt;- 3\n(x != 2) && (x != 3)\n\n[1] FALSE\n\n\nOpción correcta 2: !(x == 2 || x == 3)\n\n# Da verdadero porque x no es ni 2 ni 3\nx &lt;- 10\n!(x == 2 || x == 3)\n\n[1] TRUE\n\n# Da falso porque x es igual a 3\nx &lt;- 3\n!(x == 2 || x == 3)\n\n[1] FALSE\n\n\nOpción incorrecta: (x != 2) || (x != 3)\n\n# Como la primera parte es verdadera (porque x es igual a 3), la \n# conjunción es verdadera, cuando quisiéramos que en este caso el\n# resultado sea FALSO\nx &lt;- 3\n(x != 2) || (x != 3)\n\n[1] TRUE\n\n\nEs importante notar que todos los paréntesis usados en el código de R de los ejemplos 1, 2 y 4 son innecesarios, puesto que los operadores relacionales preceden a los lógicos en el orden de prioridad. Sin embargo, a veces preferimos usar paréntesis para que la lectura sea más sencilla. Retomando el ejemplo 1, notemos que ambas expresiones son equivalentes:\n\nvalor &lt;- 2.1\n(valor &gt; 5) && (valor &lt; 7)\n\n[1] FALSE\n\nvalor &gt; 5 && valor &lt; 7\n\n[1] FALSE\n\n\n\n\n¿Cuál es el resultado de las siguientes operaciones?\n\nx &lt;- 2\ny &lt;- -2\n\n\nx &gt; 0 && y &lt; 0: TRUEFALSE\nx &gt; 0 || y &lt; 0: TRUEFALSE\n!(x &gt; 0 && y &lt; 0): TRUEFALSE\n\n\n\nTanto para la conjunción como para la disyunción, R provee dos operadores diferentes, los ya mencionados && y || y otros que no repiten el símbolo, & y |. La diferencia entre las dos versiones se hace notar cuando operamos con vectores atómicos que almacenen más de un valor, por lo cual por ahora podemos ignorarla. Usaremos la versión de símbolos dobles.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Operadores</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_d_operadores.html#orden-de-precedencia-completo-en-r",
+    "href": "capitulos/01_d_operadores.html#orden-de-precedencia-completo-en-r",
+    "title": "4  Operadores",
+    "section": "4.4 Orden de precedencia completo en R",
+    "text": "4.4 Orden de precedencia completo en R\nResumiendo la información anterior, a continuación se presenta el orden de precedencia completo de los operadores en R que utilizaremos2:\n\n\n\nTabla 4.6: Orden de precedencia de los operadores en R.\n\n\n\n\n\n\n\n\n\n\nOrden\nOperaciones\nOperadores\n\n\n\n\n1\nPotenciación\n^\n\n\n2\nSigno de un número (ej: -3)\n+, -\n\n\n3\nDivisión entera y resto\n%/%, %%\n\n\n4\nMultiplicación y división\n*. /\n\n\n5\nSuma y resta\n+. -\n\n\n6\nOperadores de comparación\n&lt;, &gt;, &lt;=, &gt;=, ==, !=\n\n\n7\nNegación\n!\n\n\n8\nConjunción\n&&, &\n\n\n9\nDisyunción\n||, |\n\n\n10\nAsignación\n&lt;-\n\n\n\n\n\n\nDentro de una misma expresión, operadores con igual prioridad se evalúan de izquierda a derecha.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Operadores</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_d_operadores.html#evaluación-en-cortocircuito",
+    "href": "capitulos/01_d_operadores.html#evaluación-en-cortocircuito",
+    "title": "4  Operadores",
+    "section": "4.5 Evaluación en cortocircuito",
+    "text": "4.5 Evaluación en cortocircuito\nPara evaluar la operación de conjunción x && y, en R se comienza por evaluar la expresión del primer operando x y si su resultado es FALSE ya no se evalúa la expresión y del segundo operando. Esto es porque si x es FALSE, el resultado de x && y ya no depende de y, será siempre FALSE. Por este motivo se dice que el operador && se evalúa en cortocircuito. La evaluación en cortocircuito evita realizar operaciones innecesarias3.\nPor ejemplo:\n\nf &lt;- 1\ng &lt;- 2\n\n# La primera parte da TRUE, se continúa con la segunda, pero da error porque no\n# existe un objeto llamado h\n(g &gt; f) && (f &gt; h)\n\nError: object 'h' not found\n\n\n\n# La primera parte da FALSE, entonces toda la operación será FALSE, no se\n# continúa con la segunda parte, con lo cual no se intenta usar el objeto\n# inexistente h y no hay error\n(g &lt; f) && (f &gt; h)\n\n[1] FALSE\n\n\nLa operación de disyunción también se evalúa en cortocircuito, es decir, si se encuentra que uno de los operandos es TRUE, no hace falta evaluar los restantes, puesto que el resultado general será TRUE:\n\n# Es TRUE porque la primera parte es TRUE, sin evaluar la segunda, que daría\n# error\n(g &gt; f) || (f &gt; h)\n\n[1] TRUE\n\n# Como la primera parte es FALSE, debe evaluar la segunda, no encuentra a h y da\n# error\n(f &gt; g) || (f &gt; h)\n\nError: object 'h' not found",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Operadores</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_d_operadores.html#footnotes",
+    "href": "capitulos/01_d_operadores.html#footnotes",
+    "title": "4  Operadores",
+    "section": "",
+    "text": "Esta conversión de un tipo de valor a otro se llama coerción.↩︎\nHay algunos operadores más que no vamos a usar, pero que pueden ser consultados en ?Syntax.↩︎\nEl otro operador de conjunción, &, no evalúa en cortocircuito, además de poseer otras diferencias.↩︎",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Operadores</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_e_organizacion.html",
+    "href": "capitulos/01_e_organizacion.html",
+    "title": "5  Organización de archivos",
+    "section": "",
+    "text": "5.1 Carpetas, archivos y rutas informáticas\nEn las tareas de programación y de análisis de datos se trabaja con muchos archivos de distinto tipo al mismo tiempo (scripts, conjuntos de datos, archivos con resultados, gráficos, etc.). Resulta fundamental mantener un orden para que todo funcione bien y prestar atención dónde guardamos nuestros archivos y elegir esa ubicación de forma cuidadosa.\nEn una computadora, los archivos se organizan de manera jerárquica dentro de carpetas y subcarpetas, lo que facilita su acceso y gestión. La organización de estos archivos sigue un esquema de árbol, donde las carpetas actúan como contenedores que agrupan archivos relacionados. Este sistema permite a los usuarios almacenar y clasificar la información de forma ordenada y accesible.\nLa Figura 5.1 muestra como ejemplo un trabajo de análisis de datos de una encuesta a estudiantes. Dentro de la carpeta Documentos, se ha creado un directorio llamado encuesta_estudiantes para guardar allí absolutamente todos los archivos relacionados con este caso. Incluso se pueden usar subcarpetas para distribuirlos de forma bien clara, dentro de esa carpeta principal. Dentro de esa carpeta, se crearon otras subcarpetas para agrupar los archivos de forma ordenada. Este ejemplo esconde un principio muy importante: es bueno tener la costumbre de crear una carpeta específica para almacenar todos los archivos vinculados al trabajo que estamos realizando y no dejar archivos tirados por cualquier lugar en la computadora.\nCada archivo o carpeta en una computadora tiene una ruta informática o path que indica su ubicación dentro del sistema de almacenamiento. Esta ruta es como una dirección que permite encontrar un archivo o carpeta específica. La ruta se lee desde una ubicación principal en el disco de la computadora y sigue el camino de las carpetas y subcarpetas hasta llegar al archivo deseado.\nPor ejemplo, en relación a la Figura 5.1, la ruta informática que identifica la ubicación de la carpeta datos_crudos es C:\\Users\\Marcos\\Documents\\encuesta_estudiantes\\datos_crudos. Si dentro de ella hay una planilla de Excel con los datos de la encuesta, llamada datos_encuesta.xlsx, su ruta informática será C:\\Users\\Marcos\\Documentss\\encuesta_estudiantes\\datos_crudos\\datos_encuesta.xlsx. En sistemas operativos como Windows, las rutas suelen comenzar con una letra de unidad, como “C:”, seguida de las carpetas y subcarpetas.\nCuando guardamos un archivo en algún lugar de la computadora estamos definiendo cuál es su ruta informática para que distintos programas de la computadora puedan encontrarlo. Tener esta noción es fundamental a la hora de programar. Por ejemplo, puede ser que nuestro script de R necesite importar los datos del archivo datos_encuesta.xlsx. Para esto tal vez necesitemos escribir un comando especial que incluya su ruta informática para que R pueda encontrar el archivo. Si no la escribimos bien, R producirá un error diciendo que el archivo no existe.\nTener un buen sistema para ordenar archivos también es una gran recomendación al cursar una carrera universitaria, ya que necesitarás manejar múltiples archivos de distintas asignaturas a la vez. Podrías crear un esquema de trabajo como el de la Figura 5.2.\nUna buena idea adicional es que alojes la carpeta facultad y todo su contenido dentro de algún sistema de sincronización de archivos como Google Drive o OneDrive, para que tengas un respaldo en la nube y puedas acceder al contenido desde el celular u otras computadoras, manteniendo siempre todo sincronizado.\nPara nuestra asignatura, te sugerimos que dentro de la carpeta facultad/anio_1/programacion_1, definas una carpeta distinta para cada unidad o trabajo práctico (por ejemplo, unidad_1, unidad_2, etc.). Esto ayudará a mantener el orden. No hace falta que crees a mano cada una de estas carpetas. Las vamos a crear con RStudio, lo cual resultará en beneficios adicionales.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Organización de archivos</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_e_organizacion.html#sec-rutas",
+    "href": "capitulos/01_e_organizacion.html#sec-rutas",
+    "title": "5  Organización de archivos",
+    "section": "",
+    "text": "Figura 5.1: Organización de carpetas para analizar los datos de una encuesta.\n\n\n\n\n\n\n\nPara saber con exactitud cuál es la ruta informática de un archivo en Windows, podemos seguir alguna de estas opciones:\n\nUsando el Explorador de Archivos: ubicar el archivo, hacer clic derecho y seleccionar “Copiar como ruta”. Luego podemos pegar la ruta en cualquier lugar (Ctrl + V).\nDesde la Barra de Direcciones: abrir la carpeta donde está el archivo, hacer clic en la barra de direcciones, copiar la ruta (Ctrl + C) y al pegarla donde se necesite, agregar manualmente el nombre del archivo.\nDesde las Propiedades del Archivo: hacer clic derecho sobre el archivo y seleccionar “Propiedades”. En la pestaña “General”, copiar el contenido del campo Ubicación y, al pegarlo, agregar el nombre del archivo.\n\nEs importante recordar lo siguiente: si bien Windows usa barras diagonales / para mostrar rutas informáticas, R sólo las reconoce si las escribimos con barras invertidas \\.\n\n\n\n\n\n\n\n\nFigura 5.2: Organización de carpetas para las asignaturas de la facultad.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Organización de archivos</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_e_organizacion.html#directorio-de-trabajo",
+    "href": "capitulos/01_e_organizacion.html#directorio-de-trabajo",
+    "title": "5  Organización de archivos",
+    "section": "5.2 Directorio de trabajo",
+    "text": "5.2 Directorio de trabajo\nComo hemos visto en la sección anterior, nuestra computadora organiza todos sus archivos bajo un sistema jerárquico de carpetas y subcarpetas. Entre todas ellas, en cada sesión de trabajo R posa su mirada en una de forma particular, la cual recibe el nombre directorio de trabajo (o working directory, wd). Aquí es donde R busca los archivos que le pedís que cargue y donde colocará los archivos que le pedís que guarde. El directorio de trabajo por default suele ser la carpeta Documentos o alguna equivalente según el sistema operativo y es la que se muestra en el panel Files cuando iniciamos RStudio. Otras formas de saber cuál es la carpeta de la computadora que actúa como working directory en una sesión de trabajo son:\n\nLeer la ruta informática escrita en la parte superior del panel de la consola, al lado del logo y la versión de R (Figura 5.3).\n\n\n\n\n\n\n\nFigura 5.3: Indicación del working directory arriba en la consola\n\n\n\n\nEjecutar en la consola la instrucción getwd(). Por ejemplo:\n\n\ngetwd()\n\n\"C:/Users/Marcos\"\nEse resultado implica que en este momento R puede ver y acceder de manera directa a todos los archivos que hay en esa carpeta, sin necesidad de escribir la ruta informática completa para hacer referencia a cada uno de ellos. Si creamos un nuevo script y apretamos el ícono de guardar, R nos ofrece guardarlo en el working directory. Si queremos importar un conjunto de datos, lo buscará ahí, a menos que le indiquemos otra cosa. Si queremos guardar cualquier resultado de nuestro análisis, también lo guardará en esa carpeta.\nPor esa razón, es muy útil que, al trabajar con R, el working directory no sea la carpeta que aparece por defecto, sino aquella carpeta en la que tengamos guardados todos los archivos referidos al problema que estamos resolviendo. Para poder cambiar y elegir como working directory a cualquier carpeta de nuestra computadora que nos interese podemos usar una instrucción que se llama setwd(). Sin embargo, a continuación aprenderemos algo mejor.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Organización de archivos</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_e_organizacion.html#organización-del-trabajo-con-rstudio-projects",
+    "href": "capitulos/01_e_organizacion.html#organización-del-trabajo-con-rstudio-projects",
+    "title": "5  Organización de archivos",
+    "section": "5.3 Organización del trabajo con RStudio Projects",
+    "text": "5.3 Organización del trabajo con RStudio Projects\nA partir de las dos secciones anteriores, llegamos a las siguientes conclusiones:\n\nCuando encaramos un trabajo de programación o de análisis de datos, tenemos que destinar una carpeta específica de nuestra computadora para guardar ahí todos los archivos relacionados.\nSi estamos usando R, tenemos que setear como working directory a dicha carpeta, para que podamos acceder con facilidad a los archivos y guardar allí los archivos nuevos que generemos, sin tener que depender de rutas informáticas largas.\n\nRStudio nos permite trabajar de esa forma a través los RStudio Projects.\n\nAl crear un RStudio Project (o sencillamente, proyecto), se genera una nueva carpeta en la computadora con el objetivo de colocar allí todos los archivos relacionados con un trabajo específico, incluyendo scripts, datos, gráficos y otros documentos.\n\nPara crear un nuevo proyecto en RStudio, seguimos estos pasos (Figura 5.4):\n\nIr al menú File (Archivo) y seleccionar New Project… (Nuevo Proyecto).\n\nElegir New Directory (Nueva carpeta, Figura 5.4).\nIngresar un nombre para el proyecto y elegir la ubicación donde se guardará en nuestra computadora.\n\nHacer clic en Create Project (Crear Proyecto).\n\n\n\n\n\n\n\nFigura 5.4: Creación de un nuevo proyecto de RStudio.\n\n\n\nComo resultado, se crea una carpeta con el nombre elegido y se reinicia RStudio, con una nueva sesión de trabajo, en la cual dicha carpeta es configurada como working directory. Podemos leer y guardar los archivos relacionados con nuestro trabajo de forma directa en esa carpeta, sin tener que usar rutas informáticas largas.\n\nUsar proyectos de RStudio tiene varias ventajas:\n\nCada proyecto tiene su propia carpeta, lo que evita mezclar archivos de diferentes trabajos (o asignaturas).\nSe automatiza la configuración del directorio de trabajo.\nSe pueden gestionar múltiples trabajos simultáneamente. Podemos cambiar de un proyecto a otro sin perder el contexto de cada análisis (scripts abiertos, objetos en el ambiente, etc.). Abrimos cada proyecto en una instancia de RStudio diferente, pudiendo tener varias abiertas a la vez.\nTodo el código y los archivos quedan organizados en un solo lugar, lo que facilita compartir o retomar un proyecto en el futuro.\n\n\nCuando dejamos de trabajar en el proyecto, ya sea porque terminamos o debemos continuar más tarde, cerramos RStudio y listo. Para continuar trabajando en otro momento, tenemos que volver a abrir el proyecto, de alguna de estas formas:\n\nA diferencia de cualquier otra carpeta, un RStudio Project incluye un archivo de extensión .Rproj. Si lo abrimos, se abre el proyecto una nueva sesión de trabajo en RStudio, que ya tiene seteado como working directory a dicha carpeta.\nEn caso de que ya tengamos RStudio abierto:\n\nPodemos ir a File &gt; Open project y buscar en la computadora la carpeta del proyecto, para seleccionar el archivo .Rproj.\nO bien, podemos seleccionar un proyecto de la lista de proyectos abiertos recientemente (File &gt; Recent projectos o en la esquina superior derecha de RStudio).\n\n\nAl abrir un RStudio Project, los scripts que estaban abiertos en el editor la última vez que trabajamos en este proyecto, vuelven a aparecer tal como los dejamos, sin importar que estemos trabajando de manera intermitente en distintos proyectos.\nAl trabajar con un proyecto, si necesitamos referirnos en el código a la ubicación de un archivo sólo debemos usar rutas informáticas relativas, no absolutas. Una ruta absoluta es la ruta completa, como C:\\Usuarios\\Natalia\\Documentos\\encuesta_estudiantes\\datos_crudos\\datos_encuesta.xlsx. En cambio, una ruta relativa es relativa al working directory, es decir, al directorio de inicio del proyecto. Suponiendo que nuestro proyecto se corresponde con la carpeta encuesta_estudiantes, la ruta relativa que tenemos que usar para ubicar a la planilla de Excel sólo está compuesta por datos_crudos\\datos_encuesta.xlsx.\nLas rutas relativas son importantes: funcionan siempre bien, a pesar de que el código lo use otra persona en otra computadora. La primera parte de la ruta absoluta, que contiene incluso hasta el nombre de usuario, cambia de computadora a computadora, pero la parte que se usa en la ruta relativa es siempre la misma. Todas las computadoras que tengan una copia del proyecto podrán usar el mismo código sin problemas para encontrar a todos los archivos involucrados.\n\nTal vez hayas notados que los nombres de carpeta de los ejemplos lucen algo raros, no tienen espacios, mayúsculas o tildes. Es recomendable usar nombres de carpetas y archivos que no contengan espacios, tildes, la letra “ñ” ni caracteres especiales, y preferiblemente en minúsculas. Esto se debe a que algunos sistemas operativos y programas pueden interpretar estos caracteres de manera diferente, lo que puede generar errores al acceder a los archivos o al ejecutar código. Además, cuando trabajamos con rutas de archivos en R, los espacios pueden causar problemas si no se manejan correctamente. Una práctica común es utilizar guiones bajos (_) o guiones medios (-) en lugar de espacios, por ejemplo, encuesta_estudiantes en lugar de Encuesta de Estudiantes. Esto es una sugerencia que ayuda a evitar errores y asegura que los archivos sean accesibles sin complicaciones en cualquier sistema.\n\n\nVamos a establecer el siguiente modo de trabajo para este curso. En tu computadora, tal como mencionamos antes, creá una carpeta para guardar todo lo relacionado a tu carrera (puede estar en Documentos o dentro de Google Drive u otro sistema de sincronización y respaldo). Luego, creá una subcarpeta para los elementos relacionados al primer año de cursado. A continuación, creá una carpeta para cada materia que estás cursando, incluída Programación 1. El resultado tiene que ser similar al que se ve en la Figura 5.2.\nCada vez que comencemos una nueva etapa en Programación 1, vamos a crear un nuevo proyecto de RStudio para gestionar todos los archivos referidos a ella. Particularmente, ahora es momento de crear un proyecto llamado unidad_1, dentro de la carpeta programacion_1. Guardarás ahí todos los scripts que desarrollaremos a lo largo de la unidad, con ejemplos y soluciones de ejercicios. Cada vez que quieras continuar trabajando en los materiales de esta unidad, tendrás que abrir el proyecto a partir del archivo unidad_1.Rproj. Tomá de ejemplo la Figura 5.4.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Organización de archivos</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_f_errores_estilo_paquetes.html",
+    "href": "capitulos/01_f_errores_estilo_paquetes.html",
+    "title": "6  Errores de programación, guías de estilo y paquetes de R",
+    "section": "",
+    "text": "6.1 Errores de programación\nApenas iniciemos nuestro camino en el mundo de la programación nos daremos cuenta que tendremos siempre ciertos compañeros de viaje: los errores. Muchas veces nos pasará que queremos ejecutar nuestro código y el mismo no anda o no produce el resultado esperado. No importa cuán cuidadosos seamos, ni cuánta experiencia tengamos, los errores están siempre presentes. Con el tiempo y práctica, vamos a poder identificarlos y corregirlos con mayor facilidad, pero probablemente nunca dejemos de cometerlos.\nA los errores en programación se los suele llamar bugs (insecto o bicho en inglés) y el proceso de la corrección de los mismos se conoce como debugging (depuración)1. Se dice que esta terminología proviene de 1947, cuando una computadora en la Universidad de Harvard (la Mark II) dejó de funcionar y finalmente se descubrió que la causa del problema era la presencia de una polilla en un relé electromagnético de la máquina. Sin embargo, otros historiadores sostienen que el término ya se usaba desde antes.\nA continuación se presenta una clasificación de los errores que se pueden cometer en programación:\nLos errores en la programación son tan comunes, que un científico de la computación muy reconocido, Edsger Dijkstra, dijo una vez: “si la depuración es el proceso de eliminar errores, entonces la programación es el proceso de generarlos”. Ante la presencia de uno, no hay más que respirar profundo y con paciencia revisar hasta encontrarlo y solucionarlo.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Errores de programación, guías de estilo y paquetes de R</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_f_errores_estilo_paquetes.html#errores-de-programación",
+    "href": "capitulos/01_f_errores_estilo_paquetes.html#errores-de-programación",
+    "title": "6  Errores de programación, guías de estilo y paquetes de R",
+    "section": "",
+    "text": "La polilla (bug) encontrada por la científica de la computación Grace Hooper en la Mark II fue pegada con cinta en un reporte sobre el malfuncionamiento de la máquina.\n\n\n\n\nErrores de sintaxis. Tal como el lenguaje humano, los lenguajes de programación tienen su propio vocabulario y su propia sintaxis, que es el conjunto de reglas gramaticales que establecen cómo se pueden combinar las distintas partes. Estas reglas sintácticas determinan que ciertas instrucciones están correctamente construidas, mientras que otras no. Cuando ejecutamos un programa, se chequea si el mismo es sintácticamente correcto. Si hemos violado alguna regla, por ejemplo, nos faltó una coma o nos sobra un paréntesis, mostrará un mensaje de error y debemos editar nuestro programa para corregirlo. En estos casos, hay que interpretar el mensaje de error, revisar el código y corregir el error.\nErrores lógicos. Se presentan cuando el programa no tiene errores de sintaxis pero arroja resultados incorrectos o ningún resultado. El software no muestra mensajes de error, debido a que, por supuesto, no sabe cuál es el resultado deseado, sino que sólo se limita a hacer lo que hemos programado. En estos casos hay que revisar el programa para encontrar algún error en su lógica. Este tipo de errores suelen ser los más problemáticos. Algunas ideas para enfrentarlos incluyen volver a pensar paso por paso lo que se debería hacer para solucionar el problema y compararlo con lo que se ha programado, agregar pasos para mostrar resultados intermedios o emplear herramientas especializadas de debugging (llamadas debuggers) para explorar el código paso a paso hasta identificar el error.\nErrores en la ejecución (runtime errors). Se presentan cuando el programa está bien escrito, sin errores lógicos ni sintácticos, pero igualmente se comporta de alguna forma incorrecta. Se dan a pesar de que el programa ande bien en el entorno de desarrollo del programador, pero no cuando algún usuario lo utiliza en algún contexto particular. Puede ser que se intente abrir un archivo que no existe, que el proceso supere la memoria disponible, que tomen lugar operaciones aritméticas no definidas como la división por cero, etc.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Errores de programación, guías de estilo y paquetes de R</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_f_errores_estilo_paquetes.html#guías-de-estilo",
+    "href": "capitulos/01_f_errores_estilo_paquetes.html#guías-de-estilo",
+    "title": "6  Errores de programación, guías de estilo y paquetes de R",
+    "section": "6.2 Guías de estilo",
+    "text": "6.2 Guías de estilo\nEs sumamente importante mantener la prolijidad en la escritura tanto del pseudocódigo como de los programas, para facilitar la lectura de los mismos, especialmente cuando estamos trabajando con problemas largos. Siempre hay que tener en cuenta de que cuando escribimos un programa, tenemos dos públicos potenciales: integrantes de nuestro equipo de trabajo que tienen leer el código y hacer sus propios aportes y nosotros mismos en el futuro, cuando retomemos código hecho en el pasado y necesitemos interpretar qué es lo que hicimos hacer.\nEs por eso que se establecen conjuntos de reglas para controlar y unificar la forma de escribir programas, que se conocen como guía de estilo. Estas reglas cubren aspectos como, por ejemplo, la forma de escribir comentarios en el código, la utilización de espacios o renglones en blanco, el formato de los nombres para los elementos que creamos nosotros mismos (como las funciones) y para los archivos que generamos, etc. Una guía de estilo no indica la única forma de escribir código, ni siquiera la forma correcta de hacerlo, sino que establece una convención para que todos trabajen de la misma forma, basándose en costumbres que sí se ha visto que pueden tener más ventajas que otras.\nPara programar en R existe una guía de estilo muy popular llamada The tidyverse style guide, creada por los desarrolladores de RStudio (Posit). En este curso vamos a adherir a sus recomendaciones. Si bien es una lectura muy interesante, particularmente si tenés intenciones de profundizar tus conocimientos sobre programación en R, no es necesario que lean dicha guía completa. Por ahora es suficiente con que imiten con atención el estilo que usamos en los ejemplos provistos en esta guía y sigan algunas recomendaciones generales como las siguientes:\n\nComo dijimos antes, escribimos nos los nombres de nuevos objetos con snake case y en minúscula:\n\nOk: mi_objeto.\nEvitar: MIOBJETO, miObjeto.\n\nEn R los espacios en blanco son ignorados, colocarlos o no no produce errores en el código. Sin embargo, se recomienda hacer uso de los mismos para facilitar la lectura. Se sugiere colocar espacios alrededor del operador de asignación &lt;- y de los operadores matemáticos (excepto la potencia). No colocamos espacio después de abrir o antes de cerrar un paréntesis.\n\nOk: z &lt;- (a + b)^2 / d\nEvitar: z&lt;-( a + b ) ^ 2/d\n\nUsamos un espacio después de poner una coma y entre el signo igual que se usa para definir argumentos en una función:\n\nOk: log(100, base = 10)\nEvitar: log(100 ,base=10)\n\nLos nombres de archivo deben describir su contenido y evitar espacios, símbolos y caracteres especiales, y preferentemente estar escritos en minúsculas.\n\nOk: analisis_exploratorio.R\nEvitar: Análisis exploratorio.R, codigo.r\n\n\nRecordemos siempre que seguir un buen estilo para programar es como hacer uso de una correcta puntuación cuando escribimos, podemos entendernos sin ella, peroesmuchomasdificilleersinolarespetamosno?2",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Errores de programación, guías de estilo y paquetes de R</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_f_errores_estilo_paquetes.html#paquetes-de-r",
+    "href": "capitulos/01_f_errores_estilo_paquetes.html#paquetes-de-r",
+    "title": "6  Errores de programación, guías de estilo y paquetes de R",
+    "section": "6.3 Paquetes de R",
+    "text": "6.3 Paquetes de R\n\n6.3.1 Diseño del sistema R\nR está diseñado como un sistema modular, dividido en dos partes principales:\n\nR Base: Se instala automáticamente cuando descargamos R desde CRAN (Comprehensive R Archive Network). Incluye las funciones fundamentales del lenguaje, como operadores matemáticos, herramientas para manipular datos y funciones estadísticas básicas.\nPaquetes adicionales: Son extensiones opcionales que amplían las funcionalidades de R. Cada paquete es un conjunto de funciones y datos diseñados para tareas específicas, como visualización de datos, modelado estadístico o manipulación avanzada de estructuras de datos.\n\n\n\n6.3.2 Instalación de paquetes\nPara utilizar un paquete en R, primero debemos instalarlo. La mayoría de los paquetes están disponibles en CRAN y, teniendo conexión a internet, se pueden descargar directamente con el siguiente comando:\ninstall.packages(\"nombre-del-paquete\")\nEsto descargará e instalará el paquete en la computadora, permitiéndolo usarlo en futuras sesiones.\n\n\n6.3.3 Carga de paquetes\nDespués de instalar un paquete, es necesario cargarlo en la sesión de R para poder utilizar sus funciones. Es como abrirlo para sacar las funciones que están guardadas dentro. Para hacerlo, usamos la función library():\nlibrary(\"nombre-del-paquete\")\nSi intentás usar una función de un paquete sin haberlo cargado previamente, R mostrará un error indicando que el objeto no fue encontrado.\nEs importante recordar que la instalación de un paquete solo se hace una vez, pero debemos cargarlo en cada nueva sesión de R en la que queramos utilizarlo. Cuando cerramos RStudio, los paquetes se descargan de la memoria, por lo que es necesario volver a llamarlos con library() la próxima vez que los necesitemos.\nEste sistema modular permite que R sea altamente flexible, permitiendo a los usuarios instalar solo las herramientas que realmente necesitan para sus análisis.\n\n\n6.3.4 Creación de paquetes en R\nLos paquetes en R no solo son desarrollados por expertos en estadística y computación, sino también por cualquier persona que quiera compartir herramientas útiles con la comunidad. Investigadores, analistas de datos y programadores contribuyen a la expansión del ecosistema de R creando paquetes que facilitan tareas específicas.\nSi bien algunos paquetes pueden ser muy sofisticados, la creación de uno no es algo exclusivo de grandes desarrolladores. De hecho, al finalizar esta materia, contarás con los conocimientos necesarios para construir tu propio paquete desde cero. Esto te permitirá organizar y compartir funciones de manera eficiente, facilitando su reutilización en distintos proyectos.\n\n\n6.3.5 Paquetes utilizados en esta materia\nComo estaremos aprendiendo nociones de programación, no necesitaremos usar paquetes adicionales en el contexto de esta asignatura, pero sí usarás muchos en otras materias.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Errores de programación, guías de estilo y paquetes de R</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_f_errores_estilo_paquetes.html#footnotes",
+    "href": "capitulos/01_f_errores_estilo_paquetes.html#footnotes",
+    "title": "6  Errores de programación, guías de estilo y paquetes de R",
+    "section": "",
+    "text": "Algunos usan el término bug para referirse exclusivamente a errores lógicos↩︎\nFrase tomada de acá.↩︎",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Errores de programación, guías de estilo y paquetes de R</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_g_opcional.html",
+    "href": "capitulos/01_g_opcional.html",
+    "title": "7  Lectura opcional",
+    "section": "",
+    "text": "7.1 Breve reseña histórica sobre la programación\nLa historia de la programación está vinculada directamente con la de la computación. Esta palabra proviene del latín computatio, que deriva del verbo computare, cuyo significado es “enumerar cantidades”. Computación, en este sentido, designa la acción y efecto de computar, realizar una cuenta, un cálculo matemático. De allí que antiguamente computación fuese un término usado para referirse a los cálculos realizados por una persona con un instrumento expresamente utilizado para tal fin (como el ábaco, por ejemplo) o sin él. En este sentido, la computación ha estado presente desde tiempos ancestrales, sin embargo debemos remontarnos al siglo XVII para encontrar los primeros dispositivos diseñados para automatizar cómputos matemáticos.\nEn 1617 el matemático escocés John Napier (el mismo que definió los logaritmos) inventó un sistema conocido como los huesos de Napier o huesos neperianos que facilitaba la tarea de multiplicar, dividir y tomar raíces cuadradas, usando unas barras de hueso o marfil que tenían dígitos grabados. Esta fue la base para otras ideas más avanzadas, entre ellas la que dio origen a la primera calculadora mecánica, inventada por el alemán Wilhelm Schickard en 1623, capaz de realizar cómputos aritméticos sencillos funcionando a base de ruedas y engranajes. Se componía de dos mecanismos diferenciados, un ábaco de Napier de forma cilíndrica en la parte superior y un mecanismo en la inferior para realizar sumas parciales de los resultados obtenidos con el aparato de la parte superior. Fue llamado reloj calculador. A partir de aquí se fueron desarrollando otros modelos, todos ellos teniendo en común el hecho de ser puramente mecánicos, sin motores ni otras fuentes de energía. El operador ingresaba números ubicando ruedas de metal en posiciones particulares y al girarlas otras partes de la máquina se movían y mostraban el resultado. Algunos ejemplos son las calculadoras del inglés William Oughtred en 1624, de Blaise Pascal en 1645 (llamada pascalina), la de Samuel Morland en 1666 y las de Leibniz, en 1673 y 1694.\nDe izquierda a derecha: los huesos de Napier (Museo Arqueológico Nacional de España), el reloj calculador de Schickard (Museo de la Ciencia de la Universidad Pública de Navarra) y una pascalina del año 1952\nEl siglo XVIII trajo consigo algunos otros diseños, pero un gran salto se dio a comienzos del siglo XIX de mano de un tejedor y comerciante francés, Joseph Jacquard. En 1801 creó un telar que tenía un sistema de tarjetas perforadas para controlar las puntadas del tejido, de forma que fuera posible programar una gran diversidad de tramas y figuras. Sin saberlo, Jacquard sentó una idea fundamental para la creación de las computadoras.\nUn telar de Jacquard y sus tarjetas perforadas en el Museo de la ciencia y la industria en Mánchester.\nEn 1822 el matemático británico Charles Babbage publicó un diseño para la construcción de una máquina diferencial, que podía calcular valores de funciones polinómicas mediante el método de las diferencias. Este complejo sistema de ruedas y engranajes era el primero que podía trabajar automáticamente utilizando resultados de operaciones previas. Si bien el diseño era viable, por motivos técnicos y económicos no lo pudo concretar (sólo construyó un modelo de menor escala). Sin embargo, Babbage no se dio por vencido y en 1837 presentó el diseño de una máquina analítica, un aparato capaz de ejecutar cualquier tipo de cálculo matemático y que, por lo tanto, se podría utilizar con cualquier propósito. Tal como el telar de Jacquard, la operación de esta máquina sería controlada por un patrón de perforaciones hechas sobre una tarjetas que la misma podría leer. Al cambiar el patrón de las perforaciones, se podría cambiar el comportamiento de la máquina para que resuelva diferentes tipos de cálculos. Para la salida de resultados, la máquina sería capaz de perforar tarjetas. Además, funcionaría con un motor a vapor y su tamaño hubiese sido de 30 metros de largo por 10 de ancho. Si bien Babbage tampoco llegó a concretar en vida este diseño que dejó plasmado en más de 300 dibujos y 2200 páginas por motivos políticos, se lo considera como la primera conceptualización de lo que hoy conocemos como computadora, por lo cual Babbage es conocido como el padre de la computación.\nEn 1843 Lady Ada Lovelace, una matemática y escritora británica, publicó una serie de notas sobre la máquina analítica de Babbage, en las que resaltaba sus potenciales aplicaciones prácticas, incluyendo la descripción detallada de tarjetas perforadas para que sea capaz de calcular los números de Bernoulli. Al haber señalado los pasos para que la máquina pueda cumplir con estas y otras tareas, Ada es considerada actualmente como la primera programadora del mundo, a pesar de que en la época no fue tomada en serio por la comunidad científica, principalmente por su condición de mujer.\nCharles Babbage, Ada Lovelace y el algoritmo que publicó Ada para calcular los números de Bernoulli con la máquina analítica de Charles.\nLa utilidad de las tarjetas perforadas quedó confirmada en 1890, cuando Herman Hollerith las utilizó para automatizar la tabulación de datos en el censo de Estados Unidos. Las perforaciones en determinados lugares representaban información como el sexo o la edad de las personas, logrando que se pudieran lograr clasificaciones y conteos de forma muy veloz. Así, se tardaron sólo 3 años en procesar la información del censo, cinco años menos que en el anterior de 1880. Con el fin de comercializar esta tecnología, Hollerith fundó una compañía que terminaría siendo la famosa International Business Machine (IBM), empresa líder en informática hasta el día de hoy.\nSin embargo, la visión de Babbage de una computadora programable no se hizo realidad hasta los años 1940, cuando el advenimiento de la electrónica hizo posible superar a los dispositivos mecánicos existentes. John Atanasoff y Clifford Berry (Iowa State College, Estados Unidos) terminaron en 1942 en Iowa State College (Estados Unidos) una computadora electrónica capaz de resolver sistemas de ecuaciones lineales simultáneas, llamada ABC (por “Atanasoff Berry Computer”). La misma contaba con 300 tubos de vacío, unas bombillas de vidrio con ciertos componentes que podían recibir y modificar una señal eléctrica mediante el control del movimiento de los electrones produciendo una respuesta, que habían sido presentados por primera vez en 1906 por el estadounidense Lee De Forest. La ABC dio comienzo a la conocida como la primera generación de computadoras basadas en el empleo de tubos de vacío.\nLa primera computadora electrónica de propósito general fue la ENIAC, Electronic Numerical Integrator and Computer, completada por Presper Eckert y John Mauchly en la Universidad de Pensilvania. Podía realizar cinco mil operaciones aritmética por segundo y tenía más de 18000 tubos de vacío, ocupando una sala de 9x15 metros en un sótano de la universidad donde se montó un sistema de aire acondicionado especial.\nNi la ABC ni la ENIAC eran reprogramables: la ABC servía el propósito específico de resolver sistemas de ecuaciones y la ENIAC era controlada conectando ciertos cables en un panel, lo que hacía muy compleja su programación. El siguiente gran avance se produjo en 1945, cuando el matemático húngaro-estadounidense John von Neumann (Universidad de Princeton) propuso que los programas, es decir, las instrucciones para que la máquina opere, y también los datos necesarios, podrían ser representados y guardados en una memoria electrónica interna. Así nació el concepto de programa almacenado (o stored-program), en contraposición con el uso de tableros de conexiones y mecanismos similares de los modelos vigentes. Los creadores de la ENIAC, bajo la consultoría de von Neumann, implementaron esto en el diseño de su sucesora, la EDVAC, terminada en 1949. También ya había experimentado con esta idea el alemán Konrad Zuse, quien entre 1937 y 1941 desarrolló la Z3, por lo cual es considerada por algunos como la primera máquina completamente automática y programable. En lugar de usar tubos de vacíos, empleaba un conjunto de 2600 relés, unos dispositivos electromagnéticos inventados en 1835 y empleados, por ejemplo, en telegrafía.  El modelo original de la Z3 fue destruido en Berlín por un bombardeo durante la segunda guerra mundial.\nDe izquierda a derecha: las computadoras ABC, ENIAC y Z3\nEste nuevo paradigma cambió la historia de la computación, como también lo hizo la invención del transistor en 1947 en los Laboratorios Bell. Un transistor es un dispositivo electrónico semiconductor que entrega una señal de salida en respuesta a una señal de entrada, mucho más pequeño que los tubos de vacío y que consumen menos energía eléctrica. Así, una computadora podía tener cientos de miles de transistores, no obstante ocupando mucho espacio.\nDesde entonces, la computación ha evolucionado muy rápidamente, con la introducción de nuevos sistemas y conceptos, que llegan a los complejos y poderosos diseños electrónicos que caracterizan la vida actual. En un intento de caracterizar y resumir esta impactante evolución, algunos historiadores dividen al desarrollo de las computadoras modernas en “generaciones”.\nDe derecha a izquierda: un tubo de vacío, un transistor y un chip.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lectura opcional</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_g_opcional.html#niveles-de-abstracción-de-los-lenguajes-de-programación",
+    "href": "capitulos/01_g_opcional.html#niveles-de-abstracción-de-los-lenguajes-de-programación",
+    "title": "7  Lectura opcional",
+    "section": "7.2 Niveles de abstracción de los lenguajes de programación",
+    "text": "7.2 Niveles de abstracción de los lenguajes de programación\nSi bien hay distintos lenguajes de programación, una computadora en definitiva es un aparato que sólo sabe hablar en binario, es decir, sólo interpreta señales eléctricas con dos estados posibles, los cuales son representados por los dígitos binarios 0 y 1. Toda instrucción que recibe la computadora se construye mediante una adecuada y larga combinación de ceros y unos1. Este sistema de código con ceros y unos que la computadora interpreta como instrucciones o conjuntos de datos se llama lenguaje de máquina (o código de máquina).\nProgramar en lenguaje de máquina es muy complejo y lento, es fácil cometer errores pero es difícil arreglarlos. Por eso a principios de la década de 1950 se inventaron los lenguajes ensambladores, que usan palabras para representar simbólicamente las operaciones que debe realizar la computadora. Cada una de estas palabras reemplaza un código de máquina binario, siendo un poco más fácil programar. Imaginemos que deseamos crear un programa que permita sumar dos números elegidos por una persona. La computadora puede hacer esto si se lo comunicamos mediante un mensaje compuesto por una larga cadena de ceros y unos (lenguaje de máquina) que a simple vista no podríamos entender. Sin embargo, escrito en lenguaje ensamblador, el programa se vería así (por ejemplo):\n\n\n\n\n\n\n\n\n\nPrograma en lenguaje ensamblador para leer dos números, sumarlos y mostrar el resultado. Al final de cada línea hay una descripción de la operación realizada.\n\n\n\n\nEl programa que se encarga de traducir esto al código de máquina se llama ensamblador. A pesar de que no haya ceros y unos como en el lenguaje de máquina, probablemente el código anterior tampoco sea fácil de entender. Aparecen instrucciones que tal vez podemos interpretar, como add por sumar o sub por substraer, pero está lleno de cálculos hexadecimales, referencias a posiciones en la memoria de la computadora y movimientos de valores que no lo hacen muy amigable. Por eso, a pesar de que la existencia de los lenguajes ensambladores simplificó mucho la comunicación con la computadora, se hizo necesario desarrollar lenguajes que sean aún más sencillos de usar.\nPor ejemplo, con el lenguaje que vamos a aprender, R, el problema de la imagen anterior, que consiste en pedirle a una persona que ingrese dos números para luego sumarlos se resumen en las siguientes líneas de código:\n\nn1 &lt;- scan()\nn2 &lt;- scan()\nprint(n1 + n2)\n\nEn las dos primeras líneas con la instrucción scan() (que quiere decir “escanear”, “leer”) se le pide a la persona que indique dos números y en la tercera línea se muestra el resultado de la suma, con la instrucción print() (“imprimir”, “mostrar”). Mucho más corto y entendible.\nEsta simplificación es posible porque nos permitimos ignorar ciertos aspectos del proceso que realiza la computadora. Todas esas acciones que se ven ejemplificadas en la imagen con el código ensamblador se llevan a cabo de todas formas, pero no lo vemos. Nosotros sólo tenemos que aprender esas últimas tres líneas de código, de forma que nos podemos concentrar en el problema a resolver (ingresar dos números, sumarlos y mostrar el resultado) y no en las complejas operaciones internas que tiene que hacer el microprocesador.\nEn programación, la idea de simplificar un proceso complejo ignorando algunas de sus partes para comprender mejor lo que hay que realizar y así resolver un problema se conoce como abstracción2. Esto quiere decir que los lenguajes de programación pueden tener distintos niveles de abstracción:\n\nLenguajes de bajo nivel de abstracción: permiten controlar directamente el hardware de la computadora, son específicos para cada tipo de máquina, y son más rígidos y complicados de entender para nosotros. El lenguaje ensamblador entra en esta categoría.\nLenguajes de alto nivel de abstracción: diseñados para que sea fácil para los humanos expresar los algoritmos sin necesidad de entender en detalle cómo hace exactamente el hardware para ejecutarlos. El lenguaje que utilizaremos en este taller, R, es de alto nivel. Son independientes del tipo de máquina.\nLenguajes de nivel medio de abstracción: son lenguajes con características mixtas entre ambos grupos anteriores.\n\n\n\n\n\n\n\n\n\n\nDistintos lenguajes de programación y sus logos.\n\n\n\n\nSi bien podemos programar usando un lenguaje de alto nivel para que nos resulte más sencillo, alguien o algo debe traducirlo a lenguaje de máquina para que la computadora, que sólo entiende de ceros y unos, pueda realizar las tareas. Esto también es necesario incluso si programáramos en lenguaje ensamblador. Para estos procesos de traducción se crearon los compiladores e intérpretes.\nUn compilador es un programa que toma el código escrito en un lenguaje de alto nivel y lo traduce a código de máquina, guardándolo en un archivo que la computadora ejecutará posteriormente (archivo ejecutable). Para ilustrar el rol del compilador, imaginemos que alguien que sólo habla español le quiere mandar una carta escrita en español a alguien que vive en Alemania y sólo habla alemán. Cuando esta persona la reciba, no la va a entender. Se necesita de un intermediario que tome la carta en español, la traduzca y la escriba en alemán y luego se la mande al destinatario, quien ahora sí la podrá entender. Ese es el rol de un compilador en la computadora. Ahora bien, el resultado de la traducción, que es la carta escrita en alemán, sólo sirve para gente que hable alemán. Si se quiere enviar el mismo mensaje a personas que hablen otros idiomas, necesitaremos hacer la traducción que corresponda. De la misma forma, el código generado por un compilador es específico para cada máquina, depende de su arquitectura.\nAdemás de los compiladores, para realizar este pasaje también existen los intérpretes. Un intérprete es un programa que traduce el código escrito en lenguaje de alto nivel a código de máquina, pero lo va haciendo a medida que se necesita, es decir, su resultado reside en la memoria temporal de la computadora y no se genera ningún archivo ejecutable. Siguiendo con el ejemplo anterior, es similar a viajar a Alemania con un intérprete que nos vaya traduciendo en vivo y en directo cada vez que le queramos decir algo a alguien de ese país. En su implementación por defecto, el lenguaje R es interpretado, no compilado.\nConcluyendo, gracias al concepto de la abstracción podemos escribir programas en un lenguaje que nos resulte fácil entender, y gracias al trabajo de los compiladores e intérpretes la computadora podrá llevar adelante las tareas necesarias.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lectura opcional</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_g_opcional.html#software-y-hardware",
+    "href": "capitulos/01_g_opcional.html#software-y-hardware",
+    "title": "7  Lectura opcional",
+    "section": "7.3 Software y hardware",
+    "text": "7.3 Software y hardware\nComo podemos ver, en la historia de la computación hubo dos aspectos que fueron evolucionando: las máquinas y los programas que las dirigen. Hacemos referencia a estos elementos como hardware y software respectivamente, y es la conjunción de ambos la que le da vida a la computación y hace posible la programación.\n\n\n\n\n\n\n\n\n\nRepresentación de la diferencia entre hardware y software.\n\n\n\n\nEl hardware es el conjunto de piezas físicas y tangibles de la computadora. Existen diversas formas de clasificar a los elementos que componene al hardware, según distintos criterios:\n\n\n(#tab:hardware) Clasificación del hardware\n\n\n\n\n\n\nCritero\n\n\nClasificación\n\n\nDescripción\n\n\nEjemplos\n\n\n\n\n\n\nSegún su utilidad\n\n\nDispositivos de procesamiento\n\n\nSon los que reciben las instrucciones mediante señales eléctricas y usan cálculos y lógica para interpretarlas y emitir otras señales eléctricas como resultado.\n\n\nmicroprocesador, tarjeta gráfica, tarjeta de sonido, etc.\n\n\n\n\nDispositivos de almacenamiento\n\n\nSon capaces de guardar información para que esté disponible para el sistema.\n\n\ndisco duro, pen drive, DVD, etc.\n\n\n\n\nDispositivos de entrada\n\n\nCaptan instrucciones por parte de los usuarios y las transforman en señales eléctricas interpretables por la máquina.\n\n\nteclado, mouse, touch pad, etc.\n\n\n\n\nDispositivos de salida\n\n\nTransforman los resultados de los dispositivos de procesamiento para presentarlos de una forma fácilmente interpretable para el usuario.\n\n\nmonitor, impresora, etc\n\n\n\n\nSegún su ubicación\n\n\nDispositivos internos\n\n\nGeneralmente se incluye dentro de la carcasa de la computadora.\n\n\nmicroprocesador, disco rígido, ventiladores, módem, tarjeta gráfica, fuente de alimentación, puertos, etc.\n\n\n\n\nDispositivos externos o periféricos\n\n\nNo se incluye dentro de la carcasa de la computadora y está al alcance del usuario\n\n\nmonitor, teclado, mouse, joystick, micrófono, impresora, escáner, pen drive, lectores de código de barras, etc.\n\n\n\n\nSegún su importancia\n\n\nHardware principal\n\n\nDispositvos esenciales para el funcionamiento de la computadora\n\n\nmicroprocesador, disco rígido, memoria RAM, fuente de alimentación, monitor, etc.\n\n\n\n\nHardware complementario\n\n\nAquellos elementos no indispensables (claramente, dependiendo del contexto, alguna pieza del hardware que en alguna situación podría considerarse complementaria, en otras resulta principal).\n\n\n\n\n\n\n\n\\(~\\)\nPor otro lado tenemos al software, que es el conjunto de todos los programas (es decir, todas las instrucciones que recibe la computadora) que permiten que el hardware funcione y que se pueda concretar la ejecución de las tareas. No tiene una existencia física, sino que es intangible. El software se puede clasificar de la siguiente forma:\n\n\n(#tab:software) Clasificación del software\n\n\n\n\n\n\nClasificación\n\n\nDescripción\n\n\nEjemplos\n\n\n\n\n\n\nSoftware de sistema o software base\n\n\nSon los programas informáticos que están escritos en lenguaje de bajo nivel como el de máquina o ensamblador y cuyas instrucciones controlan de forma directa el hardware.\n\n\nBIOS o UEFIs (sistemas que se encargan de operaciones básicas como el arranque del sistema, la configuración del hardware, etc), sistemas operativos (Linux, Windows, iOS, Android), controladores o drivers, etc.\n\n\n\n\nSoftware de aplicación o utilitario\n\n\nSon los programas o aplicaciones que usamos habitualmente para realizar alguna tarea específica.\n\n\nprocesadores de texto como Word, reproductor de música, Whatsapp, Guaraní, navegadores web, juegos, etc.\n\n\n\n\nSoftware de programación o de desarrollo\n\n\nSon los programas y entornos que nos permiten desarrollar nuestras propias herramientas de software o nuevos programas. Aquí se incluyen los lenguajes de programación.\n\n\nC++, Java, Python, R, etc.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lectura opcional</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_g_opcional.html#footnotes",
+    "href": "capitulos/01_g_opcional.html#footnotes",
+    "title": "7  Lectura opcional",
+    "section": "",
+    "text": "Como podés leer en Sección 7.1, las primeras computadoras no se manejaban con lenguajes de programación, sino que para introducir información e instrucciones en las primeras computadoras se usaban tarjetas perforadas, en las cuales los orificios representaban un “0” y las posiciones que no los tenían se entendían como un “1”, de modo que la máquina podía operar empleando el sistema binario.↩︎\nLa abstracción no es una idea exclusiva de la programación. Se encuentra, también, por ejemplo, en el arte abstracto.↩︎",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lectura opcional</span>"
     ]
   },
   {
@@ -151,10 +500,21 @@
     "href": "capitulos/01_practica.html",
     "title": "Práctica de la Unidad 1",
     "section": "",
-    "text": "Ejercicio 1\nEnunciado Ejercicio 1…",
+    "text": "Ejercicio 1\nUsar la consola de R en RStudio para realizar las siguientes operaciones:\nLuego, crear un nuevo script en RStudio y escribir en él las operaciones anteriores. En una línea anterior, agregar el comentario “Ejercicio 1”. Guardar el script con el nombre resolucion_practica_1.R en cualquier lugar de tu computadora. Continuar completando el script la solución de los restantes ejercicios de esta práctica, usando comentarios para identificarlos.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_practica.html#ejercicio-1",
+    "href": "capitulos/01_practica.html#ejercicio-1",
+    "title": "Práctica de la Unidad 1",
+    "section": "",
+    "text": "Sumar 25 y 17.\nMultiplicar 6 por 8.\nCalcular la raíz cuadrada de 144.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -162,97 +522,141 @@
     "href": "capitulos/01_practica.html#ejercicio-2",
     "title": "Práctica de la Unidad 1",
     "section": "Ejercicio 2",
-    "text": "Ejercicio 2\nEnunciado Ejercicio 2…",
+    "text": "Ejercicio 2\nEn R, crear los siguientes objetos y observar sus valores:\nx &lt;- 10\ny &lt;- \"Hola\"\nz &lt;- 5\n\n¿Qué tipo de objeto es cada uno?\nModificar el objeto z para almacene el resultado de multiplicar a x por 6.\n¿Qué sucede si intentás sumar x e y? Explicar por qué ocurre esto.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_practica.html#ejercicio-3",
+    "href": "capitulos/01_practica.html#ejercicio-3",
+    "title": "Práctica de la Unidad 1",
+    "section": "Ejercicio 3",
+    "text": "Ejercicio 3\nDescargar el archivo practica1_ambiente.RData y guardarlo en la carpeta del proyecto unidad_1. Este archivo es de extensión .RData y se utiliza para guardar objetos de R. Cuando este archivo se lee con R, se cargan en el environment los objetos que tiene almacenados. Vamos a leer este archivo para identificar qué tipo de objetos aparecen en nuestro ambiente. Para abrir este archivo, podemos usar alguna de estas opciones:\n\nHacer doble clic en el archivo practica1_ambiente.RData.\nEn la pestaña Environment de RStudio, hacer clic en el ícono de abrir y seleccionar el archivo practica1_ambiente.RData.\nEjecutar la siguiente instrucción:\n\n\nload(\"practica1_ambiente.RData\")\n\nUna vez que el archivo haya sido cargado en R, resolver los siguiente puntos:\n\n¿Cuántos objetos fueron incorporadas al ambiente al haber cargado el archivo? ¿Cuáles son sus nombres o identificadores? ¿Qué tipo de dato contiene cada uno? ¿Qué valor contiene cada uno?\nEvaluar si al menos una de las variables var2 o var5 contiene un número negativo, escribiendo la correspondiente operación en R.\nEvaluar si ambas variables var2 y var5 contienen un número negativo, escribiendo la correspondiente operación en R.\nEvaluar si al dividir var2 por la suma entre var5 y 100, el resto es menor que 10, escribiendo la correspondiente operación en R.\nEvalúe si los valores guardados en var3 y var6 son iguales o no. Inspeccione dichos valores y comente lo observado.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_practica.html#ejercicio-4",
+    "href": "capitulos/01_practica.html#ejercicio-4",
+    "title": "Práctica de la Unidad 1",
+    "section": "Ejercicio 4",
+    "text": "Ejercicio 4\n\nEncontrar la página de ayuda en R para la función round().\n\nDescubrir qué argumentos acepta la función y qué hace cada uno de ellos.\n\n¿Cuál de esos argumentos es de uso obligatorio y cuál, opcional?\nUsar la función para redondear el valor 3.14159 con 0, 1 o 2 decimales.\nEscribir tres formas distintas de usar la función para redondear el valor 3.14159 con dos decimales/",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_practica.html#ejercicio-5",
+    "href": "capitulos/01_practica.html#ejercicio-5",
+    "title": "Práctica de la Unidad 1",
+    "section": "Ejercicio 5",
+    "text": "Ejercicio 5\nSin utilizar R, calcular el valor resultante de las siguientes operaciones, para cada uno de los casos presentados en las columnas. Luego, verificar en R.\n\n\n\n\n\n\n\n\n\nOperación\nedad &lt;- 21, altura &lt;- 1.90\nedad &lt;- 17 , altura &lt;- 1.90\nedad &lt;- 21, altura &lt;- 1.50\n\n\n\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n\n\n\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n\n\n\n\n!(edad &gt; 18)",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_practica.html#ejercicio-6",
+    "href": "capitulos/01_practica.html#ejercicio-6",
+    "title": "Práctica de la Unidad 1",
+    "section": "Ejercicio 6",
+    "text": "Ejercicio 6\nAplicando las reglas de prioridad en los operadores aritméticos, anticipar el resultado de la siguiente expresión. Luego, verificar en R.\n\n1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_practica.html#ejercicio-7",
+    "href": "capitulos/01_practica.html#ejercicio-7",
+    "title": "Práctica de la Unidad 1",
+    "section": "Ejercicio 7",
+    "text": "Ejercicio 7\n¿Para qué valores de x la siguiente expresión resulta verdadera?: (x != 4) || (x != 17).",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_practica.html#ejercicio-8",
+    "href": "capitulos/01_practica.html#ejercicio-8",
+    "title": "Práctica de la Unidad 1",
+    "section": "Ejercicio 8",
+    "text": "Ejercicio 8\nSe desea determinar si un determinado año es bisiesto. Si bien pensamos que los años bisiestos ocurren cada 4 años, los procesos astronómicos que dan origen a este concepto son algo más complejos. Dado que en realidad la Tierra tarda 365.25 días en completar su órbita anual alrededor del sol, agregar un día extra una vez cada 4 años ayuda a mantener el calendario en sincronización con el sol, pero aún queda un pequeño desfasaje. Por lo tanto, la regla completa dice que los años bisiestos ocurren cada 4 años, excepto los terminados en 00, los cuales son bisiestos sólo si son divisibles por 400. Es decir, los años como 1600, 1700, 1800 son bisiestos si son divisibles por 400. Por ejemplo, el año 1900 no fue bisiesto a pesar de ser divisible por 4, pero el año 2000 si lo fue por ser divisible por 400. Entonces, para que un año dado sea bisiesto, se debe cumplir una de las siguientes condiciones:\n\nEl año es divisible por 4 pero no divisible por 100, o\nEl año es divisible por 400.\n\nSiendo año el nombre del objeto cuyo valor es el año que se desea evaluar, expresar la operación lógica que devuelve el valor TRUE sólo si año es un año bisiesto.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_practica.html#ejercicio-9",
+    "href": "capitulos/01_practica.html#ejercicio-9",
+    "title": "Práctica de la Unidad 1",
+    "section": "Ejercicio 9",
+    "text": "Ejercicio 9\nPara cada bloque de código, determinar el valor final de cada variable antes de ejecutarlo en R. Luego, comprobar la respuesta ejecutando el código.\n\n¿Cuáles son los valores finales de a y b?\n\n\na &lt;- 10\nb &lt;- a * 2\na &lt;- a + 5\nb &lt;- b - a\n\n\n¿Cuáles son los valores finales de m y n?\n\n\nm &lt;- 5\nn &lt;- 2 * m\nm &lt;- m + 3\nn &lt;- n + m\nm &lt;- n - 4\n\n\n¿Cuál es el valor final de y?\n\n\nx &lt;- 6\ny &lt;- 2\nx &lt;- x / y + x * y\ny &lt;- x^2 %% 10\ny &lt;- y * 2\ny\n\n\n¿Cuál es el valor final de resultado?\n\n\na &lt;- 5\nb &lt;- 2\nc &lt;- 3\n\nresultado &lt;- a^b - (c * b) + (a %% c)\n\n\n¿Cuáles son los valores finales de x, y y z?\n\n\nx &lt;- 8\ny &lt;- 3\nz &lt;- 2\n\nx &lt;- x %% y + z^y\ny &lt;- (x + y) %/% z\nz &lt;- z + x - y",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_practica.html#ejercicio-10",
+    "href": "capitulos/01_practica.html#ejercicio-10",
+    "title": "Práctica de la Unidad 1",
+    "section": "Ejercicio 10",
+    "text": "Ejercicio 10\nEscribir una expresión en R para calcular el área total y el volumen de un prisma rectangular, considerando que las longitudes se guardan en las variables numéricas a, b y h, como se muestra en la imagen.\n\n\n\n\n\n\n\nPrisma rectangular.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_practica.html#ejercicio-11",
+    "href": "capitulos/01_practica.html#ejercicio-11",
+    "title": "Práctica de la Unidad 1",
+    "section": "Ejercicio 11",
+    "text": "Ejercicio 11\nResponder las siguientes preguntas:\n\n¿Cuál es la ruta informática o path del script resulucion_practica_1.R que creaste en el ejercicio 1?\n¿Cuál es el directorio de trabajo o working directory en tu sesión de trabajo actual?",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_practica.html#ejercicio-12",
+    "href": "capitulos/01_practica.html#ejercicio-12",
+    "title": "Práctica de la Unidad 1",
+    "section": "Ejercicio 12",
+    "text": "Ejercicio 12\n\nCrear en tu computadora una carpeta para guardar todo lo relacionado a tus estudios (puede estar en Documentos o dentro de Google Drive u otro sistema de sincronización y respaldo).\nCrear una subcarpeta para los elementos relacionados al primer año de cursado.\nEn ella, crear una carpeta para cada materia que estás cursando, incluyendo una para Programación 1, con el nombre programacion_1.\nCrear un proyecto de RStudio llamado unidad_1, dentro de la carpeta programacion_1.\nGuardar en la carpeta del proyecto todos los archivos que hayas utilizado. Por ejemplo, el script resolucion_practica_1.R y el archivo descargado practica1_ambiente.RData.\nA partir de ahora, cada vez que comiences una nueva unidad en esta asignatura, crear un nuevo proyecto como hicimos para la Unidad 1.",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
     ]
   },
   {
     "objectID": "capitulos/02.html",
     "href": "capitulos/02.html",
-    "title": "Unidad 2. Nombre de la unidad.",
+    "title": "Unidad 2. Estructuras de control",
     "section": "",
-    "text": "Presentación de la Unidad 2.\n\nPágina en construcción.",
+    "text": "Página en construcción.",
     "crumbs": [
-      "Unidad 2. Nombre de la unidad."
+      "Unidad 2. Estructuras de control"
     ]
   },
   {
     "objectID": "capitulos/02_a_algo.html",
     "href": "capitulos/02_a_algo.html",
-    "title": "8  Primera sección de la Unidad 2",
+    "title": "9  Primer capítulo de la Unidad 2",
     "section": "",
-    "text": "Página en construcción.\n\nKnuth (1984) bla\n\n\n\n\nKnuth, Donald E. 1984. «Literate Programming». Comput. J. 27 (2): 97-111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "Página en construcción.",
     "crumbs": [
-      "Unidad 2. Nombre de la unidad.",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Primera sección de la Unidad 2</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/webexercises.html",
-    "href": "capitulos/webexercises.html",
-    "title": "9  Ejemplos para crear “Webexercises”",
-    "section": "",
-    "text": "9.1 Example Questions\nThis is a Web Exercise template created by the psychology teaching team at the University of Glasgow, based on ideas from Software Carpentry. This template shows how instructors can easily create interactive web documents that students can use in self-guided learning.\nThe {webexercises} package provides a number of functions that you use in inline R code or through code chunk options to create HTML widgets (text boxes, pull down menus, buttons that reveal hidden content). Examples are given below. Render this file to HTML to see how it works.\nNOTE: To use the widgets in the compiled HTML file, you need to have a JavaScript-enabled browser.",
-    "crumbs": [
-      "Unidad 2. Nombre de la unidad.",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Ejemplos para crear \"Webexercises\"</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/webexercises.html#example-questions",
-    "href": "capitulos/webexercises.html#example-questions",
-    "title": "9  Ejemplos para crear “Webexercises”",
-    "section": "",
-    "text": "9.1.1 Fill-In-The-Blanks (fitb())\nCreate fill-in-the-blank questions using fitb(), providing the answer as the first argument.\n\n2 + 2 is \n\nYou can also create these questions dynamically, using variables from your R session.\n\nThe square root of 4 is: \n\nThe blanks are case-sensitive; if you don’t care about case, use the argument ignore_case = TRUE.\n\nWhat is the letter after D? \n\nIf you want to ignore differences in whitespace use, use the argument ignore_ws = TRUE (which is the default) and include spaces in your answer anywhere they could be acceptable.\n\nHow do you load the tidyverse package? \n\nYou can set more than one possible correct answer by setting the answers as a vector.\n\nType a vowel: \n\nYou can use regular expressions to test answers against more complex rules.\n\nType any 3 letters: \n\n\n\n9.1.2 Multiple Choice (mcq())\n\n“Never gonna give you up, never gonna: let you goturn you downrun awaylet you down”\n“I bless the rainsguess it rainssense the rain down in Africa” -Toto\n\n\n\n9.1.3 True or False (torf())\n\nTrue or False? You can permute values in a vector using sample(). TRUEFALSE\n\n\n\n9.1.4 Longer MCQs (longmcq())\nWhen your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use longmcq() to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with echo=FALSE.\nWhat is a p-value?\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion\n\nWhat is true about a 95% confidence interval of the mean?\n\n there is a 95% probability that the true mean lies within this range 95% of the data fall within this range if you repeated the process many times, 95% of intervals calculated in this way contain the true mean",
-    "crumbs": [
-      "Unidad 2. Nombre de la unidad.",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Ejemplos para crear \"Webexercises\"</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/webexercises.html#checked-sections",
-    "href": "capitulos/webexercises.html#checked-sections",
-    "title": "9  Ejemplos para crear “Webexercises”",
-    "section": "9.2 Checked sections",
-    "text": "9.2 Checked sections\nCreate sections with the class webex-check to add a button that hides feedback until it is pressed. Add the class webex-box to draw a box around the section (or use your own styles).\n\nI am going to learn a lot: TRUEFALSE\nWhat is a p-value?\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion",
-    "crumbs": [
-      "Unidad 2. Nombre de la unidad.",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Ejemplos para crear \"Webexercises\"</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/webexercises.html#hidden-solutions-and-hints",
-    "href": "capitulos/webexercises.html#hidden-solutions-and-hints",
-    "title": "9  Ejemplos para crear “Webexercises”",
-    "section": "9.3 Hidden solutions and hints",
-    "text": "9.3 Hidden solutions and hints\nYou can fence off a solution area that will be hidden behind a button using hide() before the solution and unhide() after, each as inline R code. Pass the text you want to appear on the button to the hide() function.\nIf the solution is a code chunk, instead of using hide() and unhide(), simply set the webex.hide chunk option to TRUE, or set it to the string you wish to display on the button.\nRecreate the scatterplot below, using the built-in cars dataset.\n\n\n\n\n\n\n\n\n\n\n\nI need a hint\n\nSee the documentation for plot() (?plot)\n\n\n\n\n\nClick here to see the solution\n\nplot(cars$speed, cars$dist)",
-    "crumbs": [
-      "Unidad 2. Nombre de la unidad.",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Ejemplos para crear \"Webexercises\"</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/02_practica.html",
-    "href": "capitulos/02_practica.html",
-    "title": "10  Práctica de la Unidad 2",
-    "section": "",
-    "text": "10.1 Ejercicio 1\nEnunciado Ejercicio 1…\nVer Solución\n\nfor (i in 1:10) {\n  print(i)\n}",
-    "crumbs": [
-      "Unidad 2. Nombre de la unidad.",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Práctica de la Unidad 2</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/02_practica.html#ejercicio-2",
-    "href": "capitulos/02_practica.html#ejercicio-2",
-    "title": "10  Práctica de la Unidad 2",
-    "section": "10.2 Ejercicio 2",
-    "text": "10.2 Ejercicio 2\nEnunciado Ejercicio 2…\n\n\n\nVer Solución\n\nfor (i in 1:10) {\n  print(i)\n}",
-    "crumbs": [
-      "Unidad 2. Nombre de la unidad.",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Práctica de la Unidad 2</span>"
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Primer capítulo de la Unidad 2</span>"
     ]
   },
   {
@@ -260,7 +664,7 @@
     "href": "capitulos/90.html",
     "title": "Soluciones de la Práctica",
     "section": "",
-    "text": "Página en construcción.",
+    "text": "En esta sección se presentan las respuestas a todos los ejercicios de la práctica. Al hacer uso de este material, se debe tener en cuenta:\n\nMuchos ejercicios no tienen una respuesta única y sólo se muestra una solución posible. Aún más, muchas veces elegimos mostrar una solución por ser sencilla o estar alineada con los temas desarrollados, cuando en realidad hay otras formas que tal vez sean mejores para resolver el mismo problema.\nEs importante intentar resolver los ejercicios por cuenta propia y no acercarse a la resolución como primera medida. Leer una respuesta puede darnos la falsa sensación de que entendemos, cuando en realidad enfrentar la resolución de un problema forma independiente puede ser mucho más desafiante. Este material debe servir como un apoyo después de haber trabajado en la resolución de los problemas.",
     "crumbs": [
       "Soluciones de la Práctica"
     ]
@@ -270,21 +674,142 @@
     "href": "capitulos/90_soluciones_01.html",
     "title": "Soluciones de la Práctica de la Unidad 1",
     "section": "",
-    "text": "Solución Ejercicio 1\nSolución Ejercicio 1…",
+    "text": "Ejercicio 1\nPara crear un nuevo script y guardarlo, podés seguir los ejemplos vistos en #sec-scripts. El contenido del script tiene que ser:\n# Ejercicio 1\n25 + 17\n6 * 8\nsqrt(144)",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
-    "objectID": "capitulos/90_soluciones_01.html#solución-ejercicio-2",
-    "href": "capitulos/90_soluciones_01.html#solución-ejercicio-2",
+    "objectID": "capitulos/90_soluciones_01.html#ejercicio-2",
+    "href": "capitulos/90_soluciones_01.html#ejercicio-2",
     "title": "Soluciones de la Práctica de la Unidad 1",
-    "section": "Solución Ejercicio 2",
-    "text": "Solución Ejercicio 2\nSolución Ejercicio 2…",
+    "section": "Ejercicio 2",
+    "text": "Ejercicio 2\n\nx &lt;- 10\ny &lt;- \"Hola\"\nz &lt;- 5\n\n\nPodemos verificar el tipo de cada objeto con la función typeof():\n\n\ntypeof(x)\n\n[1] \"double\"\n\ntypeof(y)\n\n[1] \"character\"\n\ntypeof(z)\n\n[1] \"double\"\n\n\n\nEjecutamos la siguiente instrucción:\n\n\nz &lt;- x * 6\n\nAhora, z almacenará el valor:\n\nz\n\n[1] 60\n\n\n\nObtenemos un error porque x es un número (double), mientras que y es un texto (character). En R, no es posible realizar operaciones matemáticas entre objetos de tipo diferente.\n\n\nx + y\n\nError in x + y: non-numeric argument to binary operator",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_01.html#ejercicio-3",
+    "href": "capitulos/90_soluciones_01.html#ejercicio-3",
+    "title": "Soluciones de la Práctica de la Unidad 1",
+    "section": "Ejercicio 3",
+    "text": "Ejercicio 3\n\nload(\"practica1_ambiente.RData\")\n\n\nSe incorporaron 6 objetos al ambiente:\n\n\n\n\nIdentificador\nTipo de vector\nValor\n\n\n\n\nvar1\nlogical\nTRUE\n\n\nvar2\ndouble\n200.12\n\n\nvar3\ncharacter\n\"hola\"\n\n\nvar4\ncharacter\n\"chau\"\n\n\nvar5\ninteger\n-49L\n\n\nvar6\ncharacter\n\"Hola\"\n\n\n\n\ntypeof(var1)\n\n[1] \"logical\"\n\ntypeof(var2)\n\n[1] \"double\"\n\ntypeof(var3)\n\n[1] \"character\"\n\ntypeof(var4)\n\n[1] \"character\"\n\ntypeof(var5)\n\n[1] \"integer\"\n\ntypeof(var6)\n\n[1] \"character\"\n\n\n\n\n\n\nvar2 &lt; 0 || var5 &lt; 0\n\n[1] TRUE\n\n\n\n\n\n\nvar2 &lt; 0 && var5 &lt; 0\n\n[1] FALSE\n\n\n\n\n\n\nvar2 %% (var5 + 100) &lt; 10\n\n[1] FALSE\n\n\n\nNo son iguales porque uno tiene una letra mayúscula, “H” es un caracter distinto de “h” y por lo tanto son cadenas de texto diferentes.\n\n\nvar3 == var6\n\n[1] FALSE",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_01.html#ejercicio-4",
+    "href": "capitulos/90_soluciones_01.html#ejercicio-4",
+    "title": "Soluciones de la Práctica de la Unidad 1",
+    "section": "Ejercicio 4",
+    "text": "Ejercicio 4\n\nPara acceder a la documentación de la función round(), se puede ejecutar en la consola de R:\n\n?round\no\nhelp(round)\n\nSegún la ayuda de R, la función round() tiene los siguientes argumentos:\n\n\nx: El número o vector de números que se desea redondear.\n\ndigits: El número de cifras decimales al que se desea redondear x. Puede ser positivo (para redondear decimales) o negativo (para redondear a múltiplos de 10).\n\n...: representa el uso opcional de otros argumentos, es algo que podemos ignorar por ahora.\n\n\n\nObligatorio: x, ya que es el número a redondear.\n\nOpcional: digits, que por defecto es 0, lo que significa que la función redondeará al número entero más cercano si no se especifica un valor distinto.\n\n\n\n\nround(3.14159, digits = 0)  # Redondeo a 0 decimales → Resultado: 3\n\n[1] 3\n\nround(3.14159, digits = 1)  # Redondeo a 1 decimal → Resultado: 3.1\n\n[1] 3.1\n\nround(3.14159, digits = 2)  # Redondeo a 2 decimales → Resultado: 3.14\n\n[1] 3.14\n\n\n\n\n\n\nround(3.14159, 2)\n\n[1] 3.14\n\nround(x = 3.14159, digits = 2)\n\n[1] 3.14\n\nround(digits = 2, x = 3.14159)\n\n[1] 3.14",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_01.html#ejercicio-5",
+    "href": "capitulos/90_soluciones_01.html#ejercicio-5",
+    "title": "Soluciones de la Práctica de la Unidad 1",
+    "section": "Ejercicio 5",
+    "text": "Ejercicio 5\n\n\n\n\n\n\n\n\n\nOperación\nedad &lt;- 21, altura &lt;- 1.90\nedad &lt;- 17 , altura &lt;- 1.90\nedad &lt;- 21, altura &lt;- 1.50\n\n\n\n\n(edad &gt; 18) && (altura &lt; 1.70)\nFALSE\nFALSE\nTRUE\n\n\n(edad &gt; 18)   || (altura &lt; 1.70)\nTRUE\nFALSE\nTRUE\n\n\n!(edad &gt; 18)\nFALSE\nTRUE\nFALSE\n\n\n\nVerificación en R:\n\n# Primera columna\nedad &lt;- 21\naltura &lt;- 1.90\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] FALSE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] TRUE\n\n!(edad &gt; 18)\n\n[1] FALSE\n\n# Segunda columna\nedad &lt;- 17\naltura &lt;- 1.90\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] FALSE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] FALSE\n\n!(edad &gt; 18)\n\n[1] TRUE\n\n# Tercera columna\nedad &lt;- 21\naltura &lt;- 1.50\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] TRUE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] TRUE\n\n!(edad &gt; 18)\n\n[1] FALSE",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_01.html#ejercicio-6",
+    "href": "capitulos/90_soluciones_01.html#ejercicio-6",
+    "title": "Soluciones de la Práctica de la Unidad 1",
+    "section": "Ejercicio 6",
+    "text": "Ejercicio 6\nRazonamiento paso a paso:\n1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10\n1 + 2 + (3 + 4) * ((5 * 6 * 8) - 9) - 10\n1 + 2 + (3 + 4) * (240 - 9) - 10\n1 + 2 + 7 * 231 - 10\n1 + 2 + 1617 - 10\n1610\nVerificación en R:\n\n1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10\n\n[1] 1610",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_01.html#ejercicio-7",
+    "href": "capitulos/90_soluciones_01.html#ejercicio-7",
+    "title": "Soluciones de la Práctica de la Unidad 1",
+    "section": "Ejercicio 7",
+    "text": "Ejercicio 7\nSiempre es verdadera porque sea cual fuere x, siempre va a ser distinta a alguno de los dos, incluso si es 4, es distinta a 17 y viceversa.\nRecordemos que:\n\n!= significa “distinto de”.\n\n|| es el operador “o” lógico (OR), que devuelve TRUE si al menos una de las condiciones es TRUE.\n\nLuego, de la única forma para que la expresión sea FALSE, es que ambas condiciones sean FALSE al mismo tiempo. Veamos si esto es posible:\n\nLa primera condición (x != 4) es FALSE solo cuando x = 4.\n\nLa segunda condición (x != 17) es FALSE solo cuando x = 17.\n\nPor lo visto, ambas condiciones no pueden ser FALSE simultáneamente, ya que un número no puede ser 4 y 17 al mismo tiempo. Dado que siempre hay al menos una condición que es TRUE, la expresión es siempre verdadera, sin importar el valor de x.",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_01.html#ejercicio-8",
+    "href": "capitulos/90_soluciones_01.html#ejercicio-8",
+    "title": "Soluciones de la Práctica de la Unidad 1",
+    "section": "Ejercicio 8",
+    "text": "Ejercicio 8\nEl primer ítem excluye a los años terminados en 00, los cuales son evaluados en la segunda regla. El segundo ítem incluye automáticamente a los divisibles por 4 porque 400 es divisible por 4. Entonces, la operación lógica que determina si un año es bisiesto es: ((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0).\nEn R:\n\naño &lt;- 2024\n((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0)\n\n[1] TRUE\n\naño &lt;- 2025\n((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0)\n\n[1] FALSE",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_01.html#ejercicio-9",
+    "href": "capitulos/90_soluciones_01.html#ejercicio-9",
+    "title": "Soluciones de la Práctica de la Unidad 1",
+    "section": "Ejercicio 9",
+    "text": "Ejercicio 9\n\n¿Cuáles son los valores finales de a y b?\n\n\na &lt;- 10\nb &lt;- a * 2\na &lt;- a + 5\nb &lt;- b - a\na\n\n[1] 15\n\nb\n\n[1] 5\n\n\n\n¿Cuáles son los valores finales de m y n?\n\n\nm &lt;- 5\nn &lt;- 2 * m\nm &lt;- m + 3\nn &lt;- n + m\nm &lt;- n - 4\nm\n\n[1] 14\n\nn\n\n[1] 18\n\n\n\n¿Cuál es el valor final de y?\n\n\nx &lt;- 6\ny &lt;- 2\nx &lt;- x / y + x * y\ny &lt;- x^2 %% 10\ny &lt;- y * 2\ny\n\n[1] 10\n\n\n\n¿Cuál es el valor final de resultado?\n\n\na &lt;- 5\nb &lt;- 2\nc &lt;- 3\n\nresultado &lt;- a^b - (c * b) + (a %% c)\nresultado\n\n[1] 21\n\n\n\n¿Cuáles son los valores finales de x, y y z?\n\n\nx &lt;- 8\ny &lt;- 3\nz &lt;- 2\n\nx &lt;- x %% y + z^y\ny &lt;- (x + y) %/% z\nz &lt;- z + x - y\nx\n\n[1] 10\n\ny\n\n[1] 6\n\nz\n\n[1] 6",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_01.html#ejercicio-10",
+    "href": "capitulos/90_soluciones_01.html#ejercicio-10",
+    "title": "Soluciones de la Práctica de la Unidad 1",
+    "section": "Ejercicio 10",
+    "text": "Ejercicio 10\nSe pueden cambiar los valores de a, b y h.\n\na &lt;- 5\nb &lt;- 4\nh &lt;- 3\nvolumen &lt;- a * b * h\narea &lt;- 2 * (a * b + a * h + b * h)\ncat(\"El área es igual a\", area, \"y el volumen es igual a\", volumen)\n\nEl área es igual a 94 y el volumen es igual a 60",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_01.html#ejercicio-11",
+    "href": "capitulos/90_soluciones_01.html#ejercicio-11",
+    "title": "Soluciones de la Práctica de la Unidad 1",
+    "section": "Ejercicio 11",
+    "text": "Ejercicio 11\n\nPara identificar la ruta informática de un archivo, podés seguir los pasos mostrados en 5.1 Carpetas, archivos y rutas informáticas.\nSe puede saber cuál es el working directory con:\n\n\ngetwd()",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_01.html#ejercicio-12",
+    "href": "capitulos/90_soluciones_01.html#ejercicio-12",
+    "title": "Soluciones de la Práctica de la Unidad 1",
+    "section": "Ejercicio 12",
+    "text": "Ejercicio 12\nEl resultado de crear las carpetas y subcarpetas tiene que ser similar al que se ve en la Figura 5.2. El proyecto se crea desde RStudio siguiendo los pasos de la Figura 5.4.",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/99_bibliografia.html",
+    "href": "capitulos/99_bibliografia.html",
+    "title": "Bibliografía",
+    "section": "",
+    "text": "Grolemund, G. (2014). Hands-On Programming with R. O’Reilly. Disponible online: https://rstudio-education.github.io/hopr/.\nMoeller, J. (2013). The Windows Command Line Beginner’s Guide. Azure Flame Media. 2nd Ed.\nParadis, E. (2005). R para Principiantes. Universit´e Montpellier II. Disponible online: https://cran.r-project.org/doc/contrib/rdebuts_es.pdf.\nPeng, R.; Kross, S.; Anderson, B. (2020). Mastering Software Development in R. Leanpub. Disponible online: https://bookdown.org/rdpeng/RProgDA/.\nSantana, S.; Mateos Farfán, E. (2014). El arte de programar en R: un lenguaje para la estadística. Instituto Mexicano de Tecnología del Agua, UNESCO. Disponible online: https://cran.r-project.org/doc/contrib/Santana_El_arte_de_programar_en_R.pdf.\nShotts, W. (2024). The Linux Command Line: A Complete Introduction. No Starch Press. 6th Internet Edition. Disponible online: https://sourceforge.net/projects/linuxcommand/files/TLCL/24.11/TLCL-24.11.pdf/download.\nWickham, H. (2019). Advanced R. Chapman and Hall/CRC. 2nd Ed. Disponible online: https://adv-r.hadley.nz/.\nWickham, H.; Bryan, J. (2023). R Packages. O’Reilly. 2nd Ed. Disponible online: https://r-pkgs.org/.\nWickham, H.; Cetinkaya-Rundel, M.; Grolemund, G. (2023). R para Ciencia de Datos. O’Reilly. 2da Ed. Disponible online: https://es.r4ds.hadley.nz/.\n\nÍconos creados por Smashicons and by juicy_fish y tomados de Flaticon.",
+    "crumbs": [
+      "Apéndices",
+      "Bibliografía"
     ]
   }
 ]
