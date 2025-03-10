@@ -1,0 +1,125 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Organización de archivos
+
+::: {.presentacion-capitulo data-latex=""}
+Mantener una buena organización de archivos es fundamental para trabajar de manera eficiente. Una estructura clara y ordenada facilita el acceso a scripts, datos y resultados, evitando confusión y errores al ejecutar código. En este capítulo, exploraremos conceptos clave como las carpetas, archivos y rutas informáticas, la importancia del directorio de trabajo y cómo utilizar los **RStudio Projects** para estructurar mejor nuestros proyectos.
+:::
+
+## Carpetas, archivos y rutas informáticas {#sec-rutas}
+
+En las tareas de programación y de análisis de datos se trabaja con muchos archivos de distinto tipo al mismo tiempo (scripts, conjuntos de datos, archivos con resultados, gráficos, etc.). Resulta fundamental mantener un orden para que todo funcione bien y prestar atención dónde guardamos nuestros archivos y elegir esa ubicación de forma cuidadosa. 
+
+En una computadora, los archivos se organizan de manera jerárquica dentro de carpetas y subcarpetas, lo que facilita su acceso y gestión. La organización de estos archivos sigue un esquema de árbol, donde las carpetas actúan como contenedores que agrupan archivos relacionados. Este sistema permite a los usuarios almacenar y clasificar la información de forma ordenada y accesible.
+
+La @fig-archivos muestra como ejemplo un trabajo de análisis de datos de una encuesta a estudiantes. Dentro de la carpeta `Documentos`, se ha creado un directorio llamado `encuesta_estudiantes` para guardar allí absolutamente todos los archivos relacionados con este caso. Incluso se pueden usar subcarpetas para distribuirlos de forma bien clara, dentro de esa carpeta principal. Dentro de esa carpeta, se crearon otras subcarpetas para agrupar los archivos de forma ordenada. Este ejemplo esconde un principio muy importante: es bueno tener la costumbre de crear una carpeta específica para almacenar todos los archivos vinculados al trabajo que estamos realizando y no dejar archivos tirados por cualquier lugar en la computadora.
+
+![Organización de carpetas para analizar los datos de una encuesta.](../imagenes/teoria_unidad_1/archivos.png){width="50%" fig-align="center" #fig-archivos}
+
+Cada archivo o carpeta en una computadora tiene una **ruta informática** o **path** que indica su ubicación dentro del sistema de almacenamiento. Esta ruta es como una dirección que permite encontrar un archivo o carpeta específica. La ruta se lee desde una ubicación principal en el disco de la computadora y sigue el camino de las carpetas y subcarpetas hasta llegar al archivo deseado.
+
+Por ejemplo, en relación a la @fig-archivos, la ruta informática que identifica la ubicación de la carpeta `datos_crudos` es `C:\Users\Marcos\Documents\encuesta_estudiantes\datos_crudos`. Si dentro de ella hay una planilla de Excel con los datos de la encuesta, llamada `datos_encuesta.xlsx`, su ruta informática será `C:\Users\Marcos\Documentss\encuesta_estudiantes\datos_crudos\datos_encuesta.xlsx`. En sistemas operativos como Windows, las rutas suelen comenzar con una letra de unidad, como "C:", seguida de las carpetas y subcarpetas.  
+
+Cuando guardamos un archivo en algún lugar de la computadora estamos definiendo cuál es su ruta informática para que distintos programas de la computadora puedan encontrarlo. Tener esta noción es fundamental a la hora de programar. Por ejemplo, puede ser que nuestro script de R necesite importar los datos del archivo `datos_encuesta.xlsx`. Para esto tal vez necesitemos escribir un comando especial que incluya su ruta informática para que R pueda encontrar el archivo. Si no la escribimos bien, R producirá un error diciendo que el archivo no existe.
+
+::: {.info data-latex=""}
+Para saber con exactitud cuál es la ruta informática de un archivo en Windows, podemos seguir alguna de estas opciones:
+
+1. **Usando el Explorador de Archivos**: ubicar el archivo, hacer clic derecho y seleccionar **"Copiar como ruta"**.  Luego podemos pegar la ruta en cualquier lugar (`Ctrl + V`). 
+2. **Desde la Barra de Direcciones**: abrir la carpeta donde está el archivo, hacer clic en la barra de direcciones, copiar la ruta (`Ctrl + C`) y al pegarla donde se necesite, agregar manualmente el nombre del archivo.
+3. **Desde las Propiedades del Archivo**: hacer clic derecho sobre el archivo y seleccionar **"Propiedades"**.  En la pestaña **"General"**, copiar el contenido del campo **Ubicación** y, al pegarlo, agregar el nombre del archivo.
+
+Es importante recordar lo siguiente: si bien Windows usa barras diagonales `/` para mostrar rutas informáticas, R sólo las reconoce si las escribimos con barras invertidas `\`.
+:::
+
+Tener un buen sistema para ordenar archivos también es una gran recomendación al cursar una carrera universitaria, ya que necesitarás manejar múltiples archivos de distintas asignaturas a la vez. Podrías crear un esquema de trabajo como el de la @fig-archivos2. 
+
+![Organización de carpetas para las asignaturas de la facultad.](../imagenes/teoria_unidad_1/archivos2.png){width="50%" fig-align="center" #fig-archivos2}
+
+Una buena idea adicional es que alojes la carpeta `facultad` y todo su contenido dentro de algún sistema de sincronización de archivos como **Google Drive** o **OneDrive**, para que tengas un respaldo en la nube y puedas acceder al contenido desde el celular u otras computadoras, manteniendo siempre todo sincronizado.
+
+Para nuestra asignatura, te sugerimos que dentro de la carpeta `facultad/anio_1/programacion_1`, definas una carpeta distinta para cada unidad o trabajo práctico (por ejemplo, `unidad_1`, `unidad_2`, etc.). Esto ayudará a mantener el orden. No hace falta que crees a mano cada una de estas carpetas. Las vamos a crear con RStudio, lo cual resultará en beneficios adicionales.
+
+## Directorio de trabajo 
+
+Como hemos visto en la sección anterior, nuestra computadora organiza todos sus archivos bajo un sistema jerárquico de carpetas y subcarpetas. Entre todas ellas, en cada sesión de trabajo R posa su mirada en una de forma particular, la cual recibe el nombre **directorio de trabajo** (o *working directory*, *wd*). Aquí es donde R busca los archivos que le pedís que cargue y donde colocará los archivos que le pedís que guarde. 
+El directorio de trabajo por default suele ser la carpeta *Documentos* o alguna equivalente según el sistema operativo y es la que se muestra en el panel `Files` cuando iniciamos RStudio. Otras formas de saber cuál es la carpeta de la computadora que actúa como *working directory* en una sesión de trabajo son:
+
+- Leer la ruta informática escrita en la parte superior del panel de la consola, al lado del logo y la versión de R (@fig-wd).
+
+![Indicación del *working directory* arriba en la consola](../imagenes/teoria_unidad_1/wd.png){width="50%" fig-align="center" #fig-wd}
+
+- Ejecutar en la consola la instrucción `getwd()`. Por ejemplo:
+
+```{r}
+#| eval: false
+getwd()
+```
+
+```
+"C:/Users/Marcos"
+```
+
+Ese resultado implica que en este momento R puede ver y acceder de manera directa a todos los archivos que hay en esa carpeta, sin necesidad de escribir la ruta informática completa para hacer referencia a cada uno de ellos. Si creamos un nuevo script y apretamos el ícono de guardar, R nos ofrece guardarlo en el *working directory*. Si queremos importar un conjunto de datos, lo buscará ahí, a menos que le indiquemos otra cosa. Si queremos guardar cualquier resultado de nuestro análisis, también lo guardará en esa carpeta.
+
+Por esa razón, es muy útil que, al trabajar con R, el *working directory* no sea la carpeta que aparece por defecto, sino aquella carpeta en la que tengamos guardados todos los archivos referidos al problema que estamos resolviendo. Para poder cambiar y elegir como *working directory* a cualquier carpeta de nuestra computadora que nos interese podemos usar una instrucción que se llama `setwd()`. Sin embargo, a continuación aprenderemos algo mejor.
+
+## Organización del trabajo con RStudio Projects
+
+A partir de las dos secciones anteriores, llegamos a las siguientes conclusiones:
+
+- Cuando encaramos un trabajo de programación o de análisis de datos, tenemos que destinar una carpeta específica de nuestra computadora para guardar ahí todos los archivos relacionados.
+- Si estamos usando R, tenemos que setear como *working directory* a dicha carpeta, para que podamos acceder con facilidad a los archivos y guardar allí los archivos nuevos que generemos, sin tener que depender de rutas informáticas largas.
+
+RStudio nos permite trabajar de esa forma a través los **RStudio Projects**.
+
+::: {.concepto data-latex=""}
+Al crear un **RStudio Project** (o sencillamente, **proyecto**), se genera una nueva carpeta en la computadora con el objetivo de colocar allí todos los archivos relacionados con un trabajo específico, incluyendo scripts, datos, gráficos y otros documentos. 
+:::
+
+Para crear un nuevo proyecto en RStudio, seguimos estos pasos (@fig-new-dir):  
+
+1. Ir al menú **File** (Archivo) y seleccionar **New Project...** (Nuevo Proyecto).  
+2. Elegir **New Directory** (Nueva carpeta, @fig-new-dir).
+3. Ingresar un nombre para el proyecto y elegir la ubicación donde se guardará en nuestra computadora.  
+4. Hacer clic en **Create Project** (Crear Proyecto).
+
+![Creación de un nuevo proyecto de RStudio.](../imagenes/teoria_unidad_1/nuevoproj.png){width="75%" fig-align="center" #fig-new-dir}
+
+Como resultado, se crea una carpeta con el nombre elegido y se reinicia RStudio, con una nueva sesión de trabajo, en la cual dicha carpeta es configurada como *working directory*. Podemos leer y guardar los archivos relacionados con nuestro trabajo de forma directa en esa carpeta, sin tener que usar rutas informáticas largas.
+
+::: {.info data-latex=""}
+Usar proyectos de RStudio tiene varias ventajas:  
+
+- Cada proyecto tiene su propia carpeta, lo que evita mezclar archivos de diferentes trabajos (o asignaturas).
+- Se automatiza la configuración del directorio de trabajo.
+- Se pueden gestionar múltiples trabajos simultáneamente. Podemos cambiar de un proyecto a otro sin perder el contexto de cada análisis (scripts abiertos, objetos en el ambiente, etc.). Abrimos cada proyecto en una instancia de RStudio diferente, pudiendo tener varias abiertas a la vez.
+- Todo el código y los archivos quedan organizados en un solo lugar, lo que facilita compartir o retomar un proyecto en el futuro. 
+:::
+
+Cuando dejamos de trabajar en el proyecto, ya sea porque terminamos o debemos continuar más tarde, cerramos RStudio y listo. Para continuar trabajando en otro momento, tenemos que volver a abrir el proyecto, de alguna de estas formas:
+
+- A diferencia de cualquier otra carpeta, un *RStudio Project* incluye un archivo de extensión `.Rproj`. Si lo abrimos, se abre el proyecto una nueva sesión de trabajo en RStudio, que ya tiene seteado como *working directory* a dicha carpeta. 
+- En caso de que ya tengamos RStudio abierto:
+  
+  - Podemos ir a `File > Open project` y buscar en la computadora la carpeta del proyecto, para seleccionar el archivo `.Rproj`.
+  - O bien, podemos seleccionar un proyecto de la lista de proyectos abiertos recientemente (`File > Recent projectos` o en la esquina superior derecha de RStudio).
+
+Al abrir un *RStudio Project*, los scripts que estaban abiertos en el editor la última vez que trabajamos en este proyecto, vuelven a aparecer tal como los dejamos, sin importar que estemos trabajando de manera intermitente en distintos proyectos.
+
+Al trabajar con un proyecto, si necesitamos referirnos en el código a la ubicación de un archivo sólo debemos usar rutas informáticas relativas, no absolutas. Una **ruta absoluta** es la ruta completa, como `C:\Usuarios\Natalia\Documentos\encuesta_estudiantes\datos_crudos\datos_encuesta.xlsx`. En cambio, una **ruta relativa** es relativa al *working directory*, es decir, al directorio de inicio del proyecto. Suponiendo que nuestro proyecto se corresponde con la carpeta `encuesta_estudiantes`, la ruta relativa que tenemos que usar para ubicar a la planilla de Excel sólo está compuesta por `datos_crudos\datos_encuesta.xlsx`.
+
+Las rutas relativas son importantes: funcionan siempre bien, a pesar de que el código lo use otra persona en otra computadora. La primera parte de la ruta absoluta, que contiene incluso hasta el nombre de usuario, cambia de computadora a computadora, pero la parte que se usa en la ruta relativa es siempre la misma. Todas las computadoras que tengan una copia del proyecto podrán usar el mismo código sin problemas para encontrar a todos los archivos involucrados.
+
+::: {.comentario data-latex=""}
+Tal vez hayas notados que los nombres de carpeta de los ejemplos lucen algo raros, no tienen espacios, mayúsculas o tildes. Es recomendable usar nombres de carpetas y archivos que no contengan espacios, tildes, la letra "ñ" ni caracteres especiales, y preferiblemente en minúsculas. Esto se debe a que algunos sistemas operativos y programas pueden interpretar estos caracteres de manera diferente, lo que puede generar errores al acceder a los archivos o al ejecutar código. Además, cuando trabajamos con rutas de archivos en R, los espacios pueden causar problemas si no se manejan correctamente. Una práctica común es utilizar guiones bajos (`_`) o guiones medios (`-`) en lugar de espacios, por ejemplo, `encuesta_estudiantes` en lugar de `Encuesta de Estudiantes`. Esto es una sugerencia que ayuda a evitar errores y asegura que los archivos sean accesibles sin complicaciones en cualquier sistema.
+:::
+
+::: {.ejercicio data-latex=""}
+Vamos a establecer el siguiente modo de trabajo para este curso. En tu computadora, tal como mencionamos antes, creá una carpeta para guardar todo lo relacionado a tu carrera (puede estar en `Documentos` o dentro de `Google Drive` u otro sistema de sincronización y respaldo). Luego, creá una subcarpeta para los elementos relacionados al primer año de cursado. A continuación, creá una carpeta para cada materia que estás cursando, incluída **Programación 1**. El resultado tiene que ser similar al que se ve en la @fig-archivos2.
+
+Cada vez que comencemos una nueva etapa en **Programación 1**, vamos a crear un nuevo proyecto de RStudio para gestionar todos los archivos referidos a ella. Particularmente, ahora es momento de crear un proyecto llamado `unidad_1`, dentro de la carpeta `programacion_1`. Guardarás ahí todos los scripts que desarrollaremos a lo largo de la unidad, con ejemplos y soluciones de ejercicios. Cada vez que quieras continuar trabajando en los materiales de esta unidad, tendrás que abrir el proyecto a partir del archivo `unidad_1.Rproj`. Tomá de ejemplo la @fig-new-dir.
+:::
+

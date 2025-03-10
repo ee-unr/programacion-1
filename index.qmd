@@ -6,6 +6,44 @@
 # Bienvenida {.unnumbered .unlisted}
 :::
 
-::: en-construccion
-Página en construcción.
+## ¡Hola!
+
+Bienvenidos a este curso introductorio de programación para estudiantes de Estadística y Ciencia de Datos. A lo largo de estas páginas, nos embarcaremos en un recorrido que tiene como objetivo fundamental desarrollar habilidades de pensamiento algorítmico y resolución de problemas computacionales. Aprender a programar no es solo escribir código: implica descomponer problemas complejos en partes más pequeñas, identificar patrones, diseñar soluciones y comprender cómo una computadora ejecuta instrucciones paso a paso.  
+
+En este camino utilizaremos **R**, un lenguaje ampliamente utilizado en Estadística y Ciencia de Datos. Sin embargo, **en este curso no nos enfocaremos en sus poderosas herramientas de modelado, manipulación de datos o visualización**. Aprenderás de eso en otras asignaturas, como en **Laboratorio de Datos 1**. En su lugar, usaremos R como vehículo para aprender los principios esenciales de la programación. Por ejemplo, veremos cómo lograr que la computadora haga una división, cuando en realidad es algo sencillo que R o cualquier otro entorno ya lo sabe hacer. Este enfoque nos permitirá desarrollar habilidades fundamentales: estructurar código de manera ordenada, depurar errores con criterio, organizar proyectos de software y escribir funciones reutilizables. Aprenderemos a pensar como programadores, lo que no solo facilitará el uso posterior de herramientas más avanzadas, sino que también brindará una base sólida para afrontar nuevos lenguajes y paradigmas de programación.
+
+La idea es que desarrollemos nuestro pensamiento lógico y algorítmico, mientras nos familiarizamos con el uso de nuestra computadora y archivos, con el objetivo de que salgas listo para seguir profundizando tus conocimientos, por ejemplo, en la asignatura **Programación 2**, donde usarás Python.
+
+¡Comencemos este viaje!
+
+## Estructura del libro
+
+Este libro se organiza en **unidades**, cada una de las cuales se corresponde con una unidad del programa de la asignatura y está compuesta por capítulos que abordan un tema en particular. De vez en cuando se incluyen algunos elementos especiales, que están identificados de la siguiente forma:
+
+::: {.presentacion-capitulo data-latex=""}
+Esto es la presentación de una unidad o un capítulo.
 :::
+
+::: {.ejemplo data-latex=""}
+Esto es un ejemplo.
+:::
+
+::: {.ejercicio data-latex=""}
+Esto es un ejercicio.
+:::
+
+::: {.concepto data-latex=""}
+Esto es una definición.
+:::
+
+::: {.info data-latex=""}
+Esto es una idea fundamental para tener en cuenta.
+:::
+
+::: {.comentario data-latex=""}
+Esto es un comentario adicional, que puede ser considerado como secundario o dejado de lado.
+:::
+
+## Licencia
+
+Este libro adhiere a la licencia [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). Esto significa que podés copiar, distribuir y adaptar este material libremente, incluso con fines comerciales, siempre que otorgues el crédito correspondiente a los autores originales. No se requieren permisos adicionales siempre que se cumplan estos términos.

@@ -8,14 +8,180 @@ number-sections: false
 
 # Práctica de la Unidad 1
 
-::: {.en-construccion data-latex=""}
-Página en construcción.
-:::
-
 ## Ejercicio 1
 
-Enunciado Ejercicio 1...
+Usar la consola de R en RStudio para realizar las siguientes operaciones:
+
+- Sumar 25 y 17.
+- Multiplicar 6 por 8.
+- Calcular la raíz cuadrada de 144.
+
+Luego, crear un nuevo script en RStudio y escribir en él las operaciones anteriores. En una línea anterior, agregar el comentario "Ejercicio 1". Guardar el script con el nombre `resolucion_practica_1.R` en cualquier lugar de tu computadora. Continuar completando el script la solución de los restantes ejercicios de esta práctica, usando comentarios para identificarlos.
 
 ## Ejercicio 2
 
-Enunciado Ejercicio 2...
+En R, crear los siguientes objetos y observar sus valores:
+
+```r
+x <- 10
+y <- "Hola"
+z <- 5
+```
+
+a. ¿Qué tipo de objeto es cada uno?
+b. Modificar el objeto `z` para almacene el resultado de multiplicar a `x` por 6.
+c. ¿Qué sucede si intentás sumar `x` e `y`? Explicar por qué ocurre esto.
+
+## Ejercicio 3
+
+Descargar el archivo [`practica1_ambiente.RData`](https://github.com/ee-unr/programacion-1/blob/main/archivos/instalacion_r_rstudio.pdf) y guardarlo en la carpeta del proyecto `unidad_1`. Este archivo es de extensión `.RData` y se utiliza para guardar objetos de R. Cuando este archivo se lee con R, se cargan en el *environment* los objetos que tiene almacenados. Vamos a leer este archivo para identificar qué tipo de objetos aparecen en nuestro ambiente. Para abrir este archivo, podemos usar alguna de estas opciones:
+
+- Hacer doble clic en el archivo `practica1_ambiente.RData`.
+- En la pestaña *Environment* de RStudio, hacer clic en el ícono de abrir y seleccionar el archivo `practica1_ambiente.RData`.
+- Ejecutar la siguiente instrucción:
+
+```{r}
+#| eval: false
+load("practica1_ambiente.RData")
+```
+
+Una vez que el archivo haya sido cargado en R, resolver los siguiente puntos:
+
+```{r, eval=F, echo=F}
+var1 <- TRUE
+var2 <- 200.12
+var3 <- "hola"
+var4 <- "chau"
+var5 <- -49L
+var6 <- "Hola"
+save(var1, var2, var3, var4, var5, var6, file = "practica1_ambiente.RData")
+```
+
+a. ¿Cuántos objetos fueron incorporadas al ambiente al haber cargado el archivo? ¿Cuáles son sus nombres o identificadores? ¿Qué tipo de dato contiene cada uno? ¿Qué valor contiene cada uno? 
+b. Evaluar si al menos una de las variables `var2` o `var5` contiene un número negativo, escribiendo la correspondiente operación en R.
+c. Evaluar si ambas variables `var2` y `var5` contienen un número negativo, escribiendo la correspondiente operación en R.
+d. Evaluar si al dividir `var2` por la suma entre `var5` y 100, el resto es menor que 10, escribiendo la correspondiente operación en R.
+e. Evalúe si los valores guardados en `var3` y `var6` son iguales o no. Inspeccione dichos valores y comente lo observado.
+
+## Ejercicio 4
+
+a. Encontrar la página de ayuda en R para la función `round()`.  
+b. Descubrir qué argumentos acepta la función y qué hace cada uno de ellos.  
+c. ¿Cuál de esos argumentos es de uso obligatorio y cuál, opcional?
+c. Usar la función para redondear el valor `3.14159` con 0, 1 o 2 decimales.
+d. Escribir tres formas distintas de usar la función para redondear el valor `3.14159` con dos decimales/
+
+## Ejercicio 5
+
+Sin utilizar R, calcular el valor resultante de las siguientes operaciones, para cada uno de los casos presentados en las columnas. Luego, verificar en R.
+
+|            **Operación**           | `edad <- 21`, `altura <- 1.90` | `edad <- 17` , `altura <- 1.90` | `edad <- 21`, `altura <- 1.50` |
+|:----------------------------------:|:------------------------------:|:-------------------------------:|:------------------------------:|
+|  `(edad > 18) && (altura < 1.70)`  |                                |                                 |                                |
+| `(edad > 18) || (altura < 1.70)`   |                                |                                 |                                |
+|           `!(edad > 18)`           |                                |                                 |                                |
+
+## Ejercicio 6
+
+Aplicando las reglas de prioridad en los operadores aritméticos, anticipar el resultado de la siguiente expresión. Luego, verificar en R.
+
+```{r}
+#| eval: false
+1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10
+```
+
+## Ejercicio 7
+
+¿Para qué valores de `x` la siguiente expresión resulta verdadera?: `(x != 4) || (x != 17)`.
+
+## Ejercicio 8
+
+Se desea determinar si un determinado año es bisiesto. Si bien pensamos que los años bisiestos ocurren cada 4 años, los procesos astronómicos que dan origen a este concepto son algo más complejos. Dado que en realidad la Tierra tarda 365.25 días en completar su órbita anual alrededor del sol, agregar un día extra una vez cada 4 años ayuda a mantener el calendario en sincronización con el sol, pero aún queda un pequeño desfasaje. Por lo tanto, la regla completa dice que los años bisiestos ocurren cada 4 años, excepto los terminados en 00, los cuales son bisiestos sólo si son divisibles por 400. Es decir, los años como 1600, 1700, 1800 son bisiestos si son divisibles por 400. Por ejemplo, el año 1900 no fue bisiesto a pesar de ser divisible por 4, pero el año 2000 si lo fue por ser divisible por 400. Entonces, para que un año dado sea bisiesto, se debe cumplir una de las siguientes condiciones:
+
+  - El año es divisible por 4 pero no divisible por 100, o
+  - El año es divisible por 400.
+  
+Siendo `año` el nombre del objeto cuyo valor es el año que se desea evaluar, expresar la operación lógica que devuelve el valor `TRUE` sólo si `año` es un año bisiesto.
+  
+## Ejercicio 9
+
+Para cada bloque de código, determinar el valor final de cada variable antes de ejecutarlo en R. Luego, comprobar la respuesta ejecutando el código.
+
+a. ¿Cuáles son los valores finales de `a` y `b`?
+
+```{r}
+#| eval: false
+a <- 10
+b <- a * 2
+a <- a + 5
+b <- b - a
+```
+
+b. ¿Cuáles son los valores finales de `m` y `n`?
+
+```{r}
+#| eval: false
+m <- 5
+n <- 2 * m
+m <- m + 3
+n <- n + m
+m <- n - 4
+```
+
+c. ¿Cuál es el valor final de `y`?
+
+```{r}
+#| eval: false
+x <- 6
+y <- 2
+x <- x / y + x * y
+y <- x^2 %% 10
+y <- y * 2
+y
+```
+
+d. ¿Cuál es el valor final de `resultado`?
+
+```{r}
+#| eval: false
+a <- 5
+b <- 2
+c <- 3
+
+resultado <- a^b - (c * b) + (a %% c)
+```
+
+e. ¿Cuáles son los valores finales de `x`, `y` y `z`?
+
+```{r}
+#| eval: false
+x <- 8
+y <- 3
+z <- 2
+
+x <- x %% y + z^y
+y <- (x + y) %/% z
+z <- z + x - y
+```
+
+## Ejercicio 10
+
+Escribir una expresión en R para calcular el área total y el volumen de un prisma rectangular, considerando que las longitudes se guardan en las variables numéricas `a`, `b` y `h`, como se muestra en la imagen.
+
+![Prisma rectangular.](../imagenes/practica_unidad_1/prisma.jpg){width="20%" fig-align="center"}
+
+## Ejercicio 11
+
+Responder las siguientes preguntas:
+
+a. ¿Cuál es la ruta informática o *path* del script `resulucion_practica_1.R` que creaste en el ejercicio 1?
+b. ¿Cuál es el directorio de trabajo o *working directory* en tu sesión de trabajo actual?
+
+## Ejercicio 12
+
+a. Crear en tu computadora una carpeta para guardar todo lo relacionado a tus estudios (puede estar en `Documentos` o dentro de `Google Drive` u otro sistema de sincronización y respaldo). 
+b. Crear una subcarpeta para los elementos relacionados al primer año de cursado. 
+c. En ella, crear una carpeta para cada materia que estás cursando, incluyendo una para **Programación 1**, con el nombre `programacion_1`.
+d. Crear un proyecto de RStudio llamado `unidad_1`, dentro de la carpeta `programacion_1`.
+e. Guardar en la carpeta del proyecto todos los archivos que hayas utilizado. Por ejemplo, el script `resolucion_practica_1.R` y el archivo descargado `practica1_ambiente.RData`.
+f. A partir de ahora, cada vez que comiences una nueva unidad en esta asignatura, crear un nuevo proyecto como hicimos para la Unidad 1.

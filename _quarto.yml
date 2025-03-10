@@ -26,26 +26,22 @@ book:
         - capitulos/01_a_intro.qmd
         - capitulos/01_b_primeros_pasos.qmd
         - capitulos/01_c_objetos.qmd
-        - capitulos/01_d_varios.qmd
-        - capitulos/01_e_ejemplo_ambientes.qmd
-        - capitulos/01_f_ejemplo_texto.qmd
+        - capitulos/01_d_operadores.qmd
+        - capitulos/01_e_organizacion.qmd
+        - capitulos/01_f_errores_estilo_paquetes.qmd
+        - capitulos/01_g_opcional.qmd
         - capitulos/01_practica.qmd
     - part: capitulos/02.qmd
       chapters:
         - capitulos/02_a_algo.qmd
-        - capitulos/webexercises.qmd
-  #       - capitulos/02_b_algo.qmd
-        - capitulos/02_practica.qmd
     - part: capitulos/90.qmd
       chapters:
         - capitulos/90_soluciones_01.qmd
-  # appendices:
+  appendices:
   #   - capitulos/98_tp.qmd
-  #   - capitulos/99_bibliografia.qmd
+    - capitulos/99_bibliografia.qmd
 
 lang: es
-
-bibliography: capitulos/references.bib
 
 format:
   html:
