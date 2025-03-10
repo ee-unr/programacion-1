@@ -31,7 +31,7 @@ book:
         # - capitulos/01_f_errores_estilo_paquetes.qmd
         # - capitulos/01_g_opcional.qmd
         - capitulos/01_practica.qmd
-        - capitulos/90_soluciones_01.qmd
+        # - capitulos/90_soluciones_01.qmd
   #   - part: capitulos/02.qmd
   #     chapters:
   #       - capitulos/02_a_algo.qmd
