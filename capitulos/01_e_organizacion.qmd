@@ -123,7 +123,3 @@ Vamos a establecer el siguiente modo de trabajo para este curso. En tu computado
 Cada vez que comencemos una nueva etapa en **Programación 1**, vamos a crear un nuevo proyecto de RStudio para gestionar todos los archivos referidos a ella. Particularmente, ahora es momento de crear un proyecto llamado `unidad_1`, dentro de la carpeta `programacion_1`. Guardarás ahí todos los scripts que desarrollaremos a lo largo de la unidad, con ejemplos y soluciones de ejercicios. Cada vez que quieras continuar trabajando en los materiales de esta unidad, tendrás que abrir el proyecto a partir del archivo `unidad_1.Rproj`. Tomá de ejemplo la @fig-new-dir.
 :::
 
-## Ejercicio 21.
-
-El resultado de crear las carpetas y subcarpetas tiene que ser similar al que se ve en la @fig-archivos2. El proyecto se crea desde RStudio siguiendo los pasos de la @fig-new-dir.
-

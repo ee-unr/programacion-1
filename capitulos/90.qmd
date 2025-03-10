@@ -4,6 +4,9 @@
 
 # Soluciones de la Práctica {.unnumbered}
 
-::: {.en-construccion data-latex=""}
-Página en construcción.
+::: {.presentacion-capitulo data-latex=""}
+En esta sección se presentan las respuestas a todos los ejercicios de la práctica. Al hacer uso de este material, se debe tener en cuenta:
+
+- Muchos ejercicios no tienen una respuesta única y sólo se muestra una solución posible. Aún más, muchas veces elegimos mostrar una solución por ser sencilla o estar alineada con los temas desarrollados, cuando en realidad hay otras formas que tal vez sean mejores para resolver el mismo problema. 
+- Es importante intentar resolver los ejercicios por cuenta propia y no acercarse a la resolución como primera medida. Leer una respuesta puede darnos la falsa sensación de que entendemos, cuando en realidad enfrentar la resolución de un problema forma independiente puede ser mucho más desafiante. Este material debe servir como un apoyo después de haber trabajado en la resolución de los problemas.
 :::
