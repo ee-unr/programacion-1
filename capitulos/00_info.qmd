@@ -4,7 +4,7 @@
 
 ## Programa
 
-En [este enlace](https://github.com/ee-unr/programacion-1/blob/main/archivos/programa.pdf) podés consultar el programa para esta asignatura.
+En [este enlace](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/ee-unr/programacion-1/main/archivos/programa.pdf) podés consultar el programa para esta asignatura.
 
 ## Aula virtual
 
@@ -14,7 +14,7 @@ Esta asignatura posee un [espacio virtual en la plataforma Comunidades 3](https:
 
 ### Actividades semanales
 
-Cada semana durante la extensión del cuatrimestre encontrarás las indicaciones referidas a los contenidos que debés cubrir para avanzar en tiempo y forma con esta asignatura. En [este cronograma de trabajo]() verás de forma detallada cuáles son los capítulos del libro a estudiar y los ejercicios de las prácticas a resolver, semana a semana. Todos los materiales estarán publicados con anticipación, incluyendo las respuestas a los problemas, de modo que puedas autogestionar tus tiempos. Además, en el cronograma podrás ver todas las fechas importantes que deben ser respetadas, como las de las evaluaciones.
+Cada semana durante la extensión del cuatrimestre encontrarás las indicaciones referidas a los contenidos que debés cubrir para avanzar en tiempo y forma con esta asignatura. En [este cronograma de trabajo](00_info.qmd#sec-cronograma) verás de forma detallada cuáles son los capítulos del libro a estudiar y los ejercicios de las prácticas a resolver, semana a semana. Todos los materiales estarán publicados con anticipación, incluyendo las respuestas a los problemas, de modo que puedas autogestionar tus tiempos. Además, en el cronograma podrás ver todas las fechas importantes que deben ser respetadas, como las de las evaluaciones.
 
 ### Clases
 
@@ -35,6 +35,29 @@ Podés resolver tus dudas recurriendo a estos medios:
 - **Clases de consulta virtuales**. Los enlaces y horarios se publican en el aula virtual. Si ningún estudiante se conecta, la clase se da por finalizada luego de 10 minutos de espera.
 - **Clases de consulta presenciales en el laboratorio de computación**. Estas clases tendrán una duración determinada. Durante ese tiempo, además de resolver dudas con los docentes, podés recurrir al laboratorio para hacer uso de las computadoras y resolver ejercicios u otros trabajos.
 
+### Cronograma {#sec-cronograma}
+
+Visitá periódicamente este cronograma para autogestionar tu tránsito por los temas y materiales de la asignatura:
+
+| **Semana** | **Inicio / Fin** | **Tópico**         | **Capítulos a leer** | **Ejercicios a resolver** | **Importante**                                                       |
+|:----------:|:----------------:|:------------------:|:--------------------:|:-------------------------:|----------------------------------------------------------------------|
+| 1          | 17/3 al 23/3     | Unidad 1           | 1 a 3                | 1 a 4                     |                                                                      |
+| 2          | 24/3 al 30/3     | Unidad 1           | 4                    | 5 a 7                     | Feriado: lun 24/3                                                    |
+| 3          | 31/3 al 6/4      | Unidad 1           | 5 a 7                | 8 a 12                    | Feriado: mié 2/4                                                     |
+| 4          | 7/4 al 13/4      | Unidad 2           | A definir            | A definir                 |                                                                      |
+| 5          | 14/4 al 20/4     | Unidad 2           | A definir            | A definir                 | Feriados: Jue 17/4 y Vie 18/4                                        |
+| 6          | 21/4 al 27/4     | Unidad 3           | A definir            | A definir                 |                                                                      |
+| 7          | 28/4 al 4/5      | Unidad 3           | A definir            | A definir                 | Feriados: Jue 1/5 y Vie 2/5                                          |
+| 8          | 5/5 al 11/5      | Parcial / Unidad 4 | A definir            | A definir                 | **Parcial**: jue 8/5 a la tardecita, todas las comisiones juntas     |
+| 9          | 12/5 al 18/5     | Unidad 4           | A definir            | A definir                 |                                                                      |
+| 10         | 19/5 al 25/5     | Unidad 5           | A definir            | A definir                 |                                                                      |
+| 11         | 26/5 al 1/6      | Unidad 5           | A definir            | A definir                 | **Entrega TP**: dom 1/6                                              |
+| 12         | 2/6 al 8/6       | Unidad 5           | A definir            | A definir                 |                                                                      |
+| 13         | 9/6 al 15/6      | Recup. / Unidad 6  | A definir            | A definir                 | **Recup**: jue 12/6 a la tardecita, todas las comisiones juntas      |
+| 14         | 16/6 al 22/6     | Unidad 6           | A definir            | A definir                 | **Entrega tarea promoción**: dom 22/6. Feriados: lun 16/6 y vie 20/6 |
+| 15         | 23/6 al 29/6     | Unidad 6           | A definir            | A definir                 | Vie 27/6: notificación de la condición final en la asignatura        |
+
+
 ## Evaluación
 
 La evaluación de la asignatura se realiza a través de un examen parcial individual y un trabajo práctico grupal. Ambas actividades son evaluadas con una calificación entre 0 y 10 y se ponderan para obtener una nota de cursada (60% examen parcial, 40% trabajo práctico). Al finalizar el cursado, cada estudiante obtiene una de las siguientes condiciones:
@@ -43,7 +66,7 @@ La evaluación de la asignatura se realiza a través de un examen parcial indivi
 - **Regular**: obtienen la condición de “regular” aquellos estudiantes con nota de cursada mayor o igual a 6, siempre que no tengan ninguna nota individual menor a 4.
 - **Promovido**: obtienen la condición de “promovido” aquellos estudiantes que con nota de cursada mayor o igual a 8, que no tengan ninguna nota individual menor a 6 y que aprueben una tarea de realización opcional e individual al final del cuatrimestre. La nota de cursada se computa como nota final de la asignatura.
 
-Más detalles sobre cada componente evaluativo pueden encontrarse en el [programa](https://github.com/ee-unr/programacion-1/blob/main/archivos/programa.pdf) o en el [aula virtual](https://comunidades3.campusvirtualunr.edu.ar/course/view.php?id=4893).
+Más detalles sobre cada componente evaluativo pueden encontrarse en el [programa](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/ee-unr/programacion-1/main/archivos/programa.pdf) o en el [aula virtual](https://comunidades3.campusvirtualunr.edu.ar/course/view.php?id=4893).
 
 ## Código de conducta
 

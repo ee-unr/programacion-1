@@ -14,9 +14,9 @@ Si bien R será nuestro medio de comunicación con la computadora, vamos a usarl
 
 ## Instalación
 
-Para instalar estos programas, se deben visitar las páginas oficiales de [R](https://www.r-project.org/) y de [RStudio](https://posit.co/), descargar los instaladores y ejecutarlos. En [este documento](https://github.com/ee-unr/programacion-1/blob/main/archivos/instalacion_r_rstudio.pdf) encontrarás una guía paso a paso, o también podés mirar [este video](https://www.youtube.com/watch?v=hbgzW3Cvda4) con las indicaciones.
+Para instalar estos programas, se deben visitar las páginas oficiales de [R](https://www.r-project.org/) y de [RStudio](https://posit.co/), descargar los instaladores y ejecutarlos. En [este documento](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/ee-unr/programacion-1/main/archivos/instalacion_r_rstudio.pdf) encontrarás una guía paso a paso, o también podés mirar [este video](https://www.youtube.com/watch?v=hbgzW3Cvda4) con las indicaciones.
 
-Si experimentás algún problema con la instalación, hay una alternativa para que no pierdas tiempo hasta que los docentes puedan ayudarte a resolverlo. RStudio puede ser usado online sin que lo tengas que instalar. Sólo necesitás conexión a internet. Si necesitás usar esto porque la instalación falló, seguí las instrucciones de [este archivo](https://github.com/ee-unr/programacion-1/blob/main/archivos/posit_cloud.pdf).
+Si experimentás algún problema con la instalación, hay una alternativa para que no pierdas tiempo hasta que los docentes puedan ayudarte a resolverlo. RStudio puede ser usado online sin que lo tengas que instalar. Sólo necesitás conexión a internet. Si necesitás usar esto porque la instalación falló, seguí las instrucciones de [este archivo](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/ee-unr/programacion-1/main/archivos/posit_cloud.pdf).
 
 ## Paneles de RStudio
 
