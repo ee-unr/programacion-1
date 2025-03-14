@@ -13,7 +13,7 @@ book:
   date: today
   date-format: long
   search: true
-  repo-url: https://github.com/mpru/programacion1
+  repo-url: https://github.com/ee-unr/programacion-1
   repo-actions: [edit, issue, source]
   downloads: [pdf]
   page-footer: "Developed by Marcos Prunello"
