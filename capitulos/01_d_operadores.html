@@ -575,8 +575,8 @@ Tabla&nbsp;4.3: Operadores relacionales
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>texto1 <span class="sc">==</span> <span class="st">"hola"</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="radio_KMZPBDSLOZ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_KMZPBDSLOZ" value=""> <span>TRUE</span></label><label><input type="radio" autocomplete="off" name="radio_KMZPBDSLOZ" value="answer"> <span>FALSE</span></label>
+<div id="radio_JDLBGHFHWG" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_JDLBGHFHWG" value=""> <span>TRUE</span></label><label><input type="radio" autocomplete="off" name="radio_JDLBGHFHWG" value="answer"> <span>FALSE</span></label>
 </div>
 </div>
 </section>
@@ -686,10 +686,8 @@ Tabla&nbsp;4.5: Tabla de la verdad
 </figure>
 </div>
 <p>Con estos operadores es posible construir evaluaciones lógicas algo más elaboradas como los siguientes ejemplos:</p>
-<div class="ejemplo">
 <ol type="1">
-<li>Determinar si el valor numérica guardado en la variable <code>x</code> está entre 5 y 7:</li>
-</ol>
+<li><p><strong>Determinar si el valor numérica guardado en la variable <code>x</code> está entre 5 y 7</strong>. Tal vez tu intuición te sugiere que la expresión lógica a evaluar en este caso debe ser <code>5 &lt; valor &lt; 7</code>, pero esto genera un error en R. Para saber si <code>valor</code> está entre 5 y 7, se tiene que evaluar por separado que <code>valor</code> sea mayor que 5 y también menor que 7, y ambas condiciones deben ser verdaderas.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>valor <span class="ot">&lt;-</span> <span class="fl">6.4</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>(valor <span class="sc">&gt;</span> <span class="dv">5</span>) <span class="sc">&amp;&amp;</span> (valor <span class="sc">&lt;</span> <span class="dv">7</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -701,38 +699,25 @@ Tabla&nbsp;4.5: Tabla de la verdad
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
-</div>
-<p>Tal vez tu intuición te sugiere que la expresión lógica a evaluar en este caso debe ser <code>5 &lt; valor &lt; 7</code>, pero esto genera un error en R. Para saber si <code>valor</code> está entre 5 y 7, se tiene que evaluar por separado que <code>valor</code> sea mayor que 5 y también menor que 7, y ambas condiciones deben ser verdaderas.</p>
-</div>
-<div class="ejemplo">
-<ol start="2" type="1">
-<li>Establecer si el valor de tipo carácter almacenado en la variable <code>nacionalidad</code> sea igual a una de dos opciones:</li>
-</ol>
+</div></li>
+<li><p><strong>Establecer si el valor de tipo carácter almacenado en la variable <code>nacionalidad</code> sea igual a una de dos opciones.</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>nacionalidad <span class="ot">&lt;-</span> <span class="st">"Argentino"</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>(nacionalidad <span class="sc">==</span> <span class="st">"Uruguayo"</span>) <span class="sc">||</span> (nacionalidad <span class="sc">==</span> <span class="st">"Chileno"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
-</div>
-</div>
-<div class="ejemplo">
-<ol start="3" type="1">
-<li>Verificar que el valor guardado en <code>nacionalidad</code> no coincida con “Argentino”:.</li>
-</ol>
+</div></li>
+<li><p><strong>Verificar que el valor guardado en <code>nacionalidad</code> no coincida con “Argentino”.</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>nacionalidad <span class="ot">&lt;-</span> <span class="st">"Uruguayo"</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>(nacionalidad <span class="sc">==</span> <span class="st">"Argentino"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
-</div>
-</div>
-<div class="ejemplo">
-<ol start="4" type="1">
-<li>Chequear que el valor numérico guardado en <code>x</code> no sea igual a 2 ni a 3:</li>
-</ol>
-<p>Opción correcta 1: <code>(x != 2) &amp;&amp; (x != 3)</code></p>
+</div></li>
+<li><p><strong>Chequear que el valor numérico guardado en <code>x</code> no sea igual a 2 ni a 3.</strong></p>
+<p><em>Opción correcta 1: <code>(x != 2) &amp;&amp; (x != 3)</code></em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Da verdadero porque x no es ni 2 ni 3</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
@@ -747,7 +732,7 @@ Tabla&nbsp;4.5: Tabla de la verdad
 <pre><code>[1] FALSE</code></pre>
 </div>
 </div>
-<p>Opción correcta 2: <code>!(x == 2 || x == 3)</code></p>
+<p><em>Opción correcta 2: <code>!(x == 2 || x == 3)</code></em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Da verdadero porque x no es ni 2 ni 3</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
@@ -762,7 +747,7 @@ Tabla&nbsp;4.5: Tabla de la verdad
 <pre><code>[1] FALSE</code></pre>
 </div>
 </div>
-<p>Opción incorrecta: <code>(x != 2) || (x != 3)</code></p>
+<p><em>Opción incorrecta: <code>(x != 2) || (x != 3)</code></em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Como la primera parte es verdadera (porque x es igual a 3), la</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># conjunción es verdadera, cuando quisiéramos que en este caso el</span></span>
@@ -772,8 +757,8 @@ Tabla&nbsp;4.5: Tabla de la verdad
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
-</div>
-</div>
+</div></li>
+</ol>
 <div class="info">
 <p>Es importante notar que todos los paréntesis usados en el código de R de los ejemplos 1, 2 y 4 son innecesarios, puesto que <strong>los operadores relacionales preceden a los lógicos en el orden de prioridad</strong>. Sin embargo, a veces preferimos usar paréntesis para que la lectura sea más sencilla. Retomando el ejemplo 1, notemos que ambas expresiones son equivalentes:</p>
 <div class="cell">
