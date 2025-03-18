@@ -1,0 +1,305 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Estructuras de control iterativas
+
+::: {.presentacion-capitulo data-latex=""}
+Página en construcción.
+:::
+
+
+Las estructuras de control iterativas son útiles cuando la solución de un problema requiere que se ejecute repetidamente un determinado conjunto de acciones. El número de veces que se debe repetir dicha secuencia de acciones puede ser fijo o puede variar dependiendo de algún dato o condición a evaluar en el algoritmo.
+
+## Estructuras de control iterativas con un número fijo de iteraciones
+
+Se aplican cuando se conoce de antemano el número exacto de veces que se debe repetir una secuencia de acciones. También se conocen como *bucles (loops) controlados por un conteo*, ya que el algoritmo va contando la cantidad de repeticiones haciendo uso de una variable que recibe el nombre de **variable de iteración**, **índice** o **conteo**.
+
+Por ejemplo, imaginemos que queremos escribir un algoritmo que permita calcular la quinta potencia de cualquier número. Para esto, se debe tomar dicho número y multiplicarlo por sí mismo 5 veces. Por lo tanto, una posible solución es:
+
+```
+ALGORITMO: "Calcular la quinta potencia"
+COMENZAR
+	VARIABLE numérica x, resultado
+	LEER x
+	resultado <- 1
+	resultado <- resultado * x
+	resultado <- resultado * x
+	resultado <- resultado * x
+	resultado <- resultado * x
+	resultado <- resultado * x
+	ESCRIBIR x "elevado a la quinta es igual a" resultado
+FIN
+```
+
+Ya que sabemos que la multiplicación se debe repetir 5 veces, podemos resumir lo anterior con la siguiente estructura:
+
+```
+ALGORITMO: "Calcular la quinta potencia"
+COMENZAR
+	VARIABLE numérica x, resultado
+	LEER x
+	resultado <- 1
+	PARA i DESDE 1 HASTA 5 HACER
+		resultado <- resultado * x
+	FIN PARA
+	ESCRIBIR x "elevado a la quinta es igual a" resultado
+FIN
+```
+
+La letra `i` es la variable de iteración. Podríamos haber elegido otra letra u otra palabra en su lugar, pero emplear `i` es una elección bastante común. En este ejemplo, su única función es ir contando la cantidad de veces que se repiten las acciones encerradas dentro de la estructura `PARA/FIN PARA`. El bloque de instrucciones se repite tantas veces como `i` tarde en llegar a 5 partiendo desde 1. Por convención, a la variable de iteración no la declaramos junto con las otras variables numéricas (como `x` y `resultado`). 
+
+En R, el ejemplo anterior se implementa así:
+
+```{r}
+# Programa: "Calcular la quinta potencia" ------------------------
+x <- 4
+resultado <- 1
+for (i in 1:5) {
+	resultado <- resultado * x
+}
+cat(x, "elevado a la quinta es igual a", resultado)
+```
+
+Dado que la variable de iteración toma un valor numérico que va cambiando en cada repetición del bloque, se puede aprovechar para hacer cuentas con el mismo. Por ejemplo, el siguiente algoritmo muestra la tabla del ocho:
+
+```
+ALGORITMO: "Mostrar tabla del 8"
+COMENZAR
+	VARIABLE numérica resultado
+	PARA i DESDE 0 HASTA 10 HACER
+		resultado <- 8 * i
+		ESCRIBIR "8 x" i "=" resultado
+	FIN PARA
+FIN
+```
+
+```{r}
+# Programa: "Mostrar tabla del 8" -------------------------------
+for (i in 0:10) {
+	resultado <- 8 * i
+	cat("8 x", i, "=", resultado, "\n")
+}
+```
+
+En lo anterior, `\n` es un carácter especial que indica "salto de línea". Si no lo agregamos, los mensajes se imprimirían uno al lado del otro en el mismo renglón:
+
+```{r}
+# Programa: "Mostrar tabla del 8" -------------------------------
+for (i in 0:10) {
+	resultado <- 8 * i
+	cat("8 x", i, "=", resultado)
+}
+```
+
+De manera general, la sintaxis para este tipo de estructuras es:
+
+```{r, tidy=FALSE, eval=FALSE, highlight=FALSE, echo=T}
+PARA <variable> DESDE <valor1> HASTA <valor2> CON PASO <valor3> HACER
+    Acción/es
+FIN PARA
+```
+
+Dado un valor inicial `<valor1>` asignado a la `<variable>`, esta se irá aumentando o disminuyendo según el paso `<valor3>` hasta llegar a tomar el valor `<valor2>`. Si no se indica el paso se asume que la variable de iteración aumenta de uno en uno. En R:
+
+```
+for (<variable> in seq(<valor1>, <valor2>, <valor3>)) {
+	...Acción/es...
+}
+```
+
+Notar en el ejemplo de la quinta potencia que `1:5` es lo mismo que `seq(1, 5, 1)`, pero podemos usar la función `seq()` en otros contextos más complejos, donde la variable de iteración puede pegar otros saltos en lugar de uno en uno.
+
+## Estructuras de control iterativas con un número indeterminado de iteraciones
+
+En otras circunstancias se puede necesitar repetir un bloque de acciones sin conocer con exactitud cuántas veces, si no que esto depende de algún otro aspecto del algoritmo. Las iteraciones pueden continuar *mientras que* o *hasta que* se verifique alguna condición, dando lugar a dos tipos de estructuras. Estos casos también se conocen como *bucles (loops) controlados por una condición*.
+
+### Mientras que
+
+El conjunto de sentencias se repite mientras que se siga evaluando como `VERDADERO` una condición declarada al inicio del bloque. Cuando la condición ya no se cumple, el proceso deja de ejecutarse. La sintaxis es:
+
+```
+MIENTRAS QUE <condición> HACER
+   Acción/es a repetir
+FIN MIENTRAS
+```
+
+En R:
+
+```
+while (<condición>) {
+	...Acción/es a repetir...
+}
+```
+
+Observaciones:
+
+- La evaluación de la condición se lleva a cabo antes de cada iteración, incluso antes de ejecutar el código dentro del bloque por primera vez. Si la condición es `FALSO` inicialmente, entonces las acciones en el cuerpo de la estructura no se ejecutan nunca.
+- La evaluación de la condición **sólo** se lleva a cabo al inicio de cada iteración. Si la condición se vuelve `FALSO` en algún punto durante la ejecución de un bloque, el programa no lo nota hasta que se termine de ejecutar el bloque y la condición sea evaluada antes de comenzar la próxima iteración.
+
+Veamos un ejemplo:
+
+```
+ALGORITMO: "Dividir un número por 2 hasta encontrar un valor menor que 0.01"
+COMENZAR
+	VARIABLE numérica x
+	LEER x
+	MIENTRAS QUE x >= 0.01 HACER
+		x <- x / 2
+		ESCRIBIR x
+	FIN MIENTRAS
+FIN
+```
+
+```{r}
+x <- 100
+while (x >= 0.01) {
+	x <- x / 2
+	cat(x, "\n")
+}
+```
+
+### Hasta que
+
+A diferencia de la estructura *MIENTRAS QUE*, la estructura *HASTA QUE* repite el bloque de acciones hasta que se cumpla una condición, es decir, se ejecuta mientras que dicha condición sea evaluada como `FALSA`. La sintaxis es:
+
+```{r, tidy=FALSE, eval=FALSE, highlight=FALSE, echo=T}
+REPETIR
+   Acción/es
+HASTA QUE <condición>
+```
+
+Observación: con la estructura *MIENTRAS QUE* podría ser que el conjunto de sentencias nunca llegue a ejecutarse si desde partida la condición evaluada ya es falsa. Por el contrario, en la estructura *HASTA QUE* el proceso se realiza al menos una vez, dado que la condición se evalúa al final.
+
+El ejemplo anterior empleando este tipo de estructura:
+
+```
+ALGORITMO: "Dividir un número por 2 hasta encontrar un valor menor que 0.01"
+COMENZAR
+	VARIABLE numérica x
+	LEER x
+	REPETIR
+		x <- x / 2
+		ESCRIBIR x
+	HASTA QUE x < 0.01
+FIN
+```
+
+En R este tipo de estructura se implementa con la sentencia `repeat {}`. Si bien a continuación se muestra el correspondiente ejemplo, no vamos a utilizar esta estructura, debido a que su escritura es más compleja y a que generalmente es posible obtener el mismo resultado con un `while () {}`.
+
+```{r}
+x <- 100
+repeat {
+	x <- x / 2
+	cat(x, "\n")
+	if (x < 0.01) break
+}
+```
+
+### Loops infinitos
+
+Con las sentencias de tipo `MIENTRAS QUE` se debe tener mucha precaución, puesto que si la evaluación lógica no está bien especificada o nunca deja de ser evaluada como `TRUE`, se incurre en un *loop* infinito: el programa nunca deja de repetir el bloque (al menos hasta que la máquina se tilde o se produzca un error por desbordamiento de memoria, por ejemplo). 
+
+La siguiente situación ilustra esto:
+
+```
+var <- 9
+while (var < 10) {
+	var <- var - 1
+	cat("var =", var, "No puedo parar!!!\n")
+}
+
+var = 8 No puedo parar!!!
+var = 7 No puedo parar!!!
+var = 6 No puedo parar!!!
+var = 5 No puedo parar!!!
+var = 4 No puedo parar!!!
+var = 3 No puedo parar!!!
+var = 2 No puedo parar!!!
+var = 1 No puedo parar!!!
+var = 0 No puedo parar!!!
+var = -1 No puedo parar!!!
+...
+```
+
+En R se puede usar la instrucción `break` para forzar la detención del proceso iterativo si se presenta alguna condición en particular^[También podemos usar `break` dentro de una estructura `for`]:
+
+```{r}
+var <- 9
+while (var < 10) {
+	var <- var - 1
+	cat("var =", var, "No puedo parar!!!\n")
+	if (var == -3) break
+}
+```
+
+
+### Ejemplos
+
+A continuación se presentan algunos otros ejemplos
+
+- No necesariamente tiene que ser `i` la variable iteradora, podemos darle cualquier nombre:
+
+	```{r}
+	for (guau in 1:5) {
+		print(guau)
+	}
+	```
+
+	La sentencia `print()` también sirve para mostrar resultados. La ventaja con respecto a `cat()` es que no necesitamos agregar `\n` para que el siguiente mensaje se escriba en un nuevo renglón, ya que lo agrega por sí sola sin que lo pidamos. La desventaja es que no nos permite crear un mensaje combinando elementos separados entre comas, tal como se puede hacer con `cat()` (por ejemplo, `cat("El valor de x es igual a", x)`).
+
+- Acá tenemos un ejemplo de dos estructuras `for` anidadas. En primer lugar, `i` toma el valor 1, y entonces `j` varía de 1 a 2, generando las combinaciones `i = 1, j = 1; i = 1, j = 2`. Luego de que el *loop* de `j` finalice habiendo recorrido todo su campo de variación, comienza la segunda iteración del *loop* de `i`, actualizándose su valor a 2 y comenzando otra vez el *loop* de `j`, que varía de 1 a 2. Así, se generan las combinaciones `i = 2, j = 1; i = 2, j = 2`. Finalmente, se actualiza `i` y pasa a valer 3, generando las combinaciones `i = 3, j = 1; i = 3, j = 2`. Para cada combinación, se muestra el valor de la suma:
+
+	```{r}
+	for (i in 1:3) {
+		for (j in 1:2) {
+			suma <- i + j
+			cat("i vale", i, "y j vale", j, ". La suma es igual a", suma, "\n")	
+		}
+	}
+	```
+
+- Sumar los números naturales del 1 al 5:
+
+	```{r}
+	suma <- 0
+	for (i in 1:5) {
+		suma <- suma + i
+	}
+	suma
+	```
+
+- Sumar números naturales hasta que la suma pase el valor 100 y detenerse:
+
+	```{r}
+	suma <- 0
+	i <- 1
+	while (suma < 100) {
+		suma <-  suma + i
+		i <- i + 1
+	}
+	suma
+	```
+
+- Escribir todos los múltiplos de 8 menores que 150:
+
+	```
+	ALGORITMO: "Múltiplos de 8 menores a 150"
+	COMENZAR
+		VARIABLE numérica multiplo
+		multiplo <- 8
+		MIENTRAS QUE multiplo < 150 HACER
+			ESCRIBIR multiplo
+			multiplo <- multiplo + 8
+		FIN MIENTRAS
+	FIN
+	```
+	
+	```{r}
+	# Programa: "Múltiplos de 8 menores a 150" ------------------------
+	multiplo <- 8
+	while (multiplo < 150) {
+		print(multiplo)
+		multiplo <- multiplo + 8
+	}
+	```

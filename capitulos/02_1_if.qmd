@@ -1,0 +1,175 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Estructuras de control condicionales
+
+::: {.presentacion-capitulo data-latex=""}
+Página en construcción.
+:::
+
+Como mencionamos anteriormente, un algoritmo está compuesto por una sucesión ordenada de comandos que se ejecutan uno detrás de otro. Sin embargo, con frecuencia es necesario recurrir a comandos especiales que alteran o controlan el orden en el que se ejecutan las acciones. Llamamos **estructuras de control del flujo de las acciones** al conjunto de reglas que permiten controlar el flujo de las acciones de un algoritmo o programa. Las mismas pueden clasificarse en **secuenciales**, **condicionales** e **iterativas**.
+
+CAMBIAR SECUENCIALES, PONER DEFINICION DE STRUC DE CONTROL
+
+Las **estructuras secuenciales** están compuestas por un número definido de acciones que se ubican en un orden específico y se suceden una tras otra. Los ejemplos que hemos discutido anteriormente están conformados por este tipo de estructura.
+
+
+
+En algunas partes de un algoritmo puede ser útil detenerse a hacer una pregunta porque se llegó a una situación en la que puede haber una o más opciones disponibles para continuar. Dependiendo de la respuesta a la pregunta, que siempre deberá ser `VERDADERO` (`TRUE`) o `FALSO` (`FALSE`), el algoritmo seguirá ciertas acciones e ignorará otras. Estas preguntas y respuestas representan procesos de toma de decisión que conducen a diferentes caminos dentro del algoritmo, permitiéndonos que la solución para el problema en cuestión sea flexible y se adapte a distintas situaciones. Este tipo de estructuras de control de las acciones reciben el nombre de **condicionales** (o *estructuras de selección*) y pueden ser **simples**, **dobles** y **múltiples**.
+
+## Estructuras condicionales simples
+
+Postulan una evaluación lógica y, si su resultado es `VERDADERO`, se procede a ejecutar las acciones encerradas por esta estructura. Se describen en pseudocódigo con la siguiente sintaxis:
+
+```{r, tidy=FALSE, eval=FALSE, highlight=FALSE, echo=T}
+SI <condición> ENTONCES
+    Acción/es
+FIN SI
+```
+
+La palabra `SI` indica el comando de evaluación lógica, `<condición>` indica la condición a evaluar y `Acción/es` son las instrucciones que se realizarán sólo si se cumple la condición, es decir, si la evaluación resulta en `VERDADERO`. Si la condición no se verifica, no se ejecuta ninguna acción y el algoritmo sigue su estructura secuencial a continuación del `FIN SI`.
+
+En R, la estructura que nos permite realizar esto es:
+
+```{r, eval=FALSE}
+if (<condición>) {
+	...código para ejecutar acciones...
+}
+```
+
+
+Por ejemplo, el siguiente algoritmo registra la edad de una persona y, en el caso de que sea mayor de edad, avisa que puede votar en las elecciones provinciales de Santa Fe:
+
+```
+ALGORITMO: "Analizar edad para votar"
+COMENZAR
+	VARIABLE numérica edad
+	LEER edad
+	SI edad >= 18 ENTONCES
+		ESCRIBIR "Edad = " edad " años: puede votar"
+	FIN SI
+FIN
+```
+
+```{r, eval=T}
+# Programa: "Analizar edad para votar" -------------------------------
+edad <- 21
+if (edad >= 18) {
+	cat("Edad =", edad, "años: puede votar")
+}
+```
+
+Notar que si bien el uso de sangrías en el código es opcional, decidimos emplearlo para facilitar su lectura. Mantener la prolijidad en nuestros programas es esencial.
+
+## Estructuras condicionales dobles
+
+Este tipo de estructura añade una acción a ejecutarse en el caso de que la condición evaluada no se verifique (es decir, devuelve el valor `FALSO`). La sintaxis es:
+
+```{r, tidy=FALSE, eval=FALSE, highlight=FALSE, echo=T}
+SI <condición> ENTONCES
+  Acción/es
+SI NO
+  Acción/es
+FIN SI
+```
+
+La palabra `ENTONCES` antecede a las acciones que se realizan si se cumple la condición y la expresión `SI NO` a las que se realizan si no se verifica la misma. 
+
+En R se utiliza el comando `else`:
+
+```{r, eval=FALSE}
+if (<condición>) {
+	...código para ejecutar acciones...
+} else {
+	...código para ejecutar acciones...
+}
+```
+
+Retomando el ejemplo anterior:
+
+```
+ALGORITMO: "Analizar edad para votar"
+COMENZAR
+	VARIABLE numérica edad
+	LEER edad
+	SI edad >= 18 ENTONCES
+		ESCRIBIR "Edad = " edad " años: puede votar"
+	SI NO
+		ESCRIBIR "Edad = " edad " años: no puede votar"
+	FIN SI
+FIN
+```
+
+```{r, eval=T}
+# Programa: "Analizar edad para votar" -------------------------------
+edad <- 21
+if (edad >= 18) {
+	cat("Edad =", edad, "años: puede votar")
+} else {
+	cat("Edad =", edad, "años: no puede votar")
+}
+```
+
+## Estructuras condicionales múltiples o anidadas
+
+Permiten combinar varias estructuras condicionales para establecer controles más complejos sobre el flujo de las acciones, representando una toma de decisión múltiple. Podemos ejemplificar la sintaxis de la siguiente forma:
+
+```
+SI <condición 1> ENTONCES
+  Acción 1
+SI NO
+  SI <condición 2> ENTONCES
+    Acción 2
+  SI NO
+    Acción 3
+  FIN SI
+FIN SI
+```
+
+En la estructura anterior, hay una primera evaluación lógica en la cual si el resultado es `VERDADERO`, se ejecuta la Acción 1 y nada más. En cambio, si su resultado es `FALSO`, se procede a realizar una segunda evaluación lógica, que da lugar a la ejecución de la Acción 2 o de la Acción 3 si su resultado es `VERDADERO` o `FALSO`, respectivamente.
+
+Se debe notar que luego del primer `SI NO` comienza una nueva estructura completa de `SI/ENTONCES/SI NO/FIN SI`. Cada `SI` termina con su propio `FIN SI`. Al traducir esto a R, se vuelve algo más sencillo:
+
+```{r, eval=FALSE}
+if (<condición 1>) {
+	...Acción 1...
+} else if (<condición 2>) {
+	...Acción 2...
+} else {
+	...Acción 3...
+}
+```
+
+El último bloque de acciones (`...Acción 3...`) se evaluará si ninguna de las condiciones lógicas anteriores fue `VERDADERO`.
+
+En el ejemplo de la edad:
+
+```
+ALGORITMO: "Analizar edad para votar"
+COMENZAR
+	VARIABLE numérica edad
+	LEER edad
+	SI edad < 18 ENTONCES
+		ESCRIBIR "Edad = " edad " años: no puede votar"
+	SI NO
+		SI edad >= 70 ENTONCES
+			ESCRIBIR "Edad = " edad " años: puede votar opcionalmente"
+		SI NO
+			ESCRIBIR "Edad = " edad " años: debe votar obligatoriamente"
+		FIN SI
+	FIN SI
+FIN
+```
+
+```{r, eval=T}
+# Programa: "Analizar edad para votar" -------------------------------
+edad <- 21
+if (edad < 18) {
+	cat("Edad =", edad, "años: no puede votar")
+} else if (edad >= 70) {
+	cat("Edad =", edad, "años: puede votar opcionalmente")
+} else {
+	cat("Edad =", edad, "años: debe votar obligatoriamente")
+}
+```

@@ -4,6 +4,6 @@
 
 # Unidad 2. Estructuras de control
 
-::: {.en-construccion data-latex=""}
+::: {.presentacion-capitulo data-latex=""}
 Página en construcción.
 :::
