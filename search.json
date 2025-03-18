@@ -522,7 +522,7 @@
     "href": "capitulos/01_practica.html#ejercicio-2",
     "title": "Práctica de la Unidad 1",
     "section": "Ejercicio 2",
-    "text": "Ejercicio 2\nEn R, crear los siguientes objetos y observar sus valores:\nx &lt;- 10\ny &lt;- \"Hola\"\nz &lt;- 5\n\n¿Qué tipo de objeto es cada uno?\nModificar el objeto z para almacene el resultado de multiplicar a x por 6.\n¿Qué sucede si intentás sumar x e y? Explicar por qué ocurre esto.",
+    "text": "Ejercicio 2\n\nEncontrar la página de ayuda en R para la función round().\n\nDescubrir qué argumentos acepta la función y qué hace cada uno de ellos.\n\n¿Cuál de esos argumentos es de uso obligatorio y cuál, opcional?\nUsar la función para redondear el valor 3.14159 con 0, 1 o 2 decimales.\nEscribir tres formas distintas de usar la función para redondear el valor 3.14159 con dos decimales/",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
@@ -533,7 +533,7 @@
     "href": "capitulos/01_practica.html#ejercicio-3",
     "title": "Práctica de la Unidad 1",
     "section": "Ejercicio 3",
-    "text": "Ejercicio 3\nDescargar el archivo practica1_ambiente.RData y guardarlo en la carpeta del proyecto unidad_1. Este archivo es de extensión .RData y se utiliza para guardar objetos de R. Cuando este archivo se lee con R, se cargan en el environment los objetos que tiene almacenados. Vamos a leer este archivo para identificar qué tipo de objetos aparecen en nuestro ambiente. Para abrir este archivo, podemos usar alguna de estas opciones:\n\nHacer doble clic en el archivo practica1_ambiente.RData.\nEn la pestaña Environment de RStudio, hacer clic en el ícono de abrir y seleccionar el archivo practica1_ambiente.RData.\nEjecutar la siguiente instrucción:\n\n\nload(\"practica1_ambiente.RData\")\n\nUna vez que el archivo haya sido cargado en R, resolver los siguiente puntos:\n\n¿Cuántos objetos fueron incorporadas al ambiente al haber cargado el archivo? ¿Cuáles son sus nombres o identificadores? ¿Qué tipo de dato contiene cada uno? ¿Qué valor contiene cada uno?\nEvaluar si al menos una de las variables var2 o var5 contiene un número negativo, escribiendo la correspondiente operación en R.\nEvaluar si ambas variables var2 y var5 contienen un número negativo, escribiendo la correspondiente operación en R.\nEvaluar si al dividir var2 por la suma entre var5 y 100, el resto es menor que 10, escribiendo la correspondiente operación en R.\nEvalúe si los valores guardados en var3 y var6 son iguales o no. Inspeccione dichos valores y comente lo observado.",
+    "text": "Ejercicio 3\nEn R, crear los siguientes objetos y observar sus valores:\nx &lt;- 10\ny &lt;- \"Hola\"\nz &lt;- 5\n\n¿Qué tipo de objeto es cada uno?\nModificar el objeto z para almacene el resultado de multiplicar a x por 6.\n¿Qué sucede si intentás sumar x e y? Explicar por qué ocurre esto.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
@@ -544,7 +544,7 @@
     "href": "capitulos/01_practica.html#ejercicio-4",
     "title": "Práctica de la Unidad 1",
     "section": "Ejercicio 4",
-    "text": "Ejercicio 4\n\nEncontrar la página de ayuda en R para la función round().\n\nDescubrir qué argumentos acepta la función y qué hace cada uno de ellos.\n\n¿Cuál de esos argumentos es de uso obligatorio y cuál, opcional?\nUsar la función para redondear el valor 3.14159 con 0, 1 o 2 decimales.\nEscribir tres formas distintas de usar la función para redondear el valor 3.14159 con dos decimales/",
+    "text": "Ejercicio 4\nDescargar el archivo practica1_ambiente.RData y guardarlo en la carpeta del proyecto unidad_1. Este archivo es de extensión .RData y se utiliza para guardar objetos de R. Cuando este archivo se lee con R, se cargan en el environment los objetos que tiene almacenados. Vamos a leer este archivo para identificar qué tipo de objetos aparecen en nuestro ambiente. Para abrir este archivo, podemos usar alguna de estas opciones:\n\nHacer doble clic en el archivo practica1_ambiente.RData.\nEn la pestaña Environment de RStudio, hacer clic en el ícono de abrir y seleccionar el archivo practica1_ambiente.RData.\nEjecutar la siguiente instrucción:\n\n\nload(\"practica1_ambiente.RData\")\n\nUna vez que el archivo haya sido cargado en R, responder: ¿cuántos objetos fueron incorporadas al ambiente al haber cargado el archivo? ¿Cuáles son sus nombres o identificadores? ¿Qué tipo de dato contiene cada uno? ¿Qué valor contiene cada uno?",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
@@ -555,7 +555,7 @@
     "href": "capitulos/01_practica.html#ejercicio-5",
     "title": "Práctica de la Unidad 1",
     "section": "Ejercicio 5",
-    "text": "Ejercicio 5\nSin utilizar R, calcular el valor resultante de las siguientes operaciones, para cada uno de los casos presentados en las columnas. Luego, verificar en R.\n\n\n\n\n\n\n\n\n\nOperación\nedad &lt;- 21, altura &lt;- 1.90\nedad &lt;- 17 , altura &lt;- 1.90\nedad &lt;- 21, altura &lt;- 1.50\n\n\n\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n\n\n\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n\n\n\n\n!(edad &gt; 18)",
+    "text": "Ejercicio 5\nTeniendo en cuenta los objetos cargados en el ambiente en el ejercicio anterior:\n\nEvaluar si al menos una de las variables var2 o var5 contiene un número negativo, escribiendo la correspondiente operación en R.\nEvaluar si ambas variables var2 y var5 contienen un número negativo, escribiendo la correspondiente operación en R.\nEvaluar si al dividir var2 por la suma entre var5 y 100, el resto es menor que 10, escribiendo la correspondiente operación en R.\nEvalar si los valores guardados en var3 y var6 son iguales o no. Inspeccione dichos valores y comente lo observado.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
@@ -566,7 +566,7 @@
     "href": "capitulos/01_practica.html#ejercicio-6",
     "title": "Práctica de la Unidad 1",
     "section": "Ejercicio 6",
-    "text": "Ejercicio 6\nAplicando las reglas de prioridad en los operadores aritméticos, anticipar el resultado de la siguiente expresión. Luego, verificar en R.\n\n1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10",
+    "text": "Ejercicio 6\nSin utilizar R, calcular el valor resultante de las siguientes operaciones, para cada uno de los casos presentados en las columnas. Luego, verificar en R.\n\n\n\n\n\n\n\n\n\nOperación\nedad &lt;- 21, altura &lt;- 1.90\nedad &lt;- 17 , altura &lt;- 1.90\nedad &lt;- 21, altura &lt;- 1.50\n\n\n\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n\n\n\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n\n\n\n\n!(edad &gt; 18)",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
@@ -577,7 +577,7 @@
     "href": "capitulos/01_practica.html#ejercicio-7",
     "title": "Práctica de la Unidad 1",
     "section": "Ejercicio 7",
-    "text": "Ejercicio 7\n¿Para qué valores de x la siguiente expresión resulta verdadera?: (x != 4) || (x != 17).",
+    "text": "Ejercicio 7\nAplicando las reglas de prioridad en los operadores aritméticos, anticipar el resultado de la siguiente expresión. Luego, verificar en R.\n\n1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
@@ -588,7 +588,7 @@
     "href": "capitulos/01_practica.html#ejercicio-8",
     "title": "Práctica de la Unidad 1",
     "section": "Ejercicio 8",
-    "text": "Ejercicio 8\nSe desea determinar si un determinado año es bisiesto. Si bien pensamos que los años bisiestos ocurren cada 4 años, los procesos astronómicos que dan origen a este concepto son algo más complejos. Dado que en realidad la Tierra tarda 365.25 días en completar su órbita anual alrededor del sol, agregar un día extra una vez cada 4 años ayuda a mantener el calendario en sincronización con el sol, pero aún queda un pequeño desfasaje. Por lo tanto, la regla completa dice que los años bisiestos ocurren cada 4 años, excepto los terminados en 00, los cuales son bisiestos sólo si son divisibles por 400. Es decir, los años como 1600, 1700, 1800 son bisiestos si son divisibles por 400. Por ejemplo, el año 1900 no fue bisiesto a pesar de ser divisible por 4, pero el año 2000 si lo fue por ser divisible por 400. Entonces, para que un año dado sea bisiesto, se debe cumplir una de las siguientes condiciones:\n\nEl año es divisible por 4 pero no divisible por 100, o\nEl año es divisible por 400.\n\nSiendo año el nombre del objeto cuyo valor es el año que se desea evaluar, expresar la operación lógica que devuelve el valor TRUE sólo si año es un año bisiesto.",
+    "text": "Ejercicio 8\n¿Para qué valores de x la siguiente expresión resulta verdadera?: (x != 4) || (x != 17).",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
@@ -599,7 +599,7 @@
     "href": "capitulos/01_practica.html#ejercicio-9",
     "title": "Práctica de la Unidad 1",
     "section": "Ejercicio 9",
-    "text": "Ejercicio 9\nPara cada bloque de código, determinar el valor final de cada variable antes de ejecutarlo en R. Luego, comprobar la respuesta ejecutando el código.\n\n¿Cuáles son los valores finales de a y b?\n\n\na &lt;- 10\nb &lt;- a * 2\na &lt;- a + 5\nb &lt;- b - a\n\n\n¿Cuáles son los valores finales de m y n?\n\n\nm &lt;- 5\nn &lt;- 2 * m\nm &lt;- m + 3\nn &lt;- n + m\nm &lt;- n - 4\n\n\n¿Cuál es el valor final de y?\n\n\nx &lt;- 6\ny &lt;- 2\nx &lt;- x / y + x * y\ny &lt;- x^2 %% 10\ny &lt;- y * 2\ny\n\n\n¿Cuál es el valor final de resultado?\n\n\na &lt;- 5\nb &lt;- 2\nc &lt;- 3\n\nresultado &lt;- a^b - (c * b) + (a %% c)\n\n\n¿Cuáles son los valores finales de x, y y z?\n\n\nx &lt;- 8\ny &lt;- 3\nz &lt;- 2\n\nx &lt;- x %% y + z^y\ny &lt;- (x + y) %/% z\nz &lt;- z + x - y",
+    "text": "Ejercicio 9\nSe desea determinar si un determinado año es bisiesto. Si bien pensamos que los años bisiestos ocurren cada 4 años, los procesos astronómicos que dan origen a este concepto son algo más complejos. Dado que en realidad la Tierra tarda 365.25 días en completar su órbita anual alrededor del sol, agregar un día extra una vez cada 4 años ayuda a mantener el calendario en sincronización con el sol, pero aún queda un pequeño desfasaje. Por lo tanto, la regla completa dice que los años bisiestos ocurren cada 4 años, excepto los terminados en 00, los cuales son bisiestos sólo si son divisibles por 400. Es decir, los años como 1600, 1700, 1800 son bisiestos si son divisibles por 400. Por ejemplo, el año 1900 no fue bisiesto a pesar de ser divisible por 4, pero el año 2000 si lo fue por ser divisible por 400. Entonces, para que un año dado sea bisiesto, se debe cumplir una de las siguientes condiciones:\n\nEl año es divisible por 4 pero no divisible por 100, o\nEl año es divisible por 400.\n\nSiendo año el nombre del objeto cuyo valor es el año que se desea evaluar, expresar la operación lógica que devuelve el valor TRUE sólo si año es un año bisiesto.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
@@ -610,7 +610,7 @@
     "href": "capitulos/01_practica.html#ejercicio-10",
     "title": "Práctica de la Unidad 1",
     "section": "Ejercicio 10",
-    "text": "Ejercicio 10\nEscribir una expresión en R para calcular el área total y el volumen de un prisma rectangular, considerando que las longitudes se guardan en las variables numéricas a, b y h, como se muestra en la imagen.\n\n\n\n\n\n\n\nPrisma rectangular.",
+    "text": "Ejercicio 10\nPara cada bloque de código, determinar el valor final de cada variable antes de ejecutarlo en R. Luego, comprobar la respuesta ejecutando el código.\n\n¿Cuáles son los valores finales de a y b?\n\n\na &lt;- 10\nb &lt;- a * 2\na &lt;- a + 5\nb &lt;- b - a\n\n\n¿Cuáles son los valores finales de m y n?\n\n\nm &lt;- 5\nn &lt;- 2 * m\nm &lt;- m + 3\nn &lt;- n + m\nm &lt;- n - 4\n\n\n¿Cuál es el valor final de y?\n\n\nx &lt;- 6\ny &lt;- 2\nx &lt;- x / y + x * y\ny &lt;- x^2 %% 10\ny &lt;- y * 2\ny\n\n\n¿Cuál es el valor final de resultado?\n\n\na &lt;- 5\nb &lt;- 2\nc &lt;- 3\n\nresultado &lt;- a^b - (c * b) + (a %% c)\n\n\n¿Cuáles son los valores finales de x, y y z?\n\n\nx &lt;- 8\ny &lt;- 3\nz &lt;- 2\n\nx &lt;- x %% y + z^y\ny &lt;- (x + y) %/% z\nz &lt;- z + x - y",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
@@ -621,7 +621,7 @@
     "href": "capitulos/01_practica.html#ejercicio-11",
     "title": "Práctica de la Unidad 1",
     "section": "Ejercicio 11",
-    "text": "Ejercicio 11\nResponder las siguientes preguntas:\n\n¿Cuál es la ruta informática o path del script resulucion_practica_1.R que creaste en el ejercicio 1?\n¿Cuál es el directorio de trabajo o working directory en tu sesión de trabajo actual?",
+    "text": "Ejercicio 11\nEscribir una expresión en R para calcular el área total y el volumen de un prisma rectangular, considerando que las longitudes se guardan en las variables numéricas a, b y h, como se muestra en la imagen.\n\n\n\n\n\n\n\nPrisma rectangular.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
@@ -632,7 +632,18 @@
     "href": "capitulos/01_practica.html#ejercicio-12",
     "title": "Práctica de la Unidad 1",
     "section": "Ejercicio 12",
-    "text": "Ejercicio 12\n\nCrear en tu computadora una carpeta para guardar todo lo relacionado a tus estudios (puede estar en Documentos o dentro de Google Drive u otro sistema de sincronización y respaldo).\nCrear una subcarpeta para los elementos relacionados al primer año de cursado.\nEn ella, crear una carpeta para cada materia que estás cursando, incluyendo una para Programación 1, con el nombre programacion_1.\nCrear un proyecto de RStudio llamado unidad_1, dentro de la carpeta programacion_1.\nGuardar en la carpeta del proyecto todos los archivos que hayas utilizado. Por ejemplo, el script resolucion_practica_1.R y el archivo descargado practica1_ambiente.RData.\nA partir de ahora, cada vez que comiences una nueva unidad en esta asignatura, crear un nuevo proyecto como hicimos para la Unidad 1.",
+    "text": "Ejercicio 12\nResponder las siguientes preguntas:\n\n¿Cuál es la ruta informática o path del script resulucion_practica_1.R que creaste en el ejercicio 1?\n¿Cuál es el directorio de trabajo o working directory en tu sesión de trabajo actual?",
+    "crumbs": [
+      "Unidad 1. Introducción a la programación con R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/01_practica.html#ejercicio-13",
+    "href": "capitulos/01_practica.html#ejercicio-13",
+    "title": "Práctica de la Unidad 1",
+    "section": "Ejercicio 13",
+    "text": "Ejercicio 13\n\nCrear en tu computadora una carpeta para guardar todo lo relacionado a tus estudios (puede estar en Documentos o dentro de Google Drive u otro sistema de sincronización y respaldo).\nCrear una subcarpeta para los elementos relacionados al primer año de cursado.\nEn ella, crear una carpeta para cada materia que estás cursando, incluyendo una para Programación 1, con el nombre programacion_1.\nCrear un proyecto de RStudio llamado unidad_1, dentro de la carpeta programacion_1.\nGuardar en la carpeta del proyecto todos los archivos que hayas utilizado. Por ejemplo, el script resolucion_practica_1.R y el archivo descargado practica1_ambiente.RData.\nA partir de ahora, cada vez que comiences una nueva unidad en esta asignatura, crear un nuevo proyecto como hicimos para la Unidad 1.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Práctica de la Unidad 1</span>"
@@ -685,7 +696,7 @@
     "href": "capitulos/90_soluciones_01.html#ejercicio-2",
     "title": "Soluciones de la Práctica de la Unidad 1",
     "section": "Ejercicio 2",
-    "text": "Ejercicio 2\n\nx &lt;- 10\ny &lt;- \"Hola\"\nz &lt;- 5\n\n\nPodemos verificar el tipo de cada objeto con la función typeof():\n\n\ntypeof(x)\n\n[1] \"double\"\n\ntypeof(y)\n\n[1] \"character\"\n\ntypeof(z)\n\n[1] \"double\"\n\n\n\nEjecutamos la siguiente instrucción:\n\n\nz &lt;- x * 6\n\nAhora, z almacenará el valor:\n\nz\n\n[1] 60\n\n\n\nObtenemos un error porque x es un número (double), mientras que y es un texto (character). En R, no es posible realizar operaciones matemáticas entre objetos de tipo diferente.\n\n\nx + y\n\nError in x + y: non-numeric argument to binary operator",
+    "text": "Ejercicio 2\n\nPara acceder a la documentación de la función round(), se puede ejecutar en la consola de R:\n\n?round\no\nhelp(round)\n\nSegún la ayuda de R, la función round() tiene los siguientes argumentos:\n\n\nx: El número o vector de números que se desea redondear.\n\ndigits: El número de cifras decimales al que se desea redondear x. Puede ser positivo (para redondear decimales) o negativo (para redondear a múltiplos de 10).\n\n...: representa el uso opcional de otros argumentos, es algo que podemos ignorar por ahora.\n\n\n\nObligatorio: x, ya que es el número a redondear.\n\nOpcional: digits, que por defecto es 0, lo que significa que la función redondeará al número entero más cercano si no se especifica un valor distinto.\n\n\n\n\nround(3.14159, digits = 0)  # Redondeo a 0 decimales → Resultado: 3\n\n[1] 3\n\nround(3.14159, digits = 1)  # Redondeo a 1 decimal → Resultado: 3.1\n\n[1] 3.1\n\nround(3.14159, digits = 2)  # Redondeo a 2 decimales → Resultado: 3.14\n\n[1] 3.14\n\n\n\n\n\n\nround(3.14159, 2)\n\n[1] 3.14\n\nround(x = 3.14159, digits = 2)\n\n[1] 3.14\n\nround(digits = 2, x = 3.14159)\n\n[1] 3.14",
     "crumbs": [
       "Soluciones de la Práctica",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
@@ -696,7 +707,7 @@
     "href": "capitulos/90_soluciones_01.html#ejercicio-3",
     "title": "Soluciones de la Práctica de la Unidad 1",
     "section": "Ejercicio 3",
-    "text": "Ejercicio 3\n\nload(\"practica1_ambiente.RData\")\n\n\nSe incorporaron 6 objetos al ambiente:\n\n\n\n\nIdentificador\nTipo de vector\nValor\n\n\n\n\nvar1\nlogical\nTRUE\n\n\nvar2\ndouble\n200.12\n\n\nvar3\ncharacter\n\"hola\"\n\n\nvar4\ncharacter\n\"chau\"\n\n\nvar5\ninteger\n-49L\n\n\nvar6\ncharacter\n\"Hola\"\n\n\n\n\ntypeof(var1)\n\n[1] \"logical\"\n\ntypeof(var2)\n\n[1] \"double\"\n\ntypeof(var3)\n\n[1] \"character\"\n\ntypeof(var4)\n\n[1] \"character\"\n\ntypeof(var5)\n\n[1] \"integer\"\n\ntypeof(var6)\n\n[1] \"character\"\n\n\n\n\n\n\nvar2 &lt; 0 || var5 &lt; 0\n\n[1] TRUE\n\n\n\n\n\n\nvar2 &lt; 0 && var5 &lt; 0\n\n[1] FALSE\n\n\n\n\n\n\nvar2 %% (var5 + 100) &lt; 10\n\n[1] FALSE\n\n\n\nNo son iguales porque uno tiene una letra mayúscula, “H” es un caracter distinto de “h” y por lo tanto son cadenas de texto diferentes.\n\n\nvar3 == var6\n\n[1] FALSE",
+    "text": "Ejercicio 3\n\nx &lt;- 10\ny &lt;- \"Hola\"\nz &lt;- 5\n\n\nPodemos verificar el tipo de cada objeto con la función typeof():\n\n\ntypeof(x)\n\n[1] \"double\"\n\ntypeof(y)\n\n[1] \"character\"\n\ntypeof(z)\n\n[1] \"double\"\n\n\n\nEjecutamos la siguiente instrucción:\n\n\nz &lt;- x * 6\n\nAhora, z almacenará el valor:\n\nz\n\n[1] 60\n\n\n\nObtenemos un error porque x es un número (double), mientras que y es un texto (character). En R, no es posible realizar operaciones matemáticas entre objetos de tipo diferente.\n\n\nx + y\n\nError in x + y: non-numeric argument to binary operator",
     "crumbs": [
       "Soluciones de la Práctica",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
@@ -707,7 +718,7 @@
     "href": "capitulos/90_soluciones_01.html#ejercicio-4",
     "title": "Soluciones de la Práctica de la Unidad 1",
     "section": "Ejercicio 4",
-    "text": "Ejercicio 4\n\nPara acceder a la documentación de la función round(), se puede ejecutar en la consola de R:\n\n?round\no\nhelp(round)\n\nSegún la ayuda de R, la función round() tiene los siguientes argumentos:\n\n\nx: El número o vector de números que se desea redondear.\n\ndigits: El número de cifras decimales al que se desea redondear x. Puede ser positivo (para redondear decimales) o negativo (para redondear a múltiplos de 10).\n\n...: representa el uso opcional de otros argumentos, es algo que podemos ignorar por ahora.\n\n\n\nObligatorio: x, ya que es el número a redondear.\n\nOpcional: digits, que por defecto es 0, lo que significa que la función redondeará al número entero más cercano si no se especifica un valor distinto.\n\n\n\n\nround(3.14159, digits = 0)  # Redondeo a 0 decimales → Resultado: 3\n\n[1] 3\n\nround(3.14159, digits = 1)  # Redondeo a 1 decimal → Resultado: 3.1\n\n[1] 3.1\n\nround(3.14159, digits = 2)  # Redondeo a 2 decimales → Resultado: 3.14\n\n[1] 3.14\n\n\n\n\n\n\nround(3.14159, 2)\n\n[1] 3.14\n\nround(x = 3.14159, digits = 2)\n\n[1] 3.14\n\nround(digits = 2, x = 3.14159)\n\n[1] 3.14",
+    "text": "Ejercicio 4\n\nload(\"practica1_ambiente.RData\")\n\nSe incorporaron 6 objetos al ambiente:\n\n\n\nIdentificador\nTipo de vector\nValor\n\n\n\n\nvar1\nlogical\nTRUE\n\n\nvar2\ndouble\n200.12\n\n\nvar3\ncharacter\n\"hola\"\n\n\nvar4\ncharacter\n\"chau\"\n\n\nvar5\ninteger\n-49L\n\n\nvar6\ncharacter\n\"Hola\"\n\n\n\n\ntypeof(var1)\n\n[1] \"logical\"\n\ntypeof(var2)\n\n[1] \"double\"\n\ntypeof(var3)\n\n[1] \"character\"\n\ntypeof(var4)\n\n[1] \"character\"\n\ntypeof(var5)\n\n[1] \"integer\"\n\ntypeof(var6)\n\n[1] \"character\"",
     "crumbs": [
       "Soluciones de la Práctica",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
@@ -718,7 +729,7 @@
     "href": "capitulos/90_soluciones_01.html#ejercicio-5",
     "title": "Soluciones de la Práctica de la Unidad 1",
     "section": "Ejercicio 5",
-    "text": "Ejercicio 5\n\n\n\n\n\n\n\n\n\nOperación\nedad &lt;- 21, altura &lt;- 1.90\nedad &lt;- 17 , altura &lt;- 1.90\nedad &lt;- 21, altura &lt;- 1.50\n\n\n\n\n(edad &gt; 18) && (altura &lt; 1.70)\nFALSE\nFALSE\nTRUE\n\n\n(edad &gt; 18)   || (altura &lt; 1.70)\nTRUE\nFALSE\nTRUE\n\n\n!(edad &gt; 18)\nFALSE\nTRUE\nFALSE\n\n\n\nVerificación en R:\n\n# Primera columna\nedad &lt;- 21\naltura &lt;- 1.90\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] FALSE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] TRUE\n\n!(edad &gt; 18)\n\n[1] FALSE\n\n# Segunda columna\nedad &lt;- 17\naltura &lt;- 1.90\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] FALSE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] FALSE\n\n!(edad &gt; 18)\n\n[1] TRUE\n\n# Tercera columna\nedad &lt;- 21\naltura &lt;- 1.50\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] TRUE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] TRUE\n\n!(edad &gt; 18)\n\n[1] FALSE",
+    "text": "Ejercicio 5\n\n\n\n\nvar2 &lt; 0 || var5 &lt; 0\n\n[1] TRUE\n\n\n\n\n\n\nvar2 &lt; 0 && var5 &lt; 0\n\n[1] FALSE\n\n\n\n\n\n\nvar2 %% (var5 + 100) &lt; 10\n\n[1] FALSE\n\n\n\nNo son iguales porque uno tiene una letra mayúscula, “H” es un caracter distinto de “h” y por lo tanto son cadenas de texto diferentes.\n\n\nvar3 == var6\n\n[1] FALSE",
     "crumbs": [
       "Soluciones de la Práctica",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
@@ -729,7 +740,7 @@
     "href": "capitulos/90_soluciones_01.html#ejercicio-6",
     "title": "Soluciones de la Práctica de la Unidad 1",
     "section": "Ejercicio 6",
-    "text": "Ejercicio 6\nRazonamiento paso a paso:\n1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10\n1 + 2 + (3 + 4) * ((5 * 6 * 8) - 9) - 10\n1 + 2 + (3 + 4) * (240 - 9) - 10\n1 + 2 + 7 * 231 - 10\n1 + 2 + 1617 - 10\n1610\nVerificación en R:\n\n1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10\n\n[1] 1610",
+    "text": "Ejercicio 6\n\n\n\n\n\n\n\n\n\nOperación\nedad &lt;- 21, altura &lt;- 1.90\nedad &lt;- 17 , altura &lt;- 1.90\nedad &lt;- 21, altura &lt;- 1.50\n\n\n\n\n(edad &gt; 18) && (altura &lt; 1.70)\nFALSE\nFALSE\nTRUE\n\n\n(edad &gt; 18)   || (altura &lt; 1.70)\nTRUE\nFALSE\nTRUE\n\n\n!(edad &gt; 18)\nFALSE\nTRUE\nFALSE\n\n\n\nVerificación en R:\n\n# Primera columna\nedad &lt;- 21\naltura &lt;- 1.90\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] FALSE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] TRUE\n\n!(edad &gt; 18)\n\n[1] FALSE\n\n# Segunda columna\nedad &lt;- 17\naltura &lt;- 1.90\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] FALSE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] FALSE\n\n!(edad &gt; 18)\n\n[1] TRUE\n\n# Tercera columna\nedad &lt;- 21\naltura &lt;- 1.50\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] TRUE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] TRUE\n\n!(edad &gt; 18)\n\n[1] FALSE",
     "crumbs": [
       "Soluciones de la Práctica",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
@@ -740,7 +751,7 @@
     "href": "capitulos/90_soluciones_01.html#ejercicio-7",
     "title": "Soluciones de la Práctica de la Unidad 1",
     "section": "Ejercicio 7",
-    "text": "Ejercicio 7\nSiempre es verdadera porque sea cual fuere x, siempre va a ser distinta a alguno de los dos, incluso si es 4, es distinta a 17 y viceversa.\nRecordemos que:\n\n!= significa “distinto de”.\n\n|| es el operador “o” lógico (OR), que devuelve TRUE si al menos una de las condiciones es TRUE.\n\nLuego, de la única forma para que la expresión sea FALSE, es que ambas condiciones sean FALSE al mismo tiempo. Veamos si esto es posible:\n\nLa primera condición (x != 4) es FALSE solo cuando x = 4.\n\nLa segunda condición (x != 17) es FALSE solo cuando x = 17.\n\nPor lo visto, ambas condiciones no pueden ser FALSE simultáneamente, ya que un número no puede ser 4 y 17 al mismo tiempo. Dado que siempre hay al menos una condición que es TRUE, la expresión es siempre verdadera, sin importar el valor de x.",
+    "text": "Ejercicio 7\nRazonamiento paso a paso:\n1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10\n1 + 2 + (3 + 4) * ((5 * 6 * 8) - 9) - 10\n1 + 2 + (3 + 4) * (240 - 9) - 10\n1 + 2 + 7 * 231 - 10\n1 + 2 + 1617 - 10\n1610\nVerificación en R:\n\n1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10\n\n[1] 1610",
     "crumbs": [
       "Soluciones de la Práctica",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
@@ -751,7 +762,7 @@
     "href": "capitulos/90_soluciones_01.html#ejercicio-8",
     "title": "Soluciones de la Práctica de la Unidad 1",
     "section": "Ejercicio 8",
-    "text": "Ejercicio 8\nEl primer ítem excluye a los años terminados en 00, los cuales son evaluados en la segunda regla. El segundo ítem incluye automáticamente a los divisibles por 4 porque 400 es divisible por 4. Entonces, la operación lógica que determina si un año es bisiesto es: ((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0).\nEn R:\n\naño &lt;- 2024\n((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0)\n\n[1] TRUE\n\naño &lt;- 2025\n((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0)\n\n[1] FALSE",
+    "text": "Ejercicio 8\nSiempre es verdadera porque sea cual fuere x, siempre va a ser distinta a alguno de los dos, incluso si es 4, es distinta a 17 y viceversa.\nRecordemos que:\n\n!= significa “distinto de”.\n\n|| es el operador “o” lógico (OR), que devuelve TRUE si al menos una de las condiciones es TRUE.\n\nLuego, de la única forma para que la expresión sea FALSE, es que ambas condiciones sean FALSE al mismo tiempo. Veamos si esto es posible:\n\nLa primera condición (x != 4) es FALSE solo cuando x = 4.\n\nLa segunda condición (x != 17) es FALSE solo cuando x = 17.\n\nPor lo visto, ambas condiciones no pueden ser FALSE simultáneamente, ya que un número no puede ser 4 y 17 al mismo tiempo. Dado que siempre hay al menos una condición que es TRUE, la expresión es siempre verdadera, sin importar el valor de x.",
     "crumbs": [
       "Soluciones de la Práctica",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
@@ -762,7 +773,7 @@
     "href": "capitulos/90_soluciones_01.html#ejercicio-9",
     "title": "Soluciones de la Práctica de la Unidad 1",
     "section": "Ejercicio 9",
-    "text": "Ejercicio 9\n\n¿Cuáles son los valores finales de a y b?\n\n\na &lt;- 10\nb &lt;- a * 2\na &lt;- a + 5\nb &lt;- b - a\na\n\n[1] 15\n\nb\n\n[1] 5\n\n\n\n¿Cuáles son los valores finales de m y n?\n\n\nm &lt;- 5\nn &lt;- 2 * m\nm &lt;- m + 3\nn &lt;- n + m\nm &lt;- n - 4\nm\n\n[1] 14\n\nn\n\n[1] 18\n\n\n\n¿Cuál es el valor final de y?\n\n\nx &lt;- 6\ny &lt;- 2\nx &lt;- x / y + x * y\ny &lt;- x^2 %% 10\ny &lt;- y * 2\ny\n\n[1] 10\n\n\n\n¿Cuál es el valor final de resultado?\n\n\na &lt;- 5\nb &lt;- 2\nc &lt;- 3\n\nresultado &lt;- a^b - (c * b) + (a %% c)\nresultado\n\n[1] 21\n\n\n\n¿Cuáles son los valores finales de x, y y z?\n\n\nx &lt;- 8\ny &lt;- 3\nz &lt;- 2\n\nx &lt;- x %% y + z^y\ny &lt;- (x + y) %/% z\nz &lt;- z + x - y\nx\n\n[1] 10\n\ny\n\n[1] 6\n\nz\n\n[1] 6",
+    "text": "Ejercicio 9\nEl primer ítem excluye a los años terminados en 00, los cuales son evaluados en la segunda regla. El segundo ítem incluye automáticamente a los divisibles por 4 porque 400 es divisible por 4. Entonces, la operación lógica que determina si un año es bisiesto es: ((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0).\nEn R:\n\naño &lt;- 2024\n((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0)\n\n[1] TRUE\n\naño &lt;- 2025\n((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0)\n\n[1] FALSE",
     "crumbs": [
       "Soluciones de la Práctica",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
@@ -773,7 +784,7 @@
     "href": "capitulos/90_soluciones_01.html#ejercicio-10",
     "title": "Soluciones de la Práctica de la Unidad 1",
     "section": "Ejercicio 10",
-    "text": "Ejercicio 10\nSe pueden cambiar los valores de a, b y h.\n\na &lt;- 5\nb &lt;- 4\nh &lt;- 3\nvolumen &lt;- a * b * h\narea &lt;- 2 * (a * b + a * h + b * h)\ncat(\"El área es igual a\", area, \"y el volumen es igual a\", volumen)\n\nEl área es igual a 94 y el volumen es igual a 60",
+    "text": "Ejercicio 10\n\n¿Cuáles son los valores finales de a y b?\n\n\na &lt;- 10\nb &lt;- a * 2\na &lt;- a + 5\nb &lt;- b - a\na\n\n[1] 15\n\nb\n\n[1] 5\n\n\n\n¿Cuáles son los valores finales de m y n?\n\n\nm &lt;- 5\nn &lt;- 2 * m\nm &lt;- m + 3\nn &lt;- n + m\nm &lt;- n - 4\nm\n\n[1] 14\n\nn\n\n[1] 18\n\n\n\n¿Cuál es el valor final de y?\n\n\nx &lt;- 6\ny &lt;- 2\nx &lt;- x / y + x * y\ny &lt;- x^2 %% 10\ny &lt;- y * 2\ny\n\n[1] 10\n\n\n\n¿Cuál es el valor final de resultado?\n\n\na &lt;- 5\nb &lt;- 2\nc &lt;- 3\n\nresultado &lt;- a^b - (c * b) + (a %% c)\nresultado\n\n[1] 21\n\n\n\n¿Cuáles son los valores finales de x, y y z?\n\n\nx &lt;- 8\ny &lt;- 3\nz &lt;- 2\n\nx &lt;- x %% y + z^y\ny &lt;- (x + y) %/% z\nz &lt;- z + x - y\nx\n\n[1] 10\n\ny\n\n[1] 6\n\nz\n\n[1] 6",
     "crumbs": [
       "Soluciones de la Práctica",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
@@ -784,7 +795,7 @@
     "href": "capitulos/90_soluciones_01.html#ejercicio-11",
     "title": "Soluciones de la Práctica de la Unidad 1",
     "section": "Ejercicio 11",
-    "text": "Ejercicio 11\n\nPara identificar la ruta informática de un archivo, podés seguir los pasos mostrados en 5.1 Carpetas, archivos y rutas informáticas.\nSe puede saber cuál es el working directory con:\n\n\ngetwd()",
+    "text": "Ejercicio 11\nSe pueden cambiar los valores de a, b y h.\n\na &lt;- 5\nb &lt;- 4\nh &lt;- 3\nvolumen &lt;- a * b * h\narea &lt;- 2 * (a * b + a * h + b * h)\ncat(\"El área es igual a\", area, \"y el volumen es igual a\", volumen)\n\nEl área es igual a 94 y el volumen es igual a 60",
     "crumbs": [
       "Soluciones de la Práctica",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
@@ -795,7 +806,18 @@
     "href": "capitulos/90_soluciones_01.html#ejercicio-12",
     "title": "Soluciones de la Práctica de la Unidad 1",
     "section": "Ejercicio 12",
-    "text": "Ejercicio 12\nEl resultado de crear las carpetas y subcarpetas tiene que ser similar al que se ve en la Figura 5.2. El proyecto se crea desde RStudio siguiendo los pasos de la Figura 5.4.",
+    "text": "Ejercicio 12\n\nPara identificar la ruta informática de un archivo, podés seguir los pasos mostrados en 5.1 Carpetas, archivos y rutas informáticas.\nSe puede saber cuál es el working directory con:\n\n\ngetwd()",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_01.html#ejercicio-13",
+    "href": "capitulos/90_soluciones_01.html#ejercicio-13",
+    "title": "Soluciones de la Práctica de la Unidad 1",
+    "section": "Ejercicio 13",
+    "text": "Ejercicio 13\nEl resultado de crear las carpetas y subcarpetas tiene que ser similar al que se ve en la Figura 5.2. El proyecto se crea desde RStudio siguiendo los pasos de la Figura 5.4.",
     "crumbs": [
       "Soluciones de la Práctica",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
