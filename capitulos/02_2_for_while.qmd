@@ -5,130 +5,136 @@
 # Estructuras de control iterativas
 
 ::: {.presentacion-capitulo data-latex=""}
-Página en construcción.
+Las estructuras de control iterativas son útiles cuando la solución de un problema requiere que se ejecute repetidamente un determinado conjunto de acciones. El número de veces que se debe repetir dicha secuencia de acciones puede ser fijo o puede variar dependiendo de algún dato o condición a evaluar en el programa. Dependiendo de esto, podemos hacer uso de diferentes estructuras de control iterativas, como las de tipo **for** o las de tipo **while**, que presentamos en este capítulo.
 :::
 
+## Estructuras de control iterativas con un número fijo de iteraciones: **for**
 
-Las estructuras de control iterativas son útiles cuando la solución de un problema requiere que se ejecute repetidamente un determinado conjunto de acciones. El número de veces que se debe repetir dicha secuencia de acciones puede ser fijo o puede variar dependiendo de algún dato o condición a evaluar en el algoritmo.
+Una estructura **for** se aplican cuando se conoce de antemano el número exacto de veces que se debe repetir una secuencia de instrucciones dentro de un programa. También se conoce como *bucle o loop for*. La sintaxis es:
 
-## Estructuras de control iterativas con un número fijo de iteraciones
-
-Se aplican cuando se conoce de antemano el número exacto de veces que se debe repetir una secuencia de acciones. También se conocen como *bucles (loops) controlados por un conteo*, ya que el algoritmo va contando la cantidad de repeticiones haciendo uso de una variable que recibe el nombre de **variable de iteración**, **índice** o **conteo**.
-
-Por ejemplo, imaginemos que queremos escribir un algoritmo que permita calcular la quinta potencia de cualquier número. Para esto, se debe tomar dicho número y multiplicarlo por sí mismo 5 veces. Por lo tanto, una posible solución es:
-
+```r
+for (variable in conjunto) {
+  hacer esto
+}
 ```
-ALGORITMO: "Calcular la quinta potencia"
-COMENZAR
-	VARIABLE numérica x, resultado
-	LEER x
-	resultado <- 1
-	resultado <- resultado * x
-	resultado <- resultado * x
-	resultado <- resultado * x
-	resultado <- resultado * x
-	resultado <- resultado * x
-	ESCRIBIR x "elevado a la quinta es igual a" resultado
-FIN
+
+En lo anterior, `conjunto` representa un conjunto de elementos, usualmente números o cadenas de texto. El bloque de instrucciones encerrados entre las llaves (que puede contener una o muchas líneas) se ejecutará tantas veces como elementos haya en `conjunto`. Por ejemplo:
+
+```{r}
+for (variable in c("Hola", "cómo", "estás")) {
+  print("Esto es una repetición.")
+}
+```
+
+En el ejemplo, con la expresión `c("Hola", "cómo", "estás")` se define un conjunto de tres cadenas de texto. Dado que hay tres elementos en ese conjunto, la acción indicada entre las llaves se realiza exactamente tres veces. Dicha acción consiste en imprimir en la consola el mensaje "Esto es una repetición" y se realiza gracias al uso de la función `print()`.
+
+¿Y para qué está `variable` en esa estructura? Se trata de un objeto que recibe el nombre de **variable o índice de iteración**. En cada repetición y respetando el orden, el objeto `variable` va a recibir el valor de uno de los elementos del conjunto. En este caso, durante la primera iteración, `variable` almacena el valor `"Hola"`. En la segunda repetición, el valor `"cómo"` y en la tercera, `"estás"`. De hecho, si queremos podemos usar este objeto, cuyo valor va cambiando iteración tras iteración, en las acciones que se implementan dentro de las llaves:
+
+```{r}
+for (variable in c("Hola", "cómo", "estás")) {
+  print("-------------------------")
+  print("Esto es una repetición:")
+  print(variable)
+}
+```
+
+
+La variable de iteración, que en el ejemplo se llamó `variable`, en realidad puede llevar cualquier nombre que queramos. Es común usar sencillamente el nombre `i`. También es usual que el conjunto de elementos contenga números:
+
+```{r}
+for (i in c(1, 2, 3, 4, 5)) {
+  print("-------------------------")
+  print("En esta iteración i vale:")
+  print(i)
+}
+```
+
+En los elementos del conjunto son números enteros ordenados, se puede usar un atajo con la forma `inicio:fin`:
+
+```{r}
+for (i in 1:5) {
+  print("-------------------------")
+  print("En esta iteración i vale:")
+  print(i)
+}
+```
+
+::: {.ejemplo data-latex=""}
+El siguiente bloque de código calcula y muestra la **tabla de multiplicar del ocho**:
+
+```{r}
+for (i in 0:10) {
+  resultado <- 8 * i
+  cat("8 x", i, "=", resultado, "\n")
+}
+```
+:::
+
+::: {.info data-latex=""}
+Para emitir mensajes, podemos usar `print()` o `cat()`:
+
+- `print()` tiene la ventaja de que al terminar de emitir el mensaje, agrega un salto de línea: lo próximo que se escriba, aparecerá en un nuevo renglón de la consola. No obstante, no nos permite de forma sencilla concatenar varias piezas de información para armar frases complejas.
+- `cat()` nos permite unir cadenas de texto y valores guardados en variables para armar cualquier frase que queramos, separando entre comas cada una de las partes. Sin embargo, no incluye automáticamente un salto de línea: lo próximo que se escriba queda pegado a lo anterior en el mismo renglón. Para evitar esto, incluimos el carácter especial `\n` que representa un salto de línea. Si no lo agreamos, el resultado se ve así:
+
+```{r}
+for (i in 0:10) {
+  resultado <- 8 * i
+  cat("8 x", i, "=", resultado)
+}
+```
+:::
+
+::: {.ejemplo data-latex=""}
+Imaginemos que queremos escribir un programa que permita calcular la quinta potencia de cualquier número, por ejemplo, $2^5$. Para esto, se debe tomar el número $2$ y multiplicarlo por sí mismo $5$ veces. Por lo tanto, una posible solución es:
+
+```{r}
+x <- 2
+resultado <- 1
+resultado <- resultado * x
+resultado <- resultado * x
+resultado <- resultado * x
+resultado <- resultado * x
+resultado <- resultado * x
+cat(x, "a la quinta es igual a", resultado)
 ```
 
 Ya que sabemos que la multiplicación se debe repetir 5 veces, podemos resumir lo anterior con la siguiente estructura:
 
-```
-ALGORITMO: "Calcular la quinta potencia"
-COMENZAR
-	VARIABLE numérica x, resultado
-	LEER x
-	resultado <- 1
-	PARA i DESDE 1 HASTA 5 HACER
-		resultado <- resultado * x
-	FIN PARA
-	ESCRIBIR x "elevado a la quinta es igual a" resultado
-FIN
-```
-
-La letra `i` es la variable de iteración. Podríamos haber elegido otra letra u otra palabra en su lugar, pero emplear `i` es una elección bastante común. En este ejemplo, su única función es ir contando la cantidad de veces que se repiten las acciones encerradas dentro de la estructura `PARA/FIN PARA`. El bloque de instrucciones se repite tantas veces como `i` tarde en llegar a 5 partiendo desde 1. Por convención, a la variable de iteración no la declaramos junto con las otras variables numéricas (como `x` y `resultado`). 
-
-En R, el ejemplo anterior se implementa así:
-
 ```{r}
-# Programa: "Calcular la quinta potencia" ------------------------
-x <- 4
+x <- 2
 resultado <- 1
 for (i in 1:5) {
 	resultado <- resultado * x
 }
-cat(x, "elevado a la quinta es igual a", resultado)
+cat(x, "a la quinta es igual a", resultado)
 ```
+:::
 
-Dado que la variable de iteración toma un valor numérico que va cambiando en cada repetición del bloque, se puede aprovechar para hacer cuentas con el mismo. Por ejemplo, el siguiente algoritmo muestra la tabla del ocho:
 
-```
-ALGORITMO: "Mostrar tabla del 8"
-COMENZAR
-	VARIABLE numérica resultado
-	PARA i DESDE 0 HASTA 10 HACER
-		resultado <- 8 * i
-		ESCRIBIR "8 x" i "=" resultado
-	FIN PARA
-FIN
-```
+::: {.ejercicio data-latex=""}
+¿Cuál será el valor final de `salida` después de ejecutar el siguiente código en R?
 
-```{r}
-# Programa: "Mostrar tabla del 8" -------------------------------
-for (i in 0:10) {
-	resultado <- 8 * i
-	cat("8 x", i, "=", resultado, "\n")
+```r
+salida <- 30
+for (i in 1:4) {
+  salida <- salida - i
 }
 ```
 
-En lo anterior, `\n` es un carácter especial que indica "salto de línea". Si no lo agregamos, los mensajes se imprimirían uno al lado del otro en el mismo renglón:
-
-```{r}
-# Programa: "Mostrar tabla del 8" -------------------------------
-for (i in 0:10) {
-	resultado <- 8 * i
-	cat("8 x", i, "=", resultado)
-}
-```
-
-De manera general, la sintaxis para este tipo de estructuras es:
-
-```{r, tidy=FALSE, eval=FALSE, highlight=FALSE, echo=T}
-PARA <variable> DESDE <valor1> HASTA <valor2> CON PASO <valor3> HACER
-    Acción/es
-FIN PARA
-```
-
-Dado un valor inicial `<valor1>` asignado a la `<variable>`, esta se irá aumentando o disminuyendo según el paso `<valor3>` hasta llegar a tomar el valor `<valor2>`. Si no se indica el paso se asume que la variable de iteración aumenta de uno en uno. En R:
-
-```
-for (<variable> in seq(<valor1>, <valor2>, <valor3>)) {
-	...Acción/es...
-}
-```
-
-Notar en el ejemplo de la quinta potencia que `1:5` es lo mismo que `seq(1, 5, 1)`, pero podemos usar la función `seq()` en otros contextos más complejos, donde la variable de iteración puede pegar otros saltos en lugar de uno en uno.
+`salida` es igual a: `r webexercises::fitb(20)`.
+:::
 
 ## Estructuras de control iterativas con un número indeterminado de iteraciones
 
-En otras circunstancias se puede necesitar repetir un bloque de acciones sin conocer con exactitud cuántas veces, si no que esto depende de algún otro aspecto del algoritmo. Las iteraciones pueden continuar *mientras que* o *hasta que* se verifique alguna condición, dando lugar a dos tipos de estructuras. Estos casos también se conocen como *bucles (loops) controlados por una condición*.
+En otras circunstancias se puede necesitar repetir un bloque de acciones sin conocer con exactitud cuántas veces, si no que esto depende de algún otro aspecto del programa. Las iteraciones pueden continuar *mientras que* o *hasta que* se verifique alguna condición, dando lugar a dos tipos de estructuras. Estos casos también se conocen como *bucles o loops controlados por una condición*.
 
-### Mientras que
+### Estructura **while** (mientras)
 
-El conjunto de sentencias se repite mientras que se siga evaluando como `VERDADERO` una condición declarada al inicio del bloque. Cuando la condición ya no se cumple, el proceso deja de ejecutarse. La sintaxis es:
+El conjunto de instrucciones se repite mientras que se siga evaluando como `TRUE` una condición declarada al inicio del bloque. Cuando la condición ya no se cumple, el proceso deja de ejecutarse. La sintaxis es:
 
-```
-MIENTRAS QUE <condición> HACER
-   Acción/es a repetir
-FIN MIENTRAS
-```
-
-En R:
-
-```
-while (<condición>) {
-	...Acción/es a repetir...
+```r
+while (condición) {
+	hacer esto
 }
 ```
 
