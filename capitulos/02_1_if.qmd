@@ -5,10 +5,8 @@
 # Estructuras de control condicionales
 
 ::: {.presentacion-capitulo data-latex=""}
-Un programa está compuesto por una sucesión ordenada de instrucciones que se ejecutan una detrás de otro, de forma secuencial. Sin embargo, con frecuencia es necesario recurrir a comandos especiales que alteran o controlan el orden en el que se ejecutan las instrucciones. Llamamos **estructuras de control del flujo del código** al conjunto de reglas que permiten controlar el orden o la cantidad de veces con la que se ejecutan las instrucciones de un algoritmo o programa. Las mismas pueden clasificarse **condicionales** e **iterativas**. En este capítulo estudiaremos las primeras.
-:::
-
 En algunas partes de un programa puede ser útil detenerse para elegir entre una o más opciones disponibles para continuar con la ejecución del código. Para elegir, planteamos una pregunta o **evaluación lógica**, cuya respuesta deberá ser `VERDADERO` (`TRUE`) o `FALSO` (`FALSE`). Según el resultado, el algoritmo seguirá ciertas acciones e ignorará otras. Estas preguntas y respuestas representan procesos de toma de decisión que conducen a diferentes caminos dentro de un programa, permitiéndonos que la solución para el problema en cuestión sea flexible y se adapte a distintas situaciones. Este tipo de estructuras de control de las instrucciones de programación reciben el nombre de **condicionales** (o *estructuras de selección*) y pueden ser **simples**, **dobles** o **múltiples**.
+:::
 
 ## Estructuras condicionales simples
 

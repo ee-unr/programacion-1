@@ -37,7 +37,7 @@ book:
       chapters:
         - capitulos/02_1_if.qmd
         - capitulos/02_2_for_while.qmd
-        - capitulos/02_practica.qmd
+        # - capitulos/02_practica.qmd
     - part: capitulos/90.qmd
       chapters:
         - capitulos/90_soluciones_01.qmd

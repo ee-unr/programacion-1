@@ -124,13 +124,11 @@ for (i in 1:4) {
 `salida` es igual a: `r webexercises::fitb(20)`.
 :::
 
-## Estructuras de control iterativas con un número indeterminado de iteraciones
+## Estructuras de control iterativas con un número indeterminado de iteraciones: **while**
 
-En otras circunstancias se puede necesitar repetir un bloque de acciones sin conocer con exactitud cuántas veces, si no que esto depende de algún otro aspecto del programa. Las iteraciones pueden continuar *mientras que* o *hasta que* se verifique alguna condición, dando lugar a dos tipos de estructuras. Estos casos también se conocen como *bucles o loops controlados por una condición*.
+En otras circunstancias se necesita repetir un bloque de acciones sin conocer con exactitud cuántas veces, sino que esto depende de algún otro aspecto del programa. Las iteraciones deben continuar *mientras que* se verifique alguna condición, dando lugar a la estructura **while**, también conocida como *bucle o loop controlado por una condición*.
 
-### Estructura **while** (mientras)
-
-El conjunto de instrucciones se repite mientras que se siga evaluando como `TRUE` una condición declarada al inicio del bloque. Cuando la condición ya no se cumple, el proceso deja de ejecutarse. La sintaxis es:
+En una estructura **while** (mientras), el conjunto de instrucciones se repite mientras que se siga evaluando como `TRUE` una condición declarada al inicio del bloque. Cuando la condición ya no se cumple, el proceso deja de ejecutarse. La sintaxis es:
 
 ```r
 while (condición) {
@@ -138,83 +136,133 @@ while (condición) {
 }
 ```
 
-Observaciones:
+El flujo de ejecución es el siguiente:
 
-- La evaluación de la condición se lleva a cabo antes de cada iteración, incluso antes de ejecutar el código dentro del bloque por primera vez. Si la condición es `FALSO` inicialmente, entonces las acciones en el cuerpo de la estructura no se ejecutan nunca.
-- La evaluación de la condición **sólo** se lleva a cabo al inicio de cada iteración. Si la condición se vuelve `FALSO` en algún punto durante la ejecución de un bloque, el programa no lo nota hasta que se termine de ejecutar el bloque y la condición sea evaluada antes de comenzar la próxima iteración.
+1. Se evalúa la `condición`.
+2. Si la `condición` es `TRUE`, se ejecuta el bloque de código dentro del `while`.
+3. Una vez ejecutado el bloque de código, se vuelve a evaluar la `condición`.
+4. Si la `condición` sigue siendo `TRUE`, se repite el proceso.
+5. Si la `condición` es `FALSE`, el bucle termina y el programa continúa con las instrucciones que siguen después del `while`.
 
-Veamos un ejemplo:
-
-```
-ALGORITMO: "Dividir un número por 2 hasta encontrar un valor menor que 0.01"
-COMENZAR
-	VARIABLE numérica x
-	LEER x
-	MIENTRAS QUE x >= 0.01 HACER
-		x <- x / 2
-		ESCRIBIR x
-	FIN MIENTRAS
-FIN
-```
+::: {.ejemplo data-latex=""}
+La variable `y` tiene un valor inicial igual a 5. Dado que este valor es mayor a 0, se ejecuta por primera vez el bloque entre llaves: le restamos 1 e imprimimos el resultado, el valor 4. Este valor sigue siendo mayor que 0, por lo tanto el proceso se repite. En una de las iteraciones, `y` queda con el valor 1. Dado que es mayor que 0, la condición es `TRUE`, a `y` le restamos uno, queda igual a 0 y lo imprimimos. La condición se evalúa una vez más, pero resulta en `FALSE`, por lo tanto no se detiene la repetición.
 
 ```{r}
-x <- 100
-while (x >= 0.01) {
-	x <- x / 2
-	cat(x, "\n")
+y <- 5
+while (y > 0) {
+  y <- y - 1
+  print(y)
+}
+```
+:::
+
+El valor 0 se imprime porque una vez dentro del bloque, se ejecutan todas sus acciones. El procesamiento no se interrumpe cuando `y` toma el valor 0, sino cuando se vuelve a evaluar la condición lógica y esta es `FALSE`, después de la última vuelta. En otras palabras, **la evaluación de la condición sólo se lleva a cabo al inicio de cada iteración**; si la condición se vuelve `FALSE` en algún punto durante la ejecución del bloque, el programa no lo nota hasta que termine de ejecutarlo y la condición sea evaluada antes de comenzar la próxima iteración. 
+
+::: {.ejercicio data-latex=""}
+En el siguiente bloque intercambiamos de lugar las líneas dentro de las llaves. ¿En qué difiere el resultado?
+
+```{r}
+y <- 5
+while (y > 0) {
+  print(y)
+  y <- y - 1
+}
+```
+:::
+
+Como ya observamos, la evaluación de la condición se lleva a cabo antes de cada iteración, incluso antes de ejecutar el código dentro del bloque por primera vez. Si la condición es `FALSE` inicialmente, entonces las acciones en el cuerpo de la estructura no se ejecutan nunca:
+
+```{r}
+y <- -5
+while (y > 0) {
+  print(y)
+  y <- y - 1
 }
 ```
 
-### Hasta que
+::: {.ejemplo data-latex=""}
+Este programa divide un número por 2 mientras que el resultado sea mayor o igual a 1 (es decir, hasta encontrar un valor menor que 1):
 
-A diferencia de la estructura *MIENTRAS QUE*, la estructura *HASTA QUE* repite el bloque de acciones hasta que se cumpla una condición, es decir, se ejecuta mientras que dicha condición sea evaluada como `FALSA`. La sintaxis es:
-
-```{r, tidy=FALSE, eval=FALSE, highlight=FALSE, echo=T}
-REPETIR
-   Acción/es
-HASTA QUE <condición>
+```{r}
+x <- 100
+while (x >= 1) {
+	x <- x / 2
+	print(x)
+}
 ```
 
-Observación: con la estructura *MIENTRAS QUE* podría ser que el conjunto de sentencias nunca llegue a ejecutarse si desde partida la condición evaluada ya es falsa. Por el contrario, en la estructura *HASTA QUE* el proceso se realiza al menos una vez, dado que la condición se evalúa al final.
+:::
 
-El ejemplo anterior empleando este tipo de estructura:
+::: {.ejercicio data-latex=""}
+¿Cuál será la salida del siguiente código en R?
 
+```{r}
+#| eval: false
+
+x <- 1
+suma <- 0
+
+while (suma + x <= 15) {
+  suma <- suma + x
+  cat(suma, " ")
+  x <- x + 1
+}
 ```
-ALGORITMO: "Dividir un número por 2 hasta encontrar un valor menor que 0.01"
-COMENZAR
-	VARIABLE numérica x
-	LEER x
-	REPETIR
-		x <- x / 2
-		ESCRIBIR x
-	HASTA QUE x < 0.01
-FIN
-```
 
-En R este tipo de estructura se implementa con la sentencia `repeat {}`. Si bien a continuación se muestra el correspondiente ejemplo, no vamos a utilizar esta estructura, debido a que su escritura es más compleja y a que generalmente es posible obtener el mismo resultado con un `while () {}`.
+`r webexercises::mcq(c("1 2 3 4 5", answer = "1 3 6 10 15", "1 3 6 10 15 21"))`
+
+:::
+
+::: {.comentario data-latex=""}
+En R existe otra estructura iterativa, muy relacionada con el *while*. Se trata de la estructura *repeat*, que repite indefinidamente el bloque de instrucciones entre llaves. Para detener las iteraciones, se incluye dentro del bloque una evaluación lógica con un *if* y la instrucción `break`. Si la condición es `TRUE`, se ejecuta el `break`, deteniendo el proceso iterativo.
 
 ```{r}
 x <- 100
 repeat {
-	x <- x / 2
-	cat(x, "\n")
-	if (x < 0.01) break
+  x <- x / 2
+  print(x)
+  if (x < 1) break
 }
 ```
 
-### Loops infinitos
+En general, no utilizaremos la estructura *repeat*, pero es otra herramienta disponible.
 
-Con las sentencias de tipo `MIENTRAS QUE` se debe tener mucha precaución, puesto que si la evaluación lógica no está bien especificada o nunca deja de ser evaluada como `TRUE`, se incurre en un *loop* infinito: el programa nunca deja de repetir el bloque (al menos hasta que la máquina se tilde o se produzca un error por desbordamiento de memoria, por ejemplo). 
+Así como contamos con la instrucción `break` para detener un proceso iterativo (ya sea un *for*, *while* o *repeat*), también contamos con `next` para saltar una iteración. Notemos su efecto:
+
+```{r}
+x <- 100
+while (x >= 1) {
+	x <- x / 2
+	print(x)
+}
+```
+
+```{r}
+x <- 100
+while (x >= 1) {
+	x <- x / 2
+	if (x == 12.5) next
+	print(x)
+}
+```
+:::
+
+
+## Ejemplos
+
+Con las sentencias de tipo **while** se debe tener mucha precaución, puesto que si la evaluación lógica no está bien especificada o nunca deja de ser evaluada como `TRUE`, se incurre en un *loop* infinito: el programa nunca deja de repetir el bloque (al menos hasta que la máquina se tilde o se produzca un error por desbordamiento de memoria, por ejemplo). 
 
 La siguiente situación ilustra esto:
 
-```
+```r
 var <- 9
 while (var < 10) {
 	var <- var - 1
 	cat("var =", var, "No puedo parar!!!\n")
 }
+```
 
+```
 var = 8 No puedo parar!!!
 var = 7 No puedo parar!!!
 var = 6 No puedo parar!!!
@@ -225,87 +273,99 @@ var = 2 No puedo parar!!!
 var = 1 No puedo parar!!!
 var = 0 No puedo parar!!!
 var = -1 No puedo parar!!!
-...
+var = -2 No puedo parar!!!
+.
+.
+.
 ```
 
-En R se puede usar la instrucción `break` para forzar la detención del proceso iterativo si se presenta alguna condición en particular^[También podemos usar `break` dentro de una estructura `for`]:
+Si ejecutás ese código, vas a tener que forzar "a mano" el detenimiento del procesamiento, con el botón rojo de "Stop" arriba a la derecha de la consola, o con el atajo `CTRL + C`. También podemos implementar un "conteo" de las iteraciones y agregar un `break`: si el bloque se repitió, por ejemplo, 15 veces, que se detenga:
 
 ```{r}
+#| results: hold
+conteo <- 0
 var <- 9
 while (var < 10) {
 	var <- var - 1
 	cat("var =", var, "No puedo parar!!!\n")
-	if (var == -3) break
+	conteo <- conteo + 1
+	if (conteo == 15) break
 }
+cat("Se hicieron", conteo, "iteraciones.")
 ```
 
 
-### Ejemplos
+Las distintas estructuras iterativas se pueden combinar entre sí, dando lugar flujos de ejecución del código altamente flexibles. En el siguiente caso se tienen dos estructuras `for` anidadas:
 
-A continuación se presentan algunos otros ejemplos
-
-- No necesariamente tiene que ser `i` la variable iteradora, podemos darle cualquier nombre:
-
-	```{r}
-	for (guau in 1:5) {
-		print(guau)
+```{r}
+for (i in 1:3) {
+	for (j in 1:2) {
+		suma <- i + j
+		cat("| i vale", i, "| j vale", j, "| La suma es igual a", suma, "|\n")	
 	}
-	```
+}
+```
 
-	La sentencia `print()` también sirve para mostrar resultados. La ventaja con respecto a `cat()` es que no necesitamos agregar `\n` para que el siguiente mensaje se escriba en un nuevo renglón, ya que lo agrega por sí sola sin que lo pidamos. La desventaja es que no nos permite crear un mensaje combinando elementos separados entre comas, tal como se puede hacer con `cat()` (por ejemplo, `cat("El valor de x es igual a", x)`).
+En primer lugar, `i` toma el valor 1, y entonces `j` varía de 1 a 2, generando las combinaciones `i = 1, j = 1` e `i = 1, j = 2`. Luego de que el *loop* de `j` finalice habiendo recorrido todo su campo de variación, comienza la segunda iteración del *loop* de `i`, actualizándose su valor a 2 y comenzando otra vez el *loop* de `j`, que varía de 1 a 2. Así, se generan las combinaciones `i = 2, j = 1` e `i = 2, j = 2`. Finalmente, se actualiza `i` y pasa a valer 3, generando las combinaciones `i = 3, j = 1` e `i = 3, j = 2`. Para cada combinación, se muestra el valor de la suma entre `i` y `j`.
 
-- Acá tenemos un ejemplo de dos estructuras `for` anidadas. En primer lugar, `i` toma el valor 1, y entonces `j` varía de 1 a 2, generando las combinaciones `i = 1, j = 1; i = 1, j = 2`. Luego de que el *loop* de `j` finalice habiendo recorrido todo su campo de variación, comienza la segunda iteración del *loop* de `i`, actualizándose su valor a 2 y comenzando otra vez el *loop* de `j`, que varía de 1 a 2. Así, se generan las combinaciones `i = 2, j = 1; i = 2, j = 2`. Finalmente, se actualiza `i` y pasa a valer 3, generando las combinaciones `i = 3, j = 1; i = 3, j = 2`. Para cada combinación, se muestra el valor de la suma:
+Recordemos que las variables de iteración pueden recibir cualquier nombre:
 
-	```{r}
-	for (i in 1:3) {
-		for (j in 1:2) {
-			suma <- i + j
-			cat("i vale", i, "y j vale", j, ". La suma es igual a", suma, "\n")	
-		}
+```{r}
+for (guau in 1:3) {
+	for (miau in 1:2) {
+		suma <- guau + miau
+		cat("| guau vale", guau, "| miau vale", miau, "| La suma es igual a", suma, "|\n")	
 	}
-	```
+}
+```
 
-- Sumar los números naturales del 1 al 5:
+Con estas herramientas, podemos crear programas que nos permitan verificar algunos principios matemáticos. Por ejemplo, sabemos que la suma de los primeros $n$ números naturales es igual a $n(n+1)/2$. Entonces, la suma de los 50 primeros números naturales ($1 + 2 + 3 + ... + 50$) debe ser igual a $50 \times 51 / 2 = 1275$. ¿Será verdad?
 
-	```{r}
-	suma <- 0
-	for (i in 1:5) {
-		suma <- suma + i
-	}
-	suma
-	```
+```{r}
+n <- 50
+suma <- 0
+for (i in 1:n) {
+	suma <- suma + i
+}
+suma
+```
 
-- Sumar números naturales hasta que la suma pase el valor 100 y detenerse:
+Ahora que nos quedamos tranquilos de que ese postulado matemático se cumple, si necesitams esa suma podemos hacer sencillamente:
 
-	```{r}
-	suma <- 0
-	i <- 1
-	while (suma < 100) {
-		suma <-  suma + i
-		i <- i + 1
-	}
-	suma
-	```
+```{r}
+n * (n + 1) / 2
+```
 
-- Escribir todos los múltiplos de 8 menores que 150:
+Es momento de dejar volar nuestra imaginación y plantearnos cualquier problema de este estilo que se nos ocurra, ya estamos en condiciones de resolverlo. Por ejemplo, sumemos números naturales hasta que la suma pase el valor 100:
 
-	```
-	ALGORITMO: "Múltiplos de 8 menores a 150"
-	COMENZAR
-		VARIABLE numérica multiplo
-		multiplo <- 8
-		MIENTRAS QUE multiplo < 150 HACER
-			ESCRIBIR multiplo
-			multiplo <- multiplo + 8
-		FIN MIENTRAS
-	FIN
-	```
-	
-	```{r}
-	# Programa: "Múltiplos de 8 menores a 150" ------------------------
-	multiplo <- 8
-	while (multiplo < 150) {
-		print(multiplo)
-		multiplo <- multiplo + 8
-	}
-	```
+```{r}
+suma <- 0
+nro_natural <- 1
+while (suma < 100) {
+	suma <-  suma + nro_natural
+	nro_natural <- nro_natural + 1
+}
+cat("Se deben sumar los primeros", nro_natural - 1, "números naturales para superar el valor 100.")
+cat("La suma de los primeros", nro_natural - 1, "números naturales es igual a", suma, ".")
+```
+
+::: {.ejercicio data-latex=""}
+Analizar con atención el caso anterior y explicar por qué se utiliza `nro_natural - 1` para indicar cuántos números naturales formaron parte de la suma.
+:::
+
+¿Alguien sabe cuántos múltiplos de 8 menores a 150 hay? Contemos^[Para gente curiosa: este conteo se puede hacer sencillamente con `150 %/% 8 + 1`. ¿Por qué?]:
+
+```{r}
+# cada nro es múltiplo de sí mismo, así que el primero es el mismo 8
+multiplo <- 8
+# contamos que ya tenemos identificado al primer múltiplo
+conteo <- 1
+# encontramos los siguientes múltiplos sumando de a 8
+while (multiplo < 150) {
+	print(multiplo)
+	multiplo <- multiplo + 8
+	conteo <- conteo + 1
+}
+cat("Hay", conteo, "múltiplos de 8 menores que 150.")
+```
+
