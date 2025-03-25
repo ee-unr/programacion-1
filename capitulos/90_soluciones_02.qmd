@@ -278,3 +278,26 @@ while (termino1 < 10000) {
 
 ## Solución Ejercicio 8
 
+Observar que:  
+
+- el valor inicial es el 100 ya que la combinación no comienza por 0. 
+- el `while` se detiene cuando la combinación es mayor a 800.
+- se verifican las condiciones de multiplicidad, y si no se cumplen, se pasa directamente a la siguiente iteración. 
+- en caso de que se cumplan las condiciones, se imprime la combinación, y se pasa a la siguiente iteración.
+
+```{r}
+# PROGRAMA: "Lista de posibles combinaciones" ----------------------------
+combinacion <- 100
+
+while (combinacion <= 800) {
+    if (combinacion %% 11 != 0 || combinacion %% 8 == 0) {
+        combinacion <- combinacion + 1
+        next
+    }
+    
+    print(combinacion)
+    combinacion <- combinacion + 1
+}
+
+```
+

@@ -54,3 +54,12 @@ En el siglo XIII el matemático italiano Leonardo Fibonacci ideó una secuencia 
 
 ## Ejercicio 8
 
+Se tiene una caja fuerte que, para poder abrirla, se desea crear una lista con todas las combinaciones posibles. Se sabe que:
+
+- La combinación tiene 3 cifras.
+- La combinación es múltiplo de 11.
+- La combinación no es mayor que 800.
+- La combinación no es múltiplo de 8.
+- La combinación no comienza con 0.
+
+Escribir un programa en R que permita imprimir una lista con todas las combinaciones posibles bajo las condiciones anteriores.
