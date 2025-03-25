@@ -330,7 +330,7 @@ for (i in 1:n) {
 suma
 ```
 
-Ahora que nos quedamos tranquilos de que ese postulado matemático se cumple, si necesitams esa suma podemos hacer sencillamente:
+Ahora que nos quedamos tranquilos de que ese postulado matemático se cumple, si necesitamos esa suma podemos hacer sencillamente:
 
 ```{r}
 n * (n + 1) / 2
