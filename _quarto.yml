@@ -35,10 +35,13 @@ book:
         - capitulos/01_practica.qmd
     - part: capitulos/02.qmd
       chapters:
-        - capitulos/02_a_algo.qmd
+        - capitulos/02_1_if.qmd
+        - capitulos/02_2_for_while.qmd
+        - capitulos/02_practica.qmd
     - part: capitulos/90.qmd
       chapters:
         - capitulos/90_soluciones_01.qmd
+        # - capitulos/90_soluciones_02.qmd
   appendices:
   #   - capitulos/98_tp.qmd
     - capitulos/99_bibliografia.qmd
