@@ -5,5 +5,5 @@
 # Unidad 2. Estructuras de control
 
 ::: {.presentacion-capitulo data-latex=""}
-Un programa está compuesto por una sucesión ordenada de instrucciones que se ejecutan una detrás de otra, de forma secuencial. Sin embargo, con frecuencia es necesario recurrir a comandos especiales que alteran o controlan el orden en el que se ejecutan las instrucciones. Llamamos **estructuras de control del flujo del código** al conjunto de reglas que permiten controlar el orden o la cantidad de veces con la que se ejecutan las instrucciones de un algoritmo o programa. Las mismas pueden clasificarse **condicionales** e **iterativas** y son el tema de estudio de esta unidad.
+Un programa está compuesto por una sucesión ordenada de instrucciones que se ejecutan una detrás de otra, de forma secuencial. Sin embargo, con frecuencia es necesario recurrir a comandos especiales que alteran o controlan el orden en el que se ejecutan las instrucciones. Llamamos **estructuras de control del flujo del código** al conjunto de reglas que permiten controlar el orden o la cantidad de veces con la que se ejecutan las instrucciones de un algoritmo o programa. Las mismas pueden clasificarse en **condicionales** e **iterativas** y son el tema de estudio de esta unidad.
 :::
