@@ -41,17 +41,6 @@ Escribir un programa en R que permita calcular el factorial de un número natura
 
 En el siglo XIII el matemático italiano Leonardo Fibonacci ideó una secuencia matemática que lleva su nombre, intentando explicar el crecimiento geométrico de una población de conejos. Los primeros dos términos de la secuencia son 0 y 1, y cada uno de los subsecuentes términos es la suma de los dos anteriores. De esta forma, el inicio de la secuencia de Fibonacci es: 0 - 1 - 1 - 2 - 3 - 5 - 8 - ... . Escribir un programa en R para mostrar todos los términos de la secuencia de Fibonacci menores que 10000.
 
-<!-- ## Ejercicio 8 -->
-
-<!-- En múltiples sistemas hay usuarios que pueden acceder a cierto contenido si ingresan a sus cuentas proveyendo la contraseña correcta. Si es incorrecta, el usuario debe intentar una y otra vez, hasta que coincida con el valor registrado o hasta que se llegue a un tope máximo de intentos y la cuenta sea bloqueada. -->
-
-<!-- Vamos a suponer que los estudiantes de Estadística pueden ingresar a un sistema para el cual la contraseña correcta es "amoestadistica". Escribir un algoritmo que inicialmente escriba un mensaje solicitando el ingreso de una contraseña, luego lea el valor provisto por el usuario y finalmente comience un proceso iterativo de verificación: si la contraseña no es correcta, debe anunciar "Contraseña incorrecta. Ingrésela nuevamente" y proceder a la lectura en un nuevo intento. Cuando el usuario provea la contraseña adecuada, se debe mostrar el mensaje "¡Contraseña correcta! Puede continuar con sus estudios.". -->
-
-<!-- Se deben proponer dos algoritmos distintos, considerando los siguientes escenarios: -->
-
-<!-- 1.  El proceso iterativo continúa hasta que la contraseña sea correcta, sin importar la cantidad de intentos. -->
-<!-- 2.  El proceso iterativo se detiene luego de cinco intentos fallidos, anunciando que el usuario ha sido bloqueado. -->
-
 ## Ejercicio 8
 
 Se tiene una caja fuerte que, para poder abrirla, se desea crear una lista con todas las combinaciones posibles. Se sabe que:
