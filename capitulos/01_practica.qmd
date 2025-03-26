@@ -42,7 +42,7 @@ c. ¿Qué sucede si intentás sumar `x` e `y`? Explicar por qué ocurre esto.
 
 ## Ejercicio 4
 
-Descargar el archivo [`practica1_ambiente.RData`](https://github.com/ee-unr/programacion-1/raw/refs/heads/main/archivos/practica1_ambiente.RData) y guardarlo en la carpeta del proyecto `unidad_1`. Este archivo es de extensión `.RData` y se utiliza para guardar objetos de R. Cuando este archivo se lee con R, se cargan en el *environment* los objetos que tiene almacenados. Vamos a leer este archivo para identificar qué tipo de objetos aparecen en nuestro ambiente. Para abrir este archivo, podemos usar alguna de estas opciones:
+Descargar el archivo [`practica1_ambiente.RData`](https://github.com/ee-unr/programacion-1/raw/refs/heads/main/archivos/practica1_ambiente.RData). Su extensión `.RData` indica que contiene objetos de R. Cuando este archivo se lee con R, se cargan en el *environment* los objetos que tiene almacenados. Vamos a leerlo para identificar qué tipo de objetos aparecen en nuestro ambiente, con alguna de estas opciones:
 
 - Hacer doble clic en el archivo `practica1_ambiente.RData`.
 - En la pestaña *Environment* de RStudio, hacer clic en el ícono de abrir y seleccionar el archivo `practica1_ambiente.RData`.
@@ -50,7 +50,7 @@ Descargar el archivo [`practica1_ambiente.RData`](https://github.com/ee-unr/prog
 
 ```{r}
 #| eval: false
-load("practica1_ambiente.RData")
+load("ruta/completa/hasta/el/archivo/practica1_ambiente.RData")
 ```
 
 Una vez que el archivo haya sido cargado en R, responder: ¿cuántos objetos fueron incorporadas al ambiente al haber cargado el archivo? ¿Cuáles son sus nombres o identificadores? ¿Qué tipo de dato contiene cada uno? ¿Qué valor contiene cada uno? 
@@ -177,7 +177,7 @@ Escribir una expresión en R para calcular el área total y el volumen de un pri
 
 Responder las siguientes preguntas:
 
-a. ¿Cuál es la ruta informática o *path* del script `resulucion_practica_1.R` que creaste en el ejercicio 1?
+a. ¿Cuál es la ruta informática o *path* del script `resolucion_practica_1.R` que creaste en el ejercicio 1?
 b. ¿Cuál es el directorio de trabajo o *working directory* en tu sesión de trabajo actual?
 
 ## Ejercicio 13
