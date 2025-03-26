@@ -654,20 +654,130 @@
     "href": "capitulos/02.html",
     "title": "Unidad 2. Estructuras de control",
     "section": "",
-    "text": "Página en construcción.",
+    "text": "Un programa está compuesto por una sucesión ordenada de instrucciones que se ejecutan una detrás de otra, de forma secuencial. Sin embargo, con frecuencia es necesario recurrir a comandos especiales que alteran o controlan el orden en el que se ejecutan las instrucciones. Llamamos estructuras de control del flujo del código al conjunto de reglas que permiten controlar el orden o la cantidad de veces con la que se ejecutan las instrucciones de un algoritmo o programa. Las mismas pueden clasificarse en condicionales e iterativas y son el tema de estudio de esta unidad.",
     "crumbs": [
       "Unidad 2. Estructuras de control"
     ]
   },
   {
-    "objectID": "capitulos/02_a_algo.html",
-    "href": "capitulos/02_a_algo.html",
-    "title": "9  Primer capítulo de la Unidad 2",
+    "objectID": "capitulos/02_1_if.html",
+    "href": "capitulos/02_1_if.html",
+    "title": "9  Estructuras de control condicionales",
     "section": "",
-    "text": "Página en construcción.",
+    "text": "9.1 Estructuras condicionales simples\nPostulan una evaluación lógica y, si su resultado es TRUE, se procede a ejecutar las acciones delimitadas entre las llaves que definen el cuerpo de esta estructura. se expresan en R con la siguiente sintaxis:\nLa palabra if indica el comando de evaluación lógica, condición indica la evaluación a realizar y entre llaves se detallan las instrucciones que se realizan sólo si se cumple la condición, es decir, si la evaluación resulta TRUE. Dentro de las llaves puede haber una o muchas líneas de código. Si la condición no se verifica (es FALSE), no se ejecuta ninguna acción y el programa sigue su estructura secuencial con el código que prosigue a la última llave.\nNotar que si bien el uso de sangrías o indentación en el código dentro de las llaves es opcional, decidimos emplearlo para facilitar la lectura y la identificación del inicio y el fin del bloque condicional. Mantener la prolijidad en nuestros programas es esencial.",
     "crumbs": [
       "Unidad 2. Estructuras de control",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Primer capítulo de la Unidad 2</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructuras de control condicionales</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_1_if.html#estructuras-condicionales-simples",
+    "href": "capitulos/02_1_if.html#estructuras-condicionales-simples",
+    "title": "9  Estructuras de control condicionales",
+    "section": "",
+    "text": "if (condición) {\n    hacer esto\n}\n\n\nEl siguiente programa registra la edad de una persona y, en el caso de que sea mayor de edad, avisa que puede votar en las elecciones provinciales de Santa Fe:\n\n# Persona A\nedad &lt;- 27\nif (edad &gt;= 18) {\n    cat(\"Edad =\", edad, \"años: puede votar\")\n}\n\nEdad = 27 años: puede votar\n\n# Persona B\nedad &lt;- 15\nif (edad &gt;= 18) {\n    cat(\"Edad =\", edad, \"años: puede votar\")\n}\n\n# no se ejecuta ninguna acción",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructuras de control condicionales</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_1_if.html#estructuras-condicionales-dobles",
+    "href": "capitulos/02_1_if.html#estructuras-condicionales-dobles",
+    "title": "9  Estructuras de control condicionales",
+    "section": "9.2 Estructuras condicionales dobles",
+    "text": "9.2 Estructuras condicionales dobles\nLa estructura simple sólo provee un curso de acción en el caso de que la evaluación sea TRUE. La estructura doble permite especificar, además, qué se debe hacer en el caso de que le resultado sea FALSE. La sintaxis es:\nif (condición) {\n    hacer esto\n} else {\n    hacer otra cosa\n}\nDentro del primer bloque de llaves se escriben las instrucciones que se ejecutan si se cumple la condición, mientras que en el segundo, luego de la expresión else (“si no”), se incluyen las que se evalúan si no se verifica la misma.\n\nRetomamos el caso anterior para emitir un mensaje cualquiera sea la situación:\n\n# Persona A\nedad &lt;- 27\nif (edad &gt;= 18) {\n    cat(\"Edad =\", edad, \"años: puede votar\")\n} else {\n    cat(\"Edad =\", edad, \"años: no puede votar\")\n}\n\nEdad = 27 años: puede votar\n\n# Persona B\nedad &lt;- 15\nif (edad &gt;= 18) {\n    cat(\"Edad =\", edad, \"años: puede votar\")\n} else {\n    cat(\"Edad =\", edad, \"años: no puede votar\")\n}\n\nEdad = 15 años: no puede votar",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructuras de control condicionales</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_1_if.html#estructuras-condicionales-múltiples-o-anidadas",
+    "href": "capitulos/02_1_if.html#estructuras-condicionales-múltiples-o-anidadas",
+    "title": "9  Estructuras de control condicionales",
+    "section": "9.3 Estructuras condicionales múltiples o anidadas",
+    "text": "9.3 Estructuras condicionales múltiples o anidadas\nPermiten combinar varias estructuras condicionales para establecer controles más complejos sobre el flujo de la ejecución de las instrucciones, representando una toma de decisión múltiple. Podemos ejemplificar la sintaxis de la siguiente forma:\nif (condición 1) {\n    hacer esto\n} else if (condición 2) {\n    hacer otra cosa\n} else {\n    hacer otra cosa distinta\n}\nEn la estructura anterior, hay una primera evaluación lógica. Si su resultado es TRUE, se ejecuta el código encerrado en el primer juego de llaves y el resto es ignorado. En cambio, si su resultado es FALSE, se procede a evaluar la segunda evaluación lógica, que da lugar a la ejecución del segundo bloque de código si el resultado es TRUE o del tercer bloque, si su resultado es FALSE.\nEl último bloque de acciones, indicado con hacer otra cosa distinta, se evaluará sólo si ninguna de las condiciones lógicas anteriores fue TRUE.\n\nCompletamos el caso de la edad y la votación, considerando la no obligatoriedad para las personas mayores:\n\n# Persona A\nedad &lt;- 27\nif (edad &lt; 18) {\n    cat(\"Edad =\", edad, \"años: no puede votar\")\n} else if (edad &gt;= 70) {\n    cat(\"Edad =\", edad, \"años: puede votar opcionalmente\")\n} else {\n    cat(\"Edad =\", edad, \"años: debe votar obligatoriamente\")\n}\n\nEdad = 27 años: debe votar obligatoriamente\n\n# Persona B\nedad &lt;- 15\nif (edad &lt; 18) {\n    cat(\"Edad =\", edad, \"años: no puede votar\")\n} else if (edad &gt;= 70) {\n    cat(\"Edad =\", edad, \"años: puede votar opcionalmente\")\n} else {\n    cat(\"Edad =\", edad, \"años: debe votar obligatoriamente\")\n}\n\nEdad = 15 años: no puede votar\n\n# Persona C\nedad &lt;- 81\nif (edad &lt; 18) {\n    cat(\"Edad =\", edad, \"años: no puede votar\")\n} else if (edad &gt;= 70) {\n    cat(\"Edad =\", edad, \"años: puede votar opcionalmente\")\n} else {\n    cat(\"Edad =\", edad, \"años: debe votar obligatoriamente\")\n}\n\nEdad = 81 años: puede votar opcionalmente\n\n\n\n\n¿Cuál será el valor final de resultado después de ejecutar el siguiente código en R?\nx &lt;- 20\nif (x &lt; 10) {\n  resultado &lt;- x * 20\n} else if (x &lt; 20) {\n  resultado &lt;- x / 2\n} else {\n  resultado &lt;- x + 100\n}\nresultado\nresultado es igual a: .",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Estructuras de control condicionales</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_2_for_while.html",
+    "href": "capitulos/02_2_for_while.html",
+    "title": "10  Estructuras de control iterativas",
+    "section": "",
+    "text": "10.1 Estructuras de control iterativas con un número fijo de iteraciones: for\nUna estructura for se aplican cuando se conoce de antemano el número exacto de veces que se debe repetir una secuencia de instrucciones dentro de un programa. También se conoce como bucle o loop for. La sintaxis es:\nEn lo anterior, conjunto representa un conjunto de elementos, usualmente números o cadenas de texto. El bloque de instrucciones encerrados entre las llaves (que puede contener una o muchas líneas) se ejecutará tantas veces como elementos haya en conjunto. Por ejemplo:\nfor (variable in c(\"Hola\", \"cómo\", \"estás\")) {\n  print(\"Esto es una repetición.\")\n}\n\n[1] \"Esto es una repetición.\"\n[1] \"Esto es una repetición.\"\n[1] \"Esto es una repetición.\"\nEn el ejemplo, con la expresión c(\"Hola\", \"cómo\", \"estás\") se define un conjunto de tres cadenas de texto. Dado que hay tres elementos en ese conjunto, la acción indicada entre las llaves se realiza exactamente tres veces. Dicha acción consiste en imprimir en la consola el mensaje “Esto es una repetición” y se realiza gracias al uso de la función print().\n¿Y para qué está variable en esa estructura? Se trata de un objeto que recibe el nombre de variable o índice de iteración. En cada repetición y respetando el orden, el objeto variable va a recibir el valor de uno de los elementos del conjunto. En este caso, durante la primera iteración, variable almacena el valor \"Hola\". En la segunda repetición, el valor \"cómo\" y en la tercera, \"estás\". De hecho, si queremos podemos usar este objeto, cuyo valor va cambiando iteración tras iteración, en las acciones que se implementan dentro de las llaves:\nfor (variable in c(\"Hola\", \"cómo\", \"estás\")) {\n  print(\"-------------------------\")\n  print(\"Esto es una repetición:\")\n  print(variable)\n}\n\n[1] \"-------------------------\"\n[1] \"Esto es una repetición:\"\n[1] \"Hola\"\n[1] \"-------------------------\"\n[1] \"Esto es una repetición:\"\n[1] \"cómo\"\n[1] \"-------------------------\"\n[1] \"Esto es una repetición:\"\n[1] \"estás\"\nLa variable de iteración, que en el ejemplo se llamó variable, en realidad puede llevar cualquier nombre que queramos. Es común usar sencillamente el nombre i. También es usual que el conjunto de elementos contenga números:\nfor (i in c(1, 2, 3, 4, 5)) {\n  print(\"-------------------------\")\n  print(\"En esta iteración i vale:\")\n  print(i)\n}\n\n[1] \"-------------------------\"\n[1] \"En esta iteración i vale:\"\n[1] 1\n[1] \"-------------------------\"\n[1] \"En esta iteración i vale:\"\n[1] 2\n[1] \"-------------------------\"\n[1] \"En esta iteración i vale:\"\n[1] 3\n[1] \"-------------------------\"\n[1] \"En esta iteración i vale:\"\n[1] 4\n[1] \"-------------------------\"\n[1] \"En esta iteración i vale:\"\n[1] 5\nEn los elementos del conjunto son números enteros ordenados, se puede usar un atajo con la forma inicio:fin:\nfor (i in 1:5) {\n  print(\"-------------------------\")\n  print(\"En esta iteración i vale:\")\n  print(i)\n}\n\n[1] \"-------------------------\"\n[1] \"En esta iteración i vale:\"\n[1] 1\n[1] \"-------------------------\"\n[1] \"En esta iteración i vale:\"\n[1] 2\n[1] \"-------------------------\"\n[1] \"En esta iteración i vale:\"\n[1] 3\n[1] \"-------------------------\"\n[1] \"En esta iteración i vale:\"\n[1] 4\n[1] \"-------------------------\"\n[1] \"En esta iteración i vale:\"\n[1] 5",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructuras de control iterativas</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_2_for_while.html#estructuras-de-control-iterativas-con-un-número-fijo-de-iteraciones-for",
+    "href": "capitulos/02_2_for_while.html#estructuras-de-control-iterativas-con-un-número-fijo-de-iteraciones-for",
+    "title": "10  Estructuras de control iterativas",
+    "section": "",
+    "text": "for (variable in conjunto) {\n  hacer esto\n}\n\n\n\n\n\n\n\n\n\n\nEl siguiente bloque de código calcula y muestra la tabla de multiplicar del ocho:\n\nfor (i in 0:10) {\n  resultado &lt;- 8 * i\n  cat(\"8 x\", i, \"=\", resultado, \"\\n\")\n}\n\n8 x 0 = 0 \n8 x 1 = 8 \n8 x 2 = 16 \n8 x 3 = 24 \n8 x 4 = 32 \n8 x 5 = 40 \n8 x 6 = 48 \n8 x 7 = 56 \n8 x 8 = 64 \n8 x 9 = 72 \n8 x 10 = 80 \n\n\n\n\nPara emitir mensajes, podemos usar print() o cat():\n\nprint() tiene la ventaja de que al terminar de emitir el mensaje, agrega un salto de línea: lo próximo que se escriba, aparecerá en un nuevo renglón de la consola. No obstante, no nos permite de forma sencilla concatenar varias piezas de información para armar frases complejas.\ncat() nos permite unir cadenas de texto y valores guardados en variables para armar cualquier frase que queramos, separando entre comas cada una de las partes. Sin embargo, no incluye automáticamente un salto de línea: lo próximo que se escriba queda pegado a lo anterior en el mismo renglón. Para evitar esto, incluimos el carácter especial \\n que representa un salto de línea. Si no lo agreamos, el resultado se ve así:\n\n\nfor (i in 0:10) {\n  resultado &lt;- 8 * i\n  cat(\"8 x\", i, \"=\", resultado)\n}\n\n8 x 0 = 08 x 1 = 88 x 2 = 168 x 3 = 248 x 4 = 328 x 5 = 408 x 6 = 488 x 7 = 568 x 8 = 648 x 9 = 728 x 10 = 80\n\n\n\n\nImaginemos que queremos escribir un programa que permita calcular la quinta potencia de cualquier número, por ejemplo, \\(2^5\\). Para esto, se debe tomar el número \\(2\\) y multiplicarlo por sí mismo \\(5\\) veces. Por lo tanto, una posible solución es:\n\nx &lt;- 2\nresultado &lt;- 1\nresultado &lt;- resultado * x\nresultado &lt;- resultado * x\nresultado &lt;- resultado * x\nresultado &lt;- resultado * x\nresultado &lt;- resultado * x\ncat(x, \"a la quinta es igual a\", resultado)\n\n2 a la quinta es igual a 32\n\n\nYa que sabemos que la multiplicación se debe repetir 5 veces, podemos resumir lo anterior con la siguiente estructura:\n\nx &lt;- 2\nresultado &lt;- 1\nfor (i in 1:5) {\n    resultado &lt;- resultado * x\n}\ncat(x, \"a la quinta es igual a\", resultado)\n\n2 a la quinta es igual a 32\n\n\n\n\n¿Cuál será el valor final de salida después de ejecutar el siguiente código en R?\nsalida &lt;- 30\nfor (i in 1:4) {\n  salida &lt;- salida - i\n}\nsalida es igual a: .",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructuras de control iterativas</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_2_for_while.html#estructuras-de-control-iterativas-con-un-número-indeterminado-de-iteraciones-while",
+    "href": "capitulos/02_2_for_while.html#estructuras-de-control-iterativas-con-un-número-indeterminado-de-iteraciones-while",
+    "title": "10  Estructuras de control iterativas",
+    "section": "10.2 Estructuras de control iterativas con un número indeterminado de iteraciones: while",
+    "text": "10.2 Estructuras de control iterativas con un número indeterminado de iteraciones: while\nEn otras circunstancias se necesita repetir un bloque de acciones sin conocer con exactitud cuántas veces, sino que esto depende de algún otro aspecto del programa. Las iteraciones deben continuar mientras que se verifique alguna condición, dando lugar a la estructura while, también conocida como bucle o loop controlado por una condición.\nEn una estructura while (mientras), el conjunto de instrucciones se repite mientras que se siga evaluando como TRUE una condición declarada al inicio del bloque. Cuando la condición ya no se cumple, el proceso deja de ejecutarse. La sintaxis es:\nwhile (condición) {\n    hacer esto\n}\nEl flujo de ejecución es el siguiente:\n\nSe evalúa la condición.\nSi la condición es TRUE, se ejecuta el bloque de código dentro del while.\nUna vez ejecutado el bloque de código, se vuelve a evaluar la condición.\nSi la condición sigue siendo TRUE, se repite el proceso.\nSi la condición es FALSE, el bucle termina y el programa continúa con las instrucciones que siguen después del while.\n\n\nLa variable y tiene un valor inicial igual a 5. Dado que este valor es mayor a 0, se ejecuta por primera vez el bloque entre llaves: le restamos 1 e imprimimos el resultado, el valor 4. Este valor sigue siendo mayor que 0, por lo tanto el proceso se repite. En una de las iteraciones, y queda con el valor 1. Dado que es mayor que 0, la condición es TRUE, a y le restamos uno, queda igual a 0 y lo imprimimos. La condición se evalúa una vez más, pero resulta en FALSE, por lo tanto no se detiene la repetición.\n\ny &lt;- 5\nwhile (y &gt; 0) {\n  y &lt;- y - 1\n  print(y)\n}\n\n[1] 4\n[1] 3\n[1] 2\n[1] 1\n[1] 0\n\n\n\nEl valor 0 se imprime porque una vez dentro del bloque, se ejecutan todas sus acciones. El procesamiento no se interrumpe cuando y toma el valor 0, sino cuando se vuelve a evaluar la condición lógica y esta es FALSE, después de la última vuelta. En otras palabras, la evaluación de la condición sólo se lleva a cabo al inicio de cada iteración; si la condición se vuelve FALSE en algún punto durante la ejecución del bloque, el programa no lo nota hasta que termine de ejecutarlo y la condición sea evaluada antes de comenzar la próxima iteración.\n\nEn el siguiente bloque intercambiamos de lugar las líneas dentro de las llaves. ¿En qué difiere el resultado?\n\ny &lt;- 5\nwhile (y &gt; 0) {\n  print(y)\n  y &lt;- y - 1\n}\n\n[1] 5\n[1] 4\n[1] 3\n[1] 2\n[1] 1\n\n\n\nComo ya observamos, la evaluación de la condición se lleva a cabo antes de cada iteración, incluso antes de ejecutar el código dentro del bloque por primera vez. Si la condición es FALSE inicialmente, entonces las acciones en el cuerpo de la estructura no se ejecutan nunca:\n\ny &lt;- -5\nwhile (y &gt; 0) {\n  print(y)\n  y &lt;- y - 1\n}\n\n\nEste programa divide un número por 2 mientras que el resultado sea mayor o igual a 1 (es decir, hasta encontrar un valor menor que 1):\n\nx &lt;- 100\nwhile (x &gt;= 1) {\n    x &lt;- x / 2\n    print(x)\n}\n\n[1] 50\n[1] 25\n[1] 12.5\n[1] 6.25\n[1] 3.125\n[1] 1.5625\n[1] 0.78125\n\n\n\n\n¿Cuál será la salida del siguiente código en R?\n\nx &lt;- 1\nsuma &lt;- 0\n\nwhile (suma + x &lt;= 15) {\n  suma &lt;- suma + x\n  cat(suma, \" \")\n  x &lt;- x + 1\n}\n\n1 2 3 4 51 3 6 10 151 3 6 10 15 21\n\n\nEn R existe otra estructura iterativa, muy relacionada con el while. Se trata de la estructura repeat, que repite indefinidamente el bloque de instrucciones entre llaves. Para detener las iteraciones, se incluye dentro del bloque una evaluación lógica con un if y la instrucción break. Si la condición es TRUE, se ejecuta el break, deteniendo el proceso iterativo.\n\nx &lt;- 100\nrepeat {\n  x &lt;- x / 2\n  print(x)\n  if (x &lt; 1) break\n}\n\n[1] 50\n[1] 25\n[1] 12.5\n[1] 6.25\n[1] 3.125\n[1] 1.5625\n[1] 0.78125\n\n\nEn general, no utilizaremos la estructura repeat, pero es otra herramienta disponible.\nAsí como contamos con la instrucción break para detener un proceso iterativo (ya sea un for, while o repeat), también contamos con next para saltar una iteración. Notemos su efecto:\n\nx &lt;- 100\nwhile (x &gt;= 1) {\n    x &lt;- x / 2\n    print(x)\n}\n\n[1] 50\n[1] 25\n[1] 12.5\n[1] 6.25\n[1] 3.125\n[1] 1.5625\n[1] 0.78125\n\n\n\nx &lt;- 100\nwhile (x &gt;= 1) {\n    x &lt;- x / 2\n    if (x == 12.5) next\n    print(x)\n}\n\n[1] 50\n[1] 25\n[1] 6.25\n[1] 3.125\n[1] 1.5625\n[1] 0.78125",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructuras de control iterativas</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_2_for_while.html#ejemplos",
+    "href": "capitulos/02_2_for_while.html#ejemplos",
+    "title": "10  Estructuras de control iterativas",
+    "section": "10.3 Ejemplos",
+    "text": "10.3 Ejemplos\nCon las sentencias de tipo while se debe tener mucha precaución, puesto que si la evaluación lógica no está bien especificada o nunca deja de ser evaluada como TRUE, se incurre en un loop infinito: el programa nunca deja de repetir el bloque (al menos hasta que la máquina se tilde o se produzca un error por desbordamiento de memoria, por ejemplo).\nLa siguiente situación ilustra esto:\nvar &lt;- 9\nwhile (var &lt; 10) {\n    var &lt;- var - 1\n    cat(\"var =\", var, \"No puedo parar!!!\\n\")\n}\nvar = 8 No puedo parar!!!\nvar = 7 No puedo parar!!!\nvar = 6 No puedo parar!!!\nvar = 5 No puedo parar!!!\nvar = 4 No puedo parar!!!\nvar = 3 No puedo parar!!!\nvar = 2 No puedo parar!!!\nvar = 1 No puedo parar!!!\nvar = 0 No puedo parar!!!\nvar = -1 No puedo parar!!!\nvar = -2 No puedo parar!!!\n.\n.\n.\nSi ejecutás ese código, vas a tener que forzar “a mano” el detenimiento del procesamiento, con el botón rojo de “Stop” arriba a la derecha de la consola, o con el atajo CTRL + C. También podemos implementar un “conteo” de las iteraciones y agregar un break: si el bloque se repitió, por ejemplo, 15 veces, que se detenga:\n\nconteo &lt;- 0\nvar &lt;- 9\nwhile (var &lt; 10) {\n    var &lt;- var - 1\n    cat(\"var =\", var, \"No puedo parar!!!\\n\")\n    conteo &lt;- conteo + 1\n    if (conteo == 15) break\n}\ncat(\"Se hicieron\", conteo, \"iteraciones.\")\n\nvar = 8 No puedo parar!!!\nvar = 7 No puedo parar!!!\nvar = 6 No puedo parar!!!\nvar = 5 No puedo parar!!!\nvar = 4 No puedo parar!!!\nvar = 3 No puedo parar!!!\nvar = 2 No puedo parar!!!\nvar = 1 No puedo parar!!!\nvar = 0 No puedo parar!!!\nvar = -1 No puedo parar!!!\nvar = -2 No puedo parar!!!\nvar = -3 No puedo parar!!!\nvar = -4 No puedo parar!!!\nvar = -5 No puedo parar!!!\nvar = -6 No puedo parar!!!\nSe hicieron 15 iteraciones.\n\n\nLas distintas estructuras iterativas se pueden combinar entre sí, dando lugar flujos de ejecución del código altamente flexibles. En el siguiente caso se tienen dos estructuras for anidadas:\n\nfor (i in 1:3) {\n    for (j in 1:2) {\n        suma &lt;- i + j\n        cat(\"| i vale\", i, \"| j vale\", j, \"| La suma es igual a\", suma, \"|\\n\")  \n    }\n}\n\n| i vale 1 | j vale 1 | La suma es igual a 2 |\n| i vale 1 | j vale 2 | La suma es igual a 3 |\n| i vale 2 | j vale 1 | La suma es igual a 3 |\n| i vale 2 | j vale 2 | La suma es igual a 4 |\n| i vale 3 | j vale 1 | La suma es igual a 4 |\n| i vale 3 | j vale 2 | La suma es igual a 5 |\n\n\nEn primer lugar, i toma el valor 1, y entonces j varía de 1 a 2, generando las combinaciones i = 1, j = 1 e i = 1, j = 2. Luego de que el loop de j finalice habiendo recorrido todo su campo de variación, comienza la segunda iteración del loop de i, actualizándose su valor a 2 y comenzando otra vez el loop de j, que varía de 1 a 2. Así, se generan las combinaciones i = 2, j = 1 e i = 2, j = 2. Finalmente, se actualiza i y pasa a valer 3, generando las combinaciones i = 3, j = 1 e i = 3, j = 2. Para cada combinación, se muestra el valor de la suma entre i y j.\nRecordemos que las variables de iteración pueden recibir cualquier nombre:\n\nfor (guau in 1:3) {\n    for (miau in 1:2) {\n        suma &lt;- guau + miau\n        cat(\"| guau vale\", guau, \"| miau vale\", miau, \"| La suma es igual a\", suma, \"|\\n\")  \n    }\n}\n\n| guau vale 1 | miau vale 1 | La suma es igual a 2 |\n| guau vale 1 | miau vale 2 | La suma es igual a 3 |\n| guau vale 2 | miau vale 1 | La suma es igual a 3 |\n| guau vale 2 | miau vale 2 | La suma es igual a 4 |\n| guau vale 3 | miau vale 1 | La suma es igual a 4 |\n| guau vale 3 | miau vale 2 | La suma es igual a 5 |\n\n\nCon estas herramientas, podemos crear programas que nos permitan verificar algunos principios matemáticos. Por ejemplo, sabemos que la suma de los primeros \\(n\\) números naturales es igual a \\(n(n+1)/2\\). Entonces, la suma de los 50 primeros números naturales (\\(1 + 2 + 3 + ... + 50\\)) debe ser igual a \\(50 \\times 51 / 2 = 1275\\). ¿Será verdad?\n\nn &lt;- 50\nsuma &lt;- 0\nfor (i in 1:n) {\n    suma &lt;- suma + i\n}\nsuma\n\n[1] 1275\n\n\nAhora que nos quedamos tranquilos de que ese postulado matemático se cumple, si necesitamos esa suma podemos hacer sencillamente:\n\nn * (n + 1) / 2\n\n[1] 1275\n\n\nEs momento de dejar volar nuestra imaginación y plantearnos cualquier problema de este estilo que se nos ocurra, ya estamos en condiciones de resolverlo. Por ejemplo, sumemos números naturales hasta que la suma pase el valor 100:\n\nsuma &lt;- 0\nnro_natural &lt;- 1\nwhile (suma &lt; 100) {\n    suma &lt;-  suma + nro_natural\n    nro_natural &lt;- nro_natural + 1\n}\ncat(\"Se deben sumar los primeros\", nro_natural - 1, \"números naturales para superar el valor 100.\")\n\nSe deben sumar los primeros 14 números naturales para superar el valor 100.\n\ncat(\"La suma de los primeros\", nro_natural - 1, \"números naturales es igual a\", suma, \".\")\n\nLa suma de los primeros 14 números naturales es igual a 105 .\n\n\n\nAnalizar con atención el caso anterior y explicar por qué se utiliza nro_natural - 1 para indicar cuántos números naturales formaron parte de la suma.\n\n¿Alguien sabe cuántos múltiplos de 8 menores a 150 hay? Contemos1:\n\n# cada nro es múltiplo de sí mismo, así que el primero es el mismo 8\nmultiplo &lt;- 8\n# contamos que ya tenemos identificado al primer múltiplo\nconteo &lt;- 1\n# encontramos los siguientes múltiplos sumando de a 8\nwhile (multiplo &lt; 150) {\n    print(multiplo)\n    multiplo &lt;- multiplo + 8\n    conteo &lt;- conteo + 1\n}\n\n[1] 8\n[1] 16\n[1] 24\n[1] 32\n[1] 40\n[1] 48\n[1] 56\n[1] 64\n[1] 72\n[1] 80\n[1] 88\n[1] 96\n[1] 104\n[1] 112\n[1] 120\n[1] 128\n[1] 136\n[1] 144\n\ncat(\"Hay\", conteo, \"múltiplos de 8 menores que 150.\")\n\nHay 19 múltiplos de 8 menores que 150.",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructuras de control iterativas</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_2_for_while.html#footnotes",
+    "href": "capitulos/02_2_for_while.html#footnotes",
+    "title": "10  Estructuras de control iterativas",
+    "section": "",
+    "text": "Para gente curiosa: este conteo se puede hacer sencillamente con 150 %/% 8 + 1. ¿Por qué?↩︎",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Estructuras de control iterativas</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_practica.html",
+    "href": "capitulos/02_practica.html",
+    "title": "11  Práctica de la Unidad 2",
+    "section": "",
+    "text": "11.1 Ejercicio 1\nEnunciado Ejercicio 1…\nVer Solución\n\nfor (i in 1:10) {\n  print(i)\n}",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Práctica de la Unidad 2</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_practica.html#ejercicio-2",
+    "href": "capitulos/02_practica.html#ejercicio-2",
+    "title": "11  Práctica de la Unidad 2",
+    "section": "11.2 Ejercicio 2",
+    "text": "11.2 Ejercicio 2\nEnunciado Ejercicio 2…\n\n\n\nVer Solución\n\nfor (i in 1:10) {\n  print(i)\n}",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Práctica de la Unidad 2</span>"
     ]
   },
   {
@@ -688,7 +798,7 @@
     "text": "Ejercicio 1\nPara crear un nuevo script y guardarlo, podés seguir los ejemplos vistos en #sec-scripts. El contenido del script tiene que ser:\n# Ejercicio 1\n25 + 17\n6 * 8\nsqrt(144)",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -699,7 +809,7 @@
     "text": "Ejercicio 2\n\nPara acceder a la documentación de la función round(), se puede ejecutar en la consola de R:\n\n?round\no\nhelp(round)\n\nSegún la ayuda de R, la función round() tiene los siguientes argumentos:\n\n\nx: El número o vector de números que se desea redondear.\n\ndigits: El número de cifras decimales al que se desea redondear x. Puede ser positivo (para redondear decimales) o negativo (para redondear a múltiplos de 10).\n\n...: representa el uso opcional de otros argumentos, es algo que podemos ignorar por ahora.\n\n\n\nObligatorio: x, ya que es el número a redondear.\n\nOpcional: digits, que por defecto es 0, lo que significa que la función redondeará al número entero más cercano si no se especifica un valor distinto.\n\n\n\n\nround(3.14159, digits = 0)  # Redondeo a 0 decimales → Resultado: 3\n\n[1] 3\n\nround(3.14159, digits = 1)  # Redondeo a 1 decimal → Resultado: 3.1\n\n[1] 3.1\n\nround(3.14159, digits = 2)  # Redondeo a 2 decimales → Resultado: 3.14\n\n[1] 3.14\n\n\n\n\n\n\nround(3.14159, 2)\n\n[1] 3.14\n\nround(x = 3.14159, digits = 2)\n\n[1] 3.14\n\nround(digits = 2, x = 3.14159)\n\n[1] 3.14",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -710,7 +820,7 @@
     "text": "Ejercicio 3\n\nx &lt;- 10\ny &lt;- \"Hola\"\nz &lt;- 5\n\n\nPodemos verificar el tipo de cada objeto con la función typeof():\n\n\ntypeof(x)\n\n[1] \"double\"\n\ntypeof(y)\n\n[1] \"character\"\n\ntypeof(z)\n\n[1] \"double\"\n\n\n\nEjecutamos la siguiente instrucción:\n\n\nz &lt;- x * 6\n\nAhora, z almacenará el valor:\n\nz\n\n[1] 60\n\n\n\nObtenemos un error porque x es un número (double), mientras que y es un texto (character). En R, no es posible realizar operaciones matemáticas entre objetos de tipo diferente.\n\n\nx + y\n\nError in x + y: non-numeric argument to binary operator",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -721,7 +831,7 @@
     "text": "Ejercicio 4\n\nload(\"practica1_ambiente.RData\")\n\nSe incorporaron 6 objetos al ambiente:\n\n\n\nIdentificador\nTipo de vector\nValor\n\n\n\n\nvar1\nlogical\nTRUE\n\n\nvar2\ndouble\n200.12\n\n\nvar3\ncharacter\n\"hola\"\n\n\nvar4\ncharacter\n\"chau\"\n\n\nvar5\ninteger\n-49L\n\n\nvar6\ncharacter\n\"Hola\"\n\n\n\n\ntypeof(var1)\n\n[1] \"logical\"\n\ntypeof(var2)\n\n[1] \"double\"\n\ntypeof(var3)\n\n[1] \"character\"\n\ntypeof(var4)\n\n[1] \"character\"\n\ntypeof(var5)\n\n[1] \"integer\"\n\ntypeof(var6)\n\n[1] \"character\"",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -732,7 +842,7 @@
     "text": "Ejercicio 5\n\n\n\n\nvar2 &lt; 0 || var5 &lt; 0\n\n[1] TRUE\n\n\n\n\n\n\nvar2 &lt; 0 && var5 &lt; 0\n\n[1] FALSE\n\n\n\n\n\n\nvar2 %% (var5 + 100) &lt; 10\n\n[1] FALSE\n\n\n\nNo son iguales porque uno tiene una letra mayúscula, “H” es un caracter distinto de “h” y por lo tanto son cadenas de texto diferentes.\n\n\nvar3 == var6\n\n[1] FALSE",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -743,7 +853,7 @@
     "text": "Ejercicio 6\n\n\n\n\n\n\n\n\n\nOperación\nedad &lt;- 21, altura &lt;- 1.90\nedad &lt;- 17 , altura &lt;- 1.90\nedad &lt;- 21, altura &lt;- 1.50\n\n\n\n\n(edad &gt; 18) && (altura &lt; 1.70)\nFALSE\nFALSE\nTRUE\n\n\n(edad &gt; 18)   || (altura &lt; 1.70)\nTRUE\nFALSE\nTRUE\n\n\n!(edad &gt; 18)\nFALSE\nTRUE\nFALSE\n\n\n\nVerificación en R:\n\n# Primera columna\nedad &lt;- 21\naltura &lt;- 1.90\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] FALSE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] TRUE\n\n!(edad &gt; 18)\n\n[1] FALSE\n\n# Segunda columna\nedad &lt;- 17\naltura &lt;- 1.90\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] FALSE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] FALSE\n\n!(edad &gt; 18)\n\n[1] TRUE\n\n# Tercera columna\nedad &lt;- 21\naltura &lt;- 1.50\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] TRUE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] TRUE\n\n!(edad &gt; 18)\n\n[1] FALSE",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -754,7 +864,7 @@
     "text": "Ejercicio 7\nRazonamiento paso a paso:\n1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10\n1 + 2 + (3 + 4) * ((5 * 6 * 8) - 9) - 10\n1 + 2 + (3 + 4) * (240 - 9) - 10\n1 + 2 + 7 * 231 - 10\n1 + 2 + 1617 - 10\n1610\nVerificación en R:\n\n1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10\n\n[1] 1610",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -765,7 +875,7 @@
     "text": "Ejercicio 8\nSiempre es verdadera porque sea cual fuere x, siempre va a ser distinta a alguno de los dos, incluso si es 4, es distinta a 17 y viceversa.\nRecordemos que:\n\n!= significa “distinto de”.\n\n|| es el operador “o” lógico (OR), que devuelve TRUE si al menos una de las condiciones es TRUE.\n\nLuego, de la única forma para que la expresión sea FALSE, es que ambas condiciones sean FALSE al mismo tiempo. Veamos si esto es posible:\n\nLa primera condición (x != 4) es FALSE solo cuando x = 4.\n\nLa segunda condición (x != 17) es FALSE solo cuando x = 17.\n\nPor lo visto, ambas condiciones no pueden ser FALSE simultáneamente, ya que un número no puede ser 4 y 17 al mismo tiempo. Dado que siempre hay al menos una condición que es TRUE, la expresión es siempre verdadera, sin importar el valor de x.",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -776,7 +886,7 @@
     "text": "Ejercicio 9\nEl primer ítem excluye a los años terminados en 00, los cuales son evaluados en la segunda regla. El segundo ítem incluye automáticamente a los divisibles por 4 porque 400 es divisible por 4. Entonces, la operación lógica que determina si un año es bisiesto es: ((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0).\nEn R:\n\naño &lt;- 2024\n((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0)\n\n[1] TRUE\n\naño &lt;- 2025\n((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0)\n\n[1] FALSE",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -787,7 +897,7 @@
     "text": "Ejercicio 10\n\n¿Cuáles son los valores finales de a y b?\n\n\na &lt;- 10\nb &lt;- a * 2\na &lt;- a + 5\nb &lt;- b - a\na\n\n[1] 15\n\nb\n\n[1] 5\n\n\n\n¿Cuáles son los valores finales de m y n?\n\n\nm &lt;- 5\nn &lt;- 2 * m\nm &lt;- m + 3\nn &lt;- n + m\nm &lt;- n - 4\nm\n\n[1] 14\n\nn\n\n[1] 18\n\n\n\n¿Cuál es el valor final de y?\n\n\nx &lt;- 6\ny &lt;- 2\nx &lt;- x / y + x * y\ny &lt;- x^2 %% 10\ny &lt;- y * 2\ny\n\n[1] 10\n\n\n\n¿Cuál es el valor final de resultado?\n\n\na &lt;- 5\nb &lt;- 2\nc &lt;- 3\n\nresultado &lt;- a^b - (c * b) + (a %% c)\nresultado\n\n[1] 21\n\n\n\n¿Cuáles son los valores finales de x, y y z?\n\n\nx &lt;- 8\ny &lt;- 3\nz &lt;- 2\n\nx &lt;- x %% y + z^y\ny &lt;- (x + y) %/% z\nz &lt;- z + x - y\nx\n\n[1] 10\n\ny\n\n[1] 6\n\nz\n\n[1] 6",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -798,7 +908,7 @@
     "text": "Ejercicio 11\nSe pueden cambiar los valores de a, b y h.\n\na &lt;- 5\nb &lt;- 4\nh &lt;- 3\nvolumen &lt;- a * b * h\narea &lt;- 2 * (a * b + a * h + b * h)\ncat(\"El área es igual a\", area, \"y el volumen es igual a\", volumen)\n\nEl área es igual a 94 y el volumen es igual a 60",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -809,7 +919,7 @@
     "text": "Ejercicio 12\n\nPara identificar la ruta informática de un archivo, podés seguir los pasos mostrados en 5.1 Carpetas, archivos y rutas informáticas.\nSe puede saber cuál es el working directory con:\n\n\ngetwd()",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -820,7 +930,7 @@
     "text": "Ejercicio 13\nEl resultado de crear las carpetas y subcarpetas tiene que ser similar al que se ve en la Figura 5.2. El proyecto se crea desde RStudio siguiendo los pasos de la Figura 5.4.",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
