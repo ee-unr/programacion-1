@@ -8,10 +8,10 @@ number-sections: false
 
 # Soluciones de la Práctica de la Unidad 02
 
-## Solución Ejercicio 1
+## Ejercicio 1
 
 ```{r}
-# PROGRAMA: "Paridad de un número" -----------------
+# PROGRAMA: "Paridad de un número" 
 x <- 3
 if (x %% 2 == 0) {
 	cat(x, "es par")
@@ -25,7 +25,7 @@ En el código anterior, realizamos una asignación explícita de un valor en la 
 Otra opción se muestra en el siguiente ejemplo. En lugar de asignarle un valor a `x` como parte del script, indicamos que cuando el código sea ejecutado, el usuario deberá ingresar un valor con el teclado. Para esto empleamos la función `scan()`. Su argumento `n = 1` significa que el usuario sólo deberá ingresar un número, el cual será asignado a la variable `x`. Teniendo un archivo de código con el programa como se muestra a continuación, podemos ejecutarlo de forma completa mediante el botón `Source` de RStudio. Al llegar a la evaluación de `scan()`, deberemos ingresar el valor que deseemos en la consola y dar Enter para que la ejecución continúe.
 
 ```{r, eval = FALSE}
-# PROGRAMA: "Paridad de un número" ----------------------------
+# PROGRAMA: "Paridad de un número"
 cat("Ingrese un número entero: ")
 x <- scan(n = 1)
 if (x %% 2 == 0) {
@@ -36,11 +36,11 @@ if (x %% 2 == 0) {
 ```
 
 
-## Solución Ejercicio 2
+## Ejercicio 2
 
 
 ```{r}
-# PROGRAMA: "Mayor de tres números" ----------------------------
+# PROGRAMA: "Mayor de tres números"
 x <- 5
 y <- 5
 z <- 7
@@ -53,33 +53,42 @@ if (x >= y && x >= z) {
 }
 ```
 
-Observación: se llega a la segunda evaluación lógica cuando ya sea `y` o `z` (o ambos) es mayor a `x`, por lo tanto sólo es necesario saber cuál de ellos es el mayor.
+Observación: se llega a la segunda evaluación lógica cuando `y` es mayor a `x`, o cuando `z` es mayor que `x`, o cuando ambos son mayores a `x`, por lo tanto sólo es necesario saber cuál de ellos es el mayor.
 
 
-## Solución Ejercicio 3
+## Ejercicio 3
 
 
 ```{r}
-# PROGRAMA: "Determinar salario" ----------------------------
+# PROGRAMA: "Determinar salario"
+
+# Valores fijados
+valor_hora <- 4000
+valor_adicional_noche <- 2000
+valor_adicional_domingo <- 1000
+
+# Valores para un cálculo particular
 horas <- 8
-dia <- "martes"
+dia <- "MAR"
 turno <- "T"
-salario <- horas * 400
+
+# Cálculo para el pago de ese día a ese empleado
+salario <- horas * valor_hora
 if (turno == "N") {
-	salario <- salario + horas * 200
+	salario <- salario + horas * valor_adicional_noche
 }
 if (turno == "DOM") {
-	salario <- salario + horas * 100
+	salario <- salario + horas * valor_adicional_domingo
 }
 cat("El salario que se debe abonar es", salario)
 ```
 
 
-## Solución Ejercicio 4
+## Ejercicio 4
 
 
 ```{r}
-# PROGRAMA: "Convertir temperatura" ----------------------------
+# PROGRAMA: "Convertir temperatura"
 temp <- 20
 modo <- "C a F"
 if (modo == "C a F") {
@@ -92,12 +101,12 @@ if (modo == "C a F") {
 ```
 
 
-## Solución Ejercicio 5
+## Ejercicio 5
 
 **a.** 
 
 ```{r}
-# PROGRAMA: "Suma de los n primeros números naturales" ---------------------
+# PROGRAMA: "Suma de los n primeros números naturales"
 n <- 10
 suma <- 0
 for (i in 1:n) {
@@ -144,7 +153,7 @@ cat("El producto de los primeros", n, "números naturales impares es", producto)
 Otra forma:
 
 ```{r}
-  # PROGRAMA: "Producto de los n primeros números naturales impares" ----------
+# PROGRAMA: "Producto de los n primeros números naturales impares" ----------
 n <- 10
 producto <- 1
 for (i in seq(1, 2 * n - 1, 2)) {
@@ -166,12 +175,12 @@ cat("La suma de los cubos de los primeros", n, "números naturales pares es", su
 ```
 
 
-## Solución Ejercicio 6
+## Ejercicio 6
 
 Utilizando estructura de control "PARA" 
 
 ```{r}
-# PROGRAMA: "Calcular el factorial de n" ----------------------------
+# PROGRAMA: "Calcular el factorial de n"
 n <- 0
 factorial <- 1
 for (i in 1:n) {
@@ -183,7 +192,7 @@ cat("El factorial de", n, "es", factorial)
 Utilizando estructura de control "MIENTRAS QUE" 
 
 ```{r}
-# PROGRAMA: "Calcular el factorial de n" ----------------------------
+# PROGRAMA: "Calcular el factorial de n"
 n <- 0
 factorial <- 1
 i <- 0
@@ -196,21 +205,21 @@ cat("El factorial de", n, "es", factorial)
 
 **IMPORTANTE**. Notar que la primera opción no arroja de forma correcta el factorial de 0, que por definición es igual a 1. Se podría agregar alguna estructura condicional para esta situación. La segunda opción, en cambio, funciona también para `n <- 0`.
 
-## Solución Ejercicio 7
+## Ejercicio 7
 
 ```{r}
-# PROGRAMA: "Secuencia de Fibonacci" ----------------------------
+# PROGRAMA: "Secuencia de Fibonacci"
 termino1 <- 0
 termino2 <- 1
 while (termino1 < 10000) {
-	print(termino1)
-	termino3 <- termino1 + termino2
+  print(termino1)
+  termino3 <- termino1 + termino2
   termino1 <- termino2
   termino2 <- termino3
 }
 ```
 
-## Solución Ejercicio 8
+## Ejercicio 8
 
 Observar que:  
 
@@ -220,18 +229,14 @@ Observar que:
 - en caso de que se cumplan las condiciones, se imprime la combinación, y se pasa a la siguiente iteración.
 
 ```{r}
-# PROGRAMA: "Lista de posibles combinaciones" ----------------------------
+# PROGRAMA: "Lista de posibles combinaciones"
 combinacion <- 100
 
 while (combinacion <= 800) {
-    if (combinacion %% 11 != 0 || combinacion %% 8 == 0) {
-        combinacion <- combinacion + 1
-        next
-    }
-    
+  if (combinacion %% 11 == 0 && combinacion %% 8 != 0) {
     print(combinacion)
-    combinacion <- combinacion + 1
+  }
+  combinacion <- combinacion + 1
 }
-
 ```
 

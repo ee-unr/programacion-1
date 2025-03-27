@@ -18,11 +18,11 @@ Escribir un programa en R para leer tres números y determinar cuál es el mayor
 
 ## Ejercicio 3
 
-Una fábrica organiza a sus operarios en tres turnos de trabajo rotativos: mañana, tarde y noche. Los turnos mañana y tarde se pagan \$400 la hora, mientras que el turno noche \$600. Además, los domingos se paga un adicional de \$100 la hora. Escribir un programa en R que permita calcular cuánto se le debe pagar a un operario por un día de trabajo, dados el turno, el día de la semana y la cantidad de horas trabajadas. Los turnos son identificados mediante los caracteres `M`, `T` y `N`; los días de semana mediante las primeras tres letras (`DOM`, `LUN`, `MAR`, `MIE`, `JUE`, `VIE`, `SAB`).
+Una fábrica organiza a sus operarios en tres turnos de trabajo rotativos: mañana, tarde y noche. Los turnos mañana y tarde se pagan \$4000 la hora, mientras que en el turno noche se paga un adicional de \$2000. Además, los domingos se paga un adicional de \$1000 la hora. Escribir un programa en R que permita calcular cuánto se le debe pagar a un operario por un día de trabajo, dados el turno, el día de la semana y la cantidad de horas trabajadas. Los turnos son identificados mediante los caracteres `"M"`, `"T"` y `"N"`; los días de semana mediante las primeras tres letras (`"DOM"`, `"LUN"`, `"MAR"`, `"MIE"`, `"JUE"`, `"VIE"`, `"SAB"`).
 
 ## Ejercicio 4
 
-Escribir un programa en R para convertir un valor de temperatura expresado en grados Celsius a su equivalente en grados Farenheit y viceversa. El problema debe leer la magnitud a convertir en la variable numérica `temp` y el tipo de conversión en la variable caracter `modo`, que puede tomar los valores "`C a F`" o "`F a C`".
+Escribir un programa en R para convertir un valor de temperatura expresado en grados Celsius a su equivalente en grados Farenheit y viceversa. El problema debe leer la magnitud a convertir en la variable numérica `temp` y el tipo de conversión en la variable caracter `modo`, que puede tomar los valores `"C a F"` o `"F a C"`.
 
 ## Ejercicio 5
 
