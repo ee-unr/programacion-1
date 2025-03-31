@@ -1,0 +1,11 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Unidad 3. Descomposición algorítmica
+
+::: {.presentacion-capitulo data-latex=""}
+COMPLETAR
+
+Principios de descomposición y refinamiento sucesivo. Creación de funciones en R. Paso de parámetros y ámbito de variables. Transparencia referencial y documentación de funciones.
+:::
