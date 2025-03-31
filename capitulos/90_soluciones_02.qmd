@@ -162,6 +162,8 @@ for (i in seq(1, 2 * n - 1, 2)) {
 cat("El producto de los primeros", n, "números naturales impares es", producto)
 ```
 
+La función `seq` crea un vector con una secuencia numérica. El formato con el que está utilizada aquí es `seq(valor_inicial, valor_final, intervalo)`, por lo que creará un vector con los números impares (dado que el intervalo es 2, y comienza con un número impar) empezando desde `1` hasta `2 * n - 1`.
+
 **d.** 
 
 ```{r}
@@ -238,5 +240,43 @@ while (combinacion <= 800) {
   }
   combinacion <- combinacion + 1
 }
+```
+
+## Ejercicio 9
+
+Al final del primer año habrá:
+
+1000 + 1000 * 0.02 + 50 = 1070 habitantes.
+
+Al final del 2º año habrá:
+1070 + 1070 * 0.02 + 50 => 1141 habitantes (*recordar que el número de habitantes es un entero*)
+
+Al final del tercer año habrá:
+1141 + 1141 * 0.02 + 50 => 1213
+
+Se necesitarán 3 años. 
+
+Haciendo la solución para el problema de forma más general:
+
+```{r}
+# Parámetros a definir
+p0 <- 1000
+p.objetivo <- 1200
+tasa <- 2 # La expresamos en porcentaje
+inmigrantes <- 50
+
+# Programa
+año <- 0
+poblacion <- p0
+while (poblacion < p.objetivo) {
+  poblacion <- floor(poblacion + poblacion * tasa/100 + inmigrantes)
+  año <- año + 1
+}
+cat("Con una población inicial de", p0, "habitantes, una tasa de crecimiento anual del",
+    tasa, "% \ny", inmigrantes, "nuevos habitantes anuales, se necesitarán",
+    año, "años para alcanzar una población de", p.objetivo, "habitantes.", 
+    "\nLuego del año", año, ", el pueblo contará con una población de", 
+    poblacion, "habitantes. \n")
+
 ```
 

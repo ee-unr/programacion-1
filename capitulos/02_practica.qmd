@@ -2,9 +2,7 @@
 number-sections: false
 ---
 
-```{=latex}
 \thispagestyle{primerapagina}
-```
 
 # Práctica de la Unidad 2
 
@@ -45,10 +43,18 @@ En el siglo XIII el matemático italiano Leonardo Fibonacci ideó una secuencia 
 
 Se tiene una caja fuerte que, para poder abrirla, se desea crear una lista con todas las combinaciones posibles. Se sabe que:
 
-- La combinación tiene 3 cifras.
-- La combinación es múltiplo de 11.
-- La combinación no es mayor que 800.
-- La combinación no es múltiplo de 8.
-- La combinación no comienza con 0.
+-   La combinación tiene 3 cifras.
+-   La combinación es múltiplo de 11.
+-   La combinación no es mayor que 800.
+-   La combinación no es múltiplo de 8.
+-   La combinación no comienza con 0.
 
 Escribir un programa en R que permita imprimir una lista con todas las combinaciones posibles bajo las condiciones anteriores.
+
+## Ejercicio 9
+
+En un pequeño pueblo en expansión, la población `p0` es igual a 1000 al inicio del año. La población aumenta regularmente un 2% anual. Además, 50 nuevos habitantes se mudan al pueblo cada año. 
+
+a.  ¿Cuántos años tienen que transcurrir para que el pueblo alcance una población mayor o igual a 1200 habitantes?
+
+b.  Escribir un programa en R que permita cambiar los parámetros del problema (la población inicial, población objetivo, tasa de crecimiento anual y cantidad de habitantes que inmigran al pueblo), con el objetivo de calcular la cantidad de años necesarios.  El programa debe devolver una descripción de la situación del problema, y cuántos años llevaría. 
