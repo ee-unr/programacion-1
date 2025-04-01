@@ -53,8 +53,12 @@ Escribir un programa en R que permita imprimir una lista con todas las combinaci
 
 ## Ejercicio 9
 
-En un pequeño pueblo en expansión, la población `p0` es igual a 1000 al inicio del año. La población aumenta regularmente un 2% anual. Además, 50 nuevos habitantes se mudan al pueblo cada año. 
+En un pequeño pueblo en expansión, la población es igual a 1000 al inicio del año. La población aumenta regularmente un 2% anual. Además, 50 nuevos habitantes se mudan al pueblo cada año. 
 
-a.  ¿Cuántos años tienen que transcurrir para que el pueblo alcance una población mayor o igual a 1200 habitantes?
+a. Al finalizar el año, ¿cuál es el tamaño de la población? Expresar una fómula general usando la simbología `po` para el valor inicial de la población (1000), `tasa` para el porcentaje de aumento anual (2) e `inmigrantes` para la cantidad de nuevos habitantes que llegan por año (50). 
 
-b.  Escribir un programa en R que permita cambiar los parámetros del problema (la población inicial, población objetivo, tasa de crecimiento anual y cantidad de habitantes que inmigran al pueblo), con el objetivo de calcular la cantidad de años necesarios.  El programa debe devolver una descripción de la situación del problema, y cuántos años llevaría. 
+b.  ¿Cuántos años tienen que transcurrir para que el pueblo alcance una población mayor o igual a 1200 habitantes? Realice la cuenta para cada año, tomando la parte entera del resultado en cada oportunidad, en el caso de que el resultado tenga decimales.
+
+c.  Escribir un programa en R que permita responder la pregunta del punto anterior para este caso y para cualquier otro, en el que cambien los parámetros del problema (la población inicial, población objetivo, tasa de crecimiento anual y cantidad de habitantes que inmigran al pueblo). El programa debe terminar emitiendo una descripción de la situación del problema y cuántos años deben transcurrir para llegar a la población objetivo.
+
+d. Repetir el cálculo para la situación en la que la población inicialmente es de 10000 habitantes, hay un crecimiento anual del 3%, se añaden 100 inmigrantes por año y se desea saber cuántos años llevará superar los 50000 habitantes.

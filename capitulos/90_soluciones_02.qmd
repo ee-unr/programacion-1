@@ -244,39 +244,79 @@ while (combinacion <= 800) {
 
 ## Ejercicio 9
 
-Al final del primer año habrá:
+a. Al final del primer año, la población será igual a:
 
-1000 + 1000 * 0.02 + 50 = 1070 habitantes.
+   $$
+   p0 + p0 \times \frac{tasa}{100} + inmigrantes = 1000 + 1000 * 0.02 + 50 = 1070
+   $$
 
-Al final del 2º año habrá:
-1070 + 1070 * 0.02 + 50 => 1141 habitantes (*recordar que el número de habitantes es un entero*)
+b.  Al final del 2º año, la población será:
 
-Al final del tercer año habrá:
-1141 + 1141 * 0.02 + 50 => 1213
+    $$
+    p0 + p0 \times \frac{tasa}{100} + inmigrantes = 1070 + 1070 * 0.02 + 50 = 1141.4 \cong 1141
+    $$
+    *Recordar que el número de habitantes es un entero, por lo cual tomamos la parte entera.*
+    
+    Al final del tercer año:
+    
+    $$
+    p0 + p0 \times \frac{tasa}{100} + inmigrantes = 1141 + 1141 * 0.02 + 50 = 1213.82 \cong 1213
+    $$
+    
+    Se necesitarán 3 años.
 
-Se necesitarán 3 años. 
-
-Haciendo la solución para el problema de forma más general:
+c. Haciendo la solución para el problema de forma más general:
 
 ```{r}
 # Parámetros a definir
 p0 <- 1000
-p.objetivo <- 1200
+p_objetivo <- 1200
 tasa <- 2 # La expresamos en porcentaje
 inmigrantes <- 50
 
 # Programa
 año <- 0
 poblacion <- p0
-while (poblacion < p.objetivo) {
-  poblacion <- floor(poblacion + poblacion * tasa/100 + inmigrantes)
+while (poblacion < p_objetivo) {
+  # Aplicamos la fórmula y nos quedamos con la parte entera del resultado
+  poblacion <- floor(poblacion + poblacion * tasa / 100 + inmigrantes)
+  # Contamos un año más
   año <- año + 1
 }
-cat("Con una población inicial de", p0, "habitantes, una tasa de crecimiento anual del",
-    tasa, "% \ny", inmigrantes, "nuevos habitantes anuales, se necesitarán",
-    año, "años para alcanzar una población de", p.objetivo, "habitantes.", 
-    "\nLuego del año", año, ", el pueblo contará con una población de", 
-    poblacion, "habitantes. \n")
-
+cat(
+  " Con una población inicial de", p0, 
+  "habitantes, una tasa de crecimiento anual del\n",
+  tasa, "% y", inmigrantes, "nuevos habitantes anuales, se necesitarán",
+  año, "años para alcanzar\n una población de", p_objetivo, 
+  "habitantes. Luego del año", año, "el pueblo contará con una\n población de", 
+  poblacion, "habitantes."
+)
 ```
 
+d. Cambiamos los valores de las variables y realizamos el cálculo nuevamente:
+
+```{r}
+# Parámetros a definir
+p0 <- 10000
+p_objetivo <- 50000
+tasa <- 3 # La expresamos en porcentaje
+inmigrantes <- 100
+
+# Programa
+año <- 0
+poblacion <- p0
+while (poblacion < p_objetivo) {
+  # Aplicamos la fórmula y nos quedamos con la parte entera del resultado
+  poblacion <- floor(poblacion + poblacion * tasa / 100 + inmigrantes)
+  # Contamos un año más
+  año <- año + 1
+}
+cat(
+  " Con una población inicial de", p0, 
+  "habitantes, una tasa de crecimiento anual del\n",
+  tasa, "% y", inmigrantes, "nuevos habitantes anuales, se necesitarán",
+  año, "años para alcanzar\n una población de", p_objetivo, 
+  "habitantes. Luego del año", año, "el pueblo contará con una\n población de", 
+  poblacion, "habitantes."
+)
+```
