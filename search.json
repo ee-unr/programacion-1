@@ -761,9 +761,9 @@
   {
     "objectID": "capitulos/02_practica.html",
     "href": "capitulos/02_practica.html",
-    "title": "11  Práctica de la Unidad 2",
+    "title": "Práctica de la Unidad 2",
     "section": "",
-    "text": "11.1 Ejercicio 1\nEnunciado Ejercicio 1…\nVer Solución\n\nfor (i in 1:10) {\n  print(i)\n}",
+    "text": "Ejercicio 1\nEscribir un programa en R para determinar si un número entero dado es par o impar.",
     "crumbs": [
       "Unidad 2. Estructuras de control",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Práctica de la Unidad 2</span>"
@@ -772,9 +772,86 @@
   {
     "objectID": "capitulos/02_practica.html#ejercicio-2",
     "href": "capitulos/02_practica.html#ejercicio-2",
-    "title": "11  Práctica de la Unidad 2",
-    "section": "11.2 Ejercicio 2",
-    "text": "11.2 Ejercicio 2\nEnunciado Ejercicio 2…\n\n\n\nVer Solución\n\nfor (i in 1:10) {\n  print(i)\n}",
+    "title": "Práctica de la Unidad 2",
+    "section": "Ejercicio 2",
+    "text": "Ejercicio 2\nEscribir un programa en R para leer tres números y determinar cuál es el mayor.",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Práctica de la Unidad 2</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_practica.html#ejercicio-3",
+    "href": "capitulos/02_practica.html#ejercicio-3",
+    "title": "Práctica de la Unidad 2",
+    "section": "Ejercicio 3",
+    "text": "Ejercicio 3\nUna fábrica organiza a sus operarios en tres turnos de trabajo rotativos: mañana, tarde y noche. Los turnos mañana y tarde se pagan $4000 la hora, mientras que en el turno noche se paga un adicional de $2000. Además, los domingos se paga un adicional de $1000 la hora. Escribir un programa en R que permita calcular cuánto se le debe pagar a un operario por un día de trabajo, dados el turno, el día de la semana y la cantidad de horas trabajadas. Los turnos son identificados mediante los caracteres \"M\", \"T\" y \"N\"; los días de semana mediante las primeras tres letras (\"DOM\", \"LUN\", \"MAR\", \"MIE\", \"JUE\", \"VIE\", \"SAB\").",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Práctica de la Unidad 2</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_practica.html#ejercicio-4",
+    "href": "capitulos/02_practica.html#ejercicio-4",
+    "title": "Práctica de la Unidad 2",
+    "section": "Ejercicio 4",
+    "text": "Ejercicio 4\nEscribir un programa en R para convertir un valor de temperatura expresado en grados Celsius a su equivalente en grados Farenheit y viceversa. El problema debe leer la magnitud a convertir en la variable numérica temp y el tipo de conversión en la variable caracter modo, que puede tomar los valores \"C a F\" o \"F a C\".",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Práctica de la Unidad 2</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_practica.html#ejercicio-5",
+    "href": "capitulos/02_practica.html#ejercicio-5",
+    "title": "Práctica de la Unidad 2",
+    "section": "Ejercicio 5",
+    "text": "Ejercicio 5\nEscribir un programa en R que permita calcular:\n\nla suma de los n primeros números naturales.\nla suma de los cuadrados de los n primeros números naturales.\nel producto de los primeros n números naturales impares.\nla suma de los cubos de los n primeros números naturales pares.",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Práctica de la Unidad 2</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_practica.html#ejercicio-6",
+    "href": "capitulos/02_practica.html#ejercicio-6",
+    "title": "Práctica de la Unidad 2",
+    "section": "Ejercicio 6",
+    "text": "Ejercicio 6\nEscribir un programa en R que permita calcular el factorial de un número natural n, n!. Realizarlo de dos formas, empleando estructuras iterativas diferentes.",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Práctica de la Unidad 2</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_practica.html#ejercicio-7",
+    "href": "capitulos/02_practica.html#ejercicio-7",
+    "title": "Práctica de la Unidad 2",
+    "section": "Ejercicio 7",
+    "text": "Ejercicio 7\nEn el siglo XIII el matemático italiano Leonardo Fibonacci ideó una secuencia matemática que lleva su nombre, intentando explicar el crecimiento geométrico de una población de conejos. Los primeros dos términos de la secuencia son 0 y 1, y cada uno de los subsecuentes términos es la suma de los dos anteriores. De esta forma, el inicio de la secuencia de Fibonacci es: 0 - 1 - 1 - 2 - 3 - 5 - 8 - … . Escribir un programa en R para mostrar todos los términos de la secuencia de Fibonacci menores que 10000.",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Práctica de la Unidad 2</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_practica.html#ejercicio-8",
+    "href": "capitulos/02_practica.html#ejercicio-8",
+    "title": "Práctica de la Unidad 2",
+    "section": "Ejercicio 8",
+    "text": "Ejercicio 8\nSe tiene una caja fuerte que, para poder abrirla, se desea crear una lista con todas las combinaciones posibles. Se sabe que:\n\nLa combinación tiene 3 cifras.\nLa combinación es múltiplo de 11.\nLa combinación no es mayor que 800.\nLa combinación no es múltiplo de 8.\nLa combinación no comienza con 0.\n\nEscribir un programa en R que permita imprimir una lista con todas las combinaciones posibles bajo las condiciones anteriores.",
+    "crumbs": [
+      "Unidad 2. Estructuras de control",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Práctica de la Unidad 2</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/02_practica.html#ejercicio-9",
+    "href": "capitulos/02_practica.html#ejercicio-9",
+    "title": "Práctica de la Unidad 2",
+    "section": "Ejercicio 9",
+    "text": "Ejercicio 9\nEn un pequeño pueblo en expansión, la población es igual a 1000 al inicio del año. La población aumenta regularmente un 2% anual. Además, 50 nuevos habitantes se mudan al pueblo cada año.\n\nAl finalizar el año, ¿cuál es el tamaño de la población? Expresar una fómula general usando la simbología po para el valor inicial de la población (1000), tasa para el porcentaje de aumento anual (2) e inmigrantes para la cantidad de nuevos habitantes que llegan por año (50).\n¿Cuántos años tienen que transcurrir para que el pueblo alcance una población mayor o igual a 1200 habitantes? Realice la cuenta para cada año, tomando la parte entera del resultado en cada oportunidad, en el caso de que el resultado tenga decimales.\nEscribir un programa en R que permita responder la pregunta del punto anterior para este caso y para cualquier otro, en el que cambien los parámetros del problema (la población inicial, población objetivo, tasa de crecimiento anual y cantidad de habitantes que inmigran al pueblo). El programa debe terminar emitiendo una descripción de la situación del problema y cuántos años deben transcurrir para llegar a la población objetivo.\nRepetir el cálculo para la situación en la que la población inicialmente es de 10000 habitantes, hay un crecimiento anual del 3%, se añaden 100 inmigrantes por año y se desea saber cuántos años llevará superar los 50000 habitantes.",
     "crumbs": [
       "Unidad 2. Estructuras de control",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Práctica de la Unidad 2</span>"
@@ -931,6 +1008,105 @@
     "crumbs": [
       "Soluciones de la Práctica",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_02.html",
+    "href": "capitulos/90_soluciones_02.html",
+    "title": "Soluciones de la Práctica de la Unidad 02",
+    "section": "",
+    "text": "Ejercicio 1\n# PROGRAMA: \"Paridad de un número\" \nx &lt;- 3\nif (x %% 2 == 0) {\n    cat(x, \"es par\")\n} else {\n    cat(x, \"es impar\")\n}\n\n3 es impar\nEn el código anterior, realizamos una asignación explícita de un valor en la variable (x &lt;- 3). Esto nos permite hacer un uso más interactivo del código, que puede ser útil para probar si anda o cuando vamos corriendo por partes para detectar posibles errores.\nOtra opción se muestra en el siguiente ejemplo. En lugar de asignarle un valor a x como parte del script, indicamos que cuando el código sea ejecutado, el usuario deberá ingresar un valor con el teclado. Para esto empleamos la función scan(). Su argumento n = 1 significa que el usuario sólo deberá ingresar un número, el cual será asignado a la variable x. Teniendo un archivo de código con el programa como se muestra a continuación, podemos ejecutarlo de forma completa mediante el botón Source de RStudio. Al llegar a la evaluación de scan(), deberemos ingresar el valor que deseemos en la consola y dar Enter para que la ejecución continúe.\n# PROGRAMA: \"Paridad de un número\"\ncat(\"Ingrese un número entero: \")\nx &lt;- scan(n = 1)\nif (x %% 2 == 0) {\n    cat(x, \"es par\")\n} else {\n    cat(x, \"es impar\")\n}",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 02</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_02.html#ejercicio-2",
+    "href": "capitulos/90_soluciones_02.html#ejercicio-2",
+    "title": "Soluciones de la Práctica de la Unidad 02",
+    "section": "Ejercicio 2",
+    "text": "Ejercicio 2\n\n# PROGRAMA: \"Mayor de tres números\"\nx &lt;- 5\ny &lt;- 5\nz &lt;- 7\nif (x &gt;= y && x &gt;= z) {\n    cat(\"El mayor es\", x)\n} else if (y &gt;= z) {\n    cat(\"El mayor es\", y)\n} else {\n    cat(\"El mayor es\", z)\n}\n\nEl mayor es 7\n\n\nObservación: se llega a la segunda evaluación lógica cuando y es mayor a x, o cuando z es mayor que x, o cuando ambos son mayores a x, por lo tanto sólo es necesario saber cuál de ellos es el mayor.",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 02</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_02.html#ejercicio-3",
+    "href": "capitulos/90_soluciones_02.html#ejercicio-3",
+    "title": "Soluciones de la Práctica de la Unidad 02",
+    "section": "Ejercicio 3",
+    "text": "Ejercicio 3\n\n# PROGRAMA: \"Determinar salario\"\n\n# Valores fijados\nvalor_hora &lt;- 4000\nvalor_adicional_noche &lt;- 2000\nvalor_adicional_domingo &lt;- 1000\n\n# Valores para un cálculo particular\nhoras &lt;- 8\ndia &lt;- \"MAR\"\nturno &lt;- \"T\"\n\n# Cálculo para el pago de ese día a ese empleado\nsalario &lt;- horas * valor_hora\nif (turno == \"N\") {\n    salario &lt;- salario + horas * valor_adicional_noche\n}\nif (turno == \"DOM\") {\n    salario &lt;- salario + horas * valor_adicional_domingo\n}\ncat(\"El salario que se debe abonar es\", salario)\n\nEl salario que se debe abonar es 32000",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 02</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_02.html#ejercicio-4",
+    "href": "capitulos/90_soluciones_02.html#ejercicio-4",
+    "title": "Soluciones de la Práctica de la Unidad 02",
+    "section": "Ejercicio 4",
+    "text": "Ejercicio 4\n\n# PROGRAMA: \"Convertir temperatura\"\ntemp &lt;- 20\nmodo &lt;- \"C a F\"\nif (modo == \"C a F\") {\n    temp_nuevo &lt;- temp * 9 / 5 + 32\n    cat(temp, \"ºC equivale a\", temp_nuevo, \"ºF\")\n} else {\n    temp_nuevo &lt;- (temp - 32) * 5 / 9\n    cat(temp, \"ºF equivale a\", temp_nuevo, \"ºC\")\n}\n\n20 ºC equivale a 68 ºF",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 02</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_02.html#ejercicio-5",
+    "href": "capitulos/90_soluciones_02.html#ejercicio-5",
+    "title": "Soluciones de la Práctica de la Unidad 02",
+    "section": "Ejercicio 5",
+    "text": "Ejercicio 5\na.\n\n# PROGRAMA: \"Suma de los n primeros números naturales\"\nn &lt;- 10\nsuma &lt;- 0\nfor (i in 1:n) {\n    suma &lt;- suma + i\n}\ncat(\"La suma de los primeros\", n, \"números naturales es\", suma)\n\nLa suma de los primeros 10 números naturales es 55\n\n\nb.\n\n# PROGRAMA: \"Suma de los cuadrados de los n primeros números naturales\" -----\nn &lt;- 10\nsuma &lt;- 0\nfor (i in 1:n) {\n    suma &lt;- suma + i^2\n}\ncat(\"La suma de los primeros\", n, \"números naturales al cuadrado es\", suma)\n\nLa suma de los primeros 10 números naturales al cuadrado es 385\n\n\nc.\nSabemos el número de iteraciones, n, por eso usamos for. Por ejemplo, para n = 4, los primeros impares son:\n1 = 2 * 1 - 1\n3 = 2 * 2 - 1\n5 = 2 * 3 - 1\n7 = 2 * 4 - 1\nDe forma general, los primeros 4 impares son 2 * i - 1, con i = 1, 2, 3, 4.\n\n# PROGRAMA: \"Producto de los n primeros números naturales impares\" ----------\nn &lt;- 10\nproducto &lt;- 1\nfor (i in 1:n) {\n    producto &lt;- producto * (2 * i - 1)\n}\ncat(\"El producto de los primeros\", n, \"números naturales impares es\", producto)\n\nEl producto de los primeros 10 números naturales impares es 654729075\n\n\nOtra forma:\n\n# PROGRAMA: \"Producto de los n primeros números naturales impares\" ----------\nn &lt;- 10\nproducto &lt;- 1\nfor (i in seq(1, 2 * n - 1, 2)) {\n    producto &lt;- producto * i\n}\ncat(\"El producto de los primeros\", n, \"números naturales impares es\", producto)\n\nEl producto de los primeros 10 números naturales impares es 654729075\n\n\nLa función seq crea un vector con una secuencia numérica. El formato con el que está utilizada aquí es seq(valor_inicial, valor_final, intervalo), por lo que creará un vector con los números impares (dado que el intervalo es 2, y comienza con un número impar) empezando desde 1 hasta 2 * n - 1.\nd.\n\n# PROGRAMA: \"Suma de los cubos de los n primeros números naturales pares\"\nn &lt;- 5\nsuma &lt;- 0\nfor (i in 1:n) {\n    suma &lt;- suma + (2 * i)^3\n}\ncat(\"La suma de los cubos de los primeros\", n, \"números naturales pares es\", suma)\n\nLa suma de los cubos de los primeros 5 números naturales pares es 1800",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 02</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_02.html#ejercicio-6",
+    "href": "capitulos/90_soluciones_02.html#ejercicio-6",
+    "title": "Soluciones de la Práctica de la Unidad 02",
+    "section": "Ejercicio 6",
+    "text": "Ejercicio 6\nUtilizando estructura de control “PARA”\n\n# PROGRAMA: \"Calcular el factorial de n\"\nn &lt;- 0\nfactorial &lt;- 1\nfor (i in 1:n) {\n    factorial &lt;- factorial * i\n}\ncat(\"El factorial de\", n, \"es\", factorial)\n\nEl factorial de 0 es 0\n\n\nUtilizando estructura de control “MIENTRAS QUE”\n\n# PROGRAMA: \"Calcular el factorial de n\"\nn &lt;- 0\nfactorial &lt;- 1\ni &lt;- 0\nwhile(i &lt; n) {\n    i &lt;- i + 1\n  factorial &lt;- factorial * i\n}\ncat(\"El factorial de\", n, \"es\", factorial)\n\nEl factorial de 0 es 1\n\n\nIMPORTANTE. Notar que la primera opción no arroja de forma correcta el factorial de 0, que por definición es igual a 1. Se podría agregar alguna estructura condicional para esta situación. La segunda opción, en cambio, funciona también para n &lt;- 0.",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 02</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_02.html#ejercicio-7",
+    "href": "capitulos/90_soluciones_02.html#ejercicio-7",
+    "title": "Soluciones de la Práctica de la Unidad 02",
+    "section": "Ejercicio 7",
+    "text": "Ejercicio 7\n\n# PROGRAMA: \"Secuencia de Fibonacci\"\ntermino1 &lt;- 0\ntermino2 &lt;- 1\nwhile (termino1 &lt; 10000) {\n  print(termino1)\n  termino3 &lt;- termino1 + termino2\n  termino1 &lt;- termino2\n  termino2 &lt;- termino3\n}\n\n[1] 0\n[1] 1\n[1] 1\n[1] 2\n[1] 3\n[1] 5\n[1] 8\n[1] 13\n[1] 21\n[1] 34\n[1] 55\n[1] 89\n[1] 144\n[1] 233\n[1] 377\n[1] 610\n[1] 987\n[1] 1597\n[1] 2584\n[1] 4181\n[1] 6765",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 02</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_02.html#ejercicio-8",
+    "href": "capitulos/90_soluciones_02.html#ejercicio-8",
+    "title": "Soluciones de la Práctica de la Unidad 02",
+    "section": "Ejercicio 8",
+    "text": "Ejercicio 8\nObservar que:\n\nel valor inicial es el 100 ya que la combinación no comienza por 0.\nel while se detiene cuando la combinación es mayor a 800.\nse verifican las condiciones de multiplicidad, y si no se cumplen, se pasa directamente a la siguiente iteración.\nen caso de que se cumplan las condiciones, se imprime la combinación, y se pasa a la siguiente iteración.\n\n\n# PROGRAMA: \"Lista de posibles combinaciones\"\ncombinacion &lt;- 100\n\nwhile (combinacion &lt;= 800) {\n  if (combinacion %% 11 == 0 && combinacion %% 8 != 0) {\n    print(combinacion)\n  }\n  combinacion &lt;- combinacion + 1\n}\n\n[1] 110\n[1] 121\n[1] 132\n[1] 143\n[1] 154\n[1] 165\n[1] 187\n[1] 198\n[1] 209\n[1] 220\n[1] 231\n[1] 242\n[1] 253\n[1] 275\n[1] 286\n[1] 297\n[1] 308\n[1] 319\n[1] 330\n[1] 341\n[1] 363\n[1] 374\n[1] 385\n[1] 396\n[1] 407\n[1] 418\n[1] 429\n[1] 451\n[1] 462\n[1] 473\n[1] 484\n[1] 495\n[1] 506\n[1] 517\n[1] 539\n[1] 550\n[1] 561\n[1] 572\n[1] 583\n[1] 594\n[1] 605\n[1] 627\n[1] 638\n[1] 649\n[1] 660\n[1] 671\n[1] 682\n[1] 693\n[1] 715\n[1] 726\n[1] 737\n[1] 748\n[1] 759\n[1] 770\n[1] 781",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 02</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_02.html#ejercicio-9",
+    "href": "capitulos/90_soluciones_02.html#ejercicio-9",
+    "title": "Soluciones de la Práctica de la Unidad 02",
+    "section": "Ejercicio 9",
+    "text": "Ejercicio 9\n\nAl final del primer año, la población será igual a:\n\\[\np0 + p0 \\times \\frac{tasa}{100} + inmigrantes = 1000 + 1000 * 0.02 + 50 = 1070\n\\]\nAl final del 2º año, la población será:\n\\[\np0 + p0 \\times \\frac{tasa}{100} + inmigrantes = 1070 + 1070 * 0.02 + 50 = 1141.4 \\cong 1141\n\\] Recordar que el número de habitantes es un entero, por lo cual tomamos la parte entera.\nAl final del tercer año:\n\\[\np0 + p0 \\times \\frac{tasa}{100} + inmigrantes = 1141 + 1141 * 0.02 + 50 = 1213.82 \\cong 1213\n\\]\nSe necesitarán 3 años.\nHaciendo la solución para el problema de forma más general:\n\n\n# Parámetros a definir\np0 &lt;- 1000\np_objetivo &lt;- 1200\ntasa &lt;- 2 # La expresamos en porcentaje\ninmigrantes &lt;- 50\n\n# Programa\naño &lt;- 0\npoblacion &lt;- p0\nwhile (poblacion &lt; p_objetivo) {\n  # Aplicamos la fórmula y nos quedamos con la parte entera del resultado\n  poblacion &lt;- floor(poblacion + poblacion * tasa / 100 + inmigrantes)\n  # Contamos un año más\n  año &lt;- año + 1\n}\ncat(\n  \" Con una población inicial de\", p0, \n  \"habitantes, una tasa de crecimiento anual del\\n\",\n  tasa, \"% y\", inmigrantes, \"nuevos habitantes anuales, se necesitarán\",\n  año, \"años para alcanzar\\n una población de\", p_objetivo, \n  \"habitantes. Luego del año\", año, \"el pueblo contará con una\\n población de\", \n  poblacion, \"habitantes.\"\n)\n\n Con una población inicial de 1000 habitantes, una tasa de crecimiento anual del\n 2 % y 50 nuevos habitantes anuales, se necesitarán 3 años para alcanzar\n una población de 1200 habitantes. Luego del año 3 el pueblo contará con una\n población de 1213 habitantes.\n\n\n\nCambiamos los valores de las variables y realizamos el cálculo nuevamente:\n\n\n# Parámetros a definir\np0 &lt;- 10000\np_objetivo &lt;- 50000\ntasa &lt;- 3 # La expresamos en porcentaje\ninmigrantes &lt;- 100\n\n# Programa\naño &lt;- 0\npoblacion &lt;- p0\nwhile (poblacion &lt; p_objetivo) {\n  # Aplicamos la fórmula y nos quedamos con la parte entera del resultado\n  poblacion &lt;- floor(poblacion + poblacion * tasa / 100 + inmigrantes)\n  # Contamos un año más\n  año &lt;- año + 1\n}\ncat(\n  \" Con una población inicial de\", p0, \n  \"habitantes, una tasa de crecimiento anual del\\n\",\n  tasa, \"% y\", inmigrantes, \"nuevos habitantes anuales, se necesitarán\",\n  año, \"años para alcanzar\\n una población de\", p_objetivo, \n  \"habitantes. Luego del año\", año, \"el pueblo contará con una\\n población de\", \n  poblacion, \"habitantes.\"\n)\n\n Con una población inicial de 10000 habitantes, una tasa de crecimiento anual del\n 3 % y 100 nuevos habitantes anuales, se necesitarán 47 años para alcanzar\n una población de 50000 habitantes. Luego del año 47 el pueblo contará con una\n población de 50116 habitantes.",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 02</span>"
     ]
   },
   {

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Soluciones de la Práctica de la Unidad 1 – Programación 1</title>
+<title>Soluciones de la Práctica de la Unidad 02 – Programación 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../capitulos/90_soluciones_02.html" rel="next">
-<link href="../capitulos/90.html" rel="prev">
+<link href="../capitulos/99_bibliografia.html" rel="next">
+<link href="../capitulos/90_soluciones_01.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -105,6 +105,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../webexercises/webex.css">
 </head>
@@ -118,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/90.html">Soluciones de la Práctica</a></li><li class="breadcrumb-item"><a href="../capitulos/90_soluciones_01.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 1</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/90.html">Soluciones de la Práctica</a></li><li class="breadcrumb-item"><a href="../capitulos/90_soluciones_02.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 02</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -259,13 +288,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/90_soluciones_01.html" class="sidebar-item-text sidebar-link active">
+  <a href="../capitulos/90_soluciones_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/90_soluciones_02.html" class="sidebar-item-text sidebar-link">
+  <a href="../capitulos/90_soluciones_02.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 02</span></span></a>
   </div>
 </li>
@@ -307,19 +336,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ejercicio-7" id="toc-ejercicio-7" class="nav-link" data-scroll-target="#ejercicio-7">Ejercicio 7</a></li>
   <li><a href="#ejercicio-8" id="toc-ejercicio-8" class="nav-link" data-scroll-target="#ejercicio-8">Ejercicio 8</a></li>
   <li><a href="#ejercicio-9" id="toc-ejercicio-9" class="nav-link" data-scroll-target="#ejercicio-9">Ejercicio 9</a></li>
-  <li><a href="#ejercicio-10" id="toc-ejercicio-10" class="nav-link" data-scroll-target="#ejercicio-10">Ejercicio 10</a></li>
-  <li><a href="#ejercicio-11" id="toc-ejercicio-11" class="nav-link" data-scroll-target="#ejercicio-11">Ejercicio 11</a></li>
-  <li><a href="#ejercicio-12" id="toc-ejercicio-12" class="nav-link" data-scroll-target="#ejercicio-12">Ejercicio 12</a></li>
-  <li><a href="#ejercicio-13" id="toc-ejercicio-13" class="nav-link" data-scroll-target="#ejercicio-13">Ejercicio 13</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/90_soluciones_01.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/90_soluciones_01.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/90_soluciones_02.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/90_soluciones_02.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/90.html">Soluciones de la Práctica</a></li><li class="breadcrumb-item"><a href="../capitulos/90_soluciones_01.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 1</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/90.html">Soluciones de la Práctica</a></li><li class="breadcrumb-item"><a href="../capitulos/90_soluciones_02.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 02</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Soluciones de la Práctica de la Unidad 1</span></h1>
+<h1 class="title"><span class="chapter-title">Soluciones de la Práctica de la Unidad 02</span></h1>
 </div>
 
 
@@ -338,491 +363,403 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="ejercicio-1" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h2>
-<p>Para crear un nuevo script y guardarlo, podés seguir los ejemplos vistos en #sec-scripts. El contenido del script tiene que ser:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejercicio 1</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span> <span class="sc">+</span> <span class="dv">17</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="sc">*</span> <span class="dv">8</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">144</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PROGRAMA: "Paridad de un número" </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(x, <span class="st">"es par"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(x, <span class="st">"es impar"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3 es impar</code></pre>
+</div>
+</div>
+<p>En el código anterior, realizamos una asignación explícita de un valor en la variable (<code>x &lt;- 3</code>). Esto nos permite hacer un uso más interactivo del código, que puede ser útil para probar si anda o cuando vamos corriendo por partes para detectar posibles errores.</p>
+<p>Otra opción se muestra en el siguiente ejemplo. En lugar de asignarle un valor a <code>x</code> como parte del script, indicamos que cuando el código sea ejecutado, el usuario deberá ingresar un valor con el teclado. Para esto empleamos la función <code>scan()</code>. Su argumento <code>n = 1</code> significa que el usuario sólo deberá ingresar un número, el cual será asignado a la variable <code>x</code>. Teniendo un archivo de código con el programa como se muestra a continuación, podemos ejecutarlo de forma completa mediante el botón <code>Source</code> de RStudio. Al llegar a la evaluación de <code>scan()</code>, deberemos ingresar el valor que deseemos en la consola y dar Enter para que la ejecución continúe.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PROGRAMA: "Paridad de un número"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Ingrese un número entero: "</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">scan</span>(<span class="at">n =</span> <span class="dv">1</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(x, <span class="st">"es par"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(x, <span class="st">"es impar"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="ejercicio-2" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h2>
-<ol type="a">
-<li>Para acceder a la documentación de la función <code>round()</code>, se puede ejecutar en la consola de R:</li>
-</ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>?round</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>o</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(round)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="a">
-<li>Según la ayuda de R, la función <code>round()</code> tiene los siguientes argumentos:</li>
-</ol>
-<ul>
-<li><code>x</code>: El número o vector de números que se desea redondear.<br>
-</li>
-<li><code>digits</code>: El número de cifras decimales al que se desea redondear <code>x</code>. Puede ser positivo (para redondear decimales) o negativo (para redondear a múltiplos de 10).<br>
-</li>
-<li><code>...</code>: representa el uso opcional de otros argumentos, es algo que podemos ignorar por ahora.</li>
-</ul>
-<ol start="3" type="a">
-<li><ul>
-<li><strong>Obligatorio:</strong> <code>x</code>, ya que es el número a redondear.<br>
-</li>
-<li><strong>Opcional:</strong> <code>digits</code>, que por defecto es <code>0</code>, lo que significa que la función redondeará al número entero más cercano si no se especifica un valor distinto.</li>
-</ul></li>
-<li></li>
-</ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.14159</span>, <span class="at">digits =</span> <span class="dv">0</span>)  <span class="co"># Redondeo a 0 decimales → Resultado: 3</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PROGRAMA: "Mayor de tres números"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;=</span> y <span class="sc">&amp;&amp;</span> x <span class="sc">&gt;=</span> z) {</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"El mayor es"</span>, x)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (y <span class="sc">&gt;=</span> z) {</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"El mayor es"</span>, y)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"El mayor es"</span>, z)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.14159</span>, <span class="at">digits =</span> <span class="dv">1</span>)  <span class="co"># Redondeo a 1 decimal → Resultado: 3.1</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.1</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.14159</span>, <span class="at">digits =</span> <span class="dv">2</span>)  <span class="co"># Redondeo a 2 decimales → Resultado: 3.14</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.14</code></pre>
+<pre><code>El mayor es 7</code></pre>
 </div>
 </div>
-<ol start="5" type="a">
-<li></li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.14159</span>, <span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.14</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="at">x =</span> <span class="fl">3.14159</span>, <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.14</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">2</span>, <span class="at">x =</span> <span class="fl">3.14159</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.14</code></pre>
-</div>
-</div>
+<p>Observación: se llega a la segunda evaluación lógica cuando <code>y</code> es mayor a <code>x</code>, o cuando <code>z</code> es mayor que <code>x</code>, o cuando ambos son mayores a <code>x</code>, por lo tanto sólo es necesario saber cuál de ellos es el mayor.</p>
 </section>
 <section id="ejercicio-3" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="st">"Hola"</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="dv">5</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ol type="a">
-<li>Podemos verificar el tipo de cada objeto con la función <code>typeof()</code>:</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PROGRAMA: "Determinar salario"</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores fijados</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>valor_hora <span class="ot">&lt;-</span> <span class="dv">4000</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>valor_adicional_noche <span class="ot">&lt;-</span> <span class="dv">2000</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>valor_adicional_domingo <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores para un cálculo particular</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>horas <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>dia <span class="ot">&lt;-</span> <span class="st">"MAR"</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>turno <span class="ot">&lt;-</span> <span class="st">"T"</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo para el pago de ese día a ese empleado</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>salario <span class="ot">&lt;-</span> horas <span class="sc">*</span> valor_hora</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (turno <span class="sc">==</span> <span class="st">"N"</span>) {</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    salario <span class="ot">&lt;-</span> salario <span class="sc">+</span> horas <span class="sc">*</span> valor_adicional_noche</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (turno <span class="sc">==</span> <span class="st">"DOM"</span>) {</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    salario <span class="ot">&lt;-</span> salario <span class="sc">+</span> horas <span class="sc">*</span> valor_adicional_domingo</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"El salario que se debe abonar es"</span>, salario)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "double"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(y)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "character"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(z)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "double"</code></pre>
-</div>
-</div>
-<ol start="2" type="a">
-<li>Ejecutamos la siguiente instrucción:</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> x <span class="sc">*</span> <span class="dv">6</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Ahora, <code>z</code> almacenará el valor:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>z</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 60</code></pre>
-</div>
-</div>
-<ol start="3" type="a">
-<li>Obtenemos un error porque <code>x</code> es un número (<code>double</code>), mientras que <code>y</code> es un texto (<code>character</code>). En R, no es posible realizar operaciones matemáticas entre objetos de tipo diferente.</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">+</span> y</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in x + y: non-numeric argument to binary operator</code></pre>
+<pre><code>El salario que se debe abonar es 32000</code></pre>
 </div>
 </div>
 </section>
 <section id="ejercicio-4" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-4">Ejercicio 4</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"practica1_ambiente.RData"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Se incorporaron 6 objetos al ambiente:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Identificador</th>
-<th style="text-align: center;">Tipo de vector</th>
-<th style="text-align: center;">Valor</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><code>var1</code></td>
-<td style="text-align: center;"><em>logical</em></td>
-<td style="text-align: center;"><code>TRUE</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>var2</code></td>
-<td style="text-align: center;"><em>double</em></td>
-<td style="text-align: center;"><code>200.12</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>var3</code></td>
-<td style="text-align: center;"><em>character</em></td>
-<td style="text-align: center;"><code>"hola"</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>var4</code></td>
-<td style="text-align: center;"><em>character</em></td>
-<td style="text-align: center;"><code>"chau"</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>var5</code></td>
-<td style="text-align: center;"><em>integer</em></td>
-<td style="text-align: center;"><code>-49L</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>var6</code></td>
-<td style="text-align: center;"><em>character</em></td>
-<td style="text-align: center;"><code>"Hola"</code></td>
-</tr>
-</tbody>
-</table>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(var1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PROGRAMA: "Convertir temperatura"</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>modo <span class="ot">&lt;-</span> <span class="st">"C a F"</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (modo <span class="sc">==</span> <span class="st">"C a F"</span>) {</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    temp_nuevo <span class="ot">&lt;-</span> temp <span class="sc">*</span> <span class="dv">9</span> <span class="sc">/</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">32</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(temp, <span class="st">"ºC equivale a"</span>, temp_nuevo, <span class="st">"ºF"</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    temp_nuevo <span class="ot">&lt;-</span> (temp <span class="sc">-</span> <span class="dv">32</span>) <span class="sc">*</span> <span class="dv">5</span> <span class="sc">/</span> <span class="dv">9</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(temp, <span class="st">"ºF equivale a"</span>, temp_nuevo, <span class="st">"ºC"</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "logical"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(var2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "double"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(var3)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "character"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(var4)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "character"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(var5)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "integer"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(var6)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "character"</code></pre>
+<pre><code>20 ºC equivale a 68 ºF</code></pre>
 </div>
 </div>
 </section>
 <section id="ejercicio-5" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-5">Ejercicio 5</h2>
-<ol type="a">
-<li></li>
-</ol>
+<p><strong>a.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>var2 <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">||</span> var5 <span class="sc">&lt;</span> <span class="dv">0</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PROGRAMA: "Suma de los n primeros números naturales"</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>suma <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    suma <span class="ot">&lt;-</span> suma <span class="sc">+</span> i</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"La suma de los primeros"</span>, n, <span class="st">"números naturales es"</span>, suma)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
+<pre><code>La suma de los primeros 10 números naturales es 55</code></pre>
 </div>
 </div>
-<ol start="2" type="a">
-<li></li>
-</ol>
+<p><strong>b.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>var2 <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;&amp;</span> var5 <span class="sc">&lt;</span> <span class="dv">0</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PROGRAMA: "Suma de los cuadrados de los n primeros números naturales" -----</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>suma <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    suma <span class="ot">&lt;-</span> suma <span class="sc">+</span> i<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"La suma de los primeros"</span>, n, <span class="st">"números naturales al cuadrado es"</span>, suma)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
+<pre><code>La suma de los primeros 10 números naturales al cuadrado es 385</code></pre>
 </div>
 </div>
-<ol start="3" type="a">
-<li></li>
-</ol>
+<p><strong>c.</strong></p>
+<p>Sabemos el número de iteraciones, <code>n</code>, por eso usamos <code>for</code>. Por ejemplo, para <code>n = 4</code>, los primeros impares son:</p>
+<pre><code>1 = 2 * 1 - 1
+3 = 2 * 2 - 1
+5 = 2 * 3 - 1
+7 = 2 * 4 - 1</code></pre>
+<p>De forma general, los primeros 4 impares son <code>2 * i - 1</code>, con <code>i = 1, 2, 3, 4</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>var2 <span class="sc">%%</span> (var5 <span class="sc">+</span> <span class="dv">100</span>) <span class="sc">&lt;</span> <span class="dv">10</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PROGRAMA: "Producto de los n primeros números naturales impares" ----------</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>producto <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    producto <span class="ot">&lt;-</span> producto <span class="sc">*</span> (<span class="dv">2</span> <span class="sc">*</span> i <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"El producto de los primeros"</span>, n, <span class="st">"números naturales impares es"</span>, producto)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
+<pre><code>El producto de los primeros 10 números naturales impares es 654729075</code></pre>
 </div>
 </div>
-<ol start="4" type="a">
-<li>No son iguales porque uno tiene una letra mayúscula, “H” es un caracter distinto de “h” y por lo tanto son cadenas de texto diferentes.</li>
-</ol>
+<p>Otra forma:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>var3 <span class="sc">==</span> var6</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PROGRAMA: "Producto de los n primeros números naturales impares" ----------</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>producto <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">2</span> <span class="sc">*</span> n <span class="sc">-</span> <span class="dv">1</span>, <span class="dv">2</span>)) {</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    producto <span class="ot">&lt;-</span> producto <span class="sc">*</span> i</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"El producto de los primeros"</span>, n, <span class="st">"números naturales impares es"</span>, producto)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
+<pre><code>El producto de los primeros 10 números naturales impares es 654729075</code></pre>
+</div>
+</div>
+<p>La función <code>seq</code> crea un vector con una secuencia numérica. El formato con el que está utilizada aquí es <code>seq(valor_inicial, valor_final, intervalo)</code>, por lo que creará un vector con los números impares (dado que el intervalo es 2, y comienza con un número impar) empezando desde <code>1</code> hasta <code>2 * n - 1</code>.</p>
+<p><strong>d.</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PROGRAMA: "Suma de los cubos de los n primeros números naturales pares"</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>suma <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    suma <span class="ot">&lt;-</span> suma <span class="sc">+</span> (<span class="dv">2</span> <span class="sc">*</span> i)<span class="sc">^</span><span class="dv">3</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"La suma de los cubos de los primeros"</span>, n, <span class="st">"números naturales pares es"</span>, suma)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La suma de los cubos de los primeros 5 números naturales pares es 1800</code></pre>
 </div>
 </div>
 </section>
 <section id="ejercicio-6" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-6">Ejercicio 6</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 27%">
-<col style="width: 24%">
-<col style="width: 24%">
-<col style="width: 24%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;"><strong>Operación</strong></th>
-<th style="text-align: center;"><code>edad &lt;- 21</code>, <code>altura &lt;- 1.90</code></th>
-<th style="text-align: center;"><code>edad &lt;- 17</code> , <code>altura &lt;- 1.90</code></th>
-<th style="text-align: center;"><code>edad &lt;- 21</code>, <code>altura &lt;- 1.50</code></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><code>(edad &gt; 18) &amp;&amp; (altura &lt; 1.70)</code></td>
-<td style="text-align: center;"><code>FALSE</code></td>
-<td style="text-align: center;"><code>FALSE</code></td>
-<td style="text-align: center;"><code>TRUE</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>(edad &gt; 18)   || (altura &lt; 1.70)</code></td>
-<td style="text-align: center;"><code>TRUE</code></td>
-<td style="text-align: center;"><code>FALSE</code></td>
-<td style="text-align: center;"><code>TRUE</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><code>!(edad &gt; 18)</code></td>
-<td style="text-align: center;"><code>FALSE</code></td>
-<td style="text-align: center;"><code>TRUE</code></td>
-<td style="text-align: center;"><code>FALSE</code></td>
-</tr>
-</tbody>
-</table>
-<p>Verificación en R:</p>
+<p>Utilizando estructura de control “PARA”</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Primera columna</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>edad <span class="ot">&lt;-</span> <span class="dv">21</span></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>altura <span class="ot">&lt;-</span> <span class="fl">1.90</span></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>(edad <span class="sc">&gt;</span> <span class="dv">18</span>) <span class="sc">&amp;&amp;</span> (altura <span class="sc">&lt;</span> <span class="fl">1.70</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PROGRAMA: "Calcular el factorial de n"</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>factorial <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    factorial <span class="ot">&lt;-</span> factorial <span class="sc">*</span> i</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"El factorial de"</span>, n, <span class="st">"es"</span>, factorial)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
+<pre><code>El factorial de 0 es 0</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>(edad <span class="sc">&gt;</span> <span class="dv">18</span>) <span class="sc">||</span> (altura <span class="sc">&lt;</span> <span class="fl">1.70</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Utilizando estructura de control “MIENTRAS QUE”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PROGRAMA: "Calcular el factorial de n"</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>factorial <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(i <span class="sc">&lt;</span> n) {</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  factorial <span class="ot">&lt;-</span> factorial <span class="sc">*</span> i</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"El factorial de"</span>, n, <span class="st">"es"</span>, factorial)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>(edad <span class="sc">&gt;</span> <span class="dv">18</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Segunda columna</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>edad <span class="ot">&lt;-</span> <span class="dv">17</span></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>altura <span class="ot">&lt;-</span> <span class="fl">1.90</span></span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>(edad <span class="sc">&gt;</span> <span class="dv">18</span>) <span class="sc">&amp;&amp;</span> (altura <span class="sc">&lt;</span> <span class="fl">1.70</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>(edad <span class="sc">&gt;</span> <span class="dv">18</span>) <span class="sc">||</span> (altura <span class="sc">&lt;</span> <span class="fl">1.70</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>(edad <span class="sc">&gt;</span> <span class="dv">18</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tercera columna</span></span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>edad <span class="ot">&lt;-</span> <span class="dv">21</span></span>
-<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>altura <span class="ot">&lt;-</span> <span class="fl">1.50</span></span>
-<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>(edad <span class="sc">&gt;</span> <span class="dv">18</span>) <span class="sc">&amp;&amp;</span> (altura <span class="sc">&lt;</span> <span class="fl">1.70</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>(edad <span class="sc">&gt;</span> <span class="dv">18</span>) <span class="sc">||</span> (altura <span class="sc">&lt;</span> <span class="fl">1.70</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>(edad <span class="sc">&gt;</span> <span class="dv">18</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
+<pre><code>El factorial de 0 es 1</code></pre>
 </div>
 </div>
+<p><strong>IMPORTANTE</strong>. Notar que la primera opción no arroja de forma correcta el factorial de 0, que por definición es igual a 1. Se podría agregar alguna estructura condicional para esta situación. La segunda opción, en cambio, funciona también para <code>n &lt;- 0</code>.</p>
 </section>
 <section id="ejercicio-7" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-7">Ejercicio 7</h2>
-<p>Razonamiento paso a paso:</p>
-<pre><code>1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10
-1 + 2 + (3 + 4) * ((5 * 6 * 8) - 9) - 10
-1 + 2 + (3 + 4) * (240 - 9) - 10
-1 + 2 + 7 * 231 - 10
-1 + 2 + 1617 - 10
-1610</code></pre>
-<p>Verificación en R:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">+</span> (<span class="dv">3</span> <span class="sc">+</span> <span class="dv">4</span>) <span class="sc">*</span> ((<span class="dv">5</span> <span class="sc">*</span> <span class="dv">6</span> <span class="sc">%%</span> <span class="dv">7</span> <span class="sc">*</span> <span class="dv">8</span>) <span class="sc">-</span> <span class="dv">9</span>) <span class="sc">-</span> <span class="dv">10</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PROGRAMA: "Secuencia de Fibonacci"</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>termino1 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>termino2 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (termino1 <span class="sc">&lt;</span> <span class="dv">10000</span>) {</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(termino1)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  termino3 <span class="ot">&lt;-</span> termino1 <span class="sc">+</span> termino2</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  termino1 <span class="ot">&lt;-</span> termino2</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  termino2 <span class="ot">&lt;-</span> termino3</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1610</code></pre>
+<pre><code>[1] 0
+[1] 1
+[1] 1
+[1] 2
+[1] 3
+[1] 5
+[1] 8
+[1] 13
+[1] 21
+[1] 34
+[1] 55
+[1] 89
+[1] 144
+[1] 233
+[1] 377
+[1] 610
+[1] 987
+[1] 1597
+[1] 2584
+[1] 4181
+[1] 6765</code></pre>
 </div>
 </div>
 </section>
 <section id="ejercicio-8" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-8">Ejercicio 8</h2>
-<p>Siempre es verdadera porque sea cual fuere <code>x</code>, siempre va a ser distinta a alguno de los dos, incluso si es 4, es distinta a 17 y viceversa.</p>
-<p>Recordemos que:</p>
+<p>Observar que:</p>
 <ul>
-<li><code>!=</code> significa “distinto de”.<br>
-</li>
-<li><code>||</code> es el operador “o” lógico (OR), que devuelve <code>TRUE</code> si al menos una de las condiciones es <code>TRUE</code>.</li>
+<li>el valor inicial es el 100 ya que la combinación no comienza por 0.</li>
+<li>el <code>while</code> se detiene cuando la combinación es mayor a 800.</li>
+<li>se verifican las condiciones de multiplicidad, y si no se cumplen, se pasa directamente a la siguiente iteración.</li>
+<li>en caso de que se cumplan las condiciones, se imprime la combinación, y se pasa a la siguiente iteración.</li>
 </ul>
-<p>Luego, de la única forma para que la expresión sea <code>FALSE</code>, es que ambas condiciones sean <code>FALSE</code> al mismo tiempo. Veamos si esto es posible:</p>
-<ul>
-<li>La primera condición <code>(x != 4)</code> es <code>FALSE</code> solo cuando <code>x = 4</code>.<br>
-</li>
-<li>La segunda condición <code>(x != 17)</code> es <code>FALSE</code> solo cuando <code>x = 17</code>.</li>
-</ul>
-<p>Por lo visto, ambas condiciones no pueden ser <code>FALSE</code> simultáneamente, ya que un número no puede ser <code>4</code> y <code>17</code> al mismo tiempo. Dado que siempre hay al menos una condición que es <code>TRUE</code>, la expresión es <strong>siempre verdadera</strong>, sin importar el valor de <code>x</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PROGRAMA: "Lista de posibles combinaciones"</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>combinacion <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (combinacion <span class="sc">&lt;=</span> <span class="dv">800</span>) {</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (combinacion <span class="sc">%%</span> <span class="dv">11</span> <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;&amp;</span> combinacion <span class="sc">%%</span> <span class="dv">8</span> <span class="sc">!=</span> <span class="dv">0</span>) {</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(combinacion)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  combinacion <span class="ot">&lt;-</span> combinacion <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 110
+[1] 121
+[1] 132
+[1] 143
+[1] 154
+[1] 165
+[1] 187
+[1] 198
+[1] 209
+[1] 220
+[1] 231
+[1] 242
+[1] 253
+[1] 275
+[1] 286
+[1] 297
+[1] 308
+[1] 319
+[1] 330
+[1] 341
+[1] 363
+[1] 374
+[1] 385
+[1] 396
+[1] 407
+[1] 418
+[1] 429
+[1] 451
+[1] 462
+[1] 473
+[1] 484
+[1] 495
+[1] 506
+[1] 517
+[1] 539
+[1] 550
+[1] 561
+[1] 572
+[1] 583
+[1] 594
+[1] 605
+[1] 627
+[1] 638
+[1] 649
+[1] 660
+[1] 671
+[1] 682
+[1] 693
+[1] 715
+[1] 726
+[1] 737
+[1] 748
+[1] 759
+[1] 770
+[1] 781</code></pre>
+</div>
+</div>
 </section>
 <section id="ejercicio-9" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-9">Ejercicio 9</h2>
-<p>El primer ítem excluye a los años terminados en 00, los cuales son evaluados en la segunda regla. El segundo ítem incluye automáticamente a los divisibles por 4 porque 400 es divisible por 4. Entonces, la operación lógica que determina si un año es bisiesto es: <code>((año %% 4 == 0) &amp;&amp; (año %% 100 != 0)) || (año %% 400 == 0)</code>.</p>
-<p>En R:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>año <span class="ot">&lt;-</span> <span class="dv">2024</span></span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>((año <span class="sc">%%</span> <span class="dv">4</span> <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">&amp;&amp;</span> (año <span class="sc">%%</span> <span class="dv">100</span> <span class="sc">!=</span> <span class="dv">0</span>)) <span class="sc">||</span> (año <span class="sc">%%</span> <span class="dv">400</span> <span class="sc">==</span> <span class="dv">0</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>año <span class="ot">&lt;-</span> <span class="dv">2025</span></span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>((año <span class="sc">%%</span> <span class="dv">4</span> <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">&amp;&amp;</span> (año <span class="sc">%%</span> <span class="dv">100</span> <span class="sc">!=</span> <span class="dv">0</span>)) <span class="sc">||</span> (año <span class="sc">%%</span> <span class="dv">400</span> <span class="sc">==</span> <span class="dv">0</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-</div>
-</section>
-<section id="ejercicio-10" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicio-10">Ejercicio 10</h2>
 <ol type="a">
-<li>¿Cuáles son los valores finales de <code>a</code> y <code>b</code>?</li>
+<li><p>Al final del primer año, la población será igual a:</p>
+<p><span class="math display">\[
+p0 + p0 \times \frac{tasa}{100} + inmigrantes = 1000 + 1000 * 0.02 + 50 = 1070
+\]</span></p></li>
+<li><p>Al final del 2º año, la población será:</p>
+<p><span class="math display">\[
+p0 + p0 \times \frac{tasa}{100} + inmigrantes = 1070 + 1070 * 0.02 + 50 = 1141.4 \cong 1141
+\]</span> <em>Recordar que el número de habitantes es un entero, por lo cual tomamos la parte entera.</em></p>
+<p>Al final del tercer año:</p>
+<p><span class="math display">\[
+p0 + p0 \times \frac{tasa}{100} + inmigrantes = 1141 + 1141 * 0.02 + 50 = 1213.82 \cong 1213
+\]</span></p>
+<p>Se necesitarán 3 años.</p></li>
+<li><p>Haciendo la solución para el problema de forma más general:</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> a <span class="sc">*</span> <span class="dv">2</span></span>
-<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> a <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> b <span class="sc">-</span> a</span>
-<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parámetros a definir</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>p0 <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>p_objetivo <span class="ot">&lt;-</span> <span class="dv">1200</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>tasa <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="co"># La expresamos en porcentaje</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>inmigrantes <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Programa</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>año <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>poblacion <span class="ot">&lt;-</span> p0</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (poblacion <span class="sc">&lt;</span> p_objetivo) {</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aplicamos la fórmula y nos quedamos con la parte entera del resultado</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>  poblacion <span class="ot">&lt;-</span> <span class="fu">floor</span>(poblacion <span class="sc">+</span> poblacion <span class="sc">*</span> tasa <span class="sc">/</span> <span class="dv">100</span> <span class="sc">+</span> inmigrantes)</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Contamos un año más</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>  año <span class="ot">&lt;-</span> año <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(</span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">" Con una población inicial de"</span>, p0, </span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">"habitantes, una tasa de crecimiento anual del</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>  tasa, <span class="st">"% y"</span>, inmigrantes, <span class="st">"nuevos habitantes anuales, se necesitarán"</span>,</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>  año, <span class="st">"años para alcanzar</span><span class="sc">\n</span><span class="st"> una población de"</span>, p_objetivo, </span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"habitantes. Luego del año"</span>, año, <span class="st">"el pueblo contará con una</span><span class="sc">\n</span><span class="st"> población de"</span>, </span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>  poblacion, <span class="st">"habitantes."</span></span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 15</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>b</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
-</div>
-</div>
-<ol start="2" type="a">
-<li>¿Cuáles son los valores finales de <code>m</code> y <code>n</code>?</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> m</span>
-<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> m <span class="sc">+</span> <span class="dv">3</span></span>
-<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> n <span class="sc">+</span> m</span>
-<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> n <span class="sc">-</span> <span class="dv">4</span></span>
-<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>m</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 14</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>n</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 18</code></pre>
-</div>
-</div>
-<ol start="3" type="a">
-<li>¿Cuál es el valor final de <code>y</code>?</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">6</span></span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x <span class="sc">/</span> y <span class="sc">+</span> x <span class="sc">*</span> y</span>
-<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span> <span class="sc">%%</span> <span class="dv">10</span></span>
-<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> y <span class="sc">*</span> <span class="dv">2</span></span>
-<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 10</code></pre>
+<pre><code> Con una población inicial de 1000 habitantes, una tasa de crecimiento anual del
+ 2 % y 50 nuevos habitantes anuales, se necesitarán 3 años para alcanzar
+ una población de 1200 habitantes. Luego del año 3 el pueblo contará con una
+ población de 1213 habitantes.</code></pre>
 </div>
 </div>
 <ol start="4" type="a">
-<li>¿Cuál es el valor final de <code>resultado</code>?</li>
+<li>Cambiamos los valores de las variables y realizamos el cálculo nuevamente:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> a<span class="sc">^</span>b <span class="sc">-</span> (c <span class="sc">*</span> b) <span class="sc">+</span> (a <span class="sc">%%</span> c)</span>
-<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a>resultado</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parámetros a definir</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>p0 <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>p_objetivo <span class="ot">&lt;-</span> <span class="dv">50000</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>tasa <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="co"># La expresamos en porcentaje</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>inmigrantes <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Programa</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>año <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>poblacion <span class="ot">&lt;-</span> p0</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (poblacion <span class="sc">&lt;</span> p_objetivo) {</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aplicamos la fórmula y nos quedamos con la parte entera del resultado</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>  poblacion <span class="ot">&lt;-</span> <span class="fu">floor</span>(poblacion <span class="sc">+</span> poblacion <span class="sc">*</span> tasa <span class="sc">/</span> <span class="dv">100</span> <span class="sc">+</span> inmigrantes)</span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Contamos un año más</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>  año <span class="ot">&lt;-</span> año <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(</span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">" Con una población inicial de"</span>, p0, </span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">"habitantes, una tasa de crecimiento anual del</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>  tasa, <span class="st">"% y"</span>, inmigrantes, <span class="st">"nuevos habitantes anuales, se necesitarán"</span>,</span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>  año, <span class="st">"años para alcanzar</span><span class="sc">\n</span><span class="st"> una población de"</span>, p_objetivo, </span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"habitantes. Luego del año"</span>, año, <span class="st">"el pueblo contará con una</span><span class="sc">\n</span><span class="st"> población de"</span>, </span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>  poblacion, <span class="st">"habitantes."</span></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 21</code></pre>
+<pre><code> Con una población inicial de 10000 habitantes, una tasa de crecimiento anual del
+ 3 % y 100 nuevos habitantes anuales, se necesitarán 47 años para alcanzar
+ una población de 50000 habitantes. Luego del año 47 el pueblo contará con una
+ población de 50116 habitantes.</code></pre>
 </div>
 </div>
-<ol start="5" type="a">
-<li>¿Cuáles son los valores finales de <code>x</code>, <code>y</code> y <code>z</code>?</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">8</span></span>
-<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x <span class="sc">%%</span> y <span class="sc">+</span> z<span class="sc">^</span>y</span>
-<span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> (x <span class="sc">+</span> y) <span class="sc">%/%</span> z</span>
-<span id="cb86-7"><a href="#cb86-7" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> z <span class="sc">+</span> x <span class="sc">-</span> y</span>
-<span id="cb86-8"><a href="#cb86-8" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 10</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 6</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>z</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 6</code></pre>
-</div>
-</div>
-</section>
-<section id="ejercicio-11" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicio-11">Ejercicio 11</h2>
-<p>Se pueden cambiar los valores de <code>a</code>, <code>b</code> y <code>h</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb92-4"><a href="#cb92-4" aria-hidden="true" tabindex="-1"></a>volumen <span class="ot">&lt;-</span> a <span class="sc">*</span> b <span class="sc">*</span> h</span>
-<span id="cb92-5"><a href="#cb92-5" aria-hidden="true" tabindex="-1"></a>area <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (a <span class="sc">*</span> b <span class="sc">+</span> a <span class="sc">*</span> h <span class="sc">+</span> b <span class="sc">*</span> h)</span>
-<span id="cb92-6"><a href="#cb92-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"El área es igual a"</span>, area, <span class="st">"y el volumen es igual a"</span>, volumen)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>El área es igual a 94 y el volumen es igual a 60</code></pre>
-</div>
-</div>
-</section>
-<section id="ejercicio-12" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicio-12">Ejercicio 12</h2>
-<ol type="a">
-<li>Para identificar la ruta informática de un archivo, podés seguir los pasos mostrados en <a href="01_e_organizacion.html#sec-rutas" class="quarto-xref"><span>5.1 Carpetas, archivos y rutas informáticas</span></a>.</li>
-<li>Se puede saber cuál es el <em>working directory</em> con:</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="ejercicio-13" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicio-13">Ejercicio 13</h2>
-<p>El resultado de crear las carpetas y subcarpetas tiene que ser similar al que se ve en la <a href="01_e_organizacion.html#fig-archivos2" class="quarto-xref">Figura&nbsp;<span>5.2</span></a>. El proyecto se crea desde RStudio siguiendo los pasos de la <a href="01_e_organizacion.html#fig-new-dir" class="quarto-xref">Figura&nbsp;<span>5.4</span></a>.</p>
 
 
 </section>
@@ -1597,13 +1534,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../capitulos/90.html" class="pagination-link" aria-label="Soluciones de la Práctica">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Soluciones de la Práctica</span>
+      <a href="../capitulos/90_soluciones_01.html" class="pagination-link" aria-label="Soluciones de la Práctica de la Unidad 1">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 1</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../capitulos/90_soluciones_02.html" class="pagination-link" aria-label="Soluciones de la Práctica de la Unidad 02">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 02</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../capitulos/99_bibliografia.html" class="pagination-link" aria-label="Bibliografía">
+        <span class="nav-page-text">Bibliografía</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1615,7 +1552,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Developed by Marcos Prunello</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/90_soluciones_01.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/90_soluciones_01.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/90_soluciones_02.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/90_soluciones_02.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
