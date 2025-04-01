@@ -1,43 +1,64 @@
 ---
-format:
-  html:
-    embed-resources: false
+number-sections: false
 ---
 
-```{=latex}
 \thispagestyle{primerapagina}
-```
 
 # Práctica de la Unidad 2
 
-::: {.en-construccion data-latex=""}
-Página en construcción.
-:::
-
-```{r, echo = FALSE, results='asis'}
-library(webexercises)
-# Uncomment to change widget colours:
-#style_widgets(incorrect = "goldenrod", correct = "purple", highlight = "firebrick")
-```
-
 ## Ejercicio 1
 
-Enunciado Ejercicio 1...
-
-```{r, echo = TRUE, eval = FALSE}
-#| webex.hide: "Ver Solución"
-for (i in 1:10) {
-  print(i)
-}
-```
+Escribir un programa en R para determinar si un número entero dado es par o impar.
 
 ## Ejercicio 2
 
-Enunciado Ejercicio 2...
+Escribir un programa en R para leer tres números y determinar cuál es el mayor.
 
-```{r, echo = TRUE, eval = FALSE}
-#| webex.hide: "Ver Solución"
-for (i in 1:10) {
-  print(i)
-}
-```
+## Ejercicio 3
+
+Una fábrica organiza a sus operarios en tres turnos de trabajo rotativos: mañana, tarde y noche. Los turnos mañana y tarde se pagan \$4000 la hora, mientras que en el turno noche se paga un adicional de \$2000. Además, los domingos se paga un adicional de \$1000 la hora. Escribir un programa en R que permita calcular cuánto se le debe pagar a un operario por un día de trabajo, dados el turno, el día de la semana y la cantidad de horas trabajadas. Los turnos son identificados mediante los caracteres `"M"`, `"T"` y `"N"`; los días de semana mediante las primeras tres letras (`"DOM"`, `"LUN"`, `"MAR"`, `"MIE"`, `"JUE"`, `"VIE"`, `"SAB"`).
+
+## Ejercicio 4
+
+Escribir un programa en R para convertir un valor de temperatura expresado en grados Celsius a su equivalente en grados Farenheit y viceversa. El problema debe leer la magnitud a convertir en la variable numérica `temp` y el tipo de conversión en la variable caracter `modo`, que puede tomar los valores `"C a F"` o `"F a C"`.
+
+## Ejercicio 5
+
+Escribir un programa en R que permita calcular:
+
+a.  la suma de los `n` primeros números naturales.
+b.  la suma de los cuadrados de los `n` primeros números naturales.
+c.  el producto de los primeros `n` números naturales impares.
+d.  la suma de los cubos de los `n` primeros números naturales pares.
+
+## Ejercicio 6
+
+Escribir un programa en R que permita calcular el factorial de un número natural `n`, `n!`. Realizarlo de dos formas, empleando estructuras iterativas diferentes.
+
+## Ejercicio 7
+
+En el siglo XIII el matemático italiano Leonardo Fibonacci ideó una secuencia matemática que lleva su nombre, intentando explicar el crecimiento geométrico de una población de conejos. Los primeros dos términos de la secuencia son 0 y 1, y cada uno de los subsecuentes términos es la suma de los dos anteriores. De esta forma, el inicio de la secuencia de Fibonacci es: 0 - 1 - 1 - 2 - 3 - 5 - 8 - ... . Escribir un programa en R para mostrar todos los términos de la secuencia de Fibonacci menores que 10000.
+
+## Ejercicio 8
+
+Se tiene una caja fuerte que, para poder abrirla, se desea crear una lista con todas las combinaciones posibles. Se sabe que:
+
+-   La combinación tiene 3 cifras.
+-   La combinación es múltiplo de 11.
+-   La combinación no es mayor que 800.
+-   La combinación no es múltiplo de 8.
+-   La combinación no comienza con 0.
+
+Escribir un programa en R que permita imprimir una lista con todas las combinaciones posibles bajo las condiciones anteriores.
+
+## Ejercicio 9
+
+En un pequeño pueblo en expansión, la población es igual a 1000 al inicio del año. La población aumenta regularmente un 2% anual. Además, 50 nuevos habitantes se mudan al pueblo cada año. 
+
+a. Al finalizar el año, ¿cuál es el tamaño de la población? Expresar una fómula general usando la simbología `po` para el valor inicial de la población (1000), `tasa` para el porcentaje de aumento anual (2) e `inmigrantes` para la cantidad de nuevos habitantes que llegan por año (50). 
+
+b.  ¿Cuántos años tienen que transcurrir para que el pueblo alcance una población mayor o igual a 1200 habitantes? Realice la cuenta para cada año, tomando la parte entera del resultado en cada oportunidad, en el caso de que el resultado tenga decimales.
+
+c.  Escribir un programa en R que permita responder la pregunta del punto anterior para este caso y para cualquier otro, en el que cambien los parámetros del problema (la población inicial, población objetivo, tasa de crecimiento anual y cantidad de habitantes que inmigran al pueblo). El programa debe terminar emitiendo una descripción de la situación del problema y cuántos años deben transcurrir para llegar a la población objetivo.
+
+d. Repetir el cálculo para la situación en la que la población inicialmente es de 10000 habitantes, hay un crecimiento anual del 3%, se añaden 100 inmigrantes por año y se desea saber cuántos años llevará superar los 50000 habitantes.

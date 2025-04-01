@@ -41,7 +41,7 @@ book:
     - part: capitulos/90.qmd
       chapters:
         - capitulos/90_soluciones_01.qmd
-        # - capitulos/90_soluciones_02.qmd
+        - capitulos/90_soluciones_02.qmd
   appendices:
   #   - capitulos/98_tp.qmd
     - capitulos/99_bibliografia.qmd
@@ -72,4 +72,3 @@ format:
     include-before-body: estilo/cuerpo.tex
     template-partials:
       - estilo/title.tex
-
