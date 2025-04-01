@@ -212,9 +212,14 @@ También podemos ver en la consola un listado de todos los nombres de los objeto
 rm(object, precio, Precio)
 ```
 
-```{r}
+```r
 ls()
 ```
+
+```
+[1] "v"               "x"              "y"               "z" 
+```
+
 
 Los objetos que aparecen listados en esta salida o en el panel *Environment* son los que podemos usar para programar, porque están disponibles en nuestro ambiente. Si por error queremos usar un objeto que aún no fue definido en el ambiente global, obtenemos un error así:
 

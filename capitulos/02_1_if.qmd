@@ -1,0 +1,152 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Estructuras de control condicionales
+
+::: {.presentacion-capitulo data-latex=""}
+En algunas partes de un programa puede ser útil detenerse para elegir entre una o más opciones disponibles para continuar con la ejecución del código. Para elegir, planteamos una pregunta o **evaluación lógica**, cuya respuesta deberá ser `VERDADERO` (`TRUE`) o `FALSO` (`FALSE`). Según el resultado, el algoritmo seguirá ciertas acciones e ignorará otras. Estas preguntas y respuestas representan procesos de toma de decisión que conducen a diferentes caminos dentro de un programa, permitiéndonos que la solución para el problema en cuestión sea flexible y se adapte a distintas situaciones. Este tipo de estructuras de control de las instrucciones de programación reciben el nombre de **condicionales** (o *estructuras de selección*) y pueden ser **simples**, **dobles** o **múltiples**.
+:::
+
+## Estructuras condicionales simples
+
+Postulan una evaluación lógica y, si su resultado es `TRUE`, se procede a ejecutar las acciones delimitadas entre las llaves que definen el cuerpo de esta estructura. se expresan en R con la siguiente sintaxis:
+
+```r
+if (condición) {
+	hacer esto
+}
+```
+
+La palabra `if` indica el comando de evaluación lógica, `condición` indica la evaluación a realizar y entre llaves se detallan las instrucciones que se realizan sólo si se cumple la condición, es decir, si la evaluación resulta  `TRUE`. Dentro de las llaves puede haber una o muchas líneas de código. Si la condición no se verifica (es `FALSE`), no se ejecuta ninguna acción y el programa sigue su estructura secuencial con el código que prosigue a la última llave.
+
+::: {.ejemplo data-latex=""}
+El siguiente programa registra la edad de una persona y, en el caso de que sea mayor de edad, avisa que puede votar en las elecciones provinciales de Santa Fe:
+
+```{r}
+# Persona A
+edad <- 27
+if (edad >= 18) {
+	cat("Edad =", edad, "años: puede votar")
+}
+
+# Persona B
+edad <- 15
+if (edad >= 18) {
+	cat("Edad =", edad, "años: puede votar")
+}
+
+# no se ejecuta ninguna acción
+```
+:::
+
+Notar que si bien el uso de *sangrías* o *indentación* en el código dentro de las llaves es opcional, decidimos emplearlo para facilitar la lectura y la identificación del inicio y el fin del bloque condicional. Mantener la prolijidad en nuestros programas es esencial.
+
+## Estructuras condicionales dobles
+
+La estructura simple sólo provee un curso de acción en el caso de que la evaluación sea `TRUE`. La estructura doble permite especificar, además, qué se debe hacer en el caso de que le resultado sea `FALSE`. La sintaxis es:
+
+```r
+if (condición) {
+	hacer esto
+} else {
+	hacer otra cosa
+}
+```
+
+Dentro del primer bloque de llaves se escriben las instrucciones que se ejecutan si se cumple la condición, mientras que en el segundo, luego de la expresión `else` ("si no"), se incluyen las que se evalúan si no se verifica la misma.
+
+::: {.ejemplo data-latex=""}
+Retomamos el caso anterior para emitir un mensaje cualquiera sea la situación:
+
+```{r}
+# Persona A
+edad <- 27
+if (edad >= 18) {
+	cat("Edad =", edad, "años: puede votar")
+} else {
+	cat("Edad =", edad, "años: no puede votar")
+}
+
+# Persona B
+edad <- 15
+if (edad >= 18) {
+	cat("Edad =", edad, "años: puede votar")
+} else {
+	cat("Edad =", edad, "años: no puede votar")
+}
+```
+:::
+
+## Estructuras condicionales múltiples o anidadas
+
+Permiten combinar varias estructuras condicionales para establecer controles más complejos sobre el flujo de la ejecución de las instrucciones, representando una toma de decisión múltiple. Podemos ejemplificar la sintaxis de la siguiente forma:
+
+```r
+if (condición 1) {
+	hacer esto
+} else if (condición 2) {
+	hacer otra cosa
+} else {
+	hacer otra cosa distinta
+}
+```
+
+En la estructura anterior, hay una primera evaluación lógica. Si su resultado es `TRUE`, se ejecuta el código encerrado en el primer juego de llaves y el resto es ignorado. En cambio, si su resultado es `FALSE`, se procede a evaluar la segunda evaluación lógica, que da lugar a la ejecución del segundo bloque de código si el resultado es `TRUE` o del tercer bloque, si su resultado es `FALSE`.
+
+El último bloque de acciones, indicado con `hacer otra cosa distinta`, se evaluará sólo si ninguna de las condiciones lógicas anteriores fue `TRUE`.
+
+::: {.ejemplo data-latex=""}
+Completamos el caso de la edad y la votación, considerando la no obligatoriedad para las personas mayores:
+
+```{r}
+# Persona A
+edad <- 27
+if (edad < 18) {
+	cat("Edad =", edad, "años: no puede votar")
+} else if (edad >= 70) {
+	cat("Edad =", edad, "años: puede votar opcionalmente")
+} else {
+	cat("Edad =", edad, "años: debe votar obligatoriamente")
+}
+
+# Persona B
+edad <- 15
+if (edad < 18) {
+	cat("Edad =", edad, "años: no puede votar")
+} else if (edad >= 70) {
+	cat("Edad =", edad, "años: puede votar opcionalmente")
+} else {
+	cat("Edad =", edad, "años: debe votar obligatoriamente")
+}
+
+# Persona C
+edad <- 81
+if (edad < 18) {
+	cat("Edad =", edad, "años: no puede votar")
+} else if (edad >= 70) {
+	cat("Edad =", edad, "años: puede votar opcionalmente")
+} else {
+	cat("Edad =", edad, "años: debe votar obligatoriamente")
+}
+```
+
+:::
+
+::: {.ejercicio data-latex=""}
+¿Cuál será el valor final de `resultado` después de ejecutar el siguiente código en R?
+
+```r
+x <- 20
+if (x < 10) {
+  resultado <- x * 20
+} else if (x < 20) {
+  resultado <- x / 2
+} else {
+  resultado <- x + 100
+}
+resultado
+```
+
+`resultado` es igual a: `r webexercises::fitb(120)`.
+:::
