@@ -2,261 +2,36 @@
 \thispagestyle{primerapagina}
 ```
 
-# Completar
+# Creación de nuevas funciones en R
 
 ::: {.presentacion-capitulo data-latex=""}
 COMPLETAR
 :::
 
-## Completar
 
-# Descomposición algorítmica
+## La importancia de la descomposición algorítmica
 
-Un principio fundamental en la resolución de un problema es intentar descomponerlo en partes más pequeñas, que puedan ser más fáciles de afrontar. Este concepto también se aplica en la programación. Nuestros algoritmos pueden descomponerse en **subalgoritmos** que den solución a un aspecto del problema, de menor extensión. Este proceso se conoce como **descomposición algorítmica** o **descomposición modular**. Cada subalgoritmo debe ser independiente de los demás y a su vez podría seguir descomponiéndose en partes más sencillas en lo que se conoce como **refinamiento sucesivo**. Si un programa es muy largo se corre el riesgo de que sea muy difícil de entender como un todo, pero siempre se lo puede dividir en secciones más simples y manejables. Un subalgoritmo se escribe una vez y luego es utilizado por todos aquellos algoritmos que lo necesiten. 
+Un principio clave en la resolución de problemas es la **descomposición algorítmica**, es decir, dividir un problema complejo en partes más pequeñas y manejables. En programación, esto se traduce en la creación de **subalgoritmos**: fragmentos de código que resuelven una parte específica del problema. Este enfoque, también conocido como **descomposición modular**, facilita la comprensión del código y permite reutilizar soluciones ya escritas.  
 
-Cada vez que, como parte de la resolución de un problema, desde un algoritmo se solicita que se realicen las acciones establecidas por un subalgoritmo, se dice que se lo está **invocando** o **llamando**. Al algoritmo que invoca a los subalgoritmos a veces le decimos *algoritmo principal* para darle un mayor énfasis a la idea que, desde el curso de acción principal, cada tanto se delega la ejecución de algunas tareas al subalgoritmo.
+En R, los subalgoritmos se implementan a través de **funciones**. Una función encapsula una serie de instrucciones y puede ser invocada desde distintos puntos del código cada vez que se necesite, sin necesidad de reescribir esas instrucciones encapsuladas una y otra vez. Esto aporta varios beneficios fundamentales:  
 
-El empleo de subalgoritmos, desarrollando por separado ciertas partes del problema, resulta especialmente ventajoso en los casos siguientes:
+- **Mejor legibilidad del código**: si el programa es muy largo porque las mismas instrucciones aparecen muchas veces, encerrarlas dentro de una función que es invocada en una sola línea cada vez que se necesita hace que el código se vuelva más corto. Además, al dar a una función un nombre descriptivo, el propósito de la línea de código que la invoca se vuelve más claro. Todo esto resulta en código más comprensible para las personas.
+- **Facilidad de mantenimiento**: si hay que modificar una funcionalidad, basta con actualizar la función sólo en el lugar donde está definida, en lugar de hacerlo en múltiples fragmentos de código copiados y pegados.
+- **Reducción de errores**: copiar y pegar código manualmente puede dar lugar a errores accidentales, como olvidar cambiar un nombre de variable en alguna de las copias.  
+- **Mayor eficiencia y reutilización**: una vez definida, una función puede utilizarse muchas veces, en el mismo o en otros proyectos, ahorrando tiempo y esfuerzo.
 
-- **En algoritmos complejos**: si el algoritmo, y luego el programa, se escribe todo seguido y en un único archivo de código, resulta muy complicado de entender, porque se pierde la visión de su estructura global dada la gran cantidad de operaciones que lo conforman. Aislando ciertas partes como subalgoritmos separados se reduce la complejidad.
-- **Cuando se repiten operaciones análogas**: si la resolución de un problema requiere realizar una tarea que se repite varias veces en el algoritmo, podemos definir dicha tarea como un subalgoritmo por separado. De esta manera, su código se escribirá sólo una vez aunque se use en muchos puntos del programa. 
+Las funciones son fundamentales para organizar y estructurar programas, ya que permiten dividir un problema en partes más pequeñas y reutilizar código en diferentes puntos del programa sin necesidad de repetirlo.  
 
-En este capítulo hay algunas secciones indicadas como "opcionales" y algunos comentarios agregados como notas al pie. Estas partes añaden información para quienes estén interesados en saber un poco más, pero su contenido no será requerido en la práctica ni en las evaluaciones.
+## Definición de una función
 
-## Tipos de subalgoritmos
+::: {.concepto data-latex=""}
+En **R**, una **función** es un bloque de código reutilizable que realiza una tarea específica. Las funciones toman **argumentos de entrada**, ejecutan una serie de instrucciones y pueden devolver un **resultado**.
+:::
 
-En el mundo de la programación existen muchos términos para definir distintos tipos de subalgoritmos: subrutinas, funciones, procedimientos, métodos, subprogramas, etc. No es posible obtener una definición que capture todas las variantes que existen en el uso de estos términos debido a que el significado de cada uno de ellos varía según el paradigma
-^[Se usa el término paradigma de programación para clasificar a los lenguajes según sus características. En [este link](https://hackr.io/blog/programming-paradigms) se puede encontrar una breve descripción de los principales paradigmas de programación] 
-y el lenguaje de programación escogidos.
 
-Sin embargo, suele haber bastante consenso en distinguir, dentro de los subalgoritmos, a las **funciones** y a los **procedimientos** de esta forma:
+Para ejemplificar, podemos decir que la noción de *función* en programación se asemeja a la idea matemática de *función de una o más variables*. Pensemos en la función $f(x, y) = x^2 + 3y$ (ejemplo 1). Si queremos saber cuál es el valor numérico de la función $f$ cuando $x$ toma el valor $4$ e $y$ toma el valor $5$, reemplazamos en la expresión anterior las variables por los valores mencionados y obtenemos: $f(4, 5) = 4^2 + 3 \times 5 = 31$.
 
-- Una **función** es un subalgoritmo que al ser evaluado devuelve un único resultado (por ejemplo, un valor numérico) que es utilizado en el algoritmo principal que lo invoca.
-- Un **procedimiento** es un subalgoritmo que al ser evaluado no devuelve un valor, sino que produce *efectos secundarios* en el ambiente del algoritmo principal que lo invoca. Persigue el objetivo de ayudar en la modularidad del programa.
-
-## Funciones
-
-Una **función** es un subalgoritmo que devuelve un único resultado a partir de otros valores provistos.  El valor que la función devuelve define su **tipo**, de modo que una función puede ser de tipo **numérica**, **carácter** o **lógica** ^[No siempre se pueden clasificar de esta forma a las funciones, ya que hay algunas que pueden devolver distintos tipos de valores según el caso o que devuelven otras clases de objetos.]. 
-
-Para ejemplificar, podemos decir que la noción de *función* en programación se asemeja a la idea matemática de *función de una o más variables*. Podemos pensar en la función $f(x, y) = x^2 + 3y$ (ejemplo 1). Si queremos saber cuál es el valor numérico de la función $f$ cuando $x$ toma el valor $4$ e $y$ toma el valor $5$, reemplazamos en la expresión anterior las variables por los valores mencionados y obtenemos: $f(4, 5) = 4^2 + 3 \times 5 = 31$.
-
-Podemos definir dicha función en pseudocódigo de la siguiente manera:
-
-```
-FUNCIÓN f(x: numérico, y: numérico): numérico
-COMENZAR
-	DEVOLVER x^2 + 3 * y
-FIN FUNCIÓN
-```
-
-El primer renglón de la definición comienza con la palabra clave `FUNCIÓN` y termina, luego de los dos puntos, con la palabra `numérico` para indicar que esta función devuelve como resultado un valor numérico. 
-
-En el medio se encuentra el nombre elegido para la función (`f`), seguido por la declaración entre paréntesis de los *parámetros* o *argumentos* que la función necesita para operar, es decir, el *input* o información de entrada con la cual se realizarán las operaciones. Se dice que $x$ e $y$ son los **parámetros formales** o **ficticios**, ya que no tienen un valor asignado en sí mismos sino que permiten expresar de manera general las acciones que la función ejecuta. Describen lo que uno diría en palabras: "hay que tomar a $x$, elevarlo al cuadrado y sumarle la $y$ multiplicada por 3". Entre los paréntesis también se aclara que estos parámetros formales son de tipo numérico. 
-
-Los valores en los cuales se quiere evaluar la función se llaman **parámetros actuales** o **reales**. Por ejemplo, si nos interesa calcular $f(4, 5)$, los valores $4$ y $5$ son los parámetros actuales y se establece una correspondencia entre el parámetro formal $x$ y el actual $4$, así como entre la $y$ y el $5$. El resultado que se obtiene, como observamos antes, es $31$ y este es el valor que la función *devuelve*.
-
-La definición anterior también puede ser expresada como:
-
-```
-FUNCIÓN f(x: numérico, y: numérico): numérico
-COMENZAR
-	VARIABLE numérica resultado
-	resultado <- x^2 + 3 * y
-	DEVOLVER resultado
-FIN FUNCIÓN
-```
-
-Aquí notamos que no debemos declarar a `x` e `y` puesto que son los parámetros de la función (quedan declarados entre los paréntesis en la primera línea). Sin embargo, sí declaramos cualquier otra nueva variable que sea creada dentro de la función, por ejemplo, la variable `resultado`.
-
-De manera general, la definición de una función es:
-
-```
-FUNCIÓN nombre(lista de parámetros formales): tipo de resultado
-COMENZAR
-	Declaración de variables
-	Acciones
-	DEVOLVER valor
-FIN FUNCIÓN
-```
-
-La palabra clave `DEVOLVER` provoca la inmediata finalización de la ejecución de la función e indica cuál es el resultado de la misma, cuyo tipo debe coincidir con el tipo de función declarado en el encabezado. La acción `DEVOLVER` se puede insertar en cualquier punto del cuerpo de la función y, además, es posible utilizar más de una sentencia `DEVOLVER` en una misma función, aunque sólo una llegue a ejecutarse. Esto puede verse en el siguiente ejemplo (ejemplo 2):
-
-```
-FUNCIÓN maximo(num1: numérico, num2: numérico): numérico
-COMENZAR
-	SI num1 >= num2 ENTONCES
-		DEVOLVER num1
-	SI NO
-		DEVOLVER num2
-	FIN SI
-FIN FUNCIÓN
-```
-
-Para usar una función en un algoritmo, se la invoca escribiendo su nombre seguido por los valores actuales entre paréntesis, separados por coma. Esta invocación representa un valor que puede ser usado como operando en otra expresión. Por ejemplo:
-
-```
-ALGORITMO: "Hallar el máximo entre dos valores y restarle 100"
-COMENZAR
-	VARIABLE numérica x, y, rtdo
-	LEER x, y
-	rtdo <- maximo(x, y) - 100
-	ESCRIBIR "El resultado es " rtdo
-FIN
-```
-Al invocar una función es obligatorio que los valores suministrados para los argumentos actuales entre los paréntesis correspondan en cantidad, tipo y orden con los argumentos formales de la definición de la función. Es por esto que los siguientes casos son ejemplos de un **uso incorrecto** de funciones en el algoritmo principal:
-
-```
-ALGORITMO: "Incorrecto por proveer pocos argumentos para la función"
-COMENZAR
-	VARIABLE numérica x, y, rtdo
-	LEER x, y
-	rtdo <- maximo(x) - 100
-	ESCRIBIR "El resultado es " rtdo
-FIN
-
-ALGORITMO: "Incorrecto por proveer valores de tipo carácter para la función"
-COMENZAR
-	VARIABLE numérica rtdo
-	VARIABLE carácter x, y
-	x <- "chau"
-	y <- "hola"
-	rtdo <- maximo(x, y) - 100
-	ESCRIBIR "El resultado es " rtdo
-FIN
-
-ALGORITMO: "Incorrecto por no proveer argumentos para la función"
-COMENZAR
-	VARIABLE numérica x, y, rtdo
-	LEER x, y
-	rtdo <- maximo - 100
-	ESCRIBIR "El resultado es " rtdo
-FIN
-```
-
-Para motivar el uso de una buena práctica que ayude a distinguir entre las acciones de los subalgoritmos y del algoritmo, vamos a escribir los subalgoritmos **antes** y **por fuera** del algoritmo principal^[Es más, podríamos escribirlos y guardarlos en archivos distintos.]. Consideremos el ejemplo 3 mostrado a continuación. Primero definimos los subalgoritmos que necesitaremos (son los de los ejemplos 1 y 2) y luego escribiremos un algoritmo principal que hace uso de ellos para resolver un problema en particular:
-
-```
----------------------------------------------------------------
-SUBALGORITMOS
----------------------------------------------------------------
-
-FUNCIÓN f(x: numérico, y: numérico): numérico
-COMENZAR
-	DEVOLVER x^2 + 3 * y
-FIN FUNCIÓN
-
-FUNCIÓN maximo(num1: numérico, num2: numérico): numérico
-COMENZAR
-	SI num1 >= num2 ENTONCES
-		DEVOLVER num1
-	SI NO
-		DEVOLVER num2
-	FIN SI
-FIN FUNCIÓN
-
---------------------------------------------------------------
-ALGORITMO PRINCIPAL
---------------------------------------------------------------
-
-ALGORITMO: "Realizar operaciones matemáticas muy importantes"
-COMENZAR
-	VARIABLE numérica rtdo1, rtdo2, rtdo3
-	rtdo1 <- f(2, 5)
-	rtdo2 <- f(3, 10)
-	rtdo3 <- maximo(rtdo1, rtdo2) + 20
-	ESCRIBIR "El resultado es " rtdo3
-FIN
-```
-
-¿Qué mensaje escribe el algoritmo anterior?
-
-## Funciones en R
-
-En la sección anterior vimos cómo definir funciones en pseudocódigo. Antes de pasar a ver cómo programar nuestras funciones en R, vamos a comentar algunas cuestiones acerca de las funciones que R ya trae disponibles como parte de su funcionalidad básica.
-
-### Funciones predefinidas de R {#funcpredef}
-
-R, como todo lenguaje de programación, tiene **funciones predefinidas**, es decir, sentencias que se encargan de realizar alguna actividad. Ya estuvimos usando algunas de ellas, por ejemplo, cuando hemos necesitado mostrar algún mensaje usamos las funciones `cat()` o `print()`^[Sentencias como `for`, `while` o `if` también son funciones, aunque con una estructura muy particular.]. Además, existen muchas otras funciones predefinidas, como todas aquellas que se necesitan para realizar ciertas operaciones matemáticas:
-
-```{r}
-# Raíz cuadrada
-sqrt(100)
-# Valor absoluto
-abs(100)
-# Función exponencial
-exp(100)
-# Logaritmo natural
-log(100)
-```
-
-En los ejemplos anteriores, `100` representa un valor numérico que se pasa como argumento a la función para que la misma opere. Algunas funciones predefinidas en R pueden trabajar con más de un argumento, en cuyo caso hay que enumerarlos dentro de los paréntesis, separados con comas. Por ejemplo, si en lugar de calcular el logaritmo natural (cuya base es la constante matemática $e$), queremos calcular un logaritmo en base 10, podemos hacer lo siguiente:
-
-```{r}
-# Logaritmo de 100 en base 10
-log(100, 10)
-```
-
-¿Cómo sabemos que la función `log()` se puede usar de esa forma, cambiando el valor de la base con respecto a la cual toma el logaritmo? Lo aprendemos al leer el manual de ayuda de R. Toda función predefinida de R viene con un instructivo que detalla cómo se usa, qué argumentos incluye y otras aclaraciones. Lo encontramos en la pestaña de Ayuda (*Help*) en el panel de abajo a la derecha en RStudio. Otras formas de abrir la página de ayuda sobre una función es correr en la consola alguna de estas sentencias:
-
-```{r, eval=F}
-help(log)
-?log
-```
-
-Esa página de ayuda tiene bastante información, porque reúne información sobre muchas funciones relacionadas con logaritmos y exponenciales, pero podemos detenernos en la parte resaltada que se muestra a continuación:
-
-```{r, out.width='70%', fig.show='hold', fig.cap='Captura de pantalla de la ayuda sobre la función log()', echo=FALSE, fig.align="center"}
-# knitr::include_graphics('images/03_funciones/ayuda.png')
-```
-
-En la sección *Usage* ("uso") descubrimos que la función `log()` puede usarse con dos argumentos: `x` y `base`. En la sección *Arguments* entendemos que `x` es el número al cual le vamos a sacar el logaritmo y `base` es la base con respecto a la cual se toma el logaritmo. Por eso, al correr `log(100, 10)`, estamos calculando el logaritmo de `x = 100` con `base = 10`.
-
-Vemos, además, una diferencia en la forma en que `x` y `base` aparecen en la descripción: `log(x, base = exp(1))`. Cuando un argumento tiene un signo `=` significa que tiene asignado un **valor por default** y que no es necesario usarlo. Por eso, cuando corremos `log(100)` estamos calculando el logaritmo de `x = 100` con la base elegida por R por defecto: `base = exp(1)`, que es la forma que tiene R de nombrar a la constante $e = 2.718282...$ (es el logaritmo natural). Si quiero cambiar la base, debo proveer un valor, por ejemplo, `log(100, 10)`. Por el contrario, el argumento `x` no tiene asignado un valor por default. Eso significa que obligatoriamente tenemos que proveer un valor para el mismo.
-
-R también permite usar una función escribiendo los nombres de los argumentos (es decir, detallando tanto los parámetros formales como los actuales), lo cual muchas veces es muy esclarecedor:
-
-```{r}
-log(x = 100, base = 10)
-```
-
-Es más, si escribimos los nombres de los parámetros explícitamente, podemos cambiar su orden, sin alterar el resultado:
-
-```{r}
-log(base = 10, x = 100)
-```
-
-Si no escribimos los nombres, el orden importa:
-
-```{r}
-log(100, 10)
-log(10, 100)
-```
-
-Al no tener los nombres indicados explícitamente, R hace corresponder los parámetros formales `x` y `base` con los valores provistos en ese orden: en el primer caso `x` recibe el valor `100` y `base`, el valor `10`, mientras que en el segundo caso es al revés.
-
-Finalmente, se debe observar que no es necesario invocar a la función escribiendo de forma directa los valores entre los paréntesis, sino que en su lugar pueden ir variables:
-
-```{r}
-x <- 100
-y <- x / 2
-z <- 4
-log(x - y, 4)		# Log en base 4 de x - y
-```
-
-### Definición de nuevas funciones en R 
-
-Ahora que ya hemos visto cómo se trabaja con funciones en R de manera general, vamos a aprender a definir nuestras propias funciones. Recordemos el subalgoritmo del ejemplo 1:
-
-```
-FUNCIÓN f(x: numérico, y: numérico): numérico
-COMENZAR
-	VARIABLE numérica resultado
-	resultado <- x^2 + 3 * y
-	DEVOLVER resultado
-FIN FUNCIÓN
-```
-
-En R, definimos esta función así:
+Podemos definir dicha función en R de la siguiente manera:
 
 ```{r}
 f <- function(x, y) {
@@ -282,6 +57,12 @@ Debemos:
 2. Al lado del nombre, colocar el operador de asignación (`<-`) para asociar a ese nombre la definición de una función.
 3. Escribir la sentencia `function(...) {...}`, donde entre paréntesis se definen todos los parámetros formales separados con coma y entre llaves el conjunto de acciones a englobar.
 4. El valor que la función debe arrojar como resultado se encierra dentro de la sentencia `return()`, que indica el fin de la ejecución.
+
+
+
+En el medio se encuentra el nombre elegido para la función (`f`), seguido por la declaración entre paréntesis de los *parámetros* o *argumentos* que la función necesita para operar, es decir, el *input* o información de entrada con la cual se realizarán las operaciones. Se dice que $x$ e $y$ son los **parámetros formales** o **ficticios**, ya que no tienen un valor asignado en sí mismos sino que permiten expresar de manera general las acciones que la función ejecuta. Describen lo que uno diría en palabras: "hay que tomar a $x$, elevarlo al cuadrado y sumarle la $y$ multiplicada por 3". Entre los paréntesis también se aclara que estos parámetros formales son de tipo numérico. 
+
+Los valores en los cuales se quiere evaluar la función se llaman **parámetros actuales** o **reales**. Por ejemplo, si nos interesa calcular $f(4, 5)$, los valores $4$ y $5$ son los parámetros actuales y se establece una correspondencia entre el parámetro formal $x$ y el actual $4$, así como entre la $y$ y el $5$. El resultado que se obtiene, como observamos antes, es $31$ y este es el valor que la función *devuelve*.
 
 Una vez que la definición de la función es ejecutada, pasa a formar parte de los elementos que conforman al ambiente, como se puede apreciar al verla listada como un objeto más en el panel *Environment* de RStudio ^[Sí, las funciones que creamos también son *objetos* para R, ya que son una pieza que guarda algún tipo de información. Las funciones en R son objetos de clase "function". Ver, por ejemplo, `class(f)`]. A partir de este momento, podemos utilizarla, como parte de otro programa. Para invocarla, escribimos el nombre de la función y entre paréntesis los valores que nos interesan para el cálculo (parámetros actuales). Por ejemplo:
 
@@ -419,7 +200,20 @@ class(f)
 
 <!-- Cualquiera de estas dos opciones podría ser devuelta por una función ante casos particulares (`return(NULL)` o `return(NA)`). -->
 
-### Función `return()`
+## Función `return()`
+
+La palabra clave `DEVOLVER` provoca la inmediata finalización de la ejecución de la función e indica cuál es el resultado de la misma, cuyo tipo debe coincidir con el tipo de función declarado en el encabezado. La acción `DEVOLVER` se puede insertar en cualquier punto del cuerpo de la función y, además, es posible utilizar más de una sentencia `DEVOLVER` en una misma función, aunque sólo una llegue a ejecutarse. Esto puede verse en el siguiente ejemplo (ejemplo 2):
+
+```
+FUNCIÓN maximo(num1: numérico, num2: numérico): numérico
+COMENZAR
+	SI num1 >= num2 ENTONCES
+		DEVOLVER num1
+	SI NO
+		DEVOLVER num2
+	FIN SI
+FIN FUNCIÓN
+```
 
 En R, la función `return()` puede omitirse, ya que si no está presente se devuelve el resultado de la última expresión analizada. Por eso, las siguientes funciones son equivalentes:
 
@@ -851,9 +645,10 @@ a + z
 
 Se debe prestar atención que con la sentencia `ESCRIBIR` o la función `cat()` en R se muestra en pantalla un mensaje en el momento en el que se ejecuta esa acción. Si el mensaje incluye mostrar valores guardados en objetos, se mostrarán los valores que los mismos tienen en ese momento. Por otro lado, lo devuelto por la sentencia `DEVOLVER` o la función `return()` es el resultado de la ejecución de la función: el valor que la función entrega puede ser asignado a otro objeto en el algoritmo principal, como ocurre en la lína de `z <- f3(50)`.
 
-## Otras nociones importantes en R
+## La función source()
 
-### La función source()
+
+**Para motivar el uso de una buena práctica que ayude a distinguir entre las acciones de los subalgoritmos y del algoritmo, vamos a escribir los subalgoritmos **antes** y **por fuera** del algoritmo principal^[Es más, podríamos escribirlos y guardarlos en archivos distintos.]. Consideremos el ejemplo 3 mostrado a continuación. Primero definimos los subalgoritmos que necesitaremos (son los de los ejemplos 1 y 2) y luego escribiremos un algoritmo principal que hace uso de ellos para resolver un problema en particular:**
 
 Cuanto más grande o complejo es el problema a resolver, más funciones deben ser programadas y no es necesario escribirlas a todas en el mismo archivo de código del programa principal. Para ser más ordenados, podemos escribir nuestras funciones en uno o más archivos separados. Si hacemos esto, en el comienzo del script del programa principal debemos incluir una sentencia para que en primer lugar se ejecute el código guardado en esos otros archivos, de modo que las funciones sean definidas y formen parte del ambiente global. 
 
@@ -979,146 +774,4 @@ cat(x, y, z)
 
 Nuevamente, esta forma de trabajo no es aconsejable porque estamos produciendo *efectos secundarios* desde la función en el ambiente global que pueden pasar desapercibidos si no estamos muy atentos. Así como la mejor práctica es pasar toda la información desde el programa principal hacia la función a través de sus parámetros, también es recomendable que toda comunicación desde la función hacia el programa principal se realice a través del valor (u objeto) que la función devuelve, sin producir efectos secundarios (transparencia referencial).
 
-<!-- 
-Ejemplo que tenía en la guía del 2020. En pseudocódigo no tendría forma de distinguir entre la situación de la función modifica o no modifica el valor de la global, eso estaría relacionado con un pasaje por referencia, no hago lío con esto, lo dejo acá.
-``` 
-FUNCIÓN f4(x: numérico): numérico
-COMENZAR
-	VARIABLE numérica a
-	a <- x * y
-	y <- y^2
-	DEVOLVER a
-FIN FUNCIÓN
 
-ALGORITMO: "Ejemplo"
-COMENZAR
-	VARIABLE numérica y
-	y <- 20
-	ESCRIBIR f4(2)
-	y <- 18
-	ESCRIBIR f4(2)
-FIN
-```
-
-```{r}
-# Función f2 donde el operador <<- modifica el valor de una variable global
-f4 <- function(x) {
-	a <- x * y
-	y <<- y^2
-	return(a)
-}
-
-# Variable global y recibe el valor 20
-y <- 20
-# Se ejecuta la función y devuelve el valor 60
-f4(3)
-# La variable global y fue modificada desde dentro de la función y cambió su valor
-y
-```
-
-En el pseudocódigo notamos que estamos asignándole un valor a la variable global `y` porque la misma no fue declarada como variable local dentro de la función. En R lo notamos porque se usa otro operador para la asignación: `<<-`.
--->
-
-### Procedimientos
-
-Un **procedimiento** es un subalgoritmo que agrupa una acción o conjunto de acciones, dándoles un nombre por el que se las puede identificar posteriormente. Se diferencia de la función en que no tiene como objetivo, en general, devolver un valor, sino sólo contribuir a la descomposición o modularidad del programa. R no trabaja con el concepto de *procedimiento*, sino que todo tipo de subalgoritmo se genera con la misma estructura de `function(...){...}`^[En la jerga de R, se habla de *funciones puras* o *no puras*. Las primeras no producen ningún efecto secundario en el ambiente global, las segundas sí. Hay muy pocas funciones no puras en R]. 
-
-Como en las funciones, desde el algoritmo principal se pasan valores al procedimiento utilizando **parámetros** o **argumentos**, aunque también puede haber procedimientos que carezcan de los mismos. Para usar un procedimiento hay que invocarlo, escribiendo su nombre y a continuación, si los hay, los valores de los argumentos actuales para esa llamada, separados por comas. Aquí también los argumentos actuales deben ser compatibles en cuanto a la cantidad, tipo y orden que los argumentos formales declarados en la definición del procedimiento.
-
-En el siguiente ejemplo podemos identificar los argumentos actuales `a` (con el valor 5), `b` (con el valor 2), `c` y `d` (sin valores asignados inicialmente). Cuando el procedimiento `proced1` es invocado, se establece una correspondencia con los argumentos formales `n1`, `n2`, `n3` y `n4`, respectivamente. `n1` toma el valor 5, `n2` toma el valor 2 y el procedimiento le asigna los valores 7 a `n3` y 1 a `n4`. Al finalizar, este procedimiento habrá dejado sin cambios a las variables `a` y `b`, mientras que le habrá asignado los valores 7 a `c` y 1 a `d`. Como resultado, el algoritmo escribe "5 2 7 1".
-
-```
----------------------------------------------------------------
-SUBALGORITMOS
----------------------------------------------------------------
-
-PROCEDIMIENTO proced1(n1: numérico, n2: numérico, n3: numérico, n4: numérico)
-	n3 <- n1 + n2
-	n4 <- n2 - 1
-FIN PROCEDIMIENTO
-
----------------------------------------------------------------
-ALGORITMO PRINCIPAL
----------------------------------------------------------------
-
-ALGORITMO: Primer ejemplo de procedimiento
-COMENZAR
-	VARIABLE numérica a, b, c, d
-	a <- 5
-	b <- 2
-	proced1(a, b, c, d)
-	ESCRIBIR a b c d
-FIN
-```
-
-En el siguiente ejemplo, el procedimiento `proced2` modifica las variables que actúan como argumentos actuales. Al ser invocado, se establece una correspondencia entre los argumentos actuales `a` (con el valor 5) y `b` (con el valor 2), y los argumentos formales `n1` y `n2`, respectivamente. De esta forma, la primera acción del procedimiento le asigna el valor 7 a `n1` y 1 a `n2`. De esta manera, al finalizar `a` vale 7 y `b` vale 1 y el algoritmo escribe "7 1".
-
-```
----------------------------------------------------------------
-SUBALGORITMOS
----------------------------------------------------------------
-
-PROCEDIMIENTO proced2(n1: numérico, n2: numérico)
-	n1 <- n1 + n2
-	n2 <- n2 - 1
-FIN PROCEDIMIENTO
-
----------------------------------------------------------------
-ALGORITMO PRINCIPAL
----------------------------------------------------------------
-
-ALGORITMO: Segundo ejemplo de procedimiento
-COMENZAR
-	VARIABLE numérica a, b
-	a <- 5
-	b <- 2
-	proced2(a, b)
-	ESCRIBIR a b
-FIN
-```
-
-Analicemos ahora el tipo de pasaje de argumentos en el contexto de un procedimiento:
-
-```
----------------------------------------------------------------
-SUBALGORITMOS
----------------------------------------------------------------
-
-PROCEDIMIENTO miProc(x: numérico, y: numérico)
-	x <- x * 2
-	y <- x - y
-FIN PROCEDIMIENTO
-
----------------------------------------------------------------
-ALGORITMO PRINCIPAL
----------------------------------------------------------------
-
-ALGORITMO: Tercer ejemplo de procedimiento
-COMENZAR
-	VARIABLE numérica a, b
-	a <- 8
-	b <- 4
-	miProc(a, b)
-	ESCRIBIR a b
-FIN
-```
-
-Si el pasaje es por referencia, los pasos que sigue el algoritmo serían:
-
-1. En el algortimo se asignan los valores: `a = 8, b = 4`.
-2. Al invocar la función: `x = 8, y = 4`.
-3. Primera línea de la función: `x = 8 * 2 = 16`. Lo mismo sucede con el parámetro actual `a`: `a = 16`.
-4. Segunda línea de la función: `y = 16 - 4 = 12`. Lo mismo sucede con el parámetro actual `b`: `b = 12`.
-5. Al regresar al algoritmo principal, la sentencia `ESCRIBIR` produce: `16 12`.
-
-Si el pasaje hubiese sido por valor, `a` y `b` no hubiesen cambiado y la sentencia `ESCRIBIR` mostraría `8, 4`. Como en un procedimiento los resultados regresan en los mismos parámetros, no pueden ser todos pasados por valor, porque en ese caso el procedimiento nunca realizaría ninguna acción.
-
-Si el parámetro `x` se pasa por valor mientras que `y` se pasa por referencia, los pasos serían:
-
-1. `a = 8, b = 4`.
-2. Al invocar la función: `x = 8, y = 4`.
-3. Primera línea de la función: `x = 8 * 2 = 16`. 
-4. Segunda línea de la función: `y = 16 - 4 = 12`. Lo mismo sucede con el parámetro actual `b`: `b = 12`.
-5. Al regresar al algoritmo principal, la sentencia `ESCRIBIR` produce: `8 12`.
-
-Dado que en R el pasaje de argumentos es **siempre** por valor y no por referencia, no existen los procedimientos. Por esta razón, esta sección no se ejemplifica con código de R.
