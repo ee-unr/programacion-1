@@ -28,7 +28,6 @@ Las funciones son fundamentales para organizar y estructurar programas, ya que p
 En **R**, una **función** es un bloque de código reutilizable que realiza una tarea específica. Las funciones toman **argumentos de entrada**, ejecutan una serie de instrucciones y pueden devolver un **resultado**.
 :::
 
-
 Para ejemplificar, podemos decir que la noción de *función* en programación se asemeja a la idea matemática de *función de una o más variables*. Pensemos en la función $f(x, y) = x^2 + 3y$ (ejemplo 1). Si queremos saber cuál es el valor numérico de la función $f$ cuando $x$ toma el valor $4$ e $y$ toma el valor $5$, reemplazamos en la expresión anterior las variables por los valores mencionados y obtenemos: $f(4, 5) = 4^2 + 3 \times 5 = 31$.
 
 Podemos definir dicha función en R de la siguiente manera:
@@ -40,31 +39,21 @@ f <- function(x, y) {
 }
 ```
 
-![Estructura de una función en R.](../imagenes/teoria_unidad_3/def_funcion.png){width="80%" fig-align="center" #fig-globalenv}
+La estructura general de la definición de una función consta de tres componentes:
 
-
-La estructura general es:
-
-```
+```r
 nombre <- function(argumentos) {
-  ... sentencias de R ...
+  cuerpo
 }
 ```
 
-Debemos:
+1. **Nombre**: elegido por nosotros, respetando las reglas para la elección de nombres para objetos y buscando que provea una buena descripción del propósito de la función.  Usamos el operador de asignación (`<-`) para asociar ese nombre a la definición de la función, señalada con la palabra clave `function`.
+2. **Argumentos** o **parámetros**: listado de piezas de información que la función necesita para operar y que pueden variar cada vez que es invocada. Se listan entre paréntesis y separados por comas, a la izquierda de la palabra clave `function`.
+3. **Cuerpo**: conjunto de instrucciones de programación que la función ejecuta cada vez que es invocada, encerrado por un par de llaves. Generalmente finaliza con la función `return()`, que indica el fin de la ejecución y provee el objeto que la función devuelve.
 
-1. Elegir un nombre
-2. Al lado del nombre, colocar el operador de asignación (`<-`) para asociar a ese nombre la definición de una función.
-3. Escribir la sentencia `function(...) {...}`, donde entre paréntesis se definen todos los parámetros formales separados con coma y entre llaves el conjunto de acciones a englobar.
-4. El valor que la función debe arrojar como resultado se encierra dentro de la sentencia `return()`, que indica el fin de la ejecución.
+![Estructura de una función en R.](../imagenes/teoria_unidad_3/def_funcion.png){width="60%" fig-align="center" #fig-globalenv}
 
-
-
-En el medio se encuentra el nombre elegido para la función (`f`), seguido por la declaración entre paréntesis de los *parámetros* o *argumentos* que la función necesita para operar, es decir, el *input* o información de entrada con la cual se realizarán las operaciones. Se dice que $x$ e $y$ son los **parámetros formales** o **ficticios**, ya que no tienen un valor asignado en sí mismos sino que permiten expresar de manera general las acciones que la función ejecuta. Describen lo que uno diría en palabras: "hay que tomar a $x$, elevarlo al cuadrado y sumarle la $y$ multiplicada por 3". Entre los paréntesis también se aclara que estos parámetros formales son de tipo numérico. 
-
-Los valores en los cuales se quiere evaluar la función se llaman **parámetros actuales** o **reales**. Por ejemplo, si nos interesa calcular $f(4, 5)$, los valores $4$ y $5$ son los parámetros actuales y se establece una correspondencia entre el parámetro formal $x$ y el actual $4$, así como entre la $y$ y el $5$. El resultado que se obtiene, como observamos antes, es $31$ y este es el valor que la función *devuelve*.
-
-Una vez que la definición de la función es ejecutada, pasa a formar parte de los elementos que conforman al ambiente, como se puede apreciar al verla listada como un objeto más en el panel *Environment* de RStudio ^[Sí, las funciones que creamos también son *objetos* para R, ya que son una pieza que guarda algún tipo de información. Las funciones en R son objetos de clase "function". Ver, por ejemplo, `class(f)`]. A partir de este momento, podemos utilizarla, como parte de otro programa. Para invocarla, escribimos el nombre de la función y entre paréntesis los valores que nos interesan para el cálculo (parámetros actuales). Por ejemplo:
+Una vez que la definición de la función es ejecutada, pasa a formar parte de los objetos que conforman al ambiente, como se puede apreciar al verla listada en el panel *Environment* de RStudio. A partir de este momento, podemos utilizarla, como parte de otro programa. Para invocarla, escribimos el nombre de la función y entre paréntesis los valores que nos interesan para el cálculo:
 
 ```{r}
 # Ejemplos de uso de la función f
@@ -73,7 +62,11 @@ f(6, -5)
 f(0, 0)
 ```
 
-Recordando lo discutido en la sección anterior, podemos apreciar que los siguientes usos de la función `f()` son equivalentes:
+Los **parámetros** o **argumentos** constituyen el *input* o información de entrada con la cual se realizarán las operaciones. Considerando el ejemplo, decimos que $x$ e $y$ son los **parámetros formales** o **ficticios**, ya que son símbolos que permiten expresar de manera general las acciones que la función ejecuta. Describen lo que uno diría en palabras: "hay que tomar a $x$, elevarlo al cuadrado y sumarle la $y$ multiplicada por 3". 
+
+Los valores en los cuales se quiere evaluar la función se llaman **parámetros actuales** o **reales**. Por ejemplo, si nos interesa calcular $f(4, 5)$, los valores $4$ y $5$ son los parámetros actuales y se establece una correspondencia entre el parámetro formal $x$ y el actual $4$, así como entre la $y$ y el $5$. El resultado que se obtiene, como observamos antes, es $31$ y este es el valor que la función *devuelve*.
+
+Recordando lo discutido en @sec-funciones, podemos apreciar que los siguientes usos de la función `f()` son equivalentes:
 
 ```{r}
 f(4, 5)
@@ -84,87 +77,30 @@ f(y = 5, x = 4)
 Sin embargo, no son equivalentes los siguientes:
 
 ```{r}
-# Siguiendo el orden de definición, x recibe el valor 4, y recibe el 5:
+# Siguiendo el orden de definición, x recibe el valor 4 e y recibe el 5:
 f(4, 5)
-# Siguiendo el orden de definición, x recibe el valor 5, y recibe el 4:
+# Siguiendo el orden de definición, x recibe el valor 5 e y recibe el 4:
 f(5, 4)
 ```
 
 A continuación, podemos ver casos que generan error por hacer un uso incorrecto de la función (¿por qué?):
 
-```{r, error=TRUE}
+```{r}
+#| error: true
 # Error por omitir un argumento de uso obligatorio (x recibe 4, falta y)
 f(4)
+```
+
+
+```{r}
+#| error: true
 # Error por proveer más argumentos de los declarados en la definición
 f(4, 5, 6)
 ```
 
-Retomemos ahora el ejemplo 3. Mencionamos que es importante distinguir entre la definición de los subalgoritmos y la de un algoritmo principal que los invoca: 
 
-```
----------------------------------------------------------------
-SUBALGORITMOS
----------------------------------------------------------------
 
-FUNCIÓN f(x: numérico, y: numérico): numérico
-COMENZAR
-	DEVOLVER x^2 + 3 * y
-FIN FUNCIÓN
-
-FUNCIÓN maximo(num1: numérico, num2: numérico): numérico
-COMENZAR
-	SI num1 >= num2 ENTONCES
-		DEVOLVER num1
-	SI NO
-		DEVOLVER num2
-	FIN SI
-FIN FUNCIÓN
-
---------------------------------------------------------------
-ALGORITMO PRINCIPAL
---------------------------------------------------------------
-
-ALGORITMO: "Realizar  operaciones matemáticas muy importantes"
-COMENZAR
-	VARIABLE numérica rtdo1, rtdo2, rtdo3
-	rtdo1 <- f(2, 5)
-	rtdo2 <- f(3, 10)
-	rtdo3 <- maximo(rtdo1, rtdo2) + 20
-	ESCRIBIR "El resultado es " rtdo3
-FIN
-```
-
-Esta distinción también es importante en R: la definición de las funciones debe ejecutarse antes de que las mismas sean llamadas desde el programa principal. Así, para traducir el pseudocódigo anterior a R, podríamos crear un archivo de código (llamado, por ejemplo, `ejemplo3.R`) con el siguiente contenido:
-
-```{r}
-# ---------------------------------------------------------------
-# DEFINICIÓN DE FUNCIONES
-# ---------------------------------------------------------------
-
-f <- function(x, y) {
-	resultado <- x^2 + 3 * y
-	return(resultado)
-}
-
-maximo <- function(num1, num2) {
-	if (num1 > num2) {
-		return(num1)
-	} else {
-		return(num2)
-	}
-}
-
-# ---------------------------------------------------------------
-# PROGRAMA PRINCIPAL
-# ---------------------------------------------------------------
-
-rtdo1 <- f(2, 5)
-rtdo2 <- f(3, 10)
-rtdo3 <- maximo(rtdo1, rtdo2) + 20
-cat("El resultado es", rtdo3)
-```
-
-### `NULL` vs `NA` vs `NaN`
+## `NULL` vs `NA` vs `NaN`
 
 Generalmente los lenguajes de programación poseen un valor conocido como `NULO`, para representar un objeto vacío, sin información. El mismo suele emplearse como valor devuelto por funciones cuando no corresponde devolver otro tipo de resultado. En pseudocódigo podemos usar esta estrategia escribiendo `DEVOLVER NULO`, si deseamos que nuestra función no devuelva nada. La representación en R de este tipo de objeto es `NULL`, que se trata de un objeto vacío que generalmente devuelven las funciones cuando el resultado es indefinido. Es decir, podemos crear funciones que terminen con un `return(NULL)`, como en el siguiente caso donde interesa emitir un mensaje, pero no devolver ningún objeto:
 

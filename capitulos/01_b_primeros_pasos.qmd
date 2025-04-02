@@ -166,7 +166,7 @@ En todo lenguaje de programación existe un carácter especial que, al ser coloc
 
 ![Comentarios en el script. Todo el contenido del script fue evaluado, por eso se ve también en la consola. Las líneas comentadas son ignoradas, sólo se muestran resultados para las demás.](../imagenes/teoria_unidad_1/comentarios.png){width="75%" fig-align="center" #fig-comentarios}
 
-## Funciones
+## Funciones {#sec-funciones}
 
 En los ejemplos anteriores hemos realizado algunas operaciones básicas, como sumas o multiplicaciones. Otros cálculos matemáticos requieren que usemos **funciones**. Por ejemplo, para calcular una raíz cuadrada debemos usar la función `sqrt` (del inglés *sq*uared *r*oo*t*):
 
