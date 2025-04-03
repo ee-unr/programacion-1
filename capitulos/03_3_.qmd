@@ -1,0 +1,85 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# completar
+
+::: {.presentacion-capitulo data-latex=""}
+COMPLETAR
+:::
+
+## Documentación de los subalgoritmos {#ejemplofact}
+
+En el contexto de la programación, documentar significa escribir indicaciones para que otras personas puedan entender lo que queremos hacer en nuestro código o para que sepan cómo usar nuestras funciones. Por ejemplo, como vimos antes todas funciones predefinidas de R están documentadas para que podamos buscar ayuda si la necesitamos. Cuando estamos creando nuestras propios subalgoritmos, es importante que también incluyamos comentarios para guiar a otras personas (y a nosotros mismos en el futuro si nos olvidamos) para qué y cómo se usa lo que estamos desarrollando.
+
+Para ilustrar esto, vamos a recordar que en la práctica 2 escribimos un algoritmo para el cálculo de factoriales. Dado que los mismos son muy útiles en variadas aplicaciones, podemos escribir un subalgortimo que se encargue de obtenerlos. Luego, escribiremos un algoritmo para mostrar todos los factoriales de los números 1 a 10.
+
+```
+---------------------------------------------------------------
+SUBALGORITMOS
+---------------------------------------------------------------
+
+#-------------------------------------------------------
+# Función fact
+# Calcula el factorial de números enteros no negativos
+# Entrada:
+# 	- n, entero no negativo
+# Salida:
+# 	- el factorial de n
+#-------------------------------------------------------
+FUNCIÓN fact(n: numérico): numérico
+COMENZAR
+	VARIABLE numérica resultado
+	resultado <- 1
+	SI n > 0 ENTONCES
+		PARA i DESDE 1 HASTA n HACER
+			resultado <- resultado * i
+		FIN PARA
+	FIN SI
+	DEVOLVER resultado
+FIN FUNCIÓN
+
+---------------------------------------------------------------
+ALGORITMO PRINCIPAL
+---------------------------------------------------------------
+
+ALGORITMO: "Mostrar los factoriales de los 10 primeros naturales"
+COMENZAR
+	PARA j DESDE 1 HASTA 10 HACER
+		ESCRIBIR "El factorial de " j " es igual a " fact(j)
+	FIN PARA
+FIN
+```
+
+En R:
+
+```{r}
+# ---------------------------------------------------------------
+# DEFINICIÓN DE FUNCIONES
+# ---------------------------------------------------------------
+
+#-----------------------------------------------------
+# Función fact
+# Calcula el factorial de números enteros no negativos
+# Entrada:
+#		- n, entero no negativo
+# Salida:
+#		- el factorial de n
+#-----------------------------------------------------
+fact <- function(n) {
+	resultado <- 1
+	if (n > 0) {
+		for (i in 1:n) {
+			resultado <- resultado * i
+		}
+	}
+	return(resultado)
+}
+
+# ---------------------------------------------------------------
+# PROGRAMA PRINCIPAL: Mostrar los factoriales de los 10 primeros naturales
+# ---------------------------------------------------------------
+for (j in 1:10) {
+	cat("El factorial de", j, "es igual a", fact(j), "\n")
+}
+```

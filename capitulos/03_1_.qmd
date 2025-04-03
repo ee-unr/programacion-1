@@ -83,7 +83,7 @@ f(4, 5)
 f(5, 4)
 ```
 
-A continuación, podemos ver casos que generan error por hacer un uso incorrecto de la función (¿por qué?):
+A continuación, podemos ver casos que generan error por hacer un uso incorrecto de la función:
 
 ```{r}
 #| error: true
@@ -98,546 +98,57 @@ f(4)
 f(4, 5, 6)
 ```
 
-
-
-## `NULL` vs `NA` vs `NaN`
-
-Generalmente los lenguajes de programación poseen un valor conocido como `NULO`, para representar un objeto vacío, sin información. El mismo suele emplearse como valor devuelto por funciones cuando no corresponde devolver otro tipo de resultado. En pseudocódigo podemos usar esta estrategia escribiendo `DEVOLVER NULO`, si deseamos que nuestra función no devuelva nada. La representación en R de este tipo de objeto es `NULL`, que se trata de un objeto vacío que generalmente devuelven las funciones cuando el resultado es indefinido. Es decir, podemos crear funciones que terminen con un `return(NULL)`, como en el siguiente caso donde interesa emitir un mensaje, pero no devolver ningún objeto:
-
-```{r}
-g <- function(x, y) {
-	resultado <- x^2 + 3 * y
-	cat("El resultado de esta cuenta es:", resultado)
-	return(NULL)
-}
-g(4, 5)
-```
-
-El objeto `NULL` no debe confundirse con otros dos valores existentes en el lenguaje R: `NA` y `NaN`:
-
-- `NA` son las siglas de *Not Available* y es un valor lógico (como `TRUE` y `FALSE`) que generalmente representa datos faltantes.
-- `NaN` son las siglas de *Not a Number* y es un valor numérico que generalmente surge como resultado de operaciones aritméticas imposibles de calcular, como indeterminaciones, raíces negativas, etc. (correr `0/0`, `log(-1)` o `sqrt(-1)` para verlo). Es un valor establecido por IEEE, el estándar con el cual se rige la representación numérica en la computadora.
-
-Otro valor numérico muy especial es `Inf` (y su contrapartida negativa, `-Inf`), que es el resultado de almacenar un número muy grande o de una división por cero. No es semejante a `NA`, porque además de no ser de tipo lógico, no representa que hay un dato faltante sino que se trata de un valor numérico.
-
-```{r}
-a <- NULL
-b <- NA
-d <- NaN
-e <- Inf
-f <- "NULL"
-
-class(a)
-class(b)
-class(d)
-class(e)
-class(f)
-```
-
-<!-- Cualquiera de estas dos opciones podría ser devuelta por una función ante casos particulares (`return(NULL)` o `return(NA)`). -->
-
 ## Función `return()`
 
-La palabra clave `DEVOLVER` provoca la inmediata finalización de la ejecución de la función e indica cuál es el resultado de la misma, cuyo tipo debe coincidir con el tipo de función declarado en el encabezado. La acción `DEVOLVER` se puede insertar en cualquier punto del cuerpo de la función y, además, es posible utilizar más de una sentencia `DEVOLVER` en una misma función, aunque sólo una llegue a ejecutarse. Esto puede verse en el siguiente ejemplo (ejemplo 2):
+La instrucción `return()` provoca la inmediata finalización de la ejecución de la función e indica cuál es el objeto que la misma devuelve como resultado. Aunque generalmente lo encontramos al final de la definición de la función, es posible incluir más de un `return()` para que el resultado dependa de alguna condición, aunque sólo uno llegue a ejecutarse.
 
-```
-FUNCIÓN maximo(num1: numérico, num2: numérico): numérico
-COMENZAR
-	SI num1 >= num2 ENTONCES
-		DEVOLVER num1
-	SI NO
-		DEVOLVER num2
-	FIN SI
-FIN FUNCIÓN
-```
-
-En R, la función `return()` puede omitirse, ya que si no está presente se devuelve el resultado de la última expresión analizada. Por eso, las siguientes funciones son equivalentes:
+::: {.ejemplo data-latex=""}
+Uso de dos instrucciones `return()` en la definición de una función que devuelve cuál es el mayor entre dos números:
 
 ```{r}
-g1 <- function(x, y) {
-	resultado <- x^2 + 3 * y
-	return(resultado)
-}
-g1(4, 5)
-```
-
-```{r}
-g2 <- function(x, y) {
-	x^2 + 3 * y
-}
-g2(4, 5)
-```
-
-De todos modos, es aconsejable usar `return()` para evitar ambigüedades y ganar en claridad. Además, en funciones más complejas, su uso puede ser indispensable para indicar el término de la evaluación de la función.
-
-En el caso particular donde interese que nuestra función emita un mensaje, sin necesariamente devolver un objeto en particular, podemos proceder como se mencionó en la sección anterior:
-
-```{r}
-g3 <- function(x, y) {
-	resultado <- x^2 + 3 * y
-	cat("El resultado de esta cuenta es:", resultado)
-	return(NULL)
-}
-g3(4, 5)
-```
-
-O de esta otra forma:
-
-```{r}
-g4 <- function(x, y) {
-	resultado <- x^2 + 3 * y
-	cat("El resultado de esta cuenta es:", resultado)
-}
-g4(4, 5)
-```
-
-En ambos casos, la función escribe el mensaje y devuelve como resultado un objeto `NULL`: en `g3` porque se lo pedimos explícitamente y en `g4` porque la función `cat()`, que es lo último en evaluarse, además de escribir un mensaje, devuelve un `NULL`:
-
-```{r}
-x <- g3(4, 5)
-x
-y <- g4(4, 5)
-y
-```
-
-## Documentación de los subalgoritmos {#ejemplofact}
-
-En el contexto de la programación, documentar significa escribir indicaciones para que otras personas puedan entender lo que queremos hacer en nuestro código o para que sepan cómo usar nuestras funciones. Por ejemplo, como vimos antes todas funciones predefinidas de R están documentadas para que podamos buscar ayuda si la necesitamos. Cuando estamos creando nuestras propios subalgoritmos, es importante que también incluyamos comentarios para guiar a otras personas (y a nosotros mismos en el futuro si nos olvidamos) para qué y cómo se usa lo que estamos desarrollando.
-
-Para ilustrar esto, vamos a recordar que en la práctica 2 escribimos un algoritmo para el cálculo de factoriales. Dado que los mismos son muy útiles en variadas aplicaciones, podemos escribir un subalgortimo que se encargue de obtenerlos. Luego, escribiremos un algoritmo para mostrar todos los factoriales de los números 1 a 10.
-
-```
----------------------------------------------------------------
-SUBALGORITMOS
----------------------------------------------------------------
-
-#-------------------------------------------------------
-# Función fact
-# Calcula el factorial de números enteros no negativos
-# Entrada:
-# 	- n, entero no negativo
-# Salida:
-# 	- el factorial de n
-#-------------------------------------------------------
-FUNCIÓN fact(n: numérico): numérico
-COMENZAR
-	VARIABLE numérica resultado
-	resultado <- 1
-	SI n > 0 ENTONCES
-		PARA i DESDE 1 HASTA n HACER
-			resultado <- resultado * i
-		FIN PARA
-	FIN SI
-	DEVOLVER resultado
-FIN FUNCIÓN
-
----------------------------------------------------------------
-ALGORITMO PRINCIPAL
----------------------------------------------------------------
-
-ALGORITMO: "Mostrar los factoriales de los 10 primeros naturales"
-COMENZAR
-	PARA j DESDE 1 HASTA 10 HACER
-		ESCRIBIR "El factorial de " j " es igual a " fact(j)
-	FIN PARA
-FIN
-```
-
-En R:
-
-```{r}
-# ---------------------------------------------------------------
-# DEFINICIÓN DE FUNCIONES
-# ---------------------------------------------------------------
-
-#-----------------------------------------------------
-# Función fact
-# Calcula el factorial de números enteros no negativos
-# Entrada:
-#		- n, entero no negativo
-# Salida:
-#		- el factorial de n
-#-----------------------------------------------------
-fact <- function(n) {
-	resultado <- 1
-	if (n > 0) {
-		for (i in 1:n) {
-			resultado <- resultado * i
-		}
+maximo <- function(num1, num2) {
+	if (num1 > num2) {
+		return(num1)
+	} else {
+		return(num2)
 	}
+}
+
+maximo(0, 10)
+maximo(0, -10)
+```
+:::
+
+
+La función `return()` puede omitirse, ya que si no está presente se devuelve el resultado de la última expresión analizada. Por eso, las siguientes funciones son equivalentes:
+
+```{r}
+sumar1 <- function(x, y) {
+	resultado <- x + y
 	return(resultado)
 }
 
-# ---------------------------------------------------------------
-# PROGRAMA PRINCIPAL: Mostrar los factoriales de los 10 primeros naturales
-# ---------------------------------------------------------------
-for (j in 1:10) {
-	cat("El factorial de", j, "es igual a", fact(j), "\n")
-}
-```
-
-## Pasaje de parámetros
-
-Los algoritmos y subalgoritmos comunican información entre sí a través de los parámetros o argumentos. Esta comunicación recibe el nombre de **pasaje de argumentos** y se puede realizar de dos formas: *por valor* o *por referencia*. Algunos lenguajes de programación trabajan con uno u otro sistema, mientras que otros lenguajes permiten el uso de ambos.
-
-<!-- Las funciones, además, cuentan con un valor de retorno, que es el valor que se transmite desde el subalgoritmo hacia el algorimo que lo llamó. -->
-
-### Pasaje por valor
-
-En este caso, los argumentos representan valores que se transmiten **desde** el algoritmo **hacia** el subalgoritmo. El **pasaje por valor** implica que los objetos del algoritmo provistos como argumentos en la llamada al subalgoritmo no serán modificados por la ejecución del mismo. Este sistema funciona de la siguiente forma:
-
-1. Se evalúan los argumentos actuales usados en la invocación al subalgoritmo.
-2. Los valores obtenidos se *copian* en los argumentos formales dentro del subalgoritmo.
-3. Los argumentos formales se usan como variables dentro del subalgoritmo. Aunque los mismos sean modificados (por ejemplo, se les asignen nuevos valores), no se modifican los argumentos actuales en el algoritmo, sólo sus copias dentro del subalgoritmo.
-
-Veamos un ejemplo:
-
-```
----------------------------------------------------------------
-SUBALGORITMOS
----------------------------------------------------------------
-
-FUNCIÓN fun(x: numérico, y: numérico): numérico
-COMENZAR
-	x <- x + 1
-	y <- y * 2
-	DEVOLVER x + y
-FIN FUNCIÓN
-
----------------------------------------------------------------
-ALGORITMO PRINCIPAL
----------------------------------------------------------------
-
-ALGORITMO: "Ejemplo de pasaje de argumentos"
-COMENZAR
-	VARIABLE numérica a, b, d
-	a <- 3
-	b <- 5
-	d <- fun(a, b)
-	ESCRIBIR a b d
-FIN
-```
-
-Si el pasaje de argumentos se hace por valor, los cambios producidos en el cuerpo de la función sobre los parámetros formales no son transmitidos a los parámetros actuales en el algoritmo principal. Esto significa que los formales son una "copia" de los actuales. Los pasos que sigue el algoritmo son:
-
-1. En el algoritmo principal, se asignan los valores: `a = 3`, `b = 5`.
-2. Al invocar la función, se establece la correspondencia: `x = 3, y = 5`.
-3. Primera línea de la función: `x = 3 + 1 = 4`.
-4. Segunda línea de la función: `y = 5 * 2 = 10`.
-4. La función devuelve el valor `x + y = 4 + 10 = 14`.
-5. De regreso en el algoritmo principal: `d` recibe el valor `14`.
-6. El algoritmo escribe: `3 5 14`.
-
-En R, el pasaje de argumentos es **por valor**. Por lo tanto, este tipo de comportamiento es lo que vemos cuando implementamos el ejemplo discutido^[**Nota**: En general, se desalienta la reasignación de valor a los parámetros de la función por resultar confuso. Esto quiere decir que en el ejemplo anterior, para evitar ambigüedades, sería recomendable reemplazar `x <- x + 1` por algo como `z <- x + 1` y operar con `z`, de modo que no se sobreescriba el valor del parámetro `x`. También sería aconsejable hacer algo similar para la `y`.]:
-
-```{r}
-# ---------------------------------------------------------------
-# DEFINICIÓN DE FUNCIONES
-# ---------------------------------------------------------------
-
-fun <- function(x, y) {
-	x <- x + 1
-	y <- y * 2
-	return(x + y)
+sumar2 <- function(x, y) {
+	x + y
 }
 
-# ---------------------------------------------------------------
-# PROGRAMA PRINCIPAL
-# ---------------------------------------------------------------
-
-a <- 3
-b <- 5
-d <- fun(a, b)
-cat(a, b, d)
+sumar1(4, 5)
+sumar2(4, 5)
 ```
 
+No obstante, es aconsejable usar `return()` para evitar ambigüedades y ganar en claridad. Además, en funciones más complejas, su uso puede ser indispensable para indicar el término de la evaluación de la función.
 
-### Pasaje por referencia
-
-En este caso, los argumentos no sólo representan valores que se transmiten desde el algoritmo hacia el subalgoritmo, sino también desde el subalgoritmo al algoritmo. Esto sirve en las situaciones en las que se quiere que el subalgoritmo pueda modificar las variables del algoritmo principal que se pasaron como argumentos. De esta manera, un subalgoritmo puede producir uno o varios efectos secundarios en el ambiente del algoritmo. 
-
-Si un parámetro se pasa por referencia, todos los cambios que experimente dentro del subalgoritmo se producirán también en la variable externa pasada como argumento. Esto se debe a que la información que es pasada desde el algoritmo al subalgoritmo es la dirección en la memoria de la computadora donde se halla almacenado el parámetro actual, es decir, se pasa una referencia a la variable, no el valor que contiene.
-
-Este sistema funciona de la siguiente forma:
-
-1. Se seleccionan las variables usadas como argumentos actuales.
-2. Se asocia cada variable con el argumento formal correspondiente.
-3. Los cambios que experimenten los argumentos formales se reflejan también en los argumentos actuales de origen.
-
-Retomemos el ejemplo anterior:
-
-```
----------------------------------------------------------------
-SUBALGORITMOS
----------------------------------------------------------------
-
-FUNCIÓN fun(x: numérico, y: numérico): numérico
-COMENZAR
-	x <- x + 1
-	y <- y * 2
-	DEVOLVER x + y
-FIN FUNCIÓN
-
----------------------------------------------------------------
-ALGORITMO PRINCIPAL
----------------------------------------------------------------
-
-ALGORITMO: "Ejemplo de pasaje de argumentos"
-COMENZAR
-	VARIABLE numérica a, b, d
-	a <- 3
-	b <- 5
-	d <- fun(a, b)
-	ESCRIBIR a b d
-FIN
-```
-
-Si el pasaje de argumentos se hace por referencia, los pasos que sigue el algoritmo son:
-
-1. En el algoritmo principal, se asignan los valores: `a = 3`, `b = 5`.
-2. Al invocar la función, se establece la correspondencia: `x = 3, y = 5`.
-3. Primera línea de la función: `x = 3 + 1 = 4`. El parámetro actual asociado con `x`, `a`, es en realidad el que sufre dicho cambio y recibe el valor `4` (`a = 4`).
-3. Segunda línea de la función: `y = 5 * 2 = 10`. El parámetro actual asociado con `y`, `b`, es en realidad el que sufre dicho cambio y recibe el valor `10` (`b = 10`).
-4. La función devuelve el valor `x + y = 4 + 10 = 14`.
-5. De regreso en el algoritmo principal: `d` recibe el valor `14`.
-6. El algoritmo escribe: `4 10 14`.
-
-Debe notarse que los resultados difieren dependiendo del tipo de pasaje de argumentos empleado
-^[Para diferenciar subalgoritmos con pasaje por referencia, algunos autores sugieren distinguir la declaración de los parámetros formales con algún símbolo, por ejemplo `&`.]. R no trabaja con pasaje por referencia (aunque es posible forzar a que haga algo similar, si así se lo desea).
-
-## Ámbito de las variables
-
-En todo lenguaje de programación se le dice **ámbito** o **scope** a la región del programa donde una variable definida existe y es visible, tal que fuera de dicha región no se puede acceder a la misma
-^[No sólo las variables pertenecen a un ámbito, sino todos los objetos que se puedan crear, sean estos variables, constantes o subalgoritmos.]. Según el ámbito en el que existen, las variables pueden considerarse *locales* o *globales*.
-
-### Variables locales
-
-Las variables declaradas dentro de un subalgoritmo (por ejemplo, dentro de una función) se llaman **variables locales**. Sólo pueden ser usadas por las instrucciones que están dentro de esa función, mientras que el programa principal u otros subalgoritmos desconocen su existencia y no las pueden usar. Las *variables locales* residen en el *ambiente local* de un subalgortimo y no tienen nada que ver con las variables que puedan ser declaradas con el mismo nombre en otros lugares^[Cuando otro subalgoritmo utiliza el mismo nombre se refiere a una posición diferente en memoria.]. En el siguiente ejemplo, las variables `a` y `b` son locales a la función `f1` y no se pueden usar desde el programa principal, porque dejan de existir una vez que termina la ejecución de `f1`:
-
-```{r, echo=FALSE}
-rm(list = ls())
-```
-
-
-```
----------------------------------------------------------------
-SUBALGORITMOS
----------------------------------------------------------------
-
-FUNCIÓN f1(x: numérico): numérico
-COMENZAR
-	VARIABLE numérica a, b
-	a <- x - 10
-	b <- x + 10
-	DEVOLVER a + b
-FIN FUNCIÓN
-
----------------------------------------------------------------
-ALGORITMO PRINCIPAL
----------------------------------------------------------------
-
-ALGORITMO: "Ejemplo"
-COMENZAR
-	VARIABLE numérica z
-	z <- f1(50)
-	ESCRIBIR z
-	ESCRIBIR z + a   ---LÍNEA CON ERROR---
-FIN
-```
-
-
-```{r, error=T}
-# ---------------------------------------------------------------
-# DEFINICIÓN DE FUNCIONES
-# ---------------------------------------------------------------
-
-f1 <- function(x) {
-	a <- x - 10
-	b <- x + 10
-	return(a + b)
-}
-
-# ---------------------------------------------------------------
-# PROGRAMA PRINCIPAL
-# ---------------------------------------------------------------
-
-z <- f1(50)
-z
-z + a
-```
-
-El error se genera porque el algoritmo principal quiere usar a la variable `a`, la cual es local a la función `f1()` y sólo existe dentro de la misma.
-
-El uso de *variables locales* tiene muchas ventajas. Permiten independizar al subalgoritmo del algoritmo principal, ya que las variables definidas localmente en un subalgoritmo no son reconocidas fuera de él. La comunicación entre el subalgoritmo y el algoritmo principal se da exclusivamente a través de la lista de parámetros. Esta característica hace posible dividir grandes proyectos en piezas más pequeñas y que, por ejemplo, diferentes programadores puedan trabajar independientemente en un mismo proyecto.
-
-### Variables globales
-
-Las variables globales son las que se definen en el algoritmo principal y pueden ser usadas dentro de los subalgoritmos, aún cuando no se las pase como argumento. En el ejemplo anterior `z` es una variable global^[`f1` también es global: todo tipo de objeto, incluso las funciones, pertenecen a un determinado ambiente]. Las *variables globales* residen en el *ambiente global* del algoritmo.
-
-El siguiente ejemplo muestra cómo la función `f2` puede hacer uso de una variable global `y` que fue definida fuera de ella, en el programa principal
-^[Algunos autores sugieren agregar la palabra *GLOBAL* o *LOCAL* en la declaración de las variables para distinguir su ambiente, por ejemplo, poner dentro de `f2` `VARIABLE LOCAL numérica a` y en el algoritmo `VARIABLE GLOBAL y`, pero no seguiremos esta práctica para ganar en sencillez de escritura. También algunos lenguajes de programación requieren señalar de alguna manera especial a las variables globales.]:
-
-```
----------------------------------------------------------------
-SUBALGORITMOS
----------------------------------------------------------------
-
-FUNCIÓN f2(x: numérico): numérico
-COMENZAR
-	VARIABLE numérica a
-	a <- x * y
-	DEVOLVER a
-FIN FUNCIÓN
-
----------------------------------------------------------------
-ALGORITMO PRINCIPAL
----------------------------------------------------------------
-
-ALGORITMO: "Ejemplo"
-COMENZAR
-	VARIABLE numérica y
-	y <- 20
-	ESCRIBIR f2(2)
-	y <- 18
-	ESCRIBIR f2(2)
-FIN
-```
-
-```{r}
-# ---------------------------------------------------------------
-# DEFINICIÓN DE FUNCIONES
-# ---------------------------------------------------------------
-
-f2 <- function(x) {
-	a <- x * y
-	return(a)
-}
-
-# ---------------------------------------------------------------
-# PROGRAMA PRINCIPAL
-# ---------------------------------------------------------------
-
-y <- 20
-f2(2)
-y <- 18
-f2(2)
-```
-
-La función pudo hacer uso de la variable global `y` sin haberse comunicado con el programa principal a través de los argumentos. Esta práctica no es recomendable: si bien evaluemos `f2(2)` dos veces, el resultado no fue el mismo, porque depende de cuánto vale `y` en el ambiente global en el momento que `f2` es invocada. Además de ser confuso, esto es una violación al principio de *transparencia referencial*: un subalgoritmo sólo debe utilizar elementos mencionados en la lista de argumentos o definidos localmente, sin emplear variables globales. En particular, si hablamos de una función donde el pasaje de parámetros es por valor, esta práctica garantiza que la misma siempre devuelva el mismo resultado cada vez que sea invocada con los mismos valores en los argumentos de entrada, sin producir ningún efecto secundario en el algoritmo principal. El uso de variables globales permite escribir subalgoritmos que carecen de transparencia referencial.
-
-Un algoritmo puede usar el mismo nombre para variables locales y globales, pero dentro de una función toma precedencia la variable local. En el siguiente ejemplo, hay una variable global `a` en el programa principal que recibe el valor `70`. Y hay otra variable `a` que es local a la función `f3`. Cuando `f3` calcula `a + b`, lo hace con el valor de su variable local (`x - 10`) y no con el valor de la variable global (`70`):
-
-```
----------------------------------------------------------------
-SUBALGORITMOS
----------------------------------------------------------------
-
-FUNCIÓN f3(x: numérico): numérico
-COMENZAR
-	VARIABLE numérica a, b
-	a <- x - 10
-	b <- x + 10
-	ESCRIBIR "Acá, dentro de la f3, el valor de a es", a
-	DEVOLVER a + b
-FIN FUNCIÓN
-
----------------------------------------------------------------
-ALGORITMO PRINCIPAL
----------------------------------------------------------------
-
-ALGORITMO: "Ejemplo"
-COMENZAR
-	VARIABLE numérica a, z
-	a <- 70
-	z <- f3(50)
-	ESCRIBIR z
-	ESCRIBIR "Acá, en el programa principal, el valor de a es", a
-	ESCRIBIR a + z
-FIN
-```
-
-```{r}
-# ---------------------------------------------------------------
-# DEFINICIÓN DE FUNCIONES
-# ---------------------------------------------------------------
-
-f3 <- function(x) {
-	a <- x - 10
-	b <- x + 10
-	cat("Acá, dentro de la f3, el valor de a es", a)
-	return(a + b)
-}
-
-# ---------------------------------------------------------------
-# PROGRAMA PRINCIPAL
-# ---------------------------------------------------------------
-
-a <- 70
-z <- f3(50)
-z
-cat("Acá, en el programa principal, el valor de a es", a)
-a + z
-```
-
-Se debe prestar atención que con la sentencia `ESCRIBIR` o la función `cat()` en R se muestra en pantalla un mensaje en el momento en el que se ejecuta esa acción. Si el mensaje incluye mostrar valores guardados en objetos, se mostrarán los valores que los mismos tienen en ese momento. Por otro lado, lo devuelto por la sentencia `DEVOLVER` o la función `return()` es el resultado de la ejecución de la función: el valor que la función entrega puede ser asignado a otro objeto en el algoritmo principal, como ocurre en la lína de `z <- f3(50)`.
-
-## La función source()
-
-
-**Para motivar el uso de una buena práctica que ayude a distinguir entre las acciones de los subalgoritmos y del algoritmo, vamos a escribir los subalgoritmos **antes** y **por fuera** del algoritmo principal^[Es más, podríamos escribirlos y guardarlos en archivos distintos.]. Consideremos el ejemplo 3 mostrado a continuación. Primero definimos los subalgoritmos que necesitaremos (son los de los ejemplos 1 y 2) y luego escribiremos un algoritmo principal que hace uso de ellos para resolver un problema en particular:**
-
-Cuanto más grande o complejo es el problema a resolver, más funciones deben ser programadas y no es necesario escribirlas a todas en el mismo archivo de código del programa principal. Para ser más ordenados, podemos escribir nuestras funciones en uno o más archivos separados. Si hacemos esto, en el comienzo del script del programa principal debemos incluir una sentencia para que en primer lugar se ejecute el código guardado en esos otros archivos, de modo que las funciones sean definidas y formen parte del ambiente global. 
-
-Consideremos otra vez el ejemplo de la función para el cálculo de factoriales. Podemos guardar el código de esta función (y otras si hubiese) en un archivo llamado `funciones.R`, con el siguiente contenido:
-
-```
-#-----------------------------------------------------
-# Función fact
-# Calcula el factorial de números enteros no negativos
-# Entrada:
-#		- n, entero no negativo
-# Salida:
-#		- el factorial de n
-#-----------------------------------------------------
-fact <- function(n) {
-	resultado <- 1
-	if (n > 0) {
-		for (i in 1:n) {
-			resultado <- resultado * i
-		}
-	}
-	return(resultado)
-}
-```
-
-Luego, en cualquier problema que requiera el cálculo de factoriales, vamos a pedirle a R que ejecute el código guardado en el archivo `funciones.R` con la sentencia `source()`, como paso inicial en el archivo donde estemos escribiendo el programa principal. Por ejemplo:
-
-```{r, eval=F}
-# ---------------------------------------------------------------
-# PROGRAMA PRINCIPAL: Mostrar los factoriales de los 10 primeros naturales
-# ---------------------------------------------------------------
-
-source("C:/Documentos/Facultad/IALP/funciones.R")
-
-for (j in 1:10) {
-	cat("El factorial de", j, "es igual a", fact(j), "\n")
-}
-```
-
-
-Gracias a `source()` todas las funciones definidas en el archivo `funciones.R` aparecerán en el entorno y no hay necesidad ni siquiera de abrirlo. Notar que `C:/Documentos/Facultad/IALP/` es la dirección o *path* de la carpeta en la computadora donde está guardado el archivo `funciones.R`.
-
-### Argumentos con valores asignados por defecto
+## Argumentos con valores asignados por defecto
 
 Hemos visto que algunos argumentos de las funciones predefinidas de R tienen valores asignados por defecto, como es el caso de la función `log()`, que a menos que indiquemos otra cosa opera con la base natural. Cuando definimos nuestras propias funciones, también es posible asignarle un valor por defecto a uno o más de sus argumentos.
-Tomemos el primer ejemplo de este capítulo:
+
+Recordemos la definición de la función `f`:
 
 ```{r}
 f <- function(x, y) {
 	resultado <- x^2 + 3 * y
 	return(resultado)
 }
-f(4, 5)
 ```
 
 Esta función también podría ser definida así:
@@ -649,65 +160,116 @@ nueva_f <- function(x, y = 100) {
 }
 ```
 
-Esto significa que si no proveemos un valor para el argumento `y`, a este se le asignará por default el valor 100. Luego:
+Esto significa que si no proveemos un valor para el argumento `y`, se le asignará por default el valor 100. Luego:
 
 ```{r}
 nueva_f(4)
 ```
 
-En el caso anterior, se hace corresponder el 4 al primer argumento de la función, `x`, y como no hay ningún otro parámetro actual que le estemos pasando a la función, la misma le asigna a `y` el valor 100 y calcula: `x^2 + 3 * y = 16 + 300 = 316`. Sin embargo, podemos, como antes, proveer cualquier otro valor para `y`, de modo que no se use el valor por default:
+En el caso anterior se hace corresponder el 4 al primer argumento de la función, `x`, y como no proveemos ningún otro parámetro actual, `y` recibe por defecto el valor 100 y se calcula: `x^2 + 3 * y = 16 + 300 = 316`. 
+
+Por supuesto, podemos proveer cualquier otro valor para `y`, de modo que no se use el valor asignado por default:
 
 ```{r}
 nueva_f(4, 5)
 ```
 
-Como `x` no tiene valor asignado por default en la función `nueva_f()`, siempre debemos pasarle un valor. En caso contrario, recibiremos un error:
-
-```{r, error=T}
-nueva_f()
-nueva_f(y = 5)
-```
-
-## Otros tópicos de lectura opcional
-
-### Modificar una variable global desde el cuerpo de una función en R
-
-Hemos dicho que una función recibe información desde el programa principal a través de sus parámetros, y envía información al mismo mediante el valor que devuelve. Sin embargo, es posible alterar el comportamiento para que sea capaz de producir efectos secundarios, por ejemplo, modificando el valor de una variable global, violando así el principio de transparencia referencial.
-
-Los siguientes ejemplos definen dos funciones con un único argumento, `x`, pero que en su cuerpo hacen uso de una variable global, `y`, definida el algoritmo principal (estos casos violan el principio de transparencia referencial, su práctica no es recomendable). La diferencia entre ellas es que `g1()` modifica el valor de `y` dentro de la función, pero el valor de `y` en el ambiente global no es alterado; mientras que `g2()` cambia el valor de `y` no sólo localmente, sino también en el ambiente global. Esto se logra mediante el uso del operador `<<-`^[En realidad, el operador `<<-` trabaja de forma más compleja que lo mencionado en esta guía. En programas más elaborados de R, pueden haber ambientes anidados y este operador iniciará una búsqueda desde el ambiente actual hacia los superiores hasta encontrar una variable que se llame `y` para asignarle un valor. En este caso sencillo, sólo hay dos ambientes, el de la función `g2` y el global. Por lo tanto el operador `<<-` hace que se le asigne un valor a la variable `y` en el global.].
+Como `x` no tiene valor asignado por default en la función `nueva_f()`, siempre debemos pasarle uno. En caso contrario, recibiremos un error:
 
 ```{r}
+#| error: true
+nueva_f(y = 5)
+nueva_f()
+```
+
+## ¿Dónde escribimos el código que define nuestras funciones?
+
+El código que define una función tiene que ser ejecutado **antes** que el código que pretende usarla, de modo que la función aparezca entre los objetos disponibles del *environment*. No podemos usar una función cuya definición no haya sido ejecutada, puesto que produciremos un error que indica que tal objeto no existe. Esto nos obliga a pensar dónde escribimos el código para crear nuevas funciones y en qué momento es ejecutado.
+
+En proyectos de pequeña extensión, donde todo el problema se resuelve en un único y acotado *script* y sólo se definen unas pocas nuevas funciones, podemos incluirlas al comienzo del archivo, para que sean evaluadas antes del código que las invoca.
+
+::: {.ejemplo data-latex=""}
+A continuación se presenta el contenido de un breve script de código que comienza con la definición de dos funciones, usadas posteriormente.
+
+
+```{r}
+#| eval: false
+
 # ---------------------------------------------------------------
 # DEFINICIÓN DE FUNCIONES
 # ---------------------------------------------------------------
 
-g1 <- function(x) {
-	y <- y + 100
-	return(x / y)
+f <- function(x, y) {
+    resultado <- x^2 + 3 * y
+    return(resultado)
 }
 
-g2 <- function(x) {
-	y <<- y + 100
-	return(x / y)
+maximo <- function(num1, num2) {
+    if (num1 > num2) {
+        return(num1)
+    } else {
+        return(num2)
+    }
 }
 
 # ---------------------------------------------------------------
-# PROGRAMA PRINCIPAL
+# PROGRAMA
 # ---------------------------------------------------------------
 
-# Caso 1: el valor de y en el ambiente global no es modificado por g1
-x <- 500
-y <- 50
-z <- g1(x)
-cat(x, y, z)
+rtdo1 <- f(2, 5)
+rtdo2 <- f(3, 10)
+rtdo3 <- maximo(rtdo1, rtdo2) + 20
+cat("El resultado es", rtdo3)
+```
+:::
 
-# Caso 2: el valor de y en el ambiente global es modificado por g2
-x <- 500
-y <- 50
-z <- g2(x)
-cat(x, y, z)
+::: {.ejercicio data-latex=""}
+¿Cuál es el mensaje que emite la última línea del script del ejemplo?
+
+`r webexercises::fitb("El resultado es 59")`.
+:::
+
+Cuanto más grande o complejo es el problema a resolver, más funciones deben ser programadas. Por eso, con el objetivo de tener un mayor orden en nuestro código, podemos escribir nuestras funciones en uno o más archivos separados, creados específicamente para esto ("scripts de funciones"). Si lo hacemos, al comienzo del script en el que estamos resolviendo un problema que involucra el uso de las funciones creadas, debemos incluir una instrucción para que el script de funciones sea evaluado, de modo que las funciones ahí definidas sean ejecutadas y pasen a formar parte del *environment*. Esta instrucción es la función `source()`, que toma como único argumento el nombre del script de funciones.
+
+Para ilustrar esto, vamos a recordar que en la Práctica 2 escribimos un programa para el cálculo de factoriales. Dado que los mismos son muy útiles en variadas aplicaciones, podemos definir una nueva función se encargue de obtenerlos. Escribimos la definición en un script llamado `funciones.R`, cuyo contenido es:
+
+```{r}
+fact <- function(n) {
+	resultado <- 1
+	if (n > 0) {
+		for (i in 1:n) {
+			resultado <- resultado * i
+		}
+	}
+	return(resultado)
+}
 ```
 
-Nuevamente, esta forma de trabajo no es aconsejable porque estamos produciendo *efectos secundarios* desde la función en el ambiente global que pueden pasar desapercibidos si no estamos muy atentos. Así como la mejor práctica es pasar toda la información desde el programa principal hacia la función a través de sus parámetros, también es recomendable que toda comunicación desde la función hacia el programa principal se realice a través del valor (u objeto) que la función devuelve, sin producir efectos secundarios (transparencia referencial).
+Luego, en cualquier script donde se presente un problema que requiera el cálculo de factoriales, vamos a pedirle a R que ejecute el código guardado en `funciones.R` con la sentencia `source()`, como paso inicial. Por ejemplo, en el script `mis_factoriales.R` se usa la función `fact()` para calcular el factorial de los primeros diez números naturales. Su contenido es:
+
+```{r}
+#| eval: false
+# ---------------------------------------------------------------
+# PROGRAMA: Mostrar los factoriales de los 10 primeros naturales
+# ---------------------------------------------------------------
+
+source("funciones.R")
+
+for (j in 1:10) {
+	cat("El factorial de", j, "es igual a", fact(j), "\n")
+}
+```
+
+```{r}
+#| eval: true
+#| echo: false
+
+for (j in 1:10) {
+	cat("El factorial de", j, "es igual a", fact(j), "\n")
+}
+```
+
+
+Gracias a `source()` todas las funciones definidas en el archivo `funciones.R` aparecerán en el entorno y no hay necesidad ni siquiera de abrirlo. Esto funcionará siempre que este archivo esté guardado en el directorio de trabajo. En caso contrario, se debe indicar en `source()` el *path* completo hacia el script de funciones (por ejemplo, `C:/Documentos/Facultad/funciones.R`), pero esto no es recomendable. Es preferible que todos los archivos estén correctamente organizados en la carpeta principal de nuestro proyecto y, en caso de necesitarlo, usemos rutas relativas con respecto a la misma, tal como mencionamos en @sec-organizacion.
 
 

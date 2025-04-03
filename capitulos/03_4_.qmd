@@ -1,0 +1,92 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# completar
+
+::: {.presentacion-capitulo data-latex=""}
+COMPLETAR
+:::
+
+## stop o exiting a function ??
+
+
+## `NULL` vs `NA` vs `NaN`
+
+Generalmente los lenguajes de programación poseen un valor conocido como `NULO`, para representar un objeto vacío, sin información. El mismo suele emplearse como valor devuelto por funciones cuando no corresponde devolver otro tipo de resultado. En pseudocódigo podemos usar esta estrategia escribiendo `DEVOLVER NULO`, si deseamos que nuestra función no devuelva nada. La representación en R de este tipo de objeto es `NULL`, que se trata de un objeto vacío que generalmente devuelven las funciones cuando el resultado es indefinido. Es decir, podemos crear funciones que terminen con un `return(NULL)`, como en el siguiente caso donde interesa emitir un mensaje, pero no devolver ningún objeto:
+
+```{r}
+g <- function(x, y) {
+	resultado <- x^2 + 3 * y
+	cat("El resultado de esta cuenta es:", resultado)
+	return(NULL)
+}
+g(4, 5)
+```
+
+El objeto `NULL` no debe confundirse con otros dos valores existentes en el lenguaje R: `NA` y `NaN`:
+
+- `NA` son las siglas de *Not Available* y es un valor lógico (como `TRUE` y `FALSE`) que generalmente representa datos faltantes.
+- `NaN` son las siglas de *Not a Number* y es un valor numérico que generalmente surge como resultado de operaciones aritméticas imposibles de calcular, como indeterminaciones, raíces negativas, etc. (correr `0/0`, `log(-1)` o `sqrt(-1)` para verlo). Es un valor establecido por IEEE, el estándar con el cual se rige la representación numérica en la computadora.
+
+Otro valor numérico muy especial es `Inf` (y su contrapartida negativa, `-Inf`), que es el resultado de almacenar un número muy grande o de una división por cero. No es semejante a `NA`, porque además de no ser de tipo lógico, no representa que hay un dato faltante sino que se trata de un valor numérico.
+
+```{r}
+a <- NULL
+b <- NA
+d <- NaN
+e <- Inf
+f <- "NULL"
+
+class(a)
+class(b)
+class(d)
+class(e)
+class(f)
+```
+
+<!-- Cualquiera de estas dos opciones podría ser devuelta por una función ante casos particulares (`return(NULL)` o `return(NA)`). -->
+
+## otros temas nombrados en IDEAS
+
+## Modificar una variable global desde el cuerpo de una función en R (opcional)
+
+Hemos dicho que una función recibe información desde el programa principal a través de sus parámetros, y envía información al mismo mediante el valor que devuelve. Sin embargo, es posible alterar el comportamiento para que sea capaz de producir efectos secundarios, por ejemplo, modificando el valor de una variable global, violando así el principio de transparencia referencial.
+
+Los siguientes ejemplos definen dos funciones con un único argumento, `x`, pero que en su cuerpo hacen uso de una variable global, `y`, definida el algoritmo principal (estos casos violan el principio de transparencia referencial, su práctica no es recomendable). La diferencia entre ellas es que `g1()` modifica el valor de `y` dentro de la función, pero el valor de `y` en el ambiente global no es alterado; mientras que `g2()` cambia el valor de `y` no sólo localmente, sino también en el ambiente global. Esto se logra mediante el uso del operador `<<-`^[En realidad, el operador `<<-` trabaja de forma más compleja que lo mencionado en esta guía. En programas más elaborados de R, pueden haber ambientes anidados y este operador iniciará una búsqueda desde el ambiente actual hacia los superiores hasta encontrar una variable que se llame `y` para asignarle un valor. En este caso sencillo, sólo hay dos ambientes, el de la función `g2` y el global. Por lo tanto el operador `<<-` hace que se le asigne un valor a la variable `y` en el global.].
+
+```{r}
+# ---------------------------------------------------------------
+# DEFINICIÓN DE FUNCIONES
+# ---------------------------------------------------------------
+
+g1 <- function(x) {
+	y <- y + 100
+	return(x / y)
+}
+
+g2 <- function(x) {
+	y <<- y + 100
+	return(x / y)
+}
+
+# ---------------------------------------------------------------
+# PROGRAMA PRINCIPAL
+# ---------------------------------------------------------------
+
+# Caso 1: el valor de y en el ambiente global no es modificado por g1
+x <- 500
+y <- 50
+z <- g1(x)
+cat(x, y, z)
+
+# Caso 2: el valor de y en el ambiente global es modificado por g2
+x <- 500
+y <- 50
+z <- g2(x)
+cat(x, y, z)
+```
+
+Nuevamente, esta forma de trabajo no es aconsejable porque estamos produciendo *efectos secundarios* desde la función en el ambiente global que pueden pasar desapercibidos si no estamos muy atentos. Así como la mejor práctica es pasar toda la información desde el programa principal hacia la función a través de sus parámetros, también es recomendable que toda comunicación desde la función hacia el programa principal se realice a través del valor (u objeto) que la función devuelve, sin producir efectos secundarios (transparencia referencial).
+
+

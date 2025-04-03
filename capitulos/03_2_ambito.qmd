@@ -1,0 +1,263 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# completar
+
+::: {.presentacion-capitulo data-latex=""}
+COMPLETAR
+:::
+
+
+## Pasaje de parámetros
+
+Los algoritmos y subalgoritmos comunican información entre sí a través de los parámetros o argumentos. Esta comunicación recibe el nombre de **pasaje de argumentos** y se puede realizar de dos formas: *por valor* o *por referencia*. Algunos lenguajes de programación trabajan con uno u otro sistema, mientras que otros lenguajes permiten el uso de ambos.
+
+<!-- Las funciones, además, cuentan con un valor de retorno, que es el valor que se transmite desde el subalgoritmo hacia el algorimo que lo llamó. -->
+
+### Pasaje por valor
+
+En este caso, los argumentos representan valores que se transmiten **desde** el algoritmo **hacia** el subalgoritmo. El **pasaje por valor** implica que los objetos del algoritmo provistos como argumentos en la llamada al subalgoritmo no serán modificados por la ejecución del mismo. Este sistema funciona de la siguiente forma:
+
+1. Se evalúan los argumentos actuales usados en la invocación al subalgoritmo.
+2. Los valores obtenidos se *copian* en los argumentos formales dentro del subalgoritmo.
+3. Los argumentos formales se usan como variables dentro del subalgoritmo. Aunque los mismos sean modificados (por ejemplo, se les asignen nuevos valores), no se modifican los argumentos actuales en el algoritmo, sólo sus copias dentro del subalgoritmo.
+
+Veamos un ejemplo:
+
+```
+---------------------------------------------------------------
+SUBALGORITMOS
+---------------------------------------------------------------
+
+FUNCIÓN fun(x: numérico, y: numérico): numérico
+COMENZAR
+	x <- x + 1
+	y <- y * 2
+	DEVOLVER x + y
+FIN FUNCIÓN
+
+---------------------------------------------------------------
+ALGORITMO PRINCIPAL
+---------------------------------------------------------------
+
+ALGORITMO: "Ejemplo de pasaje de argumentos"
+COMENZAR
+	VARIABLE numérica a, b, d
+	a <- 3
+	b <- 5
+	d <- fun(a, b)
+	ESCRIBIR a b d
+FIN
+```
+
+Si el pasaje de argumentos se hace por valor, los cambios producidos en el cuerpo de la función sobre los parámetros formales no son transmitidos a los parámetros actuales en el algoritmo principal. Esto significa que los formales son una "copia" de los actuales. Los pasos que sigue el algoritmo son:
+
+1. En el algoritmo principal, se asignan los valores: `a = 3`, `b = 5`.
+2. Al invocar la función, se establece la correspondencia: `x = 3, y = 5`.
+3. Primera línea de la función: `x = 3 + 1 = 4`.
+4. Segunda línea de la función: `y = 5 * 2 = 10`.
+4. La función devuelve el valor `x + y = 4 + 10 = 14`.
+5. De regreso en el algoritmo principal: `d` recibe el valor `14`.
+6. El algoritmo escribe: `3 5 14`.
+
+En R, el pasaje de argumentos es **por valor**. Por lo tanto, este tipo de comportamiento es lo que vemos cuando implementamos el ejemplo discutido^[**Nota**: En general, se desalienta la reasignación de valor a los parámetros de la función por resultar confuso. Esto quiere decir que en el ejemplo anterior, para evitar ambigüedades, sería recomendable reemplazar `x <- x + 1` por algo como `z <- x + 1` y operar con `z`, de modo que no se sobreescriba el valor del parámetro `x`. También sería aconsejable hacer algo similar para la `y`.]:
+
+```{r}
+# ---------------------------------------------------------------
+# DEFINICIÓN DE FUNCIONES
+# ---------------------------------------------------------------
+
+fun <- function(x, y) {
+	x <- x + 1
+	y <- y * 2
+	return(x + y)
+}
+
+# ---------------------------------------------------------------
+# PROGRAMA PRINCIPAL
+# ---------------------------------------------------------------
+
+a <- 3
+b <- 5
+d <- fun(a, b)
+cat(a, b, d)
+```
+
+
+
+## Ámbito de las variables
+
+En todo lenguaje de programación se le dice **ámbito** o **scope** a la región del programa donde una variable definida existe y es visible, tal que fuera de dicha región no se puede acceder a la misma
+^[No sólo las variables pertenecen a un ámbito, sino todos los objetos que se puedan crear, sean estos variables, constantes o subalgoritmos.]. Según el ámbito en el que existen, las variables pueden considerarse *locales* o *globales*.
+
+### Variables locales
+
+Las variables declaradas dentro de un subalgoritmo (por ejemplo, dentro de una función) se llaman **variables locales**. Sólo pueden ser usadas por las instrucciones que están dentro de esa función, mientras que el programa principal u otros subalgoritmos desconocen su existencia y no las pueden usar. Las *variables locales* residen en el *ambiente local* de un subalgortimo y no tienen nada que ver con las variables que puedan ser declaradas con el mismo nombre en otros lugares^[Cuando otro subalgoritmo utiliza el mismo nombre se refiere a una posición diferente en memoria.]. En el siguiente ejemplo, las variables `a` y `b` son locales a la función `f1` y no se pueden usar desde el programa principal, porque dejan de existir una vez que termina la ejecución de `f1`:
+
+```{r, echo=FALSE}
+rm(list = ls())
+```
+
+
+```
+---------------------------------------------------------------
+SUBALGORITMOS
+---------------------------------------------------------------
+
+FUNCIÓN f1(x: numérico): numérico
+COMENZAR
+	VARIABLE numérica a, b
+	a <- x - 10
+	b <- x + 10
+	DEVOLVER a + b
+FIN FUNCIÓN
+
+---------------------------------------------------------------
+ALGORITMO PRINCIPAL
+---------------------------------------------------------------
+
+ALGORITMO: "Ejemplo"
+COMENZAR
+	VARIABLE numérica z
+	z <- f1(50)
+	ESCRIBIR z
+	ESCRIBIR z + a   ---LÍNEA CON ERROR---
+FIN
+```
+
+
+```{r, error=T}
+# ---------------------------------------------------------------
+# DEFINICIÓN DE FUNCIONES
+# ---------------------------------------------------------------
+
+f1 <- function(x) {
+	a <- x - 10
+	b <- x + 10
+	return(a + b)
+}
+
+# ---------------------------------------------------------------
+# PROGRAMA PRINCIPAL
+# ---------------------------------------------------------------
+
+z <- f1(50)
+z
+z + a
+```
+
+El error se genera porque el algoritmo principal quiere usar a la variable `a`, la cual es local a la función `f1()` y sólo existe dentro de la misma.
+
+El uso de *variables locales* tiene muchas ventajas. Permiten independizar al subalgoritmo del algoritmo principal, ya que las variables definidas localmente en un subalgoritmo no son reconocidas fuera de él. La comunicación entre el subalgoritmo y el algoritmo principal se da exclusivamente a través de la lista de parámetros. Esta característica hace posible dividir grandes proyectos en piezas más pequeñas y que, por ejemplo, diferentes programadores puedan trabajar independientemente en un mismo proyecto.
+
+### Variables globales
+
+Las variables globales son las que se definen en el algoritmo principal y pueden ser usadas dentro de los subalgoritmos, aún cuando no se las pase como argumento. En el ejemplo anterior `z` es una variable global^[`f1` también es global: todo tipo de objeto, incluso las funciones, pertenecen a un determinado ambiente]. Las *variables globales* residen en el *ambiente global* del algoritmo.
+
+El siguiente ejemplo muestra cómo la función `f2` puede hacer uso de una variable global `y` que fue definida fuera de ella, en el programa principal
+^[Algunos autores sugieren agregar la palabra *GLOBAL* o *LOCAL* en la declaración de las variables para distinguir su ambiente, por ejemplo, poner dentro de `f2` `VARIABLE LOCAL numérica a` y en el algoritmo `VARIABLE GLOBAL y`, pero no seguiremos esta práctica para ganar en sencillez de escritura. También algunos lenguajes de programación requieren señalar de alguna manera especial a las variables globales.]:
+
+```
+---------------------------------------------------------------
+SUBALGORITMOS
+---------------------------------------------------------------
+
+FUNCIÓN f2(x: numérico): numérico
+COMENZAR
+	VARIABLE numérica a
+	a <- x * y
+	DEVOLVER a
+FIN FUNCIÓN
+
+---------------------------------------------------------------
+ALGORITMO PRINCIPAL
+---------------------------------------------------------------
+
+ALGORITMO: "Ejemplo"
+COMENZAR
+	VARIABLE numérica y
+	y <- 20
+	ESCRIBIR f2(2)
+	y <- 18
+	ESCRIBIR f2(2)
+FIN
+```
+
+```{r}
+# ---------------------------------------------------------------
+# DEFINICIÓN DE FUNCIONES
+# ---------------------------------------------------------------
+
+f2 <- function(x) {
+	a <- x * y
+	return(a)
+}
+
+# ---------------------------------------------------------------
+# PROGRAMA PRINCIPAL
+# ---------------------------------------------------------------
+
+y <- 20
+f2(2)
+y <- 18
+f2(2)
+```
+
+La función pudo hacer uso de la variable global `y` sin haberse comunicado con el programa principal a través de los argumentos. Esta práctica no es recomendable: si bien evaluemos `f2(2)` dos veces, el resultado no fue el mismo, porque depende de cuánto vale `y` en el ambiente global en el momento que `f2` es invocada. Además de ser confuso, esto es una violación al principio de *transparencia referencial*: un subalgoritmo sólo debe utilizar elementos mencionados en la lista de argumentos o definidos localmente, sin emplear variables globales. En particular, si hablamos de una función donde el pasaje de parámetros es por valor, esta práctica garantiza que la misma siempre devuelva el mismo resultado cada vez que sea invocada con los mismos valores en los argumentos de entrada, sin producir ningún efecto secundario en el algoritmo principal. El uso de variables globales permite escribir subalgoritmos que carecen de transparencia referencial.
+
+Un algoritmo puede usar el mismo nombre para variables locales y globales, pero dentro de una función toma precedencia la variable local. En el siguiente ejemplo, hay una variable global `a` en el programa principal que recibe el valor `70`. Y hay otra variable `a` que es local a la función `f3`. Cuando `f3` calcula `a + b`, lo hace con el valor de su variable local (`x - 10`) y no con el valor de la variable global (`70`):
+
+```
+---------------------------------------------------------------
+SUBALGORITMOS
+---------------------------------------------------------------
+
+FUNCIÓN f3(x: numérico): numérico
+COMENZAR
+	VARIABLE numérica a, b
+	a <- x - 10
+	b <- x + 10
+	ESCRIBIR "Acá, dentro de la f3, el valor de a es", a
+	DEVOLVER a + b
+FIN FUNCIÓN
+
+---------------------------------------------------------------
+ALGORITMO PRINCIPAL
+---------------------------------------------------------------
+
+ALGORITMO: "Ejemplo"
+COMENZAR
+	VARIABLE numérica a, z
+	a <- 70
+	z <- f3(50)
+	ESCRIBIR z
+	ESCRIBIR "Acá, en el programa principal, el valor de a es", a
+	ESCRIBIR a + z
+FIN
+```
+
+```{r}
+# ---------------------------------------------------------------
+# DEFINICIÓN DE FUNCIONES
+# ---------------------------------------------------------------
+
+f3 <- function(x) {
+	a <- x - 10
+	b <- x + 10
+	cat("Acá, dentro de la f3, el valor de a es", a)
+	return(a + b)
+}
+
+# ---------------------------------------------------------------
+# PROGRAMA PRINCIPAL
+# ---------------------------------------------------------------
+
+a <- 70
+z <- f3(50)
+z
+cat("Acá, en el programa principal, el valor de a es", a)
+a + z
+```
+
+Se debe prestar atención que con la sentencia `ESCRIBIR` o la función `cat()` en R se muestra en pantalla un mensaje en el momento en el que se ejecuta esa acción. Si el mensaje incluye mostrar valores guardados en objetos, se mostrarán los valores que los mismos tienen en ese momento. Por otro lado, lo devuelto por la sentencia `DEVOLVER` o la función `return()` es el resultado de la ejecución de la función: el valor que la función entrega puede ser asignado a otro objeto en el algoritmo principal, como ocurre en la lína de `z <- f3(50)`.

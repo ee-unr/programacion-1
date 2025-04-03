@@ -11,34 +11,8 @@ Principios de descomposición y refinamiento sucesivo. Creación de funciones en
 :::
 
 
-## Función `return()` o  Exiting a function ??
-
-## Argumentos con valores asignados por defecto
-
-## ¿Dónde guardamos el código que define nuestras funciones? SOURCE
-
-----
-
-## Pasaje de parámetros POR VALOR ??
-
-## Ámbito de las variables
-
----
-## Documentación de los subalgoritmos 
-
---- otras
-
-## stop o exiting a function ??
-
-## `NULL` vs `NA` vs `NaN`
-
-## Modificar una variable global desde el cuerpo de una función en R (opcional)
-
-otros temas nombrados en IDEAS
 
 
-
-En R, las funciones pueden ser más complejas e incluir **valores por defecto**, **argumentos opcionales**, y estructuras de control como condicionales y bucles, lo que las convierte en herramientas poderosas para la programación eficiente.
 
 ## ¿Dónde guardamos el código que define nuestras funciones?
 
