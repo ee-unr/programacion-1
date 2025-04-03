@@ -5,48 +5,5 @@
 # Unidad 3. Descomposición algorítmica
 
 ::: {.presentacion-capitulo data-latex=""}
-COMPLETAR
-
-Principios de descomposición y refinamiento sucesivo. Creación de funciones en R. Paso de parámetros y ámbito de variables. Transparencia referencial y documentación de funciones.
+En este capítulo exploraremos un concepto fundamental en la programación: la creación de **nuevas funciones**. A medida que los programas crecen en tamaño y complejidad, escribir el mismo código repetidas veces no solo es ineficiente, sino que también aumenta el riesgo de cometer errores. Para solucionar esto, podemos encapsular bloques de código en funciones reutilizables, mejorando la claridad y la organización de nuestros programas.  
 :::
-
-
-
-
-
-## ¿Dónde guardamos el código que define nuestras funciones?
-
-
-Esta distinción también es importante en R: la definición de las funciones debe ejecutarse antes de que las mismas sean llamadas desde el programa principal. Así, para traducir el pseudocódigo anterior a R, podríamos crear un archivo de código (llamado, por ejemplo, `ejemplo3.R`) con el siguiente contenido:
-
-```{r}
-# ---------------------------------------------------------------
-# DEFINICIÓN DE FUNCIONES
-# ---------------------------------------------------------------
-
-f <- function(x, y) {
-	resultado <- x^2 + 3 * y
-	return(resultado)
-}
-
-maximo <- function(num1, num2) {
-	if (num1 > num2) {
-		return(num1)
-	} else {
-		return(num2)
-	}
-}
-
-# ---------------------------------------------------------------
-# PROGRAMA PRINCIPAL
-# ---------------------------------------------------------------
-
-rtdo1 <- f(2, 5)
-rtdo2 <- f(3, 10)
-rtdo3 <- maximo(rtdo1, rtdo2) + 20
-cat("El resultado es", rtdo3)
-```
-
-VINCULAR SON SOURCE
-
-

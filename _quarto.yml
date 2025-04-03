@@ -40,7 +40,8 @@ book:
     #     - capitulos/02_practica.qmd
     - part: capitulos/03.qmd
       chapters:
-        - capitulos/03_1_.qmd
+        - capitulos/03_1_crear_funciones.qmd
+        - capitulos/03_2_ambito.qmd
         # - capitulos/03_practica.qmd
     - part: capitulos/90.qmd
       chapters:

@@ -8,44 +8,134 @@
 COMPLETAR
 :::
 
-## stop o exiting a function ??
+## El objeto `NULL`
 
+Generalmente los lenguajes de programación poseen un elemento conocido como NULO, para representar un objeto vacío, sin información. En R, `NULL` representa la **ausencia total de un objeto** o valor. Es un objeto en sí mismo y no pertenece a ningún tipo de objeto básico (como numérico, lógico o carácter). Se usa para indicar que una variable o un elemento de una estructura de datos no existe. Suele ser usado como el objeto devuelto por funciones cuando no hay un resultado válido para retornar.
 
-## `NULL` vs `NA` vs `NaN`
-
-Generalmente los lenguajes de programación poseen un valor conocido como `NULO`, para representar un objeto vacío, sin información. El mismo suele emplearse como valor devuelto por funciones cuando no corresponde devolver otro tipo de resultado. En pseudocódigo podemos usar esta estrategia escribiendo `DEVOLVER NULO`, si deseamos que nuestra función no devuelva nada. La representación en R de este tipo de objeto es `NULL`, que se trata de un objeto vacío que generalmente devuelven las funciones cuando el resultado es indefinido. Es decir, podemos crear funciones que terminen con un `return(NULL)`, como en el siguiente caso donde interesa emitir un mensaje, pero no devolver ningún objeto:
+::: {.ejemplo data-latex=""}
+Definimos una función para calcular el perímetro de un cuadrado en base a la longitud de uno de sus lados. Este cálculo sólo tiene sentido si el argumento `lado` es un valor positivo. Si no lo es, la función devuelve `NULL`.
 
 ```{r}
-g <- function(x, y) {
-	resultado <- x^2 + 3 * y
-	cat("El resultado de esta cuenta es:", resultado)
-	return(NULL)
+perimetro_cuadrado <- function(lado) {
+  if (lado > 0) {
+    return(lado * 4)
+  } else {
+    return(NULL)
+  }
 }
-g(4, 5)
+
+perimetro_cuadrado(10)
+perimetro_cuadrado(-2)
+
+# podemos guardar el resultado en una nueva variable
+x <- perimetro_cuadrado(-2)
+typeof(x)
+is.numeric(x)
+is.null(x)
 ```
+:::
 
-El objeto `NULL` no debe confundirse con otros dos valores existentes en el lenguaje R: `NA` y `NaN`:
-
-- `NA` son las siglas de *Not Available* y es un valor lógico (como `TRUE` y `FALSE`) que generalmente representa datos faltantes.
-- `NaN` son las siglas de *Not a Number* y es un valor numérico que generalmente surge como resultado de operaciones aritméticas imposibles de calcular, como indeterminaciones, raíces negativas, etc. (correr `0/0`, `log(-1)` o `sqrt(-1)` para verlo). Es un valor establecido por IEEE, el estándar con el cual se rige la representación numérica en la computadora.
-
-Otro valor numérico muy especial es `Inf` (y su contrapartida negativa, `-Inf`), que es el resultado de almacenar un número muy grande o de una división por cero. No es semejante a `NA`, porque además de no ser de tipo lógico, no representa que hay un dato faltante sino que se trata de un valor numérico.
+Hay funciones que devuelven el objeto `NULL` de forma invisible. Esto quiere decir que, si bien lo devuelven, no se imprime en la consola. Este es el caso de la función `cat()` que usamos para construir mensajes:
 
 ```{r}
-a <- NULL
-b <- NA
-d <- NaN
-e <- Inf
-f <- "NULL"
+nombre <- "Andrea"
+# Esribe un mensaje, aparentemente no devuelve nada...
+cat("Hola,", nombre)
 
-class(a)
-class(b)
-class(d)
-class(e)
-class(f)
+# Asignamos su resultado a una variable:
+resultado <- cat("Hola,", nombre)
+
+# Imprimimos en la consola y nos encontramos que cat() devuelve NULL, 
+# pero de forma invisible
+resultado
 ```
 
-<!-- Cualquiera de estas dos opciones podría ser devuelta por una función ante casos particulares (`return(NULL)` o `return(NA)`). -->
+Esto quiere decir que si definimos una función con el objetivo de generar un mensaje, podemos prescindir del uso de `return()` y la función devolverá de forma invisible el objeto `NULL`, aunque no lo notemos ni nos interese usarlo:
+
+```{r}
+saludar <- function(nombre) {
+  cat("Hola,", nombre)
+}
+
+saludar("Andrea")
+saludar("Gonzalo")
+saludar("Lucía")
+```
+
+La mayoría de las funciones devuelven valores de forma **visible**: si se ejecutan en un entorno interactivo como la consola de R, el resultado se muestra automáticamente en pantalla. Este es el comportamiento por defecto de las funciones que escribimos. Recordemos la función `f`:
+
+```{r}
+f <- function(x, y) {
+	resultado <- x^2 + 3 * y
+	return(resultado)
+}
+
+f(4, 5)
+```
+
+Podemos "invisibilizar" el resultado devuelto por una función, así:
+
+```{r}
+f_invisible <- function(x, y) {
+	resultado <- x^2 + 3 * y
+	return(invisible(resultado))
+}
+
+f_invisible(4, 5)
+```
+
+La función devuelve un resultado, sólo que no se ve en la consola. Para usarlo, debemos guardarlo en una nueva variable:
+
+```{r}
+resultado <- f_invisible(4, 5)
+resultado
+```
+
+
+```r
+j03 <- function() 1
+j03()
+```
+
+Sin embargo, se puede evitar la impresión automática aplicando `invisible()` al valor de retorno:  
+
+```r
+j04 <- function() invisible(1)
+j04()
+```
+En R, existen otros valores especiales que representan diferentes tipos de información ausente, indefinida o nula. Aunque parezcan similares, tienen diferencias fundamentales en cuanto a su significado, uso y comportamiento en operaciones y no deben confundirse con el objeto `NULL`:
+
+- `NA` son las siglas de *Not Available* y es un tipo especial valor de lógico que generalmente representa datos faltantes o desconocidos. No es un objeto en sí mismo. Propaga su presencia en operaciones matemáticas y lógicas, ya que cualquier operación con `NA` generalmente devuelve `NA`.
+  
+  ```{r}
+  y <- 100
+  z <- NA
+  y + z
+  ```
+  
+- `NaN` son las siglas de *Not a Number* y es un valor numérico que generalmente surge como resultado de operaciones aritméticas imposibles de calcular, como indeterminaciones, raíces negativas, etc.
+
+  ```{r}
+  0 / 0
+  log(-1)
+  sqrt(-1)
+  ```
+
+
+## Manejo de errores  
+
+
+Si una función no puede completar su tarea, debe lanzar un error utilizando `stop()`, lo que interrumpe inmediatamente su ejecución:  
+
+```r
+j05 <- function() {
+  stop("Soy un error")
+  return(10)
+}
+j05()
+```
+
+Un error indica que algo salió mal y obliga al usuario a manejar la situación. En algunos lenguajes (como C, Go o Rust), los errores se indican mediante valores de retorno especiales, pero en R **siempre** se debe lanzar un error. Aprenderás más sobre los errores y cómo manejarlos en el capítulo \@ref(conditions).
 
 ## otros temas nombrados en IDEAS
 
