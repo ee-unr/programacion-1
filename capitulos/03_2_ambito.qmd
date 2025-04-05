@@ -64,11 +64,6 @@ Si el pasaje de argumentos se hace por valor, los cambios producidos en el cuerp
 7. Se produce un error porque en el *Global Environment* no han sido definidos objetos con el nombre `x` o `y`.
 :::
 
-::: {.comentario data-latex=""}
-sobre simplificación, ver material extra
-:::
-
-
 ## Ambiente global
 
 El ejemplo anterior nos permite darnos cuenta que los objetos que definimos pueden "vivir" en distintos lugares... es decir, existen distintos *entornos*, *ambientes* o *environments*. 
@@ -147,7 +142,7 @@ f2(2)
 La práctica anterior no es recomendable: si bien evaluemos `f2(2)` dos veces, el resultado no fue el mismo, porque depende de cuánto vale `y` en el ambiente global en el momento que `f2` es invocada. Además de ser confuso, esto es una violación al principio de **transparencia referencial**: una función idealmente sólo debe utilizar objetos mencionados en la lista de argumentos o definidos localmente, sin emplear variables globales. En particular, si hablamos de una función donde el pasaje de parámetros es por valor, esta práctica garantiza que la misma siempre devuelva el mismo resultado cada vez que sea invocada con los mismos valores en los argumentos de entrada, sin producir ningún efecto secundario en el *Global Environment*. El uso de variables globales dentro de los ambientes locales de las funciones permite escribir programas que carecen de transparencia referencial.
 :::
 
-Se puede usar el mismo nombre para variables locales y globales, pero dentro del ambiente local de una función toma precedencia la variable local. 
+Se puede usar el mismo nombre para variables locales y globales, pero dentro del ambiente local de una función toma precedencia la variable local. Esto se conoce como **name masking**, porque la variable definida dentro de la función "enmascara" nombres definidos fuera de ella.
 
 ::: {.ejemplo data-latex=""}
 En el siguiente caso hay una variable global `a` en el *Global Environment* que recibe el valor `70` y otra variable `a` que es local a la función `f3`. Cuando `f3` calcula `a + b`, lo hace con el valor de su variable local (`x - 10`) y no con el valor de la variable global (`70`):
