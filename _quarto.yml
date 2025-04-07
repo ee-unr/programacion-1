@@ -33,6 +33,7 @@ book:
         - capitulos/01_f_errores_estilo_paquetes.qmd
         - capitulos/01_g_opcional.qmd
         - capitulos/01_practica.qmd
+        - capitulos/01_actividad_autoevaluativa.qmd
     - part: capitulos/02.qmd
       chapters:
         - capitulos/02_1_if.qmd
