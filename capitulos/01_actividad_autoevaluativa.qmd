@@ -52,10 +52,13 @@ Seleccione una:
 `r webexercises::longmcq(c(TRUE, answer = FALSE))`
 
 `r webexercises::hide("Explicación")`
-Como x = 22 y y = 30, entonces (22 > 30) es FALSE.<br> 
-22/2 = 11, y (11 > 10) es TRUE.<br>
-Sin embargo, !(TRUE) = FALSE. <br>
-Finalmente, FALSE || FALSE = FALSE.
+Como `x = 22` y `y = 30`, entonces `(22 > 30)` es `FALSE`
+
+`22/2 = 11`, y `(11 > 10)` es `TRUE`
+
+Sin embargo, `!(TRUE) = FALSE`
+
+Finalmente, `FALSE || FALSE = FALSE`
 `r webexercises::unhide()`
 
 
@@ -70,15 +73,18 @@ Seleccione una:
 `r webexercises::longmcq(c(answer = TRUE, FALSE))`
 
 `r webexercises::hide("Explicación")`
-Como x = 32 y y = 30, entonces (32 > 30) es TRUE.<br> 
-32/2 = 16, y (16 > 10) es TRUE.<br>
-Sin embargo, !(TRUE) = FALSE. <br>
-Finalmente, TRUE || FALSE = TRUE.
+Como `x = 32` y `y = 30` entonces `(32 > 30)` es `TRUE`
+
+`32/2 = 16` y `(16 > 10)` es `TRUE`
+
+Sin embargo, `!(TRUE) = FALSE`
+
+Finalmente, `TRUE || FALSE = TRUE`
 `r webexercises::unhide()`
 
 ## Pregunta 2
 
-¿Cuál es el valor almacenado en **var1** luego de ejecutar las siguientes acciones? 
+¿Cuál es el valor almacenado en `var1` luego de ejecutar las siguientes acciones? 
 
 ```{r}
 #| eval: false
@@ -93,20 +99,31 @@ var1 <- var3 + 20
 La respuesta es (ingrese un numero): `r webexercises::fitb(100)`
 
 `r webexercises::hide("Explicación")`
-**Inicialización:**<br>
-**1) var1 recibe el valor 100.**<br>
-**2) var2 almacena el resto de dividir var1 entre 30:**<br>
-- Como 30 × 3 = 90 y 100 − 90 = 10, entonces:<br>
-- var2 = 10.<br>
-**3) var3 guarda la suma de var1 y var2:**<br>
- - 100 + 10 = 110.<br>
-**4) Modificación de var3:**<br>
-- Se actualiza var3 restando 3 veces var2:<br>
-- 110 − (3 × 10) = 80.<br>
-**5) Actualización final de var1:**<br>
-- var1 toma el valor de var3 + 20:<br>
-- 80 + 20 = 100.<br>
-Tras todas las operaciones, var1 vuelve a su valor inicial: 100.
+
+1) `var1` recibe el valor `100`
+
+2) `var2` almacena el resto de dividir `var1` entre 30:
+
+- Como `30 × 3 = 90` y `100 − 90 = 10`, entonces:
+
+- `var2 = 10`
+
+3) `var3` guarda la suma de `var1` y `var2`:
+
+ - `100 + 10 = 110`
+ 
+4) Modificación de `var3`:
+
+- Se actualiza `var3` restando 3 veces `var2`:
+- `110 − (3 × 10) = 80`
+
+5) Actualización final de `var1`:
+
+- `var1` toma el valor de `var3 + 20`
+
+- `80 + 20 = 100`
+
+Tras todas las operaciones, `var1` vuelve a su valor inicial: `100`.
 `r webexercises::unhide()`
 
 ## Pregunta 3
@@ -116,16 +133,21 @@ Los operadores aritméticos tienen mayor orden de precedencia que los operadores
 `r webexercises::longmcq(c(answer = TRUE, FALSE))`
 
 `r webexercises::hide("Explicación")`
-Jerarquía de operadores:<br>
-- Aritméticos (^, %%, /, *, +, -): Mayor precedencia.<br>
-- Relacionales (>, <, ==, !=, >=, <=): Menor precedencia.<br>
-Ejemplo:<br>
-3 + 5 * 2 > 1<br>
-Paso 1 (aritméticos): 5 * 2 = 10 → 3 + 10 = 13.<br>
-Paso 2 (relacional): 13 > 10 → TRUE.<br>
-<br>
+Jerarquía de operadores:
+
+- Aritméticos `(^, %%, /, *, +, -)`: Mayor precedencia.<br>
+- Relacionales `(>, <, ==, !=, >=, <=)`: Menor precedencia.<br>
+
+Ejemplo:
+
+`3 + 5 * 2 > 1`
+
+Paso 1 (aritméticos): `5 * 2 = 10` → `3 + 10 = 13`<br>
+Paso 2 (relacional): `13 > 10` → `TRUE`
+
+
 Regla clave:<br>
-Paréntesis () > Aritméticos > Relacionales > Lógicos (&&, ||).
+`Paréntesis () > Aritméticos > Relacionales > Lógicos`
 `r webexercises::unhide()`
 
 ## Pregunta 4
@@ -143,19 +165,19 @@ opts_ci <- sample(c(
 `r webexercises::longmcq(opts_ci)`
 
 `r webexercises::hide("Explicación")`
-**VentaOperación:** No es la mejor opción porque incluye un acento ("ó") en el nombre de la variable, lo que puede generar problemas de codificación en algunos entornos. Además, se recomienda usar guiones bajos para separar palabras en minúsculas y mejorar la legibilidad.
+`VentaOperación`: No es la mejor opción porque incluye un acento ("ó") en el nombre de la variable, lo que puede generar problemas de codificación en algunos entornos. Además, se recomienda usar guiones bajos para separar palabras en minúsculas y mejorar la legibilidad.
 
-**2025_venta_inmueble:** En general no es buena práctica que los nombres de variables comiencen con un número en ningún lenguaje de programación. R y la mayoría de lenguajes no lo permiten, y aunque algunos sí lo hacen, dificulta la lectura y puede causar errores.
+`2025_venta_inmueble`: En general no es buena práctica que los nombres de variables comiencen con un número en ningún lenguaje de programación. R y la mayoría de lenguajes no lo permiten, y aunque algunos sí lo hacen, dificulta la lectura y puede causar errores.
 
-**Valor-Venta-Inmueble-2025:** No se recomienda usar guiones medios en nombres de variables porque este carácter está reservado para la operación de resta. En muchos lenguajes, incluyendo R, provocaría errores de sintaxis. Siempre es mejor usar guiones bajos.
+`Valor-Venta-Inmueble-2025`: No se recomienda usar guiones medios en nombres de variables porque este carácter está reservado para la operación de resta. En muchos lenguajes, incluyendo R, provocaría errores de sintaxis. Siempre es mejor usar guiones bajos.
 
-**venta inmueble 2025:** Los espacios entre palabras no son válidos en nombres de variables. El sistema interpretaría "venta", "inmueble" y "2025" como tres variables distintas. Para unir palabras, se usan guiones bajos.
+`venta inmueble 2025`: Los espacios entre palabras no son válidos en nombres de variables. El sistema interpretaría "venta", "inmueble" y "2025" como tres variables distintas. Para unir palabras, se usan guiones bajos.
 
-**valorVentaInmueble2025:** Este tipo de escritura se conoce como *camelCase*, y aunque muchos lo utilizan, en R la convención más clara y extendida es el uso de *snake_case* (con guiones bajos). Funciona, pero no sigue el estilo típico de R.
+`valorVentaInmueble2025`: Este tipo de escritura se conoce como *camelCase*, y aunque muchos lo utilizan, en R la convención más clara y extendida es el uso de *snake_case* (con guiones bajos). Funciona, pero no sigue el estilo típico de R.
 
-**operación_Año2025:** Este nombre contiene un acento ("ó") y la letra "ñ", lo que puede causar conflictos en algunos entornos. Para evitar errores, es mejor evitar caracteres especiales como estos. Ademas utiliza mayúsculas, lo que puede complicar innecesariamente la escritura del nombre de la variable.
+`operación_Año2025`: Este nombre contiene un acento ("ó") y la letra "ñ", lo que puede causar conflictos en algunos entornos. Para evitar errores, es mejor evitar caracteres especiales como estos. Ademas utiliza mayúsculas, lo que puede complicar innecesariamente la escritura del nombre de la variable.
 
-**ventainmuebleanio2025:** Aunque técnicamente válido, este nombre es largo y poco intuitivo porque carece de separadores entre palabras. Usar guiones bajos mejora significativamente la legibilidad.
+`ventainmuebleanio2025`: Aunque técnicamente válido, este nombre es largo y poco intuitivo porque carece de separadores entre palabras. Usar guiones bajos mejora significativamente la legibilidad.
 `r webexercises::unhide()`
 
 ## Pregunta 5
@@ -167,6 +189,6 @@ Indicar si la siguiente afirmación es verdadera o falsa:
 `r webexercises::longmcq(c(TRUE, answer = FALSE))`
 
 `r webexercises::hide("Explicación")`
-Un nuevo RProject en RStudio inicia una nueva sesión de R (limpia el entorno de trabajo) y setea el directorio de trabajo al directorio raíz del proyecto, pero no carga librerías instaladas. Las librerías deben cargarse manualmente en cada sesión o mediante scripts usando el comando library()
+Un nuevo **RProject** en RStudio inicia una nueva sesión de R (limpia el entorno de trabajo) y setea el directorio de trabajo al directorio raíz del proyecto, pero no carga librerías instaladas. Las librerías deben cargarse manualmente en cada sesión o mediante scripts usando el comando `library()`
 `r webexercises::unhide()`
 
