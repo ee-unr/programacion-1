@@ -15,8 +15,8 @@ $$
 Observaciones:
 
 - Se debe utilizar la función `fact()` para el cálculo de factoriales tal como fue definida en esta unidad.
-- El número combinatorio para naturales tales que $n > m$ no está definido. En este caso la función `combinatorio(m, n)` debe devolver `NULL`.
-- Una vez definida la función, utilizarla para ejemplificar las siguientes propiedades de los número combinatorios, para los valores `m = 5` y `n = 2`:
+- Una vez definida la función, guarde `combinatorio(m, n)` junto con `fact()` en un script llamado `funciones.R`.
+- En un script aparte, cargue las funciones en el ambiente global usando `source()` y ejemplifique las siguientes propiedades de los números combinatorios para `m = 5` y `n = 2`:
 
 	1. ${m \choose 0} = 1$
 	2. ${m \choose m} = 1$
@@ -24,6 +24,27 @@ Observaciones:
 	4. ${m \choose n} = {m \choose m - n}$
 	5. ${m \choose n} = {m - 1 \choose n - 1} + {m - 1 \choose n}$
 	
+Los números combinatorios sólo están definidos para `m` $\ge$ `n`:
+
+- Pruebe qué ocurre pasando un valor de `n` mayor que `m`
+- ¿Por qué la función no falla?
+- ¿Qué problemas podría generar este comportamiento?
+	
+## Ejercicio 2
+
+Retomando el ejercicio anterior, el número combinatorio `m` tomado de a `n` **con reposición** se define como: 
+
+$$
+\bar{C}(m, n) = {m + n - 1 \choose n} = \frac{(m+n-1)!}{(m-1)!n!}
+$$
+
+Cree la función `combinatorio2(m, n, r)` para generalizar el cálculo de números combinatorios, siendo `r` un argumento adicional que toma el valor lógico `TRUE` si el cálculo es con reposición, y `FALSE` en caso contrario. 
+
+Observaciones:
+
+- Use la función `combinatorio(m, n)` para implementar esta función
+- Por defecto, la función debe hacer el cálculo del número combinatorio sin reposición
+
 ## Ejercicio 2
 
 Escribir un programa en R para la creación de la función `triangulos(a, b, c)` que a partir de la longitud de los tres lados de un triángulo `a`, `b` y `c` (valores positivos) lo clasifica con los siguientes resultados posibles:
