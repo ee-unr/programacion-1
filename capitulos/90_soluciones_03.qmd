@@ -98,6 +98,41 @@ combinatorio <- function(m, n) {
 
 ## Solución Ejercicio 2
 
+Generalizamos la función `combinatorio()` para que se adapte a los dos posibles casos, con reposición y sin reposición. Para esto debemos agregar un argumento `r`, que indique si el cálculo del combinatorio debe ser con (`TRUE`) o sin (`FALSE`) repetición. Su valor por defecto será `FALSE`. 
+
+Utilizaremos la versión anterior para simplificar cálculos
+
+```{r}
+#-----------------------------------------------------
+# Función combinatorio2
+# Calcula el número combinatorio m en n, con o sin reposición dependiendo 
+# del valor del argumento r 
+# Entrada:
+#		- m, n, números naturales
+#   - r, valor lógico
+# Salida:
+#		- el número combinatorio m en n, con o sin reposición
+#-----------------------------------------------------
+combinatorio2 <- function(m, n, r = FALSE) {
+  if (r) {
+    combinatorio(m+n-1, n)
+  } else {
+    combinatorio(m, n)
+  }
+}
+
+# ---------------------------------------------------------------
+# PROGRAMA PRINCIPAL: "Ejemplos de combinatorio2, con y sin reposición"
+# ---------------------------------------------------------------
+combinatorio2(5, 2)
+combinatorio2(5, 2, T)
+combinatorio2(5, 2, F)
+
+```
+
+
+## Solución Ejercicio 3
+
 ```{r}
 #-----------------------------------------------------
 # Función triangulos
@@ -148,7 +183,7 @@ triangulos(2, 3, 4)
 triangulos(2, 3, 10)
 ```
 
-## Solución Ejercicio 3
+## Solución Ejercicio 4
 
 Hemos definido a las funciones como subalgoritmos que devuelven un objeto. En este caso no nos interesa devolver nada, por eso podemos incluir `return(NULL)` para cumplir con la definición y marcar la finalización de la ejecución de la función. Sin embargo, si obviamos esta instrucción, lo último que hace la función será emitir uno de los mensajes con `cat()`^[Y aunque no se note, la función igualmente devuelve un objeto. Además de escribir un mensaje, `cat()` devuelve `NULL` de forma invisible. Como lo último que se hace es un llamado a `cat()`, la función cumple con devolver un objeto (`NULL`). Esto puede parecer raro ahora y no importa si no lo llegamos a apreciar.]:
 
@@ -186,7 +221,7 @@ resolvente(1, 1, 1)
 
 Sería interesante en esta función que pueda devolver las respuestas. Hasta acá sabemos que las funciones pueden devolver un único valor. Esto puede ser un inconveniente para este problema, ya que nos puede interesar devolver dos valores (dos soluciones reales), un valor (una solución real doble) o ningún valor (ninguna solución real). Más adelante veremos cómo hacer para poder devolver distinta cantidad de respuestas.
 
-## Solución Ejercicio 4
+## Solución Ejercicio 5
 
 ```{r}
 #-----------------------------------------------------
@@ -210,7 +245,7 @@ elipse(3, 7)
 elipse(6, -4)
 ```
 
-## Solución Ejercicio 5
+## Solución Ejercicio 6
 
 a. Paso a paso:
 
@@ -278,7 +313,7 @@ c. Primero, en el ambiente global se define la función `f` con tres argumentos:
    Finalmente, se imprime el resultado de sumar las cuatro cantidades: `0 + 0 - 10 - 5 = -15`
 
 
-## Solución Ejercicio 6
+## Solución Ejercicio 7
 
 La solución propone devolver `TRUE` si el número analizado es 2 o 3, ya que sabemos que estos primeros naturales son primos. Para el resto de los números, divide a `n` por todos los naturales desde el 2 hasta `n - 1`. Si al hacer esta división, encuentra un resto igual a cero, significa que `n` es compuesto. Si ninguna división produce resto cero, entonces `n` es primo. 
 
@@ -330,7 +365,7 @@ es_primo(2)
 
 **Observación**: se puede plantear un algoritmo más eficiente, que realice menos iteraciones. No es necesario iterar hasta `n - 1`, si no hasta el entero inmediato menor a $\sqrt{n}$. Si no se encontró que `n` sea múltiplo de ningún valor menor a $\sqrt{n}$, tampoco lo será con los que siguen. Por otro lado, sería suficiente hacer las divisiones con respecto a los números primos de `n`.
 
-## Solución Ejercicio 7
+## Solución Ejercicio 8
 
 Para poder resolver una división usando solamente sumas y restas, tenemos que pensar que, por ejemplo, hacer 14 dividido 3 nos da cociente 4 y resto 2, porque el 3 "entra" 4 veces en el 14 y todavía sobran 2. Es decir, a 14 le podemos restar el 3 cuatro veces hasta que ya no se lo podamos restar más, quedando un resto de 2. Entonces la idea es empezar diciendo que el *resto* es el dividendo (al principio, nos *resta* todo el dividendo) y restarle iterativamente el valor del divisor hasta que el resto se haga menor que el divisor. Mientras tanto, tenemos que ir contando cuántas restas se hacen, puesto que eso será el valor del cociente. Ejemplo:
 
@@ -375,7 +410,7 @@ cociente(1253, 4)
 cociente(3, 4)
 ```
 
-## Solución Ejercicio 8
+## Solución Ejercicio 9
 
 ```{r}
 #-----------------------------------------------------

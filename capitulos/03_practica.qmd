@@ -45,7 +45,7 @@ Observaciones:
 - Use la función `combinatorio(m, n)` para implementar esta función
 - Por defecto, la función debe hacer el cálculo del número combinatorio sin reposición
 
-## Ejercicio 2
+## Ejercicio 3
 
 Escribir un programa en R para la creación de la función `triangulos(a, b, c)` que a partir de la longitud de los tres lados de un triángulo `a`, `b` y `c` (valores positivos) lo clasifica con los siguientes resultados posibles:
 
@@ -65,7 +65,7 @@ triangulos(2, 3, 10)
 [1] "no es triángulo" 
 ```
 
-## Ejercicio 3
+## Ejercicio 4
 
 Escribir un programa en R para la creación de la función `resolvente(a, b, c)` que muestra las soluciones de la ecuación de segundo grado $a x^2 + b x + c = 0$, empleando la fórmula resolvente:
         
@@ -94,7 +94,7 @@ Las soluciones son complejas        # mensaje
 NULL                                # valor NULO devuelto
 ```
 
-## Ejercicio 4
+## Ejercicio 5
 
 Escribir un programa en R para la creación de la función `elipse(x, y)` que permite determinar si un punto de coordenadas $(x, y)$ está dentro o no de la elipse definida por la ecuación:
 
@@ -115,7 +115,7 @@ elipse(6, -4)
 [1] TRUE
 ```
 
-## Ejercicio 5
+## Ejercicio 6
 
 **Rastreo de funciones y variables**
 
@@ -182,7 +182,7 @@ c. Sin usar la computadora, indique cuál es el resultado de evaluar `a + b + c 
    a + b + c + d
    ```
 
-## Ejercicio 6
+## Ejercicio 7
 
 Escribir un programa en R para la creación de la función `es_primo(n)` que devuelve el valor lógico `VERDADERO` si el natural `n` (mayor que 1) es un número primo o `FALSO` en caso contrario. 
 
@@ -197,7 +197,7 @@ es_primo(2)
 [1] TRUE
 ```
 
-## Ejercicio 7
+## Ejercicio 8
 
 Escribir un programa en R para la creación de la función `cociente(dividendo, divisor)` que permite obtener cociente entero y resto en la división de dos números naturales (llamados `dividendo` y `divisor`) empleando únicamente operaciones aritméticas de suma y resta. La función escribe un mensaje en pantalla con los valores del dividendo, divisor, cociente y resto, mientras que devuelve el valor del cociente. 
 
@@ -221,7 +221,7 @@ Resto: 3
 [1] 0             # valor devuelto
 ```
 
-## Ejercicio 8
+## Ejercicio 9
 
 Escribir un programa en R para la creación de la función `max_com_div(a, b)` que permite calcular el máximo común divisor (mcd) de los números naturales `a` y `b`, empleando el algoritmo de Euclides, que propone:
 
