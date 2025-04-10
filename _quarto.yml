@@ -47,7 +47,7 @@ book:
     - part: capitulos/90.qmd
       chapters:
         - capitulos/90_soluciones_01.qmd
-        - capitulos/90_soluciones_02.qmd
+        # - capitulos/90_soluciones_02.qmd
         # - capitulos/90_soluciones_03.qmd
   appendices:
   #   - capitulos/98_tp.qmd

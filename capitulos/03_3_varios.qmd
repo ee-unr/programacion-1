@@ -226,7 +226,7 @@ Las siguientes son algunas buenas prácticas al manejar errores:
 
 ## Documentación de las funciones
 
-En el contexto de la programación, documentar significa escribir indicaciones para que otras personas puedan entender lo que queremos hacer en nuestro código o para que sepan cómo usar nuestras funciones. Como vimos en @sec-funciones, todas las funciones predefinidas de R están documentadas para que podamos buscar orientación sobre su us en el panel de ayuda si lo necesitamos. Cuando estamos creando nuestras propias funciones, es importante que también incluyamos comentarios para guiar a otras personas (y a nosotros mismos en el futuro, si nos olvidamos) para qué y cómo se usa lo que estamos desarrollando.
+En el contexto de la programación, documentar significa escribir indicaciones para que otras personas puedan entender lo que queremos hacer en nuestro código o para que sepan cómo usar nuestras funciones. Como vimos en @sec-funciones, todas las funciones predefinidas de R están documentadas para que podamos buscar orientación sobre su uso en el panel de ayuda si lo necesitamos. Cuando estamos creando nuestras propias funciones, es importante que también incluyamos comentarios para guiar a otras personas (y a nosotros mismos en el futuro, si nos olvidamos) para qué y cómo se usa lo que estamos desarrollando.
 
 Estas aclaraciones pueden incluirse antes de la definición de la función mediante líneas comentadas con `#` o podemos hacerlo siguiendo estándares ya establecidos por la comunidad de desarrolladores. Si lo hacemos, gozaremos de la ventaja de que las páginas de ayuda sobre nuestras funciones se puedan generar automáticamente cuando las incluimos en la creación de nuevo paquete de R, como veremos en la última unidad de la asignatura.
 
