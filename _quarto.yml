@@ -79,4 +79,3 @@ format:
     include-before-body: estilo/cuerpo.tex
     template-partials:
       - estilo/title.tex
-

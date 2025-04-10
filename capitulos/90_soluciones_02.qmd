@@ -1,0 +1,322 @@
+---
+number-sections: false
+---
+
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Soluciones de la Práctica de la Unidad 2
+
+## Ejercicio 1
+
+```{r}
+# PROGRAMA: "Paridad de un número" 
+x <- 3
+if (x %% 2 == 0) {
+	cat(x, "es par")
+} else {
+	cat(x, "es impar")
+}
+```
+
+En el código anterior, realizamos una asignación explícita de un valor en la variable (`x <- 3`). Esto nos permite hacer un uso más interactivo del código, que puede ser útil para probar si anda o cuando vamos corriendo por partes para detectar posibles errores. 
+
+Otra opción se muestra en el siguiente ejemplo. En lugar de asignarle un valor a `x` como parte del script, indicamos que cuando el código sea ejecutado, el usuario deberá ingresar un valor con el teclado. Para esto empleamos la función `scan()`. Su argumento `n = 1` significa que el usuario sólo deberá ingresar un número, el cual será asignado a la variable `x`. Teniendo un archivo de código con el programa como se muestra a continuación, podemos ejecutarlo de forma completa mediante el botón `Source` de RStudio. Al llegar a la evaluación de `scan()`, deberemos ingresar el valor que deseemos en la consola y dar Enter para que la ejecución continúe.
+
+```{r, eval = FALSE}
+# PROGRAMA: "Paridad de un número"
+cat("Ingrese un número entero: ")
+x <- scan(n = 1)
+if (x %% 2 == 0) {
+	cat(x, "es par")
+} else {
+	cat(x, "es impar")
+}
+```
+
+
+## Ejercicio 2
+
+
+```{r}
+# PROGRAMA: "Mayor de tres números"
+x <- 5
+y <- 5
+z <- 7
+if (x >= y && x >= z) {
+	cat("El mayor es", x)
+} else if (y >= z) {
+	cat("El mayor es", y)
+} else {
+	cat("El mayor es", z)
+}
+```
+
+Observación: se llega a la segunda evaluación lógica cuando `y` es mayor a `x`, o cuando `z` es mayor que `x`, o cuando ambos son mayores a `x`, por lo tanto sólo es necesario saber cuál de ellos es el mayor.
+
+
+## Ejercicio 3
+
+
+```{r}
+# PROGRAMA: "Determinar salario"
+
+# Valores fijados
+valor_hora <- 4000
+valor_adicional_noche <- 2000
+valor_adicional_domingo <- 1000
+
+# Valores para un cálculo particular
+horas <- 8
+dia <- "MAR"
+turno <- "T"
+
+# Cálculo para el pago de ese día a ese empleado
+salario <- horas * valor_hora
+if (turno == "N") {
+	salario <- salario + horas * valor_adicional_noche
+}
+if (turno == "DOM") {
+	salario <- salario + horas * valor_adicional_domingo
+}
+cat("El salario que se debe abonar es", salario)
+```
+
+
+## Ejercicio 4
+
+
+```{r}
+# PROGRAMA: "Convertir temperatura"
+temp <- 20
+modo <- "C a F"
+if (modo == "C a F") {
+	temp_nuevo <- temp * 9 / 5 + 32
+	cat(temp, "ºC equivale a", temp_nuevo, "ºF")
+} else {
+	temp_nuevo <- (temp - 32) * 5 / 9
+	cat(temp, "ºF equivale a", temp_nuevo, "ºC")
+}
+```
+
+
+## Ejercicio 5
+
+**a.** 
+
+```{r}
+# PROGRAMA: "Suma de los n primeros números naturales"
+n <- 10
+suma <- 0
+for (i in 1:n) {
+	suma <- suma + i
+}
+cat("La suma de los primeros", n, "números naturales es", suma)
+```
+
+**b.** 
+
+```{r}
+# PROGRAMA: "Suma de los cuadrados de los n primeros números naturales" -----
+n <- 10
+suma <- 0
+for (i in 1:n) {
+	suma <- suma + i^2
+}
+cat("La suma de los primeros", n, "números naturales al cuadrado es", suma)
+```
+
+**c.** 
+
+Sabemos el número de iteraciones, `n`, por eso usamos `for`. Por ejemplo, para `n = 4`, los primeros impares son:
+  
+```
+1 = 2 * 1 - 1
+3 = 2 * 2 - 1
+5 = 2 * 3 - 1
+7 = 2 * 4 - 1
+```
+
+De forma general, los primeros 4 impares son `2 * i - 1`, con `i = 1, 2, 3, 4`.
+  
+```{r}
+# PROGRAMA: "Producto de los n primeros números naturales impares" ----------
+n <- 10
+producto <- 1
+for (i in 1:n) {
+	producto <- producto * (2 * i - 1)
+}
+cat("El producto de los primeros", n, "números naturales impares es", producto)
+```
+
+Otra forma:
+
+```{r}
+# PROGRAMA: "Producto de los n primeros números naturales impares" ----------
+n <- 10
+producto <- 1
+for (i in seq(1, 2 * n - 1, 2)) {
+	producto <- producto * i
+}
+cat("El producto de los primeros", n, "números naturales impares es", producto)
+```
+
+La función `seq` crea un vector con una secuencia numérica. El formato con el que está utilizada aquí es `seq(valor_inicial, valor_final, intervalo)`, por lo que creará un vector con los números impares (dado que el intervalo es 2, y comienza con un número impar) empezando desde `1` hasta `2 * n - 1`.
+
+**d.** 
+
+```{r}
+# PROGRAMA: "Suma de los cubos de los n primeros números naturales pares"
+n <- 5
+suma <- 0
+for (i in 1:n) {
+	suma <- suma + (2 * i)^3
+}
+cat("La suma de los cubos de los primeros", n, "números naturales pares es", suma)
+```
+
+
+## Ejercicio 6
+
+Utilizando estructura de control "PARA" 
+
+```{r}
+# PROGRAMA: "Calcular el factorial de n"
+n <- 0
+factorial <- 1
+for (i in 1:n) {
+	factorial <- factorial * i
+}
+cat("El factorial de", n, "es", factorial)
+```
+
+Utilizando estructura de control "MIENTRAS QUE" 
+
+```{r}
+# PROGRAMA: "Calcular el factorial de n"
+n <- 0
+factorial <- 1
+i <- 0
+while(i < n) {
+	i <- i + 1
+  factorial <- factorial * i
+}
+cat("El factorial de", n, "es", factorial)
+```
+
+**IMPORTANTE**. Notar que la primera opción no arroja de forma correcta el factorial de 0, que por definición es igual a 1. Se podría agregar alguna estructura condicional para esta situación. La segunda opción, en cambio, funciona también para `n <- 0`.
+
+## Ejercicio 7
+
+```{r}
+# PROGRAMA: "Secuencia de Fibonacci"
+termino1 <- 0
+termino2 <- 1
+while (termino1 < 10000) {
+  print(termino1)
+  termino3 <- termino1 + termino2
+  termino1 <- termino2
+  termino2 <- termino3
+}
+```
+
+## Ejercicio 8
+
+Observar que:  
+
+- el valor inicial es el 100 ya que la combinación no comienza por 0. 
+- el `while` se detiene cuando la combinación es mayor a 800.
+- se verifican las condiciones de multiplicidad, y si no se cumplen, se pasa directamente a la siguiente iteración. 
+- en caso de que se cumplan las condiciones, se imprime la combinación, y se pasa a la siguiente iteración.
+
+```{r}
+# PROGRAMA: "Lista de posibles combinaciones"
+combinacion <- 100
+
+while (combinacion <= 800) {
+  if (combinacion %% 11 == 0 && combinacion %% 8 != 0) {
+    print(combinacion)
+  }
+  combinacion <- combinacion + 1
+}
+```
+
+## Ejercicio 9
+
+a. Al final del primer año, la población será igual a:
+
+   $$
+   p0 + p0 \times \frac{tasa}{100} + inmigrantes = 1000 + 1000 * 0.02 + 50 = 1070
+   $$
+
+b.  Al final del 2º año, la población será:
+
+    $$
+    p0 + p0 \times \frac{tasa}{100} + inmigrantes = 1070 + 1070 * 0.02 + 50 = 1141.4 \cong 1141
+    $$
+    *Recordar que el número de habitantes es un entero, por lo cual tomamos la parte entera.*
+    
+    Al final del tercer año:
+    
+    $$
+    p0 + p0 \times \frac{tasa}{100} + inmigrantes = 1141 + 1141 * 0.02 + 50 = 1213.82 \cong 1213
+    $$
+    
+    Se necesitarán 3 años.
+
+c. Haciendo la solución para el problema de forma más general:
+
+```{r}
+# Parámetros a definir
+p0 <- 1000
+p_objetivo <- 1200
+tasa <- 2 # La expresamos en porcentaje
+inmigrantes <- 50
+
+# Programa
+año <- 0
+poblacion <- p0
+while (poblacion < p_objetivo) {
+  # Aplicamos la fórmula y nos quedamos con la parte entera del resultado
+  poblacion <- floor(poblacion + poblacion * tasa / 100 + inmigrantes)
+  # Contamos un año más
+  año <- año + 1
+}
+cat(
+  " Con una población inicial de", p0, 
+  "habitantes, una tasa de crecimiento anual del\n",
+  tasa, "% y", inmigrantes, "nuevos habitantes anuales, se necesitarán",
+  año, "años para alcanzar\n una población de", p_objetivo, 
+  "habitantes. Luego del año", año, "el pueblo contará con una\n población de", 
+  poblacion, "habitantes."
+)
+```
+
+d. Cambiamos los valores de las variables y realizamos el cálculo nuevamente:
+
+```{r}
+# Parámetros a definir
+p0 <- 10000
+p_objetivo <- 50000
+tasa <- 3 # La expresamos en porcentaje
+inmigrantes <- 100
+
+# Programa
+año <- 0
+poblacion <- p0
+while (poblacion < p_objetivo) {
+  # Aplicamos la fórmula y nos quedamos con la parte entera del resultado
+  poblacion <- floor(poblacion + poblacion * tasa / 100 + inmigrantes)
+  # Contamos un año más
+  año <- año + 1
+}
+cat(
+  " Con una población inicial de", p0, 
+  "habitantes, una tasa de crecimiento anual del\n",
+  tasa, "% y", inmigrantes, "nuevos habitantes anuales, se necesitarán",
+  año, "años para alcanzar\n una población de", p_objetivo, 
+  "habitantes. Luego del año", año, "el pueblo contará con una\n población de", 
+  poblacion, "habitantes."
+)
+```
