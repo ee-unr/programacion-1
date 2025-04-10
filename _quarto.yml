@@ -38,10 +38,17 @@ book:
         - capitulos/02_1_if.qmd
         - capitulos/02_2_for_while.qmd
         - capitulos/02_practica.qmd
+    - part: capitulos/03.qmd
+      chapters:
+        - capitulos/03_1_crear_funciones.qmd
+        - capitulos/03_2_ambito.qmd
+        - capitulos/03_3_varios.qmd
+        # - capitulos/03_practica.qmd
     - part: capitulos/90.qmd
       chapters:
         - capitulos/90_soluciones_01.qmd
         - capitulos/90_soluciones_02.qmd
+        # - capitulos/90_soluciones_03.qmd
   appendices:
   #   - capitulos/98_tp.qmd
     - capitulos/99_bibliografia.qmd

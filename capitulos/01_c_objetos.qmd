@@ -192,7 +192,7 @@ Otros lenguajes no admiten este comportamiento. Por el contrario, requieren se "
 Expresiones como "crear un objeto llamado `x` que contiene el valor `100`" o "sobreescribir, actualizar o reemplazar su valor" nos permiten imaginar lo que sucede y encarar tareas generales de programación en R, pero en realidad son formas simplificadas y poco precisas de describir procesos más complejos relacionados al funcionamiento de R. Estudiantes con experiencia en programación pueden opcionalmente referirse a [este material](https://adv-r.hadley.nz/names-values.html#names-values) para leer más.
 :::
 
-## Ambiente
+## Ambiente {#sec-ambiente}
 
 ::: {.concepto data-latex=""}
 En R, un **environment** (**entorno** o **ambiente**) es un espacio donde se almacenan los objetos creados durante una sesión de trabajo. Se trata una estructura clave en la gestión de variables y funciones dentro de un programa.

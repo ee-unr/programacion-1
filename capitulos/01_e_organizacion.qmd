@@ -66,7 +66,7 @@ Ese resultado implica que en este momento R puede ver y acceder de manera direct
 
 Por esa razón, es muy útil que, al trabajar con R, el *working directory* no sea la carpeta que aparece por defecto, sino aquella carpeta en la que tengamos guardados todos los archivos referidos al problema que estamos resolviendo. Para poder cambiar y elegir como *working directory* a cualquier carpeta de nuestra computadora que nos interese podemos usar una instrucción que se llama `setwd()`. Sin embargo, a continuación aprenderemos algo mejor.
 
-## Organización del trabajo con RStudio Projects
+## Organización del trabajo con RStudio Projects {#sec-organizacion}
 
 A partir de las dos secciones anteriores, llegamos a las siguientes conclusiones:
 
