@@ -183,22 +183,22 @@
 \vspace{4mm}
 }
 
-% Ejercicio
-\newenvironment{ejercicio}{
-\vspace{4mm}
-\begin{mdframedwithfootGPWE}
-\begin{minipage}[t]{0.10\textwidth}
-{$\:$ \\ \setkeys{Gin}{width=2.5em,keepaspectratio}\includegraphics{imagenes/iconos/008-edit-code.png}}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.90\textwidth}
-%\vspace{-2mm}
-\setlength{\parskip}{1em}
-\noindent\textbf{\color{oiB}\small{\MakeUppercase{Para resolver}}} $\:$ \\ 
-}{\end{minipage}
-\end{mdframedwithfootGPWE}
-\vspace{4mm}
-}
+% Ejercicio - DESPRECIADO PORQUE SI ES LARGO SE ROMPE AL ABARCAR MAS PAGINAS
+% \newenvironment{ejercicio}{
+% \vspace{4mm}
+% \begin{mdframedwithfootGPWE}
+% \begin{minipage}[t]{0.10\textwidth}
+% {$\:$ \\ \setkeys{Gin}{width=2.5em,keepaspectratio}\includegraphics{imagenes/iconos/008-edit-code.png}}
+% \end{minipage}
+% \hfill
+% \begin{minipage}[t]{0.90\textwidth}
+% %\vspace{-2mm}
+% \setlength{\parskip}{1em}
+% \noindent\textbf{\color{oiB}\small{\MakeUppercase{Para resolver}}} $\:$ \\ 
+% }{\end{minipage}
+% \end{mdframedwithfootGPWE}
+% \vspace{4mm}
+% }
 
 % ejemplo
 \newenvironment{ejemplo}{
@@ -320,3 +320,19 @@
   colbacktitle=oiLGray,
 }
 
+\newtcolorbox{ejercicio}{
+  breakable,
+  enhanced,
+  fonttitle=\sffamily\bfseries,
+  coltitle=oiB,
+  title=\textbf{\color{oiB}\small{\MakeUppercase{Para resolver}}} $\:$,
+  title code={
+  \path[fill=oiLGray] (title.south west) rectangle (title.north east);
+  \path[draw=oiB,solid,line width=0.75mm]
+  ([xshift=5mm]title.south west) -- ([xshift=-5mm]title.south east);
+  },
+  boxrule=0pt,frame hidden,
+  borderline west={3pt}{0pt}{oiB},
+  colback=oiLGray,
+  colbacktitle=oiLGray,
+}
