@@ -47,7 +47,7 @@ nombre <- function(argumentos) {
 ```
 
 1. **Nombre**: elegido por nosotros, respetando las reglas para la elección de nombres para objetos y buscando que provea una buena descripción del propósito de la función.  Usamos el operador de asignación (`<-`) para asociar ese nombre a la definición de la función, señalada con la palabra clave `function`.
-2. **Argumentos** o **parámetros**: listado de piezas de información que la función necesita para operar y que pueden variar cada vez que es invocada. Se listan entre paréntesis y separados por comas, a la izquierda de la palabra clave `function`.
+2. **Argumentos** o **parámetros**: listado de piezas de información que la función necesita para operar y que pueden variar cada vez que es invocada. Se listan entre paréntesis y separados por comas, a la derecha de la palabra clave `function`.
 3. **Cuerpo**: conjunto de instrucciones de programación que la función ejecuta cada vez que es invocada, encerrado por un par de llaves. Generalmente finaliza con la función `return()`, que indica el fin de la ejecución y provee el objeto que la función devuelve.
 
 ![Estructura de una función en R.](../imagenes/teoria_unidad_3/def_funcion.png){width="60%" fig-align="center" #fig-globalenv}
