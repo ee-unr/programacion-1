@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Información general sobre la asignatura – Programación 1</title>
+<title>9&nbsp; Actividad de autoevaluación 1 – Programación 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../capitulos/01.html" rel="next">
-<link href="../index.html" rel="prev">
+<link href="../capitulos/02.html" rel="next">
+<link href="../capitulos/01_practica.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -84,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/00_info.html">Información general sobre la asignatura</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/01.html">Unidad 1. Introducción a la programación con R</a></li><li class="breadcrumb-item"><a href="../capitulos/01_actividad_autoevaluativa.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Actividad de autoevaluación 1</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -122,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/00_info.html" class="sidebar-item-text sidebar-link active">
+  <a href="../capitulos/00_info.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Información general sobre la asignatura</span></a>
   </div>
 </li>
@@ -185,7 +219,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/01_actividad_autoevaluativa.html" class="sidebar-item-text sidebar-link">
+  <a href="../capitulos/01_actividad_autoevaluativa.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Actividad de autoevaluación 1</span></span></a>
   </div>
 </li>
@@ -299,32 +333,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#programa" id="toc-programa" class="nav-link active" data-scroll-target="#programa">Programa</a></li>
-  <li><a href="#aula-virtual" id="toc-aula-virtual" class="nav-link" data-scroll-target="#aula-virtual">Aula virtual</a></li>
-  <li><a href="#cursado" id="toc-cursado" class="nav-link" data-scroll-target="#cursado">Cursado</a>
-  <ul class="collapse">
-  <li><a href="#actividades-semanales" id="toc-actividades-semanales" class="nav-link" data-scroll-target="#actividades-semanales">Actividades semanales</a></li>
-  <li><a href="#clases" id="toc-clases" class="nav-link" data-scroll-target="#clases">Clases</a></li>
-  <li><a href="#consultas" id="toc-consultas" class="nav-link" data-scroll-target="#consultas">Consultas</a></li>
-  <li><a href="#sec-cronograma" id="toc-sec-cronograma" class="nav-link" data-scroll-target="#sec-cronograma">Cronograma</a></li>
-  </ul></li>
-  <li><a href="#evaluación" id="toc-evaluación" class="nav-link" data-scroll-target="#evaluación">Evaluación</a></li>
-  <li><a href="#código-de-conducta" id="toc-código-de-conducta" class="nav-link" data-scroll-target="#código-de-conducta">Código de conducta</a>
-  <ul class="collapse">
-  <li><a href="#respeto-y-trato-cordial" id="toc-respeto-y-trato-cordial" class="nav-link" data-scroll-target="#respeto-y-trato-cordial">Respeto y trato cordial</a></li>
-  <li><a href="#participación-y-comunicación" id="toc-participación-y-comunicación" class="nav-link" data-scroll-target="#participación-y-comunicación">Participación y comunicación</a></li>
-  <li><a href="#responsabilidad-y-compromiso" id="toc-responsabilidad-y-compromiso" class="nav-link" data-scroll-target="#responsabilidad-y-compromiso">Responsabilidad y compromiso</a></li>
-  <li><a href="#uso-responsable-de-inteligencia-artificial-para-resolver-problemas" id="toc-uso-responsable-de-inteligencia-artificial-para-resolver-problemas" class="nav-link" data-scroll-target="#uso-responsable-de-inteligencia-artificial-para-resolver-problemas">Uso responsable de inteligencia artificial para resolver problemas</a></li>
-  </ul></li>
+  <li><a href="#pregunta-1" id="toc-pregunta-1" class="nav-link active" data-scroll-target="#pregunta-1"><span class="header-section-number">9.1</span> Pregunta 1</a></li>
+  <li><a href="#pregunta-2" id="toc-pregunta-2" class="nav-link" data-scroll-target="#pregunta-2"><span class="header-section-number">9.2</span> Pregunta 2</a></li>
+  <li><a href="#pregunta-3" id="toc-pregunta-3" class="nav-link" data-scroll-target="#pregunta-3"><span class="header-section-number">9.3</span> Pregunta 3</a></li>
+  <li><a href="#pregunta-4" id="toc-pregunta-4" class="nav-link" data-scroll-target="#pregunta-4"><span class="header-section-number">9.4</span> Pregunta 4</a></li>
+  <li><a href="#pregunta-5" id="toc-pregunta-5" class="nav-link" data-scroll-target="#pregunta-5"><span class="header-section-number">9.5</span> Pregunta 5</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/00_info.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/00_info.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/01_actividad_autoevaluativa.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/01_actividad_autoevaluativa.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/01.html">Unidad 1. Introducción a la programación con R</a></li><li class="breadcrumb-item"><a href="../capitulos/01_actividad_autoevaluativa.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Actividad de autoevaluación 1</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Información general sobre la asignatura</h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Actividad de autoevaluación 1</span></h1>
 </div>
 
 
@@ -341,248 +363,169 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="programa" class="level2">
-<h2 class="anchored" data-anchor-id="programa">Programa</h2>
-<p>En <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/ee-unr/programacion-1/main/archivos/programa.pdf">este enlace</a> podés consultar el programa para esta asignatura.</p>
+<div class="info">
+<p>Esta autoevaluación DEBE ser completada sin usar R para poder razonar las preguntas.</p>
+</div>
+<section id="pregunta-1" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="pregunta-1"><span class="header-section-number">9.1</span> Pregunta 1</h2>
+<p>Dada la operación:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(x <span class="sc">&gt;</span> y) <span class="sc">||</span> <span class="sc">!</span>(x <span class="sc">/</span> <span class="dv">2</span> <span class="sc">&gt;</span> <span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>indique su resultado (<code>TRUE</code> o <code>FALSE</code>) para cada una de las siguientes asignaciones de valor para las variables <code>x</code> e <code>y</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>a<span class="er">)</span> x <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>   y <span class="ot">&lt;-</span> <span class="dv">30</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Seleccione una:</p>
+<div id="radio_FROSENTZKQ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_FROSENTZKQ" value="answer"> <span>TRUE</span></label><label><input type="radio" autocomplete="off" name="radio_FROSENTZKQ" value=""> <span>FALSE</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explicación
+</button>
+<p>Como <code>x = 15</code> y <code>y = 30</code>, entonces <code>(15 &gt; 30)</code> es <code>FALSE</code>.</p>
+<p><code>15/2 = 7.5</code> y <code>(7.5 &gt; 10)</code> también es <code>FALSE</code>.</p>
+<p>Sin embargo, <code>!(FALSE) = TRUE</code>.</p>
+<p>Finalmente, <code>FALSE || TRUE = TRUE</code> ya que el operador <code>||</code> resulta <code>TRUE</code> si al menos una de las dos condiciones es <code>TRUE</code>.</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>b<span class="er">)</span> x <span class="ot">&lt;-</span> <span class="dv">22</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>   y <span class="ot">&lt;-</span> <span class="dv">30</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Seleccione una:</p>
+<div id="radio_SRJVSAGVYJ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_SRJVSAGVYJ" value=""> <span>TRUE</span></label><label><input type="radio" autocomplete="off" name="radio_SRJVSAGVYJ" value="answer"> <span>FALSE</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explicación
+</button>
+<p>Como <code>x = 22</code> y <code>y = 30</code>, entonces <code>(22 &gt; 30)</code> es <code>FALSE</code></p>
+<p><code>22/2 = 11</code>, y <code>(11 &gt; 10)</code> es <code>TRUE</code></p>
+<p>Sin embargo, <code>!(TRUE) = FALSE</code></p>
+<p>Finalmente, <code>FALSE || FALSE = FALSE</code></p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>c<span class="er">)</span> x <span class="ot">&lt;-</span> <span class="dv">32</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>   y <span class="ot">&lt;-</span> <span class="dv">30</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Seleccione una:</p>
+<div id="radio_BXDFKKJOFX" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_BXDFKKJOFX" value="answer"> <span>TRUE</span></label><label><input type="radio" autocomplete="off" name="radio_BXDFKKJOFX" value=""> <span>FALSE</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explicación
+</button>
+<p>Como <code>x = 32</code> y <code>y = 30</code> entonces <code>(32 &gt; 30)</code> es <code>TRUE</code></p>
+<p><code>32/2 = 16</code> y <code>(16 &gt; 10)</code> es <code>TRUE</code></p>
+<p>Sin embargo, <code>!(TRUE) = FALSE</code></p>
+<p>Finalmente, <code>TRUE || FALSE = TRUE</code></p>
+</div>
 </section>
-<section id="aula-virtual" class="level2">
-<h2 class="anchored" data-anchor-id="aula-virtual">Aula virtual</h2>
-<p>Esta asignatura posee un <a href="https://comunidades3.campusvirtualunr.edu.ar/course/view.php?id=4893">espacio virtual en la plataforma Comunidades 3</a> de la Universidad Nacional de Rosario, que será utilizado para dar anuncios y noticias, responder consultas en los foros, entregar y realizar devoluciones sobre los trabajos prácticos, informar calificaciones, etc. Es importante que visites este espacio de forma regular. Si no te ha llegado la clave para poder ingresar, contactá a los docentes.</p>
-</section>
-<section id="cursado" class="level2">
-<h2 class="anchored" data-anchor-id="cursado">Cursado</h2>
-<section id="actividades-semanales" class="level3">
-<h3 class="anchored" data-anchor-id="actividades-semanales">Actividades semanales</h3>
-<p>Cada semana durante la extensión del cuatrimestre encontrarás las indicaciones referidas a los contenidos que debés cubrir para avanzar en tiempo y forma con esta asignatura. En <a href="../capitulos/00_info.html#sec-cronograma">este cronograma de trabajo</a> verás de forma detallada cuáles son los capítulos del libro a estudiar y los ejercicios de las prácticas a resolver, semana a semana. Todos los materiales estarán publicados con anticipación, incluyendo las respuestas a los problemas, de modo que puedas autogestionar tus tiempos. Además, en el cronograma podrás ver todas las fechas importantes que deben ser respetadas, como las de las evaluaciones.</p>
-</section>
-<section id="clases" class="level3">
-<h3 class="anchored" data-anchor-id="clases">Clases</h3>
-<p>Como acompañamiento a tu propio avance por la asignatura, cada semana podés asistir a dos clases:</p>
+<section id="pregunta-2" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="pregunta-2"><span class="header-section-number">9.2</span> Pregunta 2</h2>
+<p>¿Cuál es el valor almacenado en <code>var1</code> luego de ejecutar las siguientes acciones?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>var1 <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>var2 <span class="ot">&lt;-</span> var1 <span class="sc">%%</span> <span class="dv">30</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>var3 <span class="ot">&lt;-</span> var1 <span class="sc">+</span> var2</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>var3 <span class="ot">&lt;-</span> var3 <span class="sc">-</span> <span class="dv">3</span> <span class="sc">*</span> var2</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>var1 <span class="ot">&lt;-</span> var3 <span class="sc">+</span> <span class="dv">20</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>La respuesta es (ingrese un numero): <input class="webex-solveme nospaces" size="3" data-answer="[&quot;100&quot;]"></p>
+<div class="webex-solution">
+<button>
+Explicación
+</button>
+<ol type="1">
+<li><p><code>var1</code> recibe el valor <code>100</code></p></li>
+<li><p><code>var2</code> almacena el resto de dividir <code>var1</code> entre 30:</p></li>
+</ol>
 <ul>
-<li>Una es virtual y se dicta los días lunes de 14:30 a 16:30 para todo el estudiantado. Estas clases tienen el objetivo de presentar los contenidos conceptuales de cada semana, mediante la exposición interactiva del tema a abordar.</li>
-<li>La otra clase es presencial y se dicta en el Laboratorio de Computación de la Escuela de Estadística, para cada comisión por separado.</li>
+<li><p>Como <code>30 × 3 = 90</code> y <code>100 − 90 = 10</code>, entonces:</p></li>
+<li><p><code>var2 = 10</code></p></li>
 </ul>
-<p>Si por alguna razón una clase se suspende (por ejemplo, es feriado), ¡no te preocupes! Todo el material correspondiente a la semana en cuestión estará publicado y podrás resolver tus dudas en las consultas presenciales o virtuales, o en los foros del aula virtual. Tenés que tener en cuenta la semana siguiente no repasaremos el contenido de la semana en la que no tuviste clase, sino que avanzaremos con los temas que tocan esa semana, según el cronograma.</p>
-<p>Información importante para las clases, como enlaces para conectarte o días y horarios de cada comisón, son publicados en el <a href="https://comunidades3.campusvirtualunr.edu.ar/course/view.php?id=4893">aula virtual</a>.</p>
-</section>
-<section id="consultas" class="level3">
-<h3 class="anchored" data-anchor-id="consultas">Consultas</h3>
-<p>Podés resolver tus dudas recurriendo a estos medios:</p>
+<ol start="3" type="1">
+<li><code>var3</code> guarda la suma de <code>var1</code> y <code>var2</code>:</li>
+</ol>
 <ul>
-<li><strong>Foros de consulta en el aula virtual</strong>.</li>
-<li><strong>Clases de consulta virtuales</strong>. Los enlaces y horarios se publican en el aula virtual. Si ningún estudiante se conecta, la clase se da por finalizada luego de 10 minutos de espera.</li>
-<li><strong>Clases de consulta presenciales en el laboratorio de computación</strong>. Estas clases tendrán una duración determinada. Durante ese tiempo, además de resolver dudas con los docentes, podés recurrir al laboratorio para hacer uso de las computadoras y resolver ejercicios u otros trabajos.</li>
+<li><code>100 + 10 = 110</code></li>
 </ul>
-</section>
-<section id="sec-cronograma" class="level3">
-<h3 class="anchored" data-anchor-id="sec-cronograma">Cronograma</h3>
-<p>Visitá periódicamente este cronograma para autogestionar tu tránsito por los temas y materiales de la asignatura:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 7%">
-<col style="width: 10%">
-<col style="width: 11%">
-<col style="width: 13%">
-<col style="width: 15%">
-<col style="width: 41%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;"><strong>Semana</strong></th>
-<th style="text-align: center;"><strong>Inicio / Fin</strong></th>
-<th style="text-align: center;"><strong>Tópico</strong></th>
-<th style="text-align: center;"><strong>Capítulos a leer</strong></th>
-<th style="text-align: center;"><strong>Ejercicios a resolver</strong></th>
-<th><strong>Importante</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">17/3 al 23/3</td>
-<td style="text-align: center;">Unidad 1</td>
-<td style="text-align: center;">1 a 3</td>
-<td style="text-align: center;">1 a 4</td>
-<td></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">24/3 al 30/3</td>
-<td style="text-align: center;">Unidad 1</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">5 a 9</td>
-<td>Feriado: lun 24/3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">31/3 al 6/4</td>
-<td style="text-align: center;">Unidades 1 y 2</td>
-<td style="text-align: center;">5 a 9</td>
-<td style="text-align: center;">10 a 13 (Unidad 1)</td>
-<td>Feriado: mié 2/4</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">7/4 al 13/4</td>
-<td style="text-align: center;">Unidad 2</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">1 a 6</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">14/4 al 20/4</td>
-<td style="text-align: center;">Unidad 2</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">7 a 9</td>
-<td>Feriados: Jue 17/4 y Vie 18/4</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">21/4 al 27/4</td>
-<td style="text-align: center;">Unidad 3</td>
-<td style="text-align: center;">A definir</td>
-<td style="text-align: center;">A definir</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">7</td>
-<td style="text-align: center;">28/4 al 4/5</td>
-<td style="text-align: center;">Unidad 3</td>
-<td style="text-align: center;">A definir</td>
-<td style="text-align: center;">A definir</td>
-<td>Feriados: Jue 1/5 y Vie 2/5</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">8</td>
-<td style="text-align: center;">5/5 al 11/5</td>
-<td style="text-align: center;">Parcial / Unidad 4</td>
-<td style="text-align: center;">A definir</td>
-<td style="text-align: center;">A definir</td>
-<td><strong>Parcial</strong>: jue 8/5 a la tardecita, todas las comisiones juntas</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">9</td>
-<td style="text-align: center;">12/5 al 18/5</td>
-<td style="text-align: center;">Unidad 4</td>
-<td style="text-align: center;">A definir</td>
-<td style="text-align: center;">A definir</td>
-<td></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">19/5 al 25/5</td>
-<td style="text-align: center;">Unidad 5</td>
-<td style="text-align: center;">A definir</td>
-<td style="text-align: center;">A definir</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">11</td>
-<td style="text-align: center;">26/5 al 1/6</td>
-<td style="text-align: center;">Unidad 5</td>
-<td style="text-align: center;">A definir</td>
-<td style="text-align: center;">A definir</td>
-<td><strong>Entrega TP</strong>: dom 1/6</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">12</td>
-<td style="text-align: center;">2/6 al 8/6</td>
-<td style="text-align: center;">Unidad 5</td>
-<td style="text-align: center;">A definir</td>
-<td style="text-align: center;">A definir</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">13</td>
-<td style="text-align: center;">9/6 al 15/6</td>
-<td style="text-align: center;">Recup. / Unidad 6</td>
-<td style="text-align: center;">A definir</td>
-<td style="text-align: center;">A definir</td>
-<td><strong>Recup</strong>: jue 12/6 a la tardecita, todas las comisiones juntas</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">14</td>
-<td style="text-align: center;">16/6 al 22/6</td>
-<td style="text-align: center;">Unidad 6</td>
-<td style="text-align: center;">A definir</td>
-<td style="text-align: center;">A definir</td>
-<td><strong>Entrega tarea promoción</strong>: dom 22/6. Feriados: lun 16/6 y vie 20/6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">15</td>
-<td style="text-align: center;">23/6 al 29/6</td>
-<td style="text-align: center;">Unidad 6</td>
-<td style="text-align: center;">A definir</td>
-<td style="text-align: center;">A definir</td>
-<td>Vie 27/6: notificación de la condición final en la asignatura</td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="evaluación" class="level2">
-<h2 class="anchored" data-anchor-id="evaluación">Evaluación</h2>
-<p>La evaluación de la asignatura se realiza a través de un examen parcial individual y un trabajo práctico grupal. Ambas actividades son evaluadas con una calificación entre 0 y 10 y se ponderan para obtener una nota de cursada (60% examen parcial, 40% trabajo práctico). Al finalizar el cursado, cada estudiante obtiene una de las siguientes condiciones:</p>
+<ol start="4" type="1">
+<li>Modificación de <code>var3</code>:</li>
+</ol>
 <ul>
-<li><strong>Libre</strong>: obtienen la condición de “libre” aquellos estudiantes con nota de cursada inferior a 6 o alguna nota menor a 4, ya sea en el examen parcial o en el trabajo práctico.</li>
-<li><strong>Regular</strong>: obtienen la condición de “regular” aquellos estudiantes con nota de cursada mayor o igual a 6, siempre que no tengan ninguna nota menor a 4 en el examen parcial o en el trabajo práctico</li>
-<li><strong>Promovido</strong>: obtienen la condición de “promovido” aquellos estudiantes que con nota de cursada mayor o igual a 8, que no tengan ninguna nota menor a 6 en el examen parcial o en el trabajo práctico y que aprueben una tarea de realización opcional e individual al final del cuatrimestre. La nota de cursada se computa como nota final de la asignatura.</li>
+<li>Se actualiza <code>var3</code> restando 3 veces <code>var2</code>:</li>
+<li><code>110 − (3 × 10) = 80</code></li>
 </ul>
-<p>Más detalles sobre cada componente evaluativo pueden encontrarse en el <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/ee-unr/programacion-1/main/archivos/programa.pdf">programa</a> o en el <a href="https://comunidades3.campusvirtualunr.edu.ar/course/view.php?id=4893">aula virtual</a>.</p>
-</section>
-<section id="código-de-conducta" class="level2">
-<h2 class="anchored" data-anchor-id="código-de-conducta">Código de conducta</h2>
-<p>En esta asignatura promovemos un ambiente de respeto, colaboración y aprendizaje mutuo. Para garantizar una experiencia positiva para todas las personas involucradas, establecemos las siguientes normas de convivencia:</p>
-<section id="respeto-y-trato-cordial" class="level3">
-<h3 class="anchored" data-anchor-id="respeto-y-trato-cordial">Respeto y trato cordial</h3>
+<ol start="5" type="1">
+<li>Actualización final de <code>var1</code>:</li>
+</ol>
 <ul>
-<li>Todas las personas deben ser tratadas con respeto, independientemente de su experiencia, formación, identidad de género, origen, creencias u opiniones.</li>
-<li>Se espera un trato cordial y profesional entre estudiantes, docentes y personal de la facultad.<br>
-</li>
-<li>No se tolerarán expresiones de discriminación, violencia verbal, acoso o cualquier forma de descalificación personal.</li>
+<li><p><code>var1</code> toma el valor de <code>var3 + 20</code></p></li>
+<li><p><code>80 + 20 = 100</code></p></li>
 </ul>
+<p>Tras todas las operaciones, <code>var1</code> vuelve a su valor inicial: <code>100</code>.</p>
+</div>
 </section>
-<section id="participación-y-comunicación" class="level3">
-<h3 class="anchored" data-anchor-id="participación-y-comunicación">Participación y comunicación</h3>
+<section id="pregunta-3" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="pregunta-3"><span class="header-section-number">9.3</span> Pregunta 3</h2>
+<p>Los operadores aritméticos tienen mayor orden de precedencia que los operadores relacionales (es decir, se evalúan antes). ¿Es esta afirmación verdadera o falsa?</p>
+<div id="radio_WZVIFNGDBE" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_WZVIFNGDBE" value="answer"> <span>TRUE</span></label><label><input type="radio" autocomplete="off" name="radio_WZVIFNGDBE" value=""> <span>FALSE</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explicación
+</button>
+<p>Jerarquía de operadores:</p>
 <ul>
-<li>Se fomenta el intercambio de ideas y el debate académico en un marco de respeto.<br>
-</li>
-<li>Se debe permitir que todas las voces sean escuchadas sin interrupciones ni actitudes despectivas.<br>
-</li>
-<li>El uso de lenguaje claro y respetuoso es fundamental, tanto en interacciones presenciales como en medios digitales relacionados con la asignatura.<br>
-</li>
-<li>Se valora la cooperación en actividades grupales, con una distribución equitativa de tareas y reconocimiento del aporte de cada integrante.<br>
-</li>
-<li>Se invita a hacer preguntas y solicitar aclaraciones cuando sea necesario, en un clima de confianza y respeto.<br>
-</li>
-<li>Los comentarios hacia otros estudiantes y docentes deben ser constructivos y enfocados en la mejora del aprendizaje.</li>
+<li>Aritméticos <code>(^, %%, /, *, +, -)</code>: Mayor precedencia.<br></li>
+<li>Relacionales <code>(&gt;, &lt;, ==, !=, &gt;=, &lt;=)</code>: Menor precedencia.<br></li>
 </ul>
+<p>Ejemplo:</p>
+<p><code>3 + 5 * 2 &gt; 1</code></p>
+<p>Paso 1 (aritméticos): <code>5 * 2 = 10</code> → <code>3 + 10 = 13</code><br> Paso 2 (relacional): <code>13 &gt; 10</code> → <code>TRUE</code></p>
+<p>Regla clave:<br> <code>Paréntesis () &gt; Aritméticos &gt; Relacionales &gt; Lógicos</code></p>
+</div>
 </section>
-<section id="responsabilidad-y-compromiso" class="level3">
-<h3 class="anchored" data-anchor-id="responsabilidad-y-compromiso">Responsabilidad y compromiso</h3>
-<ul>
-<li>La entrega de trabajos deben realizarse con responsabilidad. En caso de dificultades, se recomienda comunicarse con el equipo docente con anticipación.</li>
-<li>Se espera honestidad académica en todas las actividades del curso.<br>
-</li>
-<li>El uso de dispositivos electrónicos en clase debe estar alineado con los objetivos de la misma, evitando distracciones innecesarias.</li>
-</ul>
+<section id="pregunta-4" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="pregunta-4"><span class="header-section-number">9.4</span> Pregunta 4</h2>
+<p>Una inmobiliaria necesita guardar el valor de una operación de venta de un inmueble efectuada durante el corriente año en una variable para realizar operaciones posteriores. Entre los siguientes posibles nombre de variable indique cual sería el más adecuado:</p>
+<div id="radio_XGSBCHVLHX" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_XGSBCHVLHX" value=""> <span>operación_Año2025</span></label><label><input type="radio" autocomplete="off" name="radio_XGSBCHVLHX" value=""> <span>valorVentaInmueble2025</span></label><label><input type="radio" autocomplete="off" name="radio_XGSBCHVLHX" value=""> <span>VentaOperación</span></label><label><input type="radio" autocomplete="off" name="radio_XGSBCHVLHX" value=""> <span>2025_venta_inmueble</span></label><label><input type="radio" autocomplete="off" name="radio_XGSBCHVLHX" value=""> <span>Valor-Venta-Inmueble-2025</span></label><label><input type="radio" autocomplete="off" name="radio_XGSBCHVLHX" value=""> <span>ventainmuebleanio2025</span></label><label><input type="radio" autocomplete="off" name="radio_XGSBCHVLHX" value="answer"> <span>venta_inmueble_2025</span></label><label><input type="radio" autocomplete="off" name="radio_XGSBCHVLHX" value=""> <span>venta inmueble 2025</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explicación
+</button>
+<p><code>VentaOperación</code>: No es la mejor opción porque incluye un acento (“ó”) en el nombre de la variable, lo que puede generar problemas de codificación en algunos entornos. Además, se recomienda usar guiones bajos para separar palabras en minúsculas y mejorar la legibilidad.</p>
+<p><code>2025_venta_inmueble</code>: En general no es buena práctica que los nombres de variables comiencen con un número en ningún lenguaje de programación. R y la mayoría de lenguajes no lo permiten, y aunque algunos sí lo hacen, dificulta la lectura y puede causar errores.</p>
+<p><code>Valor-Venta-Inmueble-2025</code>: No se recomienda usar guiones medios en nombres de variables porque este carácter está reservado para la operación de resta. En muchos lenguajes, incluyendo R, provocaría errores de sintaxis. Siempre es mejor usar guiones bajos.</p>
+<p><code>venta inmueble 2025</code>: Los espacios entre palabras no son válidos en nombres de variables. El sistema interpretaría “venta”, “inmueble” y “2025” como tres variables distintas. Para unir palabras, se usan guiones bajos.</p>
+<p><code>valorVentaInmueble2025</code>: Este tipo de escritura se conoce como <em>camelCase</em>, y aunque muchos lo utilizan, en R la convención más clara y extendida es el uso de <em>snake_case</em> (con guiones bajos). Funciona, pero no sigue el estilo típico de R.</p>
+<p><code>operación_Año2025</code>: Este nombre contiene un acento (“ó”) y la letra “ñ”, lo que puede causar conflictos en algunos entornos. Para evitar errores, es mejor evitar caracteres especiales como estos. Ademas utiliza mayúsculas, lo que puede complicar innecesariamente la escritura del nombre de la variable.</p>
+<p><code>ventainmuebleanio2025</code>: Aunque técnicamente válido, este nombre es largo y poco intuitivo porque carece de separadores entre palabras. Usar guiones bajos mejora significativamente la legibilidad.</p>
+</div>
 </section>
-<section id="uso-responsable-de-inteligencia-artificial-para-resolver-problemas" class="level3">
-<h3 class="anchored" data-anchor-id="uso-responsable-de-inteligencia-artificial-para-resolver-problemas">Uso responsable de inteligencia artificial para resolver problemas</h3>
-<ul>
-<li>Las herramientas de inteligencia artificial (IA) pueden ser útiles en ciertos contextos, pero su uso excesivo o inadecuado puede limitar el aprendizaje real. Es fundamental que los estudiantes realicen el esfuerzo de comprender y desarrollar las soluciones por sí mismos.<br>
-</li>
-<li>Para aprender a programar y desarrollar pensamiento lógico, es necesario escribir código, enfrentar errores y corregirlos. Depender demasiado de la IA puede generar una falsa sensación de dominio sin una comprensión profunda.<br>
-</li>
-<li>En las evaluaciones y entregas, <strong>queda estrictamente prohibido el plagio y todo tipo de copia</strong>, incluyendo el uso de respuestas generadas por IA sin una comprensión real del contenido.<br>
-</li>
-<li>Si se detecta plagio o copia en cualquier instancia de evaluación, o falta de comprensión de las soluciones entregadas, se aplicarán las medidas correspondientes según las normativas de la institución.</li>
-</ul>
-<p>El cumplimiento de estas normas contribuye a un entorno en el que todas las personas puedan participar activamente y aprovechar al máximo la experiencia educativa. Ante cualquier inquietud o situación que afecte la convivencia, se recomienda comunicarlo al equipo docente o a las autoridades institucionales.</p>
+<section id="pregunta-5" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="pregunta-5"><span class="header-section-number">9.5</span> Pregunta 5</h2>
+<p>Indicar si la siguiente afirmación es verdadera o falsa:</p>
+<p>“Al crear un nuevo Rproject en RStudio se inicia una nueva sesión, se setea el directorio de trabajo y se cargan todas las librerias que necesito para trabajar automáticamente”</p>
+<div id="radio_ZVXLWFVPTD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ZVXLWFVPTD" value=""> <span>TRUE</span></label><label><input type="radio" autocomplete="off" name="radio_ZVXLWFVPTD" value="answer"> <span>FALSE</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explicación
+</button>
+<p>Un nuevo <strong>RProject</strong> en RStudio inicia una nueva sesión de R (limpia el entorno de trabajo) y setea el directorio de trabajo al directorio raíz del proyecto, pero no carga librerías instaladas. Las librerías deben cargarse manualmente en cada sesión o mediante scripts usando el comando <code>library()</code></p>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1355,13 +1298,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="Bienvenida">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bienvenida</span>
+      <a href="../capitulos/01_practica.html" class="pagination-link" aria-label="Práctica de la Unidad 1">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Práctica de la Unidad 1</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../capitulos/01.html" class="pagination-link" aria-label="Unidad 1. Introducción a la programación con R">
-        <span class="nav-page-text">Unidad 1. Introducción a la programación con R</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../capitulos/02.html" class="pagination-link" aria-label="Unidad 2. Estructuras de control">
+        <span class="nav-page-text">Unidad 2. Estructuras de control</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1373,7 +1316,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Developed by Marcos Prunello</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/00_info.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/00_info.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/01_actividad_autoevaluativa.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/01_actividad_autoevaluativa.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
