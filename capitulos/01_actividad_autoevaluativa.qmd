@@ -1,0 +1,194 @@
+---
+title: "Actividad de autoevaluación 1"
+---
+
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+::: {.info data-latex=""}
+Esta autoevaluación DEBE ser completada sin usar R para poder razonar las preguntas.
+:::
+
+## Pregunta 1
+
+Dada la operación:
+
+```{r}
+#| eval: false
+(x > y) || !(x / 2 > 10)
+```
+
+indique su resultado (`TRUE` o `FALSE`) para cada una de las siguientes asignaciones de valor para las variables `x` e `y`:
+
+```{r}
+#| eval: false
+a) x <- 15
+   y <- 30
+```
+
+Seleccione una:
+
+`r webexercises::longmcq(c(answer = TRUE, FALSE))`
+
+`r webexercises::hide("Explicación")`
+Como `x = 15` y `y = 30`, entonces `(15 > 30)` es `FALSE`.
+
+`15/2 = 7.5` y `(7.5 > 10)` también es `FALSE`.
+
+Sin embargo, `!(FALSE) = TRUE`.
+
+Finalmente, `FALSE || TRUE = TRUE` ya que el operador `||`  resulta `TRUE` si al menos una de las dos condiciones es `TRUE`.
+`r webexercises::unhide()`
+
+```{r}
+#| eval: false
+b) x <- 22
+   y <- 30
+```
+
+Seleccione una:
+
+`r webexercises::longmcq(c(TRUE, answer = FALSE))`
+
+`r webexercises::hide("Explicación")`
+Como `x = 22` y `y = 30`, entonces `(22 > 30)` es `FALSE`
+
+`22/2 = 11`, y `(11 > 10)` es `TRUE`
+
+Sin embargo, `!(TRUE) = FALSE`
+
+Finalmente, `FALSE || FALSE = FALSE`
+`r webexercises::unhide()`
+
+
+```{r}
+#| eval: false
+c) x <- 32
+   y <- 30
+```
+
+Seleccione una:
+
+`r webexercises::longmcq(c(answer = TRUE, FALSE))`
+
+`r webexercises::hide("Explicación")`
+Como `x = 32` y `y = 30` entonces `(32 > 30)` es `TRUE`
+
+`32/2 = 16` y `(16 > 10)` es `TRUE`
+
+Sin embargo, `!(TRUE) = FALSE`
+
+Finalmente, `TRUE || FALSE = TRUE`
+`r webexercises::unhide()`
+
+## Pregunta 2
+
+¿Cuál es el valor almacenado en `var1` luego de ejecutar las siguientes acciones? 
+
+```{r}
+#| eval: false
+var1 <- 100
+var2 <- var1 %% 30
+var3 <- var1 + var2
+var3 <- var3 - 3 * var2
+var1 <- var3 + 20
+
+```
+
+La respuesta es (ingrese un numero): `r webexercises::fitb(100)`
+
+`r webexercises::hide("Explicación")`
+
+1) `var1` recibe el valor `100`
+
+2) `var2` almacena el resto de dividir `var1` entre 30:
+
+- Como `30 × 3 = 90` y `100 − 90 = 10`, entonces:
+
+- `var2 = 10`
+
+3) `var3` guarda la suma de `var1` y `var2`:
+
+ - `100 + 10 = 110`
+ 
+4) Modificación de `var3`:
+
+- Se actualiza `var3` restando 3 veces `var2`:
+- `110 − (3 × 10) = 80`
+
+5) Actualización final de `var1`:
+
+- `var1` toma el valor de `var3 + 20`
+
+- `80 + 20 = 100`
+
+Tras todas las operaciones, `var1` vuelve a su valor inicial: `100`.
+`r webexercises::unhide()`
+
+## Pregunta 3
+
+Los operadores aritméticos tienen mayor orden de precedencia que los operadores relacionales (es decir, se evalúan antes). ¿Es esta afirmación verdadera o falsa?
+
+`r webexercises::longmcq(c(answer = TRUE, FALSE))`
+
+`r webexercises::hide("Explicación")`
+Jerarquía de operadores:
+
+- Aritméticos `(^, %%, /, *, +, -)`: Mayor precedencia.<br>
+- Relacionales `(>, <, ==, !=, >=, <=)`: Menor precedencia.<br>
+
+Ejemplo:
+
+`3 + 5 * 2 > 1`
+
+Paso 1 (aritméticos): `5 * 2 = 10` → `3 + 10 = 13`<br>
+Paso 2 (relacional): `13 > 10` → `TRUE`
+
+
+Regla clave:<br>
+`Paréntesis () > Aritméticos > Relacionales > Lógicos`
+`r webexercises::unhide()`
+
+## Pregunta 4
+Una inmobiliaria necesita guardar el valor de una operación de venta de un inmueble efectuada durante el corriente año en una variable para realizar operaciones posteriores. Entre los siguientes posibles nombre de variable indique cual sería el más adecuado:
+
+```{r, include=FALSE}
+# use sample() to randomise the order
+opts_ci <- sample(c(
+  answer = "venta_inmueble_2025","VentaOperación","2025_venta_inmueble",
+  "Valor-Venta-Inmueble-2025", "venta inmueble 2025", "valorVentaInmueble2025", 
+  "operación_Año2025", "ventainmuebleanio2025"
+))
+```
+
+`r webexercises::longmcq(opts_ci)`
+
+`r webexercises::hide("Explicación")`
+`VentaOperación`: No es la mejor opción porque incluye un acento ("ó") en el nombre de la variable, lo que puede generar problemas de codificación en algunos entornos. Además, se recomienda usar guiones bajos para separar palabras en minúsculas y mejorar la legibilidad.
+
+`2025_venta_inmueble`: En general no es buena práctica que los nombres de variables comiencen con un número en ningún lenguaje de programación. R y la mayoría de lenguajes no lo permiten, y aunque algunos sí lo hacen, dificulta la lectura y puede causar errores.
+
+`Valor-Venta-Inmueble-2025`: No se recomienda usar guiones medios en nombres de variables porque este carácter está reservado para la operación de resta. En muchos lenguajes, incluyendo R, provocaría errores de sintaxis. Siempre es mejor usar guiones bajos.
+
+`venta inmueble 2025`: Los espacios entre palabras no son válidos en nombres de variables. El sistema interpretaría "venta", "inmueble" y "2025" como tres variables distintas. Para unir palabras, se usan guiones bajos.
+
+`valorVentaInmueble2025`: Este tipo de escritura se conoce como *camelCase*, y aunque muchos lo utilizan, en R la convención más clara y extendida es el uso de *snake_case* (con guiones bajos). Funciona, pero no sigue el estilo típico de R.
+
+`operación_Año2025`: Este nombre contiene un acento ("ó") y la letra "ñ", lo que puede causar conflictos en algunos entornos. Para evitar errores, es mejor evitar caracteres especiales como estos. Ademas utiliza mayúsculas, lo que puede complicar innecesariamente la escritura del nombre de la variable.
+
+`ventainmuebleanio2025`: Aunque técnicamente válido, este nombre es largo y poco intuitivo porque carece de separadores entre palabras. Usar guiones bajos mejora significativamente la legibilidad.
+`r webexercises::unhide()`
+
+## Pregunta 5
+
+Indicar si la siguiente afirmación es verdadera o falsa:
+
+“Al crear un nuevo Rproject en RStudio se inicia una nueva sesión, se setea el directorio de trabajo y se cargan todas las librerias que necesito para trabajar automáticamente”
+
+`r webexercises::longmcq(c(TRUE, answer = FALSE))`
+
+`r webexercises::hide("Explicación")`
+Un nuevo **RProject** en RStudio inicia una nueva sesión de R (limpia el entorno de trabajo) y setea el directorio de trabajo al directorio raíz del proyecto, pero no carga librerías instaladas. Las librerías deben cargarse manualmente en cada sesión o mediante scripts usando el comando `library()`
+`r webexercises::unhide()`
+
