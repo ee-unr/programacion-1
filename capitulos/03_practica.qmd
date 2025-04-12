@@ -4,7 +4,7 @@ format: html
 
 # Práctica de la Unidad 3
 
-## Ejercicio 1
+## Ejercicio 1 {#sec-p3e1}
 
 Escribir un programa en R para la creación de la función `combinatorio(m, n)` que calcula el número combinatorio `m` tomado de a `n` (también llamado *coeficiente binomial*), siendo estos números naturales tales que `m >= n`. Un número combinatorio se define como:
 
@@ -12,13 +12,17 @@ $$
 C(m, n) = {m \choose n} = \frac{m!}{(m-n)!n!}
 $$
 
-Se debe utilizar la función `fact()` para el cálculo de factoriales tal como fue definida en esta unidad. Una vez definida la función `combinatorio(m, n)`, guárdela junto con `fact()` en un script llamado `funciones.R`. En un script aparte, cargue las funciones en el ambiente global usando `source()` y ejemplifique las siguientes propiedades de los números combinatorios para `m = 5` y `n = 2`:
+Consideraciones:
 
-1. ${m \choose 0} = 1$
-2. ${m \choose m} = 1$
-3. ${m \choose 1} = m$
-4. ${m \choose n} = {m \choose m - n}$
-5. ${m \choose n} = {m - 1 \choose n - 1} + {m - 1 \choose n}$
+- Se debe utilizar la función `fact()` para el cálculo de factoriales tal como fue definida en esta unidad.
+- Una vez definida la función `combinatorio(m, n)`, guardarla junto con `fact()` en un script llamado `funciones.R`.
+- En un script aparte, cargue las funciones en el ambiente global usando `source()` y ejemplifique las siguientes propiedades de los números combinatorios para `m = 5` y `n = 2`:
+
+    1. ${m \choose 0} = 1$
+    2. ${m \choose m} = 1$
+    3. ${m \choose 1} = m$
+    4. ${m \choose n} = {m \choose m - n}$
+    5. ${m \choose n} = {m - 1 \choose n - 1} + {m - 1 \choose n}$
 	
 Es importante recordar que los números combinatorios sólo están definidos para `m >= n`:
 
@@ -34,12 +38,13 @@ $$
 \bar{C}(m, n) = {m + n - 1 \choose n} = \frac{(m+n-1)!}{(m-1)!n!}
 $$
 
-En base al **Ejercicio 1**, cree la función `combinatorio2(m, n, r)` para generalizar el cálculo de números combinatorios, siendo `r` un argumento adicional que toma el valor lógico `TRUE` si el cálculo es con reposición, y `FALSE` en caso contrario. 
+En base al [Ejercicio @sec-p3e1], cree la función `combinatorio2(m, n, r)` para generalizar el cálculo de números combinatorios, siendo `r` un argumento adicional que toma el valor lógico `TRUE` si el cálculo es con reposición, y `FALSE` en caso contrario. 
 
-Observaciones:
+Consideraciones:
 
 - Use la función `combinatorio(m, n)` para implementar esta nueva función.
 - Por defecto, la función debe hacer el cálculo del número combinatorio sin reposición.
+- Para `m = 5` y `n = 2`, pruebe si el número de combinaciones posibles es mayor con o sin resposición.
 
 ## Ejercicio 3
 
