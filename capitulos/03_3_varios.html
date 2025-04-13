@@ -340,7 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#warning-para-advertencias-no-fatales" id="toc-warning-para-advertencias-no-fatales" class="nav-link" data-scroll-target="#warning-para-advertencias-no-fatales"><span class="header-section-number">15.2.2</span> <code>warning()</code>: para advertencias no fatales</a></li>
   <li><a href="#message-para-informar-sin-interrumpir" id="toc-message-para-informar-sin-interrumpir" class="nav-link" data-scroll-target="#message-para-informar-sin-interrumpir"><span class="header-section-number">15.2.3</span> <code>message()</code>: para informar sin interrumpir</a></li>
   </ul></li>
-  <li><a href="#documentación-de-las-funciones" id="toc-documentación-de-las-funciones" class="nav-link" data-scroll-target="#documentación-de-las-funciones"><span class="header-section-number">15.3</span> Documentación de las funciones</a></li>
+  <li><a href="#sec-factorial" id="toc-sec-factorial" class="nav-link" data-scroll-target="#sec-factorial"><span class="header-section-number">15.3</span> Documentación de las funciones</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/03_3_varios.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/03_3_varios.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
     </div>
@@ -633,12 +633,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="documentación-de-las-funciones" class="level2" data-number="15.3">
-<h2 data-number="15.3" class="anchored" data-anchor-id="documentación-de-las-funciones"><span class="header-section-number">15.3</span> Documentación de las funciones</h2>
+<section id="sec-factorial" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="sec-factorial"><span class="header-section-number">15.3</span> Documentación de las funciones</h2>
 <p>En el contexto de la programación, documentar significa escribir indicaciones para que otras personas puedan entender lo que queremos hacer en nuestro código o para que sepan cómo usar nuestras funciones. Como vimos en <a href="01_b_primeros_pasos.html#sec-funciones" class="quarto-xref"><span>Sección 2.6</span></a>, todas las funciones predefinidas de R están documentadas para que podamos buscar orientación sobre su uso en el panel de ayuda si lo necesitamos. Cuando estamos creando nuestras propias funciones, es importante que también incluyamos comentarios para guiar a otras personas (y a nosotros mismos en el futuro, si nos olvidamos) para qué y cómo se usa lo que estamos desarrollando.</p>
 <p>Estas aclaraciones pueden incluirse antes de la definición de la función mediante líneas comentadas con <code>#</code> o podemos hacerlo siguiendo estándares ya establecidos por la comunidad de desarrolladores. Si lo hacemos, gozaremos de la ventaja de que las páginas de ayuda sobre nuestras funciones se puedan generar automáticamente cuando las incluimos en la creación de nuevo paquete de R, como veremos en la última unidad de la asignatura.</p>
 <p>RStudio ofrece ayuda para escribir la documentación de una función bajo el sistema <strong>Roxygen</strong>, que provee pautas para escribir comentarios con un formato especial, incluyendo toda la información requerida para describir qué hace una función justo antes de su definición. Podemos usar este sistema para desarrollar la costumbre de escribir la documentación al mismo tiempo que creamos la función, sin que se vuelva una carga pesada para más adelante.</p>
-<p>Para ejemplificar, vamos a recordar que en el <a href="@ejercicio-factorial">ejercicio 6 de la Práctica 2</a> escribimos un programa para el cálculo de factoriales. Dado que los mismos son muy útiles en variadas aplicaciones, podemos escribir una función que se encargue de obtenerlos:</p>
+<p>Para ejemplificar, retomemos <a href="@sec-donde-escribir">la función que escribimos para calcular factoriales</a>. Ya que aprendimos a originar errores, le agregamos la verificación para el argumento <code>n</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>fact <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (n <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">||</span> n <span class="sc">!=</span> <span class="fu">floor</span>(n)) {</span>
@@ -667,13 +667,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (n <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">||</span> n <span class="sc">!=</span> <span class="fu">floor</span>(n)) {</span>
 <span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"n debe ser entero no negativo."</span>)</span>
 <span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>    resultado <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (n <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
-<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a>            resultado <span class="ot">&lt;-</span> resultado <span class="sc">*</span> i</span>
-<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(resultado)</span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>  resultado <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (n <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a>      resultado <span class="ot">&lt;-</span> resultado <span class="sc">*</span> i</span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(resultado)</span>
 <span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Presentamos algunas pautas generales para entender la estructura de los comentarios <em>Roxygen</em>:</p>
@@ -712,13 +712,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (n <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">||</span> n <span class="sc">!=</span> <span class="fu">floor</span>(n)) {</span>
 <span id="cb55-19"><a href="#cb55-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"n debe ser entero no negativo."</span>)</span>
 <span id="cb55-20"><a href="#cb55-20" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb55-21"><a href="#cb55-21" aria-hidden="true" tabindex="-1"></a>    resultado <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb55-22"><a href="#cb55-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (n <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb55-23"><a href="#cb55-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
-<span id="cb55-24"><a href="#cb55-24" aria-hidden="true" tabindex="-1"></a>            resultado <span class="ot">&lt;-</span> resultado <span class="sc">*</span> i</span>
-<span id="cb55-25"><a href="#cb55-25" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb55-26"><a href="#cb55-26" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb55-27"><a href="#cb55-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(resultado)</span>
+<span id="cb55-21"><a href="#cb55-21" aria-hidden="true" tabindex="-1"></a>  resultado <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb55-22"><a href="#cb55-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (n <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb55-23"><a href="#cb55-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
+<span id="cb55-24"><a href="#cb55-24" aria-hidden="true" tabindex="-1"></a>      resultado <span class="ot">&lt;-</span> resultado <span class="sc">*</span> i</span>
+<span id="cb55-25"><a href="#cb55-25" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb55-26"><a href="#cb55-26" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb55-27"><a href="#cb55-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(resultado)</span>
 <span id="cb55-28"><a href="#cb55-28" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
