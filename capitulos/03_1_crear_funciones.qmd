@@ -183,7 +183,7 @@ nueva_f(y = 5)
 nueva_f()
 ```
 
-## ¿Dónde escribimos el código que define nuestras funciones?
+## ¿Dónde escribimos el código que define nuestras funciones? {#sec-donde-escribir}
 
 El código que define una función tiene que ser ejecutado **antes** que el código que pretende usarla, de modo que la función aparezca entre los objetos disponibles del *Global Environment*. No podemos usar una función cuya definición no haya sido ejecutada, puesto que produciremos un error que indica que tal objeto no existe. Esto nos obliga a pensar dónde escribimos el código para crear nuevas funciones y en qué momento es ejecutado.
 
@@ -232,7 +232,7 @@ cat("El resultado es", rtdo3)
 
 Cuanto más grande o complejo es el problema a resolver, más funciones deben ser programadas. Por eso, con el objetivo de tener un mayor orden en nuestro código, podemos escribir nuestras funciones en uno o más archivos separados, creados específicamente para esto ("scripts de funciones"). Si lo hacemos, al comienzo del script en el que estamos resolviendo un problema que involucra el uso de las funciones creadas, debemos incluir una instrucción para que el script de funciones sea evaluado, de modo que las funciones ahí definidas sean ejecutadas y pasen a formar parte del *Global Environment*. Esta instrucción es la función `source()`, que toma como único argumento el nombre del script de funciones.
 
-Para ilustrar esto, vamos a recordar que en la Práctica 2 escribimos un programa para el cálculo de factoriales. Dado que los mismos son muy útiles en variadas aplicaciones, podemos definir una nueva función se encargue de obtenerlos. Escribimos la definición en un script llamado `funciones.R`, cuyo contenido es:
+Para ilustrar esto, vamos a recordar que en el [ejercicio 6 de la Práctica 2](@ejercicio-factorial) escribimos un programa para el cálculo de factoriales. Dado que los mismos son muy útiles en variadas aplicaciones, podemos definir una nueva función se encargue de obtenerlos. Escribimos la definición en un script llamado `funciones.R`, cuyo contenido es:
 
 ```{r}
 fact <- function(n) {

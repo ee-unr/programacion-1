@@ -20,7 +20,7 @@ La @fig-archivos muestra como ejemplo un trabajo de análisis de datos de una en
 
 Cada archivo o carpeta en una computadora tiene una **ruta informática** o **path** que indica su ubicación dentro del sistema de almacenamiento. Esta ruta es como una dirección que permite encontrar un archivo o carpeta específica. La ruta se lee desde una ubicación principal en el disco de la computadora y sigue el camino de las carpetas y subcarpetas hasta llegar al archivo deseado.
 
-Por ejemplo, en relación a la @fig-archivos, la ruta informática que identifica la ubicación de la carpeta `datos_crudos` es `C:\Users\Marcos\Documents\encuesta_estudiantes\datos_crudos`. Si dentro de ella hay una planilla de Excel con los datos de la encuesta, llamada `datos_encuesta.xlsx`, su ruta informática será `C:\Users\Marcos\Documentss\encuesta_estudiantes\datos_crudos\datos_encuesta.xlsx`. En sistemas operativos como Windows, las rutas suelen comenzar con una letra de unidad, como "C:", seguida de las carpetas y subcarpetas.  
+Por ejemplo, en relación a la @fig-archivos, la ruta informática que identifica la ubicación de la carpeta `datos_crudos` es `C:\Users\Marcos\Documents\encuesta_estudiantes\datos_crudos`. Si dentro de ella hay una planilla de Excel con los datos de la encuesta, llamada `datos_encuesta.xlsx`, su ruta informática será `C:\Users\Marcos\Documents\encuesta_estudiantes\datos_crudos\datos_encuesta.xlsx`. En sistemas operativos como Windows, las rutas suelen comenzar con una letra de unidad, como "C:", seguida de las carpetas y subcarpetas.  
 
 Cuando guardamos un archivo en algún lugar de la computadora estamos definiendo cuál es su ruta informática para que distintos programas de la computadora puedan encontrarlo. Tener esta noción es fundamental a la hora de programar. Por ejemplo, puede ser que nuestro script de R necesite importar los datos del archivo `datos_encuesta.xlsx`. Para esto tal vez necesitemos escribir un comando especial que incluya su ruta informática para que R pueda encontrar el archivo. Si no la escribimos bien, R producirá un error diciendo que el archivo no existe.
 
@@ -49,18 +49,18 @@ El directorio de trabajo por default suele ser la carpeta *Documentos* o alguna 
 
 - Leer la ruta informática escrita en la parte superior del panel de la consola, al lado del logo y la versión de R (@fig-wd).
 
-![Indicación del *working directory* arriba en la consola](../imagenes/teoria_unidad_1/wd.png){width="50%" fig-align="center" #fig-wd}
+  ![Indicación del *working directory* arriba en la consola](../imagenes/teoria_unidad_1/wd.png){width="50%" fig-align="center" #fig-wd}
 
 - Ejecutar en la consola la instrucción `getwd()`. Por ejemplo:
-
-```{r}
-#| eval: false
-getwd()
-```
-
-```
-"C:/Users/Marcos"
-```
+  
+  ```{r}
+  #| eval: false
+  getwd()
+  ```
+  
+  ```
+  "C:/Users/Marcos"
+  ```
 
 Ese resultado implica que en este momento R puede ver y acceder de manera directa a todos los archivos que hay en esa carpeta, sin necesidad de escribir la ruta informática completa para hacer referencia a cada uno de ellos. Si creamos un nuevo script y apretamos el ícono de guardar, R nos ofrece guardarlo en el *working directory*. Si queremos importar un conjunto de datos, lo buscará ahí, a menos que le indiquemos otra cosa. Si queremos guardar cualquier resultado de nuestro análisis, también lo guardará en esa carpeta.
 
@@ -109,7 +109,7 @@ Cuando dejamos de trabajar en el proyecto, ya sea porque terminamos o debemos co
 
 Al abrir un *RStudio Project*, los scripts que estaban abiertos en el editor la última vez que trabajamos en este proyecto, vuelven a aparecer tal como los dejamos, sin importar que estemos trabajando de manera intermitente en distintos proyectos.
 
-Al trabajar con un proyecto, si necesitamos referirnos en el código a la ubicación de un archivo sólo debemos usar rutas informáticas relativas, no absolutas. Una **ruta absoluta** es la ruta completa, como `C:\Usuarios\Natalia\Documentos\encuesta_estudiantes\datos_crudos\datos_encuesta.xlsx`. En cambio, una **ruta relativa** es relativa al *working directory*, es decir, al directorio de inicio del proyecto. Suponiendo que nuestro proyecto se corresponde con la carpeta `encuesta_estudiantes`, la ruta relativa que tenemos que usar para ubicar a la planilla de Excel sólo está compuesta por `datos_crudos\datos_encuesta.xlsx`.
+Al trabajar con un proyecto, si necesitamos referirnos en el código a la ubicación de un archivo sólo debemos usar rutas informáticas relativas, no absolutas. Una **ruta absoluta** es la ruta completa, como `C:\Usuarios\Marcos\Documentos\encuesta_estudiantes\datos_crudos\datos_encuesta.xlsx`. En cambio, una **ruta relativa** es relativa al *working directory*, es decir, al directorio de inicio del proyecto. Suponiendo que nuestro proyecto se corresponde con la carpeta `encuesta_estudiantes`, la ruta relativa que tenemos que usar para ubicar a la planilla de Excel sólo está compuesta por `datos_crudos\datos_encuesta.xlsx`.
 
 Las rutas relativas son importantes: funcionan siempre bien, a pesar de que el código lo use otra persona en otra computadora. La primera parte de la ruta absoluta, que contiene incluso hasta el nombre de usuario, cambia de computadora a computadora, pero la parte que se usa en la ruta relativa es siempre la misma. Todas las computadoras que tengan una copia del proyecto podrán usar el mismo código sin problemas para encontrar a todos los archivos involucrados.
 

@@ -224,7 +224,7 @@ Las siguientes son algunas buenas prácticas al manejar errores:
 - Recordar que una buena función no solo produce un resultado correcto, sino que también **falla de manera informativa cuando algo no está bien**.
 :::
 
-## Documentación de las funciones
+## Documentación de las funciones {#sec-factorial}
 
 En el contexto de la programación, documentar significa escribir indicaciones para que otras personas puedan entender lo que queremos hacer en nuestro código o para que sepan cómo usar nuestras funciones. Como vimos en @sec-funciones, todas las funciones predefinidas de R están documentadas para que podamos buscar orientación sobre su uso en el panel de ayuda si lo necesitamos. Cuando estamos creando nuestras propias funciones, es importante que también incluyamos comentarios para guiar a otras personas (y a nosotros mismos en el futuro, si nos olvidamos) para qué y cómo se usa lo que estamos desarrollando.
 
@@ -232,7 +232,7 @@ Estas aclaraciones pueden incluirse antes de la definición de la función media
 
 RStudio ofrece ayuda para escribir la documentación de una función bajo el sistema **Roxygen**, que provee pautas para escribir comentarios con un formato especial, incluyendo toda la información requerida para describir qué hace una función justo antes de su definición. Podemos usar este sistema para desarrollar la costumbre de escribir la documentación al mismo tiempo que creamos la función, sin que se vuelva una carga pesada para más adelante.
 
-Para ejemplificar, vamos a recordar que en el [ejercicio 6 de la Práctica 2](@ejercicio-factorial) escribimos un programa para el cálculo de factoriales. Dado que los mismos son muy útiles en variadas aplicaciones, podemos escribir una función que se encargue de obtenerlos: 
+Para ejemplificar, retomemos [la función que escribimos para calcular factoriales](@sec-donde-escribir). Ya que aprendimos a originar errores, le agregamos la verificación para el argumento `n`: 
 
 ```{r}
 fact <- function(n) {
@@ -264,13 +264,13 @@ fact <- function(n) {
   if (n < 0 || n != floor(n)) {
     stop("n debe ser entero no negativo.")
   }
-	resultado <- 1
-	if (n > 0) {
-		for (i in 1:n) {
-			resultado <- resultado * i
-		}
-	}
-	return(resultado)
+  resultado <- 1
+  if (n > 0) {
+    for (i in 1:n) {
+      resultado <- resultado * i
+    }
+  }
+  return(resultado)
 }
 ```
 
@@ -310,13 +310,13 @@ fact <- function(n) {
   if (n < 0 || n != floor(n)) {
     stop("n debe ser entero no negativo.")
   }
-	resultado <- 1
-	if (n > 0) {
-		for (i in 1:n) {
-			resultado <- resultado * i
-		}
-	}
-	return(resultado)
+  resultado <- 1
+  if (n > 0) {
+    for (i in 1:n) {
+      resultado <- resultado * i
+    }
+  }
+  return(resultado)
 }
 ```
 

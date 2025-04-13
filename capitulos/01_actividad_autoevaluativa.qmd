@@ -1,5 +1,6 @@
 ---
 title: "Actividad de autoevaluación 1"
+number-sections: false
 ---
 
 ```{=latex}
@@ -156,9 +157,9 @@ Una inmobiliaria necesita guardar el valor de una operación de venta de un inmu
 ```{r, include=FALSE}
 # use sample() to randomise the order
 opts_ci <- sample(c(
-  answer = "venta_inmueble_2025","VentaOperación","2025_venta_inmueble",
-  "Valor-Venta-Inmueble-2025", "venta inmueble 2025", "valorVentaInmueble2025", 
-  "operación_Año2025", "ventainmuebleanio2025"
+  answer = "`venta_inmueble_2025`","`VentaOperación`","`2025_venta_inmueble`",
+  "`Valor-Venta-Inmueble-2025`", "`venta inmueble 2025`", "`valorVentaInmueble2025`", 
+  "`operación_Año2025`", "`ventainmuebleanio2025`"
 ))
 ```
 
@@ -189,6 +190,6 @@ Indicar si la siguiente afirmación es verdadera o falsa:
 `r webexercises::longmcq(c(TRUE, answer = FALSE))`
 
 `r webexercises::hide("Explicación")`
-Un nuevo **RProject** en RStudio inicia una nueva sesión de R (limpia el entorno de trabajo) y setea el directorio de trabajo al directorio raíz del proyecto, pero no carga librerías instaladas. Las librerías deben cargarse manualmente en cada sesión o mediante scripts usando el comando `library()`
+Un nuevo **RProject** en RStudio inicia una nueva sesión de R (limpia el entorno de trabajo) y setea el directorio de trabajo al directorio raíz del proyecto, pero no carga librerías instaladas. Las librerías deben cargarse manualmente en cada sesión o mediante scripts usando el comando `library()`.
 `r webexercises::unhide()`
 
