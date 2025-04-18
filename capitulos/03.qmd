@@ -1,7 +1,6 @@
 ```{=latex}
 \thispagestyle{primerapagina}
 ```
-
 # Unidad 3. Descomposición algorítmica
 
 ::: {.presentacion-capitulo data-latex=""}

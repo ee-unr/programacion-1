@@ -44,12 +44,12 @@ book:
         - capitulos/03_1_crear_funciones.qmd
         - capitulos/03_2_ambito.qmd
         - capitulos/03_3_varios.qmd
-        # - capitulos/03_practica.qmd
+        - capitulos/03_practica.qmd
     - part: capitulos/90.qmd
       chapters:
         - capitulos/90_soluciones_01.qmd
         - capitulos/90_soluciones_02.qmd
-        # - capitulos/90_soluciones_03.qmd
+        - capitulos/90_soluciones_03.qmd
   appendices:
   #   - capitulos/98_tp.qmd
     - capitulos/99_bibliografia.qmd
