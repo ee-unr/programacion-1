@@ -1,11 +1,8 @@
 ```{=latex}
 \thispagestyle{primerapagina}
 ```
+# Unidad 3. Descomposición algorítmica
 
-# Unidad 3. Nombre de la unidad.
-
-Presentación de la Unidad 3.
-
-::: {.en-construccion data-latex=""}
-Página en construcción.
+::: {.presentacion-capitulo data-latex=""}
+En este capítulo exploraremos un concepto fundamental en la programación: la creación de **nuevas funciones**. A medida que los programas crecen en tamaño y complejidad, escribir el mismo código repetidas veces no solo es ineficiente, sino que también aumenta el riesgo de cometer errores. Para solucionar esto, podemos encapsular bloques de código en funciones reutilizables, mejorando la claridad y la organización de nuestros programas.  
 :::

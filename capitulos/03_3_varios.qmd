@@ -1,0 +1,324 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Más allá de la definición de funciones
+
+::: {.presentacion-capitulo data-latex=""}
+En este capítulo profundizamos en aspectos esenciales para escribir funciones claras y comprensibles en R, que no fallen... o que avisen cuando lo hacen. Aprenderemos a utilizar el objeto especial `NULL` para controlar el comportamiento de nuestras funciones, a gestionar errores mediante el uso de `stop()`, `warning()` y `message()` para comunicar problemas o información útil al usuario, y a documentar las funciones correctamente usando el sistema **Roxygen**. Estas herramientas nos permitirán crear funciones más claras, seguras y fáciles de reutilizar.
+:::
+
+## El objeto `NULL`
+
+Generalmente los lenguajes de programación poseen un elemento conocido como NULO, para representar un objeto vacío, sin información. En R, `NULL` representa la **ausencia total de un objeto** o valor. Es un objeto en sí mismo y no pertenece a ningún tipo de objeto básico (como numérico, lógico o carácter). Se usa para indicar que una variable o un elemento de una estructura de datos no existe. Suele ser usado como el objeto devuelto por funciones cuando no hay un resultado válido para retornar.
+
+::: {.ejemplo data-latex=""}
+Definimos una función para calcular el perímetro de un cuadrado en base a la longitud de uno de sus lados. Este cálculo sólo tiene sentido si el argumento `lado` es un valor positivo. Si no lo es, la función devuelve `NULL`.
+
+```{r}
+perimetro_cuadrado <- function(lado) {
+  if (lado > 0) {
+    return(lado * 4)
+  } else {
+    return(NULL)
+  }
+}
+
+perimetro_cuadrado(10)
+perimetro_cuadrado(-2)
+
+# podemos guardar el resultado en una nueva variable
+x <- perimetro_cuadrado(-2)
+typeof(x)
+is.numeric(x)
+is.null(x)
+```
+:::
+
+Hay funciones que devuelven el objeto `NULL` de forma invisible. Esto quiere decir que, si bien lo devuelven, no se imprime en la consola. Este es el caso de la función `cat()` que usamos para construir mensajes:
+
+```{r}
+nombre <- "Andrea"
+
+# Esribe un mensaje, aparentemente no devuelve nada...
+cat("Hola,", nombre)
+
+# Asignamos su resultado a una variable:
+resultado <- cat("Hola,", nombre)
+
+# Imprimimos en la consola y nos encontramos que cat() devuelve NULL, 
+# pero de forma invisible
+resultado
+```
+
+Entonces si definimos una función con el objetivo de generar un mensaje, podemos prescindir del uso de `return()` y la función devolverá de forma invisible el objeto `NULL`, aunque no lo notemos ni nos interese usarlo:
+
+```{r}
+saludar <- function(nombre) {
+  cat("¡Hola, ", nombre, "! ¿En qué puedo ayudarte hoy?", sep = "")
+}
+
+saludar("Andrea")
+saludar("Gonzalo")
+saludar("Lucía")
+```
+
+La mayoría de las funciones devuelven valores de forma **visible**: si se ejecutan en un entorno interactivo como la consola de R, el resultado se muestra automáticamente en pantalla. Este es el comportamiento por defecto de las funciones que escribimos. Recordemos la función `f`:
+
+```{r}
+f <- function(x, y) {
+	resultado <- x^2 + 3 * y
+	return(resultado)
+}
+
+f(4, 5)
+```
+
+Podemos "invisibilizar" el resultado devuelto por una función, así:
+
+```{r}
+f_invisible <- function(x, y) {
+	resultado <- x^2 + 3 * y
+	return(invisible(resultado))
+}
+
+f_invisible(4, 5)
+```
+
+La función devuelve un resultado, pero no se ve en la consola. Para usarlo o verlo, debemos guardarlo en una nueva variable:
+
+```{r}
+resultado <- f_invisible(4, 5)
+resultado
+```
+
+Terminamos esta sección mencionando que en R, existen otros valores especiales que representan diferentes tipos de información ausente, indefinida o nula. Aunque parezcan similares, tienen diferencias fundamentales en cuanto a su significado, uso y comportamiento en operaciones y no deben confundirse con el objeto `NULL`:
+
+- `NA` son las siglas de *Not Available* y es un tipo especial valor lógico que generalmente representa datos faltantes o desconocidos. No es un objeto en sí mismo. Propaga su presencia en operaciones matemáticas y lógicas, ya que cualquier operación con `NA` generalmente devuelve `NA`.
+  
+  ```{r}
+  y <- 100
+  z <- NA
+  y + z
+  ```
+  
+- `NaN` son las siglas de *Not a Number* y es un valor numérico que generalmente surge como resultado de operaciones aritméticas imposibles de calcular, como indeterminaciones, raíces negativas, etc.
+
+  ```{r}
+  0 / 0
+  log(-1)
+  sqrt(-1)
+  ```
+
+
+## Manejo de errores y mensajes
+
+Ya hemos visto en varias ocasiones que cuando no usamos las funciones de R como deberíamos, obtenemos un mensaje de error. Las funciones que creamos nosotros también pueden contar con esta característica. Si la función no puede completar su tarea, debe lanzar un error utilizando `stop()`, que interrumpe inmediatamente su ejecución, o bien emitir un mensaje o advertencia.
+
+::: {.info data-latex=""}
+Los **mecanismos de manejo de errores** nos permiten:
+
+- Detectar y comunicar problemas de manera clara al usuario.
+- Evitar que el programa continúe ejecutándose con resultados incorrectos.
+- Manejar el error sin interrumpir el flujo de ejecución general (no lo veremos en este material).
+
+R proporciona varias herramientas para estos fines, siendo las más comunes `stop()`, `warning()` y `message()`.
+:::
+
+### `stop()`: para errores críticos
+
+La función `stop()` se usa para **detener inmediatamente la ejecución** de una función cuando ocurre una situación que impide que pueda continuar correctamente. El texto proporcionado como argumento se muestra al usuario como un error.
+
+::: {.ejemplo data-latex=""}
+Controlamos que el argumento `nombre` sea de tipo carácter para poder emitir un saludo de manera adecuada:
+
+```{r}
+#| error: true
+saludar <- function(nombre) {
+  if (!is.character(nombre)) {
+    stop("Debe proveer una cadena de texto con el nombre de la persona.")
+  }
+  cat("¡Hola, ", nombre, "! ¿En qué puedo ayudarte hoy?", sep = "")
+}
+
+saludar("Eli")
+saludar(100)
+```
+:::
+
+### `warning()`: para advertencias no fatales
+
+La función `warning()` se utiliza cuando hay algo que podría estar mal, pero no impide continuar con la ejecución. La función sigue adelante, pero el usuario recibe una advertencia.
+
+::: {.ejemplo data-latex=""}
+Verificamos que el argumento `b` que seré el divisor en la cuenta no sea igual a cero.
+
+```{r}
+division <- function(a, b) {
+  if (b == 0) {
+    warning("El divisor es 0. El resultado es una indefinición.")
+  }
+  return(a / b)
+}
+
+division(10, 2)
+division(10, 0)
+```
+:::
+
+### `message()`: para informar sin interrumpir
+
+Cuando se quiere **comunicar algo al usuario sin que se considere un error o advertencia**, se puede usar `message()`. Es útil para brindar información adicional, como el progreso de una operación.
+
+::: {.ejemplo data-latex=""}
+
+```{r}
+cuadrado <- function(x) {
+  if (!is.numeric(x)) {
+    stop("x debe ser un valor numérico.")
+  }
+  message("Calculando el cuadrado del número...")
+  resultado <- x^2
+  message("Cálculo finalizado.")
+  return(resultado)
+}
+
+cuadrado(4)
+```
+:::
+
+
+::: {.ejercicio data-latex=""}
+a.  ¿Por qué no se emite el mensaje `"Calculando el cuadrado del número..."` en el siguiente caso?
+
+    ```{r}
+    #| eval: false
+    cuadrado("cuatro")
+    ```
+
+b.  ¿Por qué no se emite el mensaje `"Cálculo finalizado"` en el siguiente caso?
+
+    ```{r}
+    #| eval: false
+    cuadrado_otra <- function(x) {
+      if (!is.numeric(x)) {
+        stop("x debe ser un valor numérico.")
+      }
+      message("Calculando el cuadrado del número...")
+      resultado <- x^2
+      return(resultado)
+      message("Cálculo finalizado.")
+    }
+    
+    cuadrado_otra(4)
+    ```
+:::
+
+
+::: {.info data-latex=""}
+Las siguientes son algunas buenas prácticas al manejar errores:
+
+- Informar claramente **qué salió mal** y, si es posible, **cómo corregirlo**.
+- Validar los **argumentos de entrada** antes de realizar operaciones.
+- Usar `stop()` para errores que impiden continuar y `warning()` para situaciones potencialmente problemáticas pero no fatales.
+- Recordar que una buena función no solo produce un resultado correcto, sino que también **falla de manera informativa cuando algo no está bien**.
+:::
+
+## Documentación de las funciones {#sec-factorial}
+
+En el contexto de la programación, documentar significa escribir indicaciones para que otras personas puedan entender lo que queremos hacer en nuestro código o para que sepan cómo usar nuestras funciones. Como vimos en @sec-funciones, todas las funciones predefinidas de R están documentadas para que podamos buscar orientación sobre su uso en el panel de ayuda si lo necesitamos. Cuando estamos creando nuestras propias funciones, es importante que también incluyamos comentarios para guiar a otras personas (y a nosotros mismos en el futuro, si nos olvidamos) para qué y cómo se usa lo que estamos desarrollando.
+
+Estas aclaraciones pueden incluirse antes de la definición de la función mediante líneas comentadas con `#` o podemos hacerlo siguiendo estándares ya establecidos por la comunidad de desarrolladores. Si lo hacemos, gozaremos de la ventaja de que las páginas de ayuda sobre nuestras funciones se puedan generar automáticamente cuando las incluimos en la creación de nuevo paquete de R, como veremos en la última unidad de la asignatura.
+
+RStudio ofrece ayuda para escribir la documentación de una función bajo el sistema **Roxygen**, que provee pautas para escribir comentarios con un formato especial, incluyendo toda la información requerida para describir qué hace una función justo antes de su definición. Podemos usar este sistema para desarrollar la costumbre de escribir la documentación al mismo tiempo que creamos la función, sin que se vuelva una carga pesada para más adelante.
+
+Para ejemplificar, retomemos [la función que escribimos para calcular factoriales](@sec-donde-escribir). Ya que aprendimos a originar errores, le agregamos la verificación para el argumento `n`: 
+
+```{r}
+fact <- function(n) {
+  if (n < 0 || n != floor(n)) {
+    stop("n debe ser entero no negativo.")
+  }
+	resultado <- 1
+	if (n > 0) {
+		for (i in 1:n) {
+			resultado <- resultado * i
+		}
+	}
+	return(resultado)
+}
+```
+
+Al trabajar en el editor de scripts y con el cursor posicionado dentro del cuerpo de la función, vamos al menú `Code` y elegimos la opción `Insert Roxygen Skeleton`. Por encima de la función se incluirá un "esqueleto" o "plantilla" para que podamos comenzar a escribir la documentación:
+
+```{r}
+#' Title
+#'
+#' @param n 
+#'
+#' @return
+#' @export
+#'
+#' @examples
+fact <- function(n) {
+  if (n < 0 || n != floor(n)) {
+    stop("n debe ser entero no negativo.")
+  }
+  resultado <- 1
+  if (n > 0) {
+    for (i in 1:n) {
+      resultado <- resultado * i
+    }
+  }
+  return(resultado)
+}
+```
+
+Presentamos algunas pautas generales para entender la estructura de los comentarios *Roxygen*:
+
+- Un bloque **Roxygen** es una secuencia de líneas que comienzan con `#'` (opcionalmente precedido por un espacio en blanco).
+- La primera línea es el título de la función, que no tiene que coincidir con su nombre. En este caso, podemos poner: "Cálculo de factoriales".
+- Luego se especifican los distintos campos de la documentación, haciendo uso de *etiquetas* (*tags*) que comienzan con `@`, aparecen al principio de una línea y su contenido se extiende hasta el inicio de la siguiente etiqueta o el final del bloque. Sirven para señalar qué tipo de información vamos a escribir (por ejemplo, qué hace cada argumento, qué devuelve la función, etc.). Algunas de las etiquetas más importantes a incluir son:
+
+  - `@description`: es lo que aparece primero en la documentación y debe describir brevemente qué hace la función.
+  - `@details`: esta sección proporciona cualquier otro detalle importante sobre el funcionamiento de la función.
+  - `@param`: se detalla para qué sirve cada parámetro de la función. Debe proporcionar un resumen conciso del tipo de parámetro (por ejemplo, es un `character` o un `numeric`). Es una oración, por lo que debe comenzar con mayúscula y terminar con punto. Puede abarcar varias líneas (o incluso párrafos) si es necesario. Todos los parámetros deben estar documentados, cada uno con su propia etiqueta. RStudio automáticamente incluye tanta etiquetas como parámetros formales hayamos definido.
+  - `@return`: explica qué objeto devuelve la función.
+  - `@examples`: incluye ejemplos del uso de la función.
+  - En el esqueleto se incluye también la etiqueta `@export`, que sólo es relevante en el contexto del desarrollo de nuevos paquetes, por lo cual por ahora la eliminamos.
+
+Teniendo en cuenta lo anterior, completamos la documentación para nuestra función:
+
+```{r}
+#' Cálculo de factoriales
+#' 
+#' @description
+#' Calcula el factorial de números enteros no negativos.
+#'
+#' @details 
+#' Produce un error si se quiere calcular el factorial de un número negativo.
+#' 
+#' @param n Número entero no negativo para el cual se calcula el factorial.
+#'
+#' @return El factorial de n.
+#'
+#' @examples
+#' fact(5)
+#' fact(0)
+#' 
+fact <- function(n) {
+  if (n < 0 || n != floor(n)) {
+    stop("n debe ser entero no negativo.")
+  }
+  resultado <- 1
+  if (n > 0) {
+    for (i in 1:n) {
+      resultado <- resultado * i
+    }
+  }
+  return(resultado)
+}
+```
+
+
+

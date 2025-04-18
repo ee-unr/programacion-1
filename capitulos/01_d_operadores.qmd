@@ -1,0 +1,303 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Operadores
+
+::: {.presentacion-capitulo data-latex=""}
+El desarrollo de un programa involucra la necesidad de efectuar operaciones de distinto tipo entre los valores guardados en los objetos: suma, resta, concatenación de caracteres, comparaciones, etc. Los elementos que describen el tipo de operación a realizar entre dos objetos se denominan **operadores**.
+
+En este capítulo exploraremos los operadores en R, fundamentales para realizar cálculos, comparaciones y evaluaciones lógicas en nuestros programas. Comenzaremos con los operadores aritméticos, que permiten realizar operaciones matemáticas básicas. Luego, abordaremos los operadores relacionales, esenciales para comparar valores, y los operadores lógicos, que nos ayudan a evaluar condiciones. También estudiaremos el orden de precedencia en R, clave para interpretar correctamente las expresiones, y la evaluación en cortocircuito, una optimización importante en decisiones condicionales.
+:::
+
+
+## Operadores aritméticos
+
+Los **operadores aritméticos** permiten realizar operaciones matemáticas con vectores atómicos que almacenen valores numéricos, como *double* o *integer* (@tbl-op-arit).
+
+|              **Operación**              | **Operador** | **Ejemplo de uso** | **Resultado con `x <- 7` e `y <- 3`** |
+|:---------------------------------------:|:------------:|:------------------:|:-------------------------------------:|
+| Suma                                    |      `+`     |       `x + y`      |                  `10`                 |
+| Resta                                   |      `-`     |       `x - y`      |                  `4`                  |
+| Multiplicación                          |      `*`     |       `x * y`      |                  `21`                 |
+| División                                |      `/`     |       `x / y`      |                 `2.33`                |
+| Potenciación                            |      `^`     |       `x ^ y`      |                 `343`                 |
+| División entera                         |     `%/%`    |      `x %/% y`     |                  `2`                  |
+| División módular (resto de la división) |     `%%`     |      `x %% y`      |                  `1`                  |
+
+: Operadores aritméticos. {#tbl-op-arit}
+
+Los operadores aritméticos actúan con un orden de prioridad establecido, también conocido como **orden de evaluación** u **orden de precedencia**, tal como estamos acostumbrados en matemática. Las expresiones entre paréntesis se evalúan primero. Si hay paréntesis anidados se evalúan desde adentro hacia afuera. Dentro de una misma expresión, los operadores se evalúan en este orden:
+
+1. Potenciación (`^`)
+2. División entera y módulo (`%/%`, `%%`)
+2. Multiplicación y división (`*`, `/`)
+3. Suma y resta (`+`, `-`)
+
+Si la expresión presenta operadores con igual nivel de prioridad, se evalúan de izquierda a derecha.
+
+::: {.ejemplo data-latex=""}
+
+|              **Operación**              | **Resultado** |
+|:-----------------------------------:|:----------:|
+|              `4 + 2 * 4`              |     `12`     |
+|              `23 * 2 / 5`             |     `9.2`    |
+|        `3 + 5 * (10 - (2 + 4))`       |     `23`     |
+|           `2.1 * 1.5 + 12.3`          |    `15.45`   |
+|          `2.1 * (1.5 + 12.3)`         |    `28.98`   |
+|               `1 %% 4`                |      `1`     |
+| `8 * (7 - 6 + 5) %% (1 + 8 / 2) - 1`  |      `7`     |
+
+: Ejemplos de operaciones aritméticas según el orden de precedencia de R. {#tbl-op-arit-ej}
+:::
+
+::: {.info data-latex=""}
+Los operadores aritméticos también se pueden aplicar con valores lógicos. En este caso, `TRUE` es considerado como `1` y `FALSE`, como `0`^[Esta conversión de un tipo de valor a otro se llama *coerción*.]:
+
+```{r}
+TRUE + TRUE
+TRUE + FALSE
+```
+:::
+
+
+## Operadores relacionales o de comparación
+
+Los **operadores relacionales** sirven para comparar dos valores de cualquier tipo y dan como resultado un valor lógico, `TRUE` o `FALSE`.
+
+|  **Comparación**  | **Operador** | **Ejemplo de uso** |  **Resultado con `x <- 7` e `y <- 3`** |
+|:-----------------:|:-----------------:|:-----------:|:----------------------------:|
+| Mayor que         |        `>`        |   `x > y`   |            `TRUE`            |
+| Menor que         |        `<`        |   `x < y`   |            `FALSE`           |
+| Mayor o igual que |        `>=`       |   `x >= y`  |            `TRUE`            |
+| Menor o igual que |        `<=`       |   `x <= y`  |            `FALSE`           |
+| Igual a           |        `==`       |   `x == y`  |            `FALSE`           |
+| Distinto a        |        `!=`       |   `x != y`  |            `TRUE`            |
+
+: Operadores relacionales {#tbl-op-rel}
+
+::: {.ejemplo data-latex=""}
+Ejemplos del uso de operadores relacionales:
+
+```{r}
+a <- 3
+b <- 4
+d <- 2
+e <- 10
+f <- 15
+
+(a * b) == (d + e)
+(a * b) != (f - b)
+```
+:::
+
+Es interesante notar que primero se evalúan las operaciones a cada lado de los operadores relacionales y luego se hace la comparación. Es decir, **los operadores aritméticos preceden a los relacionales en el orden de prioridad**. Por eso, en los ejemplos anteriores en realidad no son necesarios los paréntesis y podríamos omitirlos:
+
+```{r}
+a * b == d + e
+a * b != f - b
+```
+
+::: {.ejercicio data-latex=""}
+Para pensar... ¿en base a qué criterio se determina si un valor de tipo *character* es mayor qué otro? Mirá este ejemplo:
+
+```{r}
+texto1 <- "Hola"
+texto2 <- "Chau"
+texto3 <- "Adiós"
+
+texto1 > texto2
+texto3 > texto2
+```
+:::
+
+
+::: {.ejercicio data-latex=""}
+¿Qué valor lógico devuelve esta operación?
+
+```{r}
+#| eval: false
+texto1 == "hola"
+```
+
+`r webexercises::longmcq(c(TRUE, answer = FALSE))`
+:::
+
+## Operadores lógicos
+
+Mientras que los operadores relacionales comparan cualquier tipo de valores, los **operadores lógicos** sólo toman operandos de tipo *logical* y producen también un resultado lógico.
+
+| **Operación** | **Operador** | **Ejemplo de uso** | **Resultado con `x <- TRUE` e `y <- FALSE`** |
+|:-------------:|:------------:|:------------------:|:--------------------------------------------:|
+| Conjunción    |     `&&`     |      `x && y`      |                    `FALSE`                   |
+| Disyunción    |    `||`    |     `x || y`     |                    `TRUE`                    |
+| Negación      |      `!`     |        `!x`        |                    `FALSE`                   |
+
+: Operadores lógicos {#tbl-op-log}
+
+Veamos uno por uno:
+
+- La operación de conjunción devuelve un valor `TRUE` sólo si son verdaderas **ambas** expresiones que vincula. Ejemplo: `(3 > 2) && (3 > 5)` resulta en `TRUE && FALSE` y esto es `FALSE`.
+- La operación de disyunción devuelve un valor `TRUE` si **al menos una** de las dos expresiones que vincula es verdadera. Ejemplo: `(3 > 2) || (3 > 5)` resulta en `TRUE || FALSE` y esto es `TRUE`.
+- La operación de negación niega un valor lógico, es decir, devuelve el opuesto. Ejemplo: `!(3 > 2)` resulta en `!TRUE` y esto es `FALSE`.
+
+La **tabla de verdad** o **tabla de valores de verdad** se utiliza para mostrar todos los resultados posibles de estas operaciones lógicas:
+
+|   `x`   |   `y`   |   `!x`  | `x && y` | `x || y` |
+|:-------:|:-------:|:-------:|:--------:|:----------:|
+| `TRUE`  | `TRUE`  | `FALSE` | `TRUE`   | `TRUE`     |
+| `TRUE`  | `FALSE` | `FALSE` | `FALSE`  | `TRUE`     |
+| `FALSE` | `TRUE`  | `TRUE`  | `FALSE`  | `TRUE`     |
+| `FALSE` | `FALSE` | `TRUE`  | `FALSE`  | `FALSE`    |
+
+: Tabla de la verdad {#tbl-tablaverdad}
+
+Con estos operadores es posible construir evaluaciones lógicas algo más elaboradas como los siguientes ejemplos:
+
+1.  **Determinar si el valor numérica guardado en la variable `x` está entre 5 y 7**. Tal vez tu intuición te sugiere que la expresión lógica a evaluar en este caso debe ser `5 < valor < 7`, pero esto genera un error en R. Para saber si `valor` está entre 5 y 7, se tiene que evaluar por separado que `valor` sea mayor que 5 y también menor que 7, y ambas condiciones deben ser verdaderas.
+  
+    ```{r}
+    valor <- 6.4
+    (valor > 5) && (valor < 7)
+    
+    valor <- 2.1
+    (valor > 5) && (valor < 7)
+    ```
+
+2.  **Establecer si el valor de tipo carácter almacenado en la variable `nacionalidad` sea igual a una de dos opciones.**
+  
+    ```{r}
+    nacionalidad <- "Argentino"
+    (nacionalidad == "Uruguayo") || (nacionalidad == "Chileno")
+    ```
+
+3. **Verificar que el valor guardado en `nacionalidad` no coincida con "Argentino".**
+  
+   ```{r}
+   nacionalidad <- "Uruguayo"
+   !(nacionalidad == "Argentino")
+   ```
+
+4.  **Chequear que el valor numérico guardado en `x` no sea igual a 2 ni a 3.**
+
+    *Opción correcta 1: `(x != 2) && (x != 3)`*
+    
+    ```{r}
+    # Da verdadero porque x no es ni 2 ni 3
+    x <- 10
+    (x != 2) && (x != 3)
+    
+    # Da falso porque x es igual a 3
+    x <- 3
+    (x != 2) && (x != 3)
+    ```
+    
+    *Opción correcta 2: `!(x == 2 || x == 3)`*
+    
+    ```{r}
+    # Da verdadero porque x no es ni 2 ni 3
+    x <- 10
+    !(x == 2 || x == 3)
+    
+    # Da falso porque x es igual a 3
+    x <- 3
+    !(x == 2 || x == 3)
+    ```
+    
+    *Opción incorrecta: `(x != 2) || (x != 3)`*
+    
+    ```{r}
+    # Como la primera parte es verdadera (porque x es igual a 3), la
+    # conjunción es verdadera, cuando quisiéramos que en este caso el
+    # resultado sea FALSO
+    x <- 3
+    (x != 2) || (x != 3)
+    ```
+
+
+::: {.info data-latex=""}
+Es importante notar que todos los paréntesis usados en el código de R de los ejemplos 1, 2 y 4 son innecesarios, puesto que **los operadores relacionales preceden a los lógicos en el orden de prioridad**. Sin embargo, a veces preferimos usar paréntesis para que la lectura sea más sencilla. Retomando el ejemplo 1, notemos que ambas expresiones son equivalentes:
+
+```{r}
+valor <- 2.1
+(valor > 5) && (valor < 7)
+valor > 5 && valor < 7
+```
+:::
+
+::: {.ejercicio data-latex=""}
+
+¿Cuál es el resultado de las siguientes operaciones?
+
+```{r}
+#| eval: false
+x <- 2
+y <- -2
+```
+
+- `x > 0 && y < 0`: `r webexercises::torf(TRUE)`
+- `x > 0 || y < 0`: `r webexercises::torf(TRUE)`
+- `!(x > 0 && y < 0)`: `r webexercises::torf(FALSE)`
+:::
+
+::: {.comentario data-latex=""}
+Tanto para la conjunción como para la disyunción, R provee dos operadores diferentes, los ya mencionados `&&` y `||` y otros que no repiten el símbolo, `&` y `|`. La diferencia entre las dos versiones se hace notar cuando operamos con vectores atómicos que almacenen más de un valor, por lo cual por ahora podemos ignorarla. Usaremos la versión de símbolos dobles.
+:::
+
+
+## Orden de precedencia completo en R
+
+Resumiendo la información anterior, a continuación se presenta el orden de precedencia completo de los operadores en R que utilizaremos^[Hay algunos operadores más que no vamos a usar, pero que pueden ser consultados en `?Syntax`.]:
+
+| **Orden** |               **Operaciones**              |    **Operadores**   |
+|:-----:|:--------------------------------------:|:---------------:|
+|   1   |              Potenciación              |        `^`        |
+|   2   |       Signo de un número (ej: -3)      |       `+`, `-`      |
+|   3   |         División entera y resto        |     `%/%`, `%%`     |
+|   4   |        Multiplicación y división       |       `*`. `/`       |
+|   5   |              Suma y resta              |       `+`. `-`      |
+|   6   |        Operadores de comparación       | `<`, `>`, `<=`, `>=`, `==`, `!=` |
+|   7   |                Negación                |        `!`        |
+|   8   |               Conjunción               |      `&&`, `&`      |
+|   9   |               Disyunción               |      `||`, `|`
+|   10  |    Asignación    |        `<-`       |
+
+: Orden de precedencia de los operadores en R. {#tbl-op-orden}
+
+Dentro de una misma expresión, operadores con igual prioridad se evalúan de izquierda a derecha.
+
+## Evaluación en cortocircuito
+
+Para evaluar la operación de conjunción `x && y`, en R se comienza por evaluar la expresión del primer operando `x` y si su resultado es `FALSE` ya no se evalúa la expresión `y` del segundo operando. Esto es porque si `x` es `FALSE`, el resultado de `x && y` ya no depende de `y`, será siempre `FALSE`. Por este motivo se dice que el operador `&&` se evalúa en *cortocircuito*. La evaluación en cortocircuito evita realizar operaciones innecesarias^[El otro operador de conjunción, `&`, no evalúa en cortocircuito, además de poseer otras diferencias.].
+
+Por ejemplo:
+
+```{r}
+#| error: true
+f <- 1
+g <- 2
+
+# La primera parte da TRUE, se continúa con la segunda, pero da error porque no
+# existe un objeto llamado h
+(g > f) && (f > h)
+```
+
+```{r}
+# La primera parte da FALSE, entonces toda la operación será FALSE, no se
+# continúa con la segunda parte, con lo cual no se intenta usar el objeto
+# inexistente h y no hay error
+(g < f) && (f > h)
+```
+
+La operación de disyunción también se evalúa en cortocircuito, es decir, si se encuentra que uno de los operandos es `TRUE`, no hace falta evaluar los restantes, puesto que el resultado general será `TRUE`:
+
+```{r}
+#| error: true
+# Es TRUE porque la primera parte es TRUE, sin evaluar la segunda, que daría
+# error
+(g > f) || (f > h)
+
+# Como la primera parte es FALSE, debe evaluar la segunda, no encuentra a h y da
+# error
+(f > g) || (f > h)
+```

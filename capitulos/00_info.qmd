@@ -2,20 +2,102 @@
 
 # Información general sobre la asignatura  {.unnumbered}
 
-::: {.en-construccion data-latex=""}
-Página en construcción.
-:::
+## Programa
+
+En [este enlace](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/ee-unr/programacion-1/main/archivos/programa.pdf) podés consultar el programa para esta asignatura.
+
+## Aula virtual
+
+Esta asignatura posee un [espacio virtual en la plataforma Comunidades 3](https://comunidades3.campusvirtualunr.edu.ar/course/view.php?id=4893) de la Universidad Nacional de Rosario, que será utilizado para dar anuncios y noticias, responder consultas en los foros, entregar y realizar devoluciones sobre los trabajos prácticos, informar calificaciones, etc. Es importante que visites este espacio de forma regular. Si no te ha llegado la clave para poder ingresar, contactá a los docentes.
 
 ## Cursado
 
-Modalidad, comisiones, horarios
+### Actividades semanales
 
-## Aula virtual?
+Cada semana durante la extensión del cuatrimestre encontrarás las indicaciones referidas a los contenidos que debés cubrir para avanzar en tiempo y forma con esta asignatura. En [este cronograma de trabajo](00_info.qmd#sec-cronograma) verás de forma detallada cuáles son los capítulos del libro a estudiar y los ejercicios de las prácticas a resolver, semana a semana. Todos los materiales estarán publicados con anticipación, incluyendo las respuestas a los problemas, de modo que puedas autogestionar tus tiempos. Además, en el cronograma podrás ver todas las fechas importantes que deben ser respetadas, como las de las evaluaciones.
 
-## Programa
+### Clases
 
-enlace al programa aprobado
+Como acompañamiento a tu propio avance por la asignatura, cada semana podés asistir a dos clases:
+
+- Una es virtual y se dicta los días lunes de 14:30 a 16:30 para todo el estudiantado. Estas clases tienen el objetivo de presentar los contenidos conceptuales de cada semana, mediante la exposición interactiva del tema a abordar.
+- La otra clase es presencial y se dicta en el Laboratorio de Computación de la Escuela de Estadística, para cada comisión por separado.
+
+Si por alguna razón una clase se suspende (por ejemplo, es feriado), ¡no te preocupes! Todo el material correspondiente a la semana en cuestión estará publicado y podrás resolver tus dudas en las consultas presenciales o virtuales, o en los foros del aula virtual. Tenés que tener en cuenta la semana siguiente no repasaremos el contenido de la semana en la que no tuviste clase, sino que avanzaremos con los temas que tocan esa semana, según el cronograma.
+
+Información importante para las clases, como enlaces para conectarte o días y horarios de cada comisón, son publicados en el [aula virtual](https://comunidades3.campusvirtualunr.edu.ar/course/view.php?id=4893).
+
+### Consultas
+
+Podés resolver tus dudas recurriendo a estos medios:
+
+- **Foros de consulta en el aula virtual**.
+- **Clases de consulta virtuales**. Los enlaces y horarios se publican en el aula virtual. Si ningún estudiante se conecta, la clase se da por finalizada luego de 10 minutos de espera.
+- **Clases de consulta presenciales en el laboratorio de computación**. Estas clases tendrán una duración determinada. Durante ese tiempo, además de resolver dudas con los docentes, podés recurrir al laboratorio para hacer uso de las computadoras y resolver ejercicios u otros trabajos.
+
+### Cronograma {#sec-cronograma}
+
+Visitá periódicamente este cronograma para autogestionar tu tránsito por los temas y materiales de la asignatura:
+
+| **Semana** | **Inicio / Fin** | **Tópico**         | **Capítulos a leer** | **Ejercicios a resolver** | **Importante**                                                       |
+|:----------:|:----------------:|:------------------:|:--------------------:|:-------------------------:|----------------------------------------------------------------------|
+| 1          | 17/3 al 23/3     | Unidad 1           | 1 a 3                | 1 a 4                     |                                                                      |
+| 2          | 24/3 al 30/3     | Unidad 1           | 4                    | 5 a 9                     | Feriado: lun 24/3                                                    |
+| 3          | 31/3 al 6/4      | Unidades 1 y 2     | 5 a 9                | 10 a 13 (Unidad 1)        | Feriado: mié 2/4                                                     |
+| 4          | 7/4 al 13/4      | Unidad 2           | 10                   | 1 a 6                     |                                                                      |
+| 5          | 14/4 al 20/4     | Unidad 2           | 10                   | 7 a 9                     | Feriados: Jue 17/4 y Vie 18/4                                        |
+| 6          | 21/4 al 27/4     | Unidad 3           | A definir            | A definir                 |                                                                      |
+| 7          | 28/4 al 4/5      | Unidad 3           | A definir            | A definir                 | Feriados: Jue 1/5 y Vie 2/5                                          |
+| 8          | 5/5 al 11/5      | Parcial / Unidad 4 | A definir            | A definir                 | **Parcial**: jue 8/5 a la tardecita, todas las comisiones juntas     |
+| 9          | 12/5 al 18/5     | Unidad 4           | A definir            | A definir                 |                                                                      |
+| 10         | 19/5 al 25/5     | Unidad 5           | A definir            | A definir                 |                                                                      |
+| 11         | 26/5 al 1/6      | Unidad 5           | A definir            | A definir                 | **Entrega TP**: dom 1/6                                              |
+| 12         | 2/6 al 8/6       | Unidad 5           | A definir            | A definir                 |                                                                      |
+| 13         | 9/6 al 15/6      | Recup. / Unidad 6  | A definir            | A definir                 | **Recup**: jue 12/6 a la tardecita, todas las comisiones juntas      |
+| 14         | 16/6 al 22/6     | Unidad 6           | A definir            | A definir                 | **Entrega tarea promoción**: dom 22/6. Feriados: lun 16/6 y vie 20/6 |
+| 15         | 23/6 al 29/6     | Unidad 6           | A definir            | A definir                 | Vie 27/6: notificación de la condición final en la asignatura        |
+
 
 ## Evaluación
 
+La evaluación de la asignatura se realiza a través de un examen parcial individual y un trabajo práctico grupal. Ambas actividades son evaluadas con una calificación entre 0 y 10 y se ponderan para obtener una nota de cursada (60% examen parcial, 40% trabajo práctico). Al finalizar el cursado, cada estudiante obtiene una de las siguientes condiciones:
+
+- **Libre**: obtienen la condición de “libre” aquellos estudiantes con nota de cursada inferior a 6 o alguna nota menor a 4, ya sea en el examen parcial o en el trabajo práctico.
+- **Regular**: obtienen la condición de “regular” aquellos estudiantes con nota de cursada mayor o igual a 6, siempre que no tengan ninguna nota menor a 4 en el examen parcial o en el trabajo práctico
+- **Promovido**: obtienen la condición de “promovido” aquellos estudiantes que con nota de cursada mayor o igual a 8, que no tengan ninguna nota menor a 6 en el examen parcial o en el trabajo práctico y que aprueben una tarea de realización opcional e individual al final del cuatrimestre. La nota de cursada se computa como nota final de la asignatura.
+
+Más detalles sobre cada componente evaluativo pueden encontrarse en el [programa](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/ee-unr/programacion-1/main/archivos/programa.pdf) o en el [aula virtual](https://comunidades3.campusvirtualunr.edu.ar/course/view.php?id=4893).
+
 ## Código de conducta
+
+En esta asignatura promovemos un ambiente de respeto, colaboración y aprendizaje mutuo. Para garantizar una experiencia positiva para todas las personas involucradas, establecemos las siguientes normas de convivencia:  
+
+### Respeto y trato cordial
+
+- Todas las personas deben ser tratadas con respeto, independientemente de su experiencia, formación, identidad de género, origen, creencias u opiniones. 
+- Se espera un trato cordial y profesional entre estudiantes, docentes y personal de la facultad.  
+- No se tolerarán expresiones de discriminación, violencia verbal, acoso o cualquier forma de descalificación personal.  
+
+### Participación y comunicación
+
+- Se fomenta el intercambio de ideas y el debate académico en un marco de respeto.  
+- Se debe permitir que todas las voces sean escuchadas sin interrupciones ni actitudes despectivas.  
+- El uso de lenguaje claro y respetuoso es fundamental, tanto en interacciones presenciales como en medios digitales relacionados con la asignatura.  
+- Se valora la cooperación en actividades grupales, con una distribución equitativa de tareas y reconocimiento del aporte de cada integrante.  
+- Se invita a hacer preguntas y solicitar aclaraciones cuando sea necesario, en un clima de confianza y respeto.  
+- Los comentarios hacia otros estudiantes y docentes deben ser constructivos y enfocados en la mejora del aprendizaje.  
+
+### Responsabilidad y compromiso
+
+- La entrega de trabajos deben realizarse con responsabilidad. En caso de dificultades, se recomienda comunicarse con el equipo docente con anticipación.
+- Se espera honestidad académica en todas las actividades del curso.  
+- El uso de dispositivos electrónicos en clase debe estar alineado con los objetivos de la misma, evitando distracciones innecesarias.
+
+### Uso responsable de inteligencia artificial para resolver problemas
+
+- Las herramientas de inteligencia artificial (IA) pueden ser útiles en ciertos contextos, pero su uso excesivo o inadecuado puede limitar el aprendizaje real. Es fundamental que los estudiantes realicen el esfuerzo de comprender y desarrollar las soluciones por sí mismos.  
+- Para aprender a programar y desarrollar pensamiento lógico, es necesario escribir código, enfrentar errores y corregirlos. Depender demasiado de la IA puede generar una falsa sensación de dominio sin una comprensión profunda.  
+- En las evaluaciones y entregas, **queda estrictamente prohibido el plagio y todo tipo de copia**, incluyendo el uso de respuestas generadas por IA sin una comprensión real del contenido.  
+- Si se detecta plagio o copia en cualquier instancia de evaluación, o falta de comprensión de las soluciones entregadas, se aplicarán las medidas correspondientes según las normativas de la institución. 
+
+El cumplimiento de estas normas contribuye a un entorno en el que todas las personas puedan participar activamente y aprovechar al máximo la experiencia educativa. Ante cualquier inquietud o situación que afecte la convivencia, se recomienda comunicarlo al equipo docente o a las autoridades institucionales.

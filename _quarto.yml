@@ -23,32 +23,32 @@ book:
   chapters:
     - index.qmd
     - capitulos/00_info.qmd
-    # - part: capitulos/01.qmd
-    #   chapters:
-    #     - capitulos/01_a_intro.qmd
-    #     - capitulos/01_b_primeros_pasos.qmd
-    #     - capitulos/01_c_objetos.qmd
-    #     - capitulos/01_d_operadores.qmd
-    #     - capitulos/01_e_organizacion.qmd
-    #     - capitulos/01_f_errores_estilo_paquetes.qmd
-    #     - capitulos/01_g_opcional.qmd
-    #     - capitulos/01_practica.qmd
-    #     - capitulos/01_actividad_autoevaluativa.qmd
-    # - part: capitulos/02.qmd
-    #   chapters:
-    #     - capitulos/02_1_if.qmd
-    #     - capitulos/02_2_for_while.qmd
-    #     - capitulos/02_practica.qmd
+    - part: capitulos/01.qmd
+      chapters:
+        - capitulos/01_a_intro.qmd
+        - capitulos/01_b_primeros_pasos.qmd
+        - capitulos/01_c_objetos.qmd
+        - capitulos/01_d_operadores.qmd
+        - capitulos/01_e_organizacion.qmd
+        - capitulos/01_f_errores_estilo_paquetes.qmd
+        - capitulos/01_g_opcional.qmd
+        - capitulos/01_practica.qmd
+        - capitulos/01_actividad_autoevaluativa.qmd
+    - part: capitulos/02.qmd
+      chapters:
+        - capitulos/02_1_if.qmd
+        - capitulos/02_2_for_while.qmd
+        - capitulos/02_practica.qmd
     - part: capitulos/03.qmd
       chapters:
-        # - capitulos/03_1_crear_funciones.qmd
-        # - capitulos/03_2_ambito.qmd
-        # - capitulos/03_3_varios.qmd
+        - capitulos/03_1_crear_funciones.qmd
+        - capitulos/03_2_ambito.qmd
+        - capitulos/03_3_varios.qmd
         - capitulos/03_practica.qmd
     - part: capitulos/90.qmd
       chapters:
-        # - capitulos/90_soluciones_01.qmd
-        # - capitulos/90_soluciones_02.qmd
+        - capitulos/90_soluciones_01.qmd
+        - capitulos/90_soluciones_02.qmd
         - capitulos/90_soluciones_03.qmd
   appendices:
   #   - capitulos/98_tp.qmd

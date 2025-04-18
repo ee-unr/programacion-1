@@ -1,0 +1,202 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Alcance de las variables
+
+::: {.presentacion-capitulo data-latex=""}
+En este capítulo abordaremos el concepto de **ambiente de una función**, explicando cómo se gestionan las variables dentro de una función y cómo se relacionan con las variables que residen en el *Global Environment*.
+:::
+
+
+::: {.comentario data-latex=""}
+**Advertencia sobre el contenido de este capítulo**  
+
+El material presentado en este capítulo es una **simplificación con fines didácticos**. Se han omitido ciertos detalles técnicos y se han realizado aproximaciones para facilitar la comprensión de los conceptos fundamentales. En realidad, muchos de los temas aquí tratados son más **complejos y matizados**, especialmente en lo que respecta a aspectos avanzados del lenguaje R, la gestión de ambientes y la evaluación de expresiones. Quienes deseen profundizar en estos temas con mayor rigor, pueden explorar fuentes adicionales, como las descriptas en la bibliografía.
+:::
+
+
+## Pasaje de parámetros
+
+Las funciones y los programas desde los que se invocan comunican información entre sí a través de los parámetros. Esta comunicación recibe el nombre de **pasaje de argumentos** y se puede realizar de distintas formas, siendo las más comunes *por valor* o *por referencia*. Algunos lenguajes de programación trabajan con uno u otro sistema, mientras que otros lenguajes permiten el uso de ambos.
+
+En R, el pasaje de argumentos es **por valor**. Esto quiere decir que los argumentos representan valores que se transmiten **desde** el programa que invoca la función **hacia** la misma. Los objetos del *Global Environment* provistos como argumentos en la llamada a la función no serán modificados por su ejecución. Este sistema funciona de la siguiente forma:
+
+1. Se evalúan los argumentos actuales usados en la invocación a la función.
+2. Los valores obtenidos se *copian* en los argumentos formales dentro de la función.
+3. Los argumentos formales se usan como variables dentro de la función. Aunque los mismos sean modificados (por ejemplo, se les asignen nuevos valores), no se modifican los argumentos actuales en el *Global Environment*, sólo sus copias dentro de la función.
+
+::: {.ejemplo data-latex=""}
+Analicemos el siguiente bloque de código para apreciar cómo es el pasaje de la información a través de los argumentos:
+
+```{r}
+#| error: true
+# ---------------------------------------------------------------
+# DEFINICIÓN DE FUNCIONES
+# ---------------------------------------------------------------
+
+fun <- function(x, y) {
+	x <- x + 1
+	y <- y * 2
+	return(x + y)
+}
+
+# ---------------------------------------------------------------
+# PROGRAMA
+# ---------------------------------------------------------------
+
+a <- 3
+b <- 5
+d <- fun(a, b)
+cat(a, b, d)
+cat(x, y)
+```
+
+Si el pasaje de argumentos se hace por valor, los cambios producidos en el cuerpo de la función sobre los parámetros formales no son transmitidos a los parámetros actuales en el *Global Environment*. Esto significa que los formales son una "copia" de los actuales. Los pasos que se siguen:
+
+1. En el *Global Environment*, se asignan los valores: `a = 3`, `b = 5`.
+2. Al invocar la función, se establece la correspondencia entre `a` y `x` (que recibe el valor 3) y entre `b` e `y` que recibe el valor 5.
+3. Dentro del cuerpo de la función, se ejecuta su primera línea, resultando en la siguiente asignación de valor: `x = 3 + 1 = 4`.
+4. Segunda línea de la función: `y = 5 * 2 = 10`.
+5. La función devuelve el valor `x + y = 4 + 10 = 14`.
+6. El valor 14 es asignado a la variable `d` del *Global Environment*.
+6. Se escribe: `3 5 14`.
+7. Se produce un error porque en el *Global Environment* no han sido definidos objetos con el nombre `x` o `y`.
+:::
+
+## Ambiente global
+
+El ejemplo anterior nos permite darnos cuenta que los objetos que definimos pueden "vivir" en distintos lugares... es decir, existen distintos *entornos*, *ambientes* o *environments*. 
+
+En @sec-ambiente presentamos al *Global Environment*, que es el espacio de trabajo principal donde se almacenan los objetos creados durante una sesión de R. Es el nivel más alto en la jerarquía de entornos y es donde se guardan variables, funciones y otros elementos definidos por el usuario. A los objetos definidos en este ambiente se les suele decir **variables globales**.
+
+## Ambiente local de una función
+
+El **ambiente o entorno local** para una función en particular es el espacio donde existen las variables creadas en su cuerpo. Este ambiente es **temporal** y solo es accesible mientras la función está en ejecución. El entorno local se crea cuando se invoca a la función y en él se almacenan los valores de los argumentos de la función y las variables definidas dentro de la misma. Una vez que la función termina su ejecución, **el ambiente local desaparece**, y todas las variables dentro de él se eliminan automáticamente (a menos que sean devueltas como resultado mediante `return()`). 
+
+A los objetos definidos en este ambiente se les suele decir **variables locales**. El uso de *variables locales* tiene muchas ventajas. Permiten independizar el trabajo que realiza una función de las instrucciones de programación escritas en el script que la invoca, ya que las variables definidas localmente en una función no son reconocidas fuera de ella. La comunicación entre el ambiente global y el ambiente local de la función debe establecerse a través de la lista de parámetros y del objeto devuelto por la función. Esta característica hace posible dividir grandes trabajos de programación en piezas más pequeñas y que, por ejemplo, diferentes programadores puedan trabajar independientemente en un mismo proyecto, al encargarse del desarrollo de algunas de las funciones.
+
+## Variables locales *vs* variables globales
+
+Las variables locales sólo pueden ser usadas por las instrucciones que están dentro de esa función, mientras que el *Global Environment* desconoce su existencia. Las variables locales a una función no tienen nada que ver con las variables que puedan ser declaradas con el mismo nombre en otros ambientes, ya sea el global o ambientes locales de otras funciones. 
+
+::: {.ejemplo data-latex=""}
+Decimos que `z` es una variable global porque ha sido definida por el programa en el *Global Environment*. Por otro lado, las variables `a` y `b` son locales a la función `f1` y no se pueden usar desde el *Global Environment*, porque dejan de existir una vez que termina la ejecución de `f1`. El error se genera porque el programa quiere usar a la variable `a`, que no existe en el *Global Environment*.
+
+```{r, echo=FALSE}
+rm(list = ls())
+```
+
+```{r, error=T}
+# ---------------------------------------------------------------
+# DEFINICIÓN DE FUNCIONES
+# ---------------------------------------------------------------
+
+f1 <- function(x) {
+	a <- x - 10
+	b <- x + 10
+	return(a + b)
+}
+
+# ---------------------------------------------------------------
+# PROGRAMA
+# ---------------------------------------------------------------
+
+z <- f1(50)
+z
+z + a
+```
+:::
+
+Una variable local no puede ser usada en el *Global Environment*, pero una variable global sí puede ser usada en el ambiente local de una función.
+
+::: {.ejemplo data-latex=""}
+En el siguiente caso, la función `f2` puede hacer uso de la variable global `y` sin habérsela compartido a través de los argumentos. Cuando en el cuerpo de una función se quiere hacer uso de una variable (`y`), R primero la busca en el ambiente local. Si existe allí, opera con el valor que tiene almacenado. Si no existe, en lugar de producir un error, la busca en un ambiente superior, desde el cual la función fue invocada, en este caso, el *Global Environment*. Si existe allí, opera con el valor que tiene almacenado. Si no existe, R produce un error.
+
+```{r, echo=FALSE}
+rm(list = ls())
+```
+
+```{r}
+# ---------------------------------------------------------------
+# DEFINICIÓN DE FUNCIONES
+# ---------------------------------------------------------------
+
+f2 <- function(x) {
+	a <- x * y
+	return(a)
+}
+
+# ---------------------------------------------------------------
+# PROGRAMA
+# ---------------------------------------------------------------
+
+y <- 20
+f2(2)
+y <- 18
+f2(2)
+```
+:::
+
+::: {.info data-latex=""}
+La práctica anterior no es recomendable: si bien evaluemos `f2(2)` dos veces, el resultado no fue el mismo, porque depende de cuánto vale `y` en el ambiente global en el momento que `f2` es invocada. Además de ser confuso, esto es una violación al principio de **transparencia referencial**: una función idealmente sólo debe utilizar objetos mencionados en la lista de argumentos o definidos localmente, sin emplear variables globales. En particular, si hablamos de una función donde el pasaje de parámetros es por valor, esta práctica garantiza que la misma siempre devuelva el mismo resultado cada vez que sea invocada con los mismos valores en los argumentos de entrada, sin producir ningún efecto secundario en el *Global Environment*. El uso de variables globales dentro de los ambientes locales de las funciones permite escribir programas que carecen de transparencia referencial.
+:::
+
+Se puede usar el mismo nombre para variables locales y globales, pero dentro del ambiente local de una función toma precedencia la variable local. Esto se conoce como **name masking**, porque la variable definida dentro de la función "enmascara" nombres definidos fuera de ella.
+
+::: {.ejemplo data-latex=""}
+En el siguiente caso hay una variable global `a` en el *Global Environment* que recibe el valor `70` y otra variable `a` que es local a la función `f3`. Cuando `f3` calcula `a + b`, lo hace con el valor de su variable local (`x - 10`) y no con el valor de la variable global (`70`):
+
+```{r, echo=FALSE}
+rm(list = ls())
+```
+
+```{r}
+# ---------------------------------------------------------------
+# DEFINICIÓN DE FUNCIONES
+# ---------------------------------------------------------------
+
+f3 <- function(x) {
+	a <- x - 10
+	b <- x + 10
+	cat("Acá, dentro de la f3, el valor de a es", a)
+	return(a + b)
+}
+
+# ---------------------------------------------------------------
+# PROGRAMA
+# ---------------------------------------------------------------
+
+a <- 70
+z <- f3(50)
+z
+cat("Acá, en el programa principal, el valor de a es", a)
+a + z
+```
+
+Se debe prestar atención que con la función `cat()` en R se muestra en pantalla un mensaje en el momento en el que se ejecuta esa acción. Si el mensaje incluye mostrar valores guardados en objetos, se mostrarán los valores que los mismos tienen dentro del ambiente que está activo en ese momento. Por otro lado, lo devuelto por `return()` es el resultado de la ejecución de la función: el valor que la función entrega puede ser asignado a otro objeto en el *Global Environment*, como ocurre en la línea de `z <- f3(50)`.
+:::
+
+::: {.ejercicio data-latex=""}
+Dado el siguiente código, determinar, sin ejecutarlo en R, el resultado devuelto por cada llamada a la función `calcular()` presentada debajo.
+
+```{r}
+#| eval: false
+calcular <- function(a, b = 50) {
+  x <- a + b
+  return(x)
+}
+
+x <- 10
+b <- 100
+```
+
+- `calcular(5, 3)`: `r webexercises::mcq(c(answer = 8, 14, 52, 60, 110, 150, 200, "Error"))`
+- `calcular(2)`: `r webexercises::mcq(c(8, 14, answer = 52, 60, 110, 150, 200, "Error"))`
+- `calcular(4, x)`: `r webexercises::mcq(c(8, answer = 14, 52, 60, 110, 150, 200, "Error"))`
+- `calcular(b, x)`: `r webexercises::mcq(c(8, 14, 52, 60, answer = 110, 150, 200, "Error"))`
+- `calcular(a = x)`: `r webexercises::mcq(c(8, 14, 52, answer = 60, 110, 150, 200, "Error"))`
+- `calcular(a = b)`: `r webexercises::mcq(c(8, 14, 52, 60, 110, answer = 150, 200, "Error"))`
+- `calcular(a = b, b = b)`: `r webexercises::mcq(c(8, 14, 52, 60, 110, 150, answer = 200, "Error"))`
+- `calcular(b = x)`: `r webexercises::mcq(c(8, 14, 52, 60, 110, 150, 200, answer = "Error"))`
+:::

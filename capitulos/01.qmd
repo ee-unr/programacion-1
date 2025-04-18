@@ -4,8 +4,8 @@
 
 # Unidad 1. Introducción a la programación con R
 
-Presentación de la Unidad 1.
+::: {.presentacion-capitulo data-latex=""}
+Esta unidad introduce los conceptos fundamentales para comenzar a programar en R, proporcionando las bases necesarias para desarrollar código claro, estructurado y funcional. Iniciamos con una exploración de qué significa programar, abordando las etapas del diseño algorítmico y la codificación. Luego, presentamos R y RStudio, sus características principales y su instalación, junto con los primeros comandos y estructuras esenciales del lenguaje.
 
-::: {.en-construccion data-latex=""}
-Página en construcción.
+A lo largo de la unidad, aprenderemos sobre los distintos tipos de objetos y operadores en R, así como la organización eficiente del trabajo mediante archivos, proyectos y buenas prácticas. También abordaremos la gestión de errores, la importancia de seguir una guía de estilo para escribir código legible y el uso de paquetes para ampliar las capacidades del lenguaje. Finalmente, incluimos una reseña histórica de la computación y una introducción a los lenguajes de programación y sus niveles de abstracción.
 :::
