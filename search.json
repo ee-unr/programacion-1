@@ -698,7 +698,7 @@
     "href": "capitulos/01_actividad_autoevaluativa.html#pregunta-4",
     "title": "Actividad de autoevaluación 1",
     "section": "Pregunta 4",
-    "text": "Pregunta 4\nUna inmobiliaria necesita guardar el valor de una operación de venta de un inmueble efectuada durante el corriente año en una variable para realizar operaciones posteriores. Entre los siguientes posibles nombre de variable indique cual sería el más adecuado:\n\n ventainmuebleanio2025 VentaOperación venta_inmueble_2025 valorVentaInmueble2025 venta inmueble 2025 operación_Año2025 2025_venta_inmueble Valor-Venta-Inmueble-2025\n\n\n\nExplicación\n\nVentaOperación: No es la mejor opción porque incluye un acento (“ó”) en el nombre de la variable, lo que puede generar problemas de codificación en algunos entornos. Además, se recomienda usar guiones bajos para separar palabras en minúsculas y mejorar la legibilidad.\n2025_venta_inmueble: En general no es buena práctica que los nombres de variables comiencen con un número en ningún lenguaje de programación. R y la mayoría de lenguajes no lo permiten, y aunque algunos sí lo hacen, dificulta la lectura y puede causar errores.\nValor-Venta-Inmueble-2025: No se recomienda usar guiones medios en nombres de variables porque este carácter está reservado para la operación de resta. En muchos lenguajes, incluyendo R, provocaría errores de sintaxis. Siempre es mejor usar guiones bajos.\nventa inmueble 2025: Los espacios entre palabras no son válidos en nombres de variables. El sistema interpretaría “venta”, “inmueble” y “2025” como tres variables distintas. Para unir palabras, se usan guiones bajos.\nvalorVentaInmueble2025: Este tipo de escritura se conoce como camelCase, y aunque muchos lo utilizan, en R la convención más clara y extendida es el uso de snake_case (con guiones bajos). Funciona, pero no sigue el estilo típico de R.\noperación_Año2025: Este nombre contiene un acento (“ó”) y la letra “ñ”, lo que puede causar conflictos en algunos entornos. Para evitar errores, es mejor evitar caracteres especiales como estos. Ademas utiliza mayúsculas, lo que puede complicar innecesariamente la escritura del nombre de la variable.\nventainmuebleanio2025: Aunque técnicamente válido, este nombre es largo y poco intuitivo porque carece de separadores entre palabras. Usar guiones bajos mejora significativamente la legibilidad.",
+    "text": "Pregunta 4\nUna inmobiliaria necesita guardar el valor de una operación de venta de un inmueble efectuada durante el corriente año en una variable para realizar operaciones posteriores. Entre los siguientes posibles nombre de variable indique cual sería el más adecuado:\n\n 2025_venta_inmueble ventainmuebleanio2025 venta_inmueble_2025 VentaOperación valorVentaInmueble2025 venta inmueble 2025 operación_Año2025 Valor-Venta-Inmueble-2025\n\n\n\nExplicación\n\nVentaOperación: No es la mejor opción porque incluye un acento (“ó”) en el nombre de la variable, lo que puede generar problemas de codificación en algunos entornos. Además, se recomienda usar guiones bajos para separar palabras en minúsculas y mejorar la legibilidad.\n2025_venta_inmueble: En general no es buena práctica que los nombres de variables comiencen con un número en ningún lenguaje de programación. R y la mayoría de lenguajes no lo permiten, y aunque algunos sí lo hacen, dificulta la lectura y puede causar errores.\nValor-Venta-Inmueble-2025: No se recomienda usar guiones medios en nombres de variables porque este carácter está reservado para la operación de resta. En muchos lenguajes, incluyendo R, provocaría errores de sintaxis. Siempre es mejor usar guiones bajos.\nventa inmueble 2025: Los espacios entre palabras no son válidos en nombres de variables. El sistema interpretaría “venta”, “inmueble” y “2025” como tres variables distintas. Para unir palabras, se usan guiones bajos.\nvalorVentaInmueble2025: Este tipo de escritura se conoce como camelCase, y aunque muchos lo utilizan, en R la convención más clara y extendida es el uso de snake_case (con guiones bajos). Funciona, pero no sigue el estilo típico de R.\noperación_Año2025: Este nombre contiene un acento (“ó”) y la letra “ñ”, lo que puede causar conflictos en algunos entornos. Para evitar errores, es mejor evitar caracteres especiales como estos. Ademas utiliza mayúsculas, lo que puede complicar innecesariamente la escritura del nombre de la variable.\nventainmuebleanio2025: Aunque técnicamente válido, este nombre es largo y poco intuitivo porque carece de separadores entre palabras. Usar guiones bajos mejora significativamente la legibilidad.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Actividad de autoevaluación 1</span>"
@@ -1099,6 +1099,149 @@
     ]
   },
   {
+    "objectID": "capitulos/03_practica.html",
+    "href": "capitulos/03_practica.html",
+    "title": "Práctica de la Unidad 3",
+    "section": "",
+    "text": "Ejercicio 1",
+    "crumbs": [
+      "Unidad 3. Descomposición algorítmica",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/03_practica.html#ejercicio-1",
+    "href": "capitulos/03_practica.html#ejercicio-1",
+    "title": "Práctica de la Unidad 3",
+    "section": "",
+    "text": "Definir una nueva función f1(x1, x2, x3) que calcule y devuelva la siguiente expresión matemática:\n\\[\n\\frac{x_1}{x_2} + x_3^2 + x_2 * x_3\n\\]\nEjemplo de su uso:\n&gt; f1(5, 2, 3)\n[1] 17.5\nModificar el código de f1 para crear una función f2(x1, x2, x3) que realiza el mismo cálculo, pero asumiendo que los argumentos x2 y x3 son opcionales. Si el usuario de la función no provee un valor para ellos, deben tomar el valor 1. Chequear que el resultado coincide con los siguientes ejemplos y analizar por qué se originan:\n&gt; f2(5, 2, 3)\n[1] 17.5\n\n&gt; f2(5)\n[1] 7\n\n&gt; f2(5, 2)\n[1] 5.5\n\n&gt; f2(5, x3 = 3)\n[1] 17\n\n&gt; f2(x2 = 2, x3 = 3)\nError in f2(x2 = 2, x3 = 3) : argument \"x1\" is missing, with no default\nModificar el código de f2 para crear una función f3(x1, x2, x3) que realiza el mismo cálculo, con los mismos valores por defecto para x2 y x3, pero que devuelve -100 si alguno de los argumentos es un valor negativo. Ejemplos de su uso:\n&gt; f3(5, 2, 3)\n[1] 17.5\n\n&gt; f3(-5, 2, 3)\n[1] -100\n\n&gt; f3(-5)\n[1] -100\n\n&gt; f3(5, x3 = -3)\n[1] -100",
+    "crumbs": [
+      "Unidad 3. Descomposición algorítmica",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/03_practica.html#ejercicio-2",
+    "href": "capitulos/03_practica.html#ejercicio-2",
+    "title": "Práctica de la Unidad 3",
+    "section": "Ejercicio 2",
+    "text": "Ejercicio 2\nDados dos números enteros a y b que pueden ser negativos o positivos, crear una función llamada suma_secuencia(a, b) para calcular la suma de todos los números enteros entre a y b, incluyéndolos. Si estos números son iguales, la función debe devolver el valor que comparten. Ejemplos de su uso:\n&gt; suma_secuencia(1, 3)\n[1] 6\n&gt; suma_secuencia(30, 40)\n[1] 385\n&gt; suma_secuencia(5, 2)\n[1] 14\n&gt; suma_secuencia(-2, 3)\n[1] 3\n&gt; suma_secuencia(-7, -5)\n[1] -18\n&gt; suma_secuencia(-3, -3)\n[1] -3\n&gt; suma_secuencia(3, 3)\n[1] 3\n&gt; suma_secuencia(-3, -5)\n[1] -12",
+    "crumbs": [
+      "Unidad 3. Descomposición algorítmica",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/03_practica.html#ejercicio-3",
+    "href": "capitulos/03_practica.html#ejercicio-3",
+    "title": "Práctica de la Unidad 3",
+    "section": "Ejercicio 3",
+    "text": "Ejercicio 3\nEscribir un programa en R para la creación de la función triangulos(a, b, c) que a partir de la longitud de los tres lados de un triángulo a, b y c (valores positivos) lo clasifica con los siguientes resultados posibles:\n\nNo forman un triángulo (un lado mayor que la suma de los otros dos).\nTriángulo equilátero (tres lados iguales).\nTriángulo isósceles (dos lados iguales).\nTriángulo escaleno (tres lados distintos).\n\nComo resultado, la función devuelve uno de estos valores de tipo carácter, según corresponda: “no es triángulo”, “equilátero”, “isósceles” o “escaleno”.\nEjemplos de uso:\ntriangulos(2, 3, 4)\n[1] \"escaleno\"\ntriangulos(2, 3, 10)\n[1] \"no es triángulo\"",
+    "crumbs": [
+      "Unidad 3. Descomposición algorítmica",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/03_practica.html#ejercicio-4",
+    "href": "capitulos/03_practica.html#ejercicio-4",
+    "title": "Práctica de la Unidad 3",
+    "section": "Ejercicio 4",
+    "text": "Ejercicio 4\nEscribir un programa en R para la creación de la función elipse(x, y) que permite determinar si un punto de coordenadas \\((x, y)\\) está dentro o no de la elipse definida por la ecuación:\n\\[\\frac{(x - 6) ^ 2}{36} + \\frac{(y + 4) ^ 2}{16} = 1\\]\nSi el punto está contenido en la elipse, la función devuelve el valor lógico TRUE y en caso contrario, FALSE. En caso de que sea invocada sin valores para los argumentos x e y, la función realiza la misma evaluación pero para el origen, es decir, para el punto \\((0, 0)\\).\nObservación: si un punto se encuentra exactamente sobre la curva definida por la elipse, la fórmula anterior evaluada en las coordenadas \\((x, y)\\) del punto es exactamente igual a 1. Si el punto está dentro de la elipse, da menor que 1. Si está fuera, da mayor que 1. A continuación se presenta la representación gráfica de la elipse en cuestión:\n\n\n\n\n\nEjemplos del uso de la función:\nelipse(3, 7)\n[1] FALSE\nelipse(6, -4)\n[1] TRUE\nelipse()\n[1] FALSE",
+    "crumbs": [
+      "Unidad 3. Descomposición algorítmica",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/03_practica.html#ejercicio-5",
+    "href": "capitulos/03_practica.html#ejercicio-5",
+    "title": "Práctica de la Unidad 3",
+    "section": "Ejercicio 5",
+    "text": "Ejercicio 5\nImaginemos que con los números impares podemos crear una pirámide como la que se muestra a continuación:\n             1\n          3     5\n       7     9    11\n   13    15    17    19\n21    23    25    27    29\nUna pirámide puede tener cualquier cantidad de líneas. Definir una función llamada suma_piramide(n) que calcule la suma de los números impares en alguna la fila número n. Por ejemplo:\n&gt; suma_piramide(1)\n[1] 1\n&gt; suma_piramide(2)\n[1] 8\n&gt; suma_piramide(3)\n[1] 27\n\n# Evaluamos la suma de cada una de las primeras 10 filas\nfor (n in 1:10) {\n   suma &lt;- suma_piramide(n)\n   cat(\"Los impares de la fila\", n, \"suman\", suma, \"\\n\")\n}\n\nLos impares de la fila 1 suman 1 \nLos impares de la fila 2 suman 8 \nLos impares de la fila 3 suman 27 \nLos impares de la fila 4 suman 64 \nLos impares de la fila 5 suman 125 \nLos impares de la fila 6 suman 216 \nLos impares de la fila 7 suman 343 \nLos impares de la fila 8 suman 512 \nLos impares de la fila 9 suman 729 \nLos impares de la fila 10 suman 1000",
+    "crumbs": [
+      "Unidad 3. Descomposición algorítmica",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/03_practica.html#ejercicio-6",
+    "href": "capitulos/03_practica.html#ejercicio-6",
+    "title": "Práctica de la Unidad 3",
+    "section": "Ejercicio 6",
+    "text": "Ejercicio 6\n\nSin utilizar la computadora, indique cuál es el valor devuelto por g(a, b) luego de que este programa sea evaluado:\n\nf &lt;- function(a = 10) {\na &lt;- (a - 10) * (a + 10)\n  return(a)\n}\n\ng &lt;- function(x, y) {\n  b &lt;- x - y * 2\n  c &lt;- b * f(b)\n  d &lt;- f() - c\n  return(d)\n}\n\na &lt;- 6\nb &lt;- 1\ng(a, b)\n\nSin utilizar la computadora, indique cuál es el valor de z que se muestra el algoritmo y explique por qué se indica que la última línea produce un error:\n\nf1 &lt;- function(a, b) {\n  x &lt;- a + b\n  y &lt;- x + 2\n  return(y)\n}\n\nf2 &lt;- function(x) {\n  return(x^2)\n}\n\n# PROGRAMA: Ejemplo de ámbito de las variables\nx &lt;- 3\ny &lt;- 5\na &lt;- f1(x, y)\nz &lt;- x + f2(a)\nprint(z)\nprint(a + b) # esta línea produce un error\n\nSin usar la computadora, indique cuál es el resultado de evaluar a + b + c + d en la última línea del siguiente código:\n\nf = function(x, y = 5, z = x + y) {\n  u = z - x - y\n  return(u)\n}\n\na = f(10)\nb = f(10, 10)\nc = f(10, 10, 10)\nd = f(10, z = 10)\n\na + b + c + d",
+    "crumbs": [
+      "Unidad 3. Descomposición algorítmica",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/03_practica.html#ejercicio-7",
+    "href": "capitulos/03_practica.html#ejercicio-7",
+    "title": "Práctica de la Unidad 3",
+    "section": "Ejercicio 7",
+    "text": "Ejercicio 7\nEscribir un programa en R para la creación de la función resolvente(a, b, c) que muestra las soluciones de la ecuación de segundo grado \\(a x^2 + b x + c = 0\\), empleando la fórmula resolvente:\n\\[x_{1, 2} = \\frac{-b \\pm \\sqrt{(b^2 - 4ac)}}{2a}\\]\nObservaciones:\n\nEl programa debe emitir mensajes aclaratorios si hay una solución real doble o dos soluciones complejas (en este caso, no las calcula).\nLa función escribe en pantalla las soluciones de la ecuación y no es necesario que devuelva ningún objeto en particular.\nPara calcular una raíz cuadrada, podemos usar la función sqrt().\nSi a es igual a cero, usar la función stop() para devolver un error informativo.\n\nEjemplos de uso:\n&gt; resolvente(1, -1, -2)\nHay dos soluciones reales -1 y 2 \n\n&gt; resolvente(1, 2, 1)\nHay una solución real doble: -1 \n\n&gt; resolvente(1, 1, 1)\nLas soluciones son complejas.\n\n&gt; resolvente(0, 1, 1)\nError in resolvente(0, 1, 1) : (a) debe ser distinto de cero",
+    "crumbs": [
+      "Unidad 3. Descomposición algorítmica",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/03_practica.html#ejercicio-8",
+    "href": "capitulos/03_practica.html#ejercicio-8",
+    "title": "Práctica de la Unidad 3",
+    "section": "Ejercicio 8",
+    "text": "Ejercicio 8\nEscribir un programa en R para la creación de la función es_primo(n) que devuelve el valor lógico TRUE si el natural n es un número primo o FALSE en caso contrario. Recordar la siguiente definición:\n\nUn número primo es un número natural mayor que 1, que tiene únicamente dos divisores positivos distintos: él mismo y el 1.\n\nSi el argumento de entrada no es un natural mayor que 1, la función debe imprimir un warning y devolver FALSE como en estos ejemplos:\n&gt; es_primo(47)\n[1] TRUE\n\n&gt; es_primo(253)\n[1] FALSE\n\n&gt; es_primo(2)\n[1] TRUE\n\n&gt; es_primo(7.18)\n[1] FALSE\nWarning message:\nIn es_primo(7.18) : (n) no es entero\n\n&gt; es_primo(0)\n[1] FALSE\nWarning message:\nIn es_primo(0) : (n) no es mayor que 1",
+    "crumbs": [
+      "Unidad 3. Descomposición algorítmica",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/03_practica.html#ejercicio-9",
+    "href": "capitulos/03_practica.html#ejercicio-9",
+    "title": "Práctica de la Unidad 3",
+    "section": "Ejercicio 9",
+    "text": "Ejercicio 9\nEscribir un programa en R para la creación de la función cociente(dividendo, divisor) que permite obtener cociente entero y resto en la división de dos números naturales (llamados dividendo y divisor) empleando únicamente operaciones aritméticas de suma y resta. La función escribe un mensaje en pantalla con los valores del dividendo, divisor, cociente y resto, mientras que devuelve el valor del cociente.\nEjemplos de su uso:\ncociente(1253, 4)\n\nDividendo: 1253   # mensajes escritos\nDivisor: 4 \nCociente: 313 \nResto: 1 \n[1] 313           # valor devuelto\n\ncociente(3, 4)\n\nDividendo: 3      # mensajes escritos\nDivisor: 4 \nCociente: 0 \nResto: 3 \n[1] 0             # valor devuelto",
+    "crumbs": [
+      "Unidad 3. Descomposición algorítmica",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/03_practica.html#ejercicio-10",
+    "href": "capitulos/03_practica.html#ejercicio-10",
+    "title": "Práctica de la Unidad 3",
+    "section": "Ejercicio 10",
+    "text": "Ejercicio 10\nEscribir un programa en R para la creación de la función max_com_div(a, b) que permite calcular el máximo común divisor (mcd) de los números naturales a y b, empleando el algoritmo de Euclides, que propone:\n\nDividir al mayor por el menor.\nSi el resto es cero, el divisor es el máximo común divisor.\nSi el resto no es cero, dividir el divisor por el resto.\nEvaluar el nuevo resto de la misma forma y repetir hasta hallar un resto igual a cero. Cuando esto ocurre, el último divisor es el mcd.\n\nEjemplos de uso:\nmax_com_div(100, 24)\n4\n\nmax_com_div(25, 100)\n25\n\nmax_com_div(24, 24)\n24",
+    "crumbs": [
+      "Unidad 3. Descomposición algorítmica",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/03_practica.html#ejercicio-11",
+    "href": "capitulos/03_practica.html#ejercicio-11",
+    "title": "Práctica de la Unidad 3",
+    "section": "Ejercicio 11",
+    "text": "Ejercicio 11\n\nDescargar el archivo [funciones_unidad3.R]((https://github.com/ee-unr/programacion-1/raw/refs/heads/main/archivos/funciones_unidad3.R) en el que se encuentra ya definida la función fact() tal como se presentó en 15.3 Documentación de las funciones. Guardar este archivo en la carpeta del proyecto de esta unidad.\nAgregar en ese script código para crear una nueva función combinatorio(m, n) que calcula el número combinatorio m tomado de a n (también llamado coeficiente binomial), siendo estos números naturales tales que m &gt;= n. La función combinatorio() debe invocar a la función fact() ya provista, teniendo en cuenta que un número combinatorio se define como:\n\\[\nC(m, n) = {m \\choose n} = \\frac{m!}{(m-n)!n!}\n\\]\nCrear otro script llamado ejercicio_11.R, en el cual escribiremos ejemplos de uso de la función combinatorio(m, n). En primera instancia, incluir en este script la sentencia source(funciones_unidad3.R) para que el contenido del script de funciones sea ejecutado y las mismas sean creadas en el ambiente global. Luego, utilizar la función combinatorio(m, n) para ejemplificar las siguientes propiedades de los números combinatorios:\n\n\\({m \\choose 0} = 1\\)\n\\({m \\choose m} = 1\\)\n\\({m \\choose 1} = m\\)\n\\({m \\choose n} = {m \\choose m - n}\\)\n\\({m \\choose n} = {m - 1 \\choose n - 1} + {m - 1 \\choose n}\\)\n\nEs importante recordar que los números combinatorios sólo están definidos para m &gt;= n. Probar qué ocurre pasando un valor de n mayor que m.\nEl número combinatorio m tomado de a n con reposición se define como:\n\\[\n\\bar{C}(m, n) = {m + n - 1 \\choose n} = \\frac{(m+n-1)!}{(m-1)!n!}\n\\]\nEn base a lo realizado anteriormente, crear la función combinatorio2(m, n, r) para generalizar el cálculo de números combinatorios, siendo r un argumento adicional que toma el valor lógico TRUE si el cálculo es con reposición, y FALSE en caso contrario.\nConsideraciones:\n\nUsar la función combinatorio(m, n) para implementar esta nueva función.\nPor defecto, la función debe hacer el cálculo del número combinatorio sin reposición.\nPara m = 5 y n = 2, pruebe si el número de combinaciones posibles es mayor con o sin resposición.",
+    "crumbs": [
+      "Unidad 3. Descomposición algorítmica",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/03_practica.html#ejercicio-12",
+    "href": "capitulos/03_practica.html#ejercicio-12",
+    "title": "Práctica de la Unidad 3",
+    "section": "Ejercicio 12",
+    "text": "Ejercicio 12\nEscribir la documentación de cada una de las funciones creadas en esta unidad, siguiendo el formato Roxygen.",
+    "crumbs": [
+      "Unidad 3. Descomposición algorítmica",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
     "objectID": "capitulos/90.html",
     "href": "capitulos/90.html",
     "title": "Soluciones de la Práctica",
@@ -1116,7 +1259,7 @@
     "text": "Ejercicio 1\nPara crear un nuevo script y guardarlo, podés seguir los ejemplos vistos en #sec-scripts. El contenido del script tiene que ser:\n# Ejercicio 1\n25 + 17\n6 * 8\nsqrt(144)",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -1127,7 +1270,7 @@
     "text": "Ejercicio 2\n\nPara acceder a la documentación de la función round(), se puede ejecutar en la consola de R:\n\n?round\no\nhelp(round)\n\nSegún la ayuda de R, la función round() tiene los siguientes argumentos:\n\n\nx: El número o vector de números que se desea redondear.\n\ndigits: El número de cifras decimales al que se desea redondear x. Puede ser positivo (para redondear decimales) o negativo (para redondear a múltiplos de 10).\n\n...: representa el uso opcional de otros argumentos, es algo que podemos ignorar por ahora.\n\n\n\nObligatorio: x, ya que es el número a redondear.\n\nOpcional: digits, que por defecto es 0, lo que significa que la función redondeará al número entero más cercano si no se especifica un valor distinto.\n\n\n\n\nround(3.14159, digits = 0)  # Redondeo a 0 decimales → Resultado: 3\n\n[1] 3\n\nround(3.14159, digits = 1)  # Redondeo a 1 decimal → Resultado: 3.1\n\n[1] 3.1\n\nround(3.14159, digits = 2)  # Redondeo a 2 decimales → Resultado: 3.14\n\n[1] 3.14\n\n\n\n\n\n\nround(3.14159, 2)\n\n[1] 3.14\n\nround(x = 3.14159, digits = 2)\n\n[1] 3.14\n\nround(digits = 2, x = 3.14159)\n\n[1] 3.14",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -1138,7 +1281,7 @@
     "text": "Ejercicio 3\n\nx &lt;- 10\ny &lt;- \"Hola\"\nz &lt;- 5\n\n\nPodemos verificar el tipo de cada objeto con la función typeof():\n\n\ntypeof(x)\n\n[1] \"double\"\n\ntypeof(y)\n\n[1] \"character\"\n\ntypeof(z)\n\n[1] \"double\"\n\n\n\nEjecutamos la siguiente instrucción:\n\n\nz &lt;- x * 6\n\nAhora, z almacenará el valor:\n\nz\n\n[1] 60\n\n\n\nObtenemos un error porque x es un número (double), mientras que y es un texto (character). En R, no es posible realizar operaciones matemáticas entre objetos de tipo diferente.\n\n\nx + y\n\nError in x + y: non-numeric argument to binary operator",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -1149,7 +1292,7 @@
     "text": "Ejercicio 4\n\nload(\"practica1_ambiente.RData\")\n\nSe incorporaron 6 objetos al ambiente:\n\n\n\nIdentificador\nTipo de vector\nValor\n\n\n\n\nvar1\nlogical\nTRUE\n\n\nvar2\ndouble\n200.12\n\n\nvar3\ncharacter\n\"hola\"\n\n\nvar4\ncharacter\n\"chau\"\n\n\nvar5\ninteger\n-49L\n\n\nvar6\ncharacter\n\"Hola\"\n\n\n\n\ntypeof(var1)\n\n[1] \"logical\"\n\ntypeof(var2)\n\n[1] \"double\"\n\ntypeof(var3)\n\n[1] \"character\"\n\ntypeof(var4)\n\n[1] \"character\"\n\ntypeof(var5)\n\n[1] \"integer\"\n\ntypeof(var6)\n\n[1] \"character\"",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -1160,7 +1303,7 @@
     "text": "Ejercicio 5\n\n\n\n\nvar2 &lt; 0 || var5 &lt; 0\n\n[1] TRUE\n\n\n\n\n\n\nvar2 &lt; 0 && var5 &lt; 0\n\n[1] FALSE\n\n\n\n\n\n\nvar2 %% (var5 + 100) &lt; 10\n\n[1] FALSE\n\n\n\nNo son iguales porque uno tiene una letra mayúscula, “H” es un caracter distinto de “h” y por lo tanto son cadenas de texto diferentes.\n\n\nvar3 == var6\n\n[1] FALSE",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -1171,7 +1314,7 @@
     "text": "Ejercicio 6\n\n\n\n\n\n\n\n\n\nOperación\nedad &lt;- 21, altura &lt;- 1.90\nedad &lt;- 17 , altura &lt;- 1.90\nedad &lt;- 21, altura &lt;- 1.50\n\n\n\n\n(edad &gt; 18) && (altura &lt; 1.70)\nFALSE\nFALSE\nTRUE\n\n\n(edad &gt; 18)   || (altura &lt; 1.70)\nTRUE\nFALSE\nTRUE\n\n\n!(edad &gt; 18)\nFALSE\nTRUE\nFALSE\n\n\n\nVerificación en R:\n\n# Primera columna\nedad &lt;- 21\naltura &lt;- 1.90\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] FALSE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] TRUE\n\n!(edad &gt; 18)\n\n[1] FALSE\n\n# Segunda columna\nedad &lt;- 17\naltura &lt;- 1.90\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] FALSE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] FALSE\n\n!(edad &gt; 18)\n\n[1] TRUE\n\n# Tercera columna\nedad &lt;- 21\naltura &lt;- 1.50\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] TRUE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] TRUE\n\n!(edad &gt; 18)\n\n[1] FALSE",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -1182,7 +1325,7 @@
     "text": "Ejercicio 7\nRazonamiento paso a paso:\n1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10\n1 + 2 + (3 + 4) * ((5 * 6 * 8) - 9) - 10\n1 + 2 + (3 + 4) * (240 - 9) - 10\n1 + 2 + 7 * 231 - 10\n1 + 2 + 1617 - 10\n1610\nVerificación en R:\n\n1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10\n\n[1] 1610",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -1193,7 +1336,7 @@
     "text": "Ejercicio 8\nSiempre es verdadera porque sea cual fuere x, siempre va a ser distinta a alguno de los dos, incluso si es 4, es distinta a 17 y viceversa.\nRecordemos que:\n\n!= significa “distinto de”.\n\n|| es el operador “o” lógico (OR), que devuelve TRUE si al menos una de las condiciones es TRUE.\n\nLuego, de la única forma para que la expresión sea FALSE, es que ambas condiciones sean FALSE al mismo tiempo. Veamos si esto es posible:\n\nLa primera condición (x != 4) es FALSE solo cuando x = 4.\n\nLa segunda condición (x != 17) es FALSE solo cuando x = 17.\n\nPor lo visto, ambas condiciones no pueden ser FALSE simultáneamente, ya que un número no puede ser 4 y 17 al mismo tiempo. Dado que siempre hay al menos una condición que es TRUE, la expresión es siempre verdadera, sin importar el valor de x.",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -1204,7 +1347,7 @@
     "text": "Ejercicio 9\nEl primer ítem excluye a los años terminados en 00, los cuales son evaluados en la segunda regla. El segundo ítem incluye automáticamente a los divisibles por 4 porque 400 es divisible por 4. Entonces, la operación lógica que determina si un año es bisiesto es: ((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0).\nEn R:\n\naño &lt;- 2024\n((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0)\n\n[1] TRUE\n\naño &lt;- 2025\n((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0)\n\n[1] FALSE",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -1215,7 +1358,7 @@
     "text": "Ejercicio 10\n\n¿Cuáles son los valores finales de a y b?\n\n\na &lt;- 10\nb &lt;- a * 2\na &lt;- a + 5\nb &lt;- b - a\na\n\n[1] 15\n\nb\n\n[1] 5\n\n\n\n¿Cuáles son los valores finales de m y n?\n\n\nm &lt;- 5\nn &lt;- 2 * m\nm &lt;- m + 3\nn &lt;- n + m\nm &lt;- n - 4\nm\n\n[1] 14\n\nn\n\n[1] 18\n\n\n\n¿Cuál es el valor final de y?\n\n\nx &lt;- 6\ny &lt;- 2\nx &lt;- x / y + x * y\ny &lt;- x^2 %% 10\ny &lt;- y * 2\ny\n\n[1] 10\n\n\n\n¿Cuál es el valor final de resultado?\n\n\na &lt;- 5\nb &lt;- 2\nc &lt;- 3\n\nresultado &lt;- a^b - (c * b) + (a %% c)\nresultado\n\n[1] 21\n\n\n\n¿Cuáles son los valores finales de x, y y z?\n\n\nx &lt;- 8\ny &lt;- 3\nz &lt;- 2\n\nx &lt;- x %% y + z^y\ny &lt;- (x + y) %/% z\nz &lt;- z + x - y\nx\n\n[1] 10\n\ny\n\n[1] 6\n\nz\n\n[1] 6",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -1226,7 +1369,7 @@
     "text": "Ejercicio 11\nSe pueden cambiar los valores de a, b y h.\n\na &lt;- 5\nb &lt;- 4\nh &lt;- 3\nvolumen &lt;- a * b * h\narea &lt;- 2 * (a * b + a * h + b * h)\ncat(\"El área es igual a\", area, \"y el volumen es igual a\", volumen)\n\nEl área es igual a 94 y el volumen es igual a 60",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -1237,7 +1380,7 @@
     "text": "Ejercicio 12\n\nPara identificar la ruta informática de un archivo, podés seguir los pasos mostrados en 5.1 Carpetas, archivos y rutas informáticas.\nSe puede saber cuál es el working directory con:\n\n\ngetwd()",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -1248,7 +1391,7 @@
     "text": "Ejercicio 13\nEl resultado de crear las carpetas y subcarpetas tiene que ser similar al que se ve en la Figura 5.2. El proyecto se crea desde RStudio siguiendo los pasos de la Figura 5.4.",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
     ]
   },
   {
@@ -1259,7 +1402,7 @@
     "text": "Ejercicio 1\n# PROGRAMA: \"Paridad de un número\" \nx &lt;- 3\nif (x %% 2 == 0) {\n    cat(x, \"es par\")\n} else {\n    cat(x, \"es impar\")\n}\n\n3 es impar\nEn el código anterior, realizamos una asignación explícita de un valor en la variable (x &lt;- 3). Esto nos permite hacer un uso más interactivo del código, que puede ser útil para probar si anda o cuando vamos corriendo por partes para detectar posibles errores.\nOtra opción se muestra en el siguiente ejemplo. En lugar de asignarle un valor a x como parte del script, indicamos que cuando el código sea ejecutado, el usuario deberá ingresar un valor con el teclado. Para esto empleamos la función scan(). Su argumento n = 1 significa que el usuario sólo deberá ingresar un número, el cual será asignado a la variable x. Teniendo un archivo de código con el programa como se muestra a continuación, podemos ejecutarlo de forma completa mediante el botón Source de RStudio. Al llegar a la evaluación de scan(), deberemos ingresar el valor que deseemos en la consola y dar Enter para que la ejecución continúe.\n# PROGRAMA: \"Paridad de un número\"\ncat(\"Ingrese un número entero: \")\nx &lt;- scan(n = 1)\nif (x %% 2 == 0) {\n    cat(x, \"es par\")\n} else {\n    cat(x, \"es impar\")\n}",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
     ]
   },
   {
@@ -1270,7 +1413,7 @@
     "text": "Ejercicio 2\n\n# PROGRAMA: \"Mayor de tres números\"\nx &lt;- 5\ny &lt;- 5\nz &lt;- 7\nif (x &gt;= y && x &gt;= z) {\n    cat(\"El mayor es\", x)\n} else if (y &gt;= z) {\n    cat(\"El mayor es\", y)\n} else {\n    cat(\"El mayor es\", z)\n}\n\nEl mayor es 7\n\n\nObservación: se llega a la segunda evaluación lógica cuando y es mayor a x, o cuando z es mayor que x, o cuando ambos son mayores a x, por lo tanto sólo es necesario saber cuál de ellos es el mayor.",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
     ]
   },
   {
@@ -1281,7 +1424,7 @@
     "text": "Ejercicio 3\n\n# PROGRAMA: \"Determinar salario\"\n\n# Valores fijados\nvalor_hora &lt;- 4000\nvalor_adicional_noche &lt;- 2000\nvalor_adicional_domingo &lt;- 1000\n\n# Valores para un cálculo particular\nhoras &lt;- 8\ndia &lt;- \"MAR\"\nturno &lt;- \"T\"\n\n# Cálculo para el pago de ese día a ese empleado\nsalario &lt;- horas * valor_hora\nif (turno == \"N\") {\n    salario &lt;- salario + horas * valor_adicional_noche\n}\nif (turno == \"DOM\") {\n    salario &lt;- salario + horas * valor_adicional_domingo\n}\ncat(\"El salario que se debe abonar es\", salario)\n\nEl salario que se debe abonar es 32000",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
     ]
   },
   {
@@ -1292,7 +1435,7 @@
     "text": "Ejercicio 4\n\n# PROGRAMA: \"Convertir temperatura\"\ntemp &lt;- 20\nmodo &lt;- \"C a F\"\nif (modo == \"C a F\") {\n    temp_nuevo &lt;- temp * 9 / 5 + 32\n    cat(temp, \"ºC equivale a\", temp_nuevo, \"ºF\")\n} else {\n    temp_nuevo &lt;- (temp - 32) * 5 / 9\n    cat(temp, \"ºF equivale a\", temp_nuevo, \"ºC\")\n}\n\n20 ºC equivale a 68 ºF",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
     ]
   },
   {
@@ -1303,7 +1446,7 @@
     "text": "Ejercicio 5\na.\n\n# PROGRAMA: \"Suma de los n primeros números naturales\"\nn &lt;- 10\nsuma &lt;- 0\nfor (i in 1:n) {\n    suma &lt;- suma + i\n}\ncat(\"La suma de los primeros\", n, \"números naturales es\", suma)\n\nLa suma de los primeros 10 números naturales es 55\n\n\nb.\n\n# PROGRAMA: \"Suma de los cuadrados de los n primeros números naturales\" -----\nn &lt;- 10\nsuma &lt;- 0\nfor (i in 1:n) {\n    suma &lt;- suma + i^2\n}\ncat(\"La suma de los primeros\", n, \"números naturales al cuadrado es\", suma)\n\nLa suma de los primeros 10 números naturales al cuadrado es 385\n\n\nc.\nSabemos el número de iteraciones, n, por eso usamos for. Por ejemplo, para n = 4, los primeros impares son:\n1 = 2 * 1 - 1\n3 = 2 * 2 - 1\n5 = 2 * 3 - 1\n7 = 2 * 4 - 1\nDe forma general, los primeros 4 impares son 2 * i - 1, con i = 1, 2, 3, 4.\n\n# PROGRAMA: \"Producto de los n primeros números naturales impares\" ----------\nn &lt;- 10\nproducto &lt;- 1\nfor (i in 1:n) {\n    producto &lt;- producto * (2 * i - 1)\n}\ncat(\"El producto de los primeros\", n, \"números naturales impares es\", producto)\n\nEl producto de los primeros 10 números naturales impares es 654729075\n\n\nOtra forma:\n\n# PROGRAMA: \"Producto de los n primeros números naturales impares\" ----------\nn &lt;- 10\nproducto &lt;- 1\nfor (i in seq(1, 2 * n - 1, 2)) {\n    producto &lt;- producto * i\n}\ncat(\"El producto de los primeros\", n, \"números naturales impares es\", producto)\n\nEl producto de los primeros 10 números naturales impares es 654729075\n\n\nLa función seq crea un vector con una secuencia numérica. El formato con el que está utilizada aquí es seq(valor_inicial, valor_final, intervalo), por lo que creará un vector con los números impares (dado que el intervalo es 2, y comienza con un número impar) empezando desde 1 hasta 2 * n - 1.\nd.\n\n# PROGRAMA: \"Suma de los cubos de los n primeros números naturales pares\"\nn &lt;- 5\nsuma &lt;- 0\nfor (i in 1:n) {\n    suma &lt;- suma + (2 * i)^3\n}\ncat(\"La suma de los cubos de los primeros\", n, \"números naturales pares es\", suma)\n\nLa suma de los cubos de los primeros 5 números naturales pares es 1800",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
     ]
   },
   {
@@ -1314,7 +1457,7 @@
     "text": "Ejercicio 6\nUtilizando estructura de control “PARA”\n\n# PROGRAMA: \"Calcular el factorial de n\"\nn &lt;- 0\nfactorial &lt;- 1\nfor (i in 1:n) {\n    factorial &lt;- factorial * i\n}\ncat(\"El factorial de\", n, \"es\", factorial)\n\nEl factorial de 0 es 0\n\n\nUtilizando estructura de control “MIENTRAS QUE”\n\n# PROGRAMA: \"Calcular el factorial de n\"\nn &lt;- 0\nfactorial &lt;- 1\ni &lt;- 0\nwhile(i &lt; n) {\n    i &lt;- i + 1\n  factorial &lt;- factorial * i\n}\ncat(\"El factorial de\", n, \"es\", factorial)\n\nEl factorial de 0 es 1\n\n\nIMPORTANTE. Notar que la primera opción no arroja de forma correcta el factorial de 0, que por definición es igual a 1. Se podría agregar alguna estructura condicional para esta situación. La segunda opción, en cambio, funciona también para n &lt;- 0.",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
     ]
   },
   {
@@ -1325,7 +1468,7 @@
     "text": "Ejercicio 7\n\n# PROGRAMA: \"Secuencia de Fibonacci\"\ntermino1 &lt;- 0\ntermino2 &lt;- 1\nwhile (termino1 &lt; 10000) {\n  print(termino1)\n  termino3 &lt;- termino1 + termino2\n  termino1 &lt;- termino2\n  termino2 &lt;- termino3\n}\n\n[1] 0\n[1] 1\n[1] 1\n[1] 2\n[1] 3\n[1] 5\n[1] 8\n[1] 13\n[1] 21\n[1] 34\n[1] 55\n[1] 89\n[1] 144\n[1] 233\n[1] 377\n[1] 610\n[1] 987\n[1] 1597\n[1] 2584\n[1] 4181\n[1] 6765",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
     ]
   },
   {
@@ -1336,7 +1479,7 @@
     "text": "Ejercicio 8\nObservar que:\n\nel valor inicial es el 100 ya que la combinación no comienza por 0.\nel while se detiene cuando la combinación es mayor a 800.\nse verifican las condiciones de multiplicidad, y si no se cumplen, se pasa directamente a la siguiente iteración.\nen caso de que se cumplan las condiciones, se imprime la combinación, y se pasa a la siguiente iteración.\n\n\n# PROGRAMA: \"Lista de posibles combinaciones\"\ncombinacion &lt;- 100\n\nwhile (combinacion &lt;= 800) {\n  if (combinacion %% 11 == 0 && combinacion %% 8 != 0) {\n    print(combinacion)\n  }\n  combinacion &lt;- combinacion + 1\n}\n\n[1] 110\n[1] 121\n[1] 132\n[1] 143\n[1] 154\n[1] 165\n[1] 187\n[1] 198\n[1] 209\n[1] 220\n[1] 231\n[1] 242\n[1] 253\n[1] 275\n[1] 286\n[1] 297\n[1] 308\n[1] 319\n[1] 330\n[1] 341\n[1] 363\n[1] 374\n[1] 385\n[1] 396\n[1] 407\n[1] 418\n[1] 429\n[1] 451\n[1] 462\n[1] 473\n[1] 484\n[1] 495\n[1] 506\n[1] 517\n[1] 539\n[1] 550\n[1] 561\n[1] 572\n[1] 583\n[1] 594\n[1] 605\n[1] 627\n[1] 638\n[1] 649\n[1] 660\n[1] 671\n[1] 682\n[1] 693\n[1] 715\n[1] 726\n[1] 737\n[1] 748\n[1] 759\n[1] 770\n[1] 781",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
     ]
   },
   {
@@ -1347,7 +1490,150 @@
     "text": "Ejercicio 9\n\nAl final del primer año, la población será igual a:\n\\[\np0 + p0 \\times \\frac{tasa}{100} + inmigrantes = 1000 + 1000 * 0.02 + 50 = 1070\n\\]\nAl final del 2º año, la población será:\n\\[\np0 + p0 \\times \\frac{tasa}{100} + inmigrantes = 1070 + 1070 * 0.02 + 50 = 1141.4 \\cong 1141\n\\] Recordar que el número de habitantes es un entero, por lo cual tomamos la parte entera.\nAl final del tercer año:\n\\[\np0 + p0 \\times \\frac{tasa}{100} + inmigrantes = 1141 + 1141 * 0.02 + 50 = 1213.82 \\cong 1213\n\\]\nSe necesitarán 3 años.\nHaciendo la solución para el problema de forma más general:\n\n\n# Parámetros a definir\np0 &lt;- 1000\np_objetivo &lt;- 1200\ntasa &lt;- 2 # La expresamos en porcentaje\ninmigrantes &lt;- 50\n\n# Programa\naño &lt;- 0\npoblacion &lt;- p0\nwhile (poblacion &lt; p_objetivo) {\n  # Aplicamos la fórmula y nos quedamos con la parte entera del resultado\n  poblacion &lt;- floor(poblacion + poblacion * tasa / 100 + inmigrantes)\n  # Contamos un año más\n  año &lt;- año + 1\n}\ncat(\n  \" Con una población inicial de\", p0, \n  \"habitantes, una tasa de crecimiento anual del\\n\",\n  tasa, \"% y\", inmigrantes, \"nuevos habitantes anuales, se necesitarán\",\n  año, \"años para alcanzar\\n una población de\", p_objetivo, \n  \"habitantes. Luego del año\", año, \"el pueblo contará con una\\n población de\", \n  poblacion, \"habitantes.\"\n)\n\n Con una población inicial de 1000 habitantes, una tasa de crecimiento anual del\n 2 % y 50 nuevos habitantes anuales, se necesitarán 3 años para alcanzar\n una población de 1200 habitantes. Luego del año 3 el pueblo contará con una\n población de 1213 habitantes.\n\n\n\nCambiamos los valores de las variables y realizamos el cálculo nuevamente:\n\n\n# Parámetros a definir\np0 &lt;- 10000\np_objetivo &lt;- 50000\ntasa &lt;- 3 # La expresamos en porcentaje\ninmigrantes &lt;- 100\n\n# Programa\naño &lt;- 0\npoblacion &lt;- p0\nwhile (poblacion &lt; p_objetivo) {\n  # Aplicamos la fórmula y nos quedamos con la parte entera del resultado\n  poblacion &lt;- floor(poblacion + poblacion * tasa / 100 + inmigrantes)\n  # Contamos un año más\n  año &lt;- año + 1\n}\ncat(\n  \" Con una población inicial de\", p0, \n  \"habitantes, una tasa de crecimiento anual del\\n\",\n  tasa, \"% y\", inmigrantes, \"nuevos habitantes anuales, se necesitarán\",\n  año, \"años para alcanzar\\n una población de\", p_objetivo, \n  \"habitantes. Luego del año\", año, \"el pueblo contará con una\\n población de\", \n  poblacion, \"habitantes.\"\n)\n\n Con una población inicial de 10000 habitantes, una tasa de crecimiento anual del\n 3 % y 100 nuevos habitantes anuales, se necesitarán 47 años para alcanzar\n una población de 50000 habitantes. Luego del año 47 el pueblo contará con una\n población de 50116 habitantes.",
     "crumbs": [
       "Soluciones de la Práctica",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_03.html",
+    "href": "capitulos/90_soluciones_03.html",
+    "title": "Soluciones de la Práctica de la Unidad 3",
+    "section": "",
+    "text": "Ejercicio 1",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_03.html#ejercicio-1",
+    "href": "capitulos/90_soluciones_03.html#ejercicio-1",
+    "title": "Soluciones de la Práctica de la Unidad 3",
+    "section": "",
+    "text": "Escribimos la función y la usamos:\n\n# Función f1\nf1 &lt;- function(x1, x2, x3) {\n  resultado &lt;- x1 / x2 + x3^2 + x2 * x3\n  return(resultado)\n}\n\n# Ejemplo de su uso\nf1(5, 2, 3)\n\n[1] 17.5\n\n\nEscribimos la función y la usamos:\n\n# Función f2\nf2 &lt;- function(x1, x2 = 1, x3 = 1) {\n  resultado &lt;- x1 / x2 + x3^2 + x2 * x3\n  return(resultado)\n}\n\n# Ejemplos de su uso\nf2(5, 2, 3)\n\n[1] 17.5\n\nf2(5)\n\n[1] 7\n\nf2(5, 2)\n\n[1] 5.5\n\nf2(5, x3 = 3)\n\n[1] 17\n\nf2(x2 = 2, x3 = 3)\n\nError in f2(x2 = 2, x3 = 3): argument \"x1\" is missing, with no default\n\n\nEscribimos la función y la usamos:\n\n# Función f3\nf3 &lt;- function(x1, x2 = 1, x3 = 1) {\n  if (x1 &lt; 0 || x2 &lt; 0 || x3 &lt; 0) {\n    return(-100)\n  } else {\n    resultado &lt;- x1 / x2 + x3^2 + x2 * x3\n    return(resultado)\n  }\n}\n\n# Ejemplos de su uso\nf3(5, 2, 3)\n\n[1] 17.5\n\nf3(-5, 2, 3)\n\n[1] -100\n\nf3(-5)\n\n[1] -100\n\nf3(5, x3 = -3)\n\n[1] -100",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_03.html#ejercicio-2",
+    "href": "capitulos/90_soluciones_03.html#ejercicio-2",
+    "title": "Soluciones de la Práctica de la Unidad 3",
+    "section": "Ejercicio 2",
+    "text": "Ejercicio 2\nSin importar el signo de a y b ni cuál es mayor o menor, la secuencia de todos los enteros se puede generar fácilmente con la expresión a:b que usamos como parte de la estructura for:\n\n1:4\n\n[1] 1 2 3 4\n\n4:1\n\n[1] 4 3 2 1\n\n3:3\n\n[1] 3\n\n-2:4\n\n[1] -2 -1  0  1  2  3  4\n\n-2:-8\n\n[1] -2 -3 -4 -5 -6 -7 -8\n\n\nPor lo tanto, si iteramos con un for a través de la secuencia a:b, la función puede definirse así:\n\n#' Suma de una secuencia de números enteros\n#' \n#' @description\n#' Calcula la suma de un rango de números enteros, incluyendo los extremos. \n#' \n#' @param a,b números enteros\n#'\n#' @return suma de la secuencia\n#'\n#' @examples\n#' suma_secuencia(1, 3)\n#' suma_secuencia(-2, 3)\n#' suma_secuencia(-3, -5)\n#' suma_secuencia(3, 3)\n#' \nsuma_secuencia &lt;- function(a, b) {\n  suma &lt;- 0\n  for (i in a:b) {\n    suma &lt;- suma + i\n  }\n  return(suma)\n}\n\nEjemplos de su uso:\n\nsuma_secuencia(1, 3)\n\n[1] 6\n\nsuma_secuencia(30, 40)\n\n[1] 385\n\nsuma_secuencia(5, 2)\n\n[1] 14\n\nsuma_secuencia(-2, 3)\n\n[1] 3\n\nsuma_secuencia(-7, -5)\n\n[1] -18\n\nsuma_secuencia(-3, -5)\n\n[1] -12\n\nsuma_secuencia(-3, -3)\n\n[1] -3\n\nsuma_secuencia(3, 3)\n\n[1] 3",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_03.html#ejercicio-3",
+    "href": "capitulos/90_soluciones_03.html#ejercicio-3",
+    "title": "Soluciones de la Práctica de la Unidad 3",
+    "section": "Ejercicio 3",
+    "text": "Ejercicio 3\n\n#' Clasificación de un triángulo\n#' \n#' @description\n#' Clasifica a un triángulo según las longitudes de sus lados, en escaleno, isósceles \n#' o equilátero. \n#'\n#' @details \n#' Se evalúa la desigualdad triangular. Si las medidas de los lados no corresponden \n#' a un triángulo, la función devuelve \"no es un triángulo\". \n#' \n#' @param a,b,c números reales positivos\n#'\n#' @return valor carácter que indica el tipo de triángulo.\n#'\n#' @examples\n#' triangulos(2, 3, 4)\n#' triangulos(2, 3, 10)\n#' \ntriangulos &lt;- function(a, b, c) {\n    if (a &gt; b + c || b &gt; a + c || c &gt; a + b) {\n        return(\"no es triángulo\")\n    } else if (a == b & a == c) {\n        return(\"equilátero\")\n    } else if (a == b || a == c || b == c) {\n        return(\"isósceles\")\n    } else {\n        return(\"escaleno\")\n    }\n}\n\nAlternativamente, podemos prescindir de las estructuras anidadas, gracias a la existencia de las sentencias return en cada camino posible. Si alguna condición es TRUE, enseguida se devuelve el valor que corresponda y se detiene la ejecución de la función. El resto no se evalúa, lo cual hace innecesario usar else if o estructuras anidadas:\n\ntriangulos &lt;- function(a, b, c) {\n    if (a &gt; b + c || b &gt; a + c || c &gt; a + b) {\n      return(\"no es triángulo\")\n    }\n    if (a == b & a == c) {\n      return(\"equilátero\")\n    }\n    if (a == b || a == c || b == c) {\n      return(\"isósceles\")\n    }\n    return(\"escaleno\")\n}\n\nEjemplos de uso:\n\ntriangulos(2, 3, 4)\n\n[1] \"escaleno\"\n\ntriangulos(2, 3, 10)\n\n[1] \"no es triángulo\"",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_03.html#ejercicio-4",
+    "href": "capitulos/90_soluciones_03.html#ejercicio-4",
+    "title": "Soluciones de la Práctica de la Unidad 3",
+    "section": "Ejercicio 4",
+    "text": "Ejercicio 4\n\n#' Punto dentro de la elipse\n#' \n#' @description\n#' Determina si un punto está contenido dentro de la elipse definida por la fórmula \n#' (x - 6)^2 / 36 + (y + 4)^2 / 16 = 1\n#'\n#' @details \n#' Por defecto se evalúa al origen de coordenadas.\n#' \n#' @param x,y coordenadas, números reales. Por defecto valen 0. \n#'\n#' @return valor lógico indicando si el punto está dentro de la elipse descripta.\n#'\n#' @examples\n#' elipse(3, 7)\n#' elipse(6, -4)\n#' elipse()\n#' \nelipse &lt;- function(x = 0, y = 0) {\n  valor &lt;- (x - 6)^2 / 36 + (y + 4)^2 / 16\n    return(valor &lt;= 1)\n}\n\nEjemplos de uso:\n\nelipse(3, 7)\n\n[1] FALSE\n\nelipse(6, -4)\n\n[1] TRUE\n\nelipse()\n\n[1] FALSE",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_03.html#ejercicio-5",
+    "href": "capitulos/90_soluciones_03.html#ejercicio-5",
+    "title": "Soluciones de la Práctica de la Unidad 3",
+    "section": "Ejercicio 5",
+    "text": "Ejercicio 5\nSi bien hay muchas formas de resolver este ejercicio, tal vez usando estructuras iterativas y condicionales, conviene pensarlo desde un punto de vista matemático. La suma de los números impares de la fila \\(n\\) resulta igual a \\(n^3\\). Para darse cuenta, conviene pensar en los siguientes puntos:\n\nLa suma de los primeros \\(n\\) números naturales es: \\(n(n+1)/2\\). Por ejemplo, si \\(n=3\\), \\(1+2+3=6=3*4/2\\).\nLa suma de los primeros \\(n\\) números naturales impares es: \\(n^2\\). Por ejemplo, si \\(n=3\\), \\(1+3+5=9=3^2\\).\nEn la fila \\(i\\), hay exactamente \\(i\\) números impares. Por ejemplo, en la fila \\(i=3\\), hay 3 números: 7, 9 y 11.\nDesde la fila 1 hasta la fila \\(n\\) inclusive, hay \\(n(n+1)/2\\) números impares. En la fila 1 hay 1, en la fila 2 hay 2, etc. Entonces hasta la fila \\(n\\) hay \\(1+2+3+...+n = n(n+1)/2\\) (suma de los primeros \\(n\\) naturales).\nLa suma de los números impares desde la fila 1 hasta la fila \\(n\\) inclusive entonces es igual a la suma de los primeros \\(n(n+1)/2\\) números impares: \\(\\Big(\\frac{n(n+1)}{2}\\Big)^2\\).\nDel mismo modo, la suma de los números impares desde la fila 1 hasta la fila \\(n-1\\) inclusive es igual a la suma de los primeros \\((n-1)n/2\\) números impares: \\(\\Big(\\frac{(n-1)n}{2}\\Big)^2\\).\nComo sólo queremos la suma de los impares que están en la fila \\(n\\), podemos calcular la suma desde la fila 1 hasta la \\(n\\) inclusive, y restarle la suma desde la fila 1 hasta la fila \\(n-1\\) inclusive. El número que buscamos entonces es:\n\n\\[\n\\Big(\\frac{n(n+1)}{2}\\Big)^2 - \\Big(\\frac{(n-1)n}{2}\\Big)^2 = n^3\n\\]\nEl código de la función puede ser sencilamente:\n\n#' Suma de fila de la pirámide\n#' \n#' @description\n#' La pirámide se arma con números impares, empezando con el 1 en la cima, el 3 y 5 \n#' en la segunda fila, y así sucesivamente. Devuelve la suma de los números ubicados \n#' en la fila ingresada.\n#'\n#' @details \n#' Se puede demostrar que la suma de los números en la n-ésima fila es igual a \n#' n al cubo.\n#' \n#' @param n Número natural\n#'\n#' @return suma de los números ubicados en la n-ésima fila de la pirámide.\n#'\n#' @examples\n#' suma_piramide(1)\n#' suma_piramide(2)\n#' suma_piramide(3)\n#' \nsuma_piramide &lt;- function(n) {\n  return(n^3)\n}\n\nEjemplos:\n\nsuma_piramide(1)\n\n[1] 1\n\nsuma_piramide(2)\n\n[1] 8\n\nsuma_piramide(3)\n\n[1] 27\n\n# Evaluamos la suma de cada una de las primeras 10 filas\nfor (n in 1:10) {\n  suma &lt;- suma_piramide(n)\n  cat(\"Los impares de la fila\", n, \"suman\", suma, \"\\n\")\n}\n\nLos impares de la fila 1 suman 1 \nLos impares de la fila 2 suman 8 \nLos impares de la fila 3 suman 27 \nLos impares de la fila 4 suman 64 \nLos impares de la fila 5 suman 125 \nLos impares de la fila 6 suman 216 \nLos impares de la fila 7 suman 343 \nLos impares de la fila 8 suman 512 \nLos impares de la fila 9 suman 729 \nLos impares de la fila 10 suman 1000",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_03.html#ejercicio-6",
+    "href": "capitulos/90_soluciones_03.html#ejercicio-6",
+    "title": "Soluciones de la Práctica de la Unidad 3",
+    "section": "Ejercicio 6",
+    "text": "Ejercicio 6\n\nPaso a paso:\n\nEn el ambiente global primero se definen las funciones f y g y las variables globales a y b, con los valores 6 y 1, respectivamente.\nSe invoca g(a, b), resultando en que en el ambiente local de g, x recibe el valor 6 e y el valor 1.\nEn el ambiente local de g se crea la variable local b, con valor 6 - 2 * 1 = 4.\nDesde el ambiente local de g se invoca f(b), donde b vale 4.\nEn el ambiente local de f, a recibe el valor 4, el cual es actualizado por (4-10)*(4+10)=-84 para finalmente devolver -84.\nDe regreso en el ambiente local de g, la variable c recibe el valor b*f(b)=4*f(4)=4*(-84)=-336 y se devuelve -336.\nPara definir la variable d se vuelve a invocar f esta vez sin argumentos explícitos, por lo que en el ambiente local de f, a recibe el valor 10 y f() = 0. El valor final de d es f() - c = 0 - (-336) = 336.\nEn el ambiente global entonces el resultado de g(a, b) es 336.\n\nEn este ejemplo, el identificador a representa dos variables distintas: una de ellas definida en el Global Environment y la otra en el ámbito local de la función f1. Lo mismo ocurre con x: representa a una variable en el ambiente global, a otra en el ambiente de la función f1 y a una tercera en el ambiente de la función f2. Al ejecutar el algoritmo se obtendrían los siguientes resultados:\n\nEn el ambiente global, se definen las funciones f1 y f2 y las variables x e y con valores: x = 3 e y = 5.\nDesde el ambiente global, se invoca a la función f1, donde el parámetro formal a recibe el valor del parámetro real x (a = 3), mientras que el parámetro formal b recibe el valor del parámetro real y (b = 5). Dentro de la función f1:\n\nSe crea una nueva variable x que recibe el valor x = a + b = 8. Esta x no tiene nada que ver con la del ambiente global.\nSe crea una nueva variable y que recibe el valor y = x + 2 = 8 + 2 = 10. Esta y no tiene nada que ver con la del ambiente global.\nLa función devuelve el valor y = 10.\n\nEn el ambiente global, se le asigna a la variable a el valor recién devuelto: a = 10. Esta a no tiene nada que ver con la variable local de la función f1.\nDesde el ambiente global, se llama a la función f2, donde el parámetro formal x recibe el valor del parámetro real a (x = 10). Esta x no tiene nada que ver con las anteriores. Dentro de la función f2:\n\nSe calcula el cuadrado de x: \\(10^2\\) = 100\nSe devuelve el valor 100.\n\nEn el ambiente global, se suma x + f2(a) = 3 + 100 = 103 y se asigna este valor a z.\nEl algoritmo escribe el valor de z, 103.\nEl algoritmo intenta escribir a + b = 10 + ?, pero produce error, puesto que b no está definida en el ambiente global, no tiene asignado ningún valor. La única variable b que existe está en el ámbito de la función f1, no en el Global Environment.\n\nPrimero, en el ambiente global se define la función f con tres argumentos: x (sin valor por defecto), y y z (opcionales). La función devuelve una combinación lineal de estas tres cantidades. En segundo lugar, se invoca sucesivamente la función f para definir cuatro variables globales en el siguiente orden:\n\na = f(10) = f(10, 5, 10 + 5) = (10+5) - 10 - 5 = 0\nb = f(10, 10) = f(10, 10, 10 + 10) = (10+10) - 10 - 10 = 0\nc = f(10, 10, 10) = 10 - 10 - 10 = -10\nd = f(10, z = 10) = f(10, 5, 10) = 10 - 10 - 5 = -5\n\nFinalmente, se imprime el resultado de sumar las cuatro cantidades: 0 + 0 - 10 - 5 = -15",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_03.html#ejercicio-7",
+    "href": "capitulos/90_soluciones_03.html#ejercicio-7",
+    "title": "Soluciones de la Práctica de la Unidad 3",
+    "section": "Ejercicio 7",
+    "text": "Ejercicio 7\nHemos definido a las funciones como subalgoritmos que devuelven un objeto. En este caso no nos interesa devolver nada, sino sólo escribir mensajes en la consola, por eso podemos omitir el uso de return():\n\n#' Resolviendo ecuaciones de segundo grado\n#' \n#' @description\n#' Encuentra las soluciones de una ecuación de segundo grado a partir del uso de\n#' la formula resolvente. Se deben ingresar los coeficientes del polinomio de \n#' segundo grado asociado. \n#'\n#' @details \n#' La función imprime un mensaje con el detalle de las soluciones, incluyendo si \n#' esta ecuación tiene dos soluciones distintas, una solución doble o ninguna \n#' solución dentro de los números reales. La función devuelve un mensaje de error \n#' si el coeficiente cuadrático es 0. \n#' \n#' @param a,b,c Números reales\n#'\n#' @return NULL, junto con un mensaje con el detalle de las soluciones.\n#'\n#' @examples\n#' resolvente(1, -1, -2)\n#' resolvente(1, 2, 1)\n#' resolvente(1, 1, 1)\n#' resolvente(0, 1, 1)\n#' \nresolvente &lt;- function(a, b, c) {\n  if (a == 0) {\n    stop(\"(a) debe ser distinto de cero\")\n  }\n  discriminante &lt;- b^2 - 4 * a * c\n  if (discriminante &gt; 0) {\n    x1 &lt;- (-b - sqrt(discriminante)) / (2 * a)\n    x2 &lt;- (-b + sqrt(discriminante)) / (2 * a)\n    cat(\"Hay dos soluciones reales\", x1, \"y\", x2, \"\\n\")\n  } else if (discriminante == 0) {\n    x1 &lt;- -b / (2 * a)\n    cat(\"Hay una solución real doble:\", x1, \"\\n\")\n  } else {\n    cat(\"Las soluciones son complejas.\\n\")\n  }\n}\n\nEjemplo de uso:\n\nresolvente(1, -1, -2)\n\nHay dos soluciones reales -1 y 2 \n\nresolvente(1, 2, 1)\n\nHay una solución real doble: -1 \n\nresolvente(1, 1, 1)\n\nLas soluciones son complejas.\n\nresolvente(0, 1, 1)\n\nError in resolvente(0, 1, 1): (a) debe ser distinto de cero\n\n\nComentarios adicionales. Como hemos mencionado, cuando no se incluye un return(), igualmente la función devuelve algo, que es el resultado de la última expresión ejecutada. En todas las situaciones, en esta función la última expresión ejecutada es un cat(). Además de escribir un texto, esta función devuelve un valor NULL invisible (no se imprime en la consola, pero está). Podemos corrobar este comportamiento si usamos la función de esta forma:\n\n# Imprime texto en la consola y devuelve un NULL, que se guarda enresultado\nresultado &lt;- resolvente(1, -1, -2)\n\nHay dos soluciones reales -1 y 2 \n\n# Imprimimos resultado y encontramos que tiene guardado un NULL\nresultado\n\nNULL\n\n\nSería interesante que esta función pueda devolver las soluciones. Hasta acá sabemos que las funciones pueden devolver un único objeto. Esto puede ser un inconveniente para este problema, ya que nos interesa devolver dos valores (dos soluciones reales), un valor (una solución real doble) o ningún valor (ninguna solución real). Más adelante veremos cómo hacer para poder devolver distinta cantidad de objetos, agrupándolos en otra estructura de datos.",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_03.html#ejercicio-8",
+    "href": "capitulos/90_soluciones_03.html#ejercicio-8",
+    "title": "Soluciones de la Práctica de la Unidad 3",
+    "section": "Ejercicio 8",
+    "text": "Ejercicio 8\nLa solución propone chequear primeramente que el número de entrada sea entero y positivo. Si detecta que una de estos requisitos no se cumple, emite un warning y devuelve FALSE.\nEn caso de que se cumplan estos requisitos, el programa directamente devuelve TRUE si el número analizado es 2 o 3, ya que sabemos que estos primeros naturales son primos. Para el resto de los números, divide a n por todos los naturales desde el 2 hasta n - 1. Si al hacer esta división, encuentra un resto igual a cero, significa que n es compuesto. Si ninguna división produce resto cero, entonces n es primo.\nPor ejemplo, para n = 7, se hace:\n\n7 %% 2 = 1, sigue.\n7 %% 3 = 1, sigue.\n7 %% 4 = 3, sigue.\n7 %% 5 = 2, sigue.\n7 %% 6 = 1, termina la iteración.\nDado que no se encontraron divisores para 7, es un número primo, se devuelve TRUE\n\nPara n = 9, se hace:\n\n9 %% 2 = 1, sigue.\n9 %% 3 = 0, devuelve FALSO.\nDado que se encontró que 9 es múltiplo de 3, no es un número primo y se devolvió FALSE.\n\n\n#' Evaluación de números primos\n#' \n#' @description\n#' Determina si un número entero es primo o no. \n#'\n#' @details \n#' La función devuelve un mensaje de advertencia si no se ingresa un número natural \n#' mayor que 1. El resultado en este caso será FALSO.\n#' \n#' @param n Número natural\n#'\n#' @return Un valor lógico, TRUE si el número es primo, FALSE si no lo es.\n#'\n#' @examples\n#' es_primo(47)\n#' es_primo(253)\n#' es_primo(2)\n#' \nes_primo &lt;- function(n) {\n  if (n %% 1 != 0) {\n    warning(\"(n) no es entero\")\n    return(FALSE)\n  }\n  \n  if (n &lt;= 1) {\n    warning(\"(n) no es mayor a 1\")\n    return(FALSE)\n  }\n  \n    if (n &gt; 3) {\n        for (i in 2:(n - 1)) {\n            if (n %% i == 0) {\n                return(FALSE)\n            }\n        }\n    }\n  \n  # solo se llega acá si no se devolvió FALSE antes, es decir, si n es primo\n    return(TRUE)\n}\n\nEjemplos de uso:\n\nes_primo(47)\n\n[1] TRUE\n\nes_primo(253)\n\n[1] FALSE\n\nes_primo(2)\n\n[1] TRUE\n\nes_primo(7.18)\n\nWarning in es_primo(7.18): (n) no es entero\n\n\n[1] FALSE\n\nes_primo(0)\n\nWarning in es_primo(0): (n) no es mayor a 1\n\n\n[1] FALSE\n\n\nObservación: se puede plantear un algoritmo más eficiente, que realice menos iteraciones. No es necesario iterar hasta n - 1, si no hasta el entero inmediato menor a \\(\\sqrt{n}\\). Si no se encontró que n sea múltiplo de ningún valor menor a \\(\\sqrt{n}\\), tampoco lo será con los que siguen. Por otro lado, sería suficiente hacer las divisiones con respecto a los números primos menores \\(\\sqrt{n}\\). Se deja propuesto elaborar esta solución alternativa.",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_03.html#ejercicio-9",
+    "href": "capitulos/90_soluciones_03.html#ejercicio-9",
+    "title": "Soluciones de la Práctica de la Unidad 3",
+    "section": "Ejercicio 9",
+    "text": "Ejercicio 9\nPara poder resolver una división usando solamente sumas y restas, tenemos que pensar que, por ejemplo, hacer 14 dividido 3 nos da cociente 4 y resto 2, porque el 3 “entra” 4 veces en el 14 y todavía sobran 2. Es decir, a 14 le podemos restar el 3 cuatro veces hasta que ya no se lo podamos restar más, quedando un resto de 2. Entonces la idea es empezar diciendo que el resto es el dividendo (al principio, nos resta todo el dividendo) y restarle iterativamente el valor del divisor hasta que el resto se haga menor que el divisor. Mientras tanto, tenemos que ir contando cuántas restas se hacen, puesto que eso será el valor del cociente. Ejemplo:\n\ndividendo = 14, divisor = 3, resto = 14.\n14 - 3 = 11, digo que el resto es 11 y cuento que ya hice una resta con cociente = 1.\n11 - 3 = 8, digo que el resto es 8 y cuento que ya hice dos restas con cociente = 2.\n8 - 3 = 5, digo que el resto es 5 y cuento que ya hice tres restas con cociente = 3.\n5 - 3 = 2, digo que el resto es 2, cuento que ya hice cuatro restas con cociente = 4.\nComo ya obtuve un resto menor que el divisor, me detengo, con este resultado: cociente = 4 y resto = 2.\n\nComo a priori no sabemos cuántas iteraciones de este proceso tenemos que hacer, empleamos un while.\n\n#' Cociente de la división de números naturales\n#' \n#' @description\n#' Obtiene el cociente entero y el resto en la división de dos números naturales\n#'\n#' @details \n#' La función imprime un mensaje con todos los detalles de la división, con el \n#' dividendo, divisor, cociente y resto. Sin embargo, la función devuelve solo el \n#' cociente entero. \n#' \n#' @param dividendo,divisor Números naturales.\n#'\n#' @return El cociente entero de la división de ambos números.\n#'\n#' @examples\n#' cociente(1253, 4)\n#' cociente(3, 4)\n#' \ncociente &lt;- function(dividendo, divisor) {\n    resto &lt;- dividendo\n    cociente &lt;- 0\n    while (resto &gt;= divisor) {\n        cociente &lt;- cociente + 1\n        resto &lt;- resto - divisor\n    }\n    cat(\"Dividendo:\", dividendo, \"\\n\")\n    cat(\"Divisor:\", divisor, \"\\n\")\n    cat(\"Cociente:\", cociente, \"\\n\")\n    cat(\"Resto:\", resto, \"\\n\")\n    return(cociente)\n}\n\nEjemplos de uso:\n\ncociente(1253, 4)\n\nDividendo: 1253 \nDivisor: 4 \nCociente: 313 \nResto: 1 \n\n\n[1] 313\n\ncociente(3, 4)\n\nDividendo: 3 \nDivisor: 4 \nCociente: 0 \nResto: 3 \n\n\n[1] 0",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_03.html#ejercicio-10",
+    "href": "capitulos/90_soluciones_03.html#ejercicio-10",
+    "title": "Soluciones de la Práctica de la Unidad 3",
+    "section": "Ejercicio 10",
+    "text": "Ejercicio 10\n\n#' Cálculo del máximo común divisor\n#' \n#' @description\n#' Calcula el máximo común divisor entre dos números naturales\n#'\n#' @details \n#' Aplica el algoritmo de Euclides para encontrar el MCD. Dividir al mayor por el \n#' menor y registrar el resto. Si el resto es cero, el divisor es el MCD. Si el \n#' resto no es cero, hay que dividir el divisor por el resto y hacer la misma \n#' evaluación. Es decir, el divisor pasa a ser el nuevo dividendo y el resto, el \n#' nuevo divisor. Así hasta obtener el resto cero y tener el MCD. \n#' \n#' @param a,b Números naturales.\n#'\n#' @return El máximo común divisor de ambos números.\n#'\n#' @examples\n#' max_com_div(100, 24)\n#' max_com_div(25, 100)\n#' max_com_div(24, 24)\n#' \nmax_com_div &lt;- function(a, b) {\n  \n    # Establecer como dividendo al mayor y como divisor al menor\n    if (a &gt; b) {\n        dividendo &lt;- a\n        divisor &lt;- b\n    } else {\n        dividendo &lt;- b\n        divisor &lt;- a\n    }\n  \n    # Iniciar al resto como igual al dividendo\n    resto &lt;- dividendo\n    \n    # Aplicar algortimo de Euclides\n    while (resto != 0) {\n      \n      # Dividir al mayor por el menor y registrar el resto\n        resto &lt;- dividendo %% divisor\n        \n        # Si el resto es cero (lo chequearemos en la condición del while), el \n        # divisor es el mcd, por las dudas nos preparamos para entregarlo.\n        mcd &lt;- divisor\n        \n        # Si el resto no es cero (lo chequearemos en la condición del while), hay\n        # que dividir el divisor por el resto y hacer la misma evaluación. Es decir,\n        # el divisor pasa a ser el nuevo dividendo y el resto, el nuevo divisor\n        dividendo &lt;- divisor\n        divisor &lt;- resto\n    }\n    \n    # Devolver mcd\n    return(mcd)\n}\n\nEjemplos de uso:\n\nmax_com_div(100, 24)\n\n[1] 4\n\nmax_com_div(25, 100)\n\n[1] 25\n\nmax_com_div(24, 24)\n\n[1] 24\n\n\nOtra forma:\n\nmax_com_div &lt;- function(a, b) {\n    # Establecer como dividendo al mayor y como divisor al menor\n    if (a &gt; b) {\n        dividendo &lt;- a\n        divisor &lt;- b\n    } else {\n        dividendo &lt;- b\n        divisor &lt;- a\n    }\n    # Iniciar al resto como igual al dividendo\n    resto &lt;- dividendo\n    # Aplicar algortimo de Euclides\n    while (resto &gt; 0) {\n        resto &lt;- dividendo %% divisor\n        if (resto == 0) return(divisor)\n        dividendo &lt;- divisor\n        divisor &lt;- resto\n    }\n}",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_03.html#ejercicio-11",
+    "href": "capitulos/90_soluciones_03.html#ejercicio-11",
+    "title": "Soluciones de la Práctica de la Unidad 3",
+    "section": "Ejercicio 11",
+    "text": "Ejercicio 11\n\nEn el script funciones_unidad3.R se implementa la función combinatorio(m,n) y se guarda junto con fact(). Su contenido debe ser:\n\n# ---------------------------------------------------------------\n# DEFINICIÓN DE FUNCIONES (funciones.R)\n# ---------------------------------------------------------------\n\n#' Cálculo de factoriales\n#' \n#' @description\n#' Calcula el factorial de números enteros no negativos.\n#'\n#' @details \n#' Produce un error si se quiere calcular el factorial de un número negativo.\n#' \n#' @param n Número entero no negativo para el cual se calcula el factorial.\n#'\n#' @return El factorial de n.\n#'\n#' @examples\n#' fact(5)\n#' fact(0)\n#' \nfact &lt;- function(n) {\n  if (n &lt; 0 || n != floor(n)) {\n    stop(\"n debe ser entero no negativo.\")\n  }\n  resultado &lt;- 1\n  if (n &gt; 0) {\n      for (i in 1:n) {\n          resultado &lt;- resultado * i\n      }\n  }\n  return(resultado)\n}\n\n#' Cálculo de números combinatorios\n#' \n#' @description\n#' Calcula números combinatorios invocando a la función fact()\n#'\n#' @param m,n números naturales\n#'\n#' @return El número combinatorio m en n\n#'\n#' @examples\n#' combinatorio(3, 1)\n#' \ncombinatorio &lt;- function(m, n) {\n    return(fact(m) / (fact(m - n) * fact(n)))\n}\n\nEl contenido del script ejercicio11.R puede ser:\n\n# ---------------------------------------------------------------\n# PROGRAMA: \"Ejemplificar propiedades de los nros combinatorios\"\n# ---------------------------------------------------------------\n\n# Cargar funciones\nsource(\"funciones_unidad3.R\")\n\n\ncat(\"Propiedad 1: C(m, 0) = 1. Ejemplo:\\n\")\nres1 &lt;- combinatorio(5, 0)\ncat(\"C(5, 0) =\", res1, \"\\n\\n\")\n\ncat(\"Propiedad 2: C(m, m) = 1. Ejemplo:\\n\")\nres1 &lt;- combinatorio(5, 5)\ncat(\"C(5, 5) =\", res1, \"\\n\\n\")\n\ncat(\"Propiedad 3: C(m, 1) = m. Ejemplo:\\n\")\nres1 &lt;- combinatorio(5, 1)\ncat(\"C(5, 1) =\", res1, \"\\n\\n\")\n\ncat(\"Propiedad 4: C(m, n) = C(m, m-n). Ejemplo:\\n\")\nres1 &lt;- combinatorio(5, 2)\nres2 &lt;- combinatorio(5, 3)\ncat(\"C(5, 2) =\", res1, \"\\n\")\ncat(\"C(5, 3) =\", res2, \"\\n\\n\")\n\ncat(\"Propiedad 5: C(m, n) = C(m-1, n-1) + C(m-1, n). Ejemplo:\\n\")\nres1 &lt;- combinatorio(5, 2)\nres2 &lt;- combinatorio(4, 1) + combinatorio(4, 2)\ncat(\"C(5, 2) =\", res1, \"\\n\")\ncat(\"C(4, 1) + C(4, 2) =\", res2)\n\nPropiedad 1: C(m, 0) = 1. Ejemplo:\nC(5, 0) = 1 \n\nPropiedad 2: C(m, m) = 1. Ejemplo:\nC(5, 5) = 1 \n\nPropiedad 3: C(m, 1) = m. Ejemplo:\nC(5, 1) = 5 \n\nPropiedad 4: C(m, n) = C(m, m-n). Ejemplo:\nC(5, 2) = 10 \nC(5, 3) = 10 \n\nPropiedad 5: C(m, n) = C(m-1, n-1) + C(m-1, n). Ejemplo:\nC(5, 2) = 10 \nC(4, 1) + C(4, 2) = 10\n\n\nA continuación, se prueba pasando un valor de n mayor que m:\n\ncombinatorio(4, 5)\n\nError in fact(m - n): n debe ser entero no negativo.\n\n\nComo se observa, la función falla porque internamente se invoca a la función fact() con un número negativo, y la misma fue programada para disparar un error en ese caso. El mensaje n debe ser entero no negativo no es demasiado claro, dado que es emitido por la función fact() y se refiere a su argumento n, no al n de combinatorio(). Podríamos mejorar esta situación de varias formas. Una de ellas podría ser disparar un error antes, dentro de la función combinatorio(), para evitar cualquier procesamiento si \\(n&gt;m\\):\n\ncombinatorio &lt;- function(m, n) {\n  if (n &gt; m) {\n    stop(\"m debe ser menor o igual que n \")\n  }\n    return(fact(m) / (fact(m - n) * fact(n)))\n}\n\nSe generaliza la función combinatorio(m, n) para calcular números combinatorios con y sin reposición. Para esto se incluye el argumento r, que toma el valor lógico TRUE si el cálculo es con reposición o FALSE en caso contrario.\nAgregamos lo siguiente al archivo unidad3_funciones.R. Notar que esta vez no usamos return(), pero igualmetne se devuelve el resultado deseado por ser lo último que se evalúa:\n\n#' Cálculo de números combinatorios \n#' \n#' @description\n#' Calcula el número combinatorio m en n, con o sin reposición según r\n#'\n#' @param m,n números naturales\n#' @param r valor lógico, sobre si el cálculo es con o sin repetición, F por defecto\n#'\n#' @return El número combinatorio m en n, con o sin reposición\n#'\n#' @examples\n#' combinatorio2(10, 2, TRUE)\n#' combinatorio2(10, 2)\n#' \ncombinatorio2 &lt;- function(m, n, r = FALSE) {\n  if (r) {\n    combinatorio(m + n - 1, n)\n  } else {\n    combinatorio(m, n)\n  }\n}\n\nEn el script ejercicio_11.R probamos la nueva función:\n\n# Números combinatorios con y sin reposición\n\nm &lt;- 5\nn &lt;- 2\ncat(m, \"tomados de a\", n, \"sin resposición:\", combinatorio2(m, n), \"\\n\")\ncat(m, \"tomados de a\", n, \"con resposición:\", combinatorio2(m, n, TRUE))\n\n5 tomados de a 2 sin resposición: 10 \n5 tomados de a 2 con resposición: 15\n\n\nLa cantidad de combinaciones con reposición siempre es mayor, salvo para n = 1 donde ambas coinciden.",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_03.html#ejercicio-12",
+    "href": "capitulos/90_soluciones_03.html#ejercicio-12",
+    "title": "Soluciones de la Práctica de la Unidad 3",
+    "section": "Ejercicio 12",
+    "text": "Ejercicio 12\nLa documentación se ha incluido en cada una de las respuestas anteriores.",
+    "crumbs": [
+      "Soluciones de la Práctica",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
     ]
   },
   {
