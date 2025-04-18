@@ -2,27 +2,26 @@
 number-sections: false
 ---
 
-```{=latex}
 \thispagestyle{primerapagina}
-```
 
 # Soluciones de la Práctica de la Unidad 3
-
 
 ::: {.info data-latex=""}
 **Instrucciones generales para resolver los problemas de esta práctica:**
 
-1. Abrir RStudio y crear un nuevo proyecto llamado `unidad3`, para guardar allí todos los archivos que usaremos. Asegurarse de que RStudio esté trabajando con este proyecto abierto.
-2. Al comenzar a resolver cada ejercicio:
+1.  Abrir RStudio y crear un nuevo proyecto llamado `unidad3`, para guardar allí todos los archivos que usaremos. Asegurarse de que RStudio esté trabajando con este proyecto abierto.
+2.  Al comenzar a resolver cada ejercicio:
 
-  a. Eliminar todos los objetos del *Global Environment*, para evitar confusiones con objetos que hayan sido creados para resolver otro problema.
-  b. Crear y guardar en la carpeta del proyecto un nuevo script con el nombre `ejercicio_*.R` para almacenar de manera organizada la solución de cada problema (por ejemplo, `ejercicio_01.R`, `ejercicio_02.R`, etc.)
-  c. A menos que se indique lo contrario, utilizar cada uno de estos scripts para escribir el código que crea la función pedida en el ejercicio y también el código con ejemplos para usarla.
+<!-- -->
+
+a.  Eliminar todos los objetos del *Global Environment*, para evitar confusiones con objetos que hayan sido creados para resolver otro problema.
+b.  Crear y guardar en la carpeta del proyecto un nuevo script con el nombre `ejercicio_*.R` para almacenar de manera organizada la solución de cada problema (por ejemplo, `ejercicio_01.R`, `ejercicio_02.R`, etc.)
+c.  A menos que se indique lo contrario, utilizar cada uno de estos scripts para escribir el código que crea la función pedida en el ejercicio y también el código con ejemplos para usarla.
 :::
 
 ## Ejercicio 1
 
-a.  Escribimos la función y la usamos: 
+a.  Escribimos la función y la usamos:
 
     ```{r}
     # Función f1
@@ -30,12 +29,12 @@ a.  Escribimos la función y la usamos:
       resultado <- x1 / x2 + x3^2 + x2 * x3
       return(resultado)
     }
-    
+
     # Ejemplo de su uso
     f1(5, 2, 3)
     ```
 
-b.  Escribimos la función y la usamos: 
+b.  Escribimos la función y la usamos:
 
     ```{r}
     #| error: true
@@ -44,7 +43,7 @@ b.  Escribimos la función y la usamos:
       resultado <- x1 / x2 + x3^2 + x2 * x3
       return(resultado)
     }
-    
+
     # Ejemplos de su uso
     f2(5, 2, 3)
     f2(5)
@@ -53,7 +52,7 @@ b.  Escribimos la función y la usamos:
     f2(x2 = 2, x3 = 3)
     ```
 
-c.  Escribimos la función y la usamos: 
+c.  Escribimos la función y la usamos:
 
     ```{r}
     #| error: true
@@ -66,7 +65,7 @@ c.  Escribimos la función y la usamos:
         return(resultado)
       }
     }
-    
+
     # Ejemplos de su uso
     f3(5, 2, 3)
     f3(-5, 2, 3)
@@ -89,6 +88,21 @@ Sin importar el signo de `a` y `b` ni cuál es mayor o menor, la secuencia de to
 Por lo tanto, si iteramos con un `for` a través de la secuencia `a:b`, la función puede definirse así:
 
 ```{r}
+#' Suma de una secuencia de números enteros
+#' 
+#' @description
+#' Calcula la suma de un rango de números enteros, incluyendo los extremos. 
+#' 
+#' @param a,b números enteros
+#'
+#' @return suma de la secuencia
+#'
+#' @examples
+#' suma_secuencia(1, 3)
+#' suma_secuencia(-2, 3)
+#' suma_secuencia(-3, -5)
+#' suma_secuencia(3, 3)
+#' 
 suma_secuencia <- function(a, b) {
   suma <- 0
   for (i in a:b) {
@@ -114,14 +128,24 @@ suma_secuencia(3, 3)
 ## Ejercicio 3
 
 ```{r}
-#-----------------------------------------------------
-# Función triangulos
-# Clasifica un triángulo según la longitud de sus lados
-# Entrada:
-#		- a, b, c, números reales positivos
-# Salida:
-#		- valor carácter que indica el tipo de triángulo
-#-----------------------------------------------------
+#' Clasificación de un triángulo
+#' 
+#' @description
+#' Clasifica a un triángulo según las longitudes de sus lados, en escaleno, isósceles 
+#' o equilátero. 
+#'
+#' @details 
+#' Se evalúa la desigualdad triangular. Si las medidas de los lados no corresponden 
+#' a un triángulo, la función devuelve "no es un triángulo". 
+#' 
+#' @param a,b,c números reales positivos
+#'
+#' @return valor carácter que indica el tipo de triángulo.
+#'
+#' @examples
+#' triangulos(2, 3, 4)
+#' triangulos(2, 3, 10)
+#' 
 triangulos <- function(a, b, c) {
 	if (a > b + c || b > a + c || c > a + b) {
 		return("no es triángulo")
@@ -162,15 +186,24 @@ triangulos(2, 3, 10)
 ## Ejercicio 4
 
 ```{r}
-#-----------------------------------------------------
-# Función elipse
-# Determina si un punto está contenido dentro de la elipse definida por la
-# fórmula (x - 6)^2 / 36 + (y + 4)^2 / 16 = 1
-# Entrada:
-#		- x, y, coordenadas del punto
-# Salida:
-#		- Valor lógico TRUE o FALSE
-#-----------------------------------------------------
+#' Punto dentro de la elipse
+#' 
+#' @description
+#' Determina si un punto está contenido dentro de la elipse definida por la fórmula 
+#' (x - 6)^2 / 36 + (y + 4)^2 / 16 = 1
+#'
+#' @details 
+#' Por defecto se evalúa al origen de coordenadas.
+#' 
+#' @param x,y coordenadas, números reales. Por defecto valen 0. 
+#'
+#' @return valor lógico indicando si el punto está dentro de la elipse descripta.
+#'
+#' @examples
+#' elipse(3, 7)
+#' elipse(6, -4)
+#' elipse()
+#' 
 elipse <- function(x = 0, y = 0) {
   valor <- (x - 6)^2 / 36 + (y + 4)^2 / 16
 	return(valor <= 1)
@@ -189,13 +222,13 @@ elipse()
 
 Si bien hay muchas formas de resolver este ejercicio, tal vez usando estructuras iterativas y condicionales, conviene pensarlo desde un punto de vista matemático. La suma de los números impares de la fila $n$ resulta igual a $n^3$. Para darse cuenta, conviene pensar en los siguientes puntos:
 
-- La suma de los primeros $n$ números naturales es: $n(n+1)/2$. Por ejemplo, si $n=3$, $1+2+3=6=3*4/2$.
-- La suma de los primeros $n$ números naturales impares es: $n^2$. Por ejemplo, si $n=3$, $1+3+5=9=3^2$.
-- En la fila $i$, hay exactamente $i$ números impares. Por ejemplo, en la fila $i=3$, hay 3 números: 7, 9 y 11.
-- Desde la fila 1 hasta la fila $n$ inclusive, hay $n(n+1)/2$ números impares. En la fila 1 hay 1, en la fila 2 hay 2, etc. Entonces hasta la fila $n$ hay $1+2+3+...+n = n(n+1)/2$ (suma de los primeros $n$ naturales).
-- La suma de los números impares desde la fila 1 hasta la fila $n$ inclusive entonces es igual a la suma de los primeros $n(n+1)/2$ números impares: $\Big(\frac{n(n+1)}{2}\Big)^2$.
-- Del mismo modo, la suma de los números impares desde la fila 1 hasta la fila $n-1$ inclusive es igual a la suma de los primeros $(n-1)n/2$ números impares: $\Big(\frac{(n-1)n}{2}\Big)^2$.
-- Como sólo queremos la suma de los impares que están en la fila $n$, podemos calcular la suma desde la fila 1 hasta la $n$ inclusive, y restarle la suma desde la fila 1 hasta la fila $n-1$ inclusive. El número que buscamos entonces es:
+-   La suma de los primeros $n$ números naturales es: $n(n+1)/2$. Por ejemplo, si $n=3$, $1+2+3=6=3*4/2$.
+-   La suma de los primeros $n$ números naturales impares es: $n^2$. Por ejemplo, si $n=3$, $1+3+5=9=3^2$.
+-   En la fila $i$, hay exactamente $i$ números impares. Por ejemplo, en la fila $i=3$, hay 3 números: 7, 9 y 11.
+-   Desde la fila 1 hasta la fila $n$ inclusive, hay $n(n+1)/2$ números impares. En la fila 1 hay 1, en la fila 2 hay 2, etc. Entonces hasta la fila $n$ hay $1+2+3+...+n = n(n+1)/2$ (suma de los primeros $n$ naturales).
+-   La suma de los números impares desde la fila 1 hasta la fila $n$ inclusive entonces es igual a la suma de los primeros $n(n+1)/2$ números impares: $\Big(\frac{n(n+1)}{2}\Big)^2$.
+-   Del mismo modo, la suma de los números impares desde la fila 1 hasta la fila $n-1$ inclusive es igual a la suma de los primeros $(n-1)n/2$ números impares: $\Big(\frac{(n-1)n}{2}\Big)^2$.
+-   Como sólo queremos la suma de los impares que están en la fila $n$, podemos calcular la suma desde la fila 1 hasta la $n$ inclusive, y restarle la suma desde la fila 1 hasta la fila $n-1$ inclusive. El número que buscamos entonces es:
 
 $$
 \Big(\frac{n(n+1)}{2}\Big)^2 - \Big(\frac{(n-1)n}{2}\Big)^2 = n^3
@@ -204,6 +237,26 @@ $$
 El código de la función puede ser sencilamente:
 
 ```{r}
+#' Suma de fila de la pirámide
+#' 
+#' @description
+#' La pirámide se arma con números impares, empezando con el 1 en la cima, el 3 y 5 
+#' en la segunda fila, y así sucesivamente. Devuelve la suma de los números ubicados 
+#' en la fila ingresada.
+#'
+#' @details 
+#' Se puede demostrar que la suma de los números en la n-ésima fila es igual a 
+#' n al cubo.
+#' 
+#' @param n Número natural
+#'
+#' @return suma de los números ubicados en la n-ésima fila de la pirámide.
+#'
+#' @examples
+#' suma_piramide(1)
+#' suma_piramide(2)
+#' suma_piramide(3)
+#' 
 suma_piramide <- function(n) {
   return(n^3)
 }
@@ -225,53 +278,69 @@ for (n in 1:10) {
 
 ## Ejercicio 6
 
-a. Paso a paso:
+a.  Paso a paso:
 
-    1. En el ambiente global primero se definen las funciones `f` y `g` y las variables globales `a` y `b`, con los valores 6 y 1, respectivamente.
-    2. Se invoca `g(a, b)`, resultando en que en el ambiente local de `g`, `x` recibe el valor 6 e `y` el valor 1.
-    3. En el ambiente local de `g` se crea la variable local `b`, con valor `6 - 2 * 1 = 4`.
-    4. Desde el ambiente local de `g` se invoca `f(b)`, donde `b` vale `4`.
-    5. En el ambiente local de `f`, `a` recibe el valor 4, el cual es actualizado por `(4-10)*(4+10)=-84` para finalmente devolver `-84`.
-    6. De regreso en el ambiente local de `g`, la variable `c` recibe el valor `b*f(b)=4*f(4)=4*(-84)=-336` y se devuelve `-336`.
-    7. Para definir la variable `d` se vuelve a invocar `f` esta vez sin argumentos explícitos, por lo que en el ambiente local de `f`, `a` recibe el valor 10 y `f() = 0`. El valor final de `d` es `f() - c = 0 - (-336) = 336`.
-    8. En el ambiente global entonces el resultado de `g(a, b)` es `336`.
+    1.  En el ambiente global primero se definen las funciones `f` y `g` y las variables globales `a` y `b`, con los valores 6 y 1, respectivamente.
+    2.  Se invoca `g(a, b)`, resultando en que en el ambiente local de `g`, `x` recibe el valor 6 e `y` el valor 1.
+    3.  En el ambiente local de `g` se crea la variable local `b`, con valor `6 - 2 * 1 = 4`.
+    4.  Desde el ambiente local de `g` se invoca `f(b)`, donde `b` vale `4`.
+    5.  En el ambiente local de `f`, `a` recibe el valor 4, el cual es actualizado por `(4-10)*(4+10)=-84` para finalmente devolver `-84`.
+    6.  De regreso en el ambiente local de `g`, la variable `c` recibe el valor `b*f(b)=4*f(4)=4*(-84)=-336` y se devuelve `-336`.
+    7.  Para definir la variable `d` se vuelve a invocar `f` esta vez sin argumentos explícitos, por lo que en el ambiente local de `f`, `a` recibe el valor 10 y `f() = 0`. El valor final de `d` es `f() - c = 0 - (-336) = 336`.
+    8.  En el ambiente global entonces el resultado de `g(a, b)` es `336`.
 
-b. En este ejemplo, el identificador `a` representa dos variables distintas: una de ellas definida en el *Global Environment* y la otra en el ámbito local de la función `f1`. Lo mismo ocurre con `x`: representa a una variable en el ambiente global, a otra en el ambiente de la función `f1` y a una tercera en el ambiente de la función `f2`. Al ejecutar el algoritmo se obtendrían los siguientes resultados:
+b.  En este ejemplo, el identificador `a` representa dos variables distintas: una de ellas definida en el *Global Environment* y la otra en el ámbito local de la función `f1`. Lo mismo ocurre con `x`: representa a una variable en el ambiente global, a otra en el ambiente de la función `f1` y a una tercera en el ambiente de la función `f2`. Al ejecutar el algoritmo se obtendrían los siguientes resultados:
 
-    1. En el ambiente global, se definen las funciones `f1` y `f2` y las variables `x` e `y` con valores: `x = 3` e `y = 5`.
-    2. Desde el ambiente global, se invoca a la función `f1`, donde el parámetro formal `a` recibe el valor del parámetro real `x` (`a = 3`), mientras que el parámetro formal `b` recibe el valor del parámetro real `y` (`b = 5`). Dentro de la función `f1`:
-        a. Se crea una nueva variable `x` que recibe el valor `x = a + b = 8`. Esta `x` no tiene nada que ver con la del ambiente global.
-        b. Se crea una nueva variable `y` que recibe el valor `y = x + 2 = 8 + 2 = 10`. Esta `y` no tiene nada que ver con la del ambiente global.
-        c. La función devuelve el valor `y = 10`.
-    3. En el ambiente global, se le asigna a la variable `a` el valor recién devuelto: `a = 10`. Esta `a` no tiene nada que ver con la variable local de la función `f1`.
-    4. Desde el ambiente global, se llama a la función `f2`, donde el parámetro formal `x` recibe el valor del parámetro real `a` (`x = 10`). Esta `x` no tiene nada que ver con las anteriores. Dentro de la función `f2`:
-        a. Se calcula el cuadrado de `x`: $10^2$ = 100
-        b. Se devuelve el valor `100`.
-    5. En el ambiente global, se suma `x + f2(a) = 3 + 100 = 103` y se asigna este valor a `z`.
-    6. El algoritmo escribe el valor de `z`, 103.
-    7. El algoritmo intenta escribir `a + b = 10 + ?`, pero produce error, puesto que `b` no está definida en el ambiente global, no tiene asignado ningún valor. La única variable `b` que existe está en el ámbito de la función `f1`, no en el *Global Environment*.
-	 
-c. Primero, en el ambiente global se define la función `f` con tres argumentos: `x` (sin valor por defecto), `y` y `z` (opcionales). La función devuelve una combinación lineal de estas tres cantidades. En segundo lugar, se invoca sucesivamente la función `f` para definir cuatro variables globales en el siguiente orden:
-    1. `a = f(10) = f(10, 5, 10 + 5) = (10+5) - 10 - 5 = 0`
-    2. `b = f(10, 10) = f(10, 10, 10 + 10) = (10+10) - 10 - 10 = 0`
-    3. `c = f(10, 10, 10) = 10 - 10 - 10 = -10`
-    4. `d = f(10, z = 10) = f(10, 5, 10) = 10 - 10 - 5 = -5`
-    
-   Finalmente, se imprime el resultado de sumar las cuatro cantidades: `0 + 0 - 10 - 5 = -15`
+    1.  En el ambiente global, se definen las funciones `f1` y `f2` y las variables `x` e `y` con valores: `x = 3` e `y = 5`.
+    2.  Desde el ambiente global, se invoca a la función `f1`, donde el parámetro formal `a` recibe el valor del parámetro real `x` (`a = 3`), mientras que el parámetro formal `b` recibe el valor del parámetro real `y` (`b = 5`). Dentro de la función `f1`:
+        a.  Se crea una nueva variable `x` que recibe el valor `x = a + b = 8`. Esta `x` no tiene nada que ver con la del ambiente global.
+        b.  Se crea una nueva variable `y` que recibe el valor `y = x + 2 = 8 + 2 = 10`. Esta `y` no tiene nada que ver con la del ambiente global.
+        c.  La función devuelve el valor `y = 10`.
+    3.  En el ambiente global, se le asigna a la variable `a` el valor recién devuelto: `a = 10`. Esta `a` no tiene nada que ver con la variable local de la función `f1`.
+    4.  Desde el ambiente global, se llama a la función `f2`, donde el parámetro formal `x` recibe el valor del parámetro real `a` (`x = 10`). Esta `x` no tiene nada que ver con las anteriores. Dentro de la función `f2`:
+        a.  Se calcula el cuadrado de `x`: $10^2$ = 100
+        b.  Se devuelve el valor `100`.
+    5.  En el ambiente global, se suma `x + f2(a) = 3 + 100 = 103` y se asigna este valor a `z`.
+    6.  El algoritmo escribe el valor de `z`, 103.
+    7.  El algoritmo intenta escribir `a + b = 10 + ?`, pero produce error, puesto que `b` no está definida en el ambiente global, no tiene asignado ningún valor. La única variable `b` que existe está en el ámbito de la función `f1`, no en el *Global Environment*.
+
+c.  Primero, en el ambiente global se define la función `f` con tres argumentos: `x` (sin valor por defecto), `y` y `z` (opcionales). La función devuelve una combinación lineal de estas tres cantidades. En segundo lugar, se invoca sucesivamente la función `f` para definir cuatro variables globales en el siguiente orden:
+
+    1.  `a = f(10) = f(10, 5, 10 + 5) = (10+5) - 10 - 5 = 0`
+    2.  `b = f(10, 10) = f(10, 10, 10 + 10) = (10+10) - 10 - 10 = 0`
+    3.  `c = f(10, 10, 10) = 10 - 10 - 10 = -10`
+    4.  `d = f(10, z = 10) = f(10, 5, 10) = 10 - 10 - 5 = -5`
+
+    Finalmente, se imprime el resultado de sumar las cuatro cantidades: `0 + 0 - 10 - 5 = -15`
 
 ## Ejercicio 7
 
 Hemos definido a las funciones como subalgoritmos que devuelven un objeto. En este caso no nos interesa devolver nada, sino sólo escribir mensajes en la consola, por eso podemos omitir el uso de `return()`:
 
 ```{r}
-#-----------------------------------------------------
-# Función resolvente
-# Resuelve una ecuación de segundo grado
-# Entrada:
-#		- a, b, c, coeficientes reales de la ecuación de segundo grado
-# Salida:
-#		- mensajes en pantalla
-#-----------------------------------------------------
+#' Resolviendo ecuaciones de segundo grado
+#' 
+#' @description
+#' Encuentra las soluciones de una ecuación de segundo grado a partir del uso de
+#' la formula resolvente. Se deben ingresar los coeficientes del polinomio de 
+#' segundo grado asociado. 
+#'
+#' @details 
+#' La función imprime un mensaje con el detalle de las soluciones, incluyendo si 
+#' esta ecuación tiene dos soluciones distintas, una solución doble o ninguna 
+#' solución dentro de los números reales. La función devuelve un mensaje de error 
+#' si el coeficiente cuadrático es 0. 
+#' 
+#' @param a,b,c Números reales
+#'
+#' @return NULL, junto con un mensaje con el detalle de las soluciones.
+#'
+#' @examples
+#' resolvente(1, -1, -2)
+#' resolvente(1, 2, 1)
+#' resolvente(1, 1, 1)
+#' resolvente(0, 1, 1)
+#' 
 resolvente <- function(a, b, c) {
   if (a == 0) {
     stop("(a) debe ser distinto de cero")
@@ -314,34 +383,44 @@ Sería interesante que esta función pueda devolver las soluciones. Hasta acá s
 
 ## Ejercicio 8
 
-La solución propone chequear primeramente que el número de entrada sea entero y positivo. Si detecta que una de estos requisitos no se cumple, emite un *warning* y devuelve `FALSE`. 
+La solución propone chequear primeramente que el número de entrada sea entero y positivo. Si detecta que una de estos requisitos no se cumple, emite un *warning* y devuelve `FALSE`.
 
-En caso de que se cumplan estos requisitos, el programa directamente devuelve `TRUE` si el número analizado es 2 o 3, ya que sabemos que estos primeros naturales son primos. Para el resto de los números, divide a `n` por todos los naturales desde el `2` hasta `n - 1`. Si al hacer esta división, encuentra un resto igual a cero, significa que `n` es compuesto. Si ninguna división produce resto cero, entonces `n` es primo. 
-    
+En caso de que se cumplan estos requisitos, el programa directamente devuelve `TRUE` si el número analizado es 2 o 3, ya que sabemos que estos primeros naturales son primos. Para el resto de los números, divide a `n` por todos los naturales desde el `2` hasta `n - 1`. Si al hacer esta división, encuentra un resto igual a cero, significa que `n` es compuesto. Si ninguna división produce resto cero, entonces `n` es primo.
+
 Por ejemplo, para `n = 7`, se hace:
 
-- `7 %% 2 = 1`, sigue.
-- `7 %% 3 = 1`, sigue.
-- `7 %% 4 = 3`, sigue.
-- `7 %% 5 = 2`, sigue.
-- `7 %% 6 = 1`, termina la iteración.
-- Dado que no se encontraron divisores para 7, es un número primo, se devuelve `TRUE`
+-   `7 %% 2 = 1`, sigue.
+-   `7 %% 3 = 1`, sigue.
+-   `7 %% 4 = 3`, sigue.
+-   `7 %% 5 = 2`, sigue.
+-   `7 %% 6 = 1`, termina la iteración.
+-   Dado que no se encontraron divisores para 7, es un número primo, se devuelve `TRUE`
 
 Para `n = 9`, se hace:
 
-- `9 %% 2` = 1, sigue.
-- `9 %% 3` = 0, devuelve FALSO.
-- Dado que se encontró que 9 es múltiplo de 3, no es un número primo y se devolvió `FALSE`.
+-   `9 %% 2` = 1, sigue.
+-   `9 %% 3` = 0, devuelve FALSO.
+-   Dado que se encontró que 9 es múltiplo de 3, no es un número primo y se devolvió `FALSE`.
 
 ```{r}
-#-----------------------------------------------------
-# Función es_primo
-# Determina si un número es primo
-# Entrada:
-#		- n, número real
-# Salida:
-#		- Valor lógico TRUE si n es primo o FALSE si es compuesto
-#-----------------------------------------------------
+#' Evaluación de números primos
+#' 
+#' @description
+#' Determina si un número entero es primo o no. 
+#'
+#' @details 
+#' La función devuelve un mensaje de advertencia si no se ingresa un número natural 
+#' mayor que 1. El resultado en este caso será FALSO.
+#' 
+#' @param n Número natural
+#'
+#' @return Un valor lógico, TRUE si el número es primo, FALSE si no lo es.
+#'
+#' @examples
+#' es_primo(47)
+#' es_primo(253)
+#' es_primo(2)
+#' 
 es_primo <- function(n) {
   if (n %% 1 != 0) {
     warning("(n) no es entero")
@@ -376,32 +455,40 @@ es_primo(7.18)
 es_primo(0)
 ```
 
-**Observación**: se puede plantear un algoritmo más eficiente, que realice menos iteraciones. No es necesario iterar hasta `n - 1`, si no hasta el entero inmediato menor a $\sqrt{n}$. Si no se encontró que `n` sea múltiplo de ningún valor menor a $\sqrt{n}$, tampoco lo será con los que siguen. Por otro lado, sería suficiente hacer las divisiones con respecto a los números primos menores  $\sqrt{n}$. Se deja propuesto elaborar esta solución alternativa.
-    
+**Observación**: se puede plantear un algoritmo más eficiente, que realice menos iteraciones. No es necesario iterar hasta `n - 1`, si no hasta el entero inmediato menor a $\sqrt{n}$. Si no se encontró que `n` sea múltiplo de ningún valor menor a $\sqrt{n}$, tampoco lo será con los que siguen. Por otro lado, sería suficiente hacer las divisiones con respecto a los números primos menores $\sqrt{n}$. Se deja propuesto elaborar esta solución alternativa.
 
 ## Ejercicio 9
 
 Para poder resolver una división usando solamente sumas y restas, tenemos que pensar que, por ejemplo, hacer 14 dividido 3 nos da cociente 4 y resto 2, porque el 3 "entra" 4 veces en el 14 y todavía sobran 2. Es decir, a 14 le podemos restar el 3 cuatro veces hasta que ya no se lo podamos restar más, quedando un resto de 2. Entonces la idea es empezar diciendo que el *resto* es el dividendo (al principio, nos *resta* todo el dividendo) y restarle iterativamente el valor del divisor hasta que el resto se haga menor que el divisor. Mientras tanto, tenemos que ir contando cuántas restas se hacen, puesto que eso será el valor del cociente. Ejemplo:
 
-- `dividendo = 14`, `divisor = 3`, `resto = 14`.
-- `14 - 3 = 11`, digo que el `resto` es 11 y cuento que ya hice una resta con `cociente = 1`.
-- `11 - 3 = 8`, digo que el `resto` es 8 y cuento que ya hice dos restas con `cociente = 2`.
-- `8 - 3 = 5`, digo que el `resto` es 5 y cuento que ya hice tres restas con `cociente = 3`.
-- `5 - 3 = 2`, digo que el `resto` es 2, cuento que ya hice cuatro restas con `cociente = 4`.
-- Como ya obtuve un `resto` menor que el `divisor`, me detengo, con este resultado: `cociente = 4` y `resto = 2`.
+-   `dividendo = 14`, `divisor = 3`, `resto = 14`.
+-   `14 - 3 = 11`, digo que el `resto` es 11 y cuento que ya hice una resta con `cociente = 1`.
+-   `11 - 3 = 8`, digo que el `resto` es 8 y cuento que ya hice dos restas con `cociente = 2`.
+-   `8 - 3 = 5`, digo que el `resto` es 5 y cuento que ya hice tres restas con `cociente = 3`.
+-   `5 - 3 = 2`, digo que el `resto` es 2, cuento que ya hice cuatro restas con `cociente = 4`.
+-   Como ya obtuve un `resto` menor que el `divisor`, me detengo, con este resultado: `cociente = 4` y `resto = 2`.
 
 Como a priori no sabemos cuántas iteraciones de este proceso tenemos que hacer, empleamos un `while`.
 
 ```{r}
-#-----------------------------------------------------
-# Función cociente
-# Obtiene cociente entero y resto en la división de dos números naturales
-# Entrada:
-#		- dividendo, divisor, números naturales
-# Salida:
-#		- Escribe en pantalla dividendo, divisor, cociente y resto
-#		- Devuelve el valor del cociente
-#-----------------------------------------------------
+#' Cociente de la división de números naturales
+#' 
+#' @description
+#' Obtiene el cociente entero y el resto en la división de dos números naturales
+#'
+#' @details 
+#' La función imprime un mensaje con todos los detalles de la división, con el 
+#' dividendo, divisor, cociente y resto. Sin embargo, la función devuelve solo el 
+#' cociente entero. 
+#' 
+#' @param dividendo,divisor Números naturales.
+#'
+#' @return El cociente entero de la división de ambos números.
+#'
+#' @examples
+#' cociente(1253, 4)
+#' cociente(3, 4)
+#' 
 cociente <- function(dividendo, divisor) {
 	resto <- dividendo
 	cociente <- 0
@@ -427,14 +514,27 @@ cociente(3, 4)
 ## Ejercicio 10
 
 ```{r}
-#-----------------------------------------------------
-# Función max_com_div
-# Calcula el máximo común divisor de dos números naturales
-# Entrada:
-#		- a, b, números naturales
-# Salida:
-#		- El máximo común divisor de a y b
-#-----------------------------------------------------
+#' Cálculo del máximo común divisor
+#' 
+#' @description
+#' Calcula el máximo común divisor entre dos números naturales
+#'
+#' @details 
+#' Aplica el algoritmo de Euclides para encontrar el MCD. Dividir al mayor por el 
+#' menor y registrar el resto. Si el resto es cero, el divisor es el MCD. Si el 
+#' resto no es cero, hay que dividir el divisor por el resto y hacer la misma 
+#' evaluación. Es decir, el divisor pasa a ser el nuevo dividendo y el resto, el 
+#' nuevo divisor. Así hasta obtener el resto cero y tener el MCD. 
+#' 
+#' @param a,b Números naturales.
+#'
+#' @return El máximo común divisor de ambos números.
+#'
+#' @examples
+#' max_com_div(100, 24)
+#' max_com_div(25, 100)
+#' max_com_div(24, 24)
+#' 
 max_com_div <- function(a, b) {
   
 	# Establecer como dividendo al mayor y como divisor al menor
@@ -506,12 +606,12 @@ max_com_div <- function(a, b) {
 ## Ejercicio 11
 
 b.  En el script `funciones_unidad3.R` se implementa la función `combinatorio(m,n)` y se guarda junto con `fact()`. Su contenido debe ser:
-    
+
     ```{r}
     # ---------------------------------------------------------------
     # DEFINICIÓN DE FUNCIONES (funciones.R)
     # ---------------------------------------------------------------
-    
+
     #' Cálculo de factoriales
     #' 
     #' @description
@@ -540,13 +640,13 @@ b.  En el script `funciones_unidad3.R` se implementa la función `combinatorio(m
       }
       return(resultado)
     }
-    
+
     #' Cálculo de números combinatorios
     #' 
     #' @description
     #' Calcula números combinatorios invocando a la función fact()
     #'
-    #' @param m, n números naturales 
+    #' @param m,n números naturales
     #'
     #' @return El número combinatorio m en n
     #'
@@ -559,46 +659,44 @@ b.  En el script `funciones_unidad3.R` se implementa la función `combinatorio(m
     ```
 
 c.  El contenido del script `ejercicio11.R` puede ser:
-    
+
     ```{r}
     #| eval: false
-    
+
     # ---------------------------------------------------------------
     # PROGRAMA: "Ejemplificar propiedades de los nros combinatorios"
     # ---------------------------------------------------------------
-    
+
     # Cargar funciones
     source("funciones_unidad3.R")
     ```
-
 
     ```{r}
     #| results: hold
     cat("Propiedad 1: C(m, 0) = 1. Ejemplo:\n")
     res1 <- combinatorio(5, 0)
     cat("C(5, 0) =", res1, "\n\n")
-    
+
     cat("Propiedad 2: C(m, m) = 1. Ejemplo:\n")
     res1 <- combinatorio(5, 5)
     cat("C(5, 5) =", res1, "\n\n")
-    
+
     cat("Propiedad 3: C(m, 1) = m. Ejemplo:\n")
     res1 <- combinatorio(5, 1)
     cat("C(5, 1) =", res1, "\n\n")
-    
+
     cat("Propiedad 4: C(m, n) = C(m, m-n). Ejemplo:\n")
     res1 <- combinatorio(5, 2)
     res2 <- combinatorio(5, 3)
     cat("C(5, 2) =", res1, "\n")
     cat("C(5, 3) =", res2, "\n\n")
-    
+
     cat("Propiedad 5: C(m, n) = C(m-1, n-1) + C(m-1, n). Ejemplo:\n")
     res1 <- combinatorio(5, 2)
     res2 <- combinatorio(4, 1) + combinatorio(4, 2)
     cat("C(5, 2) =", res1, "\n")
     cat("C(4, 1) + C(4, 2) =", res2)
     ```
-
 
 d.  A continuación, se prueba pasando un valor de `n` mayor que `m`:
 
@@ -608,7 +706,7 @@ d.  A continuación, se prueba pasando un valor de `n` mayor que `m`:
     ```
 
     Como se observa, la función falla porque internamente se invoca a la función `fact()` con un número negativo, y la misma fue programada para disparar un error en ese caso. El mensaje `n debe ser entero no negativo` no es demasiado claro, dado que es emitido por la función `fact()` y se refiere a su argumento `n`, no al `n` de `combinatorio()`. Podríamos mejorar esta situación de varias formas. Una de ellas podría ser disparar un error antes, dentro de la función `combinatorio()`, para evitar cualquier procesamiento si $n>m$:
-    
+
     ```{r}
     combinatorio <- function(m, n) {
       if (n > m) {
@@ -617,21 +715,26 @@ d.  A continuación, se prueba pasando un valor de `n` mayor que `m`:
     	return(fact(m) / (fact(m - n) * fact(n)))
     }
     ```
-    
+
 e.  Se generaliza la función `combinatorio(m, n)` para calcular números combinatorios con y sin reposición. Para esto se incluye el argumento `r`, que toma el valor lógico `TRUE` si el cálculo es con reposición o `FALSE` en caso contrario.
-    
+
     Agregamos lo siguiente al archivo `unidad3_funciones.R`. Notar que esta vez no usamos `return()`, pero igualmetne se devuelve el resultado deseado por ser lo último que se evalúa:
-    
+
     ```{r}
-    #-----------------------------------------------------
-    # Función combinatorio2
-    # Calcula el número combinatorio m en n, con o sin reposición según r
-    # Entrada:
-    #   - m, n, números naturales
-    #   - r, valor lógico (FALSE, por defecto)
-    # Salida:
-    #   - el número combinatorio m en n, con o sin reposición
-    #-----------------------------------------------------
+    #' Cálculo de números combinatorios 
+    #' 
+    #' @description
+    #' Calcula el número combinatorio m en n, con o sin reposición según r
+    #'
+    #' @param m,n números naturales
+    #' @param r valor lógico, sobre si el cálculo es con o sin repetición, F por defecto
+    #'
+    #' @return El número combinatorio m en n, con o sin reposición
+    #'
+    #' @examples
+    #' combinatorio2(10, 2, TRUE)
+    #' combinatorio2(10, 2)
+    #' 
     combinatorio2 <- function(m, n, r = FALSE) {
       if (r) {
         combinatorio(m + n - 1, n)
@@ -640,19 +743,19 @@ e.  Se generaliza la función `combinatorio(m, n)` para calcular números combin
       }
     }
     ```
-    
+
     En el script `ejercicio_11.R` probamos la nueva función:
-    
+
     ```{r}
     #| results: hold
     # Números combinatorios con y sin reposición
-    
+
     m <- 5
     n <- 2
     cat(m, "tomados de a", n, "sin resposición:", combinatorio2(m, n), "\n")
     cat(m, "tomados de a", n, "con resposición:", combinatorio2(m, n, TRUE))
     ```
-    
+
     La cantidad de combinaciones con reposición siempre es mayor, salvo para `n = 1` donde ambas coinciden.
 
 ## Ejercicio 12
