@@ -1,5 +1,6 @@
 ---
 title: "Actividad de autoevaluación 2"
+number-sections: false
 ---
 
 ```{=latex}
@@ -7,159 +8,182 @@ title: "Actividad de autoevaluación 2"
 ```
 
 
-## Pregunta 1 {.unnumbered}
+## Pregunta 1
 
-Queremos clasificar a una persona según su edad y si tiene carnet de conducir.
-
-Reglas:
+Se desea determinar si una persona puede conducir o no, en función de las siguientes reglas:
 
 - Si tiene 18 años o más y tiene carnet, puede conducir.
+- Si tiene 70 años o más, o no tiene carnet, necesita una evaluación adicional.
 
-- Si tiene 70 años o más,  o no tiene carnet, necesita una evaluación adicional.
-
-¿Cuál de los siguientes bloques muestra correctamente los mensajes que correspondan?
-
-```{r, eval=FALSE}
-a) if (edad >= 18 && tiene_carnet) {
-   print("Puede conducir")
-   } else if (edad >= 70 || !tiene_carnet) {
-   print("Requiere evaluación adicional")
-   }
-```
+Se presentan distintas opciones para hacer la evaluación requerida:
 
 ```{r, eval=FALSE}
-b) if (edad >= 18 && tiene_carnet) {
-   print("Puede conducir")
-   }
-   if (edad >= 70 || !tiene_carnet) {
-   print("Requiere evaluación adicional")
-   }
+# Opción A
+if (edad >= 18 && tiene_carnet) {
+  print("Puede conducir")
+} else if (edad >= 70 || !tiene_carnet) {
+  print("Requiere evaluación adicional")
+}
 
+# Opción B
+if (edad >= 18 && tiene_carnet) {
+  print("Puede conducir")
+}
+if (edad >= 70 || !tiene_carnet) {
+  print("Requiere evaluación adicional")
+}
+
+# Opción C
+if (edad >= 70 || !tiene_carnet) {
+  print("Requiere evaluación adicional")
+} else if (edad >= 18 && tiene_carnet) {
+  print("Puede conducir")
+}
+
+# Opción D
+if (edad >= 18 && tiene_carnet) {
+  print("Puede conducir")
+} else {
+  print("Requiere evaluación adicional")
+}
 ```
 
-```{r, eval=FALSE}
-c) if (edad >= 70 || !tiene_carnet) {
-   print("Requiere evaluación adicional")
-   } else if (edad >= 18 && tiene_carnet) {
-   print("Puede conducir")
-   }
-```
-
-```{r, eval=FALSE}
-d) if (edad >= 18 && tiene_carnet) {
-   print("Puede conducir")
-   } else {
-   print("Requiere evaluación adicional")
-   }
-```
-
-Escriba la opción correcta (a, b, c o d):  `r webexercises::fitb(c("B", "b"))`
+¿Cuál es la opción correcta?:  `r webexercises::mcq(c("A", answer = "B", "C", "D"))`
 
 `r webexercises::hide("Explicación")`
-Del enunciado hay que tener en cuenta que algunas personas pueden cumplir dos reglas a la vez. Por ejemplo: si una persona tiene 80 años y carnet, puede conducir pero además necesita una evaluación adicional (por la edad). Esto significa que las condiciones NO son mutuamente excluyentes (pueden cumplirse sin excluirse una a la otra). Para resolver este tipo de condiciones se utilizan `if` independientes así, si una persona cumple las dos condiciones, recibe ambos mensajes.<br>
+Del enunciado hay que tener en cuenta que algunas personas pueden cumplir las dos reglas a la vez. Por ejemplo: si una persona tiene 80 años y carnet, puede conducir pero además necesita una evaluación adicional (por la edad). Esto significa que las condiciones NO son mutuamente excluyentes (pueden cumplirse sin excluirse una a la otra). Para resolver este tipo de condiciones se utilizan `if` independientes así, si una persona cumple las dos condiciones, recibe ambos mensajes.
 
-Problemas con las otras opciones:<br>
+Problemas con las otras opciones:
 
-- Opciones a) y d): usan `else / else if`, es decir, solo muestran uno de los dos mensajes (aunque ambas reglas apliquen). Ejemplo: 80 años con carnet solo diría "Puede conducir" (y se olvida de la evaluación).<br>
+- Opciones `A` y `D`: usan `else / else if`, es decir, solo muestran uno de los dos mensajes (aunque ambas reglas apliquen). Ejemplo: 80 años con carnet solo diría "Puede conducir" (y se olvida de la evaluación).
 
-- Opción c): pone la evaluación primera, si alguien tiene +70 años, siempre mostrará solo "Necesita evaluación" (aunque igual pueda conducir).<br>
+- Opción `C`: pone la evaluación primera, si alguien tiene +70 años, siempre mostrará solo "Necesita evaluación" (aunque igual pueda conducir).
 
-Conclusión clave:<br>
+Conclusión clave:
+
 Cuando dos reglas pueden cumplirse juntas, usamos `if` independientes.
 Si usamos `else / else if`, el programa se detiene en la primera condición `TRUE`.
 `r webexercises::unhide()`
 
-## Pregunta 2 {.unnumbered}
+## Pregunta 2
 
 ¿Cuál de las siguientes expresiones **NO** muestra la tabla del 8?
 
-
 ```{r, eval=FALSE}
-a) for (i in 0:10) {
-   cat("8 por", i, "es", 8 * i, "\n")
-   }
+# Opción A
+for (i in 0:10) {
+  cat("8 por", i, "es", 8 * i, "\n")
+}
+
+# Opción B
+numero <- 0
+for (i in 0:10) {
+  cat("8 por", i, "es", numero, "/n")
+  numero <- numero + 8
+}
+
+# Opción C
+numero <- 1
+for (i in 0:10) {
+  cat("8 por", i, "es", numero, "\n")
+  numero <- numero * 8
+}
 ```
 
-```{r, eval=FALSE}
-b) numero <- 0
-   for (i in 0:10) {
-   cat("8 por", i, "es", numero, "/n")
-   numero <- numero + 8
-   }
-```
-
-```{r, eval=FALSE}
-c) numero <- 1
-   for (i in 0:10) {
-   cat("8 por", i, "es", numero, "\n")
-   numero <- numero * 8
-   }
-```
-
-Escriba la opción correcta (a,b o c):  `r webexercises::fitb(c("C", "c"))`
+La opción que no muestra la tabla del 8 es la:  `r webexercises::mcq(c("A", "B", answer = "C"))`
 
 `r webexercises::hide("Explicación")`
-- La opción `a` está bien porque multiplica directamente 8 por cada valor de `i`. 
-- La opción `b` también es correcta, porque empieza desde cero y va sumando 8 en cada paso, lo cual genera la tabla correctamente. 
-- En cambio, la opción `c` no muestra la tabla del 8 porque multiplica el número por 8 en cada vuelta, lo que genera una secuencia exponencial en lugar de una tabla.
+- La opción `A` está bien porque multiplica directamente 8 por cada valor de `i`. 
+- La opción `B` también es correcta, porque empieza desde cero y va sumando 8 en cada paso, lo cual genera la tabla correctamente. 
+- En cambio, la opción `C` no muestra la tabla del 8 porque multiplica el número por 8 en cada vuelta, lo que genera una secuencia exponencial en lugar de una tabla.
 `r webexercises::unhide()`
 
-## Pregunta 3 {#ej3-aa2 .unnumbered}
+## Pregunta 3 {#ej3-aa2}
 
-En una fábrica, los tornillos se empaquetan y agrupan en cajas de 5 paquetes cada una. El número de tornillos por paquete varía según su tamaño. Se desea comprobar el buen estado de cada tornillo. Se sabe que, si todos los tornillos están en buen estado (sin importar su tamaño), el total de tornillos por caja siempre resulta ser un número par.
+En una fábrica, los tornillos se empaquetan de a 10 y luego los paquetes se agrupan de a 5 en cajas. En la etapa de control de calidad se eligen al azar 3 cajas y se pesan todos los tornillos. Se desea escribir un programa que informe el peso de cada tornillo evaluado, indicando a qué caja y paquete pertenece. Además, se desea informar el porcentaje de tornillos evaluados que pesan más de 1 gramo, puesto que se los considera defectuosos.
 
-Para resolver este problema se han planteado las siguientes variables:
+Completar el siguiente fragmento de código, escribiendo las partes faltantes en los campos en blanco disponibles debajo. Para las variables de iteración se puede utilizar nombres descriptivos como `caja`, `paquete` y `tornillo` o los genéricos `i`, `j` o `k`:
 
-`cajas <- 3`<br>
-`paquetes <- 5`<br>
-`tornillos <- 10`<br>
-`tornillos_buenos <- 0`<br>
 
-Complete el siguiente fragmento de código ubicando los nombres de las variables que correspondan en cada estructura `for`. Puede utilizar los nombres descriptivos `(caja, paquete, tornillo)` o los genéricos `(i, j, k)`:
+```{r}
+#| eval: false
+#| error: true
+cajas <- 3
+paquetes <- 5
+tornillos <- 10
+defectuosos <- 'A ___'
 
-```{r, eval=FALSE}
-
-for ( 'A ___' in 1: 'B ___') {
-  for ( 'C ___' in 1: 'D ___') {
-    for ('E ___' in 1: 'F ___') {
-      if ( 'G ___' %% 2 == 0) {
-          'H ___' <- tornillos_buenos + 1
+for ('B ___' in 1:'C ___') {
+  for ('D ___' in 1:'E ___') {
+    for ('F ___' in 1:'G ___') {
+      # Se pesa el tornillo (la siguiente línea genera un número al azar)
+      peso <- round(rnorm(1, 0.99, 0.01), 4)
+      cat(
+        "El tornillo", 'H ___', "del paquete", 'I ___', "de la caja", 'J ___',
+        "pesa", 'K ___', "gramos.\n"
+      )
+      if (peso > 'L ___') {
+        defectuosos <- 'M ___' + 1
       }
     }
   }
 }
-cat("Cantidad total de tornillos buenos:", tornillos_buenos)
+total_tornillos <- cajas * paquetes * 'N ___'
+porcentaje <- round(defectuosos / 'Ñ ___' * 100)
+cat("El porcentaje de tornillos defectuosos es", 'O ___', "%")
 ```
 
-- A: `r webexercises::fitb(c("caja", "i"))`
-- B: `r webexercises::fitb("cajas")`
-- C: `r webexercises::fitb(c("paquete", "j"))`
-- D: `r webexercises::fitb("paquetes")`
-- E: `r webexercises::fitb(c("tornillo", "k"))`
-- F: `r webexercises::fitb("tornillos")`
-- G: `r webexercises::fitb("tornillo")`
-- H: `r webexercises::fitb("tornillos_buenos")`
+- A: `r webexercises::fitb("0")`
+- B: `r webexercises::fitb(c("caja", "i"))`
+- C: `r webexercises::fitb("cajas")`
+- D: `r webexercises::fitb(c("paquete", "j"))`
+- E: `r webexercises::fitb("paquetes")`
+- F: `r webexercises::fitb(c("tornillo", "k"))`
+- G: `r webexercises::fitb("tornillos")`
+- H: `r webexercises::fitb(c("tornillo", "k"))`
+- I: `r webexercises::fitb(c("paquete", "j"))`
+- J: `r webexercises::fitb(c("caja", "i"))`
+- K: `r webexercises::fitb("peso")`
+- L: `r webexercises::fitb("1")`
+- M: `r webexercises::fitb("defectuosos")`
+- N: `r webexercises::fitb("tornillos")`
+- Ñ: `r webexercises::fitb("total_tornillos")`
+- O: `r webexercises::fitb("porcentaje")`
 
 `r webexercises::hide("Explicación")`
-En este ejercicio, queremos recorrer todas las `cajas`, luego cada `paquete` dentro de cada caja, y finalmente cada `tornillo` dentro de cada paquete. Como ya están definidas las cantidades totales de `cajas`, `paquetes` y `tornillos`, esas variables se deben usar como los límites de los bucles. Para verificar si un tornillo está en buen estado, usamos una condición simple: si su número es par. Si cumple con esa condición, sumamos uno a la cantidad de `tornillos_buenos`. Lo importante es entender qué representa cada nivel del bucle y usar correctamente las variables ya definidas:
+En este ejercicio, queremos recorrer todas las `cajas`, luego cada `paquete` dentro de cada caja, y finalmente cada `tornillo` dentro de cada paquete. Como ya están definidas las cantidades totales de `cajas`, `paquetes` y `tornillos`, esas variables se deben usar como los límites de los bucles. Para verificar si un tornillo está en buen estado, usamos una condición simple: si su peso es mayor a 1, contamos un tornillo defecutoso más, en una variable que fue iniciada en 0:
 
-```{r eval=FALSE}
+```{r}
+#| eval: false
+cajas <- 3
+paquetes <- 5
+tornillos <- 10
+defectuosos <- 0
+
 for (caja in 1:cajas) {
   for (paquete in 1:paquetes) {
     for (tornillo in 1:tornillos) {
-      if (tornillo %% 2 == 0) {
-          tornillos_buenos <- tornillos_buenos + 1
+      # Se pesa el tornillo (la siguiente línea genera un número al azar)
+      peso <- round(rnorm(1, 0.99, 0.01), 4)
+      cat(
+        "El tornillo", tornillo, "del paquete", paquete, "de la caja", caja,
+        "pesa", peso, "gramos.\n"
+      )
+      if (peso > 1) {
+        defectuosos <- defectuosos + 1
       }
     }
   }
 }
-cat("Cantidad total de tornillos buenos:", tornillos_buenos)
+total_tornillos <- cajas * paquetes * tornillos
+porcentaje <- round(defectuosos / total_tornillos * 100)
+cat("El porcentaje de tornillos defectuosos es", porcentaje, "%")
 ```
 `r webexercises::unhide()`
 
-## Pregunta 4 {.unnumbered}
+## Pregunta 4
 
-A partir del siguiente fragmento de código, responda las siguientes preguntas:
+A partir del siguiente fragmento de código, responder las siguientes preguntas:
 
 ```{r, eval=FALSE}
 var <- 0
@@ -171,23 +195,29 @@ while (n <= 5) {
 }
 ```
 
-- ¿Qué valor almacena la variable n al finalizar?<br>
-  Respuesta: `r webexercises::fitb(6)`<br>
-- ¿Qué valor almacena la variable var al finalizar?<br>
-  Respuesta: `r webexercises::fitb(55)`<br>
-- ¿Cuántas veces se ejecutó el bloque de código encerrado en la estructura iterativa?<br>
-  Respuesta: `r webexercises::fitb(5)` veces.<br>
-- Si en lugar de asignar al inicio `n <- 1`, se hubiese asignado `n <- 6`, <br>
-  ¿Cuál sería el valor de var al finalizar?<br>
-   Respuesta: `r webexercises::fitb(0)`
+- ¿Qué valor almacena la variable `n` al finalizar?
+  
+  Respuesta: `r webexercises::fitb(6)`
+  
+- ¿Qué valor almacena la variable `var` al finalizar?
+
+  Respuesta: `r webexercises::fitb(55)`
+  
+- ¿Cuántas veces se ejecutó el bloque de código encerrado en la estructura iterativa?
+
+  Respuesta: `r webexercises::fitb(5)` veces.
+  
+- Si en lugar de asignar al inicio `n <- 1`, se hubiese asignado `n <- 6`, ¿cuál sería el valor de `var` al finalizar?
+
+  Respuesta: `r webexercises::fitb(0)`
    
 `r webexercises::hide("Explicación")`  
-Este código usa un bucle `while` que se repite mientras la condición `n <= 5` se cumpla.<br> Arranca con `n` en 1 e incrementa de a uno en cada vuelta.<br> En cada iteración, suma el cuadrado de `n` a `var`.<br> Entonces, lo que estamos haciendo es calcular la suma de los cuadrados de los números del 1 al 5. <br> Al finalizar, `n` vale 6 porque ya no cumple la condición para seguir.<br> `var` vale 55 porque es `1² + 2² + 3² + 4² + 5²`.<br> El bloque se ejecuta 5 veces, una por cada valor de `n` de `1` a `5`.<br> Y si hubiéramos empezado con `n <- 6`, como no se cumple la condición desde el principio, el bucle no se ejecuta y `var` queda en 0.
+Este código usa un bucle `while` que se repite mientras la condición `n <= 5` se cumpla. Arranca con `n` en 1 e incrementa de a uno en cada vuelta. En cada iteración, suma el cuadrado de `n` a `var`. Entonces, lo que estamos haciendo es calcular la suma de los cuadrados de los números del 1 al 5.  Al finalizar, `n` vale 6 porque ya no cumple la condición para seguir. `var` vale 55 porque es `1² + 2² + 3² + 4² + 5²`. El bloque se ejecuta 5 veces, una por cada valor de `n` de `1` a `5`. Y si hubiéramos empezado con `n <- 6`, como no se cumple la condición desde el principio, el bucle no se ejecuta y `var` queda en 0.
 `r webexercises::unhide()`
 
-## Pregunta 5 {.unnumbered}
+## Pregunta 5
 
-Evalúe el siguiente código y conteste TRUE O FALSE:
+Analizar el código y determinar si las siguientes afirmaciones son verdaderas o falsas:
 
 ```{r, eval=FALSE}
 stock <- 7
@@ -205,25 +235,25 @@ while (stock > 0) {
 cat("Producto no disponible", "\n")
 ```
 
-- El mensaje "¡QUEDAN POCAS UNIDADES!" se imprimirá 3 veces. `r webexercises::longmcq(c(answer = TRUE, FALSE))`<br>
-- Si `tipo_producto <- "limpieza"` el código no se ejecutará.`r webexercises::longmcq(c(TRUE, answer = FALSE))` <br>
-- El bucle while se ejecuta 6 veces. `r webexercises::longmcq(c(TRUE, answer = FALSE))`<br>
-- El valor final de stock al terminar el bucle es 1. `r webexercises::longmcq(c(TRUE, answer = FALSE))`<br>
-- Si `stock <- 0` se imprime "Producto no disponible". `r webexercises::longmcq(c(answer = TRUE, FALSE))`<br>
-- Si las condiciones que evalúan el `if` y `else if` se invirtieran en posición la salida del programa cambiaria. `r webexercises::longmcq(c(TRUE, answer = FALSE))`
+- El mensaje `"¡QUEDAN POCAS UNIDADES!"` se imprimirá 3 veces. `r webexercises::longmcq(c(answer = "Verdadero", "Falso"))`
+- Si `tipo_producto <- "limpieza"` el código no se ejecutará.`r webexercises::longmcq(c("Verdadero", answer = "Falso"))` 
+- El bucle `while` se ejecuta 6 veces. `r webexercises::longmcq(c("Verdadero", answer = "Falso"))`
+- El valor final de `stock` al terminar el bucle es 1. `r webexercises::longmcq(c("Verdadero", answer = "Falso"))`
+- Si `stock <- 0` se imprime `"Producto no disponible"`. `r webexercises::longmcq(c(answer = "Verdadero", "Falso"))`
+- Si las condiciones que evalúan el `if` y `else if` se invirtieran en posición la salida del programa cambiaría. `r webexercises::longmcq(c("Verdadero", answer = "Falso"))`
 
 `r webexercises::hide("Explicación")`
-Este ejercicio muestra cómo el orden de las condiciones y el valor de las variables iniciales afectan la ejecución:<br>
+Este ejercicio muestra cómo el orden de las condiciones y el valor de las variables iniciales afectan la ejecución:
 
-- El mensaje '¡QUEDAN POCAS UNIDADES!' se imprime 3 veces porque eso pasa cuando `stock` baja de 3 a 1, cumpliendo la condición del `else if`. 
+- El mensaje `"¡QUEDAN POCAS UNIDADES!"` se imprime 3 veces porque eso pasa cuando `stock` baja de 3 a 1, cumpliendo la condición del `else if`. 
 
 - El bucle se ejecuta 7 veces en total, porque empieza en 7 y termina cuando `stock` baja a 0. 
 
-- Si `tipo_producto` fuera 'limpieza', el bucle sí se ejecuta, pero no se imprime ninguno de los mensajes dentro del `if` o `else if`, ya que esas condiciones no se cumplen. 
+- Si `tipo_producto` tuviese el valor `"limpieza"`, el bucle sí se ejecuta, pero no se imprime ninguno de los mensajes dentro del `if` o `else if`, ya que esas condiciones no se cumplen. 
 
-- El valor final `stock` es 0, no 1, porque en cada vuelta se resta 1 hasta llegar a cero. 
+- El valor final de `stock` es 0, no 1, porque en cada vuelta se resta 1 hasta llegar a cero. 
 
-- Si arrancáramos con `stock <- 0`, el bucle no se ejecuta pero igual se imprime 'Producto no disponible', porque esa línea está fuera del `while`. 
+- Si arrancáramos con `stock <- 0`, el bucle no se ejecuta pero igual se imprime `"Producto no disponible"`, porque esa línea está fuera del `while`. 
 
 - Por último, invertir el orden de `if` y `else if` no cambia el resultado en este caso porque las condiciones nunca se solapan; o se cumple una o la otra, pero nunca ambas al mismo tiempo (son excluyentes).
 
