@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -318,8 +352,18 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#pregunta-1" id="toc-pregunta-1" class="nav-link active" data-scroll-target="#pregunta-1">Pregunta 1</a></li>
+  <li><a href="#pregunta-2" id="toc-pregunta-2" class="nav-link" data-scroll-target="#pregunta-2">Pregunta 2</a></li>
+  <li><a href="#ej3-aa2" id="toc-ej3-aa2" class="nav-link" data-scroll-target="#ej3-aa2">Pregunta 3</a></li>
+  <li><a href="#pregunta-4" id="toc-pregunta-4" class="nav-link" data-scroll-target="#pregunta-4">Pregunta 4</a></li>
+  <li><a href="#pregunta-5" id="toc-pregunta-5" class="nav-link" data-scroll-target="#pregunta-5">Pregunta 5</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/02_actividad_autoevaluativa.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/02_actividad_autoevaluativa.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -343,11 +387,263 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="en-construccion">
-<p>El contenido estará disponible a la brevedad.</p>
+<section id="pregunta-1" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-1">Pregunta 1</h2>
+<p>Se desea determinar si una persona puede conducir o no, en función de las siguientes reglas:</p>
+<ul>
+<li>Si tiene 18 años o más y tiene carnet, puede conducir.</li>
+<li>Si tiene 70 años o más, o no tiene carnet, necesita una evaluación adicional.</li>
+</ul>
+<p>Se presentan distintas opciones para hacer la evaluación requerida:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Opción A</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (edad <span class="sc">&gt;=</span> <span class="dv">18</span> <span class="sc">&amp;&amp;</span> tiene_carnet) {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Puede conducir"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (edad <span class="sc">&gt;=</span> <span class="dv">70</span> <span class="sc">||</span> <span class="sc">!</span>tiene_carnet) {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Requiere evaluación adicional"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Opción B</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (edad <span class="sc">&gt;=</span> <span class="dv">18</span> <span class="sc">&amp;&amp;</span> tiene_carnet) {</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Puede conducir"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (edad <span class="sc">&gt;=</span> <span class="dv">70</span> <span class="sc">||</span> <span class="sc">!</span>tiene_carnet) {</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Requiere evaluación adicional"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Opción C</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (edad <span class="sc">&gt;=</span> <span class="dv">70</span> <span class="sc">||</span> <span class="sc">!</span>tiene_carnet) {</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Requiere evaluación adicional"</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (edad <span class="sc">&gt;=</span> <span class="dv">18</span> <span class="sc">&amp;&amp;</span> tiene_carnet) {</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Puede conducir"</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Opción D</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (edad <span class="sc">&gt;=</span> <span class="dv">18</span> <span class="sc">&amp;&amp;</span> tiene_carnet) {</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Puede conducir"</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Requiere evaluación adicional"</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>¿Cuál es la opción correcta?: <select class="webex-select"><option value="blank"></option><option value="">A</option><option value="answer">B</option><option value="">C</option><option value="">D</option></select></p>
+<div class="webex-solution">
+<button>
+Explicación
+</button>
+<p>Del enunciado hay que tener en cuenta que algunas personas pueden cumplir las dos reglas a la vez. Por ejemplo: si una persona tiene 80 años y carnet, puede conducir pero además necesita una evaluación adicional (por la edad). Esto significa que las condiciones NO son mutuamente excluyentes (pueden cumplirse sin excluirse una a la otra). Para resolver este tipo de condiciones se utilizan <code>if</code> independientes así, si una persona cumple las dos condiciones, recibe ambos mensajes.</p>
+<p>Problemas con las otras opciones:</p>
+<ul>
+<li><p>Opciones <code>A</code> y <code>D</code>: usan <code>else / else if</code>, es decir, solo muestran uno de los dos mensajes (aunque ambas reglas apliquen). Ejemplo: 80 años con carnet solo diría “Puede conducir” (y se olvida de la evaluación).</p></li>
+<li><p>Opción <code>C</code>: pone la evaluación primera, si alguien tiene +70 años, siempre mostrará solo “Necesita evaluación” (aunque igual pueda conducir).</p></li>
+</ul>
+<p>Conclusión clave:</p>
+<p>Cuando dos reglas pueden cumplirse juntas, usamos <code>if</code> independientes. Si usamos <code>else / else if</code>, el programa se detiene en la primera condición <code>TRUE</code>.</p>
+</div>
+</section>
+<section id="pregunta-2" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-2">Pregunta 2</h2>
+<p>¿Cuál de las siguientes expresiones <strong>NO</strong> muestra la tabla del 8?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Opción A</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"8 por"</span>, i, <span class="st">"es"</span>, <span class="dv">8</span> <span class="sc">*</span> i, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Opción B</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>numero <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"8 por"</span>, i, <span class="st">"es"</span>, numero, <span class="st">"/n"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  numero <span class="ot">&lt;-</span> numero <span class="sc">+</span> <span class="dv">8</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Opción C</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>numero <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"8 por"</span>, i, <span class="st">"es"</span>, numero, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  numero <span class="ot">&lt;-</span> numero <span class="sc">*</span> <span class="dv">8</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>La opción que no muestra la tabla del 8 es la: <select class="webex-select"><option value="blank"></option><option value="">A</option><option value="">B</option><option value="answer">C</option></select></p>
+<div class="webex-solution">
+<button>
+Explicación
+</button>
+<ul>
+<li>La opción <code>A</code> está bien porque multiplica directamente 8 por cada valor de <code>i</code>.</li>
+<li>La opción <code>B</code> también es correcta, porque empieza desde cero y va sumando 8 en cada paso, lo cual genera la tabla correctamente.</li>
+<li>En cambio, la opción <code>C</code> no muestra la tabla del 8 porque multiplica el número por 8 en cada vuelta, lo que genera una secuencia exponencial en lugar de una tabla.</li>
+</ul>
+</div>
+</section>
+<section id="ej3-aa2" class="level2">
+<h2 class="anchored" data-anchor-id="ej3-aa2">Pregunta 3</h2>
+<p>En una fábrica, los tornillos se empaquetan de a 10 y luego los paquetes se agrupan de a 5 en cajas. En la etapa de control de calidad se eligen al azar 3 cajas y se pesan todos los tornillos. Se desea escribir un programa que informe el peso de cada tornillo evaluado, indicando a qué caja y paquete pertenece. Además, se desea informar el porcentaje de tornillos evaluados que pesan más de 1 gramo, puesto que se los considera defectuosos.</p>
+<p>Completar el siguiente fragmento de código, escribiendo las partes faltantes en los campos en blanco disponibles debajo. Para las variables de iteración se puede utilizar nombres descriptivos como <code>caja</code>, <code>paquete</code> y <code>tornillo</code> o los genéricos <code>i</code>, <code>j</code> o <code>k</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cajas <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>paquetes <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tornillos <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>defectuosos <span class="ot">&lt;-</span> <span class="st">'A ___'</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="st">'B ___'</span> <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="st">'C ___'</span>) {</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="st">'D ___'</span> <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="st">'E ___'</span>) {</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="st">'F ___'</span> <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="st">'G ___'</span>) {</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Se pesa el tornillo (la siguiente línea genera un número al azar)</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>      peso <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="fl">0.99</span>, <span class="fl">0.01</span>), <span class="dv">4</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"El tornillo"</span>, <span class="st">'H ___'</span>, <span class="st">"del paquete"</span>, <span class="st">'I ___'</span>, <span class="st">"de la caja"</span>, <span class="st">'J ___'</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"pesa"</span>, <span class="st">'K ___'</span>, <span class="st">"gramos.</span><span class="sc">\n</span><span class="st">"</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (peso <span class="sc">&gt;</span> <span class="st">'L ___'</span>) {</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        defectuosos <span class="ot">&lt;-</span> <span class="st">'M ___'</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>total_tornillos <span class="ot">&lt;-</span> cajas <span class="sc">*</span> paquetes <span class="sc">*</span> <span class="st">'N ___'</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>porcentaje <span class="ot">&lt;-</span> <span class="fu">round</span>(defectuosos <span class="sc">/</span> <span class="st">'Ñ ___'</span> <span class="sc">*</span> <span class="dv">100</span>)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"El porcentaje de tornillos defectuosos es"</span>, <span class="st">'O ___'</span>, <span class="st">"%"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>A: <input class="webex-solveme nospaces" size="1" data-answer="[&quot;0&quot;]"></li>
+<li>B: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;caja&quot;,&quot;i&quot;]"></li>
+<li>C: <input class="webex-solveme nospaces" size="5" data-answer="[&quot;cajas&quot;]"></li>
+<li>D: <input class="webex-solveme nospaces" size="7" data-answer="[&quot;paquete&quot;,&quot;j&quot;]"></li>
+<li>E: <input class="webex-solveme nospaces" size="8" data-answer="[&quot;paquetes&quot;]"></li>
+<li>F: <input class="webex-solveme nospaces" size="8" data-answer="[&quot;tornillo&quot;,&quot;k&quot;]"></li>
+<li>G: <input class="webex-solveme nospaces" size="9" data-answer="[&quot;tornillos&quot;]"></li>
+<li>H: <input class="webex-solveme nospaces" size="8" data-answer="[&quot;tornillo&quot;,&quot;k&quot;]"></li>
+<li>I: <input class="webex-solveme nospaces" size="7" data-answer="[&quot;paquete&quot;,&quot;j&quot;]"></li>
+<li>J: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;caja&quot;,&quot;i&quot;]"></li>
+<li>K: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;peso&quot;]"></li>
+<li>L: <input class="webex-solveme nospaces" size="1" data-answer="[&quot;1&quot;]"></li>
+<li>M: <input class="webex-solveme nospaces" size="11" data-answer="[&quot;defectuosos&quot;]"></li>
+<li>N: <input class="webex-solveme nospaces" size="9" data-answer="[&quot;tornillos&quot;]"></li>
+<li>Ñ: <input class="webex-solveme nospaces" size="15" data-answer="[&quot;total_tornillos&quot;]"></li>
+<li>O: <input class="webex-solveme nospaces" size="10" data-answer="[&quot;porcentaje&quot;]"></li>
+</ul>
+<div class="webex-solution">
+<button>
+Explicación
+</button>
+<p>En este ejercicio, queremos recorrer todas las <code>cajas</code>, luego cada <code>paquete</code> dentro de cada caja, y finalmente cada <code>tornillo</code> dentro de cada paquete. Como ya están definidas las cantidades totales de <code>cajas</code>, <code>paquetes</code> y <code>tornillos</code>, esas variables se deben usar como los límites de los bucles. Para verificar si un tornillo está en buen estado, usamos una condición simple: si su peso es mayor a 1, contamos un tornillo defecutoso más, en una variable que fue iniciada en 0:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cajas <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>paquetes <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>tornillos <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>defectuosos <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (caja <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>cajas) {</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (paquete <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>paquetes) {</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (tornillo <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>tornillos) {</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Se pesa el tornillo (la siguiente línea genera un número al azar)</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>      peso <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="fl">0.99</span>, <span class="fl">0.01</span>), <span class="dv">4</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"El tornillo"</span>, tornillo, <span class="st">"del paquete"</span>, paquete, <span class="st">"de la caja"</span>, caja,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"pesa"</span>, peso, <span class="st">"gramos.</span><span class="sc">\n</span><span class="st">"</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (peso <span class="sc">&gt;</span> <span class="dv">1</span>) {</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        defectuosos <span class="ot">&lt;-</span> defectuosos <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>total_tornillos <span class="ot">&lt;-</span> cajas <span class="sc">*</span> paquetes <span class="sc">*</span> tornillos</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>porcentaje <span class="ot">&lt;-</span> <span class="fu">round</span>(defectuosos <span class="sc">/</span> total_tornillos <span class="sc">*</span> <span class="dv">100</span>)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"El porcentaje de tornillos defectuosos es"</span>, porcentaje, <span class="st">"%"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="pregunta-4" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-4">Pregunta 4</h2>
+<p>A partir del siguiente fragmento de código, responder las siguientes preguntas:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>var <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (n <span class="sc">&lt;=</span> <span class="dv">5</span>) {</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    var <span class="ot">&lt;-</span> var <span class="sc">+</span> n <span class="sc">*</span> n</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> n <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>¿Qué valor almacena la variable <code>n</code> al finalizar?</p>
+<p>Respuesta: <input class="webex-solveme nospaces" size="1" data-answer="[&quot;6&quot;]"></p></li>
+<li><p>¿Qué valor almacena la variable <code>var</code> al finalizar?</p>
+<p>Respuesta: <input class="webex-solveme nospaces" size="2" data-answer="[&quot;55&quot;]"></p></li>
+<li><p>¿Cuántas veces se ejecutó el bloque de código encerrado en la estructura iterativa?</p>
+<p>Respuesta: <input class="webex-solveme nospaces" size="1" data-answer="[&quot;5&quot;]"> veces.</p></li>
+<li><p>Si en lugar de asignar al inicio <code>n &lt;- 1</code>, se hubiese asignado <code>n &lt;- 6</code>, ¿cuál sería el valor de <code>var</code> al finalizar?</p>
+<p>Respuesta: <input class="webex-solveme nospaces" size="1" data-answer="[&quot;0&quot;]"></p></li>
+</ul>
+<div class="webex-solution">
+<button>
+Explicación
+</button>
+<p>Este código usa un bucle <code>while</code> que se repite mientras la condición <code>n &lt;= 5</code> se cumpla. Arranca con <code>n</code> en 1 e incrementa de a uno en cada vuelta. En cada iteración, suma el cuadrado de <code>n</code> a <code>var</code>. Entonces, lo que estamos haciendo es calcular la suma de los cuadrados de los números del 1 al 5. Al finalizar, <code>n</code> vale 6 porque ya no cumple la condición para seguir. <code>var</code> vale 55 porque es <code>1² + 2² + 3² + 4² + 5²</code>. El bloque se ejecuta 5 veces, una por cada valor de <code>n</code> de <code>1</code> a <code>5</code>. Y si hubiéramos empezado con <code>n &lt;- 6</code>, como no se cumple la condición desde el principio, el bucle no se ejecuta y <code>var</code> queda en 0.</p>
+</div>
+</section>
+<section id="pregunta-5" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-5">Pregunta 5</h2>
+<p>Analizar el código y determinar si las siguientes afirmaciones son verdaderas o falsas:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>stock <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>tipo_producto <span class="ot">&lt;-</span> <span class="st">"alimento"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (stock <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (stock <span class="sc">&gt;=</span> <span class="dv">5</span> <span class="sc">&amp;&amp;</span> tipo_producto <span class="sc">==</span> <span class="st">"alimento"</span>) {</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"¡OFERTA EN ALIMENTOS!"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (stock <span class="sc">&lt;=</span> <span class="dv">3</span> <span class="sc">&amp;&amp;</span> tipo_producto <span class="sc">==</span> <span class="st">"alimento"</span>) {</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"¡QUEDAN POCAS UNIDADES!"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  stock <span class="ot">&lt;-</span> stock <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Producto no disponible"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>El mensaje <code>"¡QUEDAN POCAS UNIDADES!"</code> se imprimirá 3 veces.
+<div id="radio_YKJSHLYMRD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_YKJSHLYMRD" value="answer"> <span>Verdadero</span></label><label><input type="radio" autocomplete="off" name="radio_YKJSHLYMRD" value=""> <span>Falso</span></label>
+</div></li>
+<li>Si <code>tipo_producto &lt;- "limpieza"</code> el código no se ejecutará.
+<div id="radio_EELIOGSOZK" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_EELIOGSOZK" value=""> <span>Verdadero</span></label><label><input type="radio" autocomplete="off" name="radio_EELIOGSOZK" value="answer"> <span>Falso</span></label>
+</div></li>
+<li>El bucle <code>while</code> se ejecuta 6 veces.
+<div id="radio_CEXVNKDAFD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_CEXVNKDAFD" value=""> <span>Verdadero</span></label><label><input type="radio" autocomplete="off" name="radio_CEXVNKDAFD" value="answer"> <span>Falso</span></label>
+</div></li>
+<li>El valor final de <code>stock</code> al terminar el bucle es 1.
+<div id="radio_GUAVOEVGZO" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_GUAVOEVGZO" value=""> <span>Verdadero</span></label><label><input type="radio" autocomplete="off" name="radio_GUAVOEVGZO" value="answer"> <span>Falso</span></label>
+</div></li>
+<li>Si <code>stock &lt;- 0</code> se imprime <code>"Producto no disponible"</code>.
+<div id="radio_XVTQLHUYHC" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_XVTQLHUYHC" value="answer"> <span>Verdadero</span></label><label><input type="radio" autocomplete="off" name="radio_XVTQLHUYHC" value=""> <span>Falso</span></label>
+</div></li>
+<li>Si las condiciones que evalúan el <code>if</code> y <code>else if</code> se invirtieran en posición la salida del programa cambiaría.
+<div id="radio_KCQLAETMYW" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_KCQLAETMYW" value=""> <span>Verdadero</span></label><label><input type="radio" autocomplete="off" name="radio_KCQLAETMYW" value="answer"> <span>Falso</span></label>
+</div></li>
+</ul>
+<div class="webex-solution">
+<button>
+Explicación
+</button>
+<p>Este ejercicio muestra cómo el orden de las condiciones y el valor de las variables iniciales afectan la ejecución:</p>
+<ul>
+<li><p>El mensaje <code>"¡QUEDAN POCAS UNIDADES!"</code> se imprime 3 veces porque eso pasa cuando <code>stock</code> baja de 3 a 1, cumpliendo la condición del <code>else if</code>.</p></li>
+<li><p>El bucle se ejecuta 7 veces en total, porque empieza en 7 y termina cuando <code>stock</code> baja a 0.</p></li>
+<li><p>Si <code>tipo_producto</code> tuviese el valor <code>"limpieza"</code>, el bucle sí se ejecuta, pero no se imprime ninguno de los mensajes dentro del <code>if</code> o <code>else if</code>, ya que esas condiciones no se cumplen.</p></li>
+<li><p>El valor final de <code>stock</code> es 0, no 1, porque en cada vuelta se resta 1 hasta llegar a cero.</p></li>
+<li><p>Si arrancáramos con <code>stock &lt;- 0</code>, el bucle no se ejecuta pero igual se imprime <code>"Producto no disponible"</code>, porque esa línea está fuera del <code>while</code>.</p></li>
+<li><p>Por último, invertir el orden de <code>if</code> y <code>else if</code> no cambia el resultado en este caso porque las condiciones nunca se solapan; o se cumple una o la otra, pero nunca ambas al mismo tiempo (son excluyentes).</p></li>
+</ul>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -1137,7 +1433,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Developed by Marcos Prunello</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/02_actividad_autoevaluativa.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/02_actividad_autoevaluativa.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/02_actividad_autoevaluativa.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/02_actividad_autoevaluativa.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
