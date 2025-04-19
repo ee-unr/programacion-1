@@ -55,6 +55,20 @@ d) if (edad >= 18 && tiene_carnet) {
 
 Escriba la opción correcta (a, b, c o d):  `r webexercises::fitb(c("B", "b"))`
 
+`r webexercises::hide("Explicación")`
+Del enunciado hay que tener en cuenta que algunas personas pueden cumplir dos reglas a la vez. Por ejemplo: si una persona tiene 80 años y carnet, puede conducir pero además necesita una evaluación adicional (por la edad). Esto significa que las condiciones NO son mutuamente excluyentes (pueden cumplirse sin excluirse una a la otra). Para resolver este tipo de condiciones se utilizan `if` independientes así, si una persona cumple las dos condiciones, recibe ambos mensajes.<br>
+
+Problemas con las otras opciones:<br>
+
+- Opciones a) y d): usan `else / else if`, es decir, solo muestran uno de los dos mensajes (aunque ambas reglas apliquen). Ejemplo: 80 años con carnet solo diría "Puede conducir" (y se olvida de la evaluación).<br>
+
+- Opción c): pone la evaluación primera, si alguien tiene +70 años, siempre mostrará solo "Necesita evaluación" (aunque igual pueda conducir).<br>
+
+Conclusión clave:<br>
+Cuando dos reglas pueden cumplirse juntas, usamos `if` independientes.
+Si usamos `else / else if`, el programa se detiene en la primera condición `TRUE`.
+`r webexercises::unhide()`
+
 ## Pregunta 2 {.unnumbered}
 
 ¿Cuál de las siguientes expresiones **NO** muestra la tabla del 8?
@@ -84,6 +98,12 @@ c) numero <- 1
 
 Escriba la opción correcta (a,b o c):  `r webexercises::fitb(c("C", "c"))`
 
+`r webexercises::hide("Explicación")`
+- La opción `a` está bien porque multiplica directamente 8 por cada valor de `i`. 
+- La opción `b` también es correcta, porque empieza desde cero y va sumando 8 en cada paso, lo cual genera la tabla correctamente. 
+- En cambio, la opción `c` no muestra la tabla del 8 porque multiplica el número por 8 en cada vuelta, lo que genera una secuencia exponencial en lugar de una tabla.
+`r webexercises::unhide()`
+
 ## Pregunta 3 {#ej3-aa2 .unnumbered}
 
 En una fábrica, los tornillos se empaquetan y agrupan en cajas de 5 paquetes cada una. El número de tornillos por paquete varía según su tamaño. Se desea comprobar el buen estado de cada tornillo. Se sabe que, si todos los tornillos están en buen estado (sin importar su tamaño), el total de tornillos por caja siempre resulta ser un número par.
@@ -95,7 +115,7 @@ Para resolver este problema se han planteado las siguientes variables:
 `tornillos <- 10`<br>
 `tornillos_buenos <- 0`<br>
 
-Complete el siguiente fragmento de código ubicando los nombres de las variables que correspondan en cada estructura for. Puede utilizar los nombres descriptivos (caja, paquete, tornillo) o los genéricos (i, j, k) para los contadores del bucle, pero asegúrese de utilizar correctamente las variables previamente definidas (cajas, paquetes, tornillos) en los límites de iteración:
+Complete el siguiente fragmento de código ubicando los nombres de las variables que correspondan en cada estructura `for`. Puede utilizar los nombres descriptivos `(caja, paquete, tornillo)` o los genéricos `(i, j, k)`:
 
 ```{r, eval=FALSE}
 
@@ -120,6 +140,23 @@ cat("Cantidad total de tornillos buenos:", tornillos_buenos)
 - G: `r webexercises::fitb("tornillo")`
 - H: `r webexercises::fitb("tornillos_buenos")`
 
+`r webexercises::hide("Explicación")`
+En este ejercicio, queremos recorrer todas las `cajas`, luego cada `paquete` dentro de cada caja, y finalmente cada `tornillo` dentro de cada paquete. Como ya están definidas las cantidades totales de `cajas`, `paquetes` y `tornillos`, esas variables se deben usar como los límites de los bucles. Para verificar si un tornillo está en buen estado, usamos una condición simple: si su número es par. Si cumple con esa condición, sumamos uno a la cantidad de `tornillos_buenos`. Lo importante es entender qué representa cada nivel del bucle y usar correctamente las variables ya definidas:
+
+```{r eval=FALSE}
+for (caja in 1:cajas) {
+  for (paquete in 1:paquetes) {
+    for (tornillo in 1:tornillos) {
+      if (tornillo %% 2 == 0) {
+          tornillos_buenos <- tornillos_buenos + 1
+      }
+    }
+  }
+}
+cat("Cantidad total de tornillos buenos:", tornillos_buenos)
+```
+`r webexercises::unhide()`
+
 ## Pregunta 4 {.unnumbered}
 
 A partir del siguiente fragmento de código, responda las siguientes preguntas:
@@ -143,6 +180,10 @@ while (n <= 5) {
 - Si en lugar de asignar al inicio `n <- 1`, se hubiese asignado `n <- 6`, <br>
   ¿Cuál sería el valor de var al finalizar?<br>
    Respuesta: `r webexercises::fitb(0)`
+   
+`r webexercises::hide("Explicación")`  
+Este código usa un bucle `while` que se repite mientras la condición `n <= 5` se cumpla.<br> Arranca con `n` en 1 e incrementa de a uno en cada vuelta.<br> En cada iteración, suma el cuadrado de `n` a `var`.<br> Entonces, lo que estamos haciendo es calcular la suma de los cuadrados de los números del 1 al 5. <br> Al finalizar, `n` vale 6 porque ya no cumple la condición para seguir.<br> `var` vale 55 porque es `1² + 2² + 3² + 4² + 5²`.<br> El bloque se ejecuta 5 veces, una por cada valor de `n` de `1` a `5`.<br> Y si hubiéramos empezado con `n <- 6`, como no se cumple la condición desde el principio, el bucle no se ejecuta y `var` queda en 0.
+`r webexercises::unhide()`
 
 ## Pregunta 5 {.unnumbered}
 
@@ -170,3 +211,20 @@ cat("Producto no disponible", "\n")
 - El valor final de stock al terminar el bucle es 1. `r webexercises::longmcq(c(TRUE, answer = FALSE))`<br>
 - Si `stock <- 0` se imprime "Producto no disponible". `r webexercises::longmcq(c(answer = TRUE, FALSE))`<br>
 - Si las condiciones que evalúan el `if` y `else if` se invirtieran en posición la salida del programa cambiaria. `r webexercises::longmcq(c(TRUE, answer = FALSE))`
+
+`r webexercises::hide("Explicación")`
+Este ejercicio muestra cómo el orden de las condiciones y el valor de las variables iniciales afectan la ejecución:<br>
+
+- El mensaje '¡QUEDAN POCAS UNIDADES!' se imprime 3 veces porque eso pasa cuando `stock` baja de 3 a 1, cumpliendo la condición del `else if`. 
+
+- El bucle se ejecuta 7 veces en total, porque empieza en 7 y termina cuando `stock` baja a 0. 
+
+- Si `tipo_producto` fuera 'limpieza', el bucle sí se ejecuta, pero no se imprime ninguno de los mensajes dentro del `if` o `else if`, ya que esas condiciones no se cumplen. 
+
+- El valor final `stock` es 0, no 1, porque en cada vuelta se resta 1 hasta llegar a cero. 
+
+- Si arrancáramos con `stock <- 0`, el bucle no se ejecuta pero igual se imprime 'Producto no disponible', porque esa línea está fuera del `while`. 
+
+- Por último, invertir el orden de `if` y `else if` no cambia el resultado en este caso porque las condiciones nunca se solapan; o se cumple una o la otra, pero nunca ambas al mismo tiempo (son excluyentes).
+
+`r webexercises::unhide()`
