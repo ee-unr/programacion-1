@@ -118,3 +118,8 @@ input.webex-solveme.webex-correct,
   margin: 1em 0;
 }
 
+/* Regla específica para los fitb dentro del ejercicio con ID 'ej3-aa2' */
+#ej3-aa2 .webex-solveme {
+  width: 20ch; 
+  box-sizing: border-box;
+}
