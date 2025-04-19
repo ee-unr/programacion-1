@@ -45,31 +45,12 @@ book:
         - capitulos/03_1_crear_funciones.qmd
         - capitulos/03_2_ambito.qmd
         - capitulos/03_3_varios.qmd
-        - capitulos/03_practica.qmd
-        - capitulos/03_actividad_autoevaluativa.qmd
-    # - part: capitulos/04.qmd
-    #   chapters:
-    #     - capitulos/04_1_.qmd
-    #     - capitulos/04_practica.qmd
-    #     - capitulos/04_actividad_autoevaluativa.qmd
-    # - part: capitulos/05.qmd
-    #   chapters:
-    #     - capitulos/05_1_.qmd
-    #     - capitulos/05_practica.qmd
-    #     - capitulos/05_actividad_autoevaluativa.qmd
-    # - part: capitulos/06.qmd
-    #   chapters:
-    #     - capitulos/06_1_.qmd
-    #     - capitulos/06_practica.qmd
-    #     - capitulos/06_actividad_autoevaluativa.qmd
+        # - capitulos/03_practica.qmd
     - part: capitulos/90.qmd
       chapters:
         - capitulos/90_soluciones_01.qmd
         - capitulos/90_soluciones_02.qmd
-        - capitulos/90_soluciones_03.qmd
-        # - capitulos/90_soluciones_04.qmd
-        # - capitulos/90_soluciones_05.qmd
-        # - capitulos/90_soluciones_06.qmd
+        # - capitulos/90_soluciones_03.qmd
   appendices:
   #   - capitulos/98_tp.qmd
     - capitulos/99_bibliografia.qmd

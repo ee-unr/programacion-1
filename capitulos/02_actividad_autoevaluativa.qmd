@@ -1,12 +1,172 @@
 ---
 title: "Actividad de autoevaluación 2"
-number-sections: false
 ---
 
 ```{=latex}
 \thispagestyle{primerapagina}
 ```
 
-::: {.en-construcción data-latex=""}
-El contenido estará disponible a la brevedad.
-:::
+
+## Pregunta 1 {.unnumbered}
+
+Queremos clasificar a una persona según su edad y si tiene carnet de conducir.
+
+Reglas:
+
+- Si tiene 18 años o más y tiene carnet, puede conducir.
+
+- Si tiene 70 años o más,  o no tiene carnet, necesita una evaluación adicional.
+
+¿Cuál de los siguientes bloques muestra correctamente los mensajes que correspondan?
+
+```{r, eval=FALSE}
+a) if (edad >= 18 && tiene_carnet) {
+   print("Puede conducir")
+   } else if (edad >= 70 || !tiene_carnet) {
+   print("Requiere evaluación adicional")
+   }
+```
+
+```{r, eval=FALSE}
+b) if (edad >= 18 && tiene_carnet) {
+   print("Puede conducir")
+   }
+   if (edad >= 70 || !tiene_carnet) {
+   print("Requiere evaluación adicional")
+   }
+
+```
+
+```{r, eval=FALSE}
+c) if (edad >= 70 || !tiene_carnet) {
+   print("Requiere evaluación adicional")
+   } else if (edad >= 18 && tiene_carnet) {
+   print("Puede conducir")
+   }
+```
+
+```{r, eval=FALSE}
+d) if (edad >= 18 && tiene_carnet) {
+   print("Puede conducir")
+   } else {
+   print("Requiere evaluación adicional")
+   }
+```
+
+Escriba la opción correcta (a, b, c o d):  `r webexercises::fitb(c("B", "b"))`
+
+## Pregunta 2 {.unnumbered}
+
+¿Cuál de las siguientes expresiones **NO** muestra la tabla del 8?
+
+
+```{r, eval=FALSE}
+a) for (i in 0:10) {
+   cat("8 por", i, "es", 8 * i, "\n")
+   }
+```
+
+```{r, eval=FALSE}
+b) numero <- 0
+   for (i in 0:10) {
+   cat("8 por", i, "es", numero, "/n")
+   numero <- numero + 8
+   }
+```
+
+```{r, eval=FALSE}
+c) numero <- 1
+   for (i in 0:10) {
+   cat("8 por", i, "es", numero, "\n")
+   numero <- numero * 8
+   }
+```
+
+Escriba la opción correcta (a,b o c):  `r webexercises::fitb(c("C", "c"))`
+
+## Pregunta 3 {#ej3-aa2 .unnumbered}
+
+En una fábrica, los tornillos se empaquetan y agrupan en cajas de 5 paquetes cada una. El número de tornillos por paquete varía según su tamaño. Se desea comprobar el buen estado de cada tornillo. Se sabe que, si todos los tornillos están en buen estado (sin importar su tamaño), el total de tornillos por caja siempre resulta ser un número par.
+
+Para resolver este problema se han planteado las siguientes variables:
+
+`cajas <- 3`<br>
+`paquetes <- 5`<br>
+`tornillos <- 10`<br>
+`tornillos_buenos <- 0`<br>
+
+Complete el siguiente fragmento de código ubicando los nombres de las variables que correspondan en cada estructura for. Puede utilizar los nombres descriptivos (caja, paquete, tornillo) o los genéricos (i, j, k) para los contadores del bucle, pero asegúrese de utilizar correctamente las variables previamente definidas (cajas, paquetes, tornillos) en los límites de iteración:
+
+```{r, eval=FALSE}
+
+for ( 'A ___' in 1: 'B ___') {
+  for ( 'C ___' in 1: 'D ___') {
+    for ('E ___' in 1: 'F ___') {
+      if ( 'G ___' %% 2 == 0) {
+          'H ___' <- tornillos_buenos + 1
+      }
+    }
+  }
+}
+cat("Cantidad total de tornillos buenos:", tornillos_buenos)
+```
+
+- A: `r webexercises::fitb(c("caja", "i"))`
+- B: `r webexercises::fitb("cajas")`
+- C: `r webexercises::fitb(c("paquete", "j"))`
+- D: `r webexercises::fitb("paquetes")`
+- E: `r webexercises::fitb(c("tornillo", "k"))`
+- F: `r webexercises::fitb("tornillos")`
+- G: `r webexercises::fitb("tornillo")`
+- H: `r webexercises::fitb("tornillos_buenos")`
+
+## Pregunta 4 {.unnumbered}
+
+A partir del siguiente fragmento de código, responda las siguientes preguntas:
+
+```{r, eval=FALSE}
+var <- 0
+n <- 1
+
+while (n <= 5) {
+	var <- var + n * n
+	n <- n + 1
+}
+```
+
+- ¿Qué valor almacena la variable n al finalizar?<br>
+  Respuesta: `r webexercises::fitb(6)`<br>
+- ¿Qué valor almacena la variable var al finalizar?<br>
+  Respuesta: `r webexercises::fitb(55)`<br>
+- ¿Cuántas veces se ejecutó el bloque de código encerrado en la estructura iterativa?<br>
+  Respuesta: `r webexercises::fitb(5)` veces.<br>
+- Si en lugar de asignar al inicio `n <- 1`, se hubiese asignado `n <- 6`, <br>
+  ¿Cuál sería el valor de var al finalizar?<br>
+   Respuesta: `r webexercises::fitb(0)`
+
+## Pregunta 5 {.unnumbered}
+
+Evalúe el siguiente código y conteste TRUE O FALSE:
+
+```{r, eval=FALSE}
+stock <- 7
+tipo_producto <- "alimento"
+
+while (stock > 0) {
+  if (stock >= 5 && tipo_producto == "alimento") {
+    cat("¡OFERTA EN ALIMENTOS!", "\n")
+  } else if (stock <= 3 && tipo_producto == "alimento") {
+    cat("¡QUEDAN POCAS UNIDADES!", "\n")
+  }
+  stock <- stock - 1
+}
+
+cat("Producto no disponible", "\n")
+```
+
+- El mensaje "¡QUEDAN POCAS UNIDADES!" se imprimirá 3 veces. `r webexercises::longmcq(c(answer = TRUE, FALSE))`<br>
+- Si `tipo_producto <- "limpieza"` el código no se ejecutará.`r webexercises::longmcq(c(TRUE, answer = FALSE))` <br>
+- El bucle while se ejecuta 6 veces. `r webexercises::longmcq(c(TRUE, answer = FALSE))`<br>
+- El valor final de stock al terminar el bucle es 1. `r webexercises::longmcq(c(TRUE, answer = FALSE))`<br>
+- Si `stock <- 0` se imprime "Producto no disponible". `r webexercises::longmcq(c(answer = TRUE, FALSE))`<br>
+- Si las condiciones que evalúan el `if` y `else if` se invirtieran en posición la salida del programa cambiaria. `r webexercises::longmcq(c(TRUE, answer = FALSE))`
