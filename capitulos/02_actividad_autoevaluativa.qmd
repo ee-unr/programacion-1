@@ -7,6 +7,6 @@ number-sections: false
 \thispagestyle{primerapagina}
 ```
 
-::: {.en-construcción data-latex=""}
+::: {.en-construccion data-latex=""}
 El contenido estará disponible a la brevedad.
 :::
