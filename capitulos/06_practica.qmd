@@ -6,12 +6,12 @@ number-sections: false
 \thispagestyle{primerapagina}
 ```
 
-# Soluciones de la Práctica de la Unidad NN
+# Práctica de la Unidad 6
 
 ## Ejercicio 1
 
-Solución Ejercicio 1...
+Enunciado Ejercicio 1...
 
 ## Ejercicio 2
 
-Solución Ejercicio 2...
+Enunciado Ejercicio 2...

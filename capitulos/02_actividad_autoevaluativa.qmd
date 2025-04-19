@@ -1,0 +1,12 @@
+---
+title: "Actividad de autoevaluación 2"
+number-sections: false
+---
+
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+::: {.en-construcción data-latex=""}
+El contenido estará disponible a la brevedad.
+:::

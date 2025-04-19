@@ -6,7 +6,7 @@ number-sections: false
 \thispagestyle{primerapagina}
 ```
 
-# Soluciones de la Práctica de la Unidad NN
+# Soluciones de la Práctica de la Unidad 4
 
 ## Ejercicio 1
 

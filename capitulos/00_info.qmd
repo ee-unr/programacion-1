@@ -43,13 +43,13 @@ Visitá periódicamente este cronograma para autogestionar tu tránsito por los 
 |:----------:|:----------------:|:------------------:|:--------------------:|:-------------------------:|----------------------------------------------------------------------|
 | 1          | 17/3 al 23/3     | Unidad 1           | 1 a 3                | 1 a 4                     |                                                                      |
 | 2          | 24/3 al 30/3     | Unidad 1           | 4                    | 5 a 9                     | Feriado: lun 24/3                                                    |
-| 3          | 31/3 al 6/4      | Unidades 1 y 2     | 5 a 9                | 10 a 13 (Unidad 1)        | Feriado: mié 2/4                                                     |
+| 3          | 31/3 al 6/4      | Unidades 1 y 2     | 5 a 7                | 10 a 13 (Unidad 1)        | Feriado: mié 2/4                                                     |
 | 4          | 7/4 al 13/4      | Unidad 2           | 10                   | 1 a 6                     |                                                                      |
-| 5          | 14/4 al 20/4     | Unidad 2           | 10                   | 7 a 9                     | Feriados: Jue 17/4 y Vie 18/4                                        |
-| 6          | 21/4 al 27/4     | Unidad 3           | A definir            | A definir                 |                                                                      |
-| 7          | 28/4 al 4/5      | Unidad 3           | A definir            | A definir                 | Feriados: Jue 1/5 y Vie 2/5                                          |
-| 8          | 5/5 al 11/5      | Parcial / Unidad 4 | A definir            | A definir                 | **Parcial**: jue 8/5 a la tardecita, todas las comisiones juntas     |
-| 9          | 12/5 al 18/5     | Unidad 4           | A definir            | A definir                 |                                                                      |
+| 5          | 14/4 al 20/4     | Unidad 2           | 11 y 12              | 7 a 9                     | Feriados: Jue 17/4 y Vie 18/4                                        |
+| 6          | 21/4 al 27/4     | Unidad 3           | 14                   | 1 a 5                     |                                                                      |
+| 7          | 28/4 al 4/5      | Unidad 3           | 15 y 16              | 6 a 12                    | Feriados: Jue 1/5 y Vie 2/5                                          |
+| 8          | 5/5 al 11/5      | Semana del parcial | Estudio y repaso     | Estudio y repaso          | **Parcial**: jue 8/5 a las 18:00, todas las comisiones juntas     |
+| 9          | 12/5 al 18/5     | Unidad 4           | 19                   | Todos los ejercicios      |                                                                      |
 | 10         | 19/5 al 25/5     | Unidad 5           | A definir            | A definir                 |                                                                      |
 | 11         | 26/5 al 1/6      | Unidad 5           | A definir            | A definir                 | **Entrega TP**: dom 1/6                                              |
 | 12         | 2/6 al 8/6       | Unidad 5           | A definir            | A definir                 |                                                                      |
