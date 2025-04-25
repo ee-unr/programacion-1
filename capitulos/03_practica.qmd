@@ -345,7 +345,7 @@ max_com_div(24, 24)
 
 ## Ejercicio 11
 
-a.  Descargar el archivo \[`funciones_unidad3.R`\]((https://github.com/ee-unr/programacion-1/raw/refs/heads/main/archivos/funciones_unidad3.R) en el que se encuentra ya definida la función `fact()` tal como se presentó en @sec-factorial. Guardar este archivo en la carpeta del proyecto de esta unidad.
+a.  Descargar el archivo [`funciones_unidad3.R`](https://github.com/ee-unr/programacion-1/raw/refs/heads/main/archivos/funciones_unidad3.R) en el que se encuentra ya definida la función `fact()` tal como se presentó en @sec-factorial. Guardar este archivo en la carpeta del proyecto de esta unidad.
 
 b.  Agregar en ese script código para crear una nueva función `combinatorio(m, n)` que calcula el número combinatorio `m` tomado de a `n` (también llamado *coeficiente binomial*), siendo estos números naturales tales que `m >= n`. La función `combinatorio()` debe invocar a la función `fact()` ya provista, teniendo en cuenta que un número combinatorio se define como:
 
