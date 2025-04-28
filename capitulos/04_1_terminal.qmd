@@ -1,0 +1,138 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# La terminal
+
+::: {.presentacion-capitulo data-latex=""}
+En este capítulo aprenderemos a usar la **terminal**, una herramienta clave para interactuar con el sistema operativo de manera eficiente. A través de comandos, podemos realizar tareas rápidamente sin depender de la interfaz gráfica.  Aprenderemos a abrir una terminal en Windows y a usar los comandos básicos para navegar por directorios, gestionar archivos y realizar tareas comunes de manera más rápida.
+:::
+
+## Introducción
+
+Cuando encendemos nuestra computadora, normalmente interactuamos con el sistema operativo a través de una **interfaz gráfica** (GUI), utilizando ventanas, menús, íconos, el mouse, el teclado o incluso pantallas táctiles. Sin embargo, existe otra forma de comunicarse con la computadora: escribiendo comandos en una ventana especial llamada **terminal**. La terminal interpreta estos comandos y los traduce en instrucciones que la computadora puede ejecutar. Aunque hoy en día la mayoría de los usuarios utilizan la interfaz gráfica, años atrás este método era la única forma disponible para operar un sistema.
+
+¿Por qué aprender a usar la terminal si contamos con una interfaz gráfica que parece más sencilla? La razón principal es la **eficiencia**: muchas tareas tediosas y repetitivas se pueden realizar de manera mucho más rápida mediante comandos. Por ejemplo, copiar decenas de archivos que cumplen ciertos criterios de nombre puede hacerse con un solo comando en lugar de seleccionar manualmente uno por uno. Además, muchas herramientas de diagnóstico y administración de sistemas, especialmente en el ámbito de redes y servidores, solo están disponibles a través de la terminal. El uso de la terminal también permite la **automatización** de tareas.
+
+Si bien al principio puede parecer intimidante, no es un mundo completamente desconocido: ya estamos acostumbrados a escribir comandos en la **consola de R**, interpretando respuestas y corrigiendo errores. Aprender a usar la terminal en Windows será un paso natural que te permitirá tener un **mayor control** sobre nuestro entorno de trabajo y nos abrirá nuevas posibilidades para **automatizar y optimizar** tareas cotidianas.
+
+## Conceptos relacionados
+
+En el mundo de la programación y la informática, hay muchos términos relacionados con la interacción textual con la computadora que a veces se usan como sinónimos sin demasiada preocupación, como si fuesen distintas formas de llamar a lo mismo: una ventanita donde puedo escribir comandos y hacer que sucedan cosas en la computadora. Si bien está aceptado usar cualquiera de estas palabras, hay pequeñas diferencias entre los conceptos, que acá tratamos de resumir:
+
+- **Línea de comandos (Command Line Interface, CLI)**. La línea de comandos es una forma de interactuar con el sistema operativo escribiendo comandos, en lugar de usar ventanas y botones (interfaz gráfica o *Graphical User Interface*, GUI). La línea de comandos no es un programa, sino un modo de interacción. Para usarla, necesitamos programas específicos como las terminales y las shells.
+
+- **Shell**. Una shell es un programa que interpreta los comandos que escribimos y los traduce en instrucciones que el sistema operativo puede ejecutar. Cada shell tiene su propio lenguaje de comandos y sus propias capacidades. Algunas de las más comunes son:
+  
+  | Shell            | Sistema             | Características principales                              |
+  |------------------|----------------------|----------------------------------------------------------|
+  | **CMD.exe**       | Windows              | Shell clásica de Windows. Limitada, pero simple.          |
+  | **PowerShell**    | Windows              | Más moderna y poderosa. Permite automatizar tareas.       |
+  | **Bash**          | Linux, macOS, WSL    | Muy usada en sistemas Unix y entornos Linux en Windows. Potente y versátil. |
+  | **sh, zsh, fish** | Unix-like            | Otras shells populares, con distintos niveles de funcionalidad y facilidad de uso. |
+
+- **Terminal (o emulador de terminal)**. Una terminal (o emulador de terminal) es un programa que permite enviar comandos a una shell y mostrar sus respuestas. Es como una "ventana" desde la cual nos comunicamos con la computadora usando solo texto. Se llama emulador porque hoy en día normalmente se abre desde una interfaz gráfica, simulando las terminales físicas antiguas. La terminal no ejecuta directamente los comandos, sino que los pasa a la shell que esté configurada. Ejemplos de terminales:
+
+  - En Windows: CMD, PowerShell, Windows Terminal
+  - En Linux/macOS: GNOME Terminal, Konsole, Terminal.app
+
+- **Consola**. La palabra **consola** tiene varios usos:
+
+  - Históricamente, se refería a un dispositivo físico (un teclado y una pantalla conectados directamente a una computadora o servidor).
+  - Actualmente, en el lenguaje cotidiano, muchas veces se usa como sinónimo de terminal.
+
+## Comandos básicos para el uso de la terminal en Windows
+
+En este curso utilizaremos **CMD.exe** para trabajar con la terminal en Windows. CMD es más sencillo y directo que la otra opción disponible (PowerShell) y nos permitirá concentrarnos en aprender los comandos básicos sin distracciones.
+
+Se puede abrir la terminal **CMD.exe** así:
+
+1. Hacer clic en el botón de **Inicio** (el ícono de Windows en la esquina inferior izquierda).  
+2. Escribir `cmd` en el cuadro de búsqueda.  
+3. Aparecerá una aplicación llamada **Símbolo del sistema** o **Command Prompt**.  
+4. Hacer clic en ella para abrirla.
+
+Al igual que R, una terminal siempre tiene un directorio de trabajo, cuya ruta se muestra al comienzo de cada línea, antes del *prompt* `>`, que señala que podemos escribir un comando. También se puede abrir la terminal desde el Explorador de archivos. En este caso, el directorio de trabajo será la carpeta desde la que se abrió la terminal.
+
+![Línea de comandos de Windows. El directorio de trabajo es `C:\Users\Marcos`.](../imagenes/teoria_unidad_4/terminal2.png){width="80%" fig-align="center"}
+
+A continuación, se presentan algunos comandos esenciales que pueden usarse en CMD:
+
+| Comando | Descripción |
+|--------|-------------|
+| `dir` | Lista los archivos y carpetas en el directorio actual. |
+| `cd nombre_carpeta` | Cambia al directorio especificado. |
+| `cd ..` | Sube un nivel en el árbol de directorios. |
+| `mkdir nombre` | Crea una nueva carpeta. |
+| `del nombre` | Elimina un archivo. |
+| `rmdir nombre` | Elimina una carpeta (debe estar vacía). |
+| `copy archivo1.txt archivo2.txt` | Copia `archivo1.txt` y crea una copia llamada `archivo2.txt`. |
+| `move archivo1.txt carpeta\` | Mueve `archivo1.txt` a una carpeta. |
+| `rename nombre_viejo.txt nombre_nuevo.txt` | Cambia el nombre de un archivo. |
+| `cls` | Limpia la pantalla. |
+| `echo texto` | Imprime un mensaje en la terminal. |
+| `type archivo.txt` | Muestra el contenido de un archivo de texto. |
+| `help` | Ver la ayuda de los comandos. |
+| `exit` | Cerrar la terminal. |
+
+
+::: {.ejercicio data-latex=""}
+Realicemos la siguiente lista de actividades:
+
+1. Ir al directorio de nuestra asignatura:
+
+    ```cmd
+    cd ...
+    ```
+
+2. Listar las carpetas y archivos allí guardados:
+
+    ```cmd
+    dir
+    ```
+
+3.  Crear una nueva carpeta para la Unidad 4 (no será un RStudio Project porque no es creado desde RStudio, pero no importa):
+
+    ```cmd
+    mkdir unidad_4
+    ```
+    
+4.  Crear un archivo de texto simple, llamado `archivo1.txt` y con el contenido "Este es mi primer archivo">
+    
+    ```cmd
+    echo Este es mi primer archivo > archivo1.txt
+    ```
+
+5.  Copiar el archivo:
+
+    ```cmd
+    copy archivo1.txt copia_archivo1.txt
+    ```
+    
+    Ahora tenemos dos archivos: `archivo1.txt` y `copia_archivo1.txt`.
+
+6.  Renombrar el archivo copiado:
+
+    ```cmd
+    rename copia_archivo1.txt archivo2.txt
+    ```
+
+7.  Crear una subcarpeta llamada `textos`:
+    
+    ```cmd
+    mkdir textos
+    ```
+
+8.  Mover el segundo archivo a la subcarpeta:
+    
+    ```cmd
+    move archivo2.txt textos\
+    ```
+
+9.  Verificar que los archivos se movieron:
+
+    ```cmd
+    cd textos
+    dir
+    ```
+:::

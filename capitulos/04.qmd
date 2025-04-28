@@ -1,0 +1,9 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Unidad 4. Uso de la terminal
+
+::: {.presentacion-capitulo data-latex=""}
+En esta unidad nos adentraremos en el uso de la terminal, una herramienta poderosa que permite interactuar directamente con el sistema operativo a través de comandos de texto. Aprenderemos a utilizarla en el entorno Windows para realizar tareas básicas como crear carpetas o ejecutar programas. También aprenderemos a correr *scripts* de R desde la terminal y a desarrollar programas que interactúen con el usuario, recibiendo información y reaccionando en consecuencia. 
+:::
