@@ -51,7 +51,7 @@ book:
       chapters:
         - capitulos/04_1_terminal.qmd
         - capitulos/04_2_programas_de_R.qmd
-        - capitulos/04_3_ejemplos_avanzados.qmd
+        - capitulos/04_3_opcional.qmd
         - capitulos/04_practica.qmd
         - capitulos/04_actividad_autoevaluativa.qmd
     # - part: capitulos/05.qmd
