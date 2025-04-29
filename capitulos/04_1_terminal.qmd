@@ -54,7 +54,7 @@ Se puede abrir la terminal **CMD.exe** así:
 
 Al igual que R, una terminal siempre tiene un directorio de trabajo, cuya ruta se muestra al comienzo de cada línea, antes del *prompt* `>`, que señala que podemos escribir un comando. También se puede abrir la terminal desde el Explorador de archivos. En este caso, el directorio de trabajo será la carpeta desde la que se abrió la terminal.
 
-![Línea de comandos de Windows. El directorio de trabajo es `C:\Users\Marcos`.](../imagenes/teoria_unidad_4/terminal1.png){width="80%" fig-align="center"}
+![Línea de comandos de Windows. El directorio de trabajo es `C:\Users\profesor`.](../imagenes/teoria_unidad_4/terminal1.png){width="80%" fig-align="center"}
 
 A continuación, se presentan algunos comandos esenciales que pueden usarse en CMD:
 
