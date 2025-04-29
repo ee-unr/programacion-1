@@ -14,13 +14,24 @@ Para poder ejecutar scripts de R desde la terminal de Windows, necesitamos:
 
 **1. Editar la variable de entorno `PATH`**
 
-Para correr un programa de R usaremos el comando `Rscript`. Por default, la terminal lo desconoce, porque se trata de un programa que se agregó en nuestra computadora el día que instalamos R. Por eso necesitamos indicarle al sistema operativo que `Rscript` es un comando que se instaló con R y que lo puede encontrar en la carpeta de los archivos de instalación del programa R. Esto hay que hacerlo una sola vez por computadora editando las **variables de entorno de Windows**, que son cadenas de texto que contienen información acerca del sistema. Se logra siguiendo estos pasos:
+Cuando queramos correr un programa de R usaremos el comando `Rscript`. Por default, la terminal lo desconoce, porque se trata de un programa que se agregó en nuestra computadora el día que instalamos R. Por eso necesitamos indicarle al sistema operativo que `Rscript` es un comando que se instaló con R y que lo puede encontrar en la carpeta de los archivos de instalación del programa R. Esto hay que hacerlo una sola vez por computadora editando las **variables de entorno de Windows**, que son cadenas de texto que contienen información acerca del sistema. Se logra siguiendo estos pasos:
 
-1. Fijarse en qué carpeta de la computadora está instalado R. Seguramente lo encuentres si, abriendo el explorador de archivo, vas siguiendo este camino: `Este equipo > Windows (C:) > Archivos de programa > R > R-version > bin`. En esta carpeta tiene que haber dos archivos, llamados `R.exe` y `Rscript.exe`. Si es así, hacé clic con el botón derecho del mouse sobre cualquiera de ellos, luego en "Propiedades" y copiá el *path* que aparece en "Ubicación" (deberías copiar algo como `C:\Program Files\R\R-4.5.0\bin`).
-2. Hacer clic en "Incio" o el logo de las ventanitas de la barra de tareas, o presionar la tecla Windows del teclado, escribir "Entorno" y hacer clic en la opción "Editar las variables de entorno del sistema (panel de control)".
-3. Hacer clic en el botón "Variables de entorno".
-4. En el cuadro "Variables del sistema", hacer clic en la variable "Path" y luego en "Editar".
-5. Hacer clic en "Nuevo", pegar la dirección `C:\Program Files\R\R-4.5.0\bin` y dar Enter. Luego, hacer clic en "Aceptar" tres veces para cerrar todo.
+1.  Fijarse en qué carpeta de la computadora está instalado R. Seguramente lo encuentres si, abriendo el explorador de archivo, vas siguiendo este camino: `Este equipo > Windows (C:) > Archivos de programa > R > R-version > bin`. En esta carpeta tiene que haber dos archivos, llamados `R.exe` y `Rscript.exe`. Si es así, hacé clic con el botón derecho del mouse sobre cualquiera de ellos, luego en "Propiedades" y copiá el *path* que aparece en "Ubicación" (deberías copiar algo como `C:\Program Files\R\R-4.4.3\bin`). También podés copiar el *path* que se ve arriba en la barra de navegación.
+
+    ![Archivos de instalación de R en Windows.](../imagenes/teoria_unidad_4/terminal3.png){width="80%" fig-align="center"}
+
+2. Hacer clic en "Inicio" (logo de Windows de la barra de tareas) o presionar la tecla Windows del teclado, escribir "Entorno" y hacer clic en la opción "Editar las variables de entorno del sistema".
+
+3. Hacer clic en el botón "Variables de entorno" (abajo).
+4. En el cuadro "Variables del sistema" (abajo), hacer clic en la variable "Path" y luego en "Editar".
+
+    ![Variables de entorno de Windows.](../imagenes/teoria_unidad_4/terminal4.png){width="80%" fig-align="center"}
+
+5. Hacer clic en "Nuevo", pegar la dirección copiada antes (por ejemplo, `C:\Program Files\R\R-4.4.3\bin`) y dar `Enter`. 
+
+    ![Editar variable de entorno.](../imagenes/teoria_unidad_4/terminal5.png){width="80%" fig-align="center"}
+
+6. Luego, hacer clic en "Aceptar" tres veces para confirmar y cerrar todo.
 
 **2. Abrir la terminal y cambiar el directorio de trabajo**
 
