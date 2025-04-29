@@ -35,11 +35,13 @@ Cuando queramos correr un programa de R usaremos el comando `Rscript`. Por defau
 
 **2. Abrir la terminal y cambiar el directorio de trabajo**
 
-Para ejecutar un script de R debemos abrir una terminal y ejecutar `Rscript nombre_archivo.R`. No obstante, para que esto funcione, el directorio de trabajo de la terminal debe ser la carpeta en la cual está guardado el script `nombre_archivo.R`. Por eso, en primer lugar debemos movernos hacia esa carpeta con el comando `cd`. Otra opción menos cómoda es escribir la ruta completa hacia ese directorio, por ejemplo: `Rscript C:\Users\Marcos\Documents\nombre_archivo.R`.
+A la hora de ejecutar un script desde la terminal, tenemos que cambiar el directorio de trabajo a la carpeta en la cual está guardado, con el comando `cd`. Luego, ejecutamos el comando `Rscript nombre_archivo.R`. Si no queremos cambiar el directorio de trabajo, debemos escribir el *path* completo hacia el script, pero esto es menos cómodo (por ejemplo: `Rscript C:\Users\Documents\nombre_archivo.R`).
+
+Los scripts utilizados en los ejemplos de esta unidad pueden ser descargados desde [este archivo comprimido](https://github.com/ee-unr/programacion-1/raw/refs/heads/main/archivos/scripts_unidad4/scripts_unidad4.zip) y ubicados de forma ordenada en algún lugar de la computadora, idealmente en la carpeta destinada para esta unidad, como se muestra en la siguiente imagen.
+
+![Cambio del directorio de trabajo a la carpeta que contiene los scripts de R.](../imagenes/teoria_unidad_4/terminal6.png){width="80%" fig-align="center"}
 
 ## Ejecución de programas sin interacción del usuario
-
-Los scripts utilizados en los ejemplos de esta unidad pueden ser descargados desde [este archivo comprimido](https://github.com/ee-unr/programacion-1/raw/refs/heads/main/archivos/scripts_unidad4/scripts_unidad4.zip).
 
 Empezaremos con el ejemplo propuesto por el script `mi_programa.R` que tiene este contenido:
 
@@ -51,11 +53,11 @@ Empezaremos con el ejemplo propuesto por el script `mi_programa.R` que tiene est
 
 Todo lo que en el programa está encerrado en una llamada a la función `cat()` es lo que se mostrará como mensajes en la terminal cuando el script sea ejecutado. En una terminal abierta y habiendo cambiado el directorio hacia la carpeta donde está guardado el script, utilizamos el comando `Rscript mi_programa.R` y veremos el siguiente resultado:
 
-![Correr el script mi_programa.R desde la terminal.](../imagenes/teoria_unidad_4/terminal7.png){width="80%" fig-align="center"}
+![Correr el script `mi_programa.R` desde la terminal.](../imagenes/teoria_unidad_4/terminal7.png){width="80%" fig-align="center"}
 
 ## Ejecución de programas interactivos
 
-Correr scripts desde la terminal nos permite crear programas interactivos, que soliciten información al usuario y actúen en función de esa entrada. Este enfoque es particularmente útil cuando necesitamos que el usuario proporcione datos específicos o haga elecciones durante la ejecución del programa, sin depender de interfaces gráficas complejas. Al usar funciones de R como `readline()` o `scan()`, podemos diseñar scripts que personalicen su comportamiento según las respuestas del usuario. Este tipo de programas facilita la automatización de tareas con entradas variables, permitiendo a los usuarios interactuar con sus scripts de manera flexible y adaptada a sus necesidades. 
+Correr scripts desde la terminal nos permite crear programas interactivos, que soliciten información al usuario y actúen en función de esa entrada. Este enfoque es particularmente útil cuando necesitamos que el usuario proporcione datos específicos o haga elecciones durante la ejecución del programa, sin depender de interfaces gráficas complejas. Al usar funciones de R como `scan()`, podemos diseñar scripts que personalicen su comportamiento según las respuestas del usuario.
 
 Por ejemplo, el script `saludo.R` preguntará al usuario "¿Cómo te llamás?" y luego responderá con un saludo. Su contenido es:
 
@@ -74,7 +76,7 @@ La función `scan()` es la que permite *escanear* o *leer* valores que los usuar
 
 Cuando ejecutamos este script, vemos:
 
-![Correr el script saludo.R desde la terminal.](../imagenes/teoria_unidad_4/terminal7.png){width="80%" fig-align="center"}
+![Correr el script `saludo.R` desde la terminal.](../imagenes/teoria_unidad_4/terminal8.png){width="80%" fig-align="center"}
 
 Pasamos a otro ejemplo. El siguiente script le pide a la persona que lo esté usando que indique cualquier número y luego le comunica si es par o impar:
 
@@ -86,7 +88,7 @@ Pasamos a otro ejemplo. El siguiente script le pide a la persona que lo esté us
 
 Esto es lo que ocurre en la terminal:
 
-![Correr el script paridad.R desde la terminal.](../imagenes/teoria_unidad_4/terminal7.png){width="80%" fig-align="center"}
+![Correr el script `paridad.R` desde la terminal.](../imagenes/teoria_unidad_4/terminal9.png){width="80%" fig-align="center"}
 
 Ahora recordemos el [ejercicio de la práctica 2 en el que escribimos un programa para calcular salarios](@sec-ejericio-salario), en función del día de la semana, el turno y las horas trabajadas. Podemos adaptarlo para esta información de la que depende el cálculo final se tome desde la terminal:
 
@@ -98,6 +100,4 @@ Ahora recordemos el [ejercicio de la práctica 2 en el que escribimos un program
 
 Ejecutamos el script `salario.R`:
 
-![Correr el script salario.R desde la terminal.](../imagenes/teoria_unidad_4/terminal7.png){width="80%" fig-align="center"}
-
-
+![Correr el script `salario.R` desde la terminal.](../imagenes/teoria_unidad_4/terminal10.png){width="80%" fig-align="center"}
