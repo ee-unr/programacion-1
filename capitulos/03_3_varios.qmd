@@ -5,7 +5,7 @@
 # Más allá de la definición de funciones
 
 ::: {.presentacion-capitulo data-latex=""}
-En este capítulo profundizamos en aspectos esenciales para escribir funciones claras y comprensibles en R, que no fallen... o que avisen cuando lo hacen. Aprenderemos a utilizar el objeto especial `NULL` para controlar el comportamiento de nuestras funciones, a gestionar errores mediante el uso de `stop()`, `warning()` y `message()` para comunicar problemas o información útil al usuario, y a documentar las funciones correctamente usando el sistema **Roxygen**. Estas herramientas nos permitirán crear funciones más claras, seguras y fáciles de reutilizar.
+En este capítulo profundizamos en aspectos esenciales para escribir funciones claras y comprensibles en R, que no fallen... o que avisen cuando lo hacen. Aprenderemos a utilizar el objeto especial `NULL` para controlar el comportamiento de nuestras funciones, a gestionar errores y mensajes mediante el uso de `stop()`, `warning()` y `message()` para comunicar problemas o información útil al usuario, y a documentar las funciones correctamente usando el sistema **Roxygen**. Estas herramientas nos permitirán crear funciones más claras, seguras y fáciles de reutilizar.
 :::
 
 ## El objeto `NULL`
@@ -63,6 +63,7 @@ saludar("Gonzalo")
 saludar("Lucía")
 ```
 
+::: {.comentario data-latex=""}
 La mayoría de las funciones devuelven valores de forma **visible**: si se ejecutan en un entorno interactivo como la consola de R, el resultado se muestra automáticamente en pantalla. Este es el comportamiento por defecto de las funciones que escribimos. Recordemos la función `f`:
 
 ```{r}
@@ -91,6 +92,7 @@ La función devuelve un resultado, pero no se ve en la consola. Para usarlo o ve
 resultado <- f_invisible(4, 5)
 resultado
 ```
+:::
 
 Terminamos esta sección mencionando que en R, existen otros valores especiales que representan diferentes tipos de información ausente, indefinida o nula. Aunque parezcan similares, tienen diferencias fundamentales en cuanto a su significado, uso y comportamiento en operaciones y no deben confundirse con el objeto `NULL`:
 
@@ -110,13 +112,12 @@ Terminamos esta sección mencionando que en R, existen otros valores especiales 
   sqrt(-1)
   ```
 
-
 ## Manejo de errores y mensajes
 
 Ya hemos visto en varias ocasiones que cuando no usamos las funciones de R como deberíamos, obtenemos un mensaje de error. Las funciones que creamos nosotros también pueden contar con esta característica. Si la función no puede completar su tarea, debe lanzar un error utilizando `stop()`, que interrumpe inmediatamente su ejecución, o bien emitir un mensaje o advertencia.
 
 ::: {.info data-latex=""}
-Los **mecanismos de manejo de errores** nos permiten:
+Los **mecanismos de manejo de errores, advertencias y mensajes** nos permiten:
 
 - Detectar y comunicar problemas de manera clara al usuario.
 - Evitar que el programa continúe ejecutándose con resultados incorrectos.
