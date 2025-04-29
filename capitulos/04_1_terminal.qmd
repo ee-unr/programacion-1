@@ -54,13 +54,14 @@ Se puede abrir la terminal **CMD.exe** así:
 
 Al igual que R, una terminal siempre tiene un directorio de trabajo, cuya ruta se muestra al comienzo de cada línea, antes del *prompt* `>`, que señala que podemos escribir un comando. También se puede abrir la terminal desde el Explorador de archivos. En este caso, el directorio de trabajo será la carpeta desde la que se abrió la terminal.
 
-![Línea de comandos de Windows. El directorio de trabajo es `C:\Users\Marcos`.](../imagenes/teoria_unidad_4/terminal2.png){width="80%" fig-align="center"}
+![Línea de comandos de Windows. El directorio de trabajo es `C:\Users\Marcos`.](../imagenes/teoria_unidad_4/terminal1.png){width="80%" fig-align="center"}
 
 A continuación, se presentan algunos comandos esenciales que pueden usarse en CMD:
 
 | Comando | Descripción |
 |--------|-------------|
 | `dir` | Lista los archivos y carpetas en el directorio actual. |
+| `cd` | Muestra el directorio de trabajo actual |
 | `cd nombre_carpeta` | Cambia al directorio especificado. |
 | `cd ..` | Sube un nivel en el árbol de directorios. |
 | `mkdir nombre` | Crea una nueva carpeta. |
@@ -70,19 +71,21 @@ A continuación, se presentan algunos comandos esenciales que pueden usarse en C
 | `move archivo1.txt carpeta\` | Mueve `archivo1.txt` a una carpeta. |
 | `rename nombre_viejo.txt nombre_nuevo.txt` | Cambia el nombre de un archivo. |
 | `cls` | Limpia la pantalla. |
-| `echo texto` | Imprime un mensaje en la terminal. |
+| `echo texto` | Imprime "texto" en la terminal. |
+| `echo texto > archivo.txt` | Escribe "texto" en el archivo `archivo.txt` |
 | `type archivo.txt` | Muestra el contenido de un archivo de texto. |
 | `help` | Ver la ayuda de los comandos. |
 | `exit` | Cerrar la terminal. |
 
+![Ejemplo del uso de los comandos `cd` y `dir` para cambiar de carpeta y mostrar el contenido.](../imagenes/teoria_unidad_4/terminal2.png){width="80%" fig-align="center"}
 
 ::: {.ejercicio data-latex=""}
 Realicemos la siguiente lista de actividades:
 
-1. Ir al directorio de nuestra asignatura:
+1. Ir al directorio de nuestra asignatura (escribí un *path* adecuado para tu computadora:
 
     ```cmd
-    cd ...
+    cd Documents\facultad\anio_1\programacion_1
     ```
 
 2. Listar las carpetas y archivos allí guardados:
@@ -126,7 +129,7 @@ Realicemos la siguiente lista de actividades:
 8.  Mover el segundo archivo a la subcarpeta:
     
     ```cmd
-    move archivo2.txt textos\
+    move archivo2.txt textos
     ```
 
 9.  Verificar que los archivos se movieron:
@@ -134,5 +137,11 @@ Realicemos la siguiente lista de actividades:
     ```cmd
     cd textos
     dir
+    ```
+
+10. Mostrar en la terminal el contenido de `archivo2.txt`:
+
+    ```cmd
+    type archivo2.txt
     ```
 :::
