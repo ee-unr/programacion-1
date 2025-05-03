@@ -1,3 +1,5 @@
+file = if (interactive()) "" else "stdin"
+
 #' Determinar las dimensiones de una matriz a partir de una cantidad de elementos
 #'
 #' Calcula dimensiones preferentemente cuadradas para una matriz que contenga
