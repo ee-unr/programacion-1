@@ -1,0 +1,28 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Arreglos
+
+::: {.presentacion-capitulo data-latex=""}
+
+:::
+
+## Vectores
+
+
+## Matrices
+
+
+## Atributos
+
+
+### `names`
+
+
+### `dim`
+
+
+### `class`
+
+
