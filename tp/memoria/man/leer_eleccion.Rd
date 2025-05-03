@@ -4,7 +4,7 @@
 \alias{leer_eleccion}
 \title{Leer una elección del usuario desde consola}
 \usage{
-leer_eleccion(valores_permitidos, mensaje = NULL)
+leer_eleccion(valores_permitidos, mensaje = NULL, file = "")
 }
 \arguments{
 \item{valores_permitidos}{Vector de valores válidos que el usuario puede
@@ -12,6 +12,10 @@ ingresar. Puede ser un vector numérico o carácter.}
 
 \item{mensaje}{Mensaje opcional a mostrar al usuario antes de solicitarle su
 elección}
+
+\item{file}{Cadena de texto para especificar desde dónde se toma la entrada
+del usuario: "" si el programa se corre en la consola de R en RStudio o
+"stdin" si el programa se corre desde la terminal.}
 }
 \value{
 El valor ingresado por el usuario. Su tipo coincide con el tipo de

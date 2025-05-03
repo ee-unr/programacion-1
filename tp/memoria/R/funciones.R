@@ -1,5 +1,3 @@
-file = if (interactive()) "" else "stdin"
-
 #' Determinar las dimensiones de una matriz a partir de una cantidad de elementos
 #'
 #' Calcula dimensiones preferentemente cuadradas para una matriz que contenga
@@ -196,6 +194,9 @@ limpiar_consola <- function() {
 #' ingresar. Puede ser un vector numérico o carácter.
 #' @param mensaje Mensaje opcional a mostrar al usuario antes de solicitarle su
 #' elección
+#' @param file Cadena de texto para especificar desde dónde se toma la entrada
+#' del usuario: "" si el programa se corre en la consola de R en RStudio o
+#' "stdin" si el programa se corre desde la terminal.
 #'
 #' @return El valor ingresado por el usuario. Su tipo coincide con el tipo de
 #'  `valores_permitidos`.
@@ -204,7 +205,7 @@ limpiar_consola <- function() {
 #' @examples
 #' # leer_eleccion(1:3)  # Solo si se ejecuta interactivamente
 #'
-leer_eleccion <- function(valores_permitidos, mensaje = NULL) {
+leer_eleccion <- function(valores_permitidos, mensaje = NULL, file = "") {
   tipo_numerico <- is.numeric(valores_permitidos)
   valores_permitidos <- as.character(valores_permitidos)
   if (is.null(mensaje)) {
