@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -482,8 +517,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#pregunta-1" id="toc-pregunta-1" class="nav-link active" data-scroll-target="#pregunta-1">Pregunta 1</a></li>
+  <li><a href="#pregunta-2" id="toc-pregunta-2" class="nav-link" data-scroll-target="#pregunta-2">Pregunta 2</a></li>
+  <li><a href="#pregunta-3" id="toc-pregunta-3" class="nav-link" data-scroll-target="#pregunta-3">Pregunta 3</a></li>
+  <li><a href="#pregunta-4" id="toc-pregunta-4" class="nav-link" data-scroll-target="#pregunta-4">Pregunta 4</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/03_actividad_autoevaluativa.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/03_actividad_autoevaluativa.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -508,11 +552,88 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="en-construccion">
-<p>El contenido estará disponible a la brevedad.</p>
+<section id="pregunta-1" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-1">Pregunta 1</h2>
+<p>¿Qué problema/s tiene la siguiente definición de una función en R?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>f0 <span class="ot">&lt;-</span> <span class="cf">function</span>(a b) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> a <span class="sc">+</span> b</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><select class="webex-select"><option value="blank"></option><option value="">Falta una sentencia de tipo return()</option><option value="answer">Falta una coma</option><option value="">Las dos anteriores</option><option value="">Ningún problema</option></select></p>
+</section>
+<section id="pregunta-2" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-2">Pregunta 2</h2>
+<p>Considere la siguiente función:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(y <span class="sc">==</span> <span class="st">"operar"</span>) {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> x <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    rtdo <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">100</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    rtdo <span class="ot">&lt;-</span> x</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rtdo)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>¿Qué valor se obtiene si se evalúa <code>f1(2, "operar")</code>? <select class="webex-select"><option value="blank"></option><option value="">2</option><option value="">4</option><option value="">102</option><option value="answer">104</option></select></p>
+<p>¿Qué valor se obtiene si se evalúa <code>f1(2, "no operar")</code>? <select class="webex-select"><option value="blank"></option><option value="answer">2</option><option value="">4</option><option value="">102</option><option value="">104</option></select></p>
+<p>¿Qué valor se obtiene si se evalúa <code>f1("operar", 2)</code>? <select class="webex-select"><option value="blank"></option><option value="">2</option><option value="">4</option><option value="">102</option><option value="">104</option><option value="">Tira error</option><option value="answer">Devuelve una cadena de texto</option></select></p>
+<p>¿Qué valor se obtiene si se evalúa <code>f1(2)</code>? <select class="webex-select"><option value="blank"></option><option value="">2</option><option value="">4</option><option value="">102</option><option value="">104</option><option value="answer">Tira error</option><option value="">Devuelve una cadena de texto</option></select></p>
+<p>¿Qué valor se obtiene si se evalúa <code>f1("2", "operar")</code>? <select class="webex-select"><option value="blank"></option><option value="">2</option><option value="">4</option><option value="">102</option><option value="">104</option><option value="answer">Tira error</option><option value="">Devuelve una cadena de texto</option></select></p>
+<p>¿Qué valor se obtiene si se evalúa <code>f1("2", "jaja")</code>? <select class="webex-select"><option value="blank"></option><option value="">2</option><option value="">4</option><option value="">102</option><option value="">104</option><option value="">Tira error</option><option value="answer">Devuelve una cadena de texto</option></select></p>
+</section>
+<section id="pregunta-3" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-3">Pregunta 3</h2>
+<p>Considerando la función f1 anterior junto con la siguiente función f2, indique si cada una de las siguientes afirmaciones es VERDADERA o FALSA, al evaluar el siguiente programa.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definición de funciones - SUBALGORITMOS</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(y <span class="sc">==</span> <span class="st">"operar"</span>) {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> x <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    rtdo <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">100</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    rtdo <span class="ot">&lt;-</span> x</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rtdo)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="cf">function</span>(z) {</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(z <span class="sc">+</span> b)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ALGORITMO PRINCIPAL</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>palabra <span class="ot">&lt;-</span> <span class="st">"operar"</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">f1</span>(x, palabra)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Mensaje 1: el valor encontrado es "</span>, a, <span class="st">"y la variable x vale "</span>, x, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">f2</span>(<span class="dv">15</span>)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Mensaje 2: el valor encontrado es "</span>, c, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">f1</span>(<span class="dv">5</span>, <span class="st">"no operar"</span>) <span class="sc">+</span> <span class="fu">f1</span>(<span class="dv">5</span>, <span class="st">"operar"</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Mensaje 3: el valor encontrado es"</span>, d, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>La variable <code>d</code> es local a <code>f1</code> <select class="webex-select"><option value="blank"></option><option value="">Verdadero</option><option value="answer">Falso</option></select></p>
+<p>La variable <code>c</code> es global <select class="webex-select"><option value="blank"></option><option value="answer">Verdadero</option><option value="">Falso</option></select></p>
+<p>La función <code>f2</code> respeta el principio de transparencia referencial <select class="webex-select"><option value="blank"></option><option value="">Verdadero</option><option value="answer">Falso</option></select></p>
+<p>La función <code>f2</code> puede devolver distintos resultados aunque le pasemos siempre el mismo valor para el parámetro formal <code>z</code> <select class="webex-select"><option value="blank"></option><option value="answer">Verdadero</option><option value="">Falso</option></select></p>
+<p>La variable <code>rtdo</code> existe en el ambiente global del programa <select class="webex-select"><option value="blank"></option><option value="">Verdadero</option><option value="answer">Falso</option></select></p>
+<p>La variable <code>rtdo</code> es local a la función <code>f1</code> <select class="webex-select"><option value="blank"></option><option value="answer">Verdadero</option><option value="">Falso</option></select></p>
+<p>El texto mostrado por el primer mensaje será: <select class="webex-select"><option value="blank"></option><option value="">Mensaje 1: el valor encontrado es 10 y la variable x vale 10</option><option value="">Mensaje 1: el valor encontrado es 10 y la variable x vale 120</option><option value="answer">Mensaje 1: el valor encontrado es 120 y la variable x vale 10</option><option value="">Mensaje 1: el valor encontrado es 120 y la variable x vale 20</option></select></p>
+<p>El texto mostrado por el segundo mensaje será: <select class="webex-select"><option value="blank"></option><option value="">Mensaje 2: el valor encontrado es 12</option><option value="">Mensaje 2: el valor encontrado es 15</option><option value="answer">Mensaje 2: el valor encontrado es 27</option><option value="">No se muestra un mensaje porque se produce error</option></select></p>
+<p>El texto mostrado por el tercer mensaje será: <select class="webex-select"><option value="blank"></option><option value="">Mensaje 3: el valor encontrado es 5</option><option value="">Mensaje 3: el valor encontrado es 110</option><option value="answer">Mensaje 3: el valor encontrado es 115</option><option value="">No se muestra un mensaje porque se produce error</option></select></p>
+</section>
+<section id="pregunta-4" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-4">Pregunta 4</h2>
+<p>Seleccione la opción correcta:</p>
+<p><code>warning()</code> <select class="webex-select"><option value="blank"></option><option value="">Muestra un mensaje que detiene inmediatamente la ejecución de la función</option><option value="answer">Muestra un mensaje que no detiene la ejecución del programa pero advierte al usuario de un posible error</option><option value="">Muestra un mensaje en la consola sin que sea considerado un error o advertencia</option></select></p>
+<p><code>message()</code> <select class="webex-select"><option value="blank"></option><option value="">Muestra un mensaje que detiene inmediatamente la ejecución de la función</option><option value="">Muestra un mensaje que no detiene la ejecución del programa pero advierte al usuario de un posible error</option><option value="answer">Muestra un mensaje en la consola sin que sea considerado un error o advertencia</option></select></p>
+<p><code>stop()</code> <select class="webex-select"><option value="blank"></option><option value="answer">Muestra un mensaje que detiene inmediatamente la ejecución de la función</option><option value="">Muestra un mensaje que no detiene la ejecución del programa pero advierte al usuario de un posible error</option><option value="">Muestra un mensaje en la consola sin que sea considerado un error o advertencia</option></select></p>
+<p><code>NULL</code>, <code>NA</code> y <code>NaN</code> son tres objetos que tienen comportamientos semejantes en las operaciones <select class="webex-select"><option value="blank"></option><option value="">Verdadero</option><option value="answer">Falso</option></select></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -1153,7 +1274,7 @@ window.onload = function() {
     </div>   
     <div class="nav-footer-center">
 <p>Developed by Marcos Prunello</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/03_actividad_autoevaluativa.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/03_actividad_autoevaluativa.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/03_actividad_autoevaluativa.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/03_actividad_autoevaluativa.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
