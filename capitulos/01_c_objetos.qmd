@@ -41,7 +41,7 @@ x * 100
 
 Hay distintos tipos de objetos, algunos con estructuras muy simples (como aquellos que sólo almacenan un único valor, al igual que `x` en el ejemplo) y otros mucho más complejos (como aquellos que sirven para representar conjuntos de datos completos o resultados de algún análisis). Cada lenguaje de programación propone su propio catálogo de tipos de objetos y cada programador puede crear otros tipos nuevos. Durante las primeras unidades sólo emplearemos el tipo de objeto más sencillo que R ofrece.
 
-## Vectores atómicos de R
+## Vectores atómicos de R {#sec-vetor-atomico}
 
 El **tipo de objeto más simple y básico en R** se llama **vector atómico** (*atomic vector*). De hecho, en el ejemplo, `x` es un vector atómico que hospeda un único valor numérico. En Matemática, la palabra "vector" hace referencia a un conjunto de números ordenados. Los vectores atómicos de R también pueden contener más de un valor, pero por ahora sólo consideraremos situaciones donde cada vector atómico contiene un sólo valor (como `x`). A los objetos que se usan para almacenar un solo valor a veces también se les dice **variables** (porque suele ocurrir que ese valor va cambiando a lo largo del programa). 
 
