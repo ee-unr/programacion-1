@@ -119,11 +119,7 @@ mostrar_tablero <- function(tablero, mostrar = NULL) {
   }
   tapar <- setdiff(pos, mostrar)
   tablero[tapar] <- paste0("(",tapar,")")
-  if (Sys.info()[["sysname"]] == "Windows") {
-    shell("cls")
-  } else {
-    system("clear")
-  }
+  limpiar_consola()
   cat("TABLERO:")
   print(knitr::kable(tablero, format = "pipe", align = "c"))
   cat("\n")
