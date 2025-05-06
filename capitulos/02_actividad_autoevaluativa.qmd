@@ -7,6 +7,9 @@ number-sections: false
 \thispagestyle{primerapagina}
 ```
 
+::: {.info data-latex=""}
+Esta autoevaluación DEBE ser completada sin usar R para poder razonar las preguntas.
+:::
 
 ## Pregunta 1
 

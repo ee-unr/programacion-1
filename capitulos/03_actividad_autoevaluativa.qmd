@@ -7,6 +7,9 @@ number-sections: false
 \thispagestyle{primerapagina}
 ```
 
+::: {.info data-latex=""}
+Esta autoevaluación DEBE ser completada sin usar R para poder razonar las preguntas.
+:::
 
 ## Pregunta 1
 
@@ -24,7 +27,7 @@ f0 <- function(a b) {
 
 ## Pregunta 2
 
-Considere la siguiente función: 
+Considerar la siguiente función: 
 
 ```{r, eval=FALSE}
 f1 <- function(x, y) {
@@ -53,10 +56,10 @@ f1 <- function(x, y) {
 
 ## Pregunta 3
 
-Considerando la función f1 anterior junto con la siguiente función f2, indique si cada una de las siguientes afirmaciones es VERDADERA o FALSA, al evaluar el siguiente programa. 
+Considerando la función `f1` anterior junto con la función `f2` y el programa que se muestran a continuación, indicar si cada una de las siguientes afirmaciones es VERDADERA o FALSA o elegir la respuesta correcta:
 
 ```{r, eval=FALSE}
-# Definición de funciones - SUBALGORITMOS
+# Definición de funciones
 f1 <- function(x, y) {
   if(y == "operar") {
     x <- x * 2
@@ -71,7 +74,7 @@ f2 <- function(z) {
   return(z + b)
 }
 
-# ALGORITMO PRINCIPAL
+# Programa
 x <- 10
 palabra <- "operar"
 a <- f1(x, palabra)
@@ -83,17 +86,17 @@ d <- f1(5, "no operar") + f1(5, "operar")
 cat("Mensaje 3: el valor encontrado es", d, "\n")
 ```
 
-La variable `d` es local a `f1` `r webexercises::mcq(c("Verdadero", answer = "Falso"))`
+La variable `d` es local a `f1`: `r webexercises::mcq(c("Verdadero", answer = "Falso"))`
 
-La variable `c` es global `r webexercises::mcq(c(answer = "Verdadero", "Falso"))`
+La variable `c` es global: `r webexercises::mcq(c(answer = "Verdadero", "Falso"))`
 
-La función `f2` respeta el principio de transparencia referencial `r webexercises::mcq(c("Verdadero", answer = "Falso"))`
+La función `f2` respeta el principio de transparencia referencial: `r webexercises::mcq(c("Verdadero", answer = "Falso"))`
 
-La función `f2` puede devolver distintos resultados aunque le pasemos siempre el mismo valor para el parámetro formal `z` `r webexercises::mcq(c(answer = "Verdadero", "Falso"))`
+La función `f2` puede devolver distintos resultados aunque le pasemos siempre el mismo valor para el parámetro formal `z`: `r webexercises::mcq(c(answer = "Verdadero", "Falso"))`
 
-La variable `rtdo` existe en el ambiente global del programa `r webexercises::mcq(c("Verdadero", answer = "Falso"))`
+La variable `rtdo` existe en el ambiente global del programa: `r webexercises::mcq(c("Verdadero", answer = "Falso"))`
 
-La variable `rtdo` es local a la función `f1` `r webexercises::mcq(c(answer = "Verdadero", "Falso"))`
+La variable `rtdo` es local a la función `f1`: `r webexercises::mcq(c(answer = "Verdadero", "Falso"))`
 
 El texto mostrado por el primer mensaje será: 
 `r webexercises::mcq(c("Mensaje 1: el valor encontrado es 10 y la variable x vale 10", "Mensaje 1: el valor encontrado es 10 y la variable x vale 120", answer = "Mensaje 1: el valor encontrado es 120 y la variable x vale 10", "Mensaje 1: el valor encontrado es 120 y la variable x vale 20"))`
@@ -107,12 +110,12 @@ El texto mostrado por el tercer mensaje será:
 
 ## Pregunta 4
 
-Seleccione la opción correcta:
+Seleccionar la opción correcta:
 
-`warning()` `r webexercises::mcq(c("Muestra un mensaje que detiene inmediatamente la ejecución de la función", answer = "Muestra un mensaje que no detiene la ejecución del programa pero advierte al usuario de un posible error", "Muestra un mensaje en la consola sin que sea considerado un error o advertencia"))`
+`warning()` `r webexercises::mcq(c("Muestra un mensaje que detiene inmediatamente la ejecución de la función.", answer = "Muestra un mensaje que no detiene la ejecución del programa pero advierte al usuario de un posible error.", "Muestra un mensaje en la consola sin que sea considerado un error o advertencia."))`
 
-`message()` `r webexercises::mcq(c("Muestra un mensaje que detiene inmediatamente la ejecución de la función", "Muestra un mensaje que no detiene la ejecución del programa pero advierte al usuario de un posible error", answer = "Muestra un mensaje en la consola sin que sea considerado un error o advertencia"))`
+`message()` `r webexercises::mcq(c("Muestra un mensaje que detiene inmediatamente la ejecución de la función.", "Muestra un mensaje que no detiene la ejecución del programa pero advierte al usuario de un posible error.", answer = "Muestra un mensaje en la consola sin que sea considerado un error o advertencia."))`
 
-`stop()` `r webexercises::mcq(c(answer = "Muestra un mensaje que detiene inmediatamente la ejecución de la función", "Muestra un mensaje que no detiene la ejecución del programa pero advierte al usuario de un posible error", "Muestra un mensaje en la consola sin que sea considerado un error o advertencia"))`
+`stop()` `r webexercises::mcq(c(answer = "Muestra un mensaje que detiene inmediatamente la ejecución de la función.", "Muestra un mensaje que no detiene la ejecución del programa pero advierte al usuario de un posible error.", "Muestra un mensaje en la consola sin que sea considerado un error o advertencia."))`
 
-`NULL`, `NA` y `NaN` son tres objetos que tienen comportamientos semejantes en las operaciones `r webexercises::mcq(c("Verdadero", answer = "Falso"))`
+`NULL`, `NA` y `NaN` son tres objetos que tienen comportamientos semejantes en las operaciones. `r webexercises::mcq(c("Verdadero", answer = "Falso"))`
