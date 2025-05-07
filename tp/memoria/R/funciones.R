@@ -56,7 +56,7 @@ nuevo_tablero <- function(fichas, semilla = NULL) {
 #' Verifica que la cantidad de fichas sea suficiente y que no haya fichas duplicadas.
 #'
 #' @param fichas Vector de caracteres con las fichas ingresadas.
-#' @param n Número mínimo de fichas requerido.
+#' @param n Número de fichas requerido.
 #'
 #' @return TRUE si las fichas son válidas, FALSE en caso contrario.
 #' @export
