@@ -1,3 +1,4 @@
+
 ---
 number-sections: false
 ---
@@ -10,8 +11,186 @@ number-sections: false
 
 ## Ejercicio 1
 
-Enunciado Ejercicio 1...
+Como administrador de usuarios de un sistema de ventas, usted debe organizar los datos de los usuarios registrados y temporales. Para hacerlo, realice las siguientes acciones desde la terminal:
+
+Cree una carpeta principal llamada `organizacion_usuarios`.
+
+Dentro de ella, cree dos subcarpetas: `registrados` y `temporales_abril`.
+
+Agregue información ficticia de al menos tres usuarios registrados y tres usuarios temporales. Cada usuario debe tener un archivo propio, cuyo nombre debe ser un código alfanumérico de 8 caracteres que finalice con `_T` para los usuarios temporales y `_R` para los usuarios registrados (por ejemplo: `ABC1234X_R.txt`). 
+
+El contenido de los archivos debe ser:
+
+- Usuarios registrados: dirección IP, nombre de usuario y correo electrónico.
+
+- Usuarios temporales: dirección IP y nombre de invitado (ej: "invitado01")
+
+Asegúrese de que cada archivo esté guardado en la carpeta correspondiente.
+
+Suponga que uno de los usuarios temporales se ha registrado oficialmente en el sistema: 
+- Copie el archivo de ese usuario desde `temporales_abril` a la carpeta `registrados`.
+
+- Edite el archivo del usuario para agregar el nombre de usuario y el correo electronico correspondiente.
+
+- Renombre el archivo para que su nombre termine en `_R` en lugar de `_T`.
+
+- Muestre el contenido del archivo actualizado por pantalla para asegurarse que la información fue correctamente registrada.
+
+- Finalmente, elimine el archivo original de la carpeta `temporales_abril`.
+
+Ademas, debe considerar que los archivos temporales se borran mensualmente, pero su información debe guardarse en un historial: 
+
+- En el directorio principal (`organizacion_usuarios`), crea un archivo llamado `historial` y copia allí el contenido de `temporales_abril`.
+
+- Borra `temporales_abril` y crea `temporales_mayo`
 
 ## Ejercicio 2
 
-Enunciado Ejercicio 2...
+Cree un script en R llamado `menu.R` que muestre un menú de opciones en la consola, lea la opción elegida por el usuario y ejecute una acción diferente según la opción seleccionada. 
+El menú debe contener al menos tres opciones (por ejemplo: "1. Saludar", "2. Mostrar fecha", "3. Salir").
+
+El programa debe:
+
+- Mostrar el menú al usuario.
+
+- Leer la opción ingresada.
+
+- Responder con una acción distinta para cada opción:
+
+  - Si elige "1", pedirle al usuario que ingrese su nombre y luego mostrar un saludo       personalizado, por ejemplo: "Hola, Pepito!".
+
+  - Si elige "2", mostrar la hora actual (podés usar el los comandos 
+   `format(Sys.time(), "%H:%M:%S")` para obtenerla).
+ 
+  - Si elige "3", pedirle al usuario que ingrese su nombre y luego mostrar un saludo       personalizado, por ejemplo: "Chau, Pepito!".
+
+👉 Tip: Si el usuario ingresa una opción no válida, podés mostrar un mensaje como "Opción inválida".
+
+## Ejercicio 3
+
+Se desea desarrollar un programa que calcule la calificación promedio otorgada a una película por un grupo de jueces de cine.
+El grupo debe estar compuesto por un mínimo de 3 y un máximo de 6 jueces.
+Si el número ingresado no cumple con esta condición, el programa debe mostrar un mensaje adecuado y no continuar con el resto de las instrucciones.
+
+Si el número de jueces está dentro del intervalo aceptado, el programa debe:
+
+- Solicitar al usuario que ingrese el nombre de la película.
+
+- Solicitar las calificaciones otorgadas por cada uno de los jueces.
+
+  Las calificaciones deben ser ingresadas una por una. Ademas el programa debe           asegurarse de que cada calificación ingresada esté dentro del rango válido de 0 a      10. En caso contrario, debe mostrar un mensaje de error y solicitar nuevamente esa     calificación.
+
+  Ejemplo:
+  
+  ```r
+  Ingrese la calificación asignada por el juez 1:
+  Ingrese la calificación asignada por el juez 2:
+  (y así hasta completar la cantidad de jueces indicada)
+  ```
+  
+Una vez ingresadas todas las calificaciones, el programa debe:
+
+- Calcular el promedio de los puntajes ingresados.
+
+- Mostrar el nombre de la película y su puntaje promedio.
+
+Por ejemplo, la salida podria ser un mensaje como el siguiente:
+
+```r
+"La clasificacion promedio para la pelicula Shrek 1 es 9 puntos"
+```
+## Ejercicio 4
+
+En el campus virtual de una universidad, los usuarios pueden acceder a diferentes salas, cada una correspondiente a una materia específica (por ejemplo, Programación 1, Ciencia de Datos, Estadística). Cada sala está protegida por una contraseña única. Para acceder, el usuario debe ingresar la contraseña correcta. En caso de error, debe intentarlo nuevamente hasta lograrlo o hasta que se alcance un límite máximo de intentos, tras lo cual la cuenta será bloqueada.
+
+Para el caso de la sala de Programación 1, la contraseña es "amoprogramar". Vamos a suponer que un usuario quiere ingresar a esta sala. Escriba un algoritmo que:
+
+- Muestre un mensaje solicitando el ingreso de la contraseña.
+
+- Lea el valor ingresado por el usuario.
+
+- Inicie un proceso de verificación:
+  
+  Si la contraseña ingresada es incorrecta, debe mostrar:
+  
+  ```r
+    "Contraseña incorrecta. Ingrésela nuevamente."
+  ```
+  y permitir un nuevo intento.
+  
+  Si la contraseña es correcta, debe mostrar:
+  ```r
+  "¡Contraseña correcta! Puede continuar con sus estudios."
+  ```
+
+A partir de este escenario, se deben proponer **dos versiones** del algoritmo, considerando los siguientes casos:
+
+**Caso 1:** El usuario puede intentar indefinidamente hasta ingresar la contraseña correcta.
+
+**Caso 2:** El usuario tiene un máximo de cinco intentos. Si no ingresa la contraseña correcta en ese número de intentos, se debe mostrar el mensaje:
+
+```r
+"Demasiados intentos fallidos. Su cuenta ha sido bloqueada."
+```
+
+## Ejercicio 5
+
+Vuelva al ejercicio 7 de la practica 3, en el que tuvo que crear una función llamada `resolvente(a, b, c)` que muestra las soluciones de la ecuación de segundo grado $a x^2 + b x + c = 0$, empleando la fórmula resolvente:
+
+$$x_{1, 2} = \frac{-b \pm \sqrt{(b^2 - 4ac)}}{2a}$$
+Modifique el codigo de manera que: 
+
+- El programa pida al usuario que ingrese los coeficientes a, b y c uno por uno. 
+- Si el coeficiente `a` es cero, mostrar un mensaje de error y finalizar el programa.
+- Calcule el discriminante (D) con la fórmula: `D = b^2 - 4ac`
+- Clasifique las soluciones de acuerdo al resultado de `D`:
+
+  Si `D > 0`: Mostrar las dos soluciones reales distintas.
+  
+  Si `D = 0`: Mostrar la única solución real (doble).
+  
+  Si `D < 0`: Indicar que las soluciones son complejas (sin calcularlas).
+  
+- Muestre la ecuación ingresada en formato legible (ej: `x² - 5x + 6 = 0`).
+
+- Muestre el valor de D.
+
+- De el resultado con mensajes descriptivos, por ejemplo:
+
+```r
+"Existen dos soluciones reales distintas: x₁ = 2, x₂ = 3"
+```
+- Mejore la experiencia del usuario incluyendo:
+  - Mensaje de bienvenida y despedida
+  - Números que se muestren redondeados para facilitar su lectura.
+
+## Ejercicio 6 
+
+**Este ejercicon es opcional.**
+
+Reescriba el programa anterior de forma que, en lugar de solicitar al usuario que ingrese los valores de `a`, `b` y `c` uno por uno desde la terminal, estos se ingresen directamente como argumentos del sistema al momento de ejecutar el script.
+
+Para ello, utilice `commandArgs(trailingOnly = TRUE)` para capturar los valores y adapte el código en consecuencia.
+Asegúrese de incluir validaciones adecuadas para verificar que los argumentos sean numéricos y que `a` no sea igual a cero.
+
+Ejemplo de ejecución desde consola:
+
+```{r, eval=FALSE}
+Rscript resolucion.R 1 -1 -2
+```
+> Hay dos soluciones reales: -1 y 2
+
+```{r, eval=FALSE}
+Rscript resolucion.R 1 2 1
+```
+> Hay una solución real doble: -1
+
+```{r, eval=FALSE}
+Rscript resolucion.R 1 1 1
+```
+> Las soluciones son complejas.
+
+```{r, eval=FALSE}
+Rscript resolucion.R 0 1 1
+```
+> Error: El coeficiente a no puede ser 0.
