@@ -10,7 +10,108 @@ number-sections: false
 
 ## Ejercicio 1
 
-Solución Ejercicio 1...
+Primero dirigirse a la carpeta `unidad_4\ejercicio_1`, puede hacerlo utilizando el comando cd:
+
+```cmd
+cd ~tu_ruta\unidad_4\ejercicio_1
+```
+
+Crear la carpeta principal `organizacion_usuarios`:
+
+```cmd
+mkdir organizacion_usuarios
+cd organizacion_usuarios
+```
+
+Crear subcarpetas
+
+```cmd
+mkdir registrados temporales_abril
+```
+
+Para crear usuarios registrados primero moverse a la carpeta `registrados` usando `cd`:
+
+```cmd
+cd registrados
+```
+y luego crear los archivos: 
+
+```cmd
+echo IP: 192.168.1.1 > ABC1234A_R.txt
+echo Usuario: juanperez >> ABC1234A_R.txt
+echo Email: juanperez@email.com >> ABC1234A_R.txt
+
+echo IP: 192.168.1.2 > DEF5678B_R.txt
+echo Usuario: marialopez >> DEF5678B_R.txt
+echo Email: marialopez@email.com >> DEF5678B_R.txt
+
+echo IP: 192.168.1.3 > GHI9012C_R.txt
+echo Usuario: carlosgomez >> GHI9012C_R.txt
+echo Email: carlosgomez@email.com >> GHI9012C_R.txt
+```
+
+Para crear usuarios temporales primero usar `cd ..` para volver a la carpeta `organizacion_usuarios` y luego `cd temporales_abril` para ingresar a la carpeta `temporales`, alli crear los archivos correspondientes:
+
+```cmd
+echo IP: 192.168.2.1 > JKL3456D_T.txt
+echo Nombre: invitado01 >> JKL3456D_T.txt
+
+echo IP: 192.168.2.2 > MNO7890E_T.txt
+echo Nombre: invitado02 >> MNO7890E_T.txt
+
+echo IP: 192.168.2.3 > PQR1234F_T.txt
+echo Nombre: invitado03 >> PQR1234F_T.txt
+```
+
+Supongamos que el usuario temporal `MN34OP56_T.txt` se ha registrado, debemos copiar el archivo del usuario a la carpeta `registrados`, para eso primero volvemos a la carpeta principal `organizacion_usuarios` con `cd ..` y luego copiamos el archivo del usuario desde la carpeta `temporal` hacia la carpeta `registrados`:
+
+```cmd
+copy temporales_abrilMN34OP56_T.txt registrados
+```
+
+Editar el archivo para agregar datos (nombre de usuario e email):
+
+```cmd
+echo Usuario: federicoruiz >> registrados/MN34OP56_T.txt
+echo Email: federico@email.com >> registrados/MN34OP56_T.txt
+```
+
+Renombrar el archivo con sufijo _R:
+
+```cmd
+rename registrados\MN34OP56_T.txt MN34OP56_R.txt
+```
+
+Mostrar contenido actualizado:
+
+```cmd
+type registrados\MN34OP56_R.txt
+```
+
+Eliminar el archivo original de la carpeta`temporales_abril`:
+
+```cmd
+del temporales_abril\MN34OP56_T.txt
+```
+
+Copiar contenido de archivos temporales al historial, para ello se debe crear el archivo `historial.txt`: 
+
+```cmd
+copy temporales\temporales_abril.txt historial.txt
+```
+Eliminar la carpeta `temporales_abril` y crear `temporales_mayo`:
+
+```cmd
+rmdir /s /q temporales\temporales_abril
+mkdir temporales\temporales_mayo
+```
+Nota:
+
+En el comando `rmdir`:
+
+  - `/s` elimina la carpeta y todos sus contenidos (subcarpetas y archivos).
+  
+  - `/q` omite la confirmación de eliminación, lo que hace que el comando se ejecute      sin pedir confirmación.
 
 ## Ejercicio 2
 
