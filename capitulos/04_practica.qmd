@@ -10,7 +10,7 @@ number-sections: false
 
 ## Ejercicio 1
 
-Como administrador de usuarios de un sistema de ventas, usted debe organizar los datos de los usuarios registrados y temporales. Para hacerlo, realizar las siguientes acciones desde la terminal:
+El equipo de administración de usuarios de un sistema de ventas debe organizar los datos de los usuarios registrados y temporales. Para hacerlo, se necesita realizar las siguientes acciones desde la terminal:
 
 a. Crear una carpeta principal llamada `organizacion_usuarios`.
 
@@ -22,9 +22,9 @@ c. Agregar información ficticia de al menos tres usuarios registrados y tres us
 
    - Usuarios temporales: dirección IP y nombre de invitado (ejemplo: "invitado01")
 
-   Asegúrese de que cada archivo esté guardado en la carpeta correspondiente.
+   Asegurarse de que cada archivo esté guardado en la carpeta correspondiente.
 
-d. Suponer que uno de los usuarios temporales se ha registrado oficialmente en el sistema. Se deben seguir los siguientes pasos para actualizar la información:
+d. Uno de los usuarios temporales se ha registrado oficialmente en el sistema. Se deben seguir los siguientes pasos para actualizar la información:
 
    - Copiar el archivo de ese usuario desde `temporales_abril` a la carpeta `registrados`.
 
@@ -73,14 +73,16 @@ Si el número de jueces está dentro del intervalo aceptado, el programa debe:
   ```
   Ingrese la calificación asignada por el juez 1:
   Ingrese la calificación asignada por el juez 2:
-  (y así hasta completar la cantidad de jueces indicada)
+  .
+  .
+  .
   ```
   
 - Calcular el promedio de los puntajes ingresados.
 - Mostrar el nombre de la película y su puntaje promedio. Por ejemplo:
 
   ```
-  "La clasificacion promedio para la pelicula Shrek 1 es 9 puntos"
+  "La clasificacion promedio para la pelicula Shrek 1 es 9.12 puntos."
   ```
 
 ## Ejercicio 4
@@ -132,9 +134,7 @@ Modificar el código e incluirlo en un script que pueda ser ejecutado desde la t
 - Clasificar las soluciones de acuerdo al resultado de `D`:
 
   - Si `D > 0`: mostrar las dos soluciones reales distintas con un mensaje descriptivo como: "Existen dos soluciones reales distintas: x₁ = 2, x₂ = 3".
-  
   - Si `D = 0`: mostrar la única solución real (doble) con un mensaje descriptivo como "Existe una única solución real: x = 2 (raiz doble)".
-  
   - Si `D < 0`: indicar que las soluciones son complejas (sin calcularlas).
   
 - Mejorar la experiencia del usuario incluyendo:
