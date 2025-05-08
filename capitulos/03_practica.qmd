@@ -239,7 +239,7 @@ c.  Sin usar la computadora, indique cuál es el resultado de evaluar `a + b + c
     a + b + c + d
     ```
 
-## Ejercicio 7
+## Ejercicio 7 {#sec-resolvente}
 
 Escribir un programa en R para la creación de la función `resolvente(a, b, c)` que muestra las soluciones de la ecuación de segundo grado $a x^2 + b x + c = 0$, empleando la fórmula resolvente:
 
