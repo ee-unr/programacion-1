@@ -115,4 +115,154 @@ En el comando `rmdir`:
 
 ## Ejercicio 2
 
-Solución Ejercicio 2...
+Aunque no hay una única opción para resolver este problema, una posible solución sería: 
+
+```{r, eval=FALSE}
+
+menu<- function() {
+  
+  opcion <- 0
+  
+  while (opcion != 3) {
+    cat("\n=== MENÚ PRINCIPAL ===\n")
+    cat("1. Saludar\n")
+    cat("2. Mostrar hora actual\n")
+    cat("3. Salir\n")
+    cat("Elegí una opción: ")
+
+    opcion <- scan(what = integer(), nmax = 1, quiet = TRUE)
+
+    if (opcion == 1) {
+      cat("\nIngresá tu nombre: ")
+      nombre <- scan(what = character(), nmax = 1, quiet = TRUE)
+      cat("¡Hola,", nombre, "!\n")
+
+    } else if (opcion == 2) {
+      hora <- format(Sys.time(), "%H:%M:%S")
+      cat("\nLa hora actual es:", hora, "\n")
+
+    } else if (opcion == 3) {
+      cat("\nIngresá tu nombre para despedirte: ")
+      nombre <- scan(what = character(), nmax = 1, quiet = TRUE)
+      cat("¡Chau,", nombre, "!\n")
+
+    } else {
+      cat("\nOpción inválida. Probá de nuevo.\n")
+    }
+
+    if (opcion != 3) {
+      cat("\nPresioná Enter para volver al menú...")
+      invisible(scan(what = character(), nmax = 1, quiet = TRUE))
+    }
+  }
+}
+
+# Ejecutamos la función:
+menu()
+
+```
+
+Nota: la función `invisible(...)` en R ejecuta algo sin mostrar su resultado en la consola. Es útil cuando solo querés que se realice una acción (como leer un dato con scan()) pero no te interesa ver lo que devuelve.Se usa mucho para que el programa se pause esperando que el usuario presione enter (como para "volver al menú") sin ensuciar la consola.
+
+
+## Ejercicio 3
+
+```{r eval=FALSE}
+
+evaluar_pelicula <- function() { 
+  
+cat("Ingrese la cantidad de jueces en el grupo:\n")
+n <- scan(what = integer(), nmax = 1, quiet = TRUE)
+
+if (n < 3 || n > 6) {
+  cat("Cantidad inválida de jueces. Debe ser entre 3 y 6.\n")
+} else {
+  cat("Ingrese el nombre de la película:\n")
+  nombre <- readLines(con = stdin(), n = 1)
+
+  suma <- 0
+
+  for (i in 1:n) {
+    cat("Ingrese la calificación del juez", i, "\n")
+    nota <- scan(what = numeric(), nmax = 1, quiet = TRUE)
+
+    while (nota < 0 || nota > 10) {
+      cat("Calificación inválida. Las calificaciones deben ser entre 1 y 10.\n")
+      nota <- scan(what = numeric(), nmax = 1, quiet = TRUE)
+    }
+
+    suma <- suma + nota
+  }
+
+  promedio <- suma / n
+  cat("La clasificación promedio para la película", nombre, "es", round(promedio, 2), "puntos.\n")
+  }
+}
+
+# Ejecutamos la función:
+evaluar_pelicula()
+
+```
+
+Nota: `scan()` sirve para leer entradas “palabra por palabra” (por defecto separa por espacios), por eso para leer el nombre de la pelicula es mas eficiente usar `readline()` que captura toda la línea de texto, incluyendo los espacios.
+
+# Ejercicio 4
+
+**Version 1: intentos ilimitados**
+
+```{r, eval=FALSE}
+verificar_contrasenia_ilimitada <- function ()  {
+
+contrasenia_correcta <- "amoprogramar"
+ingresada <- ""
+
+while (ingresada != contrasenia_correcta) {
+  cat("Ingrese la contraseña:\n")
+  ingresada <- scan(what = character(), nmax = 1, quiet = TRUE)
+  if (ingresada != contrasenia_correcta) {
+    cat("Contraseña incorrecta. Ingrésela nuevamente.\n")
+  }
+}
+
+cat("¡Contraseña correcta! Puede continuar con sus estudios.\n")
+}
+
+# Ejecutamos la función:
+verificar_contrasenia_ilimitada()
+
+```
+
+**Version 2: intentos limitados (5 intentos)**
+
+```{r, eval=FALSE}
+
+verificar_contrasenia_limitada <- function () {
+
+contrasenia_correcta <- "amoprogramar"
+ingresada <- ""
+intentos_restantes <- 5
+
+while (intentos_restantes > 0 && ingresada != contrasenia_correcta) {
+  cat("Ingrese la contraseña:\n")
+  ingresada <- scan(what = character(), nmax = 1, quiet = TRUE)
+  
+  if (ingresada != contrasenia_correcta) {
+    intentos_restantes <- intentos_restantes - 1
+    if (intentos_restantes > 0) {
+      cat("Contraseña incorrecta. Intentos restantes:", intentos_restantes, "\n")
+    } else {
+      cat("Demasiados intentos fallidos. Su cuenta ha sido bloqueada.\n")
+    }
+  }
+}
+
+if (ingresada == contrasenia_correcta) {
+  cat("¡Contraseña correcta! Puede continuar con sus estudios.\n")
+}
+}
+
+# Ejecutamos la función:
+
+verificar_contrasenia_limitada()
+```
+
