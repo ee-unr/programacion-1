@@ -47,11 +47,14 @@ book:
         - capitulos/03_3_varios.qmd
         - capitulos/03_practica.qmd
         - capitulos/03_actividad_autoevaluativa.qmd
-    # - part: capitulos/04.qmd
-    #   chapters:
-    #     - capitulos/04_1_.qmd
-    #     - capitulos/04_practica.qmd
-    #     - capitulos/04_actividad_autoevaluativa.qmd
+    - part: capitulos/04.qmd
+      chapters:
+        - capitulos/04_1_terminal.qmd
+        - capitulos/04_2_programas_de_R.qmd
+        - capitulos/04_3_opcional.qmd
+        - capitulos/04_practica.qmd
+        - capitulos/90_soluciones_04.qmd
+        - capitulos/04_actividad_autoevaluativa.qmd
     # - part: capitulos/05.qmd
     #   chapters:
     #     - capitulos/05_1_.qmd
@@ -62,11 +65,11 @@ book:
     #     - capitulos/06_1_.qmd
     #     - capitulos/06_practica.qmd
     #     - capitulos/06_actividad_autoevaluativa.qmd
-    - part: capitulos/90.qmd
-      chapters:
-        - capitulos/90_soluciones_01.qmd
-        - capitulos/90_soluciones_02.qmd
-        - capitulos/90_soluciones_03.qmd
+    # - part: capitulos/90.qmd
+    #   chapters:
+    #     - capitulos/90_soluciones_01.qmd
+    #     - capitulos/90_soluciones_02.qmd
+    #     - capitulos/90_soluciones_03.qmd
         # - capitulos/90_soluciones_04.qmd
         # - capitulos/90_soluciones_05.qmd
         # - capitulos/90_soluciones_06.qmd

@@ -8,10 +8,181 @@ number-sections: false
 
 # Soluciones de la Práctica de la Unidad 4
 
+Los scripts propuestos como solución a los problemas de esta práctica pueden ser descargados desde [este archivo comprimido](https://github.com/ee-unr/programacion-1/raw/refs/heads/main/archivos/scripts_unidad4/scripts_practica4.zip).
+
 ## Ejercicio 1
 
-Solución Ejercicio 1...
+a.  Dirigirse a la carpeta `unidad_4\`, crear allí la carpeta principal `organizacion_usuarios` y entrar en ella:
+
+    ```cmd
+    cd ~tu_ruta\unidad_4
+    mkdir organizacion_usuarios
+    cd organizacion_usuarios
+    ```
+
+b.  Crear las tres subcarpetas:
+  
+    ```cmd
+    mkdir registrados temporales_abril historial
+    ```
+
+c.  Para crear usuarios registrados, primero moverse a la carpeta `registrados` usando `cd` y luego crear los archivos:
+    
+    ```cmd
+    cd registrados
+
+    echo IP: 192.168.1.1 > ABC1234A_R.txt
+    echo Usuario: juanperez >> ABC1234A_R.txt
+    echo Email: juanperez@email.com >> ABC1234A_R.txt
+    
+    echo IP: 192.168.1.2 > DEF5678B_R.txt
+    echo Usuario: marialopez >> DEF5678B_R.txt
+    echo Email: marialopez@email.com >> DEF5678B_R.txt
+    
+    echo IP: 192.168.1.3 > GHI9012C_R.txt
+    echo Usuario: carlosgomez >> GHI9012C_R.txt
+    echo Email: carlosgomez@email.com >> GHI9012C_R.txt
+    ```
+
+    Notar el uso de `>>` para que el contenido a escribir se agregue como una línea nueva en el archivo, sin sobreescribir lo anterior.
+    
+    Para crear usuarios temporales primero usar `cd ..` para volver a la carpeta `organizacion_usuarios` y de allí meterse a `temporales_abril`, para crear los archivos correspondientes:
+    
+    ```cmd
+    cd ..\temporales_abril
+    
+    echo IP: 192.168.2.1 > JKL3456D_T.txt
+    echo Nombre: invitado01 >> JKL3456D_T.txt
+    
+    echo IP: 192.168.2.2 > MNO7890E_T.txt
+    echo Nombre: invitado02 >> MNO7890E_T.txt
+    
+    echo IP: 192.168.2.3 > PQR1234F_T.txt
+    echo Nombre: invitado03 >> PQR1234F_T.txt
+    ```
+
+d.  Supongamos que el usuario temporal `MN34OP56_T.txt` se ha registrado, debemos copiar el archivo del usuario a la carpeta `registrados`. Para eso primero volvemos a la carpeta principal `organizacion_usuarios` con `cd ..` y luego copiamos el archivo del usuario desde la carpeta `temporales_abril` hacia la carpeta `registrados`:
+    
+    ```cmd
+    cd ..
+    copy temporales_abril\MN34OP56_T.txt registrados
+    ```
+    
+    Eliminar el archivo original de la carpeta`temporales_abril`:
+    
+    ```cmd
+    del temporales_abril\MN34OP56_T.txt
+    ```
+    
+    Editar el archivo copiado en `registrados` para agregar datos (nombre de usuario e email):
+    
+    ```cmd
+    echo Usuario: federicoruiz >> registrados/MN34OP56_T.txt
+    echo Email: federico@email.com >> registrados/MN34OP56_T.txt
+    ```
+    
+    Renombrar el archivo con sufijo `_R`:
+    
+    ```cmd
+    rename registrados\MN34OP56_T.txt MN34OP56_R.txt
+    ```
+    
+    Mostrar contenido actualizado:
+    
+    ```cmd
+    type registrados\MN34OP56_R.txt
+    ```
+
+e.  Copiar a la carpeta historial `historial` cada uno de los archivos de la carpeta `temporales_abril`. Usamos `*` para copiar todos los archivos que existen (otra ocpión es hacerlo uno por uno, escribiendo su nombre y usando el comando `copy` varias veces): 
+    
+    ```cmd
+    copy temporales_abril\* historial
+    ```
+    
+    Eliminar la carpeta `temporales_abril` y crear `temporales_mayo`:
+    
+    ```cmd
+    rmdir /s /q temporales\temporales_abril
+    mkdir temporales\temporales_mayo
+    ```
+    
+    Nota: en el comando `rmdir` la opción `/s` elimina la carpeta y todos sus contenidos (subcarpetas y archivos), mientras que `/q` omite la confirmación de eliminación, lo que hace que el comando se ejecute sin preguntarle al usuario si está seguro de eliminar.
 
 ## Ejercicio 2
 
-Solución Ejercicio 2...
+Una posible solución para este problema es incuir el siguiente contenido en el archivo `menu.R`: 
+
+```{r}
+#| echo: true
+#| eval: false 
+#| file: ../archivos/scripts_unidad4/menu.R
+```
+
+y ejecutarlo con:
+
+```bash
+Rscript menu.R
+```
+
+## Ejercicio 3
+
+El contenido del script `evaluar_pelicula.R` puede ser:
+
+```{r}
+#| echo: true
+#| eval: false 
+#| file: ../archivos/scripts_unidad4/evaluar_pelicula.R
+```
+
+Debe ser ejecutado con:
+
+```bash
+Rscript evaluar_pelicula.R
+```
+
+Nota: `scan()` sirve para leer entradas “palabra por palabra” (por defecto separa por espacios), por eso para leer el nombre de la pelicula es mas eficiente usar `readline()` que captura toda la línea de texto, incluyendo los espacios.
+
+## Ejercicio 4
+
+a.  **Versión con intentos ilimitados**. El contenido del script puede ser:
+
+    ```{r}
+    #| echo: true
+    #| eval: false 
+    #| file: ../archivos/scripts_unidad4/verificacion_a.R
+    ```
+
+b.  **Versión con intentos limitados (5 intentos)**. El contenido del script puede ser:
+
+    ```{r}
+    #| echo: true
+    #| eval: false 
+    #| file: ../archivos/scripts_unidad4/verificacion_b.R
+    ```
+
+## Ejercicio 5
+
+El contenido del script `resolvente.R` puede ser:
+
+```{r}
+#| echo: true
+#| eval: false 
+#| file: ../archivos/scripts_unidad4/resolvente.R
+```
+
+**Observaciones**: 
+
+- La función `ifelse()` permite implementar en una sola línea una estructura *if-else* sencilla. El primer argumento es la condición lógica a evaluar, el segundo es el valor devuelto en caso de que la condición sea `TRUE` y el tercero, el valor devuelto en caso de que sea `FALSE`. Esta función se usó para agregar un signo `+` delante de los coeficientes `b` y `c` si son positivos. 
+- Se puede pensar en formas más elaboradas para escribir la expresión de la ecuación, que hagan un mejor manejo de espacios o que omitan los términos cuyos coeficientes son nulos.
+- Se usó la función `stop()` para detener la ejecución del script si el coeficiente asociado al término de segundo grado es 0.
+
+## Ejercicio 6 (opcional)
+
+El contenido del script `resolvente_args.R` puede ser:
+
+```{r}
+#| echo: true
+#| eval: false 
+#| file: ../archivos/scripts_unidad4/resolvente_args.R
+```
+

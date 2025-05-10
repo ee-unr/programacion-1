@@ -56,7 +56,7 @@ if (x >= y && x >= z) {
 Observación: se llega a la segunda evaluación lógica cuando `y` es mayor a `x`, o cuando `z` es mayor que `x`, o cuando ambos son mayores a `x`, por lo tanto sólo es necesario saber cuál de ellos es el mayor.
 
 
-## Ejercicio 3
+## Ejercicio 3 {#sec-ejericio-salario}
 
 
 ```{r}

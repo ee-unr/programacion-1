@@ -1,0 +1,5 @@
+cat("***************************************\n")
+cat("¿Cómo te llamás?\n> ")
+nombre <- scan(file = "stdin", what = character(), n = 1, quiet = TRUE)
+cat("¡Hola, ", nombre, "!\n", sep = "")
+cat("***************************************\n")

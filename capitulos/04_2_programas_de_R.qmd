@@ -1,0 +1,103 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Ejecución de *scripts* de R desde la terminal
+
+::: {.presentacion-capitulo data-latex=""}
+En este capítulo aprenderemos a **ejecutar scripts de R directamente desde la terminal**, una habilidad esencial para automatizar tareas y trabajar de manera más eficiente. Si bien RStudio y otros entornos gráficos son herramientas poderosas, ejecutar scripts desde la terminal ofrece ventajas importantes, como mayor rapidez, control sobre el entorno y la capacidad de automatizar procesos sin depender de interfaces gráficas. Hacer esto es necesario cuando tenemos que programar alguna tarea de gran escala que se ejecutará de manera remota en algún servidor o cuando necesitamos encapsular nuestro programa para que otros lo puedan correr sin siquiera saber nada de R.
+:::
+
+## Requisitos
+
+Para poder ejecutar scripts de R desde la terminal de Windows, necesitamos:
+
+**1. Editar la variable de entorno `PATH`**
+
+Cuando queramos correr un programa de R usaremos el comando `Rscript`. Por default, la terminal lo desconoce, porque se trata de un programa que se agregó en nuestra computadora el día que instalamos R. Por eso necesitamos indicarle al sistema operativo que `Rscript` es un comando que se instaló con R y que lo puede encontrar en la carpeta de los archivos de instalación del programa R. Esto hay que hacerlo una sola vez por computadora editando las **variables de entorno de Windows**, que son cadenas de texto que contienen información acerca del sistema. Se logra siguiendo estos pasos:
+
+1.  Fijarse en qué carpeta de la computadora está instalado R. Seguramente lo encuentres si, abriendo el explorador de archivo, vas siguiendo este camino: `Este equipo > Windows (C:) > Archivos de programa > R > R-version > bin`. En esta carpeta tiene que haber dos archivos, llamados `R.exe` y `Rscript.exe`. Si es así, hacé clic con el botón derecho del mouse sobre cualquiera de ellos, luego en "Propiedades" y copiá el *path* que aparece en "Ubicación" (deberías copiar algo como `C:\Program Files\R\R-4.4.3\bin`). También podés copiar el *path* que se ve arriba en la barra de navegación.
+
+    ![Archivos de instalación de R en Windows.](../imagenes/teoria_unidad_4/terminal3.png){width="80%" fig-align="center"}
+
+2. Hacer clic en "Inicio" (logo de Windows de la barra de tareas) o presionar la tecla Windows del teclado, escribir "Entorno" y hacer clic en la opción "Editar las variables de entorno del sistema".
+
+3. Hacer clic en el botón "Variables de entorno" (abajo).
+4. En el cuadro "Variables del sistema" (abajo), hacer clic en la variable "Path" y luego en "Editar".
+
+    ![Variables de entorno de Windows.](../imagenes/teoria_unidad_4/terminal4.png){width="80%" fig-align="center"}
+
+5. Hacer clic en "Nuevo", pegar la dirección copiada antes (por ejemplo, `C:\Program Files\R\R-4.4.3\bin`) y dar `Enter`. 
+
+    ![Editar variable de entorno.](../imagenes/teoria_unidad_4/terminal5.png){width="80%" fig-align="center"}
+
+6. Luego, hacer clic en "Aceptar" tres veces para confirmar y cerrar todo.
+
+**2. Abrir la terminal y cambiar el directorio de trabajo**
+
+A la hora de ejecutar un script desde la terminal, tenemos que cambiar el directorio de trabajo a la carpeta en la cual está guardado, con el comando `cd`. Luego, ejecutamos el comando `Rscript nombre_archivo.R`. Si no queremos cambiar el directorio de trabajo, debemos escribir el *path* completo hacia el script, pero esto es menos cómodo (por ejemplo: `Rscript C:\Users\Documents\nombre_archivo.R`).
+
+Los scripts utilizados en los ejemplos de esta unidad pueden ser descargados desde [este archivo comprimido](https://github.com/ee-unr/programacion-1/raw/refs/heads/main/archivos/scripts_unidad4/scripts_unidad4.zip) y ubicados de forma ordenada en algún lugar de la computadora, idealmente en la carpeta destinada para esta unidad, como se muestra en la siguiente imagen.
+
+![Cambio del directorio de trabajo a la carpeta que contiene los scripts de R.](../imagenes/teoria_unidad_4/terminal6.png){width="80%" fig-align="center"}
+
+## Ejecución de programas sin interacción del usuario
+
+Empezaremos con el ejemplo propuesto por el script `mi_programa.R` que tiene este contenido:
+
+```{r}
+#| echo: true
+#| eval: false 
+#| file: ../archivos/scripts_unidad4/mi_programa.R
+```
+
+Todo lo que en el programa está encerrado en una llamada a la función `cat()` es lo que se mostrará como mensajes en la terminal cuando el script sea ejecutado. En una terminal abierta y habiendo cambiado el directorio hacia la carpeta donde está guardado el script, utilizamos el comando `Rscript mi_programa.R` y veremos el siguiente resultado:
+
+![Correr el script `mi_programa.R` desde la terminal.](../imagenes/teoria_unidad_4/terminal7.png){width="80%" fig-align="center"}
+
+## Ejecución de programas interactivos
+
+Correr scripts desde la terminal nos permite crear programas interactivos, que soliciten información al usuario y actúen en función de esa entrada. Este enfoque es particularmente útil cuando necesitamos que el usuario proporcione datos específicos o haga elecciones durante la ejecución del programa, sin depender de interfaces gráficas complejas. Al usar funciones de R como `scan()`, podemos diseñar scripts que personalicen su comportamiento según las respuestas del usuario.
+
+Por ejemplo, el script `saludo.R` preguntará al usuario "¿Cómo te llamás?" y luego responderá con un saludo. Su contenido es:
+
+```{r}
+#| echo: true
+#| eval: false 
+#| file: ../archivos/scripts_unidad4/saludo.R
+```
+
+La función `scan()` es la que permite *escanear* o *leer* valores que los usuarios ingresen por la terminal. Sus argumentos incluyen:
+
+- `file`: especifica desde donde se lee la información. Debemos setearlo como `file = "stdin"` porque vamos a leer información desde la terminal.
+- `what`: determina el tipo de dato a leer, generalmente un valor numérico o una cadena de texto. Si queremos leer un número, no es necesario usarlo, ya que por default se tiene `what = double()` y hace eso. En cambio, si queremos leer texto, como en este ejemplo, debemos indicar `what = character()`.
+- `n`: cantidad de valores a leer (uno solo en el ejemplo).
+- `quiet`: valor lógico que determina si la función opera escribiendo detalles adicionales en la consola (`FALSE`, valor por defecto, no lo desemos) o de forma silenciosa, sin escribir nada adicional (`TRUE`, es lo que queremos).
+
+Cuando ejecutamos este script, vemos:
+
+![Correr el script `saludo.R` desde la terminal.](../imagenes/teoria_unidad_4/terminal8.png){width="80%" fig-align="center"}
+
+Pasamos a otro ejemplo. El siguiente script le pide a la persona que lo esté usando que indique cualquier número y luego le comunica si es par o impar:
+
+```{r}
+#| echo: true
+#| eval: false 
+#| file: ../archivos/scripts_unidad4/paridad.R
+```
+
+Esto es lo que ocurre en la terminal:
+
+![Correr el script `paridad.R` desde la terminal.](../imagenes/teoria_unidad_4/terminal9.png){width="80%" fig-align="center"}
+
+Ahora recordemos el [ejercicio de la práctica 2 en el que escribimos un programa para calcular salarios](@sec-ejericio-salario), en función del día de la semana, el turno y las horas trabajadas. Podemos adaptarlo para esta información de la que depende el cálculo final se tome desde la terminal:
+
+```{r}
+#| echo: true
+#| eval: false 
+#| file: ../archivos/scripts_unidad4/salario.R
+```
+
+Ejecutamos el script `salario.R`:
+
+![Correr el script `salario.R` desde la terminal.](../imagenes/teoria_unidad_4/terminal10.png){width="80%" fig-align="center"}
