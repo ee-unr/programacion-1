@@ -698,7 +698,7 @@
     "href": "capitulos/01_actividad_autoevaluativa.html#pregunta-4",
     "title": "Actividad de autoevaluación 1",
     "section": "Pregunta 4",
-    "text": "Pregunta 4\nUna inmobiliaria necesita guardar el valor de una operación de venta de un inmueble efectuada durante el corriente año en una variable para realizar operaciones posteriores. Entre los siguientes posibles nombre de variable indique cual sería el más adecuado:\n\n 2025_venta_inmueble operación_Año2025 venta inmueble 2025 VentaOperación ventainmuebleanio2025 venta_inmueble_2025 valorVentaInmueble2025 Valor-Venta-Inmueble-2025\n\n\n\nExplicación\n\nVentaOperación: No es la mejor opción porque incluye un acento (“ó”) en el nombre de la variable, lo que puede generar problemas de codificación en algunos entornos. Además, se recomienda usar guiones bajos para separar palabras en minúsculas y mejorar la legibilidad.\n2025_venta_inmueble: En general no es buena práctica que los nombres de variables comiencen con un número en ningún lenguaje de programación. R y la mayoría de lenguajes no lo permiten, y aunque algunos sí lo hacen, dificulta la lectura y puede causar errores.\nValor-Venta-Inmueble-2025: No se recomienda usar guiones medios en nombres de variables porque este carácter está reservado para la operación de resta. En muchos lenguajes, incluyendo R, provocaría errores de sintaxis. Siempre es mejor usar guiones bajos.\nventa inmueble 2025: Los espacios entre palabras no son válidos en nombres de variables. El sistema interpretaría “venta”, “inmueble” y “2025” como tres variables distintas. Para unir palabras, se usan guiones bajos.\nvalorVentaInmueble2025: Este tipo de escritura se conoce como camelCase, y aunque muchos lo utilizan, en R la convención más clara y extendida es el uso de snake_case (con guiones bajos). Funciona, pero no sigue el estilo típico de R.\noperación_Año2025: Este nombre contiene un acento (“ó”) y la letra “ñ”, lo que puede causar conflictos en algunos entornos. Para evitar errores, es mejor evitar caracteres especiales como estos. Ademas utiliza mayúsculas, lo que puede complicar innecesariamente la escritura del nombre de la variable.\nventainmuebleanio2025: Aunque técnicamente válido, este nombre es largo y poco intuitivo porque carece de separadores entre palabras. Usar guiones bajos mejora significativamente la legibilidad.",
+    "text": "Pregunta 4\nUna inmobiliaria necesita guardar el valor de una operación de venta de un inmueble efectuada durante el corriente año en una variable para realizar operaciones posteriores. Entre los siguientes posibles nombre de variable indique cual sería el más adecuado:\n\n 2025_venta_inmueble venta inmueble 2025 operación_Año2025 ventainmuebleanio2025 VentaOperación Valor-Venta-Inmueble-2025 venta_inmueble_2025 valorVentaInmueble2025\n\n\n\nExplicación\n\nVentaOperación: No es la mejor opción porque incluye un acento (“ó”) en el nombre de la variable, lo que puede generar problemas de codificación en algunos entornos. Además, se recomienda usar guiones bajos para separar palabras en minúsculas y mejorar la legibilidad.\n2025_venta_inmueble: En general no es buena práctica que los nombres de variables comiencen con un número en ningún lenguaje de programación. R y la mayoría de lenguajes no lo permiten, y aunque algunos sí lo hacen, dificulta la lectura y puede causar errores.\nValor-Venta-Inmueble-2025: No se recomienda usar guiones medios en nombres de variables porque este carácter está reservado para la operación de resta. En muchos lenguajes, incluyendo R, provocaría errores de sintaxis. Siempre es mejor usar guiones bajos.\nventa inmueble 2025: Los espacios entre palabras no son válidos en nombres de variables. El sistema interpretaría “venta”, “inmueble” y “2025” como tres variables distintas. Para unir palabras, se usan guiones bajos.\nvalorVentaInmueble2025: Este tipo de escritura se conoce como camelCase, y aunque muchos lo utilizan, en R la convención más clara y extendida es el uso de snake_case (con guiones bajos). Funciona, pero no sigue el estilo típico de R.\noperación_Año2025: Este nombre contiene un acento (“ó”) y la letra “ñ”, lo que puede causar conflictos en algunos entornos. Para evitar errores, es mejor evitar caracteres especiales como estos. Ademas utiliza mayúsculas, lo que puede complicar innecesariamente la escritura del nombre de la variable.\nventainmuebleanio2025: Aunque técnicamente válido, este nombre es largo y poco intuitivo porque carece de separadores entre palabras. Usar guiones bajos mejora significativamente la legibilidad.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Actividad de autoevaluación 1</span>"
@@ -1242,8 +1242,8 @@
     ]
   },
   {
-    "objectID": "capitulos/03_practica.html#ejercicio-7",
-    "href": "capitulos/03_practica.html#ejercicio-7",
+    "objectID": "capitulos/03_practica.html#sec-resolvente",
+    "href": "capitulos/03_practica.html#sec-resolvente",
     "title": "Práctica de la Unidad 3",
     "section": "Ejercicio 7",
     "text": "Ejercicio 7\nEscribir un programa en R para la creación de la función resolvente(a, b, c) que muestra las soluciones de la ecuación de segundo grado \\(a x^2 + b x + c = 0\\), empleando la fórmula resolvente:\n\\[x_{1, 2} = \\frac{-b \\pm \\sqrt{(b^2 - 4ac)}}{2a}\\]\nObservaciones:\n\nEl programa debe emitir mensajes aclaratorios si hay una solución real doble o dos soluciones complejas (en este caso, no las calcula).\nLa función escribe en pantalla las soluciones de la ecuación y no es necesario que devuelva ningún objeto en particular.\nPara calcular una raíz cuadrada, podemos usar la función sqrt().\nSi a es igual a cero, usar la función stop() para devolver un error informativo.\n\nEjemplos de uso:\n&gt; resolvente(1, -1, -2)\nHay dos soluciones reales -1 y 2 \n\n&gt; resolvente(1, 2, 1)\nHay una solución real doble: -1 \n\n&gt; resolvente(1, 1, 1)\nLas soluciones son complejas.\n\n&gt; resolvente(0, 1, 1)\nError in resolvente(0, 1, 1) : (a) debe ser distinto de cero",
@@ -1352,398 +1352,266 @@
     ]
   },
   {
-    "objectID": "capitulos/90.html",
-    "href": "capitulos/90.html",
-    "title": "Soluciones de la Práctica",
+    "objectID": "capitulos/04.html",
+    "href": "capitulos/04.html",
+    "title": "Unidad 4. Uso de la terminal",
     "section": "",
-    "text": "En esta sección se presentan las respuestas a todos los ejercicios de la práctica. Al hacer uso de este material, se debe tener en cuenta:\n\nMuchos ejercicios no tienen una respuesta única y sólo se muestra una solución posible. Aún más, muchas veces elegimos mostrar una solución por ser sencilla o estar alineada con los temas desarrollados, cuando en realidad hay otras formas que tal vez sean mejores para resolver el mismo problema.\nEs importante intentar resolver los ejercicios por cuenta propia y no acercarse a la resolución como primera medida. Leer una respuesta puede darnos la falsa sensación de que entendemos, cuando en realidad enfrentar la resolución de un problema forma independiente puede ser mucho más desafiante. Este material debe servir como un apoyo después de haber trabajado en la resolución de los problemas.",
+    "text": "En esta unidad nos adentraremos en el uso de la terminal, una herramienta poderosa que permite interactuar directamente con el sistema operativo a través de comandos de texto. Aprenderemos a utilizarla en el entorno Windows para realizar tareas básicas como crear carpetas o ejecutar programas. También aprenderemos a correr scripts de R desde la terminal y a desarrollar programas que interactúen con el usuario, recibiendo información y reaccionando en consecuencia.",
     "crumbs": [
-      "Soluciones de la Práctica"
+      "Unidad 4. Uso de la terminal"
     ]
   },
   {
-    "objectID": "capitulos/90_soluciones_01.html",
-    "href": "capitulos/90_soluciones_01.html",
-    "title": "Soluciones de la Práctica de la Unidad 1",
+    "objectID": "capitulos/04_1_terminal.html",
+    "href": "capitulos/04_1_terminal.html",
+    "title": "19  La terminal",
     "section": "",
-    "text": "Ejercicio 1\nPara crear un nuevo script y guardarlo, podés seguir los ejemplos vistos en #sec-scripts. El contenido del script tiene que ser:\n# Ejercicio 1\n25 + 17\n6 * 8\nsqrt(144)",
+    "text": "19.1 Introducción\nCuando encendemos nuestra computadora, normalmente interactuamos con el sistema operativo a través de una interfaz gráfica (GUI), utilizando ventanas, menús, íconos, el mouse, el teclado o incluso pantallas táctiles. Sin embargo, existe otra forma de comunicarse con la computadora: escribiendo comandos en una ventana especial llamada terminal. La terminal interpreta estos comandos y los traduce en instrucciones que la computadora puede ejecutar. Aunque hoy en día la mayoría de los usuarios utilizan la interfaz gráfica, años atrás este método era la única forma disponible para operar un sistema.\n¿Por qué aprender a usar la terminal si contamos con una interfaz gráfica que parece más sencilla? La razón principal es la eficiencia: muchas tareas tediosas y repetitivas se pueden realizar de manera mucho más rápida mediante comandos. Por ejemplo, copiar decenas de archivos que cumplen ciertos criterios de nombre puede hacerse con un solo comando en lugar de seleccionar manualmente uno por uno. Además, muchas herramientas de diagnóstico y administración de sistemas, especialmente en el ámbito de redes y servidores, solo están disponibles a través de la terminal. El uso de la terminal también permite la automatización de tareas.\nSi bien al principio puede parecer intimidante, no es un mundo completamente desconocido: ya estamos acostumbrados a escribir comandos en la consola de R, interpretando respuestas y corrigiendo errores. Aprender a usar la terminal en Windows será un paso natural que te permitirá tener un mayor control sobre nuestro entorno de trabajo y nos abrirá nuevas posibilidades para automatizar y optimizar tareas cotidianas.",
     "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>La terminal</span>"
     ]
   },
   {
-    "objectID": "capitulos/90_soluciones_01.html#ejercicio-2",
-    "href": "capitulos/90_soluciones_01.html#ejercicio-2",
-    "title": "Soluciones de la Práctica de la Unidad 1",
+    "objectID": "capitulos/04_1_terminal.html#conceptos-relacionados",
+    "href": "capitulos/04_1_terminal.html#conceptos-relacionados",
+    "title": "19  La terminal",
+    "section": "19.2 Conceptos relacionados",
+    "text": "19.2 Conceptos relacionados\nEn el mundo de la programación y la informática, hay muchos términos relacionados con la interacción textual con la computadora que a veces se usan como sinónimos sin demasiada preocupación, como si fuesen distintas formas de llamar a lo mismo: una ventanita donde puedo escribir comandos y hacer que sucedan cosas en la computadora. Si bien está aceptado usar cualquiera de estas palabras, hay pequeñas diferencias entre los conceptos, que acá tratamos de resumir:\n\nLínea de comandos (Command Line Interface, CLI). La línea de comandos es una forma de interactuar con el sistema operativo escribiendo comandos, en lugar de usar ventanas y botones (interfaz gráfica o Graphical User Interface, GUI). La línea de comandos no es un programa, sino un modo de interacción. Para usarla, necesitamos programas específicos como las terminales y las shells.\nShell. Una shell es un programa que interpreta los comandos que escribimos y los traduce en instrucciones que el sistema operativo puede ejecutar. Cada shell tiene su propio lenguaje de comandos y sus propias capacidades. Algunas de las más comunes son:\n\n\n\n\n\n\n\n\nShell\nSistema\nCaracterísticas principales\n\n\n\n\nCMD.exe\nWindows\nShell clásica de Windows. Limitada, pero simple.\n\n\nPowerShell\nWindows\nMás moderna y poderosa. Permite automatizar tareas.\n\n\nBash\nLinux, macOS, WSL\nMuy usada en sistemas Unix y entornos Linux en Windows. Potente y versátil.\n\n\nsh, zsh, fish\nUnix-like\nOtras shells populares, con distintos niveles de funcionalidad y facilidad de uso.\n\n\n\nTerminal (o emulador de terminal). Una terminal (o emulador de terminal) es un programa que permite enviar comandos a una shell y mostrar sus respuestas. Es como una “ventana” desde la cual nos comunicamos con la computadora usando solo texto. Se llama emulador porque hoy en día normalmente se abre desde una interfaz gráfica, simulando las terminales físicas antiguas. La terminal no ejecuta directamente los comandos, sino que los pasa a la shell que esté configurada. Ejemplos de terminales:\n\nEn Windows: CMD, PowerShell, Windows Terminal\nEn Linux/macOS: GNOME Terminal, Konsole, Terminal.app\n\nConsola. La palabra consola tiene varios usos:\n\nHistóricamente, se refería a un dispositivo físico (un teclado y una pantalla conectados directamente a una computadora o servidor).\nActualmente, en el lenguaje cotidiano, muchas veces se usa como sinónimo de terminal.",
+    "crumbs": [
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>La terminal</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/04_1_terminal.html#comandos-básicos-para-el-uso-de-la-terminal-en-windows",
+    "href": "capitulos/04_1_terminal.html#comandos-básicos-para-el-uso-de-la-terminal-en-windows",
+    "title": "19  La terminal",
+    "section": "19.3 Comandos básicos para el uso de la terminal en Windows",
+    "text": "19.3 Comandos básicos para el uso de la terminal en Windows\nEn este curso utilizaremos CMD.exe para trabajar con la terminal en Windows. CMD es más sencillo y directo que la otra opción disponible (PowerShell) y nos permitirá concentrarnos en aprender los comandos básicos sin distracciones.\nSe puede abrir la terminal CMD.exe así:\n\nHacer clic en el botón de Inicio (el ícono de Windows en la esquina inferior izquierda).\n\nEscribir cmd en el cuadro de búsqueda.\n\nAparecerá una aplicación llamada Símbolo del sistema o Command Prompt.\n\nHacer clic en ella para abrirla.\n\nAl igual que R, una terminal siempre tiene un directorio de trabajo, cuya ruta se muestra al comienzo de cada línea, antes del prompt &gt;, que señala que podemos escribir un comando. También se puede abrir la terminal desde el Explorador de archivos. En este caso, el directorio de trabajo será la carpeta desde la que se abrió la terminal.\n\n\n\n\n\n\n\nLínea de comandos de Windows. El directorio de trabajo es C:\\Users\\profesor.\n\n\nA continuación, se presentan algunos comandos esenciales que pueden usarse en CMD:\n\n\n\n\n\n\n\nComando\nDescripción\n\n\n\n\ndir\nLista los archivos y carpetas en el directorio actual.\n\n\ncd\nMuestra el directorio de trabajo actual\n\n\ncd nombre_carpeta\nCambia al directorio especificado.\n\n\ncd ..\nSube un nivel en el árbol de directorios.\n\n\nmkdir nombre\nCrea una nueva carpeta.\n\n\ndel nombre\nElimina un archivo.\n\n\nrmdir nombre\nElimina una carpeta (debe estar vacía).\n\n\ncopy archivo1.txt archivo2.txt\nCopia archivo1.txt y crea una copia llamada archivo2.txt.\n\n\nmove archivo1.txt carpeta\\\nMueve archivo1.txt a una carpeta.\n\n\nrename nombre_viejo.txt nombre_nuevo.txt\nCambia el nombre de un archivo.\n\n\ncls\nLimpia la pantalla.\n\n\necho texto\nImprime “texto” en la terminal.\n\n\necho primer texto &gt; archivo.txt\nEscribe “primer texto” en el archivo archivo.txt\n\n\necho segundo texto &gt;&gt; archivo.txt\nAgrega “segundo texto” en el archivo archivo.txt, como nueva línea, sin que se borre lo anterior.\n\n\ntype archivo.txt\nMuestra el contenido de un archivo de texto.\n\n\nhelp\nVer la ayuda de los comandos.\n\n\nexit\nCerrar la terminal.\n\n\n\n\n\n\n\n\n\n\nEjemplo del uso de los comandos cd y dir para cambiar de carpeta y mostrar el contenido.\n\n\n\nRealicemos la siguiente lista de actividades:\n\nIr al directorio de nuestra asignatura (escribí un path adecuado para tu computadora:\ncd Documents\\facultad\\anio_1\\programacion_1\nListar las carpetas y archivos allí guardados:\ndir\nCrear una nueva carpeta para la Unidad 4 (no será un RStudio Project porque no es creado desde RStudio, pero no importa):\nmkdir unidad_4\nCrear un archivo de texto simple, llamado archivo1.txt y con el contenido “Este es mi primer archivo”&gt;\necho Este es mi primer archivo &gt; archivo1.txt\nCopiar el archivo:\ncopy archivo1.txt copia_archivo1.txt\nAhora tenemos dos archivos: archivo1.txt y copia_archivo1.txt.\nRenombrar el archivo copiado:\nrename copia_archivo1.txt archivo2.txt\nCrear una subcarpeta llamada textos:\nmkdir textos\nMover el segundo archivo a la subcarpeta:\nmove archivo2.txt textos\nVerificar que los archivos se movieron:\ncd textos\ndir\nMostrar en la terminal el contenido de archivo2.txt:\ntype archivo2.txt",
+    "crumbs": [
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>La terminal</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/04_2_programas_de_R.html",
+    "href": "capitulos/04_2_programas_de_R.html",
+    "title": "20  Ejecución de scripts de R desde la terminal",
+    "section": "",
+    "text": "20.1 Requisitos\nPara poder ejecutar scripts de R desde la terminal de Windows, necesitamos:\n1. Editar la variable de entorno PATH\nCuando queramos correr un programa de R usaremos el comando Rscript. Por default, la terminal lo desconoce, porque se trata de un programa que se agregó en nuestra computadora el día que instalamos R. Por eso necesitamos indicarle al sistema operativo que Rscript es un comando que se instaló con R y que lo puede encontrar en la carpeta de los archivos de instalación del programa R. Esto hay que hacerlo una sola vez por computadora editando las variables de entorno de Windows, que son cadenas de texto que contienen información acerca del sistema. Se logra siguiendo estos pasos:\n2. Abrir la terminal y cambiar el directorio de trabajo\nA la hora de ejecutar un script desde la terminal, tenemos que cambiar el directorio de trabajo a la carpeta en la cual está guardado, con el comando cd. Luego, ejecutamos el comando Rscript nombre_archivo.R. Si no queremos cambiar el directorio de trabajo, debemos escribir el path completo hacia el script, pero esto es menos cómodo (por ejemplo: Rscript C:\\Users\\Documents\\nombre_archivo.R).\nLos scripts utilizados en los ejemplos de esta unidad pueden ser descargados desde este archivo comprimido y ubicados de forma ordenada en algún lugar de la computadora, idealmente en la carpeta destinada para esta unidad, como se muestra en la siguiente imagen.",
+    "crumbs": [
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Ejecución de *scripts* de R desde la terminal</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/04_2_programas_de_R.html#requisitos",
+    "href": "capitulos/04_2_programas_de_R.html#requisitos",
+    "title": "20  Ejecución de scripts de R desde la terminal",
+    "section": "",
+    "text": "Fijarse en qué carpeta de la computadora está instalado R. Seguramente lo encuentres si, abriendo el explorador de archivo, vas siguiendo este camino: Este equipo &gt; Windows (C:) &gt; Archivos de programa &gt; R &gt; R-version &gt; bin. En esta carpeta tiene que haber dos archivos, llamados R.exe y Rscript.exe. Si es así, hacé clic con el botón derecho del mouse sobre cualquiera de ellos, luego en “Propiedades” y copiá el path que aparece en “Ubicación” (deberías copiar algo como C:\\Program Files\\R\\R-4.4.3\\bin). También podés copiar el path que se ve arriba en la barra de navegación.\n\n\n\n\n\n\n\nArchivos de instalación de R en Windows.\n\n\nHacer clic en “Inicio” (logo de Windows de la barra de tareas) o presionar la tecla Windows del teclado, escribir “Entorno” y hacer clic en la opción “Editar las variables de entorno del sistema”.\nHacer clic en el botón “Variables de entorno” (abajo).\nEn el cuadro “Variables del sistema” (abajo), hacer clic en la variable “Path” y luego en “Editar”.\n\n\n\n\n\n\n\nVariables de entorno de Windows.\n\n\nHacer clic en “Nuevo”, pegar la dirección copiada antes (por ejemplo, C:\\Program Files\\R\\R-4.4.3\\bin) y dar Enter.\n\n\n\n\n\n\n\nEditar variable de entorno.\n\n\nLuego, hacer clic en “Aceptar” tres veces para confirmar y cerrar todo.\n\n\n\n\n\n\n\n\n\n\n\nCambio del directorio de trabajo a la carpeta que contiene los scripts de R.",
+    "crumbs": [
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Ejecución de *scripts* de R desde la terminal</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/04_2_programas_de_R.html#ejecución-de-programas-sin-interacción-del-usuario",
+    "href": "capitulos/04_2_programas_de_R.html#ejecución-de-programas-sin-interacción-del-usuario",
+    "title": "20  Ejecución de scripts de R desde la terminal",
+    "section": "20.2 Ejecución de programas sin interacción del usuario",
+    "text": "20.2 Ejecución de programas sin interacción del usuario\nEmpezaremos con el ejemplo propuesto por el script mi_programa.R que tiene este contenido:\n\na &lt;- \"¡Hola, Mundo!\"\nb &lt;- 3\nd &lt;- 5\ncat(\"==========================================\\n\")\ncat(\"                 RESULTADOS               \\n\")\ncat(\"==========================================\\n\\n\")\ncat(\"El valor de b es \", b, \", mientras que d vale \", d, \".\\n\\n\", sep = \"\")\ncat(\"La suma entre ellos es igual a \", b + d, \".\\n\\n\", sep = \"\")\ncat(\"Este es un saludo:\", a)\n\nTodo lo que en el programa está encerrado en una llamada a la función cat() es lo que se mostrará como mensajes en la terminal cuando el script sea ejecutado. En una terminal abierta y habiendo cambiado el directorio hacia la carpeta donde está guardado el script, utilizamos el comando Rscript mi_programa.R y veremos el siguiente resultado:\n\n\n\n\n\n\n\nCorrer el script mi_programa.R desde la terminal.",
+    "crumbs": [
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Ejecución de *scripts* de R desde la terminal</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/04_2_programas_de_R.html#ejecución-de-programas-interactivos",
+    "href": "capitulos/04_2_programas_de_R.html#ejecución-de-programas-interactivos",
+    "title": "20  Ejecución de scripts de R desde la terminal",
+    "section": "20.3 Ejecución de programas interactivos",
+    "text": "20.3 Ejecución de programas interactivos\nCorrer scripts desde la terminal nos permite crear programas interactivos, que soliciten información al usuario y actúen en función de esa entrada. Este enfoque es particularmente útil cuando necesitamos que el usuario proporcione datos específicos o haga elecciones durante la ejecución del programa, sin depender de interfaces gráficas complejas. Al usar funciones de R como scan(), podemos diseñar scripts que personalicen su comportamiento según las respuestas del usuario.\nPor ejemplo, el script saludo.R preguntará al usuario “¿Cómo te llamás?” y luego responderá con un saludo. Su contenido es:\n\ncat(\"***************************************\\n\")\ncat(\"¿Cómo te llamás?\\n&gt; \")\nnombre &lt;- scan(file = \"stdin\", what = character(), n = 1, quiet = TRUE)\ncat(\"¡Hola, \", nombre, \"!\\n\", sep = \"\")\ncat(\"***************************************\\n\")\n\nLa función scan() es la que permite escanear o leer valores que los usuarios ingresen por la terminal. Sus argumentos incluyen:\n\nfile: especifica desde donde se lee la información. Debemos setearlo como file = \"stdin\" porque vamos a leer información desde la terminal.\nwhat: determina el tipo de dato a leer, generalmente un valor numérico o una cadena de texto. Si queremos leer un número, no es necesario usarlo, ya que por default se tiene what = double() y hace eso. En cambio, si queremos leer texto, como en este ejemplo, debemos indicar what = character().\nn: cantidad de valores a leer (uno solo en el ejemplo).\nquiet: valor lógico que determina si la función opera escribiendo detalles adicionales en la consola (FALSE, valor por defecto, no lo desemos) o de forma silenciosa, sin escribir nada adicional (TRUE, es lo que queremos).\n\nCuando ejecutamos este script, vemos:\n\n\n\n\n\n\n\nCorrer el script saludo.R desde la terminal.\n\n\nPasamos a otro ejemplo. El siguiente script le pide a la persona que lo esté usando que indique cualquier número y luego le comunica si es par o impar:\n\ncat(\"==========================================\\n\")\ncat(\"           PARIDAD DE UN NÚMERO           \\n\")\ncat(\"==========================================\\n\\n\")\ncat(\"Ingrese un número entero y presione enter:\\n\")\nn &lt;- scan(file = \"stdin\", n = 1, quiet = TRUE)\nif (n %% 2 == 0) {\n  cat(n, \"es par\\n\")\n} else {\n  cat(n, \"es impar\\n\")\n}\n\nEsto es lo que ocurre en la terminal:\n\n\n\n\n\n\n\nCorrer el script paridad.R desde la terminal.\n\n\nAhora recordemos el ejercicio de la práctica 2 en el que escribimos un programa para calcular salarios, en función del día de la semana, el turno y las horas trabajadas. Podemos adaptarlo para esta información de la que depende el cálculo final se tome desde la terminal:\n\n# PROGRAMA: \"Determinar salario\"\n\n# Valores fijados\nvalor_hora &lt;- 4000\nvalor_adicional_noche &lt;- 2000\nvalor_adicional_domingo &lt;- 1000\n\n# Pedir valores para calcular el salario\ncat(\"Ingrese la cantidad de horas trabajadas:\\n\")\nhoras &lt;- scan(\"stdin\", n = 1, quiet = TRUE)\ncat(\"\\nIngrese el día de la semana (DOM LUN MAR MIE JUE VIE SAB):\\n\")\ndia &lt;- scan(\"stdin\", what = \"\", n = 1, quiet = TRUE)\ncat(\"\\nIngrese el turno (M T N):\\n\")\nturno &lt;- scan(\"stdin\", what = \"\", n = 1, quiet = TRUE)\n\n# Cálculo para el pago de ese día a ese empleado\nsalario &lt;- horas * valor_hora\nif (turno == \"N\") {\n  salario &lt;- salario + horas * valor_adicional_noche\n}\nif (turno == \"DOM\") {\n  salario &lt;- salario + horas * valor_adicional_domingo\n}\ncat(\"\\nEl salario que se debe abonar es $\", salario, \"\\n\", sep = \"\")\n\nEjecutamos el script salario.R:\n\n\n\n\n\n\n\nCorrer el script salario.R desde la terminal.",
+    "crumbs": [
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Ejecución de *scripts* de R desde la terminal</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/04_3_opcional.html",
+    "href": "capitulos/04_3_opcional.html",
+    "title": "21  Uso de argumentos en la línea de comandos al ejecutar código de R",
+    "section": "",
+    "text": "En este capítulo de lectura opcional exploraremos ejemplos más avanzados de interacción entre R y la terminal, centrándonos en el uso de argumentos que se pasan al ejecutar scripts con Rscript. Aprenderemos cómo capturar y procesar estos argumentos con la función commandArgs(), cómo validar su cantidad y contenido, y cómo convertirlos a otros tipos de datos cuando sea necesario. También veremos ejemplos prácticos y mencionaremos herramientas adicionales que permiten gestionar opciones de manera más sofisticada.\n\nEn ejemplos anteriores hemos visto cómo capturar distintas piezas de información de forma interactiva mediante la función scan() mientras estamos ejecutando un programa de R desde la terminal. En otras ocasiones, en lugar de pausar la ejecución del programa a la espera de que el usuario ingrese algún valor, es conveniente especificar algunas opciones directamente en la línea de comando, al lado instrucción Rscript que ejecuta el código.\nPor ejemplo, imaginemos que tenemos un programa llamado resumen.R que se encarga de hacer un análisis descriptivo de un conjunto de datos, guardados en algún archivo cuyo nombre debe especificar el usuario para que el programa lo lea. Supongamos también que el nombre del archivo de datos es mayo.txt. El usuario puede mandar a correr el programa que hace el análisis sobre este archivo de datos indicando su nombre como un argumento adicional de esta forma:\nRscript resumen.R mayo.txt\nAhora pensemos que este mismo tipo de análisis se repite todos los meses con datos nuevos. En lugar de modificar nuestro script resumen.R para que lea un archivo con otro nombre, ejecutamos lo anterior con el nombre del archivo que corresponda y listo:\nRscript resumen.R junio.txt\nRscript resumen.R julio.txt\nRscript resumen.R agosto.txt\nPara que esto funcione, el programa que está guardado en resumen.R debe ser capaz de capturar el nombre del archivo que tiene leer y que el usuario se lo está pasando como un argumento adicional en la instrucción Rscript.\nLa función que se encarga de capturar los argumentos adicionales que enviamos desde la terminal es commandArgs(). Toma todos los elementos que escribamos al final de la línea de Rscript y los reúne en un vector atómico de tipo carácter.\n\nEn la Unidad 1 mencionamos que los vectores atómicos pueden contener más de un valor, pero hasta acá no los usamos de esa forma. Lo veremos recién en la próxima unidad. Los ejemplos que siguen hacen uso de vectores con varios elementos, que se corresponden con todos los argumentos que un usuario envía desde la terminal. Por esta razón, es recomendable que sigas leyendo si ya sabés usar vectores con más de un elemento, o que vuelvas a ver estos ejemplos más adelante, después de que hayas estudiado la unidad 5.\nLos scripts utilizados en los ejemplos pueden ser descargados desde este archivo comprimido.\n\nEn primer lugar vamos a analizar al script ejemplo1.R, con el siguiente contenido:\n\n# Capturar los argumentos pasados desde la terminal en un vector\nargs &lt;- commandArgs(trailingOnly = TRUE)\n\n# Contar cuántos argumentos nos pasaron\ncat(\"Nos pasaron\", length(args), \"argumentos.\\n\\n\")\n\n# Mostrar los argumentos que nos pasaron\ncat(\"Los argumentos que nos pasaron son:\\n\")\ncat(args, \"\\n\")\n\n# Aunque los argumentos sean números, son tomados como carácter\ncat(\"\\nLos argumentos se toman como valores de tipo:\\n\")\ntypeof(args)\n\nVamos a ejecutarlo desde la terminal con los argumentos “hola”, “chau” y “4”. Obtenemos:\n\nRscript ejemplo1.R hola chau 4\n\n\n\nNos pasaron 3 argumentos.\n\nLos argumentos que nos pasaron son:\nhola chau 4 \n\nLos argumentos se toman como valores de tipo:\n[1] \"character\"\n\n\nSi lo ejecutamos sin argumentos:\n\nRscript ejemplo1.R\n\n\n\nNos pasaron 0 argumentos.\n\nLos argumentos que nos pasaron son:\n \n\nLos argumentos se toman como valores de tipo:\n[1] \"character\"\n\n\nAhora vamos a suponer que el programa ejemplo2.R tiene como objetivo contar un chiste o decir un refrán, según lo que se le pida en el único argumento que se le pasa al correrlo desde la terminal. Si el argumento es igual a “chiste”, se cuenta el chiste; si es igual a “refran” se cuenta el refrán; y en otro caso no se hace nada. El contenido del archivo es:\n\n# Capturar los argumentos pasados desde la terminal en un vector\nargs &lt;- commandArgs(trailingOnly = TRUE)\n\nif (args[1] == \"chiste\") {\n  cat(\"- Juan, cómo has cambiado.\\n- Yo no soy Juan.\\n- Más a mi favor.\\n\\n\")\n} else if (args[1] == \"refran\") {\n  cat(\"No por mucho madrugar amanece más temprano.\\n\\n\")\n} else {\n  # Genero un error para que el programa se detenga, avisando lo que pasa\n  stop(\"El argumento provisto debe ser igual a chiste o refran.\\n\")\n}\n\nEjecutamos este archivo pasando distintos valores para su argumento:\n\nRscript ejemplo2.R refran\n\n\n\nNo por mucho madrugar amanece más temprano.\n\n\n\nRscript ejemplo2.R chiste\n\n\n\n- Juan, cómo has cambiado.\n- Yo no soy Juan.\n- Más a mi favor.\n\n\n\nRscript ejemplo2.R hola\n\n\n\nError: El argumento provisto debe ser igual a chiste o refran.\nExecution halted\n\n\nPodemos controlar la cantidad de argumentos admitidos generando errores en el código para aquellas situaciones donde el usuario envíe menos o más que la cantidad deseada. Por ejemplo, en el caso anterior, es obligatorio enviar uno y sólo un argumento. Modificamos el script para que lo tenga en cuenta, dando lugar al programa ejemplo3.R:\n\n# Capturar los argumentos pasados desde la terminal en un vector\nargs &lt;- commandArgs(trailingOnly = TRUE)\n\n# Controlar la cantidad de argumentos\nif (length(args) == 0 || length(args) &gt; 1) {\n  stop(\"Debe proveer exactamente un argumento, que debe ser igual a chiste o refran.\\n\")\n}\n\nif (args[1] == \"chiste\") {\n  cat(\"- Juan, cómo has cambiado.\\n- Yo no soy Juan.\\n- Más a mi favor.\\n\\n\")\n} else if (args[1] == \"refran\") {\n  cat(\"No por mucho madrugar amanece más temprano.\\n\\n\")\n} else {\n  # Genero un error para que el programa se detenga, avisando lo que pasa\n  stop(\"El argumento provisto debe ser igual a chiste o refran.\\n\")\n}\n\nVeamos lo que pasa si cumplimos o no con la cantidad exacta de argumentos que hay que pasarle al código de R:\n\nRscript ejemplo3.R\n\n\n\nError: Debe proveer exactamente un argumento, que debe ser igual a chiste o refran.\nExecution halted\n\n\n\nRscript ejemplo3.R chiste refran\n\n\n\nError: Debe proveer exactamente un argumento, que debe ser igual a chiste o refran.\nExecution halted\n\n\n\nRscript ejemplo3.R chiste\n\n\n\n- Juan, cómo has cambiado.\n- Yo no soy Juan.\n- Más a mi favor.\n\n\nImaginemos por último que es obligatorio pasar un primer argumento (“chiste” o “refran”) y que opcionalmente se puede pasar un segundo argumento, que se va a tratar de un número para indicar cuántas veces queremos que el chiste o el refrán se repita. Como todos los argumentos se pasan como datos de tipo carácter, para poder usar el número tendremos que convertirlo a dato de tipo numérico. Añadimos esta característica en el script ejemplo4.R:\n\n# Capturar los argumentos pasados desde la terminal en un vector\nargs &lt;- commandArgs(trailingOnly = TRUE)\n\n# Si no proveyó argumentos, generar un error y que se detenga el programa\nif (length(args) == 0) {\n  stop(\"Debe proveer al menos un argumento (chiste o refran).\")\n}\n\n# Si proveyó más de 2 argumentos, generar un error y que se detenga el programa\nif (length(args) &gt; 2) {\n  stop(\"No debe proveer más de 2 argumentos. El primero es obligatorio (chiste o refran) y el segundo es opcional (un número que indica la cantidad de veces a repetir el chiste o el refrán).\")\n}\n\n# Si no hay segundo argumento, args[2] es NA\nif (is.na(args[2])) {\n  n &lt;- 1\n} else {\n  n &lt;- as.numeric(args[2])\n}\n\n# Repetir n veces\nfor (i in 1:n) {\n  if (args[1] == \"chiste\") {\n    cat(\"- Juan, cómo has cambiado.\\n- Yo no soy Juan.\\n- Más a mi favor.\\n\\n\")\n  } else if (args[1] == \"refran\") {\n    cat(\"No por mucho madrugar amanece más temprano.\\n\\n\")\n  } else {\n    # Genero un error para que el programa se detenga, avisando lo que pasa\n    stop(\"El argumento provisto debe ser igual a chiste o refran.\\n\")\n  }\n}\n\nVeamos ahora cómo funciona:\n\nRscript ejemplo4.R refran 5\n\n\n\nNo por mucho madrugar amanece más temprano.\n\nNo por mucho madrugar amanece más temprano.\n\nNo por mucho madrugar amanece más temprano.\n\nNo por mucho madrugar amanece más temprano.\n\nNo por mucho madrugar amanece más temprano.\n\n\n\nRscript ejemplo4.R chiste 3\n\n\n\n- Juan, cómo has cambiado.\n- Yo no soy Juan.\n- Más a mi favor.\n\n- Juan, cómo has cambiado.\n- Yo no soy Juan.\n- Más a mi favor.\n\n- Juan, cómo has cambiado.\n- Yo no soy Juan.\n- Más a mi favor.\n\n\n\nRscript ejemplo4.R refran\n\n\n\nNo por mucho madrugar amanece más temprano.\n\n\n\nRscript ejemplo4.R\n\n\n\nError: Debe proveer al menos un argumento (chiste o refran).\nExecution halted\n\n\nAdemás de la función commandArgs() existen paquetes de R para poder trabajar con argumentos y opciones de formas mucho más elaboradas, como los paquetes argparse y optparse, entre otros.",
+    "crumbs": [
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Uso de argumentos en la línea de comandos al ejecutar código de R</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/04_practica.html",
+    "href": "capitulos/04_practica.html",
+    "title": "Práctica de la Unidad 4",
+    "section": "",
+    "text": "Ejercicio 1\nEl equipo de administración de usuarios de un sistema de ventas debe organizar los datos de los usuarios registrados y temporales. Para hacerlo, se necesita realizar las siguientes acciones desde la terminal:",
+    "crumbs": [
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Práctica de la Unidad 4</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/04_practica.html#ejercicio-1",
+    "href": "capitulos/04_practica.html#ejercicio-1",
+    "title": "Práctica de la Unidad 4",
+    "section": "",
+    "text": "Crear una carpeta principal llamada organizacion_usuarios.\nDentro de ella, crear tres subcarpetas: registrados, temporales_abril e historial.\nAgregar información ficticia de al menos tres usuarios registrados y tres usuarios temporales. Cada usuario debe tener un archivo propio, cuyo nombre debe ser un código alfanumérico de 8 caracteres que finalice con _T para los usuarios temporales y _R para los usuarios registrados (por ejemplo: ABC1234X_R.txt). Se puede inventar cualquier código. El contenido de los archivos debe ser:\n\nUsuarios registrados: dirección IP, nombre de usuario y correo electrónico.\nUsuarios temporales: dirección IP y nombre de invitado (ejemplo: “invitado01”)\n\nAsegurarse de que cada archivo esté guardado en la carpeta correspondiente.\nUno de los usuarios temporales se ha registrado oficialmente en el sistema. Se deben seguir los siguientes pasos para actualizar la información:\n\nCopiar el archivo de ese usuario desde temporales_abril a la carpeta registrados.\nEditar el archivo del usuario para agregar el nombre de usuario y el correo electrónico correspondiente.\nRenombrar el archivo para que su nombre termine en _R en lugar de _T.\nMostrar el contenido del archivo actualizado por pantalla para asegurarse que la información fue correctamente registrada.\nFinalmente, eliminar el archivo original de la carpeta temporales_abril.\n\nAdemás, se debe considerar que los archivos temporales se borran mensualmente, pero se guarda un respaldo en la carpeta historial. Para lograr esto:\n\nCopiar a la carpeta historial historial cada uno de los archivos de la carpeta temporales_abril.\nBorrar la carpeta temporales_abril y crear el directorio para el próximo mes, temporales_mayo.",
+    "crumbs": [
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Práctica de la Unidad 4</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/04_practica.html#ejercicio-2",
+    "href": "capitulos/04_practica.html#ejercicio-2",
+    "title": "Práctica de la Unidad 4",
     "section": "Ejercicio 2",
-    "text": "Ejercicio 2\n\nPara acceder a la documentación de la función round(), se puede ejecutar en la consola de R:\n\n?round\no\nhelp(round)\n\nSegún la ayuda de R, la función round() tiene los siguientes argumentos:\n\n\nx: El número o vector de números que se desea redondear.\n\ndigits: El número de cifras decimales al que se desea redondear x. Puede ser positivo (para redondear decimales) o negativo (para redondear a múltiplos de 10).\n\n...: representa el uso opcional de otros argumentos, es algo que podemos ignorar por ahora.\n\n\n\nObligatorio: x, ya que es el número a redondear.\n\nOpcional: digits, que por defecto es 0, lo que significa que la función redondeará al número entero más cercano si no se especifica un valor distinto.\n\n\n\n\nround(3.14159, digits = 0)  # Redondeo a 0 decimales → Resultado: 3\n\n[1] 3\n\nround(3.14159, digits = 1)  # Redondeo a 1 decimal → Resultado: 3.1\n\n[1] 3.1\n\nround(3.14159, digits = 2)  # Redondeo a 2 decimales → Resultado: 3.14\n\n[1] 3.14\n\n\n\n\n\n\nround(3.14159, 2)\n\n[1] 3.14\n\nround(x = 3.14159, digits = 2)\n\n[1] 3.14\n\nround(digits = 2, x = 3.14159)\n\n[1] 3.14",
+    "text": "Ejercicio 2\nCrear un script en R llamado menu.R que muestre un menú de opciones en la terminal, lea la opción elegida por el usuario y ejecute una acción diferente según la opción seleccionada. El menú debe contener al menos tres opciones: “1. Saludar”, “2. Mostrar fecha” y “3. Salir”. El programa debe:\n\nMostrar el menú al usuario.\nLeer la opción ingresada.\nResponder con una acción distinta para cada opción:\n\nSi elige “1”, pedirle al usuario que ingrese su nombre, mostrar un saludo personalizado (por ejemplo: “¡Hola, Pepito!”) y mostrar otra vez el menú principal.\nSi elige “2”, mostrar la hora actual (para obtenerla se puede usar el comando de R format(Sys.time(), \"%H:%M:%S\")) y mostrar otra vez el menú principal.\nSi elige “3”, pedirle al usuario que ingrese su nombre, mostrar un saludo personalizado, por ejemplo: “¡Chau, Pepito!” y finalmente finalizar su ejecución.\n\n\nSi el usuario ingresa una opción no válida, se debe mostrar un mensaje como “Opción inválida” y solicitar nuevamente que ingrese su elección.\nRscript menu.R\n\n=== MENÚ PRINCIPAL ===\n\n1. Saludar\n2. Mostrar hora actual\n3. Salir\n\nElegí una opción: 2\n\nLa hora actual es: 11:44:30 \n\n=== MENÚ PRINCIPAL ===\n\n1. Saludar\n2. Mostrar hora actual\n3. Salir\n\nElegí una opción: 3\n\nIngresá tu nombre para despedirte: Eugenia\n¡Chau, Eugenia!",
     "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Práctica de la Unidad 4</span>"
     ]
   },
   {
-    "objectID": "capitulos/90_soluciones_01.html#ejercicio-3",
-    "href": "capitulos/90_soluciones_01.html#ejercicio-3",
-    "title": "Soluciones de la Práctica de la Unidad 1",
+    "objectID": "capitulos/04_practica.html#ejercicio-3",
+    "href": "capitulos/04_practica.html#ejercicio-3",
+    "title": "Práctica de la Unidad 4",
     "section": "Ejercicio 3",
-    "text": "Ejercicio 3\n\nx &lt;- 10\ny &lt;- \"Hola\"\nz &lt;- 5\n\n\nPodemos verificar el tipo de cada objeto con la función typeof():\n\n\ntypeof(x)\n\n[1] \"double\"\n\ntypeof(y)\n\n[1] \"character\"\n\ntypeof(z)\n\n[1] \"double\"\n\n\n\nEjecutamos la siguiente instrucción:\n\n\nz &lt;- x * 6\n\nAhora, z almacenará el valor:\n\nz\n\n[1] 60\n\n\n\nObtenemos un error porque x es un número (double), mientras que y es un texto (character). En R, no es posible realizar operaciones matemáticas entre objetos de tipo diferente.\n\n\nx + y\n\nError in x + y: non-numeric argument to binary operator",
+    "text": "Ejercicio 3\nSe desea desarrollar un programa que calcule la calificación promedio otorgada a una película por un grupo de jueces de cine. En primer lugar, el programa debe preguntar cuántos jueces integran el grupo, que debe tener un mínimo de 3 y un máximo de 6. Si el número ingresado no cumple con esta condición, el programa debe mostrar un mensaje adecuado y no continuar con el resto de las instrucciones.\nSi el número de jueces está dentro del intervalo aceptado, el programa debe:\n\nSolicitar al usuario que ingrese el nombre de la película.\nSolicitar las calificaciones otorgadas por cada uno de los jueces. Las calificaciones deben ser ingresadas una por una y se debe chequear que cada una esté dentro del rango válido de 0 a 10. En caso contrario, debe mostrar un mensaje de error y solicitar nuevamente esa calificación.\nCalcular el promedio de los puntajes ingresados.\nMostrar el nombre de la película y su puntaje promedio.\n\nEjemplo del uso del script\nRscript evaluar_pelicula.R\n\n===============================================\n\n      SISTEMA DE EVALUACIÓN DE PELÍCULAS\n\n===============================================\n\nIngrese la cantidad de jueces en el grupo:\n3\n\nIngrese el nombre de la película:\nShrek 1\n\nIngrese la calificación del juez 1:\n8.7\n\nIngrese la calificación del juez 2:\n9\n\nIngrese la calificación del juez 3:\n9.2\n\nLa clasificación promedio para la película &lt;Shrek&gt; es 8.97 puntos.",
     "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Práctica de la Unidad 4</span>"
     ]
   },
   {
-    "objectID": "capitulos/90_soluciones_01.html#ejercicio-4",
-    "href": "capitulos/90_soluciones_01.html#ejercicio-4",
-    "title": "Soluciones de la Práctica de la Unidad 1",
+    "objectID": "capitulos/04_practica.html#ejercicio-4",
+    "href": "capitulos/04_practica.html#ejercicio-4",
+    "title": "Práctica de la Unidad 4",
     "section": "Ejercicio 4",
-    "text": "Ejercicio 4\n\nload(\"practica1_ambiente.RData\")\n\nSe incorporaron 6 objetos al ambiente:\n\n\n\nIdentificador\nTipo de vector\nValor\n\n\n\n\nvar1\nlogical\nTRUE\n\n\nvar2\ndouble\n200.12\n\n\nvar3\ncharacter\n\"hola\"\n\n\nvar4\ncharacter\n\"chau\"\n\n\nvar5\ninteger\n-49L\n\n\nvar6\ncharacter\n\"Hola\"\n\n\n\n\ntypeof(var1)\n\n[1] \"logical\"\n\ntypeof(var2)\n\n[1] \"double\"\n\ntypeof(var3)\n\n[1] \"character\"\n\ntypeof(var4)\n\n[1] \"character\"\n\ntypeof(var5)\n\n[1] \"integer\"\n\ntypeof(var6)\n\n[1] \"character\"",
+    "text": "Ejercicio 4\nEn el campus virtual de una universidad, los usuarios pueden acceder a diferentes salas, cada una correspondiente a una materia específica (por ejemplo, Programación 1, Laboratorio de Datos 1, Estadística 1). Cada sala está protegida por una contraseña única. Para acceder, el usuario debe ingresar la contraseña correcta. En caso de error, debe intentarlo nuevamente hasta lograrlo o hasta que se alcance un límite máximo de intentos, tras lo cual la cuenta será bloqueada.\nPara el caso de la sala de Programación 1, la contraseña es “amoprogramar”. Vamos a suponer que un usuario quiere ingresar a esta sala. Escribir un programa que:\n\nMuestre un mensaje solicitando el ingreso de la contraseña.\nLea el valor ingresado por el usuario.\nInicie un proceso de verificación:\n\nSi la contraseña ingresada es incorrecta, debe mostrar:\n\"Contraseña incorrecta. Ingrésela nuevamente.\"\ny permitir un nuevo intento.\nSi la contraseña es correcta, debe mostrar:\n\"¡Contraseña correcta! Puede continuar con sus estudios.\"\n\n\nA partir de este escenario, se deben proponer dos versiones del programa, considerando los siguientes casos:\n\nEl usuario puede intentar indefinidamente hasta ingresar la contraseña correcta.\nEl usuario tiene un máximo de cinco intentos. Por cada intento fallido, el mensaje emitido debe indicar la cantidad de intentos restantes. Si no ingresa la contraseña correcta en ese número de intentos, se debe mostrar el mensaje:\n\"Demasiados intentos fallidos. Su cuenta ha sido bloqueada.\"",
     "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Práctica de la Unidad 4</span>"
     ]
   },
   {
-    "objectID": "capitulos/90_soluciones_01.html#ejercicio-5",
-    "href": "capitulos/90_soluciones_01.html#ejercicio-5",
-    "title": "Soluciones de la Práctica de la Unidad 1",
+    "objectID": "capitulos/04_practica.html#ejercicio-5",
+    "href": "capitulos/04_practica.html#ejercicio-5",
+    "title": "Práctica de la Unidad 4",
     "section": "Ejercicio 5",
-    "text": "Ejercicio 5\n\n\n\n\nvar2 &lt; 0 || var5 &lt; 0\n\n[1] TRUE\n\n\n\n\n\n\nvar2 &lt; 0 && var5 &lt; 0\n\n[1] FALSE\n\n\n\n\n\n\nvar2 %% (var5 + 100) &lt; 10\n\n[1] FALSE\n\n\n\nNo son iguales porque uno tiene una letra mayúscula, “H” es un caracter distinto de “h” y por lo tanto son cadenas de texto diferentes.\n\n\nvar3 == var6\n\n[1] FALSE",
+    "text": "Ejercicio 5\nEn el ejercicio 7 de la practica 3 se tuvo que crear una función llamada resolvente(a, b, c), que muestra las soluciones de la ecuación de segundo grado \\(a x^2 + b x + c = 0\\), empleando la fórmula resolvente:\n\\[x_{1, 2} = \\frac{-b \\pm \\sqrt{(b^2 - 4ac)}}{2a}\\] Modificar el código e incluirlo en un script que pueda ser ejecutado desde la terminal de manera que se cumplan los siguientes requisitos:\n\nPedir al usuario que ingrese los coeficientes a, b y c uno por uno.\nSi el coeficiente a es cero, mostrar un mensaje de error y finalice el programa.\nMostrar la ecuación ingresada en formato legible (ejemplo: x² - 5x + 6 = 0).\nCalcular el discriminante (D = b^2 - 4 * a * c) y mostrar su valor.\nClasificar las soluciones de acuerdo al resultado de D:\n\nSi D &gt; 0: mostrar las dos soluciones reales distintas con un mensaje descriptivo como: “Existen dos soluciones reales distintas: x₁ = 2, x₂ = 3”.\nSi D = 0: mostrar la única solución real (doble) con un mensaje descriptivo como “Existe una única solución real: x = 2 (raiz doble)”.\nSi D &lt; 0: indicar que las soluciones son complejas (sin calcularlas).\n\nMejorar la experiencia del usuario incluyendo:\n\nMensaje de bienvenida y despedida.\nNúmeros que se muestren redondeados para facilitar su lectura.\n\n\nEl uso de la función debe ser semejante al siguiente ejemplo:\nRscript resolvente.R\n\n========================================\n  Calculadora de ecuaciones cuadráticas\n========================================\n\nIngrese el valor del coeficiente 'a':\n1\nIngrese el valor del coeficiente 'b':\n-1\nIngrese el valor del coeficiente 'c':\n2\n\nEcuación ingresada:  1x²-1x+2=0 \nDiscriminante (D): -7 \nLas soluciones son complejas (no reales).\n\nGracias por usar la calculadora de ecuaciones cuadráticas.",
     "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Práctica de la Unidad 4</span>"
     ]
   },
   {
-    "objectID": "capitulos/90_soluciones_01.html#ejercicio-6",
-    "href": "capitulos/90_soluciones_01.html#ejercicio-6",
-    "title": "Soluciones de la Práctica de la Unidad 1",
-    "section": "Ejercicio 6",
-    "text": "Ejercicio 6\n\n\n\n\n\n\n\n\n\nOperación\nedad &lt;- 21, altura &lt;- 1.90\nedad &lt;- 17 , altura &lt;- 1.90\nedad &lt;- 21, altura &lt;- 1.50\n\n\n\n\n(edad &gt; 18) && (altura &lt; 1.70)\nFALSE\nFALSE\nTRUE\n\n\n(edad &gt; 18)   || (altura &lt; 1.70)\nTRUE\nFALSE\nTRUE\n\n\n!(edad &gt; 18)\nFALSE\nTRUE\nFALSE\n\n\n\nVerificación en R:\n\n# Primera columna\nedad &lt;- 21\naltura &lt;- 1.90\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] FALSE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] TRUE\n\n!(edad &gt; 18)\n\n[1] FALSE\n\n# Segunda columna\nedad &lt;- 17\naltura &lt;- 1.90\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] FALSE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] FALSE\n\n!(edad &gt; 18)\n\n[1] TRUE\n\n# Tercera columna\nedad &lt;- 21\naltura &lt;- 1.50\n\n(edad &gt; 18) && (altura &lt; 1.70)\n\n[1] TRUE\n\n(edad &gt; 18) || (altura &lt; 1.70)\n\n[1] TRUE\n\n!(edad &gt; 18)\n\n[1] FALSE",
+    "objectID": "capitulos/04_practica.html#ejercicio-6-opcional",
+    "href": "capitulos/04_practica.html#ejercicio-6-opcional",
+    "title": "Práctica de la Unidad 4",
+    "section": "Ejercicio 6 (opcional)",
+    "text": "Ejercicio 6 (opcional)\nReescribir el programa anterior de forma que, en lugar de solicitar al usuario que ingrese los valores de a, b y c uno por uno desde la terminal, estos se ingresen directamente como argumentos del sistema al momento de ejecutar el script. Para ello, utilizar commandArgs(trailingOnly = TRUE) para capturar los valores y adaptar el código en consecuencia. Asegurarse de incluir validaciones adecuadas para verificar que los argumentos sean numéricos y que a no sea igual a cero.\nEjemplo de ejecución desde la terminal:\n\nRscript resolvente_args.R 1 -1 -2\n\n\n\n=========================================\n  Calculadora de ecuaciones cuadráticas\n=========================================\n\nEcuación ingresada:  1x²-1x-2=0 \nDiscriminante (D): 9 \nExisten dos soluciones reales distintas:\nx₁ = -1 , x₂ = 2 \n\nGracias por usar la calculadora de ecuaciones cuadráticas.\n\n\n\nRscript resolvente_args.R 1 2 1\n\n\n\n=========================================\n  Calculadora de ecuaciones cuadráticas\n=========================================\n\nEcuación ingresada:  1x²+2x+1=0 \nDiscriminante (D): 0 \nExiste una única solución real (raíz doble):\nx = -1 \n\nGracias por usar la calculadora de ecuaciones cuadráticas.\n\n\n\nRscript resolvente_args.R 1 1 1\n\n\n\n=========================================\n  Calculadora de ecuaciones cuadráticas\n=========================================\n\nEcuación ingresada:  1x²+1x+1=0 \nDiscriminante (D): -3 \nLas soluciones son complejas (no reales).\n\nGracias por usar la calculadora de ecuaciones cuadráticas.\n\n\n\nRscript resolvente_args.R 0 1 1\n\n\n\n=========================================\n  Calculadora de ecuaciones cuadráticas\n=========================================\nError: Error: el coeficiente 'a' debe ser distinto de cero. Fin del programa.\nExecution halted\n\n\n\nRscript resolvente_args.R 2 hola 1\n\n\n\n=========================================\n  Calculadora de ecuaciones cuadráticas\n=========================================\nWarning message:\nNAs introduced by coercion \nError: Los argumentos ingresados no son valores numéricos.\nExecution halted",
     "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Práctica de la Unidad 4</span>"
     ]
   },
   {
-    "objectID": "capitulos/90_soluciones_01.html#ejercicio-7",
-    "href": "capitulos/90_soluciones_01.html#ejercicio-7",
-    "title": "Soluciones de la Práctica de la Unidad 1",
-    "section": "Ejercicio 7",
-    "text": "Ejercicio 7\nRazonamiento paso a paso:\n1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10\n1 + 2 + (3 + 4) * ((5 * 6 * 8) - 9) - 10\n1 + 2 + (3 + 4) * (240 - 9) - 10\n1 + 2 + 7 * 231 - 10\n1 + 2 + 1617 - 10\n1610\nVerificación en R:\n\n1 + 2 + (3 + 4) * ((5 * 6 %% 7 * 8) - 9) - 10\n\n[1] 1610",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_01.html#ejercicio-8",
-    "href": "capitulos/90_soluciones_01.html#ejercicio-8",
-    "title": "Soluciones de la Práctica de la Unidad 1",
-    "section": "Ejercicio 8",
-    "text": "Ejercicio 8\nSiempre es verdadera porque sea cual fuere x, siempre va a ser distinta a alguno de los dos, incluso si es 4, es distinta a 17 y viceversa.\nRecordemos que:\n\n!= significa “distinto de”.\n\n|| es el operador “o” lógico (OR), que devuelve TRUE si al menos una de las condiciones es TRUE.\n\nLuego, de la única forma para que la expresión sea FALSE, es que ambas condiciones sean FALSE al mismo tiempo. Veamos si esto es posible:\n\nLa primera condición (x != 4) es FALSE solo cuando x = 4.\n\nLa segunda condición (x != 17) es FALSE solo cuando x = 17.\n\nPor lo visto, ambas condiciones no pueden ser FALSE simultáneamente, ya que un número no puede ser 4 y 17 al mismo tiempo. Dado que siempre hay al menos una condición que es TRUE, la expresión es siempre verdadera, sin importar el valor de x.",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_01.html#ejercicio-9",
-    "href": "capitulos/90_soluciones_01.html#ejercicio-9",
-    "title": "Soluciones de la Práctica de la Unidad 1",
-    "section": "Ejercicio 9",
-    "text": "Ejercicio 9\nEl primer ítem excluye a los años terminados en 00, los cuales son evaluados en la segunda regla. El segundo ítem incluye automáticamente a los divisibles por 4 porque 400 es divisible por 4. Entonces, la operación lógica que determina si un año es bisiesto es: ((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0).\nEn R:\n\naño &lt;- 2024\n((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0)\n\n[1] TRUE\n\naño &lt;- 2025\n((año %% 4 == 0) && (año %% 100 != 0)) || (año %% 400 == 0)\n\n[1] FALSE",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_01.html#ejercicio-10",
-    "href": "capitulos/90_soluciones_01.html#ejercicio-10",
-    "title": "Soluciones de la Práctica de la Unidad 1",
-    "section": "Ejercicio 10",
-    "text": "Ejercicio 10\n\n¿Cuáles son los valores finales de a y b?\n\n\na &lt;- 10\nb &lt;- a * 2\na &lt;- a + 5\nb &lt;- b - a\na\n\n[1] 15\n\nb\n\n[1] 5\n\n\n\n¿Cuáles son los valores finales de m y n?\n\n\nm &lt;- 5\nn &lt;- 2 * m\nm &lt;- m + 3\nn &lt;- n + m\nm &lt;- n - 4\nm\n\n[1] 14\n\nn\n\n[1] 18\n\n\n\n¿Cuál es el valor final de y?\n\n\nx &lt;- 6\ny &lt;- 2\nx &lt;- x / y + x * y\ny &lt;- x^2 %% 10\ny &lt;- y * 2\ny\n\n[1] 10\n\n\n\n¿Cuál es el valor final de resultado?\n\n\na &lt;- 5\nb &lt;- 2\nc &lt;- 3\n\nresultado &lt;- a^b - (c * b) + (a %% c)\nresultado\n\n[1] 21\n\n\n\n¿Cuáles son los valores finales de x, y y z?\n\n\nx &lt;- 8\ny &lt;- 3\nz &lt;- 2\n\nx &lt;- x %% y + z^y\ny &lt;- (x + y) %/% z\nz &lt;- z + x - y\nx\n\n[1] 10\n\ny\n\n[1] 6\n\nz\n\n[1] 6",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_01.html#ejercicio-11",
-    "href": "capitulos/90_soluciones_01.html#ejercicio-11",
-    "title": "Soluciones de la Práctica de la Unidad 1",
-    "section": "Ejercicio 11",
-    "text": "Ejercicio 11\nSe pueden cambiar los valores de a, b y h.\n\na &lt;- 5\nb &lt;- 4\nh &lt;- 3\nvolumen &lt;- a * b * h\narea &lt;- 2 * (a * b + a * h + b * h)\ncat(\"El área es igual a\", area, \"y el volumen es igual a\", volumen)\n\nEl área es igual a 94 y el volumen es igual a 60",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_01.html#ejercicio-12",
-    "href": "capitulos/90_soluciones_01.html#ejercicio-12",
-    "title": "Soluciones de la Práctica de la Unidad 1",
-    "section": "Ejercicio 12",
-    "text": "Ejercicio 12\n\nPara identificar la ruta informática de un archivo, podés seguir los pasos mostrados en Carpetas, archivos y rutas informáticas.\nSe puede saber cuál es el working directory con:\n\n\ngetwd()",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_01.html#ejercicio-13",
-    "href": "capitulos/90_soluciones_01.html#ejercicio-13",
-    "title": "Soluciones de la Práctica de la Unidad 1",
-    "section": "Ejercicio 13",
-    "text": "Ejercicio 13\nEl resultado de crear las carpetas y subcarpetas tiene que ser similar al que se ve en la Figura 5.2. El proyecto se crea desde RStudio siguiendo los pasos de la Figura 5.4.",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 1</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_02.html",
-    "href": "capitulos/90_soluciones_02.html",
-    "title": "Soluciones de la Práctica de la Unidad 2",
+    "objectID": "capitulos/90_soluciones_04.html",
+    "href": "capitulos/90_soluciones_04.html",
+    "title": "Soluciones de la Práctica de la Unidad 4",
     "section": "",
-    "text": "Ejercicio 1\n# PROGRAMA: \"Paridad de un número\" \nx &lt;- 3\nif (x %% 2 == 0) {\n    cat(x, \"es par\")\n} else {\n    cat(x, \"es impar\")\n}\n\n3 es impar\nEn el código anterior, realizamos una asignación explícita de un valor en la variable (x &lt;- 3). Esto nos permite hacer un uso más interactivo del código, que puede ser útil para probar si anda o cuando vamos corriendo por partes para detectar posibles errores.\nOtra opción se muestra en el siguiente ejemplo. En lugar de asignarle un valor a x como parte del script, indicamos que cuando el código sea ejecutado, el usuario deberá ingresar un valor con el teclado. Para esto empleamos la función scan(). Su argumento n = 1 significa que el usuario sólo deberá ingresar un número, el cual será asignado a la variable x. Teniendo un archivo de código con el programa como se muestra a continuación, podemos ejecutarlo de forma completa mediante el botón Source de RStudio. Al llegar a la evaluación de scan(), deberemos ingresar el valor que deseemos en la consola y dar Enter para que la ejecución continúe.\n# PROGRAMA: \"Paridad de un número\"\ncat(\"Ingrese un número entero: \")\nx &lt;- scan(n = 1)\nif (x %% 2 == 0) {\n    cat(x, \"es par\")\n} else {\n    cat(x, \"es impar\")\n}",
+    "text": "Ejercicio 1\nLos scripts propuestos como solución a los problemas de esta práctica pueden ser descargados desde este archivo comprimido.",
     "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 4</span>"
     ]
   },
   {
-    "objectID": "capitulos/90_soluciones_02.html#ejercicio-2",
-    "href": "capitulos/90_soluciones_02.html#ejercicio-2",
-    "title": "Soluciones de la Práctica de la Unidad 2",
+    "objectID": "capitulos/90_soluciones_04.html#ejercicio-1",
+    "href": "capitulos/90_soluciones_04.html#ejercicio-1",
+    "title": "Soluciones de la Práctica de la Unidad 4",
+    "section": "",
+    "text": "Dirigirse a la carpeta unidad_4\\, crear allí la carpeta principal organizacion_usuarios y entrar en ella:\ncd ~tu_ruta\\unidad_4\nmkdir organizacion_usuarios\ncd organizacion_usuarios\nCrear las tres subcarpetas:\nmkdir registrados temporales_abril historial\nPara crear usuarios registrados, primero moverse a la carpeta registrados usando cd y luego crear los archivos:\ncd registrados\n\necho IP: 192.168.1.1 &gt; ABC1234A_R.txt\necho Usuario: juanperez &gt;&gt; ABC1234A_R.txt\necho Email: juanperez@email.com &gt;&gt; ABC1234A_R.txt\n\necho IP: 192.168.1.2 &gt; DEF5678B_R.txt\necho Usuario: marialopez &gt;&gt; DEF5678B_R.txt\necho Email: marialopez@email.com &gt;&gt; DEF5678B_R.txt\n\necho IP: 192.168.1.3 &gt; GHI9012C_R.txt\necho Usuario: carlosgomez &gt;&gt; GHI9012C_R.txt\necho Email: carlosgomez@email.com &gt;&gt; GHI9012C_R.txt\nNotar el uso de &gt;&gt; para que el contenido a escribir se agregue como una línea nueva en el archivo, sin sobreescribir lo anterior.\nPara crear usuarios temporales primero usar cd .. para volver a la carpeta organizacion_usuarios y de allí meterse a temporales_abril, para crear los archivos correspondientes:\ncd ..\\temporales_abril\n\necho IP: 192.168.2.1 &gt; JKL3456D_T.txt\necho Nombre: invitado01 &gt;&gt; JKL3456D_T.txt\n\necho IP: 192.168.2.2 &gt; MNO7890E_T.txt\necho Nombre: invitado02 &gt;&gt; MNO7890E_T.txt\n\necho IP: 192.168.2.3 &gt; PQR1234F_T.txt\necho Nombre: invitado03 &gt;&gt; PQR1234F_T.txt\nSupongamos que el usuario temporal MN34OP56_T.txt se ha registrado, debemos copiar el archivo del usuario a la carpeta registrados. Para eso primero volvemos a la carpeta principal organizacion_usuarios con cd .. y luego copiamos el archivo del usuario desde la carpeta temporales_abril hacia la carpeta registrados:\ncd ..\ncopy temporales_abril\\MN34OP56_T.txt registrados\nEliminar el archivo original de la carpetatemporales_abril:\ndel temporales_abril\\MN34OP56_T.txt\nEditar el archivo copiado en registrados para agregar datos (nombre de usuario e email):\necho Usuario: federicoruiz &gt;&gt; registrados/MN34OP56_T.txt\necho Email: federico@email.com &gt;&gt; registrados/MN34OP56_T.txt\nRenombrar el archivo con sufijo _R:\nrename registrados\\MN34OP56_T.txt MN34OP56_R.txt\nMostrar contenido actualizado:\ntype registrados\\MN34OP56_R.txt\nCopiar a la carpeta historial historial cada uno de los archivos de la carpeta temporales_abril. Usamos * para copiar todos los archivos que existen (otra ocpión es hacerlo uno por uno, escribiendo su nombre y usando el comando copy varias veces):\ncopy temporales_abril\\* historial\nEliminar la carpeta temporales_abril y crear temporales_mayo:\nrmdir /s /q temporales\\temporales_abril\nmkdir temporales\\temporales_mayo\nNota: en el comando rmdir la opción /s elimina la carpeta y todos sus contenidos (subcarpetas y archivos), mientras que /q omite la confirmación de eliminación, lo que hace que el comando se ejecute sin preguntarle al usuario si está seguro de eliminar.",
+    "crumbs": [
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 4</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/90_soluciones_04.html#ejercicio-2",
+    "href": "capitulos/90_soluciones_04.html#ejercicio-2",
+    "title": "Soluciones de la Práctica de la Unidad 4",
     "section": "Ejercicio 2",
-    "text": "Ejercicio 2\n\n# PROGRAMA: \"Mayor de tres números\"\nx &lt;- 5\ny &lt;- 5\nz &lt;- 7\nif (x &gt;= y && x &gt;= z) {\n    cat(\"El mayor es\", x)\n} else if (y &gt;= z) {\n    cat(\"El mayor es\", y)\n} else {\n    cat(\"El mayor es\", z)\n}\n\nEl mayor es 7\n\n\nObservación: se llega a la segunda evaluación lógica cuando y es mayor a x, o cuando z es mayor que x, o cuando ambos son mayores a x, por lo tanto sólo es necesario saber cuál de ellos es el mayor.",
+    "text": "Ejercicio 2\nUna posible solución para este problema es incuir el siguiente contenido en el archivo menu.R:\n\nopcion &lt;- 0\n\nwhile (opcion != 3) {\n  cat(\"\\n=== MENÚ PRINCIPAL ===\\n\\n\")\n  cat(\"1. Saludar\\n\")\n  cat(\"2. Mostrar hora actual\\n\")\n  cat(\"3. Salir\\n\\n\")\n  cat(\"Elegí una opción: \")\n  \n  opcion &lt;- scan(file = \"stdin\", what = integer(), n = 1, quiet = TRUE)\n  \n  if (opcion == 1) {\n    cat(\"\\nIngresá tu nombre: \")\n    nombre &lt;- scan(file = \"stdin\", what = character(), n = 1, quiet = TRUE)\n    cat(\"¡Hola, \", nombre, \"!\\n\", sep = \"\")\n    \n  } else if (opcion == 2) {\n    hora &lt;- format(Sys.time(), \"%H:%M:%S\")\n    cat(\"\\nLa hora actual es:\", hora, \"\\n\")\n    \n  } else if (opcion == 3) {\n    cat(\"\\nIngresá tu nombre para despedirte: \")\n    nombre &lt;- scan(file = \"stdin\", what = character(), n = 1, quiet = TRUE)\n    cat(\"¡Chau, \", nombre, \"!\\n\", sep = \"\")\n    \n  } else {\n    cat(\"\\nOpción inválida. Probá de nuevo.\\n\")\n  }\n}\n\ny ejecutarlo con:\nRscript menu.R",
     "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 4</span>"
     ]
   },
   {
-    "objectID": "capitulos/90_soluciones_02.html#ejercicio-3",
-    "href": "capitulos/90_soluciones_02.html#ejercicio-3",
-    "title": "Soluciones de la Práctica de la Unidad 2",
+    "objectID": "capitulos/90_soluciones_04.html#ejercicio-3",
+    "href": "capitulos/90_soluciones_04.html#ejercicio-3",
+    "title": "Soluciones de la Práctica de la Unidad 4",
     "section": "Ejercicio 3",
-    "text": "Ejercicio 3\n\n# PROGRAMA: \"Determinar salario\"\n\n# Valores fijados\nvalor_hora &lt;- 4000\nvalor_adicional_noche &lt;- 2000\nvalor_adicional_domingo &lt;- 1000\n\n# Valores para un cálculo particular\nhoras &lt;- 8\ndia &lt;- \"MAR\"\nturno &lt;- \"T\"\n\n# Cálculo para el pago de ese día a ese empleado\nsalario &lt;- horas * valor_hora\nif (turno == \"N\") {\n    salario &lt;- salario + horas * valor_adicional_noche\n}\nif (turno == \"DOM\") {\n    salario &lt;- salario + horas * valor_adicional_domingo\n}\ncat(\"El salario que se debe abonar es\", salario)\n\nEl salario que se debe abonar es 32000",
+    "text": "Ejercicio 3\nEl contenido del script evaluar_pelicula.R puede ser:\n\ncat(\"\\n===============================================\\n\")\ncat(\"\\n      SISTEMA DE EVALUACIÓN DE PELÍCULAS\\n\")\ncat(\"\\n===============================================\\n\\n\")\n\ncat(\"Ingrese la cantidad de jueces en el grupo:\\n\")\nn &lt;- scan(file = \"stdin\", what = integer(), n = 1, quiet = TRUE)\n\nif (n &lt; 3 || n &gt; 6) {\n  cat(\"Cantidad inválida de jueces. Debe ser entre 3 y 6.\\n\")\n} else {\n  cat(\"\\nIngrese el nombre de la película:\\n\")\n  nombre &lt;- scan(file = \"stdin\", what = character(), n = 1, quiet = TRUE)\n  suma &lt;- 0\n  for (i in 1:n) {\n    cat(\"\\nIngrese la calificación del juez \", i, \":\\n\", sep = \"\")\n    nota &lt;- scan(file = \"stdin\", what = numeric(), n = 1, quiet = TRUE)\n    while (nota &lt; 0 || nota &gt; 10) {\n      cat(\"Calificación inválida. Las calificaciones deben ser entre 1 y 10.\\nIngrésela nuevamente:\\n\")\n      nota &lt;- scan(file = \"stdin\", what = numeric(), n = 1, quiet = TRUE)\n    }\n    suma &lt;- suma + nota\n  }\n  promedio &lt;- suma / n\n  cat(\n    \"\\nLa clasificación promedio para la película &lt;\", nombre, \"&gt; es \",\n    round(promedio, 2), \" puntos.\\n\\n\", sep = \"\"\n  )\n}\n\nDebe ser ejecutado con:\nRscript evaluar_pelicula.R\nNota: scan() sirve para leer entradas “palabra por palabra” (por defecto separa por espacios), por eso para leer el nombre de la pelicula es mas eficiente usar readline() que captura toda la línea de texto, incluyendo los espacios.",
     "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 4</span>"
     ]
   },
   {
-    "objectID": "capitulos/90_soluciones_02.html#ejercicio-4",
-    "href": "capitulos/90_soluciones_02.html#ejercicio-4",
-    "title": "Soluciones de la Práctica de la Unidad 2",
+    "objectID": "capitulos/90_soluciones_04.html#ejercicio-4",
+    "href": "capitulos/90_soluciones_04.html#ejercicio-4",
+    "title": "Soluciones de la Práctica de la Unidad 4",
     "section": "Ejercicio 4",
-    "text": "Ejercicio 4\n\n# PROGRAMA: \"Convertir temperatura\"\ntemp &lt;- 20\nmodo &lt;- \"C a F\"\nif (modo == \"C a F\") {\n    temp_nuevo &lt;- temp * 9 / 5 + 32\n    cat(temp, \"ºC equivale a\", temp_nuevo, \"ºF\")\n} else {\n    temp_nuevo &lt;- (temp - 32) * 5 / 9\n    cat(temp, \"ºF equivale a\", temp_nuevo, \"ºC\")\n}\n\n20 ºC equivale a 68 ºF",
+    "text": "Ejercicio 4\n\nVersión con intentos ilimitados. El contenido del script puede ser:\n\ncat(\"\\n==================================================\\n\")\ncat(\"\\n  BIENVENIDO/A AL AULA VIRTUAL DE PROGRAMACIÓN 1  \\n\")\ncat(\"\\n==================================================\\n\\n\")\n\ncontrasenia_correcta &lt;- \"amoprogramar\"\ningresada &lt;- \"\"\n\nwhile (ingresada != contrasenia_correcta) {\n  cat(\"\\nIngrese la contraseña:\\n\")\n  ingresada &lt;- scan(file = \"stdin\", what = character(), n = 1, quiet = TRUE)\n  if (ingresada != contrasenia_correcta) {\n    cat(\"Contraseña incorrecta. Ingrésela nuevamente.\\n\")\n  }\n}\n\ncat(\"\\n¡Contraseña correcta! Puede ingresar y continuar con sus estudios.\\n\\n\")\n\nVersión con intentos limitados (5 intentos). El contenido del script puede ser:\n\ncat(\"\\n==================================================\\n\")\ncat(\"\\n  BIENVENIDO/A AL AULA VIRTUAL DE PROGRAMACIÓN 1  \\n\")\ncat(\"\\n==================================================\\n\\n\")\n\ncontrasenia_correcta &lt;- \"amoprogramar\"\ningresada &lt;- \"\"\nintentos_restantes &lt;- 5\n\nwhile (intentos_restantes &gt; 0 && ingresada != contrasenia_correcta) {\n  cat(\"\\nIngrese la contraseña:\\n\")\n  ingresada &lt;- scan(file = \"stdin\", what = character(), nmax = 1, quiet = TRUE)\n\n  if (ingresada != contrasenia_correcta) {\n    intentos_restantes &lt;- intentos_restantes - 1\n    if (intentos_restantes &gt; 0) {\n      cat(\"Contraseña incorrecta. Intentos restantes:\", intentos_restantes, \"\\n\")\n    } else {\n      cat(\"\\nDemasiados intentos fallidos. Su cuenta ha sido bloqueada.\\n\\n\")\n    }\n  }\n}\n\nif (ingresada == contrasenia_correcta) {\n  cat(\"\\n¡Contraseña correcta! Puede ingresar y continuar con sus estudios.\\n\\n\")\n}",
     "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 4</span>"
     ]
   },
   {
-    "objectID": "capitulos/90_soluciones_02.html#ejercicio-5",
-    "href": "capitulos/90_soluciones_02.html#ejercicio-5",
-    "title": "Soluciones de la Práctica de la Unidad 2",
+    "objectID": "capitulos/90_soluciones_04.html#ejercicio-5",
+    "href": "capitulos/90_soluciones_04.html#ejercicio-5",
+    "title": "Soluciones de la Práctica de la Unidad 4",
     "section": "Ejercicio 5",
-    "text": "Ejercicio 5\na.\n\n# PROGRAMA: \"Suma de los n primeros números naturales\"\nn &lt;- 10\nsuma &lt;- 0\nfor (i in 1:n) {\n    suma &lt;- suma + i\n}\ncat(\"La suma de los primeros\", n, \"números naturales es\", suma)\n\nLa suma de los primeros 10 números naturales es 55\n\n\nb.\n\n# PROGRAMA: \"Suma de los cuadrados de los n primeros números naturales\" -----\nn &lt;- 10\nsuma &lt;- 0\nfor (i in 1:n) {\n    suma &lt;- suma + i^2\n}\ncat(\"La suma de los primeros\", n, \"números naturales al cuadrado es\", suma)\n\nLa suma de los primeros 10 números naturales al cuadrado es 385\n\n\nc.\nSabemos el número de iteraciones, n, por eso usamos for. Por ejemplo, para n = 4, los primeros impares son:\n1 = 2 * 1 - 1\n3 = 2 * 2 - 1\n5 = 2 * 3 - 1\n7 = 2 * 4 - 1\nDe forma general, los primeros 4 impares son 2 * i - 1, con i = 1, 2, 3, 4.\n\n# PROGRAMA: \"Producto de los n primeros números naturales impares\" ----------\nn &lt;- 10\nproducto &lt;- 1\nfor (i in 1:n) {\n    producto &lt;- producto * (2 * i - 1)\n}\ncat(\"El producto de los primeros\", n, \"números naturales impares es\", producto)\n\nEl producto de los primeros 10 números naturales impares es 654729075\n\n\nOtra forma:\n\n# PROGRAMA: \"Producto de los n primeros números naturales impares\" ----------\nn &lt;- 10\nproducto &lt;- 1\nfor (i in seq(1, 2 * n - 1, 2)) {\n    producto &lt;- producto * i\n}\ncat(\"El producto de los primeros\", n, \"números naturales impares es\", producto)\n\nEl producto de los primeros 10 números naturales impares es 654729075\n\n\nLa función seq crea un vector con una secuencia numérica. El formato con el que está utilizada aquí es seq(valor_inicial, valor_final, intervalo), por lo que creará un vector con los números impares (dado que el intervalo es 2, y comienza con un número impar) empezando desde 1 hasta 2 * n - 1.\nd.\n\n# PROGRAMA: \"Suma de los cubos de los n primeros números naturales pares\"\nn &lt;- 5\nsuma &lt;- 0\nfor (i in 1:n) {\n    suma &lt;- suma + (2 * i)^3\n}\ncat(\"La suma de los cubos de los primeros\", n, \"números naturales pares es\", suma)\n\nLa suma de los cubos de los primeros 5 números naturales pares es 1800",
+    "text": "Ejercicio 5\nEl contenido del script resolvente.R puede ser:\n\n# Mensaje de bienvenida\ncat(\"=========================================\\n\")\ncat(\"  Calculadora de ecuaciones cuadráticas\\n\")\ncat(\"=========================================\\n\\n\")\n\n# Leer coeficientes desde la terminal\ncat(\"Ingrese el valor del coeficiente 'a':\\n\")\na &lt;- scan(file = \"stdin\", n = 1, quiet = TRUE)\nif (a == 0) {\n  stop(\"El coeficiente 'a' debe ser distinto de cero. Fin del programa.\\n\")\n}\ncat(\"Ingrese el valor del coeficiente 'b':\\n\")\nb &lt;- scan(file = \"stdin\", n = 1, quiet = TRUE)\ncat(\"Ingrese el valor del coeficiente 'c':\\n\")\nc &lt;- scan(file = \"stdin\", n = 1, quiet = TRUE)\n\n# Mostrar la ecuación de forma legible\necuacion &lt;- paste0(a, \"x²\", ifelse(b &lt; 0, \"\", \"+\"), b, \"x\", ifelse(c &lt; 0, \"\", \"+\"), c, \"=0\")\ncat(\"\\nEcuación ingresada: \", ecuacion, \"\\n\")\n\n# Calcular el discriminante\nD &lt;- b^2 - 4 * a * c\ncat(\"Discriminante (D):\", round(D, 3), \"\\n\")\n\n# Calcular soluciones\nif (D &gt; 0) {\n  x1 &lt;- (-b - sqrt(D)) / (2 * a)\n  x2 &lt;- (-b + sqrt(D)) / (2 * a)\n  cat(\"Existen dos soluciones reales distintas:\\n\")\n  cat(\"x₁ =\", round(x1, 3), \", x₂ =\", round(x2, 3), \"\\n\")\n} else if (D == 0) {\n  x &lt;- -b / (2 * a)\n  cat(\"Existe una única solución real (raíz doble):\\n\")\n  cat(\"x =\", round(x, 3), \"\\n\")\n} else {\n  cat(\"Las soluciones son complejas (no reales).\\n\")\n}\n\n# Mensaje de despedida\ncat(\"\\nGracias por usar la calculadora de ecuaciones cuadráticas.\\n\")\n\nObservaciones:\n\nLa función ifelse() permite implementar en una sola línea una estructura if-else sencilla. El primer argumento es la condición lógica a evaluar, el segundo es el valor devuelto en caso de que la condición sea TRUE y el tercero, el valor devuelto en caso de que sea FALSE. Esta función se usó para agregar un signo + delante de los coeficientes b y c si son positivos.\nSe puede pensar en formas más elaboradas para escribir la expresión de la ecuación, que hagan un mejor manejo de espacios o que omitan los términos cuyos coeficientes son nulos.\nSe usó la función stop() para detener la ejecución del script si el coeficiente asociado al término de segundo grado es 0.",
     "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 4</span>"
     ]
   },
   {
-    "objectID": "capitulos/90_soluciones_02.html#ejercicio-6",
-    "href": "capitulos/90_soluciones_02.html#ejercicio-6",
-    "title": "Soluciones de la Práctica de la Unidad 2",
-    "section": "Ejercicio 6",
-    "text": "Ejercicio 6\nUtilizando estructura de control “PARA”\n\n# PROGRAMA: \"Calcular el factorial de n\"\nn &lt;- 0\nfactorial &lt;- 1\nfor (i in 1:n) {\n    factorial &lt;- factorial * i\n}\ncat(\"El factorial de\", n, \"es\", factorial)\n\nEl factorial de 0 es 0\n\n\nUtilizando estructura de control “MIENTRAS QUE”\n\n# PROGRAMA: \"Calcular el factorial de n\"\nn &lt;- 0\nfactorial &lt;- 1\ni &lt;- 0\nwhile(i &lt; n) {\n    i &lt;- i + 1\n  factorial &lt;- factorial * i\n}\ncat(\"El factorial de\", n, \"es\", factorial)\n\nEl factorial de 0 es 1\n\n\nIMPORTANTE. Notar que la primera opción no arroja de forma correcta el factorial de 0, que por definición es igual a 1. Se podría agregar alguna estructura condicional para esta situación. La segunda opción, en cambio, funciona también para n &lt;- 0.",
+    "objectID": "capitulos/90_soluciones_04.html#ejercicio-6-opcional",
+    "href": "capitulos/90_soluciones_04.html#ejercicio-6-opcional",
+    "title": "Soluciones de la Práctica de la Unidad 4",
+    "section": "Ejercicio 6 (opcional)",
+    "text": "Ejercicio 6 (opcional)\nEl contenido del script resolvente_args.R puede ser:\n\n# Mensaje de bienvenida\ncat(\"=========================================\\n\")\ncat(\"  Calculadora de ecuaciones cuadráticas\\n\")\ncat(\"=========================================\\n\")\n\n# Capturar los argumentos pasados desde la terminal en un vector\nargs &lt;- commandArgs(trailingOnly = TRUE)\n\n# Si no proveyó suficientes argumentos, generar un error y que se detenga el programa\nif (length(args) &lt; 3) {\n  stop(\"Debe proveer tres valores para los coeficientes de la ecuación.\")\n}\n\n# Convertir a numérico todos los argumentos\na &lt;- as.numeric(args[1])\nb &lt;- as.numeric(args[2])\nc &lt;- as.numeric(args[3])\n\n# Si alguno no era numérico, no se pudo convertir y es NA\nif (is.na(a) || is.na(b) || is.na(c)) {\n  stop(\"Los argumentos ingresados no son valores numéricos.\")\n}\n\n# Si a = 0, genera un error y se detiene\nif (a == 0) {\n  stop(\"Error: el coeficiente 'a' debe ser distinto de cero. Fin del programa.\\n\")\n}\n\n# Mostrar la ecuación de forma legible\necuacion &lt;- paste0(a, \"x²\", ifelse(b &lt; 0, \"\", \"+\"), b, \"x\", ifelse(c &lt; 0, \"\", \"+\"), c, \"=0\")\ncat(\"\\nEcuación ingresada: \", ecuacion, \"\\n\")\n\n# Calcular el discriminante\nD &lt;- b^2 - 4 * a * c\ncat(\"Discriminante (D):\", round(D, 3), \"\\n\")\n\n# Calcular soluciones\nif (D &gt; 0) {\n  x1 &lt;- (-b - sqrt(D)) / (2 * a)\n  x2 &lt;- (-b + sqrt(D)) / (2 * a)\n  cat(\"Existen dos soluciones reales distintas:\\n\")\n  cat(\"x₁ =\", round(x1, 3), \", x₂ =\", round(x2, 3), \"\\n\")\n} else if (D == 0) {\n  x &lt;- -b / (2 * a)\n  cat(\"Existe una única solución real (raíz doble):\\n\")\n  cat(\"x =\", round(x, 3), \"\\n\")\n} else {\n  cat(\"Las soluciones son complejas (no reales).\\n\")\n}\n\n# Mensaje de despedida\ncat(\"\\nGracias por usar la calculadora de ecuaciones cuadráticas.\\n\")",
     "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 4</span>"
     ]
   },
   {
-    "objectID": "capitulos/90_soluciones_02.html#ejercicio-7",
-    "href": "capitulos/90_soluciones_02.html#ejercicio-7",
-    "title": "Soluciones de la Práctica de la Unidad 2",
-    "section": "Ejercicio 7",
-    "text": "Ejercicio 7\n\n# PROGRAMA: \"Secuencia de Fibonacci\"\ntermino1 &lt;- 0\ntermino2 &lt;- 1\nwhile (termino1 &lt; 10000) {\n  print(termino1)\n  termino3 &lt;- termino1 + termino2\n  termino1 &lt;- termino2\n  termino2 &lt;- termino3\n}\n\n[1] 0\n[1] 1\n[1] 1\n[1] 2\n[1] 3\n[1] 5\n[1] 8\n[1] 13\n[1] 21\n[1] 34\n[1] 55\n[1] 89\n[1] 144\n[1] 233\n[1] 377\n[1] 610\n[1] 987\n[1] 1597\n[1] 2584\n[1] 4181\n[1] 6765",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_02.html#ejercicio-8",
-    "href": "capitulos/90_soluciones_02.html#ejercicio-8",
-    "title": "Soluciones de la Práctica de la Unidad 2",
-    "section": "Ejercicio 8",
-    "text": "Ejercicio 8\nObservar que:\n\nel valor inicial es el 100 ya que la combinación no comienza por 0.\nel while se detiene cuando la combinación es mayor a 800.\nse verifican las condiciones de multiplicidad, y si no se cumplen, se pasa directamente a la siguiente iteración.\nen caso de que se cumplan las condiciones, se imprime la combinación, y se pasa a la siguiente iteración.\n\n\n# PROGRAMA: \"Lista de posibles combinaciones\"\ncombinacion &lt;- 100\n\nwhile (combinacion &lt;= 800) {\n  if (combinacion %% 11 == 0 && combinacion %% 8 != 0) {\n    print(combinacion)\n  }\n  combinacion &lt;- combinacion + 1\n}\n\n[1] 110\n[1] 121\n[1] 132\n[1] 143\n[1] 154\n[1] 165\n[1] 187\n[1] 198\n[1] 209\n[1] 220\n[1] 231\n[1] 242\n[1] 253\n[1] 275\n[1] 286\n[1] 297\n[1] 308\n[1] 319\n[1] 330\n[1] 341\n[1] 363\n[1] 374\n[1] 385\n[1] 396\n[1] 407\n[1] 418\n[1] 429\n[1] 451\n[1] 462\n[1] 473\n[1] 484\n[1] 495\n[1] 506\n[1] 517\n[1] 539\n[1] 550\n[1] 561\n[1] 572\n[1] 583\n[1] 594\n[1] 605\n[1] 627\n[1] 638\n[1] 649\n[1] 660\n[1] 671\n[1] 682\n[1] 693\n[1] 715\n[1] 726\n[1] 737\n[1] 748\n[1] 759\n[1] 770\n[1] 781",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_02.html#ejercicio-9",
-    "href": "capitulos/90_soluciones_02.html#ejercicio-9",
-    "title": "Soluciones de la Práctica de la Unidad 2",
-    "section": "Ejercicio 9",
-    "text": "Ejercicio 9\n\nAl final del primer año, la población será igual a:\n\\[\np0 + p0 \\times \\frac{tasa}{100} + inmigrantes = 1000 + 1000 * 0.02 + 50 = 1070\n\\]\nAl final del 2º año, la población será:\n\\[\np0 + p0 \\times \\frac{tasa}{100} + inmigrantes = 1070 + 1070 * 0.02 + 50 = 1141.4 \\cong 1141\n\\] Recordar que el número de habitantes es un entero, por lo cual tomamos la parte entera.\nAl final del tercer año:\n\\[\np0 + p0 \\times \\frac{tasa}{100} + inmigrantes = 1141 + 1141 * 0.02 + 50 = 1213.82 \\cong 1213\n\\]\nSe necesitarán 3 años.\nHaciendo la solución para el problema de forma más general:\n\n\n# Parámetros a definir\np0 &lt;- 1000\np_objetivo &lt;- 1200\ntasa &lt;- 2 # La expresamos en porcentaje\ninmigrantes &lt;- 50\n\n# Programa\naño &lt;- 0\npoblacion &lt;- p0\nwhile (poblacion &lt; p_objetivo) {\n  # Aplicamos la fórmula y nos quedamos con la parte entera del resultado\n  poblacion &lt;- floor(poblacion + poblacion * tasa / 100 + inmigrantes)\n  # Contamos un año más\n  año &lt;- año + 1\n}\ncat(\n  \" Con una población inicial de\", p0, \n  \"habitantes, una tasa de crecimiento anual del\\n\",\n  tasa, \"% y\", inmigrantes, \"nuevos habitantes anuales, se necesitarán\",\n  año, \"años para alcanzar\\n una población de\", p_objetivo, \n  \"habitantes. Luego del año\", año, \"el pueblo contará con una\\n población de\", \n  poblacion, \"habitantes.\"\n)\n\n Con una población inicial de 1000 habitantes, una tasa de crecimiento anual del\n 2 % y 50 nuevos habitantes anuales, se necesitarán 3 años para alcanzar\n una población de 1200 habitantes. Luego del año 3 el pueblo contará con una\n población de 1213 habitantes.\n\n\n\nCambiamos los valores de las variables y realizamos el cálculo nuevamente:\n\n\n# Parámetros a definir\np0 &lt;- 10000\np_objetivo &lt;- 50000\ntasa &lt;- 3 # La expresamos en porcentaje\ninmigrantes &lt;- 100\n\n# Programa\naño &lt;- 0\npoblacion &lt;- p0\nwhile (poblacion &lt; p_objetivo) {\n  # Aplicamos la fórmula y nos quedamos con la parte entera del resultado\n  poblacion &lt;- floor(poblacion + poblacion * tasa / 100 + inmigrantes)\n  # Contamos un año más\n  año &lt;- año + 1\n}\ncat(\n  \" Con una población inicial de\", p0, \n  \"habitantes, una tasa de crecimiento anual del\\n\",\n  tasa, \"% y\", inmigrantes, \"nuevos habitantes anuales, se necesitarán\",\n  año, \"años para alcanzar\\n una población de\", p_objetivo, \n  \"habitantes. Luego del año\", año, \"el pueblo contará con una\\n población de\", \n  poblacion, \"habitantes.\"\n)\n\n Con una población inicial de 10000 habitantes, una tasa de crecimiento anual del\n 3 % y 100 nuevos habitantes anuales, se necesitarán 47 años para alcanzar\n una población de 50000 habitantes. Luego del año 47 el pueblo contará con una\n población de 50116 habitantes.",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 2</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_03.html",
-    "href": "capitulos/90_soluciones_03.html",
-    "title": "Soluciones de la Práctica de la Unidad 3",
+    "objectID": "capitulos/04_actividad_autoevaluativa.html",
+    "href": "capitulos/04_actividad_autoevaluativa.html",
+    "title": "Actividad de autoevaluación 4",
     "section": "",
-    "text": "Ejercicio 1",
+    "text": "El contenido estará disponible a la brevedad.",
     "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_03.html#ejercicio-1",
-    "href": "capitulos/90_soluciones_03.html#ejercicio-1",
-    "title": "Soluciones de la Práctica de la Unidad 3",
-    "section": "",
-    "text": "Escribimos la función y la usamos:\n\n# Función f1\nf1 &lt;- function(x1, x2, x3) {\n  resultado &lt;- x1 / x2 + x3^2 + x2 * x3\n  return(resultado)\n}\n\n# Ejemplo de su uso\nf1(5, 2, 3)\n\n[1] 17.5\n\n\nEscribimos la función y la usamos:\n\n# Función f2\nf2 &lt;- function(x1, x2 = 1, x3 = 1) {\n  resultado &lt;- x1 / x2 + x3^2 + x2 * x3\n  return(resultado)\n}\n\n# Ejemplos de su uso\nf2(5, 2, 3)\n\n[1] 17.5\n\nf2(5)\n\n[1] 7\n\nf2(5, 2)\n\n[1] 5.5\n\nf2(5, x3 = 3)\n\n[1] 17\n\nf2(x2 = 2, x3 = 3)\n\nError in f2(x2 = 2, x3 = 3): argument \"x1\" is missing, with no default\n\n\nEscribimos la función y la usamos:\n\n# Función f3\nf3 &lt;- function(x1, x2 = 1, x3 = 1) {\n  if (x1 &lt; 0 || x2 &lt; 0 || x3 &lt; 0) {\n    return(-100)\n  } else {\n    resultado &lt;- x1 / x2 + x3^2 + x2 * x3\n    return(resultado)\n  }\n}\n\n# Ejemplos de su uso\nf3(5, 2, 3)\n\n[1] 17.5\n\nf3(-5, 2, 3)\n\n[1] -100\n\nf3(-5)\n\n[1] -100\n\nf3(5, x3 = -3)\n\n[1] -100",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_03.html#ejercicio-2",
-    "href": "capitulos/90_soluciones_03.html#ejercicio-2",
-    "title": "Soluciones de la Práctica de la Unidad 3",
-    "section": "Ejercicio 2",
-    "text": "Ejercicio 2\nSin importar el signo de a y b ni cuál es mayor o menor, la secuencia de todos los enteros se puede generar fácilmente con la expresión a:b que usamos como parte de la estructura for:\n\n1:4\n\n[1] 1 2 3 4\n\n4:1\n\n[1] 4 3 2 1\n\n3:3\n\n[1] 3\n\n-2:4\n\n[1] -2 -1  0  1  2  3  4\n\n-2:-8\n\n[1] -2 -3 -4 -5 -6 -7 -8\n\n\nPor lo tanto, si iteramos con un for a través de la secuencia a:b, la función puede definirse así:\n\n#' Suma de una secuencia de números enteros\n#' \n#' @description\n#' Calcula la suma de un rango de números enteros, incluyendo los extremos. \n#' \n#' @param a,b números enteros\n#'\n#' @return suma de la secuencia\n#'\n#' @examples\n#' suma_secuencia(1, 3)\n#' suma_secuencia(-2, 3)\n#' suma_secuencia(-3, -5)\n#' suma_secuencia(3, 3)\n#' \nsuma_secuencia &lt;- function(a, b) {\n  suma &lt;- 0\n  for (i in a:b) {\n    suma &lt;- suma + i\n  }\n  return(suma)\n}\n\nEjemplos de su uso:\n\nsuma_secuencia(1, 3)\n\n[1] 6\n\nsuma_secuencia(30, 40)\n\n[1] 385\n\nsuma_secuencia(5, 2)\n\n[1] 14\n\nsuma_secuencia(-2, 3)\n\n[1] 3\n\nsuma_secuencia(-7, -5)\n\n[1] -18\n\nsuma_secuencia(-3, -5)\n\n[1] -12\n\nsuma_secuencia(-3, -3)\n\n[1] -3\n\nsuma_secuencia(3, 3)\n\n[1] 3",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_03.html#ejercicio-3",
-    "href": "capitulos/90_soluciones_03.html#ejercicio-3",
-    "title": "Soluciones de la Práctica de la Unidad 3",
-    "section": "Ejercicio 3",
-    "text": "Ejercicio 3\n\n#' Clasificación de un triángulo\n#' \n#' @description\n#' Clasifica a un triángulo según las longitudes de sus lados, en escaleno, isósceles \n#' o equilátero. \n#'\n#' @details \n#' Se evalúa la desigualdad triangular. Si las medidas de los lados no corresponden \n#' a un triángulo, la función devuelve \"no es un triángulo\". \n#' \n#' @param a,b,c números reales positivos\n#'\n#' @return valor carácter que indica el tipo de triángulo.\n#'\n#' @examples\n#' triangulos(2, 3, 4)\n#' triangulos(2, 3, 10)\n#' \ntriangulos &lt;- function(a, b, c) {\n    if (a &gt; b + c || b &gt; a + c || c &gt; a + b) {\n        return(\"no es triángulo\")\n    } else if (a == b & a == c) {\n        return(\"equilátero\")\n    } else if (a == b || a == c || b == c) {\n        return(\"isósceles\")\n    } else {\n        return(\"escaleno\")\n    }\n}\n\nAlternativamente, podemos prescindir de las estructuras anidadas, gracias a la existencia de las sentencias return en cada camino posible. Si alguna condición es TRUE, enseguida se devuelve el valor que corresponda y se detiene la ejecución de la función. El resto no se evalúa, lo cual hace innecesario usar else if o estructuras anidadas:\n\ntriangulos &lt;- function(a, b, c) {\n    if (a &gt; b + c || b &gt; a + c || c &gt; a + b) {\n      return(\"no es triángulo\")\n    }\n    if (a == b & a == c) {\n      return(\"equilátero\")\n    }\n    if (a == b || a == c || b == c) {\n      return(\"isósceles\")\n    }\n    return(\"escaleno\")\n}\n\nEjemplos de uso:\n\ntriangulos(2, 3, 4)\n\n[1] \"escaleno\"\n\ntriangulos(2, 3, 10)\n\n[1] \"no es triángulo\"",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_03.html#ejercicio-4",
-    "href": "capitulos/90_soluciones_03.html#ejercicio-4",
-    "title": "Soluciones de la Práctica de la Unidad 3",
-    "section": "Ejercicio 4",
-    "text": "Ejercicio 4\n\n#' Punto dentro de la elipse\n#' \n#' @description\n#' Determina si un punto está contenido dentro de la elipse definida por la fórmula \n#' (x - 6)^2 / 36 + (y + 4)^2 / 16 = 1\n#'\n#' @details \n#' Por defecto se evalúa al origen de coordenadas.\n#' \n#' @param x,y coordenadas, números reales. Por defecto valen 0. \n#'\n#' @return valor lógico indicando si el punto está dentro de la elipse descripta.\n#'\n#' @examples\n#' elipse(3, 7)\n#' elipse(6, -4)\n#' elipse()\n#' \nelipse &lt;- function(x = 0, y = 0) {\n  valor &lt;- (x - 6)^2 / 36 + (y + 4)^2 / 16\n    return(valor &lt;= 1)\n}\n\nEjemplos de uso:\n\nelipse(3, 7)\n\n[1] FALSE\n\nelipse(6, -4)\n\n[1] TRUE\n\nelipse()\n\n[1] FALSE",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_03.html#ejercicio-5",
-    "href": "capitulos/90_soluciones_03.html#ejercicio-5",
-    "title": "Soluciones de la Práctica de la Unidad 3",
-    "section": "Ejercicio 5",
-    "text": "Ejercicio 5\nSi bien hay muchas formas de resolver este ejercicio, tal vez usando estructuras iterativas y condicionales, conviene pensarlo desde un punto de vista matemático. La suma de los números impares de la fila \\(n\\) resulta igual a \\(n^3\\). Para darse cuenta, conviene pensar en los siguientes puntos:\n\nLa suma de los primeros \\(n\\) números naturales es: \\(n(n+1)/2\\). Por ejemplo, si \\(n=3\\), \\(1+2+3=6=3*4/2\\).\nLa suma de los primeros \\(n\\) números naturales impares es: \\(n^2\\). Por ejemplo, si \\(n=3\\), \\(1+3+5=9=3^2\\).\nEn la fila \\(i\\), hay exactamente \\(i\\) números impares. Por ejemplo, en la fila \\(i=3\\), hay 3 números: 7, 9 y 11.\nDesde la fila 1 hasta la fila \\(n\\) inclusive, hay \\(n(n+1)/2\\) números impares. En la fila 1 hay 1, en la fila 2 hay 2, etc. Entonces hasta la fila \\(n\\) hay \\(1+2+3+...+n = n(n+1)/2\\) (suma de los primeros \\(n\\) naturales).\nLa suma de los números impares desde la fila 1 hasta la fila \\(n\\) inclusive entonces es igual a la suma de los primeros \\(n(n+1)/2\\) números impares: \\(\\Big(\\frac{n(n+1)}{2}\\Big)^2\\).\nDel mismo modo, la suma de los números impares desde la fila 1 hasta la fila \\(n-1\\) inclusive es igual a la suma de los primeros \\((n-1)n/2\\) números impares: \\(\\Big(\\frac{(n-1)n}{2}\\Big)^2\\).\nComo sólo queremos la suma de los impares que están en la fila \\(n\\), podemos calcular la suma desde la fila 1 hasta la \\(n\\) inclusive, y restarle la suma desde la fila 1 hasta la fila \\(n-1\\) inclusive. El número que buscamos entonces es:\n\n\\[\n\\Big(\\frac{n(n+1)}{2}\\Big)^2 - \\Big(\\frac{(n-1)n}{2}\\Big)^2 = n^3\n\\]\nEl código de la función puede ser sencilamente:\n\n#' Suma de fila de la pirámide\n#' \n#' @description\n#' La pirámide se arma con números impares, empezando con el 1 en la cima, el 3 y 5 \n#' en la segunda fila, y así sucesivamente. Devuelve la suma de los números ubicados \n#' en la fila ingresada.\n#'\n#' @details \n#' Se puede demostrar que la suma de los números en la n-ésima fila es igual a \n#' n al cubo.\n#' \n#' @param n Número natural\n#'\n#' @return suma de los números ubicados en la n-ésima fila de la pirámide.\n#'\n#' @examples\n#' suma_piramide(1)\n#' suma_piramide(2)\n#' suma_piramide(3)\n#' \nsuma_piramide &lt;- function(n) {\n  return(n^3)\n}\n\nEjemplos:\n\nsuma_piramide(1)\n\n[1] 1\n\nsuma_piramide(2)\n\n[1] 8\n\nsuma_piramide(3)\n\n[1] 27\n\n# Evaluamos la suma de cada una de las primeras 10 filas\nfor (n in 1:10) {\n  suma &lt;- suma_piramide(n)\n  cat(\"Los impares de la fila\", n, \"suman\", suma, \"\\n\")\n}\n\nLos impares de la fila 1 suman 1 \nLos impares de la fila 2 suman 8 \nLos impares de la fila 3 suman 27 \nLos impares de la fila 4 suman 64 \nLos impares de la fila 5 suman 125 \nLos impares de la fila 6 suman 216 \nLos impares de la fila 7 suman 343 \nLos impares de la fila 8 suman 512 \nLos impares de la fila 9 suman 729 \nLos impares de la fila 10 suman 1000",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_03.html#ejercicio-6",
-    "href": "capitulos/90_soluciones_03.html#ejercicio-6",
-    "title": "Soluciones de la Práctica de la Unidad 3",
-    "section": "Ejercicio 6",
-    "text": "Ejercicio 6\n\nPaso a paso:\n\nEn el ambiente global primero se definen las funciones f y g y las variables globales a y b, con los valores 6 y 1, respectivamente.\nSe invoca g(a, b), resultando en que en el ambiente local de g, x recibe el valor 6 e y el valor 1.\nEn el ambiente local de g se crea la variable local b, con valor 6 - 2 * 1 = 4.\nDesde el ambiente local de g se invoca f(b), donde b vale 4.\nEn el ambiente local de f, a recibe el valor 4, el cual es actualizado por (4-10)*(4+10)=-84 para finalmente devolver -84.\nDe regreso en el ambiente local de g, la variable c recibe el valor b*f(b)=4*f(4)=4*(-84)=-336 y se devuelve -336.\nPara definir la variable d se vuelve a invocar f esta vez sin argumentos explícitos, por lo que en el ambiente local de f, a recibe el valor 10 y f() = 0. El valor final de d es f() - c = 0 - (-336) = 336.\nEn el ambiente global entonces el resultado de g(a, b) es 336.\n\nEn este ejemplo, el identificador a representa dos variables distintas: una de ellas definida en el Global Environment y la otra en el ámbito local de la función f1. Lo mismo ocurre con x: representa a una variable en el ambiente global, a otra en el ambiente de la función f1 y a una tercera en el ambiente de la función f2. Al ejecutar el algoritmo se obtendrían los siguientes resultados:\n\nEn el ambiente global, se definen las funciones f1 y f2 y las variables x e y con valores: x = 3 e y = 5.\nDesde el ambiente global, se invoca a la función f1, donde el parámetro formal a recibe el valor del parámetro real x (a = 3), mientras que el parámetro formal b recibe el valor del parámetro real y (b = 5). Dentro de la función f1:\n\nSe crea una nueva variable x que recibe el valor x = a + b = 8. Esta x no tiene nada que ver con la del ambiente global.\nSe crea una nueva variable y que recibe el valor y = x + 2 = 8 + 2 = 10. Esta y no tiene nada que ver con la del ambiente global.\nLa función devuelve el valor y = 10.\n\nEn el ambiente global, se le asigna a la variable a el valor recién devuelto: a = 10. Esta a no tiene nada que ver con la variable local de la función f1.\nDesde el ambiente global, se llama a la función f2, donde el parámetro formal x recibe el valor del parámetro real a (x = 10). Esta x no tiene nada que ver con las anteriores. Dentro de la función f2:\n\nSe calcula el cuadrado de x: \\(10^2\\) = 100\nSe devuelve el valor 100.\n\nEn el ambiente global, se suma x + f2(a) = 3 + 100 = 103 y se asigna este valor a z.\nEl algoritmo escribe el valor de z, 103.\nEl algoritmo intenta escribir a + b = 10 + ?, pero produce error, puesto que b no está definida en el ambiente global, no tiene asignado ningún valor. La única variable b que existe está en el ámbito de la función f1, no en el Global Environment.\n\nPrimero, en el ambiente global se define la función f con tres argumentos: x (sin valor por defecto), y y z (opcionales). La función devuelve una combinación lineal de estas tres cantidades. En segundo lugar, se invoca sucesivamente la función f para definir cuatro variables globales en el siguiente orden:\n\na = f(10) = f(10, 5, 10 + 5) = (10+5) - 10 - 5 = 0\nb = f(10, 10) = f(10, 10, 10 + 10) = (10+10) - 10 - 10 = 0\nc = f(10, 10, 10) = 10 - 10 - 10 = -10\nd = f(10, z = 10) = f(10, 5, 10) = 10 - 10 - 5 = -5\n\nFinalmente, se imprime el resultado de sumar las cuatro cantidades: 0 + 0 - 10 - 5 = -15",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_03.html#ejercicio-7",
-    "href": "capitulos/90_soluciones_03.html#ejercicio-7",
-    "title": "Soluciones de la Práctica de la Unidad 3",
-    "section": "Ejercicio 7",
-    "text": "Ejercicio 7\nHemos definido a las funciones como subalgoritmos que devuelven un objeto. En este caso no nos interesa devolver nada, sino sólo escribir mensajes en la consola, por eso podemos omitir el uso de return():\n\n#' Resolviendo ecuaciones de segundo grado\n#' \n#' @description\n#' Encuentra las soluciones de una ecuación de segundo grado a partir del uso de\n#' la formula resolvente. Se deben ingresar los coeficientes del polinomio de \n#' segundo grado asociado. \n#'\n#' @details \n#' La función imprime un mensaje con el detalle de las soluciones, incluyendo si \n#' esta ecuación tiene dos soluciones distintas, una solución doble o ninguna \n#' solución dentro de los números reales. La función devuelve un mensaje de error \n#' si el coeficiente cuadrático es 0. \n#' \n#' @param a,b,c Números reales\n#'\n#' @return NULL, junto con un mensaje con el detalle de las soluciones.\n#'\n#' @examples\n#' resolvente(1, -1, -2)\n#' resolvente(1, 2, 1)\n#' resolvente(1, 1, 1)\n#' resolvente(0, 1, 1)\n#' \nresolvente &lt;- function(a, b, c) {\n  if (a == 0) {\n    stop(\"(a) debe ser distinto de cero\")\n  }\n  discriminante &lt;- b^2 - 4 * a * c\n  if (discriminante &gt; 0) {\n    x1 &lt;- (-b - sqrt(discriminante)) / (2 * a)\n    x2 &lt;- (-b + sqrt(discriminante)) / (2 * a)\n    cat(\"Hay dos soluciones reales\", x1, \"y\", x2, \"\\n\")\n  } else if (discriminante == 0) {\n    x1 &lt;- -b / (2 * a)\n    cat(\"Hay una solución real doble:\", x1, \"\\n\")\n  } else {\n    cat(\"Las soluciones son complejas.\\n\")\n  }\n}\n\nEjemplo de uso:\n\nresolvente(1, -1, -2)\n\nHay dos soluciones reales -1 y 2 \n\nresolvente(1, 2, 1)\n\nHay una solución real doble: -1 \n\nresolvente(1, 1, 1)\n\nLas soluciones son complejas.\n\nresolvente(0, 1, 1)\n\nError in resolvente(0, 1, 1): (a) debe ser distinto de cero\n\n\nComentarios adicionales. Como hemos mencionado, cuando no se incluye un return(), igualmente la función devuelve algo, que es el resultado de la última expresión ejecutada. En todas las situaciones, en esta función la última expresión ejecutada es un cat(). Además de escribir un texto, esta función devuelve un valor NULL invisible (no se imprime en la consola, pero está). Podemos corrobar este comportamiento si usamos la función de esta forma:\n\n# Imprime texto en la consola y devuelve un NULL, que se guarda enresultado\nresultado &lt;- resolvente(1, -1, -2)\n\nHay dos soluciones reales -1 y 2 \n\n# Imprimimos resultado y encontramos que tiene guardado un NULL\nresultado\n\nNULL\n\n\nSería interesante que esta función pueda devolver las soluciones. Hasta acá sabemos que las funciones pueden devolver un único objeto. Esto puede ser un inconveniente para este problema, ya que nos interesa devolver dos valores (dos soluciones reales), un valor (una solución real doble) o ningún valor (ninguna solución real). Más adelante veremos cómo hacer para poder devolver distinta cantidad de objetos, agrupándolos en otra estructura de datos.",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_03.html#ejercicio-8",
-    "href": "capitulos/90_soluciones_03.html#ejercicio-8",
-    "title": "Soluciones de la Práctica de la Unidad 3",
-    "section": "Ejercicio 8",
-    "text": "Ejercicio 8\nLa solución propone chequear primeramente que el número de entrada sea entero y positivo. Si detecta que una de estos requisitos no se cumple, emite un warning y devuelve FALSE.\nEn caso de que se cumplan estos requisitos, el programa directamente devuelve TRUE si el número analizado es 2 o 3, ya que sabemos que estos primeros naturales son primos. Para el resto de los números, divide a n por todos los naturales desde el 2 hasta n - 1. Si al hacer esta división, encuentra un resto igual a cero, significa que n es compuesto. Si ninguna división produce resto cero, entonces n es primo.\nPor ejemplo, para n = 7, se hace:\n\n7 %% 2 = 1, sigue.\n7 %% 3 = 1, sigue.\n7 %% 4 = 3, sigue.\n7 %% 5 = 2, sigue.\n7 %% 6 = 1, termina la iteración.\nDado que no se encontraron divisores para 7, es un número primo, se devuelve TRUE\n\nPara n = 9, se hace:\n\n9 %% 2 = 1, sigue.\n9 %% 3 = 0, devuelve FALSO.\nDado que se encontró que 9 es múltiplo de 3, no es un número primo y se devolvió FALSE.\n\n\n#' Evaluación de números primos\n#' \n#' @description\n#' Determina si un número entero es primo o no. \n#'\n#' @details \n#' La función devuelve un mensaje de advertencia si no se ingresa un número natural \n#' mayor que 1. El resultado en este caso será FALSO.\n#' \n#' @param n Número natural\n#'\n#' @return Un valor lógico, TRUE si el número es primo, FALSE si no lo es.\n#'\n#' @examples\n#' es_primo(47)\n#' es_primo(253)\n#' es_primo(2)\n#' \nes_primo &lt;- function(n) {\n  if (n %% 1 != 0) {\n    warning(\"(n) no es entero\")\n    return(FALSE)\n  }\n  \n  if (n &lt;= 1) {\n    warning(\"(n) no es mayor a 1\")\n    return(FALSE)\n  }\n  \n    if (n &gt; 3) {\n        for (i in 2:(n - 1)) {\n            if (n %% i == 0) {\n                return(FALSE)\n            }\n        }\n    }\n  \n  # solo se llega acá si no se devolvió FALSE antes, es decir, si n es primo\n    return(TRUE)\n}\n\nEjemplos de uso:\n\nes_primo(47)\n\n[1] TRUE\n\nes_primo(253)\n\n[1] FALSE\n\nes_primo(2)\n\n[1] TRUE\n\nes_primo(7.18)\n\nWarning in es_primo(7.18): (n) no es entero\n\n\n[1] FALSE\n\nes_primo(0)\n\nWarning in es_primo(0): (n) no es mayor a 1\n\n\n[1] FALSE\n\n\nObservación: se puede plantear un algoritmo más eficiente, que realice menos iteraciones. No es necesario iterar hasta n - 1, si no hasta el entero inmediato menor a \\(\\sqrt{n}\\). Si no se encontró que n sea múltiplo de ningún valor menor a \\(\\sqrt{n}\\), tampoco lo será con los que siguen. Por otro lado, sería suficiente hacer las divisiones con respecto a los números primos menores \\(\\sqrt{n}\\). Se deja propuesto elaborar esta solución alternativa.",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_03.html#ejercicio-9",
-    "href": "capitulos/90_soluciones_03.html#ejercicio-9",
-    "title": "Soluciones de la Práctica de la Unidad 3",
-    "section": "Ejercicio 9",
-    "text": "Ejercicio 9\nPara poder resolver una división usando solamente sumas y restas, tenemos que pensar que, por ejemplo, hacer 14 dividido 3 nos da cociente 4 y resto 2, porque el 3 “entra” 4 veces en el 14 y todavía sobran 2. Es decir, a 14 le podemos restar el 3 cuatro veces hasta que ya no se lo podamos restar más, quedando un resto de 2. Entonces la idea es empezar diciendo que el resto es el dividendo (al principio, nos resta todo el dividendo) y restarle iterativamente el valor del divisor hasta que el resto se haga menor que el divisor. Mientras tanto, tenemos que ir contando cuántas restas se hacen, puesto que eso será el valor del cociente. Ejemplo:\n\ndividendo = 14, divisor = 3, resto = 14.\n14 - 3 = 11, digo que el resto es 11 y cuento que ya hice una resta con cociente = 1.\n11 - 3 = 8, digo que el resto es 8 y cuento que ya hice dos restas con cociente = 2.\n8 - 3 = 5, digo que el resto es 5 y cuento que ya hice tres restas con cociente = 3.\n5 - 3 = 2, digo que el resto es 2, cuento que ya hice cuatro restas con cociente = 4.\nComo ya obtuve un resto menor que el divisor, me detengo, con este resultado: cociente = 4 y resto = 2.\n\nComo a priori no sabemos cuántas iteraciones de este proceso tenemos que hacer, empleamos un while.\n\n#' Cociente de la división de números naturales\n#' \n#' @description\n#' Obtiene el cociente entero y el resto en la división de dos números naturales\n#'\n#' @details \n#' La función imprime un mensaje con todos los detalles de la división, con el \n#' dividendo, divisor, cociente y resto. Sin embargo, la función devuelve solo el \n#' cociente entero. \n#' \n#' @param dividendo,divisor Números naturales.\n#'\n#' @return El cociente entero de la división de ambos números.\n#'\n#' @examples\n#' cociente(1253, 4)\n#' cociente(3, 4)\n#' \ncociente &lt;- function(dividendo, divisor) {\n    resto &lt;- dividendo\n    cociente &lt;- 0\n    while (resto &gt;= divisor) {\n        cociente &lt;- cociente + 1\n        resto &lt;- resto - divisor\n    }\n    cat(\"Dividendo:\", dividendo, \"\\n\")\n    cat(\"Divisor:\", divisor, \"\\n\")\n    cat(\"Cociente:\", cociente, \"\\n\")\n    cat(\"Resto:\", resto, \"\\n\")\n    return(cociente)\n}\n\nEjemplos de uso:\n\ncociente(1253, 4)\n\nDividendo: 1253 \nDivisor: 4 \nCociente: 313 \nResto: 1 \n\n\n[1] 313\n\ncociente(3, 4)\n\nDividendo: 3 \nDivisor: 4 \nCociente: 0 \nResto: 3 \n\n\n[1] 0",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_03.html#ejercicio-10",
-    "href": "capitulos/90_soluciones_03.html#ejercicio-10",
-    "title": "Soluciones de la Práctica de la Unidad 3",
-    "section": "Ejercicio 10",
-    "text": "Ejercicio 10\n\n#' Cálculo del máximo común divisor\n#' \n#' @description\n#' Calcula el máximo común divisor entre dos números naturales\n#'\n#' @details \n#' Aplica el algoritmo de Euclides para encontrar el MCD. Dividir al mayor por el \n#' menor y registrar el resto. Si el resto es cero, el divisor es el MCD. Si el \n#' resto no es cero, hay que dividir el divisor por el resto y hacer la misma \n#' evaluación. Es decir, el divisor pasa a ser el nuevo dividendo y el resto, el \n#' nuevo divisor. Así hasta obtener el resto cero y tener el MCD. \n#' \n#' @param a,b Números naturales.\n#'\n#' @return El máximo común divisor de ambos números.\n#'\n#' @examples\n#' max_com_div(100, 24)\n#' max_com_div(25, 100)\n#' max_com_div(24, 24)\n#' \nmax_com_div &lt;- function(a, b) {\n  \n    # Establecer como dividendo al mayor y como divisor al menor\n    if (a &gt; b) {\n        dividendo &lt;- a\n        divisor &lt;- b\n    } else {\n        dividendo &lt;- b\n        divisor &lt;- a\n    }\n  \n    # Iniciar al resto como igual al dividendo\n    resto &lt;- dividendo\n    \n    # Aplicar algortimo de Euclides\n    while (resto != 0) {\n      \n      # Dividir al mayor por el menor y registrar el resto\n        resto &lt;- dividendo %% divisor\n        \n        # Si el resto es cero (lo chequearemos en la condición del while), el \n        # divisor es el mcd, por las dudas nos preparamos para entregarlo.\n        mcd &lt;- divisor\n        \n        # Si el resto no es cero (lo chequearemos en la condición del while), hay\n        # que dividir el divisor por el resto y hacer la misma evaluación. Es decir,\n        # el divisor pasa a ser el nuevo dividendo y el resto, el nuevo divisor\n        dividendo &lt;- divisor\n        divisor &lt;- resto\n    }\n    \n    # Devolver mcd\n    return(mcd)\n}\n\nEjemplos de uso:\n\nmax_com_div(100, 24)\n\n[1] 4\n\nmax_com_div(25, 100)\n\n[1] 25\n\nmax_com_div(24, 24)\n\n[1] 24\n\n\nOtra forma:\n\nmax_com_div &lt;- function(a, b) {\n    # Establecer como dividendo al mayor y como divisor al menor\n    if (a &gt; b) {\n        dividendo &lt;- a\n        divisor &lt;- b\n    } else {\n        dividendo &lt;- b\n        divisor &lt;- a\n    }\n    # Iniciar al resto como igual al dividendo\n    resto &lt;- dividendo\n    # Aplicar algortimo de Euclides\n    while (resto &gt; 0) {\n        resto &lt;- dividendo %% divisor\n        if (resto == 0) return(divisor)\n        dividendo &lt;- divisor\n        divisor &lt;- resto\n    }\n}",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_03.html#ejercicio-11",
-    "href": "capitulos/90_soluciones_03.html#ejercicio-11",
-    "title": "Soluciones de la Práctica de la Unidad 3",
-    "section": "Ejercicio 11",
-    "text": "Ejercicio 11\n\nEn el script funciones_unidad3.R se implementa la función combinatorio(m,n) y se guarda junto con fact(). Su contenido debe ser:\n\n# ---------------------------------------------------------------\n# DEFINICIÓN DE FUNCIONES (funciones.R)\n# ---------------------------------------------------------------\n\n#' Cálculo de factoriales\n#' \n#' @description\n#' Calcula el factorial de números enteros no negativos.\n#'\n#' @details \n#' Produce un error si se quiere calcular el factorial de un número negativo.\n#' \n#' @param n Número entero no negativo para el cual se calcula el factorial.\n#'\n#' @return El factorial de n.\n#'\n#' @examples\n#' fact(5)\n#' fact(0)\n#' \nfact &lt;- function(n) {\n  if (n &lt; 0 || n != floor(n)) {\n    stop(\"n debe ser entero no negativo.\")\n  }\n  resultado &lt;- 1\n  if (n &gt; 0) {\n      for (i in 1:n) {\n          resultado &lt;- resultado * i\n      }\n  }\n  return(resultado)\n}\n\n#' Cálculo de números combinatorios\n#' \n#' @description\n#' Calcula números combinatorios invocando a la función fact()\n#'\n#' @param m,n números naturales\n#'\n#' @return El número combinatorio m en n\n#'\n#' @examples\n#' combinatorio(3, 1)\n#' \ncombinatorio &lt;- function(m, n) {\n    return(fact(m) / (fact(m - n) * fact(n)))\n}\n\nEl contenido del script ejercicio11.R puede ser:\n\n# ---------------------------------------------------------------\n# PROGRAMA: \"Ejemplificar propiedades de los nros combinatorios\"\n# ---------------------------------------------------------------\n\n# Cargar funciones\nsource(\"funciones_unidad3.R\")\n\n\ncat(\"Propiedad 1: C(m, 0) = 1. Ejemplo:\\n\")\nres1 &lt;- combinatorio(5, 0)\ncat(\"C(5, 0) =\", res1, \"\\n\\n\")\n\ncat(\"Propiedad 2: C(m, m) = 1. Ejemplo:\\n\")\nres1 &lt;- combinatorio(5, 5)\ncat(\"C(5, 5) =\", res1, \"\\n\\n\")\n\ncat(\"Propiedad 3: C(m, 1) = m. Ejemplo:\\n\")\nres1 &lt;- combinatorio(5, 1)\ncat(\"C(5, 1) =\", res1, \"\\n\\n\")\n\ncat(\"Propiedad 4: C(m, n) = C(m, m-n). Ejemplo:\\n\")\nres1 &lt;- combinatorio(5, 2)\nres2 &lt;- combinatorio(5, 3)\ncat(\"C(5, 2) =\", res1, \"\\n\")\ncat(\"C(5, 3) =\", res2, \"\\n\\n\")\n\ncat(\"Propiedad 5: C(m, n) = C(m-1, n-1) + C(m-1, n). Ejemplo:\\n\")\nres1 &lt;- combinatorio(5, 2)\nres2 &lt;- combinatorio(4, 1) + combinatorio(4, 2)\ncat(\"C(5, 2) =\", res1, \"\\n\")\ncat(\"C(4, 1) + C(4, 2) =\", res2)\n\nPropiedad 1: C(m, 0) = 1. Ejemplo:\nC(5, 0) = 1 \n\nPropiedad 2: C(m, m) = 1. Ejemplo:\nC(5, 5) = 1 \n\nPropiedad 3: C(m, 1) = m. Ejemplo:\nC(5, 1) = 5 \n\nPropiedad 4: C(m, n) = C(m, m-n). Ejemplo:\nC(5, 2) = 10 \nC(5, 3) = 10 \n\nPropiedad 5: C(m, n) = C(m-1, n-1) + C(m-1, n). Ejemplo:\nC(5, 2) = 10 \nC(4, 1) + C(4, 2) = 10\n\n\nA continuación, se prueba pasando un valor de n mayor que m:\n\ncombinatorio(4, 5)\n\nError in fact(m - n): n debe ser entero no negativo.\n\n\nComo se observa, la función falla porque internamente se invoca a la función fact() con un número negativo, y la misma fue programada para disparar un error en ese caso. El mensaje n debe ser entero no negativo no es demasiado claro, dado que es emitido por la función fact() y se refiere a su argumento n, no al n de combinatorio(). Podríamos mejorar esta situación de varias formas. Una de ellas podría ser disparar un error antes, dentro de la función combinatorio(), para evitar cualquier procesamiento si \\(n&gt;m\\):\n\ncombinatorio &lt;- function(m, n) {\n  if (n &gt; m) {\n    stop(\"m debe ser menor o igual que n \")\n  }\n    return(fact(m) / (fact(m - n) * fact(n)))\n}\n\nSe generaliza la función combinatorio(m, n) para calcular números combinatorios con y sin reposición. Para esto se incluye el argumento r, que toma el valor lógico TRUE si el cálculo es con reposición o FALSE en caso contrario.\nAgregamos lo siguiente al archivo unidad3_funciones.R. Notar que esta vez no usamos return(), pero igualmetne se devuelve el resultado deseado por ser lo último que se evalúa:\n\n#' Cálculo de números combinatorios \n#' \n#' @description\n#' Calcula el número combinatorio m en n, con o sin reposición según r\n#'\n#' @param m,n números naturales\n#' @param r valor lógico, sobre si el cálculo es con o sin repetición, F por defecto\n#'\n#' @return El número combinatorio m en n, con o sin reposición\n#'\n#' @examples\n#' combinatorio2(10, 2, TRUE)\n#' combinatorio2(10, 2)\n#' \ncombinatorio2 &lt;- function(m, n, r = FALSE) {\n  if (r) {\n    combinatorio(m + n - 1, n)\n  } else {\n    combinatorio(m, n)\n  }\n}\n\nEn el script ejercicio_11.R probamos la nueva función:\n\n# Números combinatorios con y sin reposición\n\nm &lt;- 5\nn &lt;- 2\ncat(m, \"tomados de a\", n, \"sin resposición:\", combinatorio2(m, n), \"\\n\")\ncat(m, \"tomados de a\", n, \"con resposición:\", combinatorio2(m, n, TRUE))\n\n5 tomados de a 2 sin resposición: 10 \n5 tomados de a 2 con resposición: 15\n\n\nLa cantidad de combinaciones con reposición siempre es mayor, salvo para n = 1 donde ambas coinciden.",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
-    ]
-  },
-  {
-    "objectID": "capitulos/90_soluciones_03.html#ejercicio-12",
-    "href": "capitulos/90_soluciones_03.html#ejercicio-12",
-    "title": "Soluciones de la Práctica de la Unidad 3",
-    "section": "Ejercicio 12",
-    "text": "Ejercicio 12\nLa documentación se ha incluido en cada una de las respuestas anteriores.",
-    "crumbs": [
-      "Soluciones de la Práctica",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Soluciones de la Práctica de la Unidad 3</span>"
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Actividad de autoevaluación 4</span>"
     ]
   },
   {
