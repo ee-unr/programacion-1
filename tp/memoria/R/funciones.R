@@ -208,11 +208,11 @@ leer_eleccion <- function(valores_permitidos, mensaje = NULL, file = "") {
     mensaje <- "Ingresá tu elección y presioná ENTER: "
   }
   cat("\n", mensaje, "\n\n", sep = "")
-  opcion <- scan(what = character(), n = 1, quiet = T, file = file)
+  opcion <- scan(what = character(), n = 1, quiet = T, file = file, sep = "%")
   while (length(opcion) == 0 || is.na(opcion) || (!opcion %in% valores_permitidos)) {
     cat("\nEl valor ingresado no es válido\n")
     cat("\n", mensaje, "\n\n")
-    opcion <- scan(what = character(), n = 1, quiet = T, file = file)
+    opcion <- scan(what = character(), n = 1, quiet = T, file = file, sep = "%")
   }
   return(ifelse(tipo_numerico, as.numeric(opcion), opcion))
 }
