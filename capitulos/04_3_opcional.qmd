@@ -218,5 +218,3 @@ Rscript ../archivos/scripts_unidad4/ejemplo4.R
 ```
 
 Además de la función `commandArgs()` existen paquetes de R para poder trabajar con argumentos y opciones de formas mucho más elaboradas, como los paquetes `argparse` y `optparse`, entre otros.
-
-

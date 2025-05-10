@@ -72,7 +72,8 @@ A continuación, se presentan algunos comandos esenciales que pueden usarse en C
 | `rename nombre_viejo.txt nombre_nuevo.txt` | Cambia el nombre de un archivo. |
 | `cls` | Limpia la pantalla. |
 | `echo texto` | Imprime "texto" en la terminal. |
-| `echo texto > archivo.txt` | Escribe "texto" en el archivo `archivo.txt` |
+| `echo primer texto > archivo.txt` | Escribe "primer texto" en el archivo `archivo.txt` |
+| `echo segundo texto >> archivo.txt` | Agrega "segundo texto" en el archivo `archivo.txt`, como nueva línea, sin que se borre lo anterior. |
 | `type archivo.txt` | Muestra el contenido de un archivo de texto. |
 | `help` | Ver la ayuda de los comandos. |
 | `exit` | Cerrar la terminal. |
