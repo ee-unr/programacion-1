@@ -1,0 +1,19 @@
+Package: memoria
+Type: Package
+Title: Funciones Auxiliares para el Juego de la Memoria
+Version: 0.1.0
+Authors@R: 
+    person(given = "Cátedra",
+           family = "Programación 1",
+           role = c("aut", "cre", "cph"),
+           email = "catedra@sinemail.com")
+Description: Este paquete ofrece funciones muy útiles para poder implementar el 
+  Juego de la Memoria en R. Se recomienda leer con atención la documentación y
+  probar los ejemplos.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
+Imports:
+  knitr,
+  purrr
