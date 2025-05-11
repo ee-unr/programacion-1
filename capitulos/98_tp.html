@@ -542,7 +542,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
-  <li><a href="#objetivo-del-trabajo-práctico" id="toc-objetivo-del-trabajo-práctico" class="nav-link" data-scroll-target="#objetivo-del-trabajo-práctico">Objetivo del trabajo práctico</a></li>
+  <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo">Objetivo</a></li>
   <li><a href="#dinámica-del-juego" id="toc-dinámica-del-juego" class="nav-link" data-scroll-target="#dinámica-del-juego">Dinámica del juego</a></li>
   <li><a href="#la-terminal" id="toc-la-terminal" class="nav-link" data-scroll-target="#la-terminal">La terminal</a></li>
   <li><a href="#materiales-provistos" id="toc-materiales-provistos" class="nav-link" data-scroll-target="#materiales-provistos">Materiales provistos</a></li>
@@ -583,8 +583,8 @@ ul.task-list li input[type="checkbox"] {
 <p>El “Juego de la Memoria”, también conocido como “Memotest”, es un clásico juego de mesa que pone a prueba la capacidad de atención y la memoria visual de los participantes. Su dinámica es simple pero atrapante: se colocan fichas o cartas boca abajo, con imágenes ocultas, y los jugadores deben voltearlas de a dos por turno, intentando encontrar pares coincidentes. Si las dos fichas tienen la misma imagen, el jugador las retira del tablero y puede seguir jugando. Si no coinciden, se vuelven a colocar boca abajo, y es turno del siguiente jugador.</p>
 <p>Este juego ha sido disfrutado por generaciones tanto en el ámbito familiar como en actividades educativas, ya que además de ser entretenido, fomenta habilidades cognitivas importantes. En este trabajo práctico, vamos a programar en R una versión digital y simplificada del juego, que se podrá jugar en solitario desde la terminal de la computadora.</p>
 </section>
-<section id="objetivo-del-trabajo-práctico" class="level2">
-<h2 class="anchored" data-anchor-id="objetivo-del-trabajo-práctico">Objetivo del trabajo práctico</h2>
+<section id="objetivo" class="level2">
+<h2 class="anchored" data-anchor-id="objetivo">Objetivo</h2>
 <p>El objetivo de este trabajo práctico es desarrollar una versión interactiva del Juego de la Memoria en R, que funcione desde la terminal. El programa permitirá jugar con un tablero de fichas ocultas, revelarlas de a pares, y buscar coincidencias hasta completar todos los pares disponibles. El juego debe mostrar el estado del tablero en cada momento, registrar la cantidad de intentos realizados y permitir al jugador reiniciar la partida si lo desea.</p>
 </section>
 <section id="dinámica-del-juego" class="level2">
@@ -607,7 +607,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="descomposición-algorítmica" class="level2">
 <h2 class="anchored" data-anchor-id="descomposición-algorítmica">Descomposición algorítmica</h2>
 <p>Para organizar el código de manera clara y modular, se recomienda aplicar el principio de descomposición algorítmica, creando funciones propias para distintas partes del juego. Estas funciones pueden definirse en <code>jugar.R</code> o, mejor aún, en scripts adicionales. El o los nuevos scripts deberán estar guardados en el mismo directorio que <code>jugar.R</code>, desde donde se los debe invocar con la función <code>source()</code>. Desde dicha carpeta, deben abrir la terminal y ejecutar el programa con <code>Rscript jugar.R</code>, sin que se produzcan errores.</p>
-<p>Todas las funciones creadas deben estar documentadas <a href="@sec-factorial">bajo el sistema <strong>Roxygen</strong></a>. Algunas podrán tomar argumentos, otras no, y algunas devolverán valores mientras que otras sólo imprimirán mensajes en pantalla. Lo importante es que cada función cumpla una tarea bien definida y facilite la lectura del programa principal.</p>
+<p>Todas las funciones creadas deben estar documentadas <a href="../capitulos/03_3_varios.html#sec-factorial">bajo el sistema <strong>Roxygen</strong></a>. Algunas podrán tomar argumentos, otras no, y algunas devolverán valores mientras que otras sólo imprimirán mensajes en pantalla. Lo importante es que cada función cumpla una tarea bien definida y facilite la lectura del programa principal.</p>
 </section>
 <section id="otras-indicaciones-y-sugerencias" class="level2">
 <h2 class="anchored" data-anchor-id="otras-indicaciones-y-sugerencias">Otras indicaciones y sugerencias</h2>
