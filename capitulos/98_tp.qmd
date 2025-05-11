@@ -10,7 +10,7 @@ El “Juego de la Memoria”, también conocido como “Memotest”, es un clás
 
 Este juego ha sido disfrutado por generaciones tanto en el ámbito familiar como en actividades educativas, ya que además de ser entretenido, fomenta habilidades cognitivas importantes. En este trabajo práctico, vamos a programar en R una versión digital y simplificada del juego, que se podrá jugar en solitario desde la terminal de la computadora.
 
-## Objetivo del trabajo práctico
+## Objetivo
 
 El objetivo de este trabajo práctico es desarrollar una versión interactiva del Juego de la Memoria en R, que funcione desde la terminal. El programa permitirá jugar con un tablero de fichas ocultas, revelarlas de a pares, y buscar coincidencias hasta completar todos los pares disponibles. El juego debe mostrar el estado del tablero en cada momento, registrar la cantidad de intentos realizados y permitir al jugador reiniciar la partida si lo desea.
 
@@ -35,7 +35,7 @@ Para realizar este trabajo práctico cuentan con los siguientes archivos de apoy
 
 Para organizar el código de manera clara y modular, se recomienda aplicar el principio de descomposición algorítmica, creando funciones propias para distintas partes del juego. Estas funciones pueden definirse en `jugar.R` o, mejor aún, en scripts adicionales. El o los nuevos scripts deberán estar guardados en el mismo directorio que `jugar.R`, desde donde se los debe invocar con la función `source()`. Desde dicha carpeta, deben abrir la terminal y ejecutar el programa con `Rscript jugar.R`, sin que se produzcan errores.
 
-Todas las funciones creadas deben estar documentadas [bajo el sistema **Roxygen**](@sec-factorial). Algunas podrán tomar argumentos, otras no, y algunas devolverán valores mientras que otras sólo imprimirán mensajes en pantalla. Lo importante es que cada función cumpla una tarea bien definida y facilite la lectura del programa principal.
+Todas las funciones creadas deben estar documentadas [bajo el sistema **Roxygen**](03_3_varios.qmd#sec-factorial). Algunas podrán tomar argumentos, otras no, y algunas devolverán valores mientras que otras sólo imprimirán mensajes en pantalla. Lo importante es que cada función cumpla una tarea bien definida y facilite la lectura del programa principal.
 
 
 ## Otras indicaciones y sugerencias

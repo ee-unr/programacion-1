@@ -154,7 +154,7 @@ b.  El usuario tiene un máximo de cinco intentos. Por cada intento fallido, el 
 
 ## Ejercicio 5
 
-En el [ejercicio 7 de la practica 3](@sec-resolvente) se tuvo que crear una función llamada `resolvente(a, b, c)`, que muestra las soluciones de la ecuación de segundo grado $a x^2 + b x + c = 0$, empleando la fórmula resolvente:
+En el [ejercicio 7 de la practica 3](03_practica.qmd#sec-resolvente) se tuvo que crear una función llamada `resolvente(a, b, c)`, que muestra las soluciones de la ecuación de segundo grado $a x^2 + b x + c = 0$, empleando la fórmula resolvente:
 
 $$x_{1, 2} = \frac{-b \pm \sqrt{(b^2 - 4ac)}}{2a}$$
 Modificar el código e incluirlo en un script que pueda ser ejecutado desde la terminal de manera que se cumplan los siguientes requisitos: 
