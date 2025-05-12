@@ -10,13 +10,13 @@ En este capítulo vamos a trabajar con **arreglos**, una clase de estructuras qu
 
 Hasta ahora todos los programas que hemos desarrollado hacen uso de objetos que guardan datos individuales, los cuales representan un número, una cadena de texto o un valor lógico. Sin embargo, la verdadera utilidad de la computación radica en poder trabajar con muchos datos a la vez, organizados de acuerdo a ciertas reglas que permitan su manipulación y acceso.
 
-::: {.presentacion-capitulo data-latex=""}
+::: {.concepto data-latex=""}
 En el contexto de la programación, una **estructura de datos** es una forma organizada de almacenar y manipular datos dentro de un programa informático. Permite a los desarrolladores organizar y gestionar información de manera eficiente, optimizando el acceso y la manipulación de los datos para resolver problemas específicos. 
 :::
 
 Hay muchos tipos de estructuras de datos y cada lenguaje de programación propone los suyos propios. Sin embargo, las estructuras más sencillas se conocen como **arreglos** y de una u otra forma están presentes en todos los lenguajes, permitiendo generalizar su definición.
 
-::: {.presentacion-capitulo data-latex=""}
+::: {.concepto data-latex=""}
 Un **arreglo** (también conocido como *array*) es una estructura de datos que permite almacenar una **colección ordenada** de elementos. En la mayoría de los lenguajes, los elementos de un arreglo son del **mismo tipo**, lo que permite realizar operaciones de forma eficiente y sistemática sobre todos ellos. Por ejemplo, un arreglo puede contener únicamente números, caracteres o valores lógicos, según cómo haya sido definido. De esta forma, decimos que los arreglos tienen dos características fundamentales:
 
 - *Ordenamiento*: los elementos individuales pueden ser enumerados en orden, es decir, debe ser posible identificar en qué posición del arreglo se encuentra cada valor (qué hay en primer lugar, qué hay en segundo lugar, etc.).
@@ -42,14 +42,14 @@ En R, los vectores se construyen con la función `c()` (de *combine*), que reún
 x <- c(-4.5, 12, 2.71, -6, 25)
 ```
 
-Cuando ejecutamos la línea anterior, se crea en el ambiente global el objetos `x`, como podemos notar en la pestaña `Environment` de RStudio. Es decir, los arreglos son **objetos** que constituyen entidades en sí mismas y que pueden ser manipulados al hacer referencia a sus nombres. Además, RStudio nos muestra en la pestaña mencionada qué tipo de vector es cada uno (en este caso dice `num`), cuántos elementos tiene (pone `[1:5]`) y una previsualización de sus primeros elementos. También podemos chequear el tipo de vector y la cantidad de elementos que tiene en la consola:
+Cuando ejecutamos la línea anterior, se crea en el ambiente global el objeto `x`, como podemos notar en la pestaña `Environment` de RStudio. Es decir, los arreglos son **objetos** que constituyen entidades en sí mismas y que pueden ser manipulados al hacer referencia a sus nombres. Además, RStudio nos muestra en la pestaña mencionada qué tipo de vector es cada uno (en este caso dice `num`), cuántos elementos tiene (pone `[1:5]`) y una previsualización de sus primeros elementos. También podemos chequear el tipo de vector y la cantidad de elementos que tiene en la consola:
 
 ```{r}
 typeof(x)
 length(x)
 ```
 
-Cada uno de los elementos ocupa una posición determinada en el vector. Por ejemplo, el elemento 3 del vector `x` es el numéro 2.71. Se puede *acceder* o hacer referencia a cada elemento mediante el uso de un **índice**, expresado con un número entero entre corchetes al lado del nombre del vector. De esta forma, si escribimos `x[3]` hacemos referencia a la tercera posición del vector, que actualmente guarda al valor 2.71. Como podemos ver, sólo hace falta un índice para hacer referencia a cada elemento de un vector.
+Cada uno de los elementos ocupa una posición determinada en el vector. Por ejemplo, el elemento 3 del vector `x` es el numéro 2.71. Se puede *acceder* o hacer referencia (**indexar**) a cada elemento mediante el uso de un **índice**, expresado con un número entero entre corchetes al lado del nombre del vector. De esta forma, si escribimos `x[3]` hacemos referencia a la tercera posición del vector, que actualmente guarda al valor 2.71. Como podemos ver, sólo hace falta un índice para hacer referencia a cada elemento de un vector.
 
 ![Ejemplo de un vector numérico: se necesita de un solo índice para señalar cada posición.](../imagenes/teoria_unidad_5/estr02.png){width="60%" fig-align="center"}
 
@@ -103,6 +103,7 @@ z[1] && z[2]
 Podemos emplear estructuras iterativas para recorrer todas las posiciones de un vector y realizar operaciones con ellas, por ejemplo:
 
 ```{r}
+#| results: hold
 suma <- 0
 for (i in 1:5) {
 	cat("La posición", i, "de x está ocupada por el valor", x[i], "\n")
@@ -208,7 +209,7 @@ Si bien podemos pensar en distintas formas para resolver este problema, probable
 Ahora sólo resta realizar el mismo procedimiento para los valores de las posiciones 2 y 4. Como el número de elementos en el vector es impar, el valor en la posición central queda en su lugar. Podemos definir el siguiente programa para resolver este problema de manera general, para vectores de cualquier largo `n`:
 
 ```{r}
-v <- c("Estadística", "en", "Licenciatura", "la", "Aguante")
+v <- c("Datos", "de", "Análisis", "de", "Aguante")
 n <- length(v)
 for (i in 1:(n %/% 2)) {
 	tmp <- v[i]
@@ -225,16 +226,280 @@ En R, la indexación de los elementos de un vector comienza en **1**, lo que sig
 
 ## Matrices
 
+Un **arreglo bidimensional** representa lo que habitualmente conocemos en matemática como **matriz** y por eso también lo llamamos de esa forma. Podemos *imaginar* que en una matriz los elementos están organizados en *filas* y *columnas* formando una tabla. Por ejemplo, la siguiente es una matriz llamada `x`:
+
+![Ejemplo de una matriz numérica.](../imagenes/teoria_unidad_5/estr05.png){width="60%" fig-align="center"}
+
+A diferencia de los vectores, las matrices requieren dos índices para señalar la posición de cada elemento, el primero para indicar la fila y el segundo para indicar la columna. Los mismos se colocan entre corchetes, separados por una coma, al lado del identificador de la matriz. De esta forma, si hablamos de `x[1, 3]` hacemos referencia a la posición ocupada por el valor 18, mientras que si mencionamos `x[3, 1]` nos referimos al valor 14.
+
+![Ejemplo de una matriz numérica: se usan dos índices para señalar cada posición.](../imagenes/teoria_unidad_5/estr06.png){width="80%" fig-align="center"}
+
+Al *tamaño* de una matriz, es decir, cuántas filas y columnas tiene, se le dice **dimensión**. La matriz anterior es de dimensión $3 \times 4$.
+
+Para crear una matriz en R, usamos la función `matrix()`. Su primer argumento, `data`, es un vector con todos los elementos que queremos guardar en la matriz. Luego, se indica la cantidad de filas para la misma con `nrow` o la cantidad de columnas con `ncol`:
+
+```{r}
+x <- matrix(data = c(8, 11, 14, 13, 16, 19, 18, 21, 24, 23, 26, 29), nrow = 3)
+x
+```
+
+El siguiente código es equivalente:
+
+```{r}
+x <- matrix(data = c(8, 11, 14, 13, 16, 19, 18, 21, 24, 23, 26, 29), ncol = 4)
+```
+
+
+Notar que R ubica a los valores provistos en el vector llenando primero la columna 1, luego la 2, etc. Ese comportamiento puede ser modificado con el argumento `byrow`, que por default es `FALSE`. Si lo cambiamos a `TRUE` los elementos son ubicados por fila. Además, podemos usar saltos de líneas en el código para imaginar mejor el aspect final de la matriz. Esto no tiene ningún impacto en R, sólo sirve para que el código sea más fácil de leer. Las siguiente sentencia es equivalente a las anteriores:
+
+```{r, eval=F}
+x <- matrix(c(
+              8, 13, 18, 23, 
+              11, 16, 21, 26, 
+              14, 19, 24, 29
+            ), 
+            nrow = 3,
+            byrow = TRUE)
+```
+
+Si colocamos un único valor como primer argumento en la función `matrix()`, el mismo se repetirá en todas las posiciones. En este caso sí o sí tenemos que indicar cuántas filas y columnas deseamos:
+
+```{r}
+y <- matrix(0, nrow = 2, ncol = 5)
+y
+```
+
+Tenemos las siguientes funciones para analizar el tamaño de las matrices:
+
+```{r}
+dim(x) # devuelve un vector con la cantidad de filas y columnas
+nrow(x)
+ncol(x)
+```
+
+Podemos recorrer todas las posiciones de una matriz con una estructura iterativa doble: nos situamos en la primera fila y recorremos cada columna, luego en la segunda fila y recorremos todas las columnas y así sucesivamente:
+
+```{r}
+#| eval: false
+for (i in 1:3) {
+  for (j in 1:4) {
+    ...hacer algo con x[i, j]...
+  }
+}
+```
+
+![Recorrer todas las posiciones de una matriz fila por fila.](../imagenes/teoria_unidad_5/estr07.png){width="80%" fig-align="center"}
+
+También se puede recorrer la matriz por columna, si modificamos ligeramente las estructuras iterativas:
+
+```{r}
+#| eval: false
+for (j in 1:4) {
+  for (i in 1:3) {
+    ...hacer algo con x[i, j]...
+  }
+}
+```
+
+![Recorrer todas las posiciones de una matriz columna por columna.](../imagenes/teoria_unidad_5/estr08.png){width="80%" fig-align="center"}
+
+Se puede usar cualquier letra o palabra como variables iteradoras, pero el uso de `i` para las filas y de `j` para las columnas es bastante común.
+
+También podemos asignar valores en cada celda mientras recorremos la matriz. De hecho, la matriz `x` del ejemplo puede ser generada así, donde los índices `i` y `j` no sólo señalan una posición en particular dentro de la matriz, sino que además se usan para hacer el cálculo del valor a asignar:
+
+```{r}
+x <- matrix(0, nrow = 3, ncol = 4)
+for (i in 1:nrow(x)) {
+	for (j in 1:ncol(x)) {
+		x[i, j] <- 3 * i + 5 * j
+	}
+}
+x
+```
+
+::: {.ejemplo data-latex=""}
+**Trasponer una matriz**
+
+En Álgebra, una matriz traspuesta es una nueva matriz obtenida al intercambiar las filas por las columnas de una matriz original. En otras palabras, la primera fila de la matriz original se convierte en la primera columna de la matriz traspuesta, y así sucesivamente. Si la matriz original es de dimensión $m \times n$, su matriz transpuesta es de dimensión $n \times m$:
+
+![La matriz `x` y su traspuesta.](../imagenes/teoria_unidad_5/estr14.png){width="80%" fig-align="center"}
+
+Podemos escribir un programa para generar la matriz traspuesta, teniendo en cuenta que cada elemento que originalmente ocupa la posición `[i, j]` en la matriz original, debe pasar a ocupar la posición `[j, i]` en la matriz traspuesta:
+
+Dado que en R vamos a asignar valores en la matriz de manera literal, primero la creamos y luego usamos `nrow()` y `ncol()` para obtener los correspondientes valores de `nf` y `nc`. En el siguiente ejemplo, además, todas las posiciones de la matriz traspuesta son iniciadas con el valor `NA`.
+
+```{r}
+#| results: hold
+# Matriz original
+x <- matrix(c( 8, 13, 18, 23, 
+              11, 16, 21, 26, 
+              14, 19, 24, 29), 
+            nrow = 3, byrow = TRUE)
+
+# Cantidad de filas y columnas de la original
+nf <- nrow(x)
+nc <- ncol(x)
+
+# Definimos la traspuesta, inicialmente llena de valores NA
+traspuesta <- matrix(NA, nrow = nc, ncol = nf)
+
+# Generamos la matriz traspuesta
+for (i in 1:nf) {
+	for (j in 1:nc) {
+		traspuesta[j, i] <- x[i, j]
+	}
+}
+
+cat("Matriz original:\n")
+x
+cat("\nMatriz traspuesta:\n")
+traspuesta
+```
+:::
+
+::: {.comentario data-latex=""}
+Las **matrices** no deben confundirse con otras estructuras como los **data.frames** de R. Un **data.frame** permite almacenar datos tabulares, es decir, organizados en filas y columnas, de forma similar a una hoja de cálculo o una tabla de base de datos. Aunque las *matrices* y los *data.frames* pueden parecer similares porque ambos organizan datos en filas y columnas, existe una diferencia fundamental entre ellos: en una matriz todos los elementos deben ser del mismo tipo (por ejemplo, todos numéricos), mientras que un *data.frame* puede contener columnas de distintos tipos (por ejemplo, números, texto y otras cosas a la vez). En esta asignatura no trabajaremos con *data.frames*, ya que no aprendemos sobre análisis o manejo de datos, pero sí lo harán en Laboratorio de Datos 1.
+:::
 
 ## Atributos
 
+::: {.concepto data-latex=""}
+En R, un **atributo** o **attribute** es información adicional que se puede asociar a un objeto, como un vector atómico, sin modificar los valores que contiene. Es decir, los atributos actúan como *metadatos*: datos sobre los datos. Estos no cambian el contenido del objeto, no se muestran cuando lo imprimimos directamente, y no suelen influir en operaciones básicas. Sin embargo, algunas funciones de R pueden utilizar atributos específicos para tratar los objetos de una manera especial.
+:::
 
-### `names`
+Podemos averiguar si un objeto tiene atributos con la función `attributes()`. Si el objeto no tiene ninguno, la función devuelve `NULL`.
+
+```{r}
+v <- c(10, -9, 9, 1, 7, 2)
+attributes(v)
+```
+
+En este ejemplo, el vector atómico `v` de tipo numérico no tiene atributos asociados. Aunque un vector atómico común no tiene atributos por defecto, R construye muchas estructuras de datos más complejas, como **matrices**, otros **arrays**, **factores**, **fechas**, etc.) agregando atributos a vectores simples. 
+
+A continuación, veremos algunos atributos fundamentales.
+
+### `names` (nombres)
+
+Uno de los atributos más comunes es el de los **names**. Se usa para asignar una etiqueta a cada elemento de un vector. Esto puede ayudar a interpretar los datos o acceder a elementos por nombre.
+
+Por ejemplo, en el vector `cantidades` vamos a anotar cuántas frutas (manzanas, naranjas, bananas y peras) tenemos que comprar:
+
+```{r}
+cantidades <- c(3, 7, 2, 1)
+cantidades
+names(cantidades)
+```
+
+Seguramente es más cómodo si usamos el atributo **names** para anotar ponerle a cada valor un nombre que indique la fruta correspondiente:
+
+```{r}
+names(cantidades) <- c("manzanas", "naranjas", "bananas", "peras")
+cantidades
+```
+
+El contenido del vector no cambia, pero al imprimirlo ahora se muestran las etiquetas junto a los valores. Estas etiquetas no afectan a las operaciones que queramos hacer:
+
+```{r}
+# Mejor compro 4 manzanas más
+cantidades[1] <- cantidades[1] + 4
+cantidades
+```
+
+Algo muy interesante de tener nombres, es que los podemos usar para indexar:
+
+```{r}
+cantidades[3]
+cantidades["bananas"]
+```
 
 
-### `dim`
+Podemos eliminar todas las etiquetas asignando `NULL` al atributo `names()`:
 
+```{r}
+names(cantidades) <- NULL
+cantidades
+```
 
-### `class`
+También se pueden nombrar los elementos de un vector directamente cuando lo creamos:
 
+```{r}
+cantidades <- c(manzanas = 3, naranjas = 7, bananas = 2, peras = 1)
+cantidades
+```
 
+En el caso de las matrices, se le puede asignar nombres a sus filas y columnas. Esto se puede hacer después de crear la matriz
+	
+```{r}
+x <- matrix(c( 8, 13, 18, 23, 
+              11, 16, 21, 26, 
+              14, 19, 24, 29), 
+            nrow = 3, byrow = TRUE)
+rownames(x) <- c("A", "B", "C")
+colnames(x) <- c("grupo1", "grupo2", "grupo3", "grupo4")
+x
+```
+
+o al crearla dentro de la función `matrix()`:
+
+```{r}
+x <- matrix(c( 8, 13, 18, 23, 
+              11, 16, 21, 26, 
+              14, 19, 24, 29), 
+            nrow = 3, byrow = TRUE,
+            dimnames = list(Categorias = c("A", "B", "C"), 
+                            Grupos = c("grupo1", "grupo2", "grupo3", "grupo4")))
+x
+```
+	
+En este último ejemplo, se han elegido arbitrariamente los nombres `Categorias` y `Grupos` para llamar al conjunto completo de las filas y de las columnas, respectivamente. Esos nombres pueden ser cambiados por otros. Además, los nombres fueron encerrados en una *lista*, una estructura de datos que estudiaremos en los próximos capítulos.
+
+Al igual que con los vectores, podemos usar los nombres de filas y columnas para indexar:
+
+```{r}
+x["B", "grupo2"]
+```
+
+### `dim` (dimensiones)
+
+El atributo `dim` en R define las **dimensiones** de un objeto, y permite transformar un vector atómico en una **estructura multidimensional**, como una **matriz** o un **array**. De hecho, una **matriz** es, en realidad, un vector atómico con un atributo adicional: `dim`, que define sus dimensiones. Por ejemplo, para crear una matriz de 3 filas y 2 columnas a partir de un vector de longitud 6, basta con asignar el atributo correspondiente:
+
+```{r}
+# Creamos un vector atómico numérico
+x <- c(8, 11, 14, 13, 16, 19, 18, 21, 24, 23, 26, 29)
+x
+length(x)
+typeof(x)
+is.vector(x)
+is.matrix(x)
+dim(x)
+
+# Una matriz es un vector al que se le asigna un atributo "dim"
+dim(x) <- c(3, 4)
+x
+length(x)
+typeof(x)
+is.vector(x)
+is.matrix(x)
+dim(x)
+```
+
+Al asignar `dim`, R reorganiza internamente los datos del vector sin modificar sus valores, pero cambia su forma y la manera en que se imprimen o manipulan. Lo anterior nos enseña que para crear una matriz podemos usar la función `matrix()` como vimos antes, o agregarle un atributo `dim` a un vector. Podemos cambiar el atributo `dim` para organizar los valores en otra disposición:
+
+```{r}
+dim(x) <- c(2, 6)
+x
+```
+
+### `class` (clase)
+
+El atributo `class` indica de qué clase es un objeto y esto le sirve a R para saber cómo debe comportarse y qué métodos (funciones) deben aplicarse sobre él. Dependiendo de la clase de objeto, R hace algo distinto al imprimirlo, al indexarlo o al aplicar funciones.
+
+A continuación, tomamos la matriz `x` del ejemplo anterior. Vemos que es una estructura de datos numérica, ya que así lo indica `typeof()`. Pero además, vemos que no es un vector atómico numérico común y corriente, sino que se trata de una matriz, como indica `class()`. Los objetos de clase `matrix` tienen particularidades propias, como el atributo `dim` que indica en cuántas filas y columnas se organiza su contenido. 
+
+```{r}
+x
+typeof(x)
+class(x)
+```
+
+Cualquier lenguaje permite crear nuevas **clases** a partir de objetos más simples. Los objetos pertenecientes a una determinada clase tiene sus propios atributos, particularidades y formas de funcionar. Muchas funciones en R se comportan de forma distinta dependiendo de la clase de un objeto. 
