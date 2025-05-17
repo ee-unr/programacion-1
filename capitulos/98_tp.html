@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.30">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,14 +38,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-2b3e328b71be8d25427581baeb23079b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ca491189273499fb475b4ce6dd88b408.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-480d0d820328ec0468b14301a35c49e4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-ca491189273499fb475b4ce6dd88b408.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-aa4f6fdd9e90f681aca633630ec53804.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-bb6bdc767db078c25efbf72ed0631994.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-aa4f6fdd9e90f681aca633630ec53804.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -603,6 +603,16 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://github.com/ee-unr/programacion-1/raw/refs/heads/main/archivos/tp_2025/jugar.R"><strong>Script <code>jugar.R</code></strong></a>: archivo principal donde deben escribir su programa. Contiene una plantilla con instrucciones y espacio para agregar los datos del equipo y el código del juego.</li>
 <li><strong>Paquete <code>memoria</code></strong>: este paquete creado por la cátedra ofrece funciones auxiliares que simplifican muchas partes de la solución de este trabajo y serán de extrema utilidad. Se recomienda leer la documentación del paquete con atención y correr los ejemplos. Las funciones disponibles son: <code>nuevo_tablero</code>, <code>validar_fichas</code>, <code>mostrar_tablero</code>, <code>texto_lento</code>, <code>limpiar_consola</code>, <code>leer_eleccion</code>, <code>mostrar_info</code>, <code>posiciones_disponibles</code> y <code>mostrar_pares</code>. En el script <code>jugar.R</code> se incluyen instrucciones de instalación.</li>
 </ul>
+<p><strong>Información importante para usuarios de Windows</strong></p>
+<p>Si usas Windows, para instalar el paquete <code>memoria</code> es necesario tener instalado <strong>Rtools</strong>, un conjunto de herramientas que permite compilar paquetes de R que contienen código en C/C++ o Fortran. Instrucciones de instalación:</p>
+<ol type="1">
+<li>Visitar la página https://cran.r-project.org/bin/windows/Rtools/</li>
+<li>Elegir la versión correspondiente para la versión de R que tengan instalada. Por ejemplo, para la versión de R <code>4.4.1</code> es necesario descargar <code>Rtools 4.4</code>. Para descubrir la versión de R instalada en su computadora pueden ejecutar <code>R.version.string</code> en la consola.</li>
+<li>Descargar el instalador haciendo click en el link correspondiente. El link se encuentra en la sección <code>Installing RtoolsNN</code> y lleva el nombre <code>RtoolsNN installer</code>. <code>NN</code> hace referencia a la versión de Rtools. En nuestro ejemplo, <code>NN</code> sería <code>44</code>.</li>
+<li>Ejecutar el instalador y seguir las instrucciones. Pueden elegir valores por defecto.</li>
+<li>Una vez instalado, cerrar RStudio y volver a abrirlo para asegurarse que los cambios se apliquen correctamente.</li>
+</ol>
+<p>Siguiendo los pasos anteriores, la instalación de <code>memoria</code> debería poder continuar sin inconvenientes.</p>
 </section>
 <section id="descomposición-algorítmica" class="level2">
 <h2 class="anchored" data-anchor-id="descomposición-algorítmica">Descomposición algorítmica</h2>
