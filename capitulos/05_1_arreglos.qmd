@@ -106,7 +106,7 @@ Podemos emplear estructuras iterativas para recorrer todas las posiciones de un 
 #| results: hold
 suma <- 0
 for (i in 1:5) {
-	cat("La posición", i, "de x está ocupada por el valor", x[i], "\n")
+  cat("La posición", i, "de x está ocupada por el valor", x[i], "\n")
   cat(x[i], "al cuadrado es igual a", x[i]^2, "\n")
   suma <- suma + x[i]
 }
@@ -120,7 +120,7 @@ En el ejemplo anterior, se estableció que `i` itere entre 1 y 5 (`i in 1:5`) pa
 #| eval: false
 suma <- 0
 for (i in 1:length(x)) {
-	cat("La posición", i, "de x está ocupada por el valor", x[i], "\n")
+  cat("La posición", i, "de x está ocupada por el valor", x[i], "\n")
   cat(x[i], "al cuadrado es igual a", x[i]^2, "\n")
   suma <- suma + x[i]
 }

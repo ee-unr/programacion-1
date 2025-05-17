@@ -8,7 +8,9 @@ number-sections: false
 
 # Soluciones de la Práctica de la Unidad 5
 
-## Ejercicio 1
+## Vectores
+
+### Ejercicio 1
 
 ```{r}
 #' Suma de los elementos de un vector
@@ -28,39 +30,36 @@ suma <- function(v) {
 }
 ```
 
-## Ejercicio 2
+### Ejercicio 2
 
 ```{r}
 #' Suma componente a componente de dos vectores
 #'
 #' Suma dos vectores numéricos de igual longitud, elemento a elemento.
-#' Si las longitudes no coinciden, muestra un mensaje de error y devuelve NULL.
+#' Si las longitudes no coinciden, se detiene con error.
 #'
 #' @param u Un vector numérico.
 #' @param v Un vector numérico.
 #'
-#' @return Un vector numérico con la suma componente a componente, o NULL si
-#' las longitudes no coinciden.
+#' @return Un vector numérico con la suma componente a componente.
 #'
 #' @examples
 #' sumar_vectores(c(1, 2, 3), c(4, 5, 6))  # Devuelve c(5, 7, 9)
 sumar_vectores <- function(u, v) {
   nu <- length(u)
   nv <- length(v)
-  if (nu == nv) {
-    suma <- numeric(nu)
-    for (i in 1:nu) { 
-      suma[i] <- u[i] + v[i]
-    }
-    return(suma)
-  } else {
-    cat("Las dimensiones de los vectores no coinciden\n")
-    return(NULL)
+  if (nu != nv) {
+    stop("Las dimensiones de los vectores no coinciden.")
   }
+  suma <- numeric(nu)
+  for (i in 1:nu) { 
+    suma[i] <- u[i] + v[i]
+  }
+  return(suma)
 }
 ```
 
-## Ejercicio 3
+### Ejercicio 3
 
 ```{r}
 #' Ordenar un vector numérico de forma ascendente
@@ -89,7 +88,7 @@ ordenar_asc <- function(v) {
 }
 ```
 
-## Ejercicio 4
+### Ejercicio 4
 
 ```{r}
 #' Máximo de un vector numérico
@@ -115,125 +114,127 @@ maximo <- function(v) {
       posicion <- i
     }
   }
-  resultado <- c(mayor, posicion)
+  resultado <- c("mayor" = mayor, "posicion" = posicion)
   return(resultado)
 }
 ```
 
-## Ejercicio 5
+### Ejercicio 5
 
-### Item a
-
-```{r}
-#' Producto escalar de dos vectores
-#'
-#' Calcula el producto escalar entre dos vectores numéricos de igual longitud.
-#'
-#' @param u Un vector numérico.
-#' @param v Un vector numérico.
-#'
-#' @return Un número que representa el producto escalar entre u y v, o NULL si 
-#' las longitudes no coinciden.
-#'
-#' @examples
-#' prod_escalar(c(1, 2, 3), c(4, 5, 6))  # Devuelve 32
-#' prod_escalar(c(1, 2), c(1, 2, 3))     # Devuelve NULL y muestra un mensaje
-prod_escalar <- function(u, v) {
-  nu <- length(u)
-  nv <- length(v)
-  if (nu == nv) {
-    suma <- 0
-    for (i in 1:nu) {
-      suma <- suma + u[i] * v[i]
+a.  Producto escalar de dos vectores.
+    
+    ```{r}
+    #' Producto escalar de dos vectores
+    #'
+    #' Calcula el producto escalar entre dos vectores numéricos de igual longitud.
+    #'
+    #' @param u Un vector numérico.
+    #' @param v Un vector numérico.
+    #'
+    #' @return Un número que representa el producto escalar entre u y v.
+    #' @details Se detiene con error si las longitudes no coinciden.
+    #'
+    #' @examples
+    #' prod_escalar(c(1, 2, 3), c(4, 5, 6))  # Devuelve 32
+    #' prod_escalar(c(1, 2), c(1, 2, 3))     # Error
+    prod_escalar <- function(u, v) {
+      nu <- length(u)
+      nv <- length(v)
+      if (nu != nv) {
+        stop("Las dimensiones de los vectores no coinciden.")
+      }
+      suma <- 0
+      for (i in 1:nu) {
+        suma <- suma + u[i] * v[i]
+      }
+      return(suma)
     }
-    return(suma)
-  } else {
-    cat("Las dimensiones de los vectores no coinciden\n")
-    return(NULL)
-  }
-}
-```
+    ```
 
-### Item b
+b.  Producto vectorial de dos vectores de dimensión 3
+    
+    ```{r}
+    #' Producto vectorial de dos vectores de dimensión 3
+    #'
+    #' Calcula el producto vectorial entre dos vectores numéricos de dimensión 3.
+    #'
+    #' @param u Un vector numérico de longitud 3.
+    #' @param v Un vector numérico de longitud 3.
+    #'
+    #' @return Un vector numérico de longitud 3 que representa el producto vectorial 
+    #' u × v
+    #' 
+    #' @details Se detiene con error si alguno de los vectores no tiene dimensión 3.
+    #'
+    #' @examples
+    #' prod_vectorial(c(1, 0, 0), c(0, 1, 0))  # Devuelve c(0, 0, 1)
+    #' prod_vectorial(c(1, 2), c(3, 4))        # Error
+    prod_vectorial <- function(u, v) {
+      nu <- length(u)
+      nv <- length(v)
+      if (nu != 3 || nv != 3) {
+        stop("Los vectores no son de dimensión 3.")
+      }
+      resultado <- c(u[2] * v[3] - u[3] * v[2], 
+                     u[3] * v[1] - u[1] * v[3], 
+                     u[1] * v[2] - u[2] * v[1])
+      return(resultado)
+    }
+    ```
 
-```{r}
-#' Producto vectorial de dos vectores de dimensión 3
-#'
-#' Calcula el producto vectorial entre dos vectores numéricos de dimensión 3.
-#'
-#' @param u Un vector numérico de longitud 3.
-#' @param v Un vector numérico de longitud 3.
-#'
-#' @return Un vector numérico de longitud 3 que representa el producto vectorial 
-#' u × v, o NULL si alguno de los vectores no tiene dimensión 3.
-#'
-#' @examples
-#' prod_vectorial(c(1, 0, 0), c(0, 1, 0))  # Devuelve c(0, 0, 1)
-#' prod_vectorial(c(1, 2), c(3, 4))        # Devuelve NULL y muestra un mensaje
-prod_vectorial <- function(u, v) {
-  nu <- length(u)
-  nv <- length(v)
-  if (nu == 3 && nv == 3) {
-    resultado <- c(u[2] * v[3] - u[3] * v[2], 
-                   u[3] * v[1] - u[1] * v[3], 
-                   u[1] * v[2] - u[2] * v[1])
-    return(resultado)
-  } else {
-    cat("Los vectores no son de dimensión 3\n")
-    return(NULL)
-  }
-}
-```
+c.  Producto mixto de tres vectores de dimensión 3
+    
+    ```{r}
+    #' Producto mixto de tres vectores de dimensión 3
+    #'
+    #' Calcula el producto mixto de tres vectores u, v y w  de dimensión 3,
+    #' definido como el producto escalar de w con el producto vectorial de u y v
+    #'
+    #' @param u Un vector numérico de longitud 3.
+    #' @param v Un vector numérico de longitud 3.
+    #' @param w Un vector numérico de longitud 3.
+    #'
+    #' @return Un número que representa el producto mixto.
+    #' @details Se detiene con error si alguno de los vectores no tiene dimensión 3.
+    #'
+    #' @examples
+    #' prod_mixto(c(1, 0, 0), c(0, 1, 0), c(0, 0, 1)) # Devuelve 1
+    #' prod_mixto(c(1, 2), c(3, 4, 5), c(6, 7, 8))    # Error
+    prod_mixto <- function(u, v, w) {
+      resultado1 <- prod_vectorial(u, v)
+      resultado2 <- prod_escalar(resultado1, w)
+      return(resultado2)
+    }
+    ```
 
-### Item c
+d.  Mostrar productos vectoriales y escalares entre tres vectores
+    
+    ```{r}
+    #' Mostrar productos vectoriales y escalares entre tres vectores
+    #'
+    #' Calcula y muestra por consola el producto escalar entre v y w, 
+    #' el producto vectorial entre u y w, y el producto mixto entre v, w y u.
+    #'
+    #' @param u Un vector numérico de longitud 3.
+    #' @param v Un vector numérico de longitud 3.
+    #' @param w Un vector numérico de longitud 3.
+    #'
+    #' @return No devuelve un valor, solo imprime los resultados por consola.
+    #'
+    #' @examples
+    #' mostrar_productos(c(5, 8, 2), c(2, 3, -1), c(1, 2, 3))
+    mostrar_productos <- function(u, v, w) {
+      prod_esc <- prod_escalar(v, w)
+      prod_mix <- prod_mixto(v, w, u)
+      cat("El producto escalar entre v y w es:", prod_esc, "\n")
+      cat("El producto mixto entre v, w y u es:", prod_mix, "\n")
+      resultado <- c("prod_escalar" = prod_esc, "prod_mixto" = prod_mix)
+      return(resultado)
+    }
+    ```
 
-```{r}
-#' Producto mixto de tres vectores de dimensión 3
-#'
-#' Calcula el producto mixto de tres vectores u, v y w  de dimensión 3,
-#' definido como el producto escalar de w con el producto vectorial de u y v
-#'
-#' @param u Un vector numérico de longitud 3.
-#' @param v Un vector numérico de longitud 3.
-#' @param w Un vector numérico de longitud 3.
-#'
-#' @return Un número que representa el producto mixto, o NULL si alguno de los 
-#' vectores no tiene dimensión 3.
-#'
-#' @examples
-#' prod_mixto(c(1, 0, 0), c(0, 1, 0), c(0, 0, 1)) # Devuelve 1
-#' prod_mixto(c(1, 2), c(3, 4, 5), c(6, 7, 8)) # Devuelve NULL y muestra un mensaje
-prod_mixto <- function(u, v, w) {
-  resultado1 <- prod_vectorial(u, v)
-  resultado2 <- prod_escalar(resultado1, w)
-  return(resultado2)
-}
-```
+### Ejercicio 6
 
-### Item d
-
-```{r}
-#' Mostrar productos vectoriales y escalares entre tres vectores
-#'
-#' Calcula y muestra por consola el producto escalar entre v y w, 
-#' el producto vectorial entre u y w, y el producto mixto entre v, w y u.
-#'
-#' @param u Un vector numérico de longitud 3.
-#' @param v Un vector numérico de longitud 3.
-#' @param w Un vector numérico de longitud 3.
-#'
-#' @return No devuelve un valor, solo imprime los resultados por consola.
-#'
-#' @examples
-#' mostrar_productos(c(5, 8, 2), c(2, 3, -1), c(1, 2, 3))
-mostrar_productos <- function(u, v, w) {
-  cat("El producto escalar entre v y w es:", prod_escalar(v, w), "\n")
-  cat("El producto vectorial entre u y w es:", prod_vectorial(u, w), "\n")
-  cat("El producto mixto entre v, w y u es:", prod_mixto(v, w, u), "\n")
-}
-```
-
-## Ejercicio 6
 ```{r}
 #' Mostrar números primos hasta n usando distintos enfoques de la Criba de Eratóstenes
 #'
@@ -313,7 +314,9 @@ mostrar_primos <- function(n, enfoque = c("asumir_primos", "tachar", "encerrado"
 }
 ```
 
-## Ejercicio 7
+## Matrices
+
+### Ejercicio 7
 
 ```{r}
 #' Suma de dos matrices
@@ -347,219 +350,222 @@ sumar_matrices <- function(A, B) {
 }
 ```
 
-## Ejercicio 8
+### Ejercicio 8
 
-### Item a
-```{r}
-#' Mínimo de una matriz y su posición
-#'
-#' Esta función recorre una matriz y devuelve un vector con el valor mínimo 
-#' y su posición (fila y columna) dentro de la matriz.
-#'
-#' @param m Una matriz numérica.
-#'
-#' @return Un vector numérico de longitud 3 con los siguientes valores: 
-#' - Posición 1: El valor mínimo encontrado en la matriz.
-#' - Posición 2: La fila donde se encuentra el valor mínimo.
-#' - Posición 3: La columna donde se encuentra el valor mínimo.
-#'
-#' @examples
-#' matriz <- matrix(c(3, 2, 5, 1, 4, 6), nrow = 2)
-#' minimo_matriz(matriz)
-minimo_matriz <- function(m) {
-  min <- m[1, 1]
-  fila <- 1
-  col <- 1
-  for (i in 1:nrow(m)) {
-    for (j in 1:ncol(m)) {
-      if (m[i, j] < min) {
-        min <- m[i, j]
-        fila <- i
-        col <- j
-      }
-    }
-  }
-  resultado <- c(min, fila, col)
-  return(resultado)
-}
-```
-
-### Item b
-```{r}
-#' Encontrar el valor mínimo en una fila específica de una matriz
-#'
-#' Esta función busca el valor mínimo dentro de una fila específica de una matriz 
-#' y devuelve el valor junto con el número de columna donde se encuentra.
-#'
-#' @param m Una matriz numérica.
-#' @param fila Un entero que indica el número de fila en la que se desea buscar 
-#' el valor mínimo.
-#'
-#' @return Un vector numérico de longitud 2con los siguientes valores: 
-#' - Posición 1: El valor mínimo en la fila especificada.
-#' - Posición 2: El número de columna donde se encuentra ese valor mínimo.
-#'
-#' @examples
-#' matriz <- matrix(c(3, 2, 5, 1, 4, 6), nrow = 2)
-#' minimo_matriz_fila(matriz, 1)
-minimo_matriz_fila <- function(m, fila) {
-  min <- m[fila, 1]
-  col <- 1
-  for (j in 1:ncol(m)) {
-    if (m[fila, j] < min) {
-      min <- m[fila, j]
-      col <- j
-    }
-  }
-  return(c(min, col))
-}
-```
-
-## Ejercicio 9
-
-### Item a
-
-```{r}
-#' Ordenar matriz por columna en orden descendente
-#'
-#' Esta función ordena las filas de una matriz numérica según los valores
-#' de una columna específica, en orden descendente.
-#'
-#' @param m Una matriz
-#' @param col Un entero que indica el índice de la columna por la que se desea 
-#' ordenar.
-#'
-#' @return La matriz ordenada por la columna especificada en orden descendente.
-#' 
-#' @examples
-#' m <- matrix(c(1, 2, 3, 4, 5, 6), ncol = 2, byrow = TRUE)
-#' ordenar_desc_col(m, 1)
-ordenar_desc_col <- function(m, col) {
-  if (nrow(m) > 1) {
-    for (i in 1:(nrow(m)-1)) {
-      for (j in (i+1):nrow(m)) {
-        if (m[i, col] < m[j, col]) {
-          for (k in 1:ncol(m)) {
-            tmp <- m[i, k]
-            m[i, k] <- m[j, k]
-            m[j, k] <- tmp
+a.  Mínimo de una matriz y su posición.
+    
+    ```{r}
+    #' Mínimo de una matriz y su posición
+    #'
+    #' Esta función recorre una matriz y devuelve un vector con el valor mínimo 
+    #' y su posición (fila y columna) dentro de la matriz.
+    #'
+    #' @param m Una matriz numérica.
+    #'
+    #' @return Un vector numérico de longitud 3 con los siguientes valores: 
+    #' - Posición 1: El valor mínimo encontrado en la matriz.
+    #' - Posición 2: La fila donde se encuentra el valor mínimo.
+    #' - Posición 3: La columna donde se encuentra el valor mínimo.
+    #'
+    #' @examples
+    #' matriz <- matrix(c(3, 2, 5, 1, 4, 6), nrow = 2)
+    #' minimo_matriz(matriz)
+    minimo_matriz <- function(m) {
+      min <- m[1, 1]
+      fila <- 1
+      col <- 1
+      for (i in 1:nrow(m)) {
+        for (j in 1:ncol(m)) {
+          if (m[i, j] < min) {
+            min <- m[i, j]
+            fila <- i
+            col <- j
           }
         }
       }
+      resultado <- c(min, fila, col)
+      return(resultado)
     }
-  }
-  return(m)
-}
-```
+    ```
 
-*Observaciones*
+b.  Encontrar el valor mínimo en una fila específica de una matriz.
+    
+    ```{r}
+    #' Encontrar el valor mínimo en una fila específica de una matriz
+    #'
+    #' Esta función busca el valor mínimo dentro de una fila específica de una matriz 
+    #' y devuelve el valor junto con el número de columna donde se encuentra.
+    #'
+    #' @param m Una matriz numérica.
+    #' @param fila Un entero que indica el número de fila en la que se desea buscar 
+    #' el valor mínimo.
+    #'
+    #' @return Un vector numérico de longitud 2con los siguientes valores: 
+    #' - Posición 1: El valor mínimo en la fila especificada.
+    #' - Posición 2: El número de columna donde se encuentra ese valor mínimo.
+    #'
+    #' @examples
+    #' matriz <- matrix(c(3, 2, 5, 1, 4, 6), nrow = 2)
+    #' minimo_matriz_fila(matriz, 1)
+    minimo_matriz_fila <- function(m, fila) {
+      min <- m[fila, 1]
+      col <- 1
+      for (j in 1:ncol(m)) {
+        if (m[fila, j] < min) {
+          min <- m[fila, j]
+          col <- j
+        }
+      }
+      return(c(min, col))
+    }
+    ```
 
-- En lugar de chequear si tiene más de una fila, podríamos directamente poner `for (i in 1:nrow(m))` y `for (j in i:nrow(m))`. Esto funciona también cuando la matriz provista tiene una sola fila, pero en cualquier otro caso implica a hacer comparaciones lógicas de más, tantas como número de fila tenga la matriz.
-- Se puede mejorar la función agregando un control para que el argumento `col` provisto por el usuario esté siempre entre 1 y `ncol(m)`.
+### Ejercicio 9
 
-### Item b
-
-```{r}
-#' Ordenar matriz por columna en orden ascendente
-#'
-#' Esta función ordena las filas de una matriz numérica según los valores
-#' de una columna específica, en orden ascendente.
-#'
-#' @param m Una matriz numérica.
-#' @param col Un entero que indica el índice de la columna por la que se desea 
-#' ordenar.
-#'
-#' @return La matriz ordenada por la columna especificada en orden ascendente.
-#' 
-#' @examples
-#' m <- matrix(c(3, 2, 1, 6, 5, 4), ncol = 2, byrow = TRUE)
-#' ordenar_asc_col(m, 1)
-ordenar_asc_col <- function(m, col) {
-  if (nrow(m) > 1) {
-    for (i in 1:(nrow(m) - 1)) {
-      for (j in (i + 1):nrow(m)) {
-        if (m[i, col] > m[j, col]) { # Solo cambia el signo
-          for (k in 1:ncol(m)) {
-            tmp      <- m[i, k]
-            m[i, k]  <- m[j, k]
-            m[j, k]  <- tmp
+a.  Ordenar matriz por columna en orden descendente.
+    
+    ```{r}
+    #' Ordenar matriz por columna en orden descendente
+    #'
+    #' Esta función ordena las filas de una matriz numérica según los valores
+    #' de una columna específica, en orden descendente.
+    #'
+    #' @param m Una matriz
+    #' @param col Un entero que indica el índice de la columna por la que se desea 
+    #' ordenar.
+    #'
+    #' @return La matriz ordenada por la columna especificada en orden descendente.
+    #' 
+    #' @examples
+    #' m <- matrix(c(1, 2, 3, 4, 5, 6), ncol = 2, byrow = TRUE)
+    #' ordenar_desc_col(m, 1)
+    ordenar_desc_col <- function(m, col) {
+      if (nrow(m) > 1) {
+        for (i in 1:(nrow(m)-1)) {
+          for (j in (i+1):nrow(m)) {
+            if (m[i, col] < m[j, col]) {
+              for (k in 1:ncol(m)) {
+                tmp <- m[i, k]
+                m[i, k] <- m[j, k]
+                m[j, k] <- tmp
+              }
+            }
           }
         }
       }
+      return(m)
     }
-  }
-  return(m)
-}
-```
+    ```
+    
+    *Observaciones*
+    
+    - En lugar de chequear si tiene más de una fila, podríamos directamente poner `for (i in 1:nrow(m))` y `for (j in i:nrow(m))`. Esto funciona también cuando la matriz provista tiene una sola fila, pero en cualquier otro caso implica a hacer comparaciones lógicas de más, tantas como número de fila tenga la matriz.
+    - Se puede mejorar la función agregando un control para que el argumento `col` provisto por el usuario esté siempre entre 1 y `ncol(m)`.
 
-### Item c
-```{r}
-#' Ordenar matriz por fila en orden descendente
-#'
-#' Esta función ordena las columnas de una matriz numérica según los valores
-#' de una fila específica, en orden descendente.
-#'
-#' @param m Una matriz numérica.
-#' @param fila Un entero que indica el índice de la fila por la que se desea 
-#' ordenar.
-#'
-#' @return La matriz ordenada por la fila especificada en orden descendente.
-#' 
-#' @examples
-#' m <- matrix(c(1, 4, 2, 3, 5, 6), nrow = 2, byrow = TRUE)
-#' ordenar_desc_fila(m, 1)
-ordenar_desc_fila <- function(m, fila) {
-  if (ncol(m) > 1) {
-    for (i in 1:(ncol(m) - 1)) {
-      for (j in (i + 1):ncol(m)) {
-        if (m[fila, i] < m[fila, j]) { # Compara columnas
-          for (k in 1:nrow(m)) {
-            tmp      <- m[k, i]
-            m[k, i]  <- m[k, j]
-            m[k, j]  <- tmp
+b.  Ordenar matriz por columna en orden ascendente.
+    
+    ```{r}
+    #' Ordenar matriz por columna en orden ascendente
+    #'
+    #' Esta función ordena las filas de una matriz numérica según los valores
+    #' de una columna específica, en orden ascendente.
+    #'
+    #' @param m Una matriz numérica.
+    #' @param col Un entero que indica el índice de la columna por la que se desea 
+    #' ordenar.
+    #'
+    #' @return La matriz ordenada por la columna especificada en orden ascendente.
+    #' 
+    #' @examples
+    #' m <- matrix(c(3, 2, 1, 6, 5, 4), ncol = 2, byrow = TRUE)
+    #' ordenar_asc_col(m, 1)
+    ordenar_asc_col <- function(m, col) {
+      if (nrow(m) > 1) {
+        for (i in 1:(nrow(m) - 1)) {
+          for (j in (i + 1):nrow(m)) {
+            if (m[i, col] > m[j, col]) { # Solo cambia el signo
+              for (k in 1:ncol(m)) {
+                tmp      <- m[i, k]
+                m[i, k]  <- m[j, k]
+                m[j, k]  <- tmp
+              }
+            }
           }
         }
       }
+      return(m)
     }
-  }
-  return(m)
-}
-```
+    ```
 
-```{r}
-#' Ordenar matriz por fila en orden ascendente
-#'
-#' Esta función ordena las columnas de una matriz numérica según los valores
-#' de una fila específica, en orden ascendente.
-#'
-#' @param m Una matriz numérica.
-#' @param fila Un entero que indica el índice de la fila por la que se desea 
-#' ordenar.
-#'
-#' @return La matriz ordenada por la fila especificada en orden ascendente.
-#' 
-#' @examples
-#' m <- matrix(c(3, 1, 4, 2, 6, 5), nrow = 2, byrow = TRUE)
-#' ordenar_asc_fila(m, 1)
-ordenar_asc_fila <- function(m, fila) {
-  if (ncol(m) > 1) {
-    for (i in 1:(ncol(m) - 1)) {
-      for (j in (i + 1):ncol(m)) {
-        if (m[fila, i] > m[fila, j]) { # Solo cambia el signo
-          for (k in 1:nrow(m)) {
-            tmp      <- m[k, i]
-            m[k, i]  <- m[k, j]
-            m[k, j]  <- tmp
+c.  Ordenar matriz por fila en orden descendente
+    
+    ```{r}
+    #' Ordenar matriz por fila en orden descendente
+    #'
+    #' Esta función ordena las columnas de una matriz numérica según los valores
+    #' de una fila específica, en orden descendente.
+    #'
+    #' @param m Una matriz numérica.
+    #' @param fila Un entero que indica el índice de la fila por la que se desea 
+    #' ordenar.
+    #'
+    #' @return La matriz ordenada por la fila especificada en orden descendente.
+    #' 
+    #' @examples
+    #' m <- matrix(c(1, 4, 2, 3, 5, 6), nrow = 2, byrow = TRUE)
+    #' ordenar_desc_fila(m, 1)
+    ordenar_desc_fila <- function(m, fila) {
+      if (ncol(m) > 1) {
+        for (i in 1:(ncol(m) - 1)) {
+          for (j in (i + 1):ncol(m)) {
+            if (m[fila, i] < m[fila, j]) { # Compara columnas
+              for (k in 1:nrow(m)) {
+                tmp      <- m[k, i]
+                m[k, i]  <- m[k, j]
+                m[k, j]  <- tmp
+              }
+            }
           }
         }
       }
+      return(m)
     }
-  }
-  return(m)
-}
-```
+    ```
+    
+    ```{r}
+    #' Ordenar matriz por fila en orden ascendente
+    #'
+    #' Esta función ordena las columnas de una matriz numérica según los valores
+    #' de una fila específica, en orden ascendente.
+    #'
+    #' @param m Una matriz numérica.
+    #' @param fila Un entero que indica el índice de la fila por la que se desea 
+    #' ordenar.
+    #'
+    #' @return La matriz ordenada por la fila especificada en orden ascendente.
+    #' 
+    #' @examples
+    #' m <- matrix(c(3, 1, 4, 2, 6, 5), nrow = 2, byrow = TRUE)
+    #' ordenar_asc_fila(m, 1)
+    ordenar_asc_fila <- function(m, fila) {
+      if (ncol(m) > 1) {
+        for (i in 1:(ncol(m) - 1)) {
+          for (j in (i + 1):ncol(m)) {
+            if (m[fila, i] > m[fila, j]) { # Solo cambia el signo
+              for (k in 1:nrow(m)) {
+                tmp      <- m[k, i]
+                m[k, i]  <- m[k, j]
+                m[k, j]  <- tmp
+              }
+            }
+          }
+        }
+      }
+      return(m)
+    }
+    ```
 
-## Ejercicio 10
+### Ejercicio 10
 
 ```{r}
 #' Verificar si una matriz es un cuadrado mágico

@@ -58,7 +58,7 @@ book:
         # - capitulos/05_2_operaciones_vectorizadas.qmd
         # - capitulos/05_3_listas.qmd
         # - capitulos/05_4_varios.qmd
-    #     - capitulos/05_practica.qmd
+        - capitulos/05_practica.qmd
     #     - capitulos/05_actividad_autoevaluativa.qmd
     # - part: capitulos/06.qmd
     #   chapters:
@@ -71,7 +71,7 @@ book:
     #     - capitulos/90_soluciones_02.qmd
     #     - capitulos/90_soluciones_03.qmd
         # - capitulos/90_soluciones_04.qmd
-        # - capitulos/90_soluciones_05.qmd
+        - capitulos/90_soluciones_05.qmd
         # - capitulos/90_soluciones_06.qmd
   appendices:
   #   - capitulos/98_tp.qmd

@@ -49,23 +49,23 @@ Definir una función llamada `sumar_vectores(u, v)` que reciba dos vectores `u` 
 
 ```{r}
 #| echo: false
+#| error: true
 sumar_vectores <- function(u, v) {
   nu <- length(u)
   nv <- length(v)
-  if (nu == nv) {
-    suma <- numeric(nu)
-    for (i in 1:nu) { 
-      suma[i] <- u[i] + v[i]
-    }
-    return(suma)
-  } else {
-    cat("Las dimensiones de los vectores no coinciden\n")
-    return(NULL)
+  if (nu != nv) {
+    stop("Las dimensiones de los vectores no coinciden.")
   }
+  suma <- numeric(nu)
+  for (i in 1:nu) { 
+    suma[i] <- u[i] + v[i]
+  }
+  return(suma)
 }
 ```
 
 ```{r}
+#| error: true
 u <- c(5, 8, 2)
 v <- c(2, 3, -1)
 sumar_vectores(u, v)
@@ -114,7 +114,7 @@ ordenar_asc(x)
 
 **Hallar máximo en un vector**
 
-Definir una función llamada `maximo(v)` que encuentre cuál es el mayor valor en un vector numérico `v`. La función debe devolver un vector con dos elementos, el primero es el valor del máximo y el segundo es la posición en la cual el mismo se halla en el vector `v`. Si dicho mayor valor estuviese repetido en el vector, se determina la posición de su primera ocurrencia. Ejemplos de su uso:
+Definir una función llamada `maximo(v)` que encuentre cuál es el mayor valor en un vector numérico `v`. La función debe devolver un vector con dos elementos, el primero es el valor del máximo y el segundo es la posición en la cual el mismo se halla en el vector `v`. Si dicho mayor valor estuviese repetido en el vector, se determina la posición de su primera ocurrencia. El vector devuelto hace uso del atributo *names*. Ejemplos de su uso:
 
 ```{r}
 #| echo: false
@@ -129,7 +129,7 @@ maximo <- function(v) {
       posicion <- i
     }
   }
-  resultado <- c(mayor, posicion)
+  resultado <- c("mayor" = mayor, "posicion" = posicion)
   return(resultado)
 }
 ```
@@ -145,125 +145,126 @@ maximo(x)
 
 **Álgebra vectorial**
 
-#### Item a
+a.  Dados dos vectores $\bar u = (u_1, u_2, ..., u_n)$ y $\bar v = (v_1, v_2, ..., v_n)$, ambos $\in \mathbf{R}^n$, se define como producto escalar al escalar: $\bar u \times \bar v = u_1v_1+u_2v_2+....+u_nv_n$.
 
-Dados dos vectores $\bar u = (u_1, u_2, ..., u_n)$ y $\bar v = (v_1, v_2, ..., v_n)$, ambos $\in \mathbf{R}^n$, se define como producto escalar al escalar: $\bar u \times \bar v = u_1v_1+u_2v_2+....+u_nv_n$.
-
-Definir una función llamada `prod_escalar(u, v)` que tome dos vectores `u` y `v` de la misma dimensión y devuelva el producto escalar entre ellos. La función debe evaluar que el largo de los vectores admita esta operación. Ejemplos de su uso:
-
-```{r}
-#| echo: false
-prod_escalar <- function(u, v) {
-  nu <- length(u)
-  nv <- length(v)
-  if (nu == nv) {
-    suma <- 0
-    for (i in 1:nu) {
-      suma <- suma + u[i] * v[i]
+    Definir una función llamada `prod_escalar(u, v)` que tome dos vectores `u` y `v` de la misma dimensión y devuelva el producto escalar entre ellos. La función debe evaluar que el largo de los vectores admita esta operación. Ejemplos de su uso:
+    
+    ```{r}
+    #| echo: false
+    prod_escalar <- function(u, v) {
+      nu <- length(u)
+      nv <- length(v)
+      if (nu != nv) {
+        stop("Las dimensiones de los vectores no coinciden.")
+      }
+      suma <- 0
+      for (i in 1:nu) {
+        suma <- suma + u[i] * v[i]
+      }
+      return(suma)
     }
-    return(suma)
-  } else {
-    cat("Las dimensiones de los vectores no coinciden\n")
-    return(NULL)
-  }
-}
-```
+    ```
+    
+    ```{r}
+    #| error: true
+    u <- c(5, 8, 2)
+    v <- c(2, 3, -1)
+    prod_escalar(u, v)
+    
+    x <- 10
+    y <- 2
+    prod_escalar(x, y)
+    
+    w <- c(5, 8, 2)
+    z <- c(2, 3)
+    prod_escalar(w, z)
+    ```
 
-```{r}
-u <- c(5, 8, 2)
-v <- c(2, 3, -1)
-prod_escalar(u, v)
+b.  Dados dos vectores $\bar u = (u_1, u_2, u_3)$ y $\bar v = (v_1, v_2, v_3)$, ambos $\in \mathbf{R}^3$, se define como producto vectorial de $\bar u$ con $\bar v$ al vector de $\mathbf{R}^3$: $\bar u \wedge \bar v = (u_2v_3-u_3v_2, u_3v_1-u_1v_3, u_1v_2-u_2v_1)$.
+    
+    Definir una función llamada `prod_vectorial(u, v)` que tome dos vectores `u` y `v` de largo 3 y devuelva el producto vectorial entre ellos. Ejemplos de su uso:
+    
+    ```{r}
+    #| echo: false
+    prod_vectorial <- function(u, v) {
+      nu <- length(u)
+      nv <- length(v)
+      if (nu != 3 || nv != 3) {
+        stop("Los vectores no son de dimensión 3.")
+      }
+      resultado <- c(u[2] * v[3] - u[3] * v[2], 
+                     u[3] * v[1] - u[1] * v[3], 
+                     u[1] * v[2] - u[2] * v[1])
+      return(resultado)
+    }
+    ```
+    
+    ```{r}
+    #| error: true
+    u <- c(5, 8, 2)
+    v <- c(2, 3, -1)
+    prod_vectorial(u, v)
+    
+    w <- c(5, 8)
+    z <- c(2, 3)
+    prod_vectorial(w, z)
+    ```
 
-x <- 10
-y <- 2
-prod_escalar(x, y)
+c.  Dados tres vectores $\bar u$, $\bar v$ y $\bar w \in \mathbf{R}^3$, se llama producto mixto de $\bar u$, $\bar v$ y $\bar w$, en ese orden, al escalar: $\bar u \wedge \bar v \times \bar w$.
+    
+    Haciendo uso de las funciones definidas en los ítems anteriores, definir una función llamada `prod_mixto(u, v, w)` que tome tres vectores de largo 3 y devuelva el producto mixto entre ellos. Ejemplo de su uso:
+    
+    ```{r}
+    #| echo: false
+    prod_mixto <- function(u, v, w) {
+      resultado1 <- prod_vectorial(u, v)
+      resultado2 <- prod_escalar(resultado1, w)
+      return(resultado2)
+    }
+    ```
+    
+    ```{r}
+    #| error: true
+    u <- c(5, 8, 2)
+    v <- c(2, 3, -1)
+    w <- c(1, 2, 3)
+    x <- c(1, 2)
+    prod_mixto(u, v, w)
+    prod_mixto(u, v, x)
+    ```
 
-w <- c(5, 8, 2)
-z <- c(2, 3)
-prod_escalar(w, z)
-```
-
-#### Item b
-
-Dados dos vectores $\bar u = (u_1, u_2, u_3)$ y $\bar v = (v_1, v_2, v_3)$, ambos $\in \mathbf{R}^3$, se define como producto vectorial de $\bar u$ con $\bar v$ al vector de $\mathbf{R}^3$: $\bar u \wedge \bar v = (u_2v_3-u_3v_2, u_3v_1-u_1v_3, u_1v_2-u_2v_1)$.
-
-Definir una función llamada `prod_vectorial(u, v)` que tome dos vectores `u` y `v` de largo 3 y devuelva el producto vectorial entre ellos. Ejemplos de su uso:
-
-```{r}
-#| echo: false
-prod_vectorial <- function(u, v) {
-  nu <- length(u)
-  nv <- length(v)
-  if (nu == 3 && nv == 3) {
-    resultado <- c(u[2] * v[3] - u[3] * v[2], 
-                   u[3] * v[1] - u[1] * v[3], 
-                   u[1] * v[2] - u[2] * v[1])
-    return(resultado)
-  } else {
-    cat("Los vectores no son de dimensión 3\n")
-    return(NULL)
-  }
-}
-```
-
-```{r}
-u <- c(5, 8, 2)
-v <- c(2, 3, -1)
-prod_vectorial(u, v)
-
-w <- c(5, 8)
-z <- c(2, 3)
-prod_vectorial(w, z)
-```
-
-#### Item c
-
-Dados tres vectores $\bar u$, $\bar v$ y $\bar w \in \mathbf{R}^3$, se llama producto mixto de $\bar u$, $\bar v$ y $\bar w$, en ese orden, al escalar: $\bar u \wedge \bar v \times \bar w$.
-
-Haciendo uso de las funciones definidas en los ítems anteriores, definir una función llamada `prod_mixto(u, v, w)` que tome tres vectores de largo 3 y devuelva el producto mixto entre ellos. Ejemplo de su uso:
-
-```{r}
-#| echo: false
-prod_mixto <- function(u, v, w) {
-  resultado1 <- prod_vectorial(u, v)
-  resultado2 <- prod_escalar(resultado1, w)
-  return(resultado2)
-}
-```
-
-```{r}
-u <- c(5, 8, 2)
-v <- c(2, 3, -1)
-w <- c(1, 2, 3)
-prod_mixto(u, v, w)
-```
-
-#### Item d
-
-Haciendo uso de las funciones definidas en los ítems anteriores, definir una función llamada `mostrar_productos(u, v, w)` que tome tres vectores $\bar u$, $\bar v$ y $\bar w \in \mathbf{R}^3$ y calcule y muestre:
-
-- el producto escalar $\bar v \wedge \bar w$
-- el producto vectorial $\bar u \times \bar w$ 
-- el producto mixto $\bar v \wedge \bar w \times \bar u$
-
-Ejemplo de su uso:
- 
-```{r}
-#| echo: false
-mostrar_productos <- function(u, v, w) {
-  cat("El producto escalar entre v y w es:", prod_escalar(v, w), "\n")
-  cat("El producto vectorial entre u y w es:", prod_vectorial(u, w), "\n")
-  cat("El producto mixto entre v, w y u es:", prod_mixto(v, w, u), "\n")
-}
-```
-
-```{r}
-u <- c(5, 8, 2)
-v <- c(2, 3, -1)
-w <- c(1, 2, 3)
-
-mostrar_productos(u, v, w)
-```
+d.  Haciendo uso de las funciones definidas en los ítems anteriores, definir una función llamada `mostrar_productos(u, v, w)` que tome tres vectores $\bar u$, $\bar v$ y $\bar w \in \mathbf{R}^3$ y calcule y muestre en la consola:
+    
+    - el producto escalar $\bar v \wedge \bar w$
+    - el producto mixto $\bar v \wedge \bar w \times \bar u$
+    
+    Además, la función devuelve un vector numérico de largo 2 con los resultados anteriores, en ese orden, con nombres. Ejemplo de su uso:
+     
+    ```{r}
+    #| echo: false
+    mostrar_productos <- function(u, v, w) {
+      prod_esc <- prod_escalar(v, w)
+      prod_mix <- prod_mixto(v, w, u)
+      cat("El producto escalar entre v y w es:", prod_esc, "\n")
+      cat("El producto mixto entre v, w y u es:", prod_mix, "\n")
+      resultado <- c("prod_escalar" = prod_esc, "prod_mixto" = prod_mix)
+      return(resultado)
+    }
+    ```
+    
+    ```{r}
+    #| error: true
+    u <- c(5, 8, 2)
+    v <- c(2, 3, -1)
+    w <- c(1, 2, 3)
+    x <- c(1, 2)
+    
+    productos <- mostrar_productos(u, v, w)
+    productos
+    productos[1]
+    productos["prod_mixto"]
+    productos <- mostrar_productos(u, v, x)
+    ```
 
 ### Ejercicio 6
 
@@ -401,215 +402,205 @@ sumar_matrices(A, B)
 
 **Búsqueda del valor mínimo en una matriz**
 
-#### Item a
-
-Definir una función llamada `minimo_matriz(m)` que encuentre el menor valor en una matriz numérica `m` y lo devuelva como el primer elemento de un vector de largo 3, el cual debe tener como segundo y tercer elemento el número de fila y de columna donde se encuentra el mínimo, respectivamente. Ejemplo de uso:
-
-```{r}
-#| echo: false
-minimo_matriz <- function(m) {
-  min <- m[1, 1]
-  fila <- 1
-  col <- 1
-  for (i in 1:nrow(m)) {
-    for (j in 1:ncol(m)) {
-      if (m[i, j] < min) {
-        min <- m[i, j]
-        fila <- i
-        col <- j
+a.  Definir una función llamada `minimo_matriz(m)` que encuentre el menor valor en una matriz numérica `m` y lo devuelva como el primer elemento de un vector de largo 3, el cual debe tener como segundo y tercer elemento el número de fila y de columna donde se encuentra el mínimo, respectivamente. Ejemplo de uso:
+    
+    ```{r}
+    #| echo: false
+    minimo_matriz <- function(m) {
+      min <- m[1, 1]
+      fila <- 1
+      col <- 1
+      for (i in 1:nrow(m)) {
+        for (j in 1:ncol(m)) {
+          if (m[i, j] < min) {
+            min <- m[i, j]
+            fila <- i
+            col <- j
+          }
+        }
       }
+      resultado <- c(min, fila, col)
+      return(resultado)
     }
-  }
-  resultado <- c(min, fila, col)
-  return(resultado)
-}
-```
+    ```
+    
+    ```{r}
+    A <- matrix(c(5, 8, 2, 7, 3, 1), nrow = 3)
+    A
+    minimo_matriz(A)
+    ```
 
-```{r}
-A <- matrix(c(5, 8, 2, 7, 3, 1), nrow = 3)
-A
-minimo_matriz(A)
-```
-
-#### Item b
-
-Definir una función llamada `minimo_matriz_fila(m, fila)` que encuentre el menor valor en la fila número `fila` de una matriz numérica `m` y devuelva un vector de largo 2, donde el primer elemento sea el valor mínimo encontrado y el segundo elemento sea el número de columna en la que lo encontró. Ejemplo de uso:
-
-```{r}
-#| echo: false
-minimo_matriz_fila <- function(m, fila) {
-  min <- m[fila, 1]
-  col <- 1
-  for (j in 1:ncol(m)) {
-    if (m[fila, j] < min) {
-      min <- m[fila, j]
-      col <- j
+b.  Definir una función llamada `minimo_matriz_fila(m, fila)` que encuentre el menor valor en la fila número `fila` de una matriz numérica `m` y devuelva un vector de largo 2, donde el primer elemento sea el valor mínimo encontrado y el segundo elemento sea el número de columna en la que lo encontró. Ejemplo de uso:
+    
+    ```{r}
+    #| echo: false
+    minimo_matriz_fila <- function(m, fila) {
+      min <- m[fila, 1]
+      col <- 1
+      for (j in 1:ncol(m)) {
+        if (m[fila, j] < min) {
+          min <- m[fila, j]
+          col <- j
+        }
+      }
+      return(c(min, col))
     }
-  }
-  return(c(min, col))
-}
-```
-
-```{r}
-A <- matrix(c(5, 8, 2, 7, 3, 1), nrow = 3)
-A
-minimo_matriz_fila(A, 2)
-```
+    ```
+    
+    ```{r}
+    A <- matrix(c(5, 8, 2, 7, 3, 1), nrow = 3)
+    A
+    minimo_matriz_fila(A, 2)
+    ```
 
 ### Ejercicio 9
 
 **Reordenar matriz según valores en una fila o columna**
 
-### Item a
-
-Definir una función llamada `ordenar_desc_col(m, col)` que intercambie las filas de la matriz `m` de modo que la misma quede con los valores de la columna número `col` ordenados de forma descendente. Ejemplos de su uso:
-
-```{r}
-#| echo: false
-ordenar_desc_col <- function(m, col) {
-  if (nrow(m) > 1) {
-    for (i in 1:(nrow(m)-1)) {
-      for (j in (i+1):nrow(m)) {
-        if (m[i, col] < m[j, col]) {
-          for (k in 1:ncol(m)) {
-            tmp <- m[i, k]
-            m[i, k] <- m[j, k]
-            m[j, k] <- tmp
+a.  Definir una función llamada `ordenar_desc_col(m, col)` que intercambie las filas de la matriz `m` de modo que la misma quede con los valores de la columna número `col` ordenados de forma descendente. Ejemplos de su uso:
+    
+    ```{r}
+    #| echo: false
+    ordenar_desc_col <- function(m, col) {
+      if (nrow(m) > 1) {
+        for (i in 1:(nrow(m)-1)) {
+          for (j in (i+1):nrow(m)) {
+            if (m[i, col] < m[j, col]) {
+              for (k in 1:ncol(m)) {
+                tmp <- m[i, k]
+                m[i, k] <- m[j, k]
+                m[j, k] <- tmp
+              }
+            }
           }
         }
       }
+      return(m)
     }
-  }
-  return(m)
-}
-```
+    ```
+    
+    ```{r}
+    A <- matrix(c( 4, 13,  9, 17,
+                  20, 14, 14,  9,
+                   2, 16, 12,  7,
+                  16,  2,  4, 11,
+                  12, 20, 16,  4), nrow = 5, byrow = TRUE)
+    A
+    ordenar_desc_col(A, 3)
+    
+    A <- matrix(c( 4, 13,  9, 17), nrow = 1)
+    A
+    ordenar_desc_col(A, 3)
+    ```
 
-```{r}
-A <- matrix(c( 4, 13,  9, 17,
-              20, 14, 14,  9,
-               2, 16, 12,  7,
-              16,  2,  4, 11,
-              12, 20, 16,  4), nrow = 5, byrow = TRUE)
-A
-ordenar_desc_col(A, 3)
-
-A <- matrix(c( 4, 13,  9, 17), nrow = 1)
-A
-ordenar_desc_col(A, 3)
-```
-
-### Item b
-
-Definir una función llamada `ordenar_asc_col(m, col)` que intercambie las filas de la matriz `m` de modo que la misma quede con los valores de la columna número `col` ordenados de forma ascendente. Ejemplos de su uso:
-
-```{r}
-#| echo: false
-ordenar_asc_col <- function(m, col) {
-  if (nrow(m) > 1) {
-    for (i in 1:(nrow(m) - 1)) {
-      for (j in (i + 1):nrow(m)) {
-        if (m[i, col] > m[j, col]) { # Solo cambia el signo
-          for (k in 1:ncol(m)) {
-            tmp      <- m[i, k]
-            m[i, k]  <- m[j, k]
-            m[j, k]  <- tmp
+b.  Definir una función llamada `ordenar_asc_col(m, col)` que intercambie las filas de la matriz `m` de modo que la misma quede con los valores de la columna número `col` ordenados de forma ascendente. Ejemplos de su uso:
+    
+    ```{r}
+    #| echo: false
+    ordenar_asc_col <- function(m, col) {
+      if (nrow(m) > 1) {
+        for (i in 1:(nrow(m) - 1)) {
+          for (j in (i + 1):nrow(m)) {
+            if (m[i, col] > m[j, col]) { # Solo cambia el signo
+              for (k in 1:ncol(m)) {
+                tmp      <- m[i, k]
+                m[i, k]  <- m[j, k]
+                m[j, k]  <- tmp
+              }
+            }
           }
         }
       }
+      return(m)
     }
-  }
-  return(m)
-}
-```
+    ```
+    
+    
+    ```{r}
+    A <- matrix(c( 4, 13,  9, 17,
+                  20, 14, 14,  9,
+                   2, 16, 12,  7,
+                  16,  2,  4, 11,
+                  12, 20, 16,  4), nrow = 5, byrow = TRUE)
+    A
+    ordenar_asc_col(A, 3)
+    
+    A <- matrix(c( 4, 13,  9, 17), nrow = 1)
+    A
+    ordenar_asc_col(A, 3)
+    ```
+    
+    **Ayuda**: A partir de la función desarrollada en el item a, pensá qué comparación está determinando si dos filas deben intercambiarse, y qué cambio permitiría invertir el criterio de ordenamiento.
 
-
-```{r}
-A <- matrix(c( 4, 13,  9, 17,
-              20, 14, 14,  9,
-               2, 16, 12,  7,
-              16,  2,  4, 11,
-              12, 20, 16,  4), nrow = 5, byrow = TRUE)
-A
-ordenar_asc_col(A, 3)
-
-A <- matrix(c( 4, 13,  9, 17), nrow = 1)
-A
-ordenar_asc_col(A, 3)
-```
-
-**Ayuda**: A partir de la función desarrollada en el item a, pensá qué comparación está determinando si dos filas deben intercambiarse, y qué cambio permitiría invertir el criterio de ordenamiento.
-
-### Item c
-
-Definir las funciones `ordenar_desc_fila(m, fila)` y `ordenar_asc_fila(m, fila)`, las cuales deben intercambiar las columnas de la matriz `m` de modo que la misma quede con los valores de la fila número `fila` ordenados en forma descendente y ascendente respectivamente. Ejemplos de su uso:
-
-```{r}
-#| echo: false
-ordenar_desc_fila <- function(m, fila) {
-  if (ncol(m) > 1) {
-    for (i in 1:(ncol(m) - 1)) {
-      for (j in (i + 1):ncol(m)) {
-        if (m[fila, i] < m[fila, j]) { # Compara columnas
-          for (k in 1:nrow(m)) {
-            tmp      <- m[k, i]
-            m[k, i]  <- m[k, j]
-            m[k, j]  <- tmp
+c.  Definir las funciones `ordenar_desc_fila(m, fila)` y `ordenar_asc_fila(m, fila)`, las cuales deben intercambiar las columnas de la matriz `m` de modo que la misma quede con los valores de la fila número `fila` ordenados en forma descendente y ascendente respectivamente. Ejemplos de su uso:
+    
+    ```{r}
+    #| echo: false
+    ordenar_desc_fila <- function(m, fila) {
+      if (ncol(m) > 1) {
+        for (i in 1:(ncol(m) - 1)) {
+          for (j in (i + 1):ncol(m)) {
+            if (m[fila, i] < m[fila, j]) { # Compara columnas
+              for (k in 1:nrow(m)) {
+                tmp      <- m[k, i]
+                m[k, i]  <- m[k, j]
+                m[k, j]  <- tmp
+              }
+            }
           }
         }
       }
+      return(m)
     }
-  }
-  return(m)
-}
-```
-
-```{r}
-A <- matrix(c( 4, 13,  9, 17,
-              20, 14, 14,  9,
-               2, 16, 12,  7,
-              16,  2,  4, 11,
-              12, 20, 16,  4), nrow = 5, byrow = TRUE)
-A
-ordenar_desc_fila(A, 3)
-
-A <- matrix(c( 4, 13,  9, 17), nrow = 1)
-A
-ordenar_desc_fila(A, 1)
-```
-
-```{r}
-#| echo: false
-ordenar_asc_fila <- function(m, fila) {
-  if (ncol(m) > 1) {
-    for (i in 1:(ncol(m) - 1)) {
-      for (j in (i + 1):ncol(m)) {
-        if (m[fila, i] > m[fila, j]) { # Solo cambia el signo
-          for (k in 1:nrow(m)) {
-            tmp      <- m[k, i]
-            m[k, i]  <- m[k, j]
-            m[k, j]  <- tmp
+    ```
+    
+    ```{r}
+    A <- matrix(c( 4, 13,  9, 17,
+                  20, 14, 14,  9,
+                   2, 16, 12,  7,
+                  16,  2,  4, 11,
+                  12, 20, 16,  4), nrow = 5, byrow = TRUE)
+    A
+    ordenar_desc_fila(A, 3)
+    
+    A <- matrix(c( 4, 13,  9, 17), nrow = 1)
+    A
+    ordenar_desc_fila(A, 1)
+    ```
+    
+    ```{r}
+    #| echo: false
+    ordenar_asc_fila <- function(m, fila) {
+      if (ncol(m) > 1) {
+        for (i in 1:(ncol(m) - 1)) {
+          for (j in (i + 1):ncol(m)) {
+            if (m[fila, i] > m[fila, j]) { # Solo cambia el signo
+              for (k in 1:nrow(m)) {
+                tmp      <- m[k, i]
+                m[k, i]  <- m[k, j]
+                m[k, j]  <- tmp
+              }
+            }
           }
         }
       }
+      return(m)
     }
-  }
-  return(m)
-}
-```
-
-```{r}
-A <- matrix(c( 4, 13,  9, 17,
-              20, 14, 14,  9,
-               2, 16, 12,  7,
-              16,  2,  4, 11,
-              12, 20, 16,  4), nrow = 5, byrow = TRUE)
-A
-ordenar_asc_fila(A, 3)
-
-A <- matrix(c( 4, 13,  9, 17), nrow = 1)
-A
-ordenar_asc_fila(A, 1)
-```
+    ```
+    
+    ```{r}
+    A <- matrix(c( 4, 13,  9, 17,
+                  20, 14, 14,  9,
+                   2, 16, 12,  7,
+                  16,  2,  4, 11,
+                  12, 20, 16,  4), nrow = 5, byrow = TRUE)
+    A
+    ordenar_asc_fila(A, 3)
+    
+    A <- matrix(c( 4, 13,  9, 17), nrow = 1)
+    A
+    ordenar_asc_fila(A, 1)
+    ```
 
 ### Ejercicio 10
 
