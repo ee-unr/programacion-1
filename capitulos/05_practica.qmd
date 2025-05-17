@@ -8,10 +8,344 @@ number-sections: false
 
 # Práctica de la Unidad 5
 
-## Ejercicio 1
+## Vectores
 
-Enunciado Ejercicio 1...
+### Ejercicio 1
 
-## Ejercicio 2
+**Suma de los elementos de un vector**
 
-Enunciado Ejercicio 2...
+Definir una función llamada `suma(v)` que reciba un vector numérico `v` de cualquier longitud y devuelva la suma de sus elementos. Ejemplos de su uso:
+
+```{r}
+#| echo: false
+suma <- function(v) {
+  resultado <- 0
+  for (i in 1:length(v)) {
+    resultado <- resultado + v[i]
+  }
+  return(resultado)
+}
+```
+
+
+```{r}
+mi_vector <- c(60, -5, 0, 12, 1)
+suma(mi_vector)
+x <- 3
+suma(x)
+```
+
+### Ejercicio 2
+
+**Suma de vectores**
+
+Como sabemos del Álgebra Vectorial, la suma de dos vectores de la misma dimensión está dada por un nuevo vector donde cada elemento es igual a la suma de los elementos que ocupan la misma posición en los vectores originales. Por ejemplo:
+
+$$
+\bar{u} + \bar{v} = \begin{pmatrix} 5 \\ 8 \\ 2 \end{pmatrix} +  \begin{pmatrix} 2 \\ 3 \\ -1 \end{pmatrix}  = \begin{pmatrix} 7 \\ 11 \\ 1 \end{pmatrix}
+$$
+
+Definir una función llamada `sumar_vectores(u, v)` que reciba dos vectores `u` y `v` de la misma dimensión y devuelva su suma. La función debe corroborar que los largos de ambos vectores sean iguales y, si no lo son, escribir un mensaje aclaratorio y devolver `NULL`. Ejemplos de su uso:
+
+```{r}
+#| echo: false
+sumar_vectores <- function(u, v) {
+  nu <- length(u)
+  nv <- length(v)
+  if (nu == nv) {
+    suma <- numeric(nu)
+    for (i in 1:nu) { 
+      suma[i] <- u[i] + v[i]
+    }
+    return(suma)
+  } else {
+    cat("Las dimensiones de los vectores no coinciden\n")
+    return(NULL)
+  }
+}
+```
+
+```{r}
+u <- c(5, 8, 2)
+v <- c(2, 3, -1)
+sumar_vectores(u, v)
+
+x <- 10
+y <- 2
+sumar_vectores(x, y)
+
+w <- c(5, 8, 2)
+z <- c(2, 3)
+sumar_vectores(w, z)
+```
+
+
+### Ejercicio 3
+
+**Ordenar los elementos un vector numérico**
+
+Definir una función llamada `ordenar_asc(v)` que tome como entrada un vector numérico `v` de cualquier largo y lo devuelva con sus elementos ordenados en forma ascendente (de menor a mayor). La función debe cubrir el caso en el que el largo de `v` sea 1 (en cuyo caso devuelve el valor provisto, sin arrojar errores). Ejemplos de su uso:
+
+```{r}
+#| echo: false
+ordenar_asc <- function(v) {
+  n <- length(v)
+  for (i in 1:n) {
+    for (j in i:n) {
+      if (v[i] > v[j]) {
+        tmp <- v[i]
+        v[i] <- v[j]
+        v[j] <- tmp 
+      }
+    }
+  }
+  return(v)
+}
+```
+
+```{r}
+mi_vector <- c(60, -5, 0, 12, 1)
+ordenar_asc(mi_vector)
+x <- 1
+ordenar_asc(x)
+```
+
+### Ejercicio 4
+
+**Hallar máximo en un vector**
+
+Definir una función llamada `maximo(v)` que encuentre cuál es el mayor valor en un vector numérico `v`. La función debe devolver un vector con dos elementos, el primero es el valor del máximo y el segundo es la posición en la cual el mismo se halla en el vector `v`. Si dicho mayor valor estuviese repetido en el vector, se determina la posición de su primera ocurrencia. Ejemplos de su uso:
+
+```{r}
+#| echo: false
+maximo <- function(v) {
+  n <- length(v)
+  mayor <- v[1]
+  posicion <- 1
+  for (i in 1:n) {
+    # Desde i = 1 para que también funcione si n = 1
+    if (v[i] > mayor) {
+      mayor <- v[i]
+      posicion <- i
+    }
+  }
+  resultado <- c(mayor, posicion)
+  return(resultado)
+}
+```
+
+```{r}
+mi_vector <- c(60, -5, 0, 120, 1)
+maximo(mi_vector)
+x <- 6
+maximo(x)
+```
+
+### Ejercicio 5
+
+**Álgebra vectorial**
+
+#### Item a
+
+Dados dos vectores $\bar u = (u_1, u_2, ..., u_n)$ y $\bar v = (v_1, v_2, ..., v_n)$, ambos $\in \mathbf{R}^n$, se define como producto escalar al escalar: $\bar u \times \bar v = u_1v_1+u_2v_2+....+u_nv_n$.
+
+Definir una función llamada `prod_escalar(u, v)` que tome dos vectores `u` y `v` de la misma dimensión y devuelva el producto escalar entre ellos. La función debe evaluar que el largo de los vectores admita esta operación. Ejemplos de su uso:
+
+```{r}
+#| echo: false
+prod_escalar <- function(u, v) {
+  nu <- length(u)
+  nv <- length(v)
+  if (nu == nv) {
+    suma <- 0
+    for (i in 1:nu) {
+      suma <- suma + u[i] * v[i]
+    }
+    return(suma)
+  } else {
+    cat("Las dimensiones de los vectores no coinciden\n")
+    return(NULL)
+  }
+}
+```
+
+```{r}
+u <- c(5, 8, 2)
+v <- c(2, 3, -1)
+prod_escalar(u, v)
+
+x <- 10
+y <- 2
+prod_escalar(x, y)
+
+w <- c(5, 8, 2)
+z <- c(2, 3)
+prod_escalar(w, z)
+```
+
+#### Item b
+
+Dados dos vectores $\bar u = (u_1, u_2, u_3)$ y $\bar v = (v_1, v_2, v_3)$, ambos $\in \mathbf{R}^3$, se define como producto vectorial de $\bar u$ con $\bar v$ al vector de $\mathbf{R}^3$: $\bar u \wedge \bar v = (u_2v_3-u_3v_2, u_3v_1-u_1v_3, u_1v_2-u_2v_1)$.
+
+Definir una función llamada `prod_vectorial(u, v)` que tome dos vectores `u` y `v` de largo 3 y devuelva el producto vectorial entre ellos. Ejemplos de su uso:
+
+```{r}
+#| echo: false
+prod_vectorial <- function(u, v) {
+  nu <- length(u)
+  nv <- length(v)
+  if (nu == 3 && nv == 3) {
+    resultado <- c(u[2] * v[3] - u[3] * v[2], 
+                   u[3] * v[1] - u[1] * v[3], 
+                   u[1] * v[2] - u[2] * v[1])
+    return(resultado)
+  } else {
+    cat("Los vectores no son de dimensión 3\n")
+    return(NULL)
+  }
+}
+```
+
+```{r}
+u <- c(5, 8, 2)
+v <- c(2, 3, -1)
+prod_vectorial(u, v)
+
+w <- c(5, 8)
+z <- c(2, 3)
+prod_vectorial(w, z)
+```
+
+#### Item c
+
+Dados tres vectores $\bar u$, $\bar v$ y $\bar w \in \mathbf{R}^3$, se llama producto mixto de $\bar u$, $\bar v$ y $\bar w$, en ese orden, al escalar: $\bar u \wedge \bar v \times \bar w$.
+
+Haciendo uso de las funciones definidas en los ítems anteriores, definir una función llamada `prod_mixto(u, v, w)` que tome tres vectores de largo 3 y devuelva el producto mixto entre ellos. Ejemplo de su uso:
+
+```{r}
+#| echo: false
+prod_mixto <- function(u, v, w) {
+  resultado1 <- prod_vectorial(u, v)
+  resultado2 <- prod_escalar(resultado1, w)
+  return(resultado2)
+}
+```
+
+```{r}
+u <- c(5, 8, 2)
+v <- c(2, 3, -1)
+w <- c(1, 2, 3)
+prod_mixto(u, v, w)
+```
+
+#### Item d
+
+Haciendo uso de las funciones definidas en los ítems anteriores, definir una función llamada `mostrar_productos(u, v, w)` que tome tres vectores $\bar u$, $\bar v$ y $\bar w \in \mathbf{R}^3$ y calcule y muestre:
+
+- el producto escalar $\bar v \wedge \bar w$
+- el producto vectorial $\bar u \times \bar w$ 
+- el producto mixto $\bar v \wedge \bar w \times \bar u$
+
+Ejemplo de su uso:
+ 
+```{r}
+#| echo: false
+mostrar_productos <- function(u, v, w) {
+  cat("El producto escalar entre v y w es:", prod_escalar(v, w), "\n")
+  cat("El producto vectorial entre u y w es:", prod_vectorial(u, w), "\n")
+  cat("El producto mixto entre v, w y u es:", prod_mixto(v, w, u), "\n")
+}
+```
+
+```{r}
+u <- c(5, 8, 2)
+v <- c(2, 3, -1)
+w <- c(1, 2, 3)
+
+mostrar_productos(u, v, w)
+```
+
+### Ejercicio 6
+
+**La criba de Eratóstenes**
+
+En el siglo III a.C., el astrónomo griego Eratóstenes desarrolló un algoritmo para encontrar todos los números primos menores que un número natural dado `n`. El mismo consiste en anotar una tabla todos los naturales entre 2 y `n`. Por ejemplo, para `n = 20`, empezamos por escribir el siguiente conjunto:
+
+```{r, out.width='80%', fig.show='hold', echo=FALSE, fig.align="center"}
+knitr::include_graphics('../imagenes/practica_unidad_5/erathostenes1.jpg')
+```
+
+Luego se encierra con un círculo el primer número del conjunto, indicando que hemos encontrado un número primo. Se recorre el resto del grupo tachando cada múltiplo del valor que hemos encerrado recién, dado que esto significa que no puede ser primo. Por lo tanto, al finalizar el primer paso del algoritmo, habremos encerrado el número 2 y tachado todos los múltiplos de 2, como se ve a continuación:
+
+```{r, out.width='80%', fig.show='hold', echo=FALSE, fig.align="center"}
+knitr::include_graphics('../imagenes/practica_unidad_5/erathostenes2.jpg')
+```
+
+A partir de acá, simplemente se repite el proceso encerrando el primer número del conjunto que no está ni tachado ni encerrado y luego tachando todos sus múltiplos. Eventualmente, cada número en la lista quedará encerrado o tachado, como se muestra en el diagrama:
+
+```{r, out.width='80%', fig.show='hold', echo=FALSE, fig.align="center"}
+knitr::include_graphics('../imagenes/practica_unidad_5/erathostenes3.jpg')
+```
+
+Los números encerrados son los primos, los tachados son compuestos. Este algoritmo para generar una lista de números primos se conoce como [la Criba de Eratóstenes](https://es.wikipedia.org/wiki/Criba_de_Erat%C3%B3stenes). 
+
+Definir una función llamada `mostrar_primos(n, enfoque)` que se base en la criba de Eratóstenes y muestre todos los números primos hasta un número entero `n`. La función debe implementar los siguientes enfoques:
+
+- `"asumir_primos"`: partir de un vector lógico donde todos los números, salvo el 1, se consideran primos inicialmente. Luego, descartar los múltiplos de cada número que aún es considerado primo.
+
+- `"tachar"`: utilizar un vector llamado `tachado` que comience con todos los valores en `FALSE`, e ir marcando con `TRUE` a los números que se descartan por no ser primos (es decir, los tachados). Comenzar tachando el 1, y luego los múltiplos de cada número no tachado.
+
+- `"encerrado"`: partir de un vector `encerrado` en el que todos los números comiencen como `TRUE`. Cada vez que se encuentre un número primo, marcar (poner en `FALSE`) todos sus múltiplos, indicando que ya no están "encerrados".
+
+Ejemplos de uso:
+
+```{r}
+#| echo: false
+mostrar_primos <- function(n, enfoque = c("asumir_primos", "tachar", "encerrado")) {
+  if (enfoque == "asumir_primos") {
+    es_primo <- rep(TRUE, n)
+    es_primo[1] <- FALSE
+    for (i in 2:n) {
+      if (es_primo[i]) {
+        print(i)
+        j <- 2 * i
+        while (j <= n) {
+          es_primo[j] <- FALSE
+          j <- j + i
+        }
+      }
+    }
+  } else if (enfoque == "tachar") {
+    tachado <- logical(n)
+    tachado[1] <- TRUE
+    for (i in 2:n) {
+      if (!tachado[i]) {
+        print(i)
+        j <- 2 * i
+        while (j <= n) {
+          tachado[j] <- TRUE
+          j <- j + i
+        }
+      }
+    }
+  } else if (enfoque == "encerrado") {
+    encerrado <- rep(TRUE, n)
+    for (i in 2:n) {
+      if (encerrado[i]) {
+        print(i)
+        for (j in seq(i, n, i)) {
+          encerrado[j] <- FALSE
+        }
+      }
+    }
+  }
+}
+```
+
+
+```{r}
+mostrar_primos(15, enfoque = "asumir_primos")
+mostrar_primos(15, enfoque = "tachar")
+mostrar_primos(15, enfoque = "encerrado")
+```
+

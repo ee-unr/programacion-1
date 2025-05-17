@@ -10,8 +10,305 @@ number-sections: false
 
 ## Ejercicio 1
 
-Solución Ejercicio 1...
+```{r}
+#' Suma de los elementos de un vector
+#'
+#' Calcula la suma de todos los elementos de un vector numérico.
+#'
+#' @param v Un vector numérico.
+#' @return La suma de los elementos del vector.
+#' @examples
+#' suma(c(1, 2, 3))  # Devuelve 6
+suma <- function(v) {
+  resultado <- 0
+  for (i in 1:length(v)) {
+    resultado <- resultado + v[i]
+  }
+  return(resultado)
+}
+```
 
 ## Ejercicio 2
 
-Solución Ejercicio 2...
+```{r}
+#' Suma componente a componente de dos vectores
+#'
+#' Suma dos vectores numéricos de igual longitud, elemento a elemento.
+#' Si las longitudes no coinciden, muestra un mensaje de error y devuelve NULL.
+#'
+#' @param u Un vector numérico.
+#' @param v Un vector numérico.
+#'
+#' @return Un vector numérico con la suma componente a componente, o NULL si
+#' las longitudes no coinciden.
+#'
+#' @examples
+#' sumar_vectores(c(1, 2, 3), c(4, 5, 6))  # Devuelve c(5, 7, 9)
+sumar_vectores <- function(u, v) {
+  nu <- length(u)
+  nv <- length(v)
+  if (nu == nv) {
+    suma <- numeric(nu)
+    for (i in 1:nu) { 
+      suma[i] <- u[i] + v[i]
+    }
+    return(suma)
+  } else {
+    cat("Las dimensiones de los vectores no coinciden\n")
+    return(NULL)
+  }
+}
+```
+
+## Ejercicio 3
+
+```{r}
+#' Ordenar un vector numérico de forma ascendente
+#'
+#' Ordena los elementos de un vector numérico en orden ascendente usando un 
+#' algoritmo de comparación simple.
+#'
+#' @param v Un vector numérico.
+#'
+#' @return Un vector numérico con los elementos ordenados de menor a mayor.
+#'
+#' @examples
+#' ordenar_asc(c(3, 1, 4, 2))  # Devuelve c(1, 2, 3, 4)
+ordenar_asc <- function(v) {
+  n <- length(v)
+  for (i in 1:n) {
+    for (j in i:n) {
+      if (v[i] > v[j]) {
+        tmp <- v[i]
+        v[i] <- v[j]
+        v[j] <- tmp 
+      }
+    }
+  }
+  return(v)
+}
+```
+
+## Ejercicio 4
+
+```{r}
+#' Máximo de un vector numérico
+#'
+#' Encuentra el valor máximo en un vector numérico y su posición.
+#'
+#' @param v Un vector numérico.
+#'
+#' @return Un vector numérico de longitud 2. El primer elemento es el valor máximo,
+#' y el segundo, la posición donde se encuentra (primera aparición).
+#'
+#' @examples
+#' maximo(c(4, 2, 7, 1))  # Devuelve c(7, 3)
+#' maximo(c(10))          # Devuelve c(10, 1)
+maximo <- function(v) {
+  n <- length(v)
+  mayor <- v[1]
+  posicion <- 1
+  for (i in 1:n) {
+    # Desde i = 1 para que también funcione si n = 1
+    if (v[i] > mayor) {
+      mayor <- v[i]
+      posicion <- i
+    }
+  }
+  resultado <- c(mayor, posicion)
+  return(resultado)
+}
+```
+
+## Ejercicio 5
+
+### Item a
+
+```{r}
+#' Producto escalar de dos vectores
+#'
+#' Calcula el producto escalar entre dos vectores numéricos de igual longitud.
+#'
+#' @param u Un vector numérico.
+#' @param v Un vector numérico.
+#'
+#' @return Un número que representa el producto escalar entre u y v, o NULL si 
+#' las longitudes no coinciden.
+#'
+#' @examples
+#' prod_escalar(c(1, 2, 3), c(4, 5, 6))  # Devuelve 32
+#' prod_escalar(c(1, 2), c(1, 2, 3))     # Devuelve NULL y muestra un mensaje
+prod_escalar <- function(u, v) {
+  nu <- length(u)
+  nv <- length(v)
+  if (nu == nv) {
+    suma <- 0
+    for (i in 1:nu) {
+      suma <- suma + u[i] * v[i]
+    }
+    return(suma)
+  } else {
+    cat("Las dimensiones de los vectores no coinciden\n")
+    return(NULL)
+  }
+}
+```
+
+### Item b
+
+```{r}
+#' Producto vectorial de dos vectores de dimensión 3
+#'
+#' Calcula el producto vectorial entre dos vectores numéricos de dimensión 3.
+#'
+#' @param u Un vector numérico de longitud 3.
+#' @param v Un vector numérico de longitud 3.
+#'
+#' @return Un vector numérico de longitud 3 que representa el producto vectorial 
+#' u × v, o NULL si alguno de los vectores no tiene dimensión 3.
+#'
+#' @examples
+#' prod_vectorial(c(1, 0, 0), c(0, 1, 0))  # Devuelve c(0, 0, 1)
+#' prod_vectorial(c(1, 2), c(3, 4))        # Devuelve NULL y muestra un mensaje
+prod_vectorial <- function(u, v) {
+  nu <- length(u)
+  nv <- length(v)
+  if (nu == 3 && nv == 3) {
+    resultado <- c(u[2] * v[3] - u[3] * v[2], 
+                   u[3] * v[1] - u[1] * v[3], 
+                   u[1] * v[2] - u[2] * v[1])
+    return(resultado)
+  } else {
+    cat("Los vectores no son de dimensión 3\n")
+    return(NULL)
+  }
+}
+```
+
+### Item c
+
+```{r}
+#' Producto mixto de tres vectores de dimensión 3
+#'
+#' Calcula el producto mixto de tres vectores u, v y w  de dimensión 3,
+#' definido como el producto escalar de w con el producto vectorial de u y v
+#'
+#' @param u Un vector numérico de longitud 3.
+#' @param v Un vector numérico de longitud 3.
+#' @param w Un vector numérico de longitud 3.
+#'
+#' @return Un número que representa el producto mixto, o NULL si alguno de los 
+#' vectores no tiene dimensión 3.
+#'
+#' @examples
+#' prod_mixto(c(1, 0, 0), c(0, 1, 0), c(0, 0, 1)) # Devuelve 1
+#' prod_mixto(c(1, 2), c(3, 4, 5), c(6, 7, 8)) # Devuelve NULL y muestra un mensaje
+prod_mixto <- function(u, v, w) {
+  resultado1 <- prod_vectorial(u, v)
+  resultado2 <- prod_escalar(resultado1, w)
+  return(resultado2)
+}
+```
+
+### Item d
+
+```{r}
+#' Mostrar productos vectoriales y escalares entre tres vectores
+#'
+#' Calcula y muestra por consola el producto escalar entre v y w, 
+#' el producto vectorial entre u y w, y el producto mixto entre v, w y u.
+#'
+#' @param u Un vector numérico de longitud 3.
+#' @param v Un vector numérico de longitud 3.
+#' @param w Un vector numérico de longitud 3.
+#'
+#' @return No devuelve un valor, solo imprime los resultados por consola.
+#'
+#' @examples
+#' mostrar_productos(c(5, 8, 2), c(2, 3, -1), c(1, 2, 3))
+mostrar_productos <- function(u, v, w) {
+  cat("El producto escalar entre v y w es:", prod_escalar(v, w), "\n")
+  cat("El producto vectorial entre u y w es:", prod_vectorial(u, w), "\n")
+  cat("El producto mixto entre v, w y u es:", prod_mixto(v, w, u), "\n")
+}
+```
+
+## Ejercicio 6
+```{r}
+#' Mostrar números primos hasta n usando distintos enfoques de la Criba de Eratóstenes
+#'
+#' Esta función muestra los números primos hasta n utilizando distintos enfoques
+#' de la criba de Eratóstenes.
+#' El argumento enfoque permite elegir entre varias implementaciones:
+#' "asumir_primos", "tachar", o "encerrado".
+#'
+#' @param n Un número entero positivo que indica el límite superior para 
+#' la búsqueda de primos.
+#' @param enfoque Un string que indica el enfoque a usar: "asumir_primos",
+#' "tachar" o "encerrado".
+#'
+#' @details
+#' Los enfoques disponibles son:
+#' 
+#' - "asumir_primos"
+#' Parte de un vector lógico donde todos los números son considerados primos 
+#' inicialmente (excepto el 1). Luego, se descartan los múltiplos de cada 
+#' número que aún es considerado primo.
+#'
+#' - "tachar"
+#' Utiliza un vector "tachado" para marcar con TRUE los números que no son 
+#' primos (es decir, los tachados). Comienza tachando el 1, y luego los 
+#' múltiplos de cada número no tachado. Los primos son los que quedan sin
+#' tachar al final.
+#'
+#' - "encerrado"
+#' Usa un vector lógico llamado "encerrado" donde todos los números empiezan 
+#' como TRUE. Cada vez que se encuentra un primo, se marcan (ponen en FALSE) 
+#' todos sus múltiplos, indicando que ya no están "encerrados".
+#' 
+#' @return Ninguno. La función imprime en consola los números primos encontrados.
+#'
+#' @examples
+#' mostrar_primos(30, enfoque = "asumir_primos")
+#' mostrar_primos(30, enfoque = "tachar")
+#' mostrar_primos(30, enfoque = "encerrado")
+mostrar_primos <- function(n, enfoque = c("asumir_primos", "tachar", "encerrado")) {
+  if (enfoque == "asumir_primos") {
+    es_primo <- rep(TRUE, n)
+    es_primo[1] <- FALSE
+    for (i in 2:n) {
+      if (es_primo[i]) {
+        print(i)
+        j <- 2 * i
+        while (j <= n) {
+          es_primo[j] <- FALSE
+          j <- j + i
+        }
+      }
+    }
+  } else if (enfoque == "tachar") {
+    tachado <- logical(n)
+    tachado[1] <- TRUE
+    for (i in 2:n) {
+      if (!tachado[i]) {
+        print(i)
+        j <- 2 * i
+        while (j <= n) {
+          tachado[j] <- TRUE
+          j <- j + i
+        }
+      }
+    }
+  } else if (enfoque == "encerrado") {
+    encerrado <- rep(TRUE, n)
+    for (i in 2:n) {
+      if (encerrado[i]) {
+        print(i)
+        for (j in seq(i, n, i)) {
+          encerrado[j] <- FALSE
+        }
+      }
+    }
+  }
+}
+```
