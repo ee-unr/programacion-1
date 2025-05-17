@@ -312,3 +312,309 @@ mostrar_primos <- function(n, enfoque = c("asumir_primos", "tachar", "encerrado"
   }
 }
 ```
+
+## Ejercicio 7
+
+```{r}
+#' Suma de dos matrices
+#'
+#' Esta función toma dos matrices del mismo tamaño y devuelve una nueva matriz 
+#' que representa la suma elemento a elemento de ambas. Si las dimensiones 
+#' no coinciden, imprime un mensaje de error y devuelve NULL
+#'
+#' @param A Una matriz numérica.
+#' @param B Una matriz numérica del mismo tamaño que A.
+#'
+#' @return Una matriz con la suma de A y B, o NULL si las dimensiones no coinciden.
+#'
+#' @examples
+#' A <- matrix(1:4, nrow = 2)
+#' B <- matrix(5:8, nrow = 2)
+#' sumar_matrices(A, B)
+sumar_matrices <- function(A, B) {
+  if (nrow(A) == nrow(B) && ncol(A) == ncol(B)) {
+    suma <- matrix(NA, nrow(A), ncol(A))
+    for (i in 1:nrow(A)) {
+      for (j in 1:ncol(A)) {
+        suma[i, j] <- A[i, j] + B[i, j]
+      }
+    }
+    return(suma)
+  } else {
+    cat("Las dimensiones de las matrices no coinciden\n")
+    return(NULL)
+  }
+}
+```
+
+## Ejercicio 8
+
+### Item a
+```{r}
+#' Mínimo de una matriz y su posición
+#'
+#' Esta función recorre una matriz y devuelve un vector con el valor mínimo 
+#' y su posición (fila y columna) dentro de la matriz.
+#'
+#' @param m Una matriz numérica.
+#'
+#' @return Un vector numérico de longitud 3 con los siguientes valores: 
+#' - Posición 1: El valor mínimo encontrado en la matriz.
+#' - Posición 2: La fila donde se encuentra el valor mínimo.
+#' - Posición 3: La columna donde se encuentra el valor mínimo.
+#'
+#' @examples
+#' matriz <- matrix(c(3, 2, 5, 1, 4, 6), nrow = 2)
+#' minimo_matriz(matriz)
+minimo_matriz <- function(m) {
+  min <- m[1, 1]
+  fila <- 1
+  col <- 1
+  for (i in 1:nrow(m)) {
+    for (j in 1:ncol(m)) {
+      if (m[i, j] < min) {
+        min <- m[i, j]
+        fila <- i
+        col <- j
+      }
+    }
+  }
+  resultado <- c(min, fila, col)
+  return(resultado)
+}
+```
+
+### Item b
+```{r}
+#' Encontrar el valor mínimo en una fila específica de una matriz
+#'
+#' Esta función busca el valor mínimo dentro de una fila específica de una matriz 
+#' y devuelve el valor junto con el número de columna donde se encuentra.
+#'
+#' @param m Una matriz numérica.
+#' @param fila Un entero que indica el número de fila en la que se desea buscar 
+#' el valor mínimo.
+#'
+#' @return Un vector numérico de longitud 2con los siguientes valores: 
+#' - Posición 1: El valor mínimo en la fila especificada.
+#' - Posición 2: El número de columna donde se encuentra ese valor mínimo.
+#'
+#' @examples
+#' matriz <- matrix(c(3, 2, 5, 1, 4, 6), nrow = 2)
+#' minimo_matriz_fila(matriz, 1)
+minimo_matriz_fila <- function(m, fila) {
+  min <- m[fila, 1]
+  col <- 1
+  for (j in 1:ncol(m)) {
+    if (m[fila, j] < min) {
+      min <- m[fila, j]
+      col <- j
+    }
+  }
+  return(c(min, col))
+}
+```
+
+## Ejercicio 9
+
+### Item a
+
+```{r}
+#' Ordenar matriz por columna en orden descendente
+#'
+#' Esta función ordena las filas de una matriz numérica según los valores
+#' de una columna específica, en orden descendente.
+#'
+#' @param m Una matriz
+#' @param col Un entero que indica el índice de la columna por la que se desea 
+#' ordenar.
+#'
+#' @return La matriz ordenada por la columna especificada en orden descendente.
+#' 
+#' @examples
+#' m <- matrix(c(1, 2, 3, 4, 5, 6), ncol = 2, byrow = TRUE)
+#' ordenar_desc_col(m, 1)
+ordenar_desc_col <- function(m, col) {
+  if (nrow(m) > 1) {
+    for (i in 1:(nrow(m)-1)) {
+      for (j in (i+1):nrow(m)) {
+        if (m[i, col] < m[j, col]) {
+          for (k in 1:ncol(m)) {
+            tmp <- m[i, k]
+            m[i, k] <- m[j, k]
+            m[j, k] <- tmp
+          }
+        }
+      }
+    }
+  }
+  return(m)
+}
+```
+
+*Observaciones*
+
+- En lugar de chequear si tiene más de una fila, podríamos directamente poner `for (i in 1:nrow(m))` y `for (j in i:nrow(m))`. Esto funciona también cuando la matriz provista tiene una sola fila, pero en cualquier otro caso implica a hacer comparaciones lógicas de más, tantas como número de fila tenga la matriz.
+- Se puede mejorar la función agregando un control para que el argumento `col` provisto por el usuario esté siempre entre 1 y `ncol(m)`.
+
+### Item b
+
+```{r}
+#' Ordenar matriz por columna en orden ascendente
+#'
+#' Esta función ordena las filas de una matriz numérica según los valores
+#' de una columna específica, en orden ascendente.
+#'
+#' @param m Una matriz numérica.
+#' @param col Un entero que indica el índice de la columna por la que se desea 
+#' ordenar.
+#'
+#' @return La matriz ordenada por la columna especificada en orden ascendente.
+#' 
+#' @examples
+#' m <- matrix(c(3, 2, 1, 6, 5, 4), ncol = 2, byrow = TRUE)
+#' ordenar_asc_col(m, 1)
+ordenar_asc_col <- function(m, col) {
+  if (nrow(m) > 1) {
+    for (i in 1:(nrow(m) - 1)) {
+      for (j in (i + 1):nrow(m)) {
+        if (m[i, col] > m[j, col]) { # Solo cambia el signo
+          for (k in 1:ncol(m)) {
+            tmp      <- m[i, k]
+            m[i, k]  <- m[j, k]
+            m[j, k]  <- tmp
+          }
+        }
+      }
+    }
+  }
+  return(m)
+}
+```
+
+### Item c
+```{r}
+#' Ordenar matriz por fila en orden descendente
+#'
+#' Esta función ordena las columnas de una matriz numérica según los valores
+#' de una fila específica, en orden descendente.
+#'
+#' @param m Una matriz numérica.
+#' @param fila Un entero que indica el índice de la fila por la que se desea 
+#' ordenar.
+#'
+#' @return La matriz ordenada por la fila especificada en orden descendente.
+#' 
+#' @examples
+#' m <- matrix(c(1, 4, 2, 3, 5, 6), nrow = 2, byrow = TRUE)
+#' ordenar_desc_fila(m, 1)
+ordenar_desc_fila <- function(m, fila) {
+  if (ncol(m) > 1) {
+    for (i in 1:(ncol(m) - 1)) {
+      for (j in (i + 1):ncol(m)) {
+        if (m[fila, i] < m[fila, j]) { # Compara columnas
+          for (k in 1:nrow(m)) {
+            tmp      <- m[k, i]
+            m[k, i]  <- m[k, j]
+            m[k, j]  <- tmp
+          }
+        }
+      }
+    }
+  }
+  return(m)
+}
+```
+
+```{r}
+#' Ordenar matriz por fila en orden ascendente
+#'
+#' Esta función ordena las columnas de una matriz numérica según los valores
+#' de una fila específica, en orden ascendente.
+#'
+#' @param m Una matriz numérica.
+#' @param fila Un entero que indica el índice de la fila por la que se desea 
+#' ordenar.
+#'
+#' @return La matriz ordenada por la fila especificada en orden ascendente.
+#' 
+#' @examples
+#' m <- matrix(c(3, 1, 4, 2, 6, 5), nrow = 2, byrow = TRUE)
+#' ordenar_asc_fila(m, 1)
+ordenar_asc_fila <- function(m, fila) {
+  if (ncol(m) > 1) {
+    for (i in 1:(ncol(m) - 1)) {
+      for (j in (i + 1):ncol(m)) {
+        if (m[fila, i] > m[fila, j]) { # Solo cambia el signo
+          for (k in 1:nrow(m)) {
+            tmp      <- m[k, i]
+            m[k, i]  <- m[k, j]
+            m[k, j]  <- tmp
+          }
+        }
+      }
+    }
+  }
+  return(m)
+}
+```
+
+## Ejercicio 10
+
+```{r}
+#' Verificar si una matriz es un cuadrado mágico
+#'
+#' Esta función verifica si una matriz cuadrada numérica es un cuadrado mágico.
+#' Un cuadrado mágico es una matriz en la que la suma de los elementos en cada fila,
+#' en cada columna y en las dos diagonales principales es igual.
+#'
+#' @param cuadrado Una matriz cuadrada numérica.
+#'
+#' @return `TRUE` si la matriz es un cuadrado mágico, `FALSE` en caso contrario.
+#' 
+#' @examples
+#' m <- matrix(c(2, 7, 6, 9, 5, 1, 4, 3, 8), nrow=3, byrow=TRUE)
+#' cuadrado_magico(m)
+cuadrado_magico <- function(cuadrado) {
+  n <- nrow(cuadrado)
+  
+  # Calcular el primer total fila para tener de control
+  control <- 0
+  for (j in 1:n) {
+    control <- control + cuadrado[1, j]
+  }
+  
+  # Calcular los restantes totales filas y chequearlos
+  for (i in 2:n) {
+    total <- 0
+    for (j in 1:n) {
+      total <- total + cuadrado[i, j]
+    }
+    if (total != control) {
+      return(FALSE)
+    }
+  }
+  
+  # Chequear totales columnas si lo anterior estuvo bien
+  for (j in 1:n) {
+    total <- 0
+    for (i in 1:n) {
+      total <- total + cuadrado[i, j]
+    }
+    if (total != control) {
+      return(FALSE)
+    }
+  }
+  
+  # Chequear diagonales si lo anterior estuvo bien
+  diag1 <- 0
+  diag2 <- 0
+  for (i in 1:n) {
+    diag1 <- diag1 + cuadrado[i, i]
+    diag2 <- diag2 + cuadrado[n - i + 1, i]
+  }
+  if (diag1 != control || diag2 != control) return(FALSE)
+  return(TRUE)
+}
+```
+

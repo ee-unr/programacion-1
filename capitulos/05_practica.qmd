@@ -349,3 +349,339 @@ mostrar_primos(15, enfoque = "tachar")
 mostrar_primos(15, enfoque = "encerrado")
 ```
 
+## Matrices
+
+### Ejercicio 7
+
+**Suma de dos matrices**
+
+Dadas dos matrices de igual dimensión $\mathbf{A}$ y $\mathbf{B}$:
+
+$$
+\mathbf{A} = \begin{pmatrix} 5 & 2 \\ 8 & 3 \\ 2 & 1\end{pmatrix} \qquad \qquad
+\mathbf{B} = \begin{pmatrix} 0 & 1 \\ -1 & 2 \\ 3 & 4\end{pmatrix}
+$$
+
+la suma entre ellas es igual a:
+
+$$
+\mathbf{A} + \mathbf{B} = \begin{pmatrix} 5 & 2 \\ 8 & 3 \\ 2 & 1\end{pmatrix} +
+\begin{pmatrix} 0 & 1 \\ -1 & 2 \\ 3 & 4\end{pmatrix} =
+\begin{pmatrix} 5 & 3 \\ 7 & 5 \\ 5 & 5\end{pmatrix}
+$$
+
+Definir una función llamada `sumar_matrices(A, B)` que tome dos matrices `A` y `B` de la misma dimensión y devuelva su suma. Ejemplo de su uso:
+
+```{r}
+#| echo: false
+sumar_matrices <- function(A, B) {
+  if (nrow(A) == nrow(B) && ncol(A) == ncol(B)) {
+    suma <- matrix(NA, nrow(A), ncol(A))
+    for (i in 1:nrow(A)) {
+      for (j in 1:ncol(A)) {
+        suma[i, j] <- A[i, j] + B[i, j]
+      }
+    }
+    return(suma)
+  } else {
+    cat("Las dimensiones de las matrices no coinciden\n")
+    return(NULL)
+  }
+}
+```
+
+
+```{r}
+A <- matrix(c(5, 8, 2, 2, 3, 1), nrow = 3)
+B <- matrix(c(0, -1, 3, 1, 2, 4), nrow = 3)
+sumar_matrices(A, B)
+```
+
+### Ejercicio 8
+
+**Búsqueda del valor mínimo en una matriz**
+
+#### Item a
+
+Definir una función llamada `minimo_matriz(m)` que encuentre el menor valor en una matriz numérica `m` y lo devuelva como el primer elemento de un vector de largo 3, el cual debe tener como segundo y tercer elemento el número de fila y de columna donde se encuentra el mínimo, respectivamente. Ejemplo de uso:
+
+```{r}
+#| echo: false
+minimo_matriz <- function(m) {
+  min <- m[1, 1]
+  fila <- 1
+  col <- 1
+  for (i in 1:nrow(m)) {
+    for (j in 1:ncol(m)) {
+      if (m[i, j] < min) {
+        min <- m[i, j]
+        fila <- i
+        col <- j
+      }
+    }
+  }
+  resultado <- c(min, fila, col)
+  return(resultado)
+}
+```
+
+```{r}
+A <- matrix(c(5, 8, 2, 7, 3, 1), nrow = 3)
+A
+minimo_matriz(A)
+```
+
+#### Item b
+
+Definir una función llamada `minimo_matriz_fila(m, fila)` que encuentre el menor valor en la fila número `fila` de una matriz numérica `m` y devuelva un vector de largo 2, donde el primer elemento sea el valor mínimo encontrado y el segundo elemento sea el número de columna en la que lo encontró. Ejemplo de uso:
+
+```{r}
+#| echo: false
+minimo_matriz_fila <- function(m, fila) {
+  min <- m[fila, 1]
+  col <- 1
+  for (j in 1:ncol(m)) {
+    if (m[fila, j] < min) {
+      min <- m[fila, j]
+      col <- j
+    }
+  }
+  return(c(min, col))
+}
+```
+
+```{r}
+A <- matrix(c(5, 8, 2, 7, 3, 1), nrow = 3)
+A
+minimo_matriz_fila(A, 2)
+```
+
+### Ejercicio 9
+
+**Reordenar matriz según valores en una fila o columna**
+
+### Item a
+
+Definir una función llamada `ordenar_desc_col(m, col)` que intercambie las filas de la matriz `m` de modo que la misma quede con los valores de la columna número `col` ordenados de forma descendente. Ejemplos de su uso:
+
+```{r}
+#| echo: false
+ordenar_desc_col <- function(m, col) {
+  if (nrow(m) > 1) {
+    for (i in 1:(nrow(m)-1)) {
+      for (j in (i+1):nrow(m)) {
+        if (m[i, col] < m[j, col]) {
+          for (k in 1:ncol(m)) {
+            tmp <- m[i, k]
+            m[i, k] <- m[j, k]
+            m[j, k] <- tmp
+          }
+        }
+      }
+    }
+  }
+  return(m)
+}
+```
+
+```{r}
+A <- matrix(c( 4, 13,  9, 17,
+              20, 14, 14,  9,
+               2, 16, 12,  7,
+              16,  2,  4, 11,
+              12, 20, 16,  4), nrow = 5, byrow = TRUE)
+A
+ordenar_desc_col(A, 3)
+
+A <- matrix(c( 4, 13,  9, 17), nrow = 1)
+A
+ordenar_desc_col(A, 3)
+```
+
+### Item b
+
+Definir una función llamada `ordenar_asc_col(m, col)` que intercambie las filas de la matriz `m` de modo que la misma quede con los valores de la columna número `col` ordenados de forma ascendente. Ejemplos de su uso:
+
+```{r}
+#| echo: false
+ordenar_asc_col <- function(m, col) {
+  if (nrow(m) > 1) {
+    for (i in 1:(nrow(m) - 1)) {
+      for (j in (i + 1):nrow(m)) {
+        if (m[i, col] > m[j, col]) { # Solo cambia el signo
+          for (k in 1:ncol(m)) {
+            tmp      <- m[i, k]
+            m[i, k]  <- m[j, k]
+            m[j, k]  <- tmp
+          }
+        }
+      }
+    }
+  }
+  return(m)
+}
+```
+
+
+```{r}
+A <- matrix(c( 4, 13,  9, 17,
+              20, 14, 14,  9,
+               2, 16, 12,  7,
+              16,  2,  4, 11,
+              12, 20, 16,  4), nrow = 5, byrow = TRUE)
+A
+ordenar_asc_col(A, 3)
+
+A <- matrix(c( 4, 13,  9, 17), nrow = 1)
+A
+ordenar_asc_col(A, 3)
+```
+
+**Ayuda**: A partir de la función desarrollada en el item a, pensá qué comparación está determinando si dos filas deben intercambiarse, y qué cambio permitiría invertir el criterio de ordenamiento.
+
+### Item c
+
+Definir las funciones `ordenar_desc_fila(m, fila)` y `ordenar_asc_fila(m, fila)`, las cuales deben intercambiar las columnas de la matriz `m` de modo que la misma quede con los valores de la fila número `fila` ordenados en forma descendente y ascendente respectivamente. Ejemplos de su uso:
+
+```{r}
+#| echo: false
+ordenar_desc_fila <- function(m, fila) {
+  if (ncol(m) > 1) {
+    for (i in 1:(ncol(m) - 1)) {
+      for (j in (i + 1):ncol(m)) {
+        if (m[fila, i] < m[fila, j]) { # Compara columnas
+          for (k in 1:nrow(m)) {
+            tmp      <- m[k, i]
+            m[k, i]  <- m[k, j]
+            m[k, j]  <- tmp
+          }
+        }
+      }
+    }
+  }
+  return(m)
+}
+```
+
+```{r}
+A <- matrix(c( 4, 13,  9, 17,
+              20, 14, 14,  9,
+               2, 16, 12,  7,
+              16,  2,  4, 11,
+              12, 20, 16,  4), nrow = 5, byrow = TRUE)
+A
+ordenar_desc_fila(A, 3)
+
+A <- matrix(c( 4, 13,  9, 17), nrow = 1)
+A
+ordenar_desc_fila(A, 1)
+```
+
+```{r}
+#| echo: false
+ordenar_asc_fila <- function(m, fila) {
+  if (ncol(m) > 1) {
+    for (i in 1:(ncol(m) - 1)) {
+      for (j in (i + 1):ncol(m)) {
+        if (m[fila, i] > m[fila, j]) { # Solo cambia el signo
+          for (k in 1:nrow(m)) {
+            tmp      <- m[k, i]
+            m[k, i]  <- m[k, j]
+            m[k, j]  <- tmp
+          }
+        }
+      }
+    }
+  }
+  return(m)
+}
+```
+
+```{r}
+A <- matrix(c( 4, 13,  9, 17,
+              20, 14, 14,  9,
+               2, 16, 12,  7,
+              16,  2,  4, 11,
+              12, 20, 16,  4), nrow = 5, byrow = TRUE)
+A
+ordenar_asc_fila(A, 3)
+
+A <- matrix(c( 4, 13,  9, 17), nrow = 1)
+A
+ordenar_asc_fila(A, 1)
+```
+
+### Ejercicio 10
+
+**Cuadrado mágico**
+
+Un [cuadrado mágico](https://es.wikipedia.org/wiki/Cuadrado_m%C3%A1gico) es un arreglo bidimensional de enteros en el que las filas, columnas y diagonales suman el mismo valor. Uno de los cuadrados mágicos más famosos aparece en el grabado *Melancolía I* de Alberto Durero, justo debajo de la campana. En el mismo, todas las sumas dan 34, y además Durero acomodó el cuadrado de manera que en el centro en la fila de abajo se forme *1514*, año en el que produjo el grabado. 
+
+```{r, out.width='48%', fig.show='hold', echo=FALSE, fig.align="center"}
+knitr::include_graphics('../imagenes/practica_unidad_5/durero.jpg')
+```
+
+Definir una función llamada `cuadrado_magico(cuadrado)` que devuelva `TRUE` si una matriz $n \times n$ contiene un cuadrado mágico, o `FALSE` en caso contrario. Ejemplos de su uso:
+
+```{r}
+#| echo: false
+cuadrado_magico <- function(cuadrado) {
+  n <- nrow(cuadrado)
+  
+  # Calcular el primer total fila para tener de control
+  control <- 0
+  for (j in 1:n) {
+    control <- control + cuadrado[1, j]
+  }
+  
+  # Calcular los restantes totales filas y chequearlos
+  for (i in 2:n) {
+    total <- 0
+    for (j in 1:n) {
+      total <- total + cuadrado[i, j]
+    }
+    if (total != control) {
+      return(FALSE)
+    }
+  }
+  
+  # Chequear totales columnas si lo anterior estuvo bien
+  for (j in 1:n) {
+    total <- 0
+    for (i in 1:n) {
+      total <- total + cuadrado[i, j]
+    }
+    if (total != control) {
+      return(FALSE)
+    }
+  }
+  
+  # Chequear diagonales si lo anterior estuvo bien
+  diag1 <- 0
+  diag2 <- 0
+  for (i in 1:n) {
+    diag1 <- diag1 + cuadrado[i, i]
+    diag2 <- diag2 + cuadrado[n - i + 1, i]
+  }
+  if (diag1 != control || diag2 != control) return(FALSE)
+  return(TRUE)
+}
+
+```
+
+```{r}
+cuadrado <- matrix(c(16,  3,  2, 13,
+                      5, 10, 11,  8,
+                      9,  6,  7, 12,
+                      4, 15, 14,  1), nrow = 4, byrow = TRUE)
+cuadrado
+cuadrado_magico(cuadrado)
+
+cuadrado <- matrix(c( 0,  3,  2, 13,
+                      5, 10, 11,  8,
+                      9,  6,  7, 12,
+                      4, 15, 14,  1), nrow = 4, byrow = TRUE)
+cuadrado
+cuadrado_magico(cuadrado)
+```
+
