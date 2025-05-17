@@ -29,7 +29,19 @@ El programa es interactivo y requiere que el usuario ingrese datos en tiempo rea
 Para realizar este trabajo práctico cuentan con los siguientes archivos de apoyo:
 
 - [**Script `jugar.R`**](https://github.com/ee-unr/programacion-1/raw/refs/heads/main/archivos/tp_2025/jugar.R): archivo principal donde deben escribir su programa. Contiene una plantilla con instrucciones y espacio para agregar los datos del equipo y el código del juego.
-- **Paquete `memoria`**: este paquete creado por la cátedra ofrece funciones auxiliares que simplifican muchas partes de la solución de este trabajo y serán de extrema utilidad. Se recomienda leer la documentación del paquete con atención y correr los ejemplos. Las funciones disponibles son: `nuevo_tablero`, `validar_fichas`, `mostrar_tablero`, `texto_lento`, `limpiar_consola`, `leer_eleccion`, `mostrar_info`, `posiciones_disponibles` y `mostrar_pares`. En el script `jugar.R` se incluyen instrucciones de instalación.
+- **Paquete `memoria`**: este paquete creado por la cátedra ofrece funciones auxiliares que simplifican muchas partes de la solución de este trabajo y serán de extrema utilidad. Se recomienda leer la documentación del paquete con atención y correr los ejemplos. Las funciones disponibles son: `nuevo_tablero`, `validar_fichas`, `mostrar_tablero`, `texto_lento`, `limpiar_consola`, `leer_eleccion`, `mostrar_info`, `posiciones_disponibles` y `mostrar_pares`. En el script `jugar.R` se incluyen instrucciones de instalación. 
+
+**Información importante para usuarios de Windows**
+
+Si usas Windows, para instalar el paquete `memoria` es necesario tener instalado **Rtools**, un conjunto de herramientas que permite compilar paquetes de R que contienen código en C/C++ o Fortran. Instrucciones de instalación:
+
+1. Visitar la página https://cran.r-project.org/bin/windows/Rtools/
+2. Elegir la versión correspondiente para la versión de R que tengan instalada. Por ejemplo, para la versión de R `4.4.1` es necesario descargar `Rtools 4.4`. Para descubrir la versión de R instalada en su computadora pueden ejecutar `R.version.string` en la consola.
+3. Descargar el instalador haciendo click en el link correspondiente. El link se encuentra en la sección `Installing RtoolsNN` y lleva el nombre `RtoolsNN installer`. `NN` hace referencia a la versión de Rtools. En nuestro ejemplo, `NN` sería `44`.
+4. Ejecutar el instalador y seguir las instrucciones. Pueden elegir valores por defecto.
+5. Una vez instalado, cerrar RStudio y volver a abrirlo para asegurarse que los cambios se apliquen correctamente.
+
+Siguiendo los pasos anteriores, la instalación de `memoria` debería poder continuar sin inconvenientes.
 
 ## Descomposición algorítmica
 
