@@ -113,7 +113,7 @@ for (i in 1:5) {
 cat("La suma de los elementos del vector x es igual a", suma)
 ```
 
-::: {.importante data-latex=""}
+::: {.info data-latex=""}
 En el ejemplo anterior, se estableció que `i` itere entre 1 y 5 (`i in 1:5`) para recorrer desde el primer al último elemento de `x`. Es mucho mejor establecer el recorrido de la variable de iteración en función del largo de `x`, para que el código sirva sea cual sea la cantidad de elementos en este vector:
 
 ```{r}

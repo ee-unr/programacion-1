@@ -376,25 +376,27 @@ Definir una función llamada `sumar_matrices(A, B)` que tome dos matrices `A` y 
 ```{r}
 #| echo: false
 sumar_matrices <- function(A, B) {
-  if (nrow(A) == nrow(B) && ncol(A) == ncol(B)) {
-    suma <- matrix(NA, nrow(A), ncol(A))
-    for (i in 1:nrow(A)) {
-      for (j in 1:ncol(A)) {
-        suma[i, j] <- A[i, j] + B[i, j]
-      }
-    }
-    return(suma)
-  } else {
-    cat("Las dimensiones de las matrices no coinciden\n")
-    return(NULL)
+  if (nrow(A) != nrow(B) || ncol(A) != ncol(B)) {
+    stop("Las dimensiones de las matrices no coinciden.")
   }
+  suma <- matrix(NA, nrow(A), ncol(A))
+  for (i in 1:nrow(A)) {
+    for (j in 1:ncol(A)) {
+      suma[i, j] <- A[i, j] + B[i, j]
+    }
+  }
+  return(suma)
 }
 ```
 
 
 ```{r}
+#| error: true
 A <- matrix(c(5, 8, 2, 2, 3, 1), nrow = 3)
 B <- matrix(c(0, -1, 3, 1, 2, 4), nrow = 3)
+sumar_matrices(A, B)
+
+B <- matrix(c(0, -1, 3, 1, 2, 4), nrow = 2)
 sumar_matrices(A, B)
 ```
 
@@ -419,7 +421,7 @@ a.  Definir una función llamada `minimo_matriz(m)` que encuentre el menor valor
           }
         }
       }
-      resultado <- c(min, fila, col)
+      resultado <- c(minimo = min, fila = fila, columna = col)
       return(resultado)
     }
     ```
@@ -430,11 +432,11 @@ a.  Definir una función llamada `minimo_matriz(m)` que encuentre el menor valor
     minimo_matriz(A)
     ```
 
-b.  Definir una función llamada `minimo_matriz_fila(m, fila)` que encuentre el menor valor en la fila número `fila` de una matriz numérica `m` y devuelva un vector de largo 2, donde el primer elemento sea el valor mínimo encontrado y el segundo elemento sea el número de columna en la que lo encontró. Ejemplo de uso:
+b.  Definir una función llamada `minimo_matriz_fila(m, fila)` que encuentre el menor valor en la fila número `fila` de una matriz numérica `m` y devuelva un vector de largo 2, donde el primer elemento sea el valor mínimo encontrado y el segundo elemento sea el número de columna en la que lo encontró. Por defecto, la búsqueda del mínimo debe hacerse en la fila 1. Ejemplo de uso:
     
     ```{r}
     #| echo: false
-    minimo_matriz_fila <- function(m, fila) {
+    minimo_matriz_fila <- function(m, fila = 1) {
       min <- m[fila, 1]
       col <- 1
       for (j in 1:ncol(m)) {
@@ -443,7 +445,7 @@ b.  Definir una función llamada `minimo_matriz_fila(m, fila)` que encuentre el 
           col <- j
         }
       }
-      return(c(min, col))
+      return(c(minimo = min, columna = col))
     }
     ```
     
@@ -451,6 +453,7 @@ b.  Definir una función llamada `minimo_matriz_fila(m, fila)` que encuentre el 
     A <- matrix(c(5, 8, 2, 7, 3, 1), nrow = 3)
     A
     minimo_matriz_fila(A, 2)
+    minimo_matriz_fila(A)
     ```
 
 ### Ejercicio 9
@@ -493,80 +496,7 @@ a.  Definir una función llamada `ordenar_desc_col(m, col)` que intercambie las 
     ordenar_desc_col(A, 3)
     ```
 
-b.  Definir una función llamada `ordenar_asc_col(m, col)` que intercambie las filas de la matriz `m` de modo que la misma quede con los valores de la columna número `col` ordenados de forma ascendente. Ejemplos de su uso:
-    
-    ```{r}
-    #| echo: false
-    ordenar_asc_col <- function(m, col) {
-      if (nrow(m) > 1) {
-        for (i in 1:(nrow(m) - 1)) {
-          for (j in (i + 1):nrow(m)) {
-            if (m[i, col] > m[j, col]) { # Solo cambia el signo
-              for (k in 1:ncol(m)) {
-                tmp      <- m[i, k]
-                m[i, k]  <- m[j, k]
-                m[j, k]  <- tmp
-              }
-            }
-          }
-        }
-      }
-      return(m)
-    }
-    ```
-    
-    
-    ```{r}
-    A <- matrix(c( 4, 13,  9, 17,
-                  20, 14, 14,  9,
-                   2, 16, 12,  7,
-                  16,  2,  4, 11,
-                  12, 20, 16,  4), nrow = 5, byrow = TRUE)
-    A
-    ordenar_asc_col(A, 3)
-    
-    A <- matrix(c( 4, 13,  9, 17), nrow = 1)
-    A
-    ordenar_asc_col(A, 3)
-    ```
-    
-    **Ayuda**: A partir de la función desarrollada en el item a, pensá qué comparación está determinando si dos filas deben intercambiarse, y qué cambio permitiría invertir el criterio de ordenamiento.
-
-c.  Definir las funciones `ordenar_desc_fila(m, fila)` y `ordenar_asc_fila(m, fila)`, las cuales deben intercambiar las columnas de la matriz `m` de modo que la misma quede con los valores de la fila número `fila` ordenados en forma descendente y ascendente respectivamente. Ejemplos de su uso:
-    
-    ```{r}
-    #| echo: false
-    ordenar_desc_fila <- function(m, fila) {
-      if (ncol(m) > 1) {
-        for (i in 1:(ncol(m) - 1)) {
-          for (j in (i + 1):ncol(m)) {
-            if (m[fila, i] < m[fila, j]) { # Compara columnas
-              for (k in 1:nrow(m)) {
-                tmp      <- m[k, i]
-                m[k, i]  <- m[k, j]
-                m[k, j]  <- tmp
-              }
-            }
-          }
-        }
-      }
-      return(m)
-    }
-    ```
-    
-    ```{r}
-    A <- matrix(c( 4, 13,  9, 17,
-                  20, 14, 14,  9,
-                   2, 16, 12,  7,
-                  16,  2,  4, 11,
-                  12, 20, 16,  4), nrow = 5, byrow = TRUE)
-    A
-    ordenar_desc_fila(A, 3)
-    
-    A <- matrix(c( 4, 13,  9, 17), nrow = 1)
-    A
-    ordenar_desc_fila(A, 1)
-    ```
+b.  Definir la función `ordenar_asc_fila(m, fila)` para intercambiar las columnas de la matriz `m` de modo que la misma quede con los valores de la fila número `fila` ordenados en forma ascendente. Ejemplos de su uso:
     
     ```{r}
     #| echo: false
