@@ -1,0 +1,22 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Operaciones vectorizadas
+
+::: {.presentacion-capitulo data-latex=""}
+
+:::
+
+## Vectores
+
+
+## Matrices
+
+
+## Operaciones lógicas vectorizadas
+
+
+## Indexación con vectores
+
+

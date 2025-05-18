@@ -1,0 +1,24 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Otras nociones importantes
+
+::: {.presentacion-capitulo data-latex=""}
+
+:::
+
+## Familia de funciones `apply`
+
+
+## Generación de vectores con secuencias numéricas
+
+
+## Concatenación de vectores, matrices y listas
+
+
+## Clasificación de los arreglos (lectura opcional)
+
+
+## Arreglos multidimensionales (lectura opcional)
+

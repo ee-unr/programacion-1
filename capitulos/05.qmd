@@ -1,0 +1,10 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Unidad 5. Estructuras de datos
+
+::: {.presentacion-capitulo data-latex=""}
+Una parte fundamental de la programación consiste en organizar y manipular conjuntos de datos. En esta unidad vamos a introducir las principales estructuras que R utiliza para almacenar y procesar datos, comenzando con aquellas más simples y homogéneas, como los vectores y las matrices, hasta llegar a otras más complejas y heterogéneas. Primero trabajaremos con estas estructuras mediante operaciones explícitas, elemento por elemento, para consolidar la lógica que subyace a su uso. Más adelante, exploraremos las operaciones vectorizadas que R ofrece, las cuales permiten escribir programas más eficientes, legibles y compactos.
+:::
+
