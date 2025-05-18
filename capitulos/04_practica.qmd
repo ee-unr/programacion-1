@@ -8,10 +8,257 @@ number-sections: false
 
 # Práctica de la Unidad 4
 
+```{r}
+#| include: false
+# parece que si no hay R code chunk, los bash chunks no andan
+3 + 4
+```
+
 ## Ejercicio 1
 
-Enunciado Ejercicio 1...
+El equipo de administración de usuarios de un sistema de ventas debe organizar los datos de los usuarios registrados y temporales. Para hacerlo, se necesita realizar las siguientes acciones desde la terminal:
+
+a. Crear una carpeta principal llamada `organizacion_usuarios`.
+b. Dentro de ella, crear tres subcarpetas: `registrados`, `temporales_abril` e `historial`.
+c. Agregar información ficticia de al menos tres usuarios registrados y tres usuarios temporales. Cada usuario debe tener un archivo propio, cuyo nombre debe ser un código alfanumérico de 8 caracteres que finalice con `_T` para los usuarios temporales y `_R` para los usuarios registrados (por ejemplo: `ABC1234X_R.txt`). Se puede inventar cualquier código. El contenido de los archivos debe ser:
+
+   - Usuarios registrados: dirección IP, nombre de usuario y correo electrónico.
+   - Usuarios temporales: dirección IP y nombre de invitado (ejemplo: "invitado01")
+
+   Asegurarse de que cada archivo esté guardado en la carpeta correspondiente.
+
+d. Uno de los usuarios temporales se ha registrado oficialmente en el sistema. Se deben seguir los siguientes pasos para actualizar la información:
+
+   - Copiar el archivo de ese usuario desde `temporales_abril` a la carpeta `registrados`.
+   - Editar el archivo del usuario para agregar el nombre de usuario y el correo electrónico correspondiente.
+   - Renombrar el archivo para que su nombre termine en `_R` en lugar de `_T`.
+   - Mostrar el contenido del archivo actualizado por pantalla para asegurarse que la información fue correctamente registrada.
+   - Finalmente, eliminar el archivo original de la carpeta `temporales_abril`.
+
+e. Además, se debe considerar que los archivos temporales se borran mensualmente, pero se guarda un respaldo en la carpeta `historial`. Para lograr esto:
+
+   - Copiar a la carpeta historial `historial` cada uno de los archivos de la carpeta `temporales_abril`.
+   - Borrar la carpeta `temporales_abril` y crear el directorio para el próximo mes, `temporales_mayo`.
 
 ## Ejercicio 2
 
-Enunciado Ejercicio 2...
+Crear un script en R llamado `menu.R` que muestre un menú de opciones en la terminal, lea la opción elegida por el usuario y ejecute una acción diferente según la opción seleccionada. El menú debe contener al menos tres opciones: "1. Saludar", "2. Mostrar fecha" y "3. Salir". El programa debe:
+
+- Mostrar el menú al usuario.
+- Leer la opción ingresada.
+- Responder con una acción distinta para cada opción:
+
+  - Si elige "1", pedirle al usuario que ingrese su nombre, mostrar un saludo personalizado (por ejemplo: "¡Hola, Pepito!") y mostrar otra vez el menú principal.
+  - Si elige "2", mostrar la hora actual (para obtenerla se puede usar el comando de R `format(Sys.time(), "%H:%M:%S")`)  y mostrar otra vez el menú principal.
+  - Si elige "3", pedirle al usuario que ingrese su nombre, mostrar un saludo personalizado, por ejemplo: "¡Chau, Pepito!" y finalmente finalizar su ejecución.
+
+Si el usuario ingresa una opción no válida, se debe mostrar un mensaje como "Opción inválida" y solicitar nuevamente que ingrese su elección.
+
+```bash
+Rscript menu.R
+
+=== MENÚ PRINCIPAL ===
+
+1. Saludar
+2. Mostrar hora actual
+3. Salir
+
+Elegí una opción: 2
+
+La hora actual es: 11:44:30 
+
+=== MENÚ PRINCIPAL ===
+
+1. Saludar
+2. Mostrar hora actual
+3. Salir
+
+Elegí una opción: 3
+
+Ingresá tu nombre para despedirte: Eugenia
+¡Chau, Eugenia!
+```
+
+
+## Ejercicio 3
+
+Se desea desarrollar un programa que calcule la calificación promedio otorgada a una película por un grupo de jueces de cine. En primer lugar, el programa debe preguntar cuántos jueces integran el grupo, que debe tener un mínimo de 3 y un máximo de 6. Si el número ingresado no cumple con esta condición, el programa debe mostrar un mensaje adecuado y no continuar con el resto de las instrucciones.
+
+Si el número de jueces está dentro del intervalo aceptado, el programa debe:
+
+- Solicitar al usuario que ingrese el nombre de la película.
+- Solicitar las calificaciones otorgadas por cada uno de los jueces. Las calificaciones deben ser ingresadas una por una y se debe chequear que cada una esté dentro del rango válido de 0 a 10. En caso contrario, debe mostrar un mensaje de error y solicitar nuevamente esa calificación. 
+- Calcular el promedio de los puntajes ingresados.
+- Mostrar el nombre de la película y su puntaje promedio.
+
+Ejemplo del uso del script
+
+```bash
+Rscript evaluar_pelicula.R
+
+===============================================
+
+      SISTEMA DE EVALUACIÓN DE PELÍCULAS
+
+===============================================
+
+Ingrese la cantidad de jueces en el grupo:
+3
+
+Ingrese el nombre de la película:
+Shrek 1
+
+Ingrese la calificación del juez 1:
+8.7
+
+Ingrese la calificación del juez 2:
+9
+
+Ingrese la calificación del juez 3:
+9.2
+
+La clasificación promedio para la película <Shrek> es 8.97 puntos.
+```
+
+## Ejercicio 4
+
+En el campus virtual de una universidad, los usuarios pueden acceder a diferentes salas, cada una correspondiente a una materia específica (por ejemplo, Programación 1, Laboratorio de Datos 1, Estadística 1). Cada sala está protegida por una contraseña única. Para acceder, el usuario debe ingresar la contraseña correcta. En caso de error, debe intentarlo nuevamente hasta lograrlo o hasta que se alcance un límite máximo de intentos, tras lo cual la cuenta será bloqueada.
+
+Para el caso de la sala de Programación 1, la contraseña es "amoprogramar". Vamos a suponer que un usuario quiere ingresar a esta sala. Escribir un programa que:
+
+- Muestre un mensaje solicitando el ingreso de la contraseña.
+- Lea el valor ingresado por el usuario.
+- Inicie un proceso de verificación:
+  
+  - Si la contraseña ingresada es incorrecta, debe mostrar:
+    
+    ```r
+    "Contraseña incorrecta. Ingrésela nuevamente."
+    ```
+    y permitir un nuevo intento.
+    
+  - Si la contraseña es correcta, debe mostrar:
+    
+    ```r
+    "¡Contraseña correcta! Puede continuar con sus estudios."
+    ```
+
+A partir de este escenario, se deben proponer **dos versiones** del programa, considerando los siguientes casos:
+
+a. El usuario puede intentar indefinidamente hasta ingresar la contraseña correcta.
+b.  El usuario tiene un máximo de cinco intentos. Por cada intento fallido, el mensaje emitido debe indicar la cantidad de intentos restantes. Si no ingresa la contraseña correcta en ese número de intentos, se debe mostrar el mensaje:
+  
+    ```r
+    "Demasiados intentos fallidos. Su cuenta ha sido bloqueada."
+    ```
+
+## Ejercicio 5
+
+En el [ejercicio 7 de la practica 3](03_practica.qmd#sec-resolvente) se tuvo que crear una función llamada `resolvente(a, b, c)`, que muestra las soluciones de la ecuación de segundo grado $a x^2 + b x + c = 0$, empleando la fórmula resolvente:
+
+$$x_{1, 2} = \frac{-b \pm \sqrt{(b^2 - 4ac)}}{2a}$$
+Modificar el código e incluirlo en un script que pueda ser ejecutado desde la terminal de manera que se cumplan los siguientes requisitos: 
+
+- Pedir al usuario que ingrese los coeficientes `a`, `b` y `c` uno por uno. 
+- Si el coeficiente `a` es cero, mostrar un mensaje de error y finalice el programa.
+- Mostrar la ecuación ingresada en formato legible (ejemplo: `x² - 5x + 6 = 0`).
+- Calcular el discriminante (`D = b^2 - 4 * a * c`) y mostrar su valor.
+- Clasificar las soluciones de acuerdo al resultado de `D`:
+
+  - Si `D > 0`: mostrar las dos soluciones reales distintas con un mensaje descriptivo como: "Existen dos soluciones reales distintas: x₁ = 2, x₂ = 3".
+  - Si `D = 0`: mostrar la única solución real (doble) con un mensaje descriptivo como "Existe una única solución real: x = 2 (raiz doble)".
+  - Si `D < 0`: indicar que las soluciones son complejas (sin calcularlas).
+  
+- Mejorar la experiencia del usuario incluyendo:
+
+  - Mensaje de bienvenida y despedida.
+  - Números que se muestren redondeados para facilitar su lectura.
+  
+El uso de la función debe ser semejante al siguiente ejemplo:
+
+```
+Rscript resolvente.R
+
+========================================
+  Calculadora de ecuaciones cuadráticas
+========================================
+
+Ingrese el valor del coeficiente 'a':
+1
+Ingrese el valor del coeficiente 'b':
+-1
+Ingrese el valor del coeficiente 'c':
+2
+
+Ecuación ingresada:  1x²-1x+2=0 
+Discriminante (D): -7 
+Las soluciones son complejas (no reales).
+
+Gracias por usar la calculadora de ecuaciones cuadráticas.
+```
+
+## Ejercicio 6 (opcional)
+
+Reescribir el programa anterior de forma que, en lugar de solicitar al usuario que ingrese los valores de `a`, `b` y `c` uno por uno desde la terminal, estos se ingresen directamente como argumentos del sistema al momento de ejecutar el script. Para ello, utilizar `commandArgs(trailingOnly = TRUE)` para capturar los valores y adaptar el código en consecuencia. Asegurarse de incluir validaciones adecuadas para verificar que los argumentos sean numéricos y que `a` no sea igual a cero.
+
+Ejemplo de ejecución desde la terminal:
+
+```{bash}
+#| eval: false
+Rscript resolvente_args.R 1 -1 -2
+```
+
+```{bash}
+#| eval: true
+#| echo: false
+#| error: true
+Rscript ../archivos/scripts_unidad4/resolvente_args.R 1 -1 -2
+```
+
+```{bash}
+#| eval: false
+Rscript resolvente_args.R 1 2 1
+```
+
+```{bash}
+#| eval: true
+#| echo: false
+#| error: true
+Rscript ../archivos/scripts_unidad4/resolvente_args.R 1 2 1
+```
+
+```{bash}
+#| eval: false
+Rscript resolvente_args.R 1 1 1
+```
+
+```{bash}
+#| eval: true
+#| echo: false
+#| error: true
+Rscript ../archivos/scripts_unidad4/resolvente_args.R 1 1 1
+```
+
+```{bash}
+#| eval: false
+Rscript resolvente_args.R 0 1 1
+```
+
+```{bash}
+#| eval: true
+#| echo: false
+#| error: true
+Rscript ../archivos/scripts_unidad4/resolvente_args.R 0 1 1
+```
+
+```{bash}
+#| eval: false
+Rscript resolvente_args.R 2 hola 1
+```
+
+```{bash}
+#| eval: true
+#| echo: false
+#| error: true
+Rscript ../archivos/scripts_unidad4/resolvente_args.R 2 hola 1
+```

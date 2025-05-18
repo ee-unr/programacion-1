@@ -7,6 +7,9 @@ number-sections: false
 \thispagestyle{primerapagina}
 ```
 
+::: {.info data-latex=""}
+Esta autoevaluación DEBE ser completada sin usar R para poder razonar las preguntas.
+:::
 
 ## Pregunta 1
 
@@ -95,7 +98,10 @@ La opción que no muestra la tabla del 8 es la:  `r webexercises::mcq(c("A", "B"
 `r webexercises::hide("Explicación")`
 - La opción `A` está bien porque multiplica directamente 8 por cada valor de `i`. 
 - La opción `B` también es correcta, porque empieza desde cero y va sumando 8 en cada paso, lo cual genera la tabla correctamente. 
-- En cambio, la opción `C` no muestra la tabla del 8 porque multiplica el número por 8 en cada vuelta, lo que genera una secuencia exponencial en lugar de una tabla.
+- En cambio, la opción `C` no muestra la tabla del 8 por dos razones:
+
+  - En primer lugar, el primer `cat("8 por", i, "es", numero, "\n")` da como resultado `8 por 0 es 1` puesto que la variable `numero` se inicializa en 1.
+  - Además, en cada vuelta se multiplica el resultado anterior por 8, en lugar de sumarle 8, lo cual genera una secuencia exponencial.
 `r webexercises::unhide()`
 
 ## Pregunta 3 {#ej3-aa2}

@@ -4,7 +4,86 @@
 
 # Trabajo Práctico {.unnumbered}
 
-::: {.en-construccion data-latex=""}
-Página en construcción.
-:::
+## Introducción
+
+El “Juego de la Memoria”, también conocido como “Memotest”, es un clásico juego de mesa que pone a prueba la capacidad de atención y la memoria visual de los participantes. Su dinámica es simple pero atrapante: se colocan fichas o cartas boca abajo, con imágenes ocultas, y los jugadores deben voltearlas de a dos por turno, intentando encontrar pares coincidentes. Si las dos fichas tienen la misma imagen, el jugador las retira del tablero y puede seguir jugando. Si no coinciden, se vuelven a colocar boca abajo, y es turno del siguiente jugador.
+
+Este juego ha sido disfrutado por generaciones tanto en el ámbito familiar como en actividades educativas, ya que además de ser entretenido, fomenta habilidades cognitivas importantes. En este trabajo práctico, vamos a programar en R una versión digital y simplificada del juego, que se podrá jugar en solitario desde la terminal de la computadora.
+
+## Objetivo
+
+El objetivo de este trabajo práctico es desarrollar una versión interactiva del Juego de la Memoria en R, que funcione desde la terminal. El programa permitirá jugar con un tablero de fichas ocultas, revelarlas de a pares, y buscar coincidencias hasta completar todos los pares disponibles. El juego debe mostrar el estado del tablero en cada momento, registrar la cantidad de intentos realizados y permitir al jugador reiniciar la partida si lo desea.
+
+## Dinámica del juego
+
+Para comprender cómo debe funcionar el programa, deben [mirar el video grabado con una *demo*](https://drive.google.com/file/d/1y4ccRdBW9iRWHLHFi7bYlQZLsolCvTOv/view?usp=sharing). El tablero estará compuesto por una cantidad par de fichas organizadas en una grilla rectangular (por ejemplo, 4 filas por 5 columnas). Cada ficha tiene un símbolo, letra o texto oculto, y hay exactamente dos fichas con cada símbolo.
+
+En cada turno, el jugador debe ingresar la posición de dos fichas para descubrir. El programa debe mostrar el tablero con las dos fichas seleccionadas visibles. Si las fichas coinciden, permanecen visibles. Si no coinciden, el jugador debe memorizar su ubicación y el programa espera hasta que el jugador le diga que está listo para continuar. El juego continúa hasta que el jugador haya encontrado todos los pares. Al finalizar, se muestra la cantidad de intentos realizados y se ofrece la posibilidad de jugar otra partida.
+
+## La terminal
+
+El programa es interactivo y requiere que el usuario ingrese datos en tiempo real: configurar el tablero, elegir posiciones del tablero para descubrir, decidir si desea volver a jugar, etc. Por ello, el programa debe ejecutarse desde la **terminal** de la computadora, donde pueden escribirse comandos y visualizarse respuestas del sistema. Es importante familiarizarse con la [Unidad 4](@sec-unidad4) de la asignatura para lograr este funcionamiento del programa.
+
+## Materiales provistos
+
+Para realizar este trabajo práctico cuentan con los siguientes archivos de apoyo:
+
+- [**Script `jugar.R`**](https://github.com/ee-unr/programacion-1/raw/refs/heads/main/archivos/tp_2025/jugar.R): archivo principal donde deben escribir su programa. Contiene una plantilla con instrucciones y espacio para agregar los datos del equipo y el código del juego.
+- **Paquete `memoria`**: este paquete creado por la cátedra ofrece funciones auxiliares que simplifican muchas partes de la solución de este trabajo y serán de extrema utilidad. Se recomienda leer la documentación del paquete con atención y correr los ejemplos. Las funciones disponibles son: `nuevo_tablero`, `validar_fichas`, `mostrar_tablero`, `texto_lento`, `limpiar_consola`, `leer_eleccion`, `mostrar_info`, `posiciones_disponibles` y `mostrar_pares`. En el script `jugar.R` se incluyen instrucciones de instalación. 
+
+**Información importante para usuarios de Windows**
+
+Si usas Windows, para instalar el paquete `memoria` es necesario tener instalado **Rtools**, un conjunto de herramientas que permite compilar paquetes de R que contienen código en C/C++ o Fortran. Instrucciones de instalación:
+
+1. Visitar la página https://cran.r-project.org/bin/windows/Rtools/
+2. Elegir la versión correspondiente para la versión de R que tengan instalada. Por ejemplo, para la versión de R `4.4.1` es necesario descargar `Rtools 4.4`. Para descubrir la versión de R instalada en su computadora pueden ejecutar `R.version.string` en la consola.
+3. Descargar el instalador haciendo click en el link correspondiente. El link se encuentra en la sección `Installing RtoolsNN` y lleva el nombre `RtoolsNN installer`. `NN` hace referencia a la versión de Rtools. En nuestro ejemplo, `NN` sería `44`.
+4. Ejecutar el instalador y seguir las instrucciones. Pueden elegir valores por defecto.
+5. Una vez instalado, cerrar RStudio y volver a abrirlo para asegurarse que los cambios se apliquen correctamente.
+
+Siguiendo los pasos anteriores, la instalación de `memoria` debería poder continuar sin inconvenientes.
+
+## Descomposición algorítmica
+
+Para organizar el código de manera clara y modular, se recomienda aplicar el principio de descomposición algorítmica, creando funciones propias para distintas partes del juego. Estas funciones pueden definirse en `jugar.R` o, mejor aún, en scripts adicionales. El o los nuevos scripts deberán estar guardados en el mismo directorio que `jugar.R`, desde donde se los debe invocar con la función `source()`. Desde dicha carpeta, deben abrir la terminal y ejecutar el programa con `Rscript jugar.R`, sin que se produzcan errores.
+
+Todas las funciones creadas deben estar documentadas [bajo el sistema **Roxygen**](03_3_varios.qmd#sec-factorial). Algunas podrán tomar argumentos, otras no, y algunas devolverán valores mientras que otras sólo imprimirán mensajes en pantalla. Lo importante es que cada función cumpla una tarea bien definida y facilite la lectura del programa principal.
+
+
+## Otras indicaciones y sugerencias
+
+- Es conveniente diseñar el algoritmo antes de programar, es decir, tomarse tiempo para pensar cómo es la lógica de la estructura del juego, qué pequeñas partes se pueden ir programando y probando de a poco, etc.
+- No dejar para último momento. Empezar con inmediatez, ya que no se resuelve de un día para el otro y es posible que necesiten realizar consultas con los docentes. Si dejan para último momento ya no habrá tiempo de organizar consultas, no podrán entregar el trabajo práctico y quedarán libres en la asignatura.
+- Probar el programa por partes, para asegurarse que cada cosa que van agregando funcione. Tratar de armar todo y luego evaluar puede hacer muy difícil a la tarea de detectar errores. 
+- Utilicen comentarios para identificar distintas partes de su programa y para describir qué se prentende realizar en cada sección.
+- El objetivo estará cumplido si logran un programa similar al presentado en la *demo*. Opcionalmente, pueden incluir otros agregados que les resulte de interés. 
+- Si no logran programar todo lo pedido, igualmente realicen la entrega de lo que hayan podido hacer y los docentes evaluarán si es suficiente o no para aprobar.
+- No intentar resolver todo de a una vez. Agregar pequeñas partes de a poco. Utilizar la emisión de mensajes temporarios para ir probando el código.
+
+## Equipos
+
+El trabajo práctico se resuelve en grupos de **exactamente CUATRO integrantes**, de cualquier comisión. Hay tiempo hasta el **lunes 19/5/25** para informar la composición de cada equipo [en este foro de Comunidades](https://comunidades3.campusvirtualunr.edu.ar/mod/forum/discuss.php?d=79027). Asimismo, si no tenés equipo o faltan integrantes en tu grupo, hay tiempo hasta esa fecha para comentar la situación en ese mismo foro. El día martes 20/5 se tomarán del foro los nombres de aquellos que hayan manifestado interés de hacer el TP pero no pudieron formar equipo, y entre ellos se crearán al azar nuevos equipos y/o se completarán también al azar los grupos incompletos. El armado de estos equipos será inapelable. 
+
+El script `jugar.R` tiene un espacio destinado para escribir los nombres de los integrantes del equipo. **Deben colocar allí los nombres de quienes hayan efectivamente participado del trabajo**. Comunidades les permite a todos los integrantes de un equipo ver los archivos que se han entregado, de modo que cada estudiante sabe si su nombre figura o no en el script. Si en el mismo  falta el nombre de un estudiante y los docentes no son contactados al respecto, se entenderá que dicha persona no realizó el trabajo y quedará libre.
+
+## Código de conducta
+
+- La discusión entre integrantes de distintos grupos está permitida, no así el intercambio de código. Se puede debatir en el foro de Comunidades o en otros medios, pero no publicar partes de código.
+- Las entregas son sometidas a un software de detección de plagio, si se detectan similaridades sospechosas en el trabajo de distintos grupos, podrán quedar descalificados. 
+- Cuando se detecta un uso llamativo de herramientas de Inteligencia Artificial o estructuras de programación que no se corresponde con los usos y funciones básicas vistas en este curso introductorio, los estudiantes son convocados por los docentes para defender y explicar su entrega de forma oral y responder preguntas sobre la resolución entregada.
+
+## Entrega
+
+Deben entregar el archivo `jugar.R` y cualquier otro script que generen, en la sección destinada para tal fin del aula virtual. Es suficiente con que un integrante del equipo adjunte los archivos. El resto de los integrantes podrá ver la entrega y, más adelante, la devolución y calificación por parte de los docentes.
+
+**Fecha límite de entrega: martes 10/06 a las 08:00** No se reciben trabajos fuera de este horario límite, sin ningún tipo de excepción.
+
+## Evaluación
+
+La evaluación tendrá en cuenta:
+
+- Si el programa funciona y permite jugar.
+- Si el programa implementa el juego con el comportamiento presentado en la demo.
+- Si hay prolijidad, claridad y buen uso de comentarios en el código.
+- Si el trabajo muestra ser original y no copia de otros recursos.
 
