@@ -39,13 +39,13 @@ suma(x)
 
 **Suma de vectores**
 
-Como sabemos del Álgebra Vectorial, la suma de dos vectores de la misma dimensión está dada por un nuevo vector donde cada elemento es igual a la suma de los elementos que ocupan la misma posición en los vectores originales. Por ejemplo:
+La suma de dos vectores de la misma dimensión está dada por un nuevo vector donde cada elemento es igual a la suma de los elementos que ocupan la misma posición en los vectores originales. Por ejemplo:
 
 $$
 \bar{u} + \bar{v} = \begin{pmatrix} 5 \\ 8 \\ 2 \end{pmatrix} +  \begin{pmatrix} 2 \\ 3 \\ -1 \end{pmatrix}  = \begin{pmatrix} 7 \\ 11 \\ 1 \end{pmatrix}
 $$
 
-Definir una función llamada `sumar_vectores(u, v)` que reciba dos vectores `u` y `v` de la misma dimensión y devuelva su suma. La función debe corroborar que los largos de ambos vectores sean iguales y, si no lo son, escribir un mensaje aclaratorio y devolver `NULL`. Ejemplos de su uso:
+Definir una función llamada `sumar_vectores(u, v)` que reciba dos vectores `u` y `v` de la misma dimensión y devuelva su suma. La función debe devolver un error informativo si los largos de ambos vectores no son iguales. Ejemplos de su uso:
 
 ```{r}
 #| echo: false
@@ -82,7 +82,7 @@ sumar_vectores(w, z)
 
 ### Ejercicio 3
 
-**Ordenar los elementos un vector numérico**
+**Ordenar los elementos de un vector numérico**
 
 Definir una función llamada `ordenar_asc(v)` que tome como entrada un vector numérico `v` de cualquier largo y lo devuelva con sus elementos ordenados en forma ascendente (de menor a mayor). La función debe cubrir el caso en el que el largo de `v` sea 1 (en cuyo caso devuelve el valor provisto, sin arrojar errores). Ejemplos de su uso:
 
@@ -112,9 +112,9 @@ ordenar_asc(x)
 
 ### Ejercicio 4
 
-**Hallar máximo en un vector**
+**Hallar el máximo de un vector**
 
-Definir una función llamada `maximo(v)` que encuentre cuál es el mayor valor en un vector numérico `v`. La función debe devolver un vector con dos elementos, el primero es el valor del máximo y el segundo es la posición en la cual el mismo se halla en el vector `v`. Si dicho mayor valor estuviese repetido en el vector, se determina la posición de su primera ocurrencia. El vector devuelto hace uso del atributo *names*. Ejemplos de su uso:
+Definir una función llamada `maximo(v)` que encuentre cuál es el mayor valor en un vector numérico `v`. La función debe devolver un vector con dos elementos, el primero es el valor del máximo y el segundo es la posición en la cual el mismo se halla en el vector `v`. Si dicho mayor valor estuviese repetido en el vector, se determina la posición de su primera ocurrencia. El vector devuelto debe hacer uso del atributo *names*. Ejemplos de su uso:
 
 ```{r}
 #| echo: false
@@ -147,7 +147,7 @@ maximo(x)
 
 a.  Dados dos vectores $\bar u = (u_1, u_2, ..., u_n)$ y $\bar v = (v_1, v_2, ..., v_n)$, ambos $\in \mathbf{R}^n$, se define como producto escalar al escalar: $\bar u \times \bar v = u_1v_1+u_2v_2+....+u_nv_n$.
 
-    Definir una función llamada `prod_escalar(u, v)` que tome dos vectores `u` y `v` de la misma dimensión y devuelva el producto escalar entre ellos. La función debe evaluar que el largo de los vectores admita esta operación. Ejemplos de su uso:
+    Definir una función llamada `prod_escalar(u, v)` que tome dos vectores `u` y `v` de la misma dimensión y devuelva el producto escalar entre ellos. La función debe devolver un error informativo si largo de los vectores no admite esta operación. Ejemplos de su uso:
     
     ```{r}
     #| echo: false
@@ -182,7 +182,7 @@ a.  Dados dos vectores $\bar u = (u_1, u_2, ..., u_n)$ y $\bar v = (v_1, v_2, ..
 
 b.  Dados dos vectores $\bar u = (u_1, u_2, u_3)$ y $\bar v = (v_1, v_2, v_3)$, ambos $\in \mathbf{R}^3$, se define como producto vectorial de $\bar u$ con $\bar v$ al vector de $\mathbf{R}^3$: $\bar u \wedge \bar v = (u_2v_3-u_3v_2, u_3v_1-u_1v_3, u_1v_2-u_2v_1)$.
     
-    Definir una función llamada `prod_vectorial(u, v)` que tome dos vectores `u` y `v` de largo 3 y devuelva el producto vectorial entre ellos. Ejemplos de su uso:
+    Definir una función llamada `prod_vectorial(u, v)` que tome dos vectores `u` y `v` de largo 3 y devuelva el producto vectorial entre ellos. La función debe devolver un error informativo si los vectores no son de dimensión 3. Ejemplos de su uso:
     
     ```{r}
     #| echo: false
@@ -238,7 +238,7 @@ d.  Haciendo uso de las funciones definidas en los ítems anteriores, definir un
     - el producto escalar $\bar v \wedge \bar w$
     - el producto mixto $\bar v \wedge \bar w \times \bar u$
     
-    Además, la función devuelve un vector numérico de largo 2 con los resultados anteriores, en ese orden, con nombres. Ejemplo de su uso:
+    Además, la función debe devolver un vector numérico de largo 2 con los resultados anteriores, en ese orden, con nombres. Ejemplo de su uso:
      
     ```{r}
     #| echo: false
@@ -371,7 +371,7 @@ $$
 \begin{pmatrix} 5 & 3 \\ 7 & 5 \\ 5 & 5\end{pmatrix}
 $$
 
-Definir una función llamada `sumar_matrices(A, B)` que tome dos matrices `A` y `B` de la misma dimensión y devuelva su suma. Ejemplo de su uso:
+Definir una función llamada `sumar_matrices(A, B)` que tome dos matrices `A` y `B` de la misma dimensión y devuelva su suma. La función debe devolver un error informativo si las dimensiones de las matrices no coinciden. Ejemplo de su uso:
 
 ```{r}
 #| echo: false
@@ -402,9 +402,9 @@ sumar_matrices(A, B)
 
 ### Ejercicio 8
 
-**Búsqueda del valor mínimo en una matriz**
+**Hallar mínimo en una matriz**
 
-a.  Definir una función llamada `minimo_matriz(m)` que encuentre el menor valor en una matriz numérica `m` y lo devuelva como el primer elemento de un vector de largo 3, el cual debe tener como segundo y tercer elemento el número de fila y de columna donde se encuentra el mínimo, respectivamente. Ejemplo de uso:
+a.  Definir una función llamada `minimo_matriz(m)` que encuentre el menor valor en una matriz numérica `m` y lo devuelva como el primer elemento de un vector de largo 3, el cual debe tener como segundo y tercer elemento el número de fila y de columna donde se encuentra el mínimo, respectivamente. El vector devuelto debe hacer uso del atributo *names*. Ejemplo de uso:
     
     ```{r}
     #| echo: false
@@ -432,7 +432,7 @@ a.  Definir una función llamada `minimo_matriz(m)` que encuentre el menor valor
     minimo_matriz(A)
     ```
 
-b.  Definir una función llamada `minimo_matriz_fila(m, fila)` que encuentre el menor valor en la fila número `fila` de una matriz numérica `m` y devuelva un vector de largo 2, donde el primer elemento sea el valor mínimo encontrado y el segundo elemento sea el número de columna en la que lo encontró. Por defecto, la búsqueda del mínimo debe hacerse en la fila 1. Ejemplo de uso:
+b.  Definir una función llamada `minimo_matriz_fila(m, fila)` que encuentre el menor valor en la fila número `fila` de una matriz numérica `m` y devuelva un vector de largo 2, donde el primer elemento sea el valor mínimo encontrado y el segundo elemento sea el número de columna en la que lo encontró. Por defecto, la búsqueda del mínimo debe hacerse en la fila 1. El vector devuelto debe hacer uso del atributo *names*. Ejemplo de uso:
     
     ```{r}
     #| echo: false
