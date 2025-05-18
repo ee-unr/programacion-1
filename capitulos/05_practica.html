@@ -725,11 +725,11 @@ window.Quarto = {
 <section id="ejercicio-2" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h3>
 <p><strong>Suma de vectores</strong></p>
-<p>Como sabemos del Álgebra Vectorial, la suma de dos vectores de la misma dimensión está dada por un nuevo vector donde cada elemento es igual a la suma de los elementos que ocupan la misma posición en los vectores originales. Por ejemplo:</p>
+<p>La suma de dos vectores de la misma dimensión está dada por un nuevo vector donde cada elemento es igual a la suma de los elementos que ocupan la misma posición en los vectores originales. Por ejemplo:</p>
 <p><span class="math display">\[
 \bar{u} + \bar{v} = \begin{pmatrix} 5 \\ 8 \\ 2 \end{pmatrix} +  \begin{pmatrix} 2 \\ 3 \\ -1 \end{pmatrix}  = \begin{pmatrix} 7 \\ 11 \\ 1 \end{pmatrix}
 \]</span></p>
-<p>Definir una función llamada <code>sumar_vectores(u, v)</code> que reciba dos vectores <code>u</code> y <code>v</code> de la misma dimensión y devuelva su suma. La función debe corroborar que los largos de ambos vectores sean iguales y, si no lo son, escribir un mensaje aclaratorio y devolver <code>NULL</code>. Ejemplos de su uso:</p>
+<p>Definir una función llamada <code>sumar_vectores(u, v)</code> que reciba dos vectores <code>u</code> y <code>v</code> de la misma dimensión y devuelva su suma. La función debe devolver un error informativo si los largos de ambos vectores no son iguales. Ejemplos de su uso:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">2</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
@@ -753,7 +753,7 @@ window.Quarto = {
 </section>
 <section id="ejercicio-3" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h3>
-<p><strong>Ordenar los elementos un vector numérico</strong></p>
+<p><strong>Ordenar los elementos de un vector numérico</strong></p>
 <p>Definir una función llamada <code>ordenar_asc(v)</code> que tome como entrada un vector numérico <code>v</code> de cualquier largo y lo devuelva con sus elementos ordenados en forma ascendente (de menor a mayor). La función debe cubrir el caso en el que el largo de <code>v</code> sea 1 (en cuyo caso devuelve el valor provisto, sin arrojar errores). Ejemplos de su uso:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mi_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">1</span>)</span>
@@ -770,8 +770,8 @@ window.Quarto = {
 </section>
 <section id="ejercicio-4" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-4">Ejercicio 4</h3>
-<p><strong>Hallar máximo en un vector</strong></p>
-<p>Definir una función llamada <code>maximo(v)</code> que encuentre cuál es el mayor valor en un vector numérico <code>v</code>. La función debe devolver un vector con dos elementos, el primero es el valor del máximo y el segundo es la posición en la cual el mismo se halla en el vector <code>v</code>. Si dicho mayor valor estuviese repetido en el vector, se determina la posición de su primera ocurrencia. El vector devuelto hace uso del atributo <em>names</em>. Ejemplos de su uso:</p>
+<p><strong>Hallar el máximo de un vector</strong></p>
+<p>Definir una función llamada <code>maximo(v)</code> que encuentre cuál es el mayor valor en un vector numérico <code>v</code>. La función debe devolver un vector con dos elementos, el primero es el valor del máximo y el segundo es la posición en la cual el mismo se halla en el vector <code>v</code>. Si dicho mayor valor estuviese repetido en el vector, se determina la posición de su primera ocurrencia. El vector devuelto debe hacer uso del atributo <em>names</em>. Ejemplos de su uso:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mi_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">120</span>, <span class="dv">1</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">maximo</span>(mi_vector)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -792,7 +792,7 @@ window.Quarto = {
 <p><strong>Álgebra vectorial</strong></p>
 <ol type="a">
 <li><p>Dados dos vectores <span class="math inline">\(\bar u = (u_1, u_2, ..., u_n)\)</span> y <span class="math inline">\(\bar v = (v_1, v_2, ..., v_n)\)</span>, ambos <span class="math inline">\(\in \mathbf{R}^n\)</span>, se define como producto escalar al escalar: <span class="math inline">\(\bar u \times \bar v = u_1v_1+u_2v_2+....+u_nv_n\)</span>.</p>
-<p>Definir una función llamada <code>prod_escalar(u, v)</code> que tome dos vectores <code>u</code> y <code>v</code> de la misma dimensión y devuelva el producto escalar entre ellos. La función debe evaluar que el largo de los vectores admita esta operación. Ejemplos de su uso:</p>
+<p>Definir una función llamada <code>prod_escalar(u, v)</code> que tome dos vectores <code>u</code> y <code>v</code> de la misma dimensión y devuelva el producto escalar entre ellos. La función debe devolver un error informativo si largo de los vectores no admite esta operación. Ejemplos de su uso:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">2</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
@@ -814,7 +814,7 @@ window.Quarto = {
 </div>
 </div></li>
 <li><p>Dados dos vectores <span class="math inline">\(\bar u = (u_1, u_2, u_3)\)</span> y <span class="math inline">\(\bar v = (v_1, v_2, v_3)\)</span>, ambos <span class="math inline">\(\in \mathbf{R}^3\)</span>, se define como producto vectorial de <span class="math inline">\(\bar u\)</span> con <span class="math inline">\(\bar v\)</span> al vector de <span class="math inline">\(\mathbf{R}^3\)</span>: <span class="math inline">\(\bar u \wedge \bar v = (u_2v_3-u_3v_2, u_3v_1-u_1v_3, u_1v_2-u_2v_1)\)</span>.</p>
-<p>Definir una función llamada <code>prod_vectorial(u, v)</code> que tome dos vectores <code>u</code> y <code>v</code> de largo 3 y devuelva el producto vectorial entre ellos. Ejemplos de su uso:</p>
+<p>Definir una función llamada <code>prod_vectorial(u, v)</code> que tome dos vectores <code>u</code> y <code>v</code> de largo 3 y devuelva el producto vectorial entre ellos. La función debe devolver un error informativo si los vectores no son de dimensión 3. Ejemplos de su uso:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">2</span>)</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
@@ -850,7 +850,7 @@ window.Quarto = {
 <li>el producto escalar <span class="math inline">\(\bar v \wedge \bar w\)</span></li>
 <li>el producto mixto <span class="math inline">\(\bar v \wedge \bar w \times \bar u\)</span></li>
 </ul>
-<p>Además, la función devuelve un vector numérico de largo 2 con los resultados anteriores, en ese orden, con nombres. Ejemplo de su uso:</p>
+<p>Además, la función debe devolver un vector numérico de largo 2 con los resultados anteriores, en ese orden, con nombres. Ejemplo de su uso:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">2</span>)</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
@@ -972,7 +972,7 @@ El producto mixto entre v, w y u es: 1 </code></pre>
 \begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 2 \\ 3 &amp; 4\end{pmatrix} =
 \begin{pmatrix} 5 &amp; 3 \\ 7 &amp; 5 \\ 5 &amp; 5\end{pmatrix}
 \]</span></p>
-<p>Definir una función llamada <code>sumar_matrices(A, B)</code> que tome dos matrices <code>A</code> y <code>B</code> de la misma dimensión y devuelva su suma. Ejemplo de su uso:</p>
+<p>Definir una función llamada <code>sumar_matrices(A, B)</code> que tome dos matrices <code>A</code> y <code>B</code> de la misma dimensión y devuelva su suma. La función debe devolver un error informativo si las dimensiones de las matrices no coinciden. Ejemplo de su uso:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>), <span class="at">nrow =</span> <span class="dv">3</span>)</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>), <span class="at">nrow =</span> <span class="dv">3</span>)</span>
@@ -992,9 +992,9 @@ El producto mixto entre v, w y u es: 1 </code></pre>
 </section>
 <section id="ejercicio-8" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-8">Ejercicio 8</h3>
-<p><strong>Búsqueda del valor mínimo en una matriz</strong></p>
+<p><strong>Hallar mínimo en una matriz</strong></p>
 <ol type="a">
-<li><p>Definir una función llamada <code>minimo_matriz(m)</code> que encuentre el menor valor en una matriz numérica <code>m</code> y lo devuelva como el primer elemento de un vector de largo 3, el cual debe tener como segundo y tercer elemento el número de fila y de columna donde se encuentra el mínimo, respectivamente. Ejemplo de uso:</p>
+<li><p>Definir una función llamada <code>minimo_matriz(m)</code> que encuentre el menor valor en una matriz numérica <code>m</code> y lo devuelva como el primer elemento de un vector de largo 3, el cual debe tener como segundo y tercer elemento el número de fila y de columna donde se encuentra el mínimo, respectivamente. El vector devuelto debe hacer uso del atributo <em>names</em>. Ejemplo de uso:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">1</span>), <span class="at">nrow =</span> <span class="dv">3</span>)</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>A</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1010,7 +1010,7 @@ El producto mixto entre v, w y u es: 1 </code></pre>
       1       3       2 </code></pre>
 </div>
 </div></li>
-<li><p>Definir una función llamada <code>minimo_matriz_fila(m, fila)</code> que encuentre el menor valor en la fila número <code>fila</code> de una matriz numérica <code>m</code> y devuelva un vector de largo 2, donde el primer elemento sea el valor mínimo encontrado y el segundo elemento sea el número de columna en la que lo encontró. Por defecto, la búsqueda del mínimo debe hacerse en la fila 1. Ejemplo de uso:</p>
+<li><p>Definir una función llamada <code>minimo_matriz_fila(m, fila)</code> que encuentre el menor valor en la fila número <code>fila</code> de una matriz numérica <code>m</code> y devuelva un vector de largo 2, donde el primer elemento sea el valor mínimo encontrado y el segundo elemento sea el número de columna en la que lo encontró. Por defecto, la búsqueda del mínimo debe hacerse en la fila 1. El vector devuelto debe hacer uso del atributo <em>names</em>. Ejemplo de uso:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">1</span>), <span class="at">nrow =</span> <span class="dv">3</span>)</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>A</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
