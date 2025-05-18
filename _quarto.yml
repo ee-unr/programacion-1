@@ -95,13 +95,13 @@ format:
     fig-dpi: 300
     fig-show: hold
     fig-align: center
-  pdf:
-    documentclass: scrbook
-    latex-output-dir: _book
-    output-file: "programacion1"
-    keep-tex: false
-    colorlinks: true
-    include-in-header: estilo/preambulo.tex
-    include-before-body: estilo/cuerpo.tex
-    template-partials:
-      - estilo/title.tex
+  # pdf:
+  #   documentclass: scrbook
+  #   latex-output-dir: _book
+  #   output-file: "programacion1"
+  #   keep-tex: false
+  #   colorlinks: true
+  #   include-in-header: estilo/preambulo.tex
+  #   include-before-body: estilo/cuerpo.tex
+  #   template-partials:
+  #     - estilo/title.tex
