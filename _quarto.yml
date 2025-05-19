@@ -57,11 +57,11 @@ book:
     - part: capitulos/05.qmd
       chapters:
         - capitulos/05_1_arreglos.qmd
-        - capitulos/05_2_operaciones_vectorizadas.qmd
-        - capitulos/05_3_listas.qmd
-        - capitulos/05_4_varios.qmd
+    #     - capitulos/05_2_operaciones_vectorizadas.qmd
+    #     - capitulos/05_3_listas.qmd
+    #     - capitulos/05_4_varios.qmd
         - capitulos/05_practica.qmd
-        - capitulos/05_actividad_autoevaluativa.qmd
+    #     - capitulos/05_actividad_autoevaluativa.qmd
     # - part: capitulos/06.qmd
     #   chapters:
     #     - capitulos/06_1_.qmd
@@ -95,13 +95,13 @@ format:
     fig-dpi: 300
     fig-show: hold
     fig-align: center
-  # pdf:
-  #   documentclass: scrbook
-  #   latex-output-dir: _book
-  #   output-file: "programacion1"
-  #   keep-tex: false
-  #   colorlinks: true
-  #   include-in-header: estilo/preambulo.tex
-  #   include-before-body: estilo/cuerpo.tex
-  #   template-partials:
-  #     - estilo/title.tex
+  pdf:
+    documentclass: scrbook
+    latex-output-dir: _book
+    output-file: "programacion1"
+    keep-tex: false
+    colorlinks: true
+    include-in-header: estilo/preambulo.tex
+    include-before-body: estilo/cuerpo.tex
+    template-partials:
+      - estilo/title.tex
