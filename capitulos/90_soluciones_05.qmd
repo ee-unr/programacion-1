@@ -693,4 +693,23 @@ g.  Una posibilidad es:
     cuadrado_magico(cuadrado)
     ```
   
-  
+### Ejercicio 12
+
+a.
+
+  ```{r}
+  # Crear vector para guardar los promedios
+  promedios <- numeric(ncol(m))
+  # Calcular iterando a través de las filas
+  for (j in 1:ncol(m)) {
+    promedios[j] <- mean(m[, j])
+  }
+  promedios
+  ```
+
+b. 
+
+    ```{r}
+    apply(m, 2, mean)
+    ```
+

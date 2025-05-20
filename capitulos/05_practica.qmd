@@ -630,3 +630,22 @@ f.  ¿Cómo se pueden usar las funciones de R base para encontrar el valor míni
 
 g.  Pensar una nueva forma de crear la función `cuadrado_magico()` del [Ejercicio 10](#ejercicio-10) que aproveche la operatoria vectorizada de R para simplificar los cálculos.
 
+### Ejercicio 12
+
+**Comparación entre `for` y `apply`**
+
+Dada la matriz `m`:
+
+```{r}
+# set.seed asegura que todos obtengamos la misma matriz, a pesar de que se genera aleatoriamente
+set.seed(34)
+m <- matrix(sample(100, 20), nrow = 4)
+m
+```
+
+calcular la media de cada columna de dos maneras diferentes:
+
+a.  Usando una estructura iterativa `for()`.
+b.  Usando la función `apply()`.
+
+En ambos casos se puede usar la función de R Base `mean()` o definir una nueva función propia para calcular un promedio.
