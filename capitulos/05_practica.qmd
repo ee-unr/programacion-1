@@ -606,7 +606,9 @@ cuadrado
 cuadrado_magico(cuadrado)
 ```
 
-## Operaciones Vectorizadas
+## Manejo de Estructuras de Datos usando Funciones de R
+
+En esta sección utilizaremos la operatoria vectorizada de R y las funciones que el software ya trae disponible para alcanzar los mismos objetivos que en los ejercicios anteriores y realizar otras tareas.
 
 ### Ejercicio 11
 

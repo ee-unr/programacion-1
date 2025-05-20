@@ -566,7 +566,7 @@ cuadrado_magico <- function(cuadrado) {
 }
 ```
 
-## Operaciones Vectorizadas
+## Manejo de Estructuras de Datos usando Funciones de R
 
 ### Ejercicio 11
 
