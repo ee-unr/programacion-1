@@ -612,17 +612,17 @@ cuadrado_magico(cuadrado)
 
 **Resolución alternativa de ejercicios anteriores**
 
-a.  ¿Cuál es la función de R base que se encarga de sumar los elementos de un arreglo numérico? Utilizarla en el mismo ejemplo presentado en el [Ejercicio 1](#ejercicio-1) y comparar resultados.
+a.  ¿Cuál es la función de R Base que se encarga de sumar los elementos de un arreglo numérico? Utilizarla en el mismo ejemplo presentado en el [Ejercicio 1](#ejercicio-1) y comparar resultados.
 
 b.  En el [Ejercicio 2](#ejercicio-2) escribimos una función llamada `sumar_vectores(u, v)` que toma dos vectores `u` y `v` de la misma dimensión y devuelve su suma. De manera similar, en el [Ejercicio 7](#ejercicio-7) escribimos una función para sumar dos matrices. ¿Cómo podemos obtener el mismo resultado sin tener que crear estas funciones nuevas, sabiendo que en R las funciones operan de forma vectorizada?
 
-c.  ¿Con qué función de R base se pueden ordenar de forma ascendente los elementos de un vector numérico? Demostrarlo con los mismos ejemplos del [Ejercicio 3](#ejercicio-3). ¿Se puede aplicar esta función en vectores de tipo carácter?
+c.  ¿Con qué función de R Base se pueden ordenar de forma ascendente los elementos de un vector numérico? Demostrarlo con los mismos ejemplos del [Ejercicio 3](#ejercicio-3). ¿Se puede aplicar esta función en vectores de tipo carácter?
 
-d.  ¿Con qué funciones de R base se pueden encontrar los valores mínimos y máximos de un vector o de una matriz? Las funciones que escribimos en el [Ejercicio 4](#ejercicio-4) y en el [Ejercicio 8](#ejercicio-8) persiguen este mismo objetivo, pero además devuelven la posición del valor buscado en el arreglo. ¿Cómo se puede hacer esto en R base? ¿Se pueden aplicar estas funciones en vectores de tipo carácter?
+d.  ¿Con qué funciones de R Base se pueden encontrar los valores mínimos y máximos de un vector o de una matriz? Las funciones que escribimos en el [Ejercicio 4](#ejercicio-4) y en el [Ejercicio 8](#ejercicio-8) persiguen este mismo objetivo, pero además devuelven la posición del valor buscado en el arreglo. ¿Cómo se puede hacer esto en R Base? ¿Se pueden aplicar estas funciones en vectores de tipo carácter?
 
 e.  Utilizando las funciones vectorizadas de R, ¿cómo podemos obtener de manera sencilla el producto escalar entre dos vectores, como en el [Ejercicio 5](#ejercicio-5)a?
 
-f.  ¿Cómo se pueden usar las funciones de R base para encontrar el valor mínimo en una fila en particular de una matriz numérica? Demostrarlo con la matriz que se define a continuación, suponiendo que deseamos encontrar cuál es el mínimo en la fila 2.
+f.  ¿Cómo se pueden usar las funciones de R Base para encontrar el valor mínimo en una fila en particular de una matriz numérica? Demostrarlo con la matriz que se define a continuación, suponiendo que deseamos encontrar cuál es el mínimo en la fila 2.
 
     ```{r}
     A <- matrix(c(5, 8, 2, 7, 3, 1), nrow = 3)
