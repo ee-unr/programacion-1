@@ -209,7 +209,7 @@ Si bien podemos pensar en distintas formas para resolver este problema, probable
 Ahora sólo resta realizar el mismo procedimiento para los valores de las posiciones 2 y 4. Como el número de elementos en el vector es impar, el valor en la posición central queda en su lugar. Podemos definir el siguiente programa para resolver este problema de manera general, para vectores de cualquier largo `n`:
 
 ```{r}
-v <- c("Datos", "de", "Análisis", "de", "Aguante")
+v <- c("Datos", "de", "Análisis", "el", "Aguante")
 n <- length(v)
 for (i in 1:(n %/% 2)) {
 	tmp <- v[i]
