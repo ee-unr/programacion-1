@@ -697,19 +697,51 @@ g.  Una posibilidad es:
 
 a.
 
-  ```{r}
-  # Crear vector para guardar los promedios
-  promedios <- numeric(ncol(m))
-  # Calcular iterando a través de las filas
-  for (j in 1:ncol(m)) {
-    promedios[j] <- mean(m[, j])
-  }
-  promedios
-  ```
+    ```{r}
+    # Crear vector para guardar los promedios
+    promedios <- numeric(ncol(m))
+    # Calcular iterando a través de las filas
+    for (j in 1:ncol(m)) {
+      promedios[j] <- mean(m[, j])
+    }
+    promedios
+    ```
 
 b. 
 
     ```{r}
     apply(m, 2, mean)
+    ```
+
+### Ejercicio 13
+
+a.
+
+    ```{r}
+    #| eval: false
+    d[[2]]
+    ```
+
+b. 
+
+    ```{r}
+    #| eval: false
+    d[[1]][1] <- "M"
+    d
+    ```
+
+c.
+
+    ```{r}
+    # Creación de la lista
+    mi_lista <- list(1:10, "Buenas", TRUE)
+    mi_lista
+    
+    # De manera vectorizada le sumamos 2 a cada elemento del vector y lo guardamos en el mismo lugar
+    mi_lista[[1]] <- mi_lista[[1]] + 2
+    
+    # Cambiar el TRUE por FALSE
+    mi_lista[[3]] <- FALSE
+    mi_lista
     ```
 

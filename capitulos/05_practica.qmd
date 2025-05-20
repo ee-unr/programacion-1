@@ -639,7 +639,7 @@ g.  Pensar una nueva forma de crear la función `cuadrado_magico()` del [Ejercic
 Dada la matriz `m`:
 
 ```{r}
-# set.seed asegura que todos obtengamos la misma matriz, a pesar de que se genera aleatoriamente
+# set.seed asegura obtener la misma matriz, a pesar de que se genera aleatoriamente
 set.seed(34)
 m <- matrix(sample(100, 20), nrow = 4)
 m
@@ -651,3 +651,26 @@ a.  Usando una estructura iterativa `for()`.
 b.  Usando la función `apply()`.
 
 En ambos casos se puede usar la función de R Base `mean()` o definir una nueva función propia para calcular un promedio.
+
+### Ejercicio 13
+
+**Preguntas sobre listas en R**
+
+a.  Dados los siguientes objetos, ¿cuál es el valor de `d[[2]]`? Responder sin correr el código. Luego verificar.
+
+    ```{r}
+    #| eval: false
+    a <- c(2, 1, 9)
+    b <- c("X", "Y", "Z")
+    d <- list(b, a)
+    ```
+
+b.  Dados los objetos anteriores, ¿qué sentencia reemplazará la "X" en la lista `d` por el valor "M"? Elegir la respuesta correcta sin correr el código. Luego verificar.
+
+	1. `d[[1]] <- "M"`
+	2. `d[[1]][1] <- "M"`
+	3. `d[[2]][1] <- "M"`
+	4. `d[[1]][2] <- "M"`
+
+c.  Dada la lista: `mi_lista <- list(1:10, "Buenas", TRUE)`, escribir código que permita sumarle un 2 a cada elemento del primer vector dentro de la lista y que cambie el valor `TRUE` por un `FALSE`.
+
