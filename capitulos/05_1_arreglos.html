@@ -977,7 +977,7 @@ NULL</code></pre>
 </div>
 <p>Ahora sólo resta realizar el mismo procedimiento para los valores de las posiciones 2 y 4. Como el número de elementos en el vector es impar, el valor en la posición central queda en su lugar. Podemos definir el siguiente programa para resolver este problema de manera general, para vectores de cualquier largo <code>n</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Datos"</span>, <span class="st">"de"</span>, <span class="st">"Análisis"</span>, <span class="st">"de"</span>, <span class="st">"Aguante"</span>)</span>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Datos"</span>, <span class="st">"de"</span>, <span class="st">"Análisis"</span>, <span class="st">"el"</span>, <span class="st">"Aguante"</span>)</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(v)</span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(n <span class="sc">%/%</span> <span class="dv">2</span>)) {</span>
 <span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>    tmp <span class="ot">&lt;-</span> v[i]</span>
@@ -986,7 +986,7 @@ NULL</code></pre>
 <span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>v</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Aguante"  "de"       "Análisis" "de"       "Datos"   </code></pre>
+<pre><code>[1] "Aguante"  "el"       "Análisis" "de"       "Datos"   </code></pre>
 </div>
 </div>
 </div>
