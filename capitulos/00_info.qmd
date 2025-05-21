@@ -4,7 +4,7 @@
 
 ## Programa
 
-En [este enlace](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/ee-unr/programacion-1/main/archivos/programa.pdf) podés consultar el programa para esta asignatura.
+En [este enlace](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/ee-unr/programacion-1/main/archivos/programa.pdf) podés consultar el programa para esta asignatura. Allí se describe en detalle el sistema de evaluación, junto con todos los requisitos para regularizar o promover la asignatura.
 
 ## Aula virtual
 
@@ -35,7 +35,7 @@ Podés resolver tus dudas recurriendo a estos medios:
 - **Clases de consulta virtuales**. Los enlaces y horarios se publican en el aula virtual. Si ningún estudiante se conecta, la clase se da por finalizada luego de 10 minutos de espera.
 - **Clases de consulta presenciales en el laboratorio de computación**. Estas clases tendrán una duración determinada. Durante ese tiempo, además de resolver dudas con los docentes, podés recurrir al laboratorio para hacer uso de las computadoras y resolver ejercicios u otros trabajos.
 
-### Cronograma {#sec-cronograma}
+## Cronograma {#sec-cronograma}
 
 Visitá periódicamente este cronograma para autogestionar tu tránsito por los temas y materiales de la asignatura:
 
@@ -57,16 +57,6 @@ Visitá periódicamente este cronograma para autogestionar tu tránsito por los 
 | 14         | 16/6 al 22/6     | Unidad 6           | A definir            | A definir                 | **Entrega tarea promoción**: dom 22/6. Feriados: lun 16/6 y vie 20/6 |
 | 15         | 23/6 al 29/6     | Unidad 6           | A definir            | A definir                 | Vie 27/6: notificación de la condición final en la asignatura        |
 
-
-## Evaluación
-
-La evaluación de la asignatura se realiza a través de un examen parcial individual y un trabajo práctico grupal. Ambas actividades son evaluadas con una calificación entre 0 y 10 y se ponderan para obtener una nota de cursada (60% examen parcial, 40% trabajo práctico). Al finalizar el cursado, cada estudiante obtiene una de las siguientes condiciones:
-
-- **Libre**: obtienen la condición de “libre” aquellos estudiantes con nota de cursada inferior a 6 o alguna nota menor a 4, ya sea en el examen parcial o en el trabajo práctico.
-- **Regular**: obtienen la condición de “regular” aquellos estudiantes con nota de cursada mayor o igual a 6, siempre que no tengan ninguna nota menor a 4 en el examen parcial o en el trabajo práctico
-- **Promovido**: obtienen la condición de “promovido” aquellos estudiantes que con nota de cursada mayor o igual a 8, que no tengan ninguna nota menor a 6 en el examen parcial o en el trabajo práctico y que aprueben una tarea de realización opcional e individual al final del cuatrimestre. La nota de cursada se computa como nota final de la asignatura.
-
-Más detalles sobre cada componente evaluativo pueden encontrarse en el [programa](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/ee-unr/programacion-1/main/archivos/programa.pdf) o en el [aula virtual](https://comunidades3.campusvirtualunr.edu.ar/course/view.php?id=4893).
 
 ## Código de conducta
 
