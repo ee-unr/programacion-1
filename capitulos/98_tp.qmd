@@ -48,7 +48,7 @@ Siguiendo los pasos anteriores, la instalación de `memoria` debería poder cont
 1. Descargar [memoria_0.1.0.tar.gz](https://github.com/ee-unr/programacion-1/raw/refs/heads/main/tp/memoria_0.1.0.tar.gz). Una vez descargado, se recomienda mover el archivo a la misma carpeta donde está el archivo `jugar.R`.
 2. Ejecutar `install.packages("ruta/a/memoria_0.1.0.tar.gz", repos = NULL, type = "source")`, reemplazando `"ruta/a/memoria_0.1.0.tar.gz"` por la ruta correspondiente. 
 
-    - Si `memoria_0.1.0.tar.gz` está en la carpeta de su proyecto de R pueden ejecutar `install.packages(memoria_0.1.0.tar.gz", repos = NULL, type = "source")`. Recuerden que al trabajar en un proyecto de R pueden usar rutas relativas.
+    - Si `memoria_0.1.0.tar.gz` está en la carpeta de su proyecto de R pueden ejecutar `install.packages("memoria_0.1.0.tar.gz", repos = NULL, type = "source")`. Recuerden que al trabajar en un proyecto de R pueden usar rutas relativas.
     - Caso contrario, `"ruta/a/memoria_0.1.0.tar.gz"` deberá ser la ruta absoluta a la ubicación del archivo.
 
 ## Descomposición algorítmica
