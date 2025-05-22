@@ -5,10 +5,102 @@
 # Operaciones vectorizadas
 
 ::: {.presentacion-capitulo data-latex=""}
-
+En R, muchas funciones y operadores están diseñados para trabajar directamente con vectores completos, sin necesidad de escribir bucles explícitos para recorrer elemento por elemento. Esta capacidad se conoce como **vectorización** y es una de las características más poderosas y distintivas del lenguaje. Usar **operaciones vectorizadas** permite escribir código más compacto, más rápido y más fácil de leer. En este capítulo exploraremos qué significa que una operación sea vectorizada, cómo se comportan estas operaciones en distintos contextos y qué ventajas ofrece esta forma de programación. Ya que ahora conocemos cómo se construyen vectores y matrices y cómo acceder a sus elementos, es el momento de aprender a operar sobre ellos de manera eficiente.
 :::
 
 ## Vectores
+
+Con los conocimientos compartidos hasta aquí en esta unidad somos capaces de escribir interesantes algoritmos y programas para operar con vectores y matrices (por ejemplo: ordenar, buscar el mínimo, realizar cálculos algebraicos, etc.). No obstante, son tareas para las que generalmente los lenguajes ya ofrecen una respuesta, entre el conjunto de funciones que ofrecen. Es decir, en este proceso de aprendizaje, hemos trabajado de más, resolviendo problemas que ya tienen solución, ¡pero fue para poder aprender! Ahora vamos a mencionar algunas funcionalidades que evitan que tengamos que trabajar tanto. En R, el uso de vectores y matrices es muy sencillo gracias a la **vectorización**.
+
+::: {.condepto data-latex=""}
+Decimos que una operación es *vectorizada* cuando se aplica a todos los elementos de un vector (o matriz) de manera automática, sin necesidad de usar estructuras como `for` o `while`. Esto significa que no es necesario escribir instrucciones para acceder y modificar cada elemento por separado: simplemente escribimos la operación y R se encarga de aplicarla a todos los valores del objeto,haciendo que el código sea más conciso, fácil de leer y con menos chances de cometer errores.
+:::
+
+Por ejemplo, si tenemos un vector numérico y queremos sumar 1 a cada elemento, no necesitamos escribir una estructura `for`. Basta con:
+
+```{r}
+x <- c(3, 1, 6)
+x + 1
+```
+
+El resultado es un nuevo vector, también de tres elementos. Internamente, R realiza la operación `1 + 1`, `2 + 1` y `3 + 1`, pero nosotros no tenemos que preocuparnos por escribir esa lógica paso a paso. Esto nos ahorra tiempo, reduce la cantidad de código y disminuye las posibilidades de cometer errores. Comparemos este enfoque con una versión que usa un `for`:
+
+```{r}
+x <- c(3, 1, 6)
+for (i in seq_along(x)) {
+  x[i] <- x[i] + 1
+}
+x
+```
+
+Las formas vectorizadas, además, suelen ser más eficientes porque internamente R delega estas operaciones al lenguaje C, lo que las hace mucho más rápidas. El concepto de *vectorización* es uno de los pilares del lenguaje R y se aplica a operaciones aritméticas, comparaciones, funciones matemáticas, transformaciones de datos, entre muchas otras tareas.
+
+### Operaciones aritméticas vectorizadas
+
+Una de las formas más comunes de vectorización en R ocurre con las operaciones aritméticas básicas como suma (`+`), resta (`-`), multiplicación (`*`), división (`/`) y exponenciación (`^`), entro otras. Estas operaciones se aplican elemento a elemento cuando los operandos son vectores del mismo largo. Por ejemplo:
+
+```{r}
+a <- c(1, 2, 3)
+b <- c(10, 20, 30)
+
+a + b
+```
+
+Aquí R realizó las siguientes sumas: `1+10`, `2+20`, `3+30`.
+
+#### Operaciones entre un vector y un escalar
+
+También podemos operar un vector con un único valor (un escalar). En ese caso, R *recicla* automáticamente el escalar para que tenga la misma longitud que el vector:
+
+```{r}
+a <- c(1, 2, 3)
+a * 10
+```
+
+
+
+
+
+Es como si R hubiera hecho:
+
+```{r}
+c(1*10, 2*10, 3*10)
+```
+
+#### Operaciones entre vectores de distinto largo
+
+Si los vectores tienen diferente longitud, R intentará reciclar el más corto, repitiendo sus elementos hasta alcanzar la longitud del más largo. Si la longitud del más largo no es múltiplo exacto de la del más corto, R emitirá una advertencia:
+
+```{r}
+x <- c(1, 2, 3, 4)
+y <- c(10, 20)
+
+x + y
+```
+
+R realiza:
+
+```
+1 + 10
+2 + 20
+3 + 10
+4 + 20
+```
+
+Resultado:
+
+```{r}
+[1] 11 22 13 24
+```
+
+Y mostrará una advertencia del tipo:
+
+```{r}
+Warning message:
+In x + y : longer object length is not a multiple of shorter object length
+```
+
+Esto es útil, pero también puede provocar errores difíciles de detectar si no se controla con cuidado.
 
 
 ## Matrices
