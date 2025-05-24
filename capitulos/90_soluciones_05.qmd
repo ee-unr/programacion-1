@@ -566,9 +566,72 @@ cuadrado_magico <- function(cuadrado) {
 }
 ```
 
-## Manejo de Estructuras de Datos usando Funciones de R
+## Operaciones vectorizadas
 
 ### Ejercicio 11
+
+```{r}
+x <- c(2, 5, 8, 1, 9)
+x
+# a)
+log(x, base = 5)
+# b)
+which(x > 4)
+# c)
+x[x>4]
+# d)
+length(x[x>4])
+sum(x>4)
+# e)
+x[x %% 2 == 0]
+# f)
+sum(x[x>5])
+```
+
+### Ejercicio 12
+
+```{r}
+m <- matrix(1:9, nrow = 3)
+m
+# a)
+m + 10
+# b)
+m^(1/3)
+# c)
+m * 2
+# d)
+n <- matrix(9:1, nrow = 3)
+m - n
+# e)
+sum(m > 5)
+# f)
+m[m > 5]  # muestra los valores mayores que 5 como un vector
+# g)
+which(m > 5, arr.ind = TRUE)
+# h)
+sum(m)
+mean(m)
+rowSums(m)
+colSums(m)
+rowMeans(m)
+colMeans(m)
+```
+
+### Ejercicio 13
+
+```{r}
+x <- 1:20
+# a)
+x[x > 10 & x %% 3 == 0]
+# b)
+x[!(x %% 2 == 0 | x %% 5 == 0)]
+x[x %% 2 != 0 & x %% 5 != 0]
+# c)
+length(x[x %% 2 != 0 & x %% 5 != 0])
+sum(x %% 2 != 0 & x %% 5 != 0)
+```
+
+### Ejercicio 14
 
 a.  La función es `sum()`. Se puede usar tanto con vectores como con matrices.
     
@@ -654,30 +717,27 @@ f.  De la siguiente forma:
     min(A[3, ])
     # Para saber en qué columna de la fila 3 se encuentra su mínimo:
     which.min(A[3, ])
-    # Para obtener el mínimo en cada fila:
-    apply(A, 1, min)
-    # Para saber en qué columna se encuentra el mínimo de cada fila:
-    apply(A, 1, which.min)
+    # Con la función del ejecicio 8b
+    minimo_matriz_fila(A, 3)
     ```
 
 g.  Una posibilidad es:
     
     ```{r}
     cuadrado_magico <- function(cuadrado) {
-    	# Calcular el primer total fila para tener de control
-      control <- sum(cuadrado[1, ])
-      
+
       # Todos las sumas
       sumas_filas <- rowSums(cuadrado)
       sumas_col <- colSums(cuadrado)
       suma_diag1 <- sum(diag(cuadrado))
       suma_diag2 <- sum(diag(cuadrado[nrow(cuadrado):1, ]))
       
-      # Junto las sumas en un vector (arbitrariamente dejo afuera a suma_diag2)
+      # Junto las sumas en un vector, deberían ser todoas iguales
+      # Arbitrariamente dejo afuera a suma_diag2, para comparar con ella
       sumas <- c(sumas_filas, sumas_col, suma_diag1)
       
       # ¿Dieron igual todas las sumas?
-      return(all(sumas == suma_diag1))
+      return(all(sumas == suma_diag2))
     }
     
     cuadrado <- matrix(c(16,  3,  2, 13,
@@ -693,212 +753,3 @@ g.  Una posibilidad es:
     cuadrado_magico(cuadrado)
     ```
   
-### Ejercicio 12
-
-a.  
-    
-    ```{r}
-    #| echo: false
-    # set.seed asegura obtener la misma matriz, a pesar de que se genera aleatoriamente
-    set.seed(34)
-    m <- matrix(sample(100, 20), nrow = 4)
-    m
-    ```
-    
-    ```{r}
-    # Crear vector para guardar los promedios
-    promedios <- numeric(ncol(m))
-    # Calcular iterando a través de las filas
-    for (j in 1:ncol(m)) {
-      promedios[j] <- mean(m[, j])
-    }
-    promedios
-    ```
-
-b.  
-    
-    ```{r}
-    apply(m, 2, mean)
-    ```
-
-### Ejercicio 13
-
-a.  
-    
-    ```{r}
-    #| eval: false
-    d[[2]]
-    ```
-
-b.  
-    
-    ```{r}
-    #| eval: false
-    d[[1]][1] <- "M"
-    d
-    ```
-
-c.  
-    
-    ```{r}
-    # Creación de la lista
-    mi_lista <- list(1:10, "Buenas", TRUE)
-    mi_lista
-    
-    # De manera vectorizada le sumamos 2 a cada elemento del vector y lo guardamos en el mismo lugar
-    mi_lista[[1]] <- mi_lista[[1]] + 2
-    
-    # Cambiar el TRUE por FALSE
-    mi_lista[[3]] <- FALSE
-    mi_lista
-    ```
-
-### Ejercicio 14
-
-a.  Hay 5 objetos:
-  
-    - `cosa1`: vector numérico de largo 3
-    - `cosa2`: vector carácter de largo 5
-    - `cosa3`: matriz numérica de dimensión 10x3
-    - `cosa4`: lista con 4 elementos:
-    
-      - 1° elemento, con nombre "letras": matriz carácter de dimensión 3x6
-      - 2° elemento, con nombre "mediciones": vector numérico de largo 10
-      - 3° elemento, con nombre "respuestas": vector lógico de largo 6
-      - 4° elemento, con nombre "numeros":  matriz numérica de dimensión 10x10
-      
-    - `cosa5`: lista con 5 elementos, todos ellos vectores numéricos de distinto largo.
-    
-    ```{r}
-    load("../archivos/unidad5/popurri.RData")
-    ```
-
-b.  
-    
-    ```{r}
-    cosa1
-    names(cosa1) <- c("valorA", "valorB", "valorC")
-    cosa1
-    ```
-
-c.  
-    
-    ```{r}
-    cosa1[3]        # Indexando según posición
-    cosa1["valorC"] # Indexando según nombre
-    ```
-
-d.  
-    
-    ```{r}
-    cosa4[[2]]            # Indexando según posición
-    cosa4[["mediciones"]] # Indexando según nombre (1)
-    cosa4$mediciones      # Indexando según nombre (2)
-    ```
-
-e.  
-    
-    ```{r}
-    sort(cosa4$mediciones)
-    ```
-
-f.  
-    
-    ```{r}
-    t(cosa4$numeros)
-    ```
-
-g.  
-    
-    ```{r}
-    min(cosa4$numeros)
-    apply(cosa4$numeros, 2, max)
-    ```
-
-h.  
-    
-    ```{r}
-    x <- seq(1, 100, length.out = 9)
-    ```
-
-i.  
-    
-    ```{r}
-    y <- matrix(x, nrow = 3)
-    ```
-
-j.  
-    
-    ```{r}
-    z <- rbind(cosa4$numeros, y)
-    ```
-
-k.  
-    
-    ```{r}
-    w <- c(cosa1, cosa4$numeros, cosa1)
-    w
-    ```
-
-l. `lapply()` devuelve los resultados en una lista y `sapply()` en un vector.  
-```{r}
-# Con una estructura for
-maximos <- numeric(length(cosa5))
-for (i in 1:length(cosa5)) {
-  maximos[i] <- max(cosa5[[i]])
-}
-maximos
-
-# Con lapply
-lapply(cosa5, max)
-
-# Con sapply
-sapply(cosa5, max)
-```
-
-m.  Se aplica la función `max()` a cada elemento de la lista `cosa4`. En el vector `letras` obtuvo el "máximo" al ordenar los datos de tipo carácter alfabeticamente. En el vector `mediciones` obtuvo el máximo valor numérico. En el vector de valores lógicos `respuestas` el máximo fue 1 porque los valores `FALSE` son considerados como 0 y los `TRUE` como 1. En la matriz `numeros` obtuvo el máximo valor en toda la matriz.
-    
-    ```{r}
-    sapply(cosa4, max)
-    ```
-
-n.  Se aplica la función `sqrt()` a cada elemento de la lista `cosa4`, pero como hay elementos que no tienen datos numéricos, como el vector carácter `letras`, tratar de sacarles la raiz cuadrada produce un error.
-    
-    ```
-    lapply(cosa4, sqrt)
-    Error in FUN(X[[i]], ...) : non-numeric argument to mathematical function
-    ```
-
-o.  Se obtiene un vector lógico del mismo largo con un `TRUE` en cada posición donde hay un número mayor a cero y `FALSE` en caso contrario.
-  
-    ```{r}
-    cosa4$mediciones > 0
-    ```
-
-p.
-```{r}
-cosa4$mediciones[cosa4$mediciones > 0]
-```
-
-q.  
-    
-    ```{r}
-    v <- abs(cosa3) < 1
-    v
-    ```
-
-r.  En R los valores lógicos `TRUE` son evaluados como 1 y los `FALSE` como 0. Por eso al aplicarle la suma a una matriz de valores lógicos se obtiene la cantidad de valores `TRUE`. Luego, `sum(v)` nos dice cuántos valores en la matriz `cosa3` tienen valor absoluto menor que 1. `apply(v, 1, sum)` indica cuántos `TRUE` hay en cada fila, mientras que `apply(v, 2, sum)`, cuántos `TRUE` hay en cada columna.
-  
-    ```{r}
-    sum(v)
-    apply(v, 1, sum)
-    apply(v, 2, sum)
-    ```
-
-s.  
-    
-    ```{r}
-    w
-    w[w > 500] <- -100
-    w
-    ```
