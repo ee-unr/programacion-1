@@ -23,61 +23,61 @@ book:
   chapters:
     - index.qmd
     - capitulos/00_info.qmd
-    # - part: capitulos/01.qmd
-    #   chapters:
-    #     - capitulos/01_a_intro.qmd
-    #     - capitulos/01_b_primeros_pasos.qmd
-    #     - capitulos/01_c_objetos.qmd
-    #     - capitulos/01_d_operadores.qmd
-    #     - capitulos/01_e_organizacion.qmd
-    #     - capitulos/01_f_errores_estilo_paquetes.qmd
-    #     - capitulos/01_g_opcional.qmd
-    #     - capitulos/01_practica.qmd
-    #     - capitulos/01_actividad_autoevaluativa.qmd
-    # - part: capitulos/02.qmd
-    #   chapters:
-    #     - capitulos/02_1_if.qmd
-    #     - capitulos/02_2_for_while.qmd
-    #     - capitulos/02_practica.qmd
-    #     - capitulos/02_actividad_autoevaluativa.qmd
-    # - part: capitulos/03.qmd
-    #   chapters:
-    #     - capitulos/03_1_crear_funciones.qmd
-    #     - capitulos/03_2_ambito.qmd
-    #     - capitulos/03_3_varios.qmd
-    #     - capitulos/03_practica.qmd
-    #     - capitulos/03_actividad_autoevaluativa.qmd
-    # - part: capitulos/04.qmd
-    #   chapters:
-    #     - capitulos/04_1_terminal.qmd
-    #     - capitulos/04_2_programas_de_R.qmd
-    #     - capitulos/04_3_opcional.qmd
-    #     - capitulos/04_practica.qmd
-    #     - capitulos/04_actividad_autoevaluativa.qmd
+    - part: capitulos/01.qmd
+      chapters:
+        - capitulos/01_a_intro.qmd
+        - capitulos/01_b_primeros_pasos.qmd
+        - capitulos/01_c_objetos.qmd
+        - capitulos/01_d_operadores.qmd
+        - capitulos/01_e_organizacion.qmd
+        - capitulos/01_f_errores_estilo_paquetes.qmd
+        - capitulos/01_g_opcional.qmd
+        - capitulos/01_practica.qmd
+        - capitulos/01_actividad_autoevaluativa.qmd
+    - part: capitulos/02.qmd
+      chapters:
+        - capitulos/02_1_if.qmd
+        - capitulos/02_2_for_while.qmd
+        - capitulos/02_practica.qmd
+        - capitulos/02_actividad_autoevaluativa.qmd
+    - part: capitulos/03.qmd
+      chapters:
+        - capitulos/03_1_crear_funciones.qmd
+        - capitulos/03_2_ambito.qmd
+        - capitulos/03_3_varios.qmd
+        - capitulos/03_practica.qmd
+        - capitulos/03_actividad_autoevaluativa.qmd
+    - part: capitulos/04.qmd
+      chapters:
+        - capitulos/04_1_terminal.qmd
+        - capitulos/04_2_programas_de_R.qmd
+        - capitulos/04_3_opcional.qmd
+        - capitulos/04_practica.qmd
+        - capitulos/04_actividad_autoevaluativa.qmd
     - part: capitulos/05.qmd
       chapters:
         - capitulos/05_1_arreglos.qmd
-        - capitulos/05_2_operaciones_vectorizadas.qmd
+    #     - capitulos/05_2_operaciones_vectorizadas.qmd
     #     - capitulos/05_3_listas.qmd
     #     - capitulos/05_4_varios.qmd
-        # - capitulos/05_practica.qmd
+        - capitulos/05_practica.qmd
     #     - capitulos/05_actividad_autoevaluativa.qmd
     # - part: capitulos/06.qmd
     #   chapters:
     #     - capitulos/06_1_.qmd
     #     - capitulos/06_practica.qmd
     #     - capitulos/06_actividad_autoevaluativa.qmd
-    # - part: capitulos/90.qmd
-    #   chapters:
-    #     - capitulos/90_soluciones_01.qmd
-    #     - capitulos/90_soluciones_02.qmd
-    #     - capitulos/90_soluciones_03.qmd
-    #     - capitulos/90_soluciones_04.qmd
-    #     - capitulos/90_soluciones_05.qmd
+    - part: capitulos/90.qmd
+      chapters:
+        - capitulos/90_soluciones_01.qmd
+        - capitulos/90_soluciones_02.qmd
+        - capitulos/90_soluciones_03.qmd
+        - capitulos/90_soluciones_04.qmd
+        - capitulos/90_soluciones_05.qmd
         # - capitulos/90_soluciones_06.qmd
-  # appendices:
-  #   - capitulos/98_tp.qmd
-  #   - capitulos/99_bibliografia.qmd
+  appendices:
+    - capitulos/98_tp.qmd
+    - capitulos/99_bibliografia.qmd
 
 lang: es
 
