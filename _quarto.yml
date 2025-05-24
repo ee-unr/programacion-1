@@ -57,7 +57,7 @@ book:
     - part: capitulos/05.qmd
       chapters:
         - capitulos/05_1_arreglos.qmd
-    #     - capitulos/05_2_operaciones_vectorizadas.qmd
+        - capitulos/05_2_operaciones_vectorizadas.qmd
     #     - capitulos/05_3_listas.qmd
     #     - capitulos/05_4_varios.qmd
         - capitulos/05_practica.qmd

@@ -51,8 +51,8 @@ Visitá periódicamente este cronograma para autogestionar tu tránsito por los 
 | 8          | 5/5 al 11/5      | Semana del parcial | Estudio y repaso     | Estudio y repaso          | **Parcial**: jue 8/5 a las 18:00, todas las comisiones juntas     |
 | 9          | 12/5 al 18/5     | Unidad 4           | 19 a 21              | Todos los ejercicios      |                                                                      |
 | 10         | 19/5 al 25/5     | Unidad 5           | 24                   | 1 a 10                    |                                                                      |
-| 11         | 26/5 al 1/6      | Unidad 5           | 25                   | A definir                 |                                               |
-| 12         | 2/6 al 8/6       | Unidad 5           | 26                   | A definir                 |                                                                      |
+| 11         | 26/5 al 1/6      | Unidad 5           | 25                   | 11 a 14                   |                                               |
+| 12         | 2/6 al 8/6       | Unidad 5           | 26                   | 15 en adelante            |                                                                      |
 | 13         | 9/6 al 15/6      | Recup. / Unidad 6  | A definir            | A definir                 | **Entrega TP**: martes 10/6. **Recup**: jue 12/6 a la tardecita, todas las comisiones juntas      |
 | 14         | 16/6 al 22/6     | Unidad 6           | A definir            | A definir                 | **Entrega tarea promoción**: dom 22/6. Feriados: lun 16/6 y vie 20/6 |
 | 15         | 23/6 al 29/6     | Unidad 6           | A definir            | A definir                 | Vie 27/6: notificación de la condición final en la asignatura        |
