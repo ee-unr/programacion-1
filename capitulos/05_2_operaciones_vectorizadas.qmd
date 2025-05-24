@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 ```{=latex}
 \thispagestyle{primerapagina}
 ```
@@ -5,18 +10,434 @@
 # Operaciones vectorizadas
 
 ::: {.presentacion-capitulo data-latex=""}
-
+En R, muchas funciones y operadores están diseñados para trabajar directamente con vectores completos, sin necesidad de escribir bucles explícitos para recorrer elemento por elemento. Esta capacidad se conoce como **vectorización** y es una de las características más poderosas y distintivas del lenguaje. Usar **operaciones vectorizadas** permite escribir código más compacto, más rápido y más fácil de leer. En este capítulo exploraremos qué significa que una operación sea vectorizada, cómo se comportan estas operaciones en distintos contextos y qué ventajas ofrece esta forma de programación. Ya que ahora conocemos cómo se construyen vectores y matrices y cómo acceder a sus elementos, es el momento de aprender a operar sobre ellos de manera eficiente.
 :::
 
-## Vectores
+Con los conocimientos compartidos hasta aquí en esta unidad somos capaces de escribir interesantes algoritmos y programas para operar con vectores y matrices (por ejemplo: ordenar, buscar el mínimo, realizar cálculos algebraicos, etc.). No obstante, son tareas para las que generalmente los lenguajes ya ofrecen una respuesta, entre el conjunto de funciones que ofrecen. Es decir, en este proceso de aprendizaje, hemos trabajado de más, resolviendo problemas que ya tienen solución, ¡pero fue para poder aprender! Ahora vamos a mencionar algunas funcionalidades que evitan que tengamos que trabajar tanto. En R, el uso de vectores y matrices es muy sencillo gracias a la **vectorización**.
 
+::: {.concepto data-latex=""}
+Decimos que una operación es *vectorizada* cuando se aplica a todos los elementos de un vector (o matriz) de manera automática, sin necesidad de usar estructuras como `for` o `while`. Esto significa que no es necesario escribir instrucciones para acceder y modificar cada elemento por separado: simplemente escribimos la operación y R se encarga de aplicarla a todos los valores del objeto,haciendo que el código sea más conciso, fácil de leer y con menos chances de cometer errores.
+:::
 
-## Matrices
+Por ejemplo, si tenemos un vector numérico y queremos sumar 1 a cada elemento, no necesitamos escribir una estructura `for`. Basta con:
 
+```{r}
+v <- c(3, 1, 6)
+v + 1
+```
+
+El resultado es un nuevo vector, también de tres elementos. Internamente, R realiza la operación `1 + 1`, `2 + 1` y `3 + 1`, pero nosotros no tenemos que preocuparnos por escribir esa lógica paso a paso. Esto nos ahorra tiempo, reduce la cantidad de código y disminuye las posibilidades de cometer errores. Comparemos este enfoque con una versión que usa un `for`:
+
+```{r}
+v <- c(3, 1, 6)
+for (i in seq_along(v)) {
+  v[i] <- v[i] + 1
+}
+v
+```
+
+Lo mismo ocurre con las matrices. Supongamos que queremos sumar las matrices `m1` y `m2`:
+
+```{r}
+m1 <- matrix(c(5, 8, 2, 2, 3, 1), nrow = 3)
+m1
+m2 <- matrix(c(0, -1, 3, 1, 2, 4), nrow = 3)
+m2
+```
+
+Podemos hacer la suma celda por celda con dos estructuras `for` anidadas:
+
+```{r}
+suma <- matrix(NA, nrow(m1), ncol(m1))
+for (i in 1:nrow(m1)) {
+    for (j in 1:ncol(m1)) {
+        suma[i, j] <- m1[i, j] + m2[i, j]
+    }
+}
+suma
+```
+
+No obstante, gracias a la vectorización, todo lo anterior puede ser reemplazado sencillamente por:
+
+```{r}
+m1 + m2
+```
+
+Las formas vectorizadas, además, suelen ser más eficientes porque internamente R delega estas operaciones al lenguaje C, lo que las hace mucho más rápidas. El concepto de *vectorización* es uno de los pilares del lenguaje R y se aplica a operaciones aritméticas, comparaciones, funciones matemáticas, transformaciones de datos, entre muchas otras tareas.
+
+## Operaciones aritméticas vectorizadas
+
+Una de las formas más comunes de vectorización en R ocurre con las operaciones aritméticas básicas como suma (`+`), resta (`-`), multiplicación (`*`), división (`/`) y exponenciación (`^`), entro otras. Estas operaciones se aplican elemento a elemento cuando los operandos son vectores o matrices del mismo largo o dimensión (como en el caso visto recién). 
+
+Acá R realiza las siguientes sumas: `1+10`, `2+20`, `3+30`:
+
+```{r}
+v1 <- c(1, 2, 3)
+v2 <- c(10, 20, 30)
+
+v1 + v2
+```
+
+En este caso, R toma cada valor de `m1` y lo divide por el valor de `m2` que está en la misma posición:
+
+```{r}
+m1 / m2
+```
+
+## Operaciones entre un arreglo y un escalar
+
+También podemos realizar operaciones entre una matriz o vector y un vector con un único valor (un escalar), como en el primer ejemplo de este capítulo. En ese caso, R *recicla* automáticamente el escalar para que tenga la misma longitud que el vector:
+
+```{r}
+a <- c(1, 2, 3)
+a * 10
+```
+
+Es como si R hubiera hecho:
+
+```{r}
+a * c(10, 10, 10)
+```
+
+o bien:
+
+```{r}
+c(1 * 10, 2 * 10, 3 * 10)
+```
+
+Lo mismo ocurre con las matrices. En los siguientes caso, R toma cada valor de `m2` y lo eleva al cuadrado:
+
+```{r}
+m2^2
+```
+
+## Operaciones entre vectores de distinto largo
+
+Si los vectores tienen diferente longitud, R intentará reciclar el más corto, repitiendo sus elementos hasta alcanzar la longitud del más largo:
+
+```{r}
+v1 <- c(1, 2, 3, 4)
+v2 <- c(10, 20)
+
+v1 + v2
+```
+
+En este caso, R realiza:
+
+```r
+1 + 10
+2 + 20
+3 + 10
+4 + 20
+```
+
+Si la longitud del más largo no es múltiplo exacto de la del más corto, R emitirá una advertencia:
+
+```{r}
+#| warning: true
+v1 <- c(1, 2, 3)
+v2 <- c(10, 20)
+
+v1 + v2
+```
+
+Si bien este comportamiento parece práctico, puede provocar errores difíciles de detectar si no se controla con cuidado, en especial cuando se trabaja con matrices. Es preferible siempre chequear que las dimensiones de los elementos con los que operamos sean los esperados y no hacer uso de esta posibilidad.
+
+## Funciones vectorizadas
+
+En R, muchas funciones están diseñadas para operar de manera vectorizada. Esto quiere decir que si pasamos como argumento un vector o matriz, R aplica la función matemática a cada uno de sus elementos. Por ejemplo, si tenemos un vector de números, podemos obtener la raíz cuadrada de cada uno con una sola línea:
+
+```{r}
+v1 <- c(1, 4, 9, 16)
+sqrt(v2)
+```
+
+Si tenemos un vector de cadenas de texto, podemos ver cuántos caracteres hay en cada uno:
+
+```{r}
+v2 <- c("hola", "mundo")
+nchar(v2)
+```
+
+Otros ejemplos de funciones matemáticas vectorizadas aplicadas a vectores numéricos:
+
+```{r}
+v1 <- c(2.5, 3.7, -1.2)
+
+round(v1)    # Redondeo al entero más cercano
+ceiling(v1)  # Techo (entero inmediato superior)
+floor(v1)    # Piso (entero inmediato inferior)
+abs(v1)      # Valor absoluto
+sin(v1)      # Seno
+```
+
+Es análogo con matrices:
+
+```{r}
+m1 <- matrix(c(5, 8, 2, 2, 3, 1), nrow = 3)
+m1
+
+log(m1)
+sqrt(m1)
+```
+
+Por supuesto, R proporciona muchas funciones estadísticas que trabajan de forma *vectorizada*, es decir, que procesan todos los elementos de un vector en una sola llamada. Estas funciones son muy eficientes y permiten escribir código compacto para obtener resúmenes estadísticos básicos. Si bien la exploración estadística de datos no es objeto de esta asignatura, mencionamos algunas de estas funciones:
+
+* `sum(v1)`: suma todos los elementos del vector `v1`.
+* `mean(v1)`: calcula el promedio (media aritmética).
+* `median(v1)`: calcula la mediana.
+* `min(v1)`, `max(v1)`: devuelven el mínimo y el máximo.
+* `range(v1)`: devuelve un vector con el mínimo y el máximo.
+* `sd(v1)`, `var(v1)`: calculan el desvío estándar y la variancia.
+* `quantile(x, probs = c(0.25, 0.5, .75))`: calcula los cuartiles.
+* `IQR(v1)`: calcula el rango intercuartil.
+* `prod(v1)`: multiplica todos los elementos.
+
+```{r}
+v1 <- c(2, 4, 6, 8)
+range(v1)
+mean(v1)
+median(v1)
+sd(v1)
+quantile(v1, probs = c(0.25, 0.5, .75))
+prod(v1)
+```
+
+También pueden ser aplicadas a matrices, por ejemplo:
+
+```{r}
+sum(m1)
+sum(m1) / (nrow(m1) * ncol(m2))
+mean(m1)
+sd(m1)
+```
+
+En lugar de aplicar estas funciones estadísticas sobre todos los valores de una matriz, es más común hacerlo sobre vectores, ya que los mismos suelen representar datos observados de alguna variable. En cambio, suele ser más común calcular estos resúmenes numéricos para cada una de las filas o columnas de una matriz:
+
+- Suma y media de los elementos de cada fila:
+  
+  ```{r}
+  rowSums(m1)
+  rowMeans(m1)
+  rowSums(m1) / ncol(m1)
+  ```
+
+- Suma y media de los elementos de cada columna:
+
+  ```{r}
+  colSums(m1)
+  colMeans(m1)
+  colSums(m1) / nrow(m1)
+  ```
+
+## Búsqueda de mínimos y máximos en arreglos numéricos
+
+De esta forma podemos encontrar el valor mínimo y su ubicación en un vector numérico:
+
+```{r}
+x <- c(40, 70, 20, 90, 20)
+min(x)
+which.min(x)       # si el mínimo se repite, esta es la posición del primero
+which(x == min(x)) # si el mínimo se repite, esto muestra todas sus posiciones
+```
+
+Y así, encontrar el valor máximo y su ubicación en el vector:
+
+```{r}
+max(x)
+which.max(x)       # si el máximo se repite, esta es la posición del primero
+which(x == max(x)) # si el máximo se repite, esto muestra todas sus posiciones
+```
+
+Cuando se trata de una matriz, tenemos:
+
+```{r}
+m1
+
+# Valor máximo
+max(m1)
+# Posición (arr.ind = TRUE para que nos indique fila y columna)
+which(m1 == max(m1), arr.ind = TRUE)
+
+# Valor mínimo
+min(m1)
+# Posición
+which(m1 == min(m1), arr.ind = TRUE)
+```
+
+## Álgebra matricial
+
+Como aprenderán en Álgebra, las matrices numéricas son muy útiles en diversos campos y por eso existen distintas operaciones que se pueden realizar con las mismas. Veamos algunos ejemplos de la aplicación del álgebra matricial en R:
+
+- Transpuesta de una matriz:
+  
+  ```{r}
+  m1
+  t(m1)
+  ```
+
+- Producto entre dos matrices (la cantidad de columnas de la primera debe coincidir con la cantidad de filas de la segunda):
+  
+  ```{r}
+  m3 <- matrix(1:4, nrow = 2)
+  m1
+  m3
+  m1 %*% m3
+  ```
+
+- Inversa de la matriz:
+  
+  ```{r}
+  solve(m3)
+  ```
+
+- Obtener los elementos de la diagonal principal:
+  
+  ```{r}
+  diag(m3)
+  ```
+
+- Crear una matriz identidad:
+  
+  ```{r}
+  diag(5)
+  ```
 
 ## Operaciones lógicas vectorizadas
 
+Al igual que las funciones matemáticas, los operadores de comparación en R también están vectorizados. Esto significa que podemos comparar cada elemento de un vector o una matriz con un valor, o comparar dos arreglos entre sí, sin necesidad de usar bucles y obteniendo como resultado otro arreglo de valores lógicos.
 
-## Indexación con vectores
+### Comparaciones lógicas entre arreglos
 
+Cuando dos vectores o matrices se vinculan a través de una comparación, se opera elemento a elemento obteniendo un vector o matriz de valores lógicos:
 
+```{r}
+v1 <- c(40, 70, 20, 90, 20)
+v2 <- c(10, 70, 30, 15, 21)
+v1 > v2
+v1 < v2 * 5
+
+m1 <- matrix(c(5, 8, 2, 2, 3, 1), nrow = 3)
+m2 <- matrix(c(0, -1, 3, 1, 2, 4), nrow = 3)
+m1
+m2
+m1 != m2
+m1 > m2
+```
+
+Si tenemos un vector o matriz de valores lógicos y queremos saber si todos o al menos uno de los elementos es igual a `TRUE`, podemos usar las funciones `all()` y `any()`, respectivamente:
+
+```{r}
+all(m1 != m2)
+any(m1 != m2)
+all(m1 > m2)
+any(m1 > m2)
+```
+
+### Comparaciones lógicas entre un arreglo y un valor
+
+Las operaciones de comparación pueden hacerse entre cada elemento de un vector o matriz y un único valor. Recordemos los vectores y matrices que estamos usando:
+
+```{r}
+v1
+v2
+m1
+m2
+```
+
+Ahora veamos ejemplos de comparaciones lógicas entre ellos y un número:
+
+```{r}
+v1 < 50
+m1 == 3
+m2 > 0
+```
+
+Los operadores lógicos que se utilizan para realizar cálculos elemento a elemento con vectores y matrices son `&`, `\` y `!`. Ellos nos permiten crear expresiones aún más complejas:
+
+```{r}
+v1 < 50 & v2 > 50
+m1 < 0 | m2 > 0
+!(v1 <= 50)
+```
+
+## Formas de indexación múltiple
+
+Como ya sabemos, indexar es hacer referencia a uno o más elementos particulares dentro de una estructura de datos. Una de las formas más potentes y expresivas de trabajar con vectores en R es a través de la *indexación lógica*. Esta técnica permite seleccionar elementos de un arreglo usando condiciones que generan vectores lógicos (`TRUE` o `FALSE`).
+
+### Indexación múltiple en base a posiciones
+
+Conocemos que para indexar a un vector, hace falta sólo un índice:
+
+```{r}
+v1 <- c(10.4, 5.6, 3.1, 6.4, 21.7)
+v1[3]
+```
+
+Y que para indexar matrices, son necesarios dos índices:
+
+```{r}
+m1 <- matrix(c(4,-2, 1, 20, -7, 12, -8, 13, 17), nrow = 3)
+m1
+m1[2, 3]
+```
+
+Pero también podemos indexar a múltiples elementos de un vector o una matriz a la vez. Los siguientes ejemplos presentan distintas formas de seleccionar varias posiciones de un vector en simultáneo:
+
+```{r}
+# Vector v1
+v1
+# Mostrar los primeros tres elementos del vector v1
+v1[1:3]
+# Mostrar los elementos en las posiciones 2 y 4
+v1[c(2, 4)]
+# Mostrar el último elemento
+v1[length(v1)]
+# Bonus: Mostrar todos los elementos menos el cuarto
+v1[-4]
+```
+
+Para las matrices:
+
+```{r}
+# Matriz m1
+m1
+# Filas 2 y 3, columna 2
+m1[2:3, 2]
+# Filas 1 y 3, columna 1
+m1[c(1, 3), 1]
+# Toda la fila 3
+m1[3, ]
+# Toda la columna 2
+m1[, 2]
+# Submatriz con las columnas 1 y 2
+m1[, 1:2]
+# Submatriz con las columnas 1 y 3
+m1[, c(1, 3)]
+# Asignar el mismo valor en toda la fila 3
+m1[3, ] <- 10
+m1
+```
+
+### Indexación múltiple en base a comparaciones lógicas
+
+Ya hemos visto que, además de utilizar enteros para señalar posiciones, también podemos indexar usando *nombres* si los arreglos tienen seteado su atributo *names*. No obstante, estas no son las únicas formas de indexar: también podemos hacerlo con valores lógicos `TRUE` o `FALSE`.
+
+```{r}
+# Vector v1
+v1
+# Indexar con valores lógicos. Obtenemos sólo las posiciones indicadas con TRUE:
+v1[c(FALSE, FALSE, TRUE, TRUE, FALSE)]
+# Sabiendo que la siguiente operación devuelve TRUE o FALSE para cada posición 
+# de v1...
+v1 > 10
+# ...podemos usarLA para quedarnos con aquellos elementos de x mayores a 10:
+v1[v1 > 10]
+```
+
+Este tipo de expresión es muy habitual en el análisis de datos, ya que permite extraer subconjuntos en forma directa y legible. También se puede combinar con asignación de valor:
+
+```{r}
+v1[v1 < 10] <- 0
+v1
+```
