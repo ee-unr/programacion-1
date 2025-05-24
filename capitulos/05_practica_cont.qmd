@@ -1,0 +1,324 @@
+# ENUNCIADOS
+
+### Ejercicio 12
+
+**Comparación entre `for` y `apply`**
+
+Dada la matriz `m`:
+
+```{r}
+# set.seed asegura obtener la misma matriz, a pesar de que se genera aleatoriamente
+set.seed(34)
+m <- matrix(sample(100, 20), nrow = 4)
+m
+```
+
+calcular la media de cada columna de dos maneras diferentes:
+
+a.  Usando una estructura iterativa `for()`.
+b.  Usando la función `apply()`.
+
+En ambos casos se puede usar la función de R `mean()` o definir una nueva función propia para calcular un promedio.
+
+### Ejercicio 13
+
+**Preguntas sobre listas en R**
+
+a.  Dados los siguientes objetos, ¿cuál es el valor de `d[[2]]`? Responder sin correr el código. Luego verificar.
+
+    ```{r}
+    #| eval: false
+    a <- c(2, 1, 9)
+    b <- c("X", "Y", "Z")
+    d <- list(b, a)
+    ```
+
+b.  Dados los objetos anteriores, ¿qué sentencia reemplazará la "X" en la lista `d` por el valor "M"? Elegir la respuesta correcta sin correr el código. Luego verificar.
+
+	1. `d[[1]] <- "M"`
+	2. `d[[1]][1] <- "M"`
+	3. `d[[2]][1] <- "M"`
+	4. `d[[1]][2] <- "M"`
+
+c.  Dada la lista: `mi_lista <- list(1:10, "Buenas", TRUE)`, escribir código que permita sumarle un 2 a cada elemento del primer vector dentro de la lista y que cambie el valor `TRUE` por un `FALSE`.
+
+### Ejercicio 14
+
+**Popurrí**
+
+```{r, crear-popurri}
+#| eval: false
+#| echo: false
+
+rm(list = ls())
+set.seed(35)
+cosa1 <- runif(3)
+cosa2 <- c("libro", "pc", "anotador", "celular", "lapicera")
+cosa3 <- matrix(rnorm(30), 10, 3)
+cosa4 <- list(
+  letras = matrix(sample(LETTERS, 18), 3, 6),
+  mediciones = rnorm(10),
+  respuestas = c(T, F, F, T, F, F),
+  numeros = matrix(sample(1000, 30), 10, 3)
+)
+cosa5 <- list(rnorm(5), rnorm(4), rnorm(10), rnorm(3), rnorm(8))
+save(cosa1, cosa2, cosa3, cosa4, cosa5, file = "archivos/unidad5/popurri.RData")
+```
+
+```{r}
+#| echo: false
+load("../archivos/unidad5/popurri.RData")
+```
+
+Cargar en el ambiente el archivo [`popurri.RData`](https://github.com/ee-unr/programacion-1/raw/refs/heads/main/archivos/unidad5/popurri.RData) y resolver las siguientes consignas:
+
+a.  ¿Cuántos objetos están guardados en ese archivo y de qué tipo es cada uno?
+
+b.  Asignar los siguientes nombres a los elementos guardados en el vector `cosa1`: `valorA`, `valorB` y `valorC`.
+
+c.  Acceder al tercer elemento guardado en el vector `cosa1` de dos formas distintas: indexando según su posición y según su nombre.
+
+d.  Acceder al segundo elemento guardado en la lista `cosa4` de tres formas distintas.
+
+e.  Ordenar de menor a mayor los elementos del vector numérico perteneciente a la lista `cosa4`.
+
+f.  Obtener la matriz traspuesta de la matriz que ocupa la cuarta posición en la lista `cosa4`.
+
+g.  Obtener el mínimo valor de la matriz numérica guardada en la lista `cosa4` y el máximo de cada una de sus columnas.
+
+h.  Utilizar la función `seq()` para crear un vector llamado `x` con 9 números equiespaciados entre 1 y 100.
+
+i.  Con los valores del vector `x` crear una matriz de dimensión 3x3 llamada `y`.
+
+j.  Concatenar verticalmente la matriz `numeros` de la lista `cosa4` y la matriz `y` del punto anterior con la función `rbind()` para formar una nueva matriz llamada `z` de dimensión 13x3.
+
+k.  Crear un nuevo vector `w` que contenga primero a todos los elementos del vector `cosa1`, luego todos los del vector `mediciones` de la lista `cosa4` y finalmente otra vez todos los elementos del vector `cosa1`.
+
+l.  Hallar el valor máximo en cada vector numérico de la lista `cosa5` de tres formas distintas: con un `for`, con `lapply()` y con `sapply()`. ¿En qué difieren las formas en las que las últimas dos muestran los resultados?
+
+m.  Ejecutar `sapply(cosa4, max)`. Explicar qué hace esa acción y por qué se obtiene cada resultado.
+
+n.  Ejecutar `lapply(cosa4, sqrt)`. Explicar qué hace esa acción y por qué se obtiene cada resultado. 
+
+o.  Tomar el vector `mediciones` de la lista `cosa4` y ejecutar: `cosa4$mediciones > 0`. ¿Qué se obtiene?
+
+p.  Utilizar el resultado del punto anterior para mostrar únicamente los valores del vector `mediciones` que son mayores a cero.
+
+q.  Generar una matriz de valores lógicos llamada `v` que tenga `TRUE` en las celdas donde el valor absoluto de los valores de `cosa3` son menores a 1 y `FALSE` donde es mayor o igual a 1.
+
+r.  Ejecutar `sum(v)` e interpretar qué representa el valor obtenido. Hacer lo mismo con `apply(v, 1, sum)` y `apply(v, 2, sum)`.
+
+s.  Reemplazar en el vector `w` todos los valores mayores a 500 por el valor -100.
+
+
+# SOLUCIONES
+
+### Ejercicio 12
+
+a.  
+    
+    ```{r}
+    #| echo: false
+    # set.seed asegura obtener la misma matriz, a pesar de que se genera aleatoriamente
+    set.seed(34)
+    m <- matrix(sample(100, 20), nrow = 4)
+    m
+    ```
+    
+    ```{r}
+    # Crear vector para guardar los promedios
+    promedios <- numeric(ncol(m))
+    # Calcular iterando a través de las filas
+    for (j in 1:ncol(m)) {
+      promedios[j] <- mean(m[, j])
+    }
+    promedios
+    ```
+
+b.  
+    
+    ```{r}
+    apply(m, 2, mean)
+    ```
+
+### Ejercicio 13
+
+a.  
+    
+    ```{r}
+    #| eval: false
+    d[[2]]
+    ```
+
+b.  
+    
+    ```{r}
+    #| eval: false
+    d[[1]][1] <- "M"
+    d
+    ```
+
+c.  
+    
+    ```{r}
+    # Creación de la lista
+    mi_lista <- list(1:10, "Buenas", TRUE)
+    mi_lista
+    
+    # De manera vectorizada le sumamos 2 a cada elemento del vector y lo guardamos en el mismo lugar
+    mi_lista[[1]] <- mi_lista[[1]] + 2
+    
+    # Cambiar el TRUE por FALSE
+    mi_lista[[3]] <- FALSE
+    mi_lista
+    ```
+
+### Ejercicio 14
+
+a.  Hay 5 objetos:
+  
+    - `cosa1`: vector numérico de largo 3
+    - `cosa2`: vector carácter de largo 5
+    - `cosa3`: matriz numérica de dimensión 10x3
+    - `cosa4`: lista con 4 elementos:
+    
+      - 1° elemento, con nombre "letras": matriz carácter de dimensión 3x6
+      - 2° elemento, con nombre "mediciones": vector numérico de largo 10
+      - 3° elemento, con nombre "respuestas": vector lógico de largo 6
+      - 4° elemento, con nombre "numeros":  matriz numérica de dimensión 10x10
+      
+    - `cosa5`: lista con 5 elementos, todos ellos vectores numéricos de distinto largo.
+    
+    ```{r}
+    load("../archivos/unidad5/popurri.RData")
+    ```
+
+b.  
+    
+    ```{r}
+    cosa1
+    names(cosa1) <- c("valorA", "valorB", "valorC")
+    cosa1
+    ```
+
+c.  
+    
+    ```{r}
+    cosa1[3]        # Indexando según posición
+    cosa1["valorC"] # Indexando según nombre
+    ```
+
+d.  
+    
+    ```{r}
+    cosa4[[2]]            # Indexando según posición
+    cosa4[["mediciones"]] # Indexando según nombre (1)
+    cosa4$mediciones      # Indexando según nombre (2)
+    ```
+
+e.  
+    
+    ```{r}
+    sort(cosa4$mediciones)
+    ```
+
+f.  
+    
+    ```{r}
+    t(cosa4$numeros)
+    ```
+
+g.  
+    
+    ```{r}
+    min(cosa4$numeros)
+    apply(cosa4$numeros, 2, max)
+    ```
+
+h.  
+    
+    ```{r}
+    x <- seq(1, 100, length.out = 9)
+    ```
+
+i.  
+    
+    ```{r}
+    y <- matrix(x, nrow = 3)
+    ```
+
+j.  
+    
+    ```{r}
+    z <- rbind(cosa4$numeros, y)
+    ```
+
+k.  
+    
+    ```{r}
+    w <- c(cosa1, cosa4$numeros, cosa1)
+    w
+    ```
+
+l. `lapply()` devuelve los resultados en una lista y `sapply()` en un vector.  
+```{r}
+# Con una estructura for
+maximos <- numeric(length(cosa5))
+for (i in 1:length(cosa5)) {
+  maximos[i] <- max(cosa5[[i]])
+}
+maximos
+
+# Con lapply
+lapply(cosa5, max)
+
+# Con sapply
+sapply(cosa5, max)
+```
+
+m.  Se aplica la función `max()` a cada elemento de la lista `cosa4`. En el vector `letras` obtuvo el "máximo" al ordenar los datos de tipo carácter alfabeticamente. En el vector `mediciones` obtuvo el máximo valor numérico. En el vector de valores lógicos `respuestas` el máximo fue 1 porque los valores `FALSE` son considerados como 0 y los `TRUE` como 1. En la matriz `numeros` obtuvo el máximo valor en toda la matriz.
+    
+    ```{r}
+    sapply(cosa4, max)
+    ```
+
+n.  Se aplica la función `sqrt()` a cada elemento de la lista `cosa4`, pero como hay elementos que no tienen datos numéricos, como el vector carácter `letras`, tratar de sacarles la raiz cuadrada produce un error.
+    
+    ```
+    lapply(cosa4, sqrt)
+    Error in FUN(X[[i]], ...) : non-numeric argument to mathematical function
+    ```
+
+o.  Se obtiene un vector lógico del mismo largo con un `TRUE` en cada posición donde hay un número mayor a cero y `FALSE` en caso contrario.
+  
+    ```{r}
+    cosa4$mediciones > 0
+    ```
+
+p.
+```{r}
+cosa4$mediciones[cosa4$mediciones > 0]
+```
+
+q.  
+    
+    ```{r}
+    v <- abs(cosa3) < 1
+    v
+    ```
+
+r.  En R los valores lógicos `TRUE` son evaluados como 1 y los `FALSE` como 0. Por eso al aplicarle la suma a una matriz de valores lógicos se obtiene la cantidad de valores `TRUE`. Luego, `sum(v)` nos dice cuántos valores en la matriz `cosa3` tienen valor absoluto menor que 1. `apply(v, 1, sum)` indica cuántos `TRUE` hay en cada fila, mientras que `apply(v, 2, sum)`, cuántos `TRUE` hay en cada columna.
+  
+    ```{r}
+    sum(v)
+    apply(v, 1, sum)
+    apply(v, 2, sum)
+    ```
+
+s.  
+    
+    ```{r}
+    w
+    w[w > 500] <- -100
+    w
+    ```

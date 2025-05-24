@@ -566,3 +566,190 @@ cuadrado_magico <- function(cuadrado) {
 }
 ```
 
+## Operaciones vectorizadas
+
+### Ejercicio 11
+
+```{r}
+x <- c(2, 5, 8, 1, 9)
+x
+# a)
+log(x, base = 5)
+# b)
+which(x > 4)
+# c)
+x[x>4]
+# d)
+length(x[x>4])
+sum(x>4)
+# e)
+x[x %% 2 == 0]
+# f)
+sum(x[x>5])
+```
+
+### Ejercicio 12
+
+```{r}
+m <- matrix(1:9, nrow = 3)
+m
+# a)
+m + 10
+# b)
+m^(1/3)
+# c)
+m * 2
+# d)
+n <- matrix(9:1, nrow = 3)
+m - n
+# e)
+sum(m > 5)
+# f)
+m[m > 5]  # muestra los valores mayores que 5 como un vector
+# g)
+which(m > 5, arr.ind = TRUE)
+# h)
+sum(m)
+mean(m)
+rowSums(m)
+colSums(m)
+rowMeans(m)
+colMeans(m)
+```
+
+### Ejercicio 13
+
+```{r}
+x <- 1:20
+# a)
+x[x > 10 & x %% 3 == 0]
+# b)
+x[!(x %% 2 == 0 | x %% 5 == 0)]
+x[x %% 2 != 0 & x %% 5 != 0]
+# c)
+length(x[x %% 2 != 0 & x %% 5 != 0])
+sum(x %% 2 != 0 & x %% 5 != 0)
+```
+
+### Ejercicio 14
+
+a.  La función es `sum()`. Se puede usar tanto con vectores como con matrices.
+    
+    ```{r}
+    mi_vector <- c(60, -5, 0, 12, 1)
+    # Nuestra función
+    suma(mi_vector)
+    # La función de R Base
+    sum(mi_vector)
+    ```
+
+b.  Basta con hacer:
+    
+    ```{r}
+    u <- c(5, 8, 2)
+    v <- c(2, 3, -1)
+    u + v
+    A <- matrix(c(5, 8, 2, 2, 3, 1), nrow = 3)
+    B <- matrix(c(0, -1, 3, 1, 2, 4), nrow = 3)
+    A + B
+    ```
+
+c.  La función es `sort()`
+    
+    ```{r}
+    mi_vector <- c(60, -5, 0, 12, 1)
+    # Por defecto, sort() ordena de forma ascendente
+    sort(mi_vector)
+    # Podemos definir decreasing = TRUE para ordenar en forma descendente
+    sort(mi_vector, decreasing = TRUE)
+    ```
+    
+    Si se aplica en vectores de tipo carácter, ordena alfabéticamente:
+    
+    ```{r}
+    mi_vector <- c("introducción", "a", "la", "programación")
+    sort(mi_vector)
+    sort(mi_vector, decreasing = TRUE)
+    ```
+
+d.  Usamos `min()` y `max()`:
+    
+    ```{r}
+    # Vectores
+    mi_vector <- c(60, -5, 0, -5, 12, 1)
+    min(mi_vector)
+    max(mi_vector)
+    # Ubicación del mínimo o máximo (sólo primera ocurrencia)
+    which.min(mi_vector)
+    which.max(mi_vector)
+    # Ubicación del mínimo o máximo (todas las ocurrencias)
+    which(mi_vector == min(mi_vector))
+    which(mi_vector == max(mi_vector))
+    # También sirve para vectores de tipo carácter
+    mi_vector <- c("introducción", "a", "la", "programación")
+    min(mi_vector)
+    
+    # Matrices
+    A <- matrix(c(5, 8, 2, 7, 3, 1), nrow = 3)
+    A
+    min(A)
+    max(A)
+    # Posición (arr.ind = TRUE para que nos indique fila y columna)
+    which(A == min(A), arr.ind = TRUE)
+    which(A == max(A), arr.ind = TRUE)
+    ```
+
+e.  Se puede hacer:
+    
+    ```{r}
+    u <- c(5, 8, 2)
+    v <- c(2, 3, -1)
+    sum(u * v)
+    # Usando la function del Ejercicio 5a:
+    prod_escalar(u, v)
+    ```
+
+f.  De la siguiente forma:
+    
+    ```{r}
+    A
+    # Evaluamos min() sólo en la fila 3
+    min(A[3, ])
+    # Para saber en qué columna de la fila 3 se encuentra su mínimo:
+    which.min(A[3, ])
+    # Con la función del ejecicio 8b
+    minimo_matriz_fila(A, 3)
+    ```
+
+g.  Una posibilidad es:
+    
+    ```{r}
+    cuadrado_magico <- function(cuadrado) {
+
+      # Todos las sumas
+      sumas_filas <- rowSums(cuadrado)
+      sumas_col <- colSums(cuadrado)
+      suma_diag1 <- sum(diag(cuadrado))
+      suma_diag2 <- sum(diag(cuadrado[nrow(cuadrado):1, ]))
+      
+      # Junto las sumas en un vector, deberían ser todoas iguales
+      # Arbitrariamente dejo afuera a suma_diag2, para comparar con ella
+      sumas <- c(sumas_filas, sumas_col, suma_diag1)
+      
+      # ¿Dieron igual todas las sumas?
+      return(all(sumas == suma_diag2))
+    }
+    
+    cuadrado <- matrix(c(16,  3,  2, 13,
+                          5, 10, 11,  8,
+                          9,  6,  7, 12,
+                          4, 15, 14,  1), nrow = 4, byrow = TRUE)
+    cuadrado_magico(cuadrado)
+    
+    cuadrado <- matrix(c( 0,  3,  2, 13,
+                          5, 10, 11,  8,
+                          9,  6,  7, 12,
+                          4, 15, 14,  1), nrow = 4, byrow = TRUE)
+    cuadrado_magico(cuadrado)
+    ```
+  

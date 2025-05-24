@@ -606,3 +606,61 @@ cuadrado
 cuadrado_magico(cuadrado)
 ```
 
+## Operaciones vectorizadas
+
+En esta sección utilizaremos la operatoria vectorizada de R y las funciones que el software ya trae disponibles para alcanzar los mismos objetivos que en los ejercicios anteriores y, además, realizar otras tareas.
+
+### Ejercicio 11
+
+Luego de crear el vector `x <- c(2, 5, 8, 1, 9, 10, 4, 5)`:
+
+a. Calcular el logaritmo en base 5 de cada uno de los valores de `x`.
+b. Indicar en qué posiciones del vector hay valores mayores que 4.
+c. Indexar el vector para extraer los valores mayores que 4.
+d. Contar cuántos valores del vector son mayores que 4.
+e. Extraer del vector los elementos que son pares.
+f. Calcular la suma de todos los elementos mayores que 5.
+
+### Ejercicio 12
+
+Luego de crear la matriz `m <- matrix(1:9, nrow = 3)`:
+
+a. Sumarle 10 a todos los elementos.
+b. Sacarle la raíz cúbica a todos los elementos.
+c. Multiplicar cada elemento por 2.
+d. Definir una matriz cualquiera del mismo tamaño y restársela a `m`.
+e. Contar cuántos elementos mayores a 5 tiene `m`.
+f. Mostrar cuáles son los elementos mayores a 5.
+g. Mostrar en qué posiciones se encuentran los elementos mayores a 5.
+h. Calcular la suma total de los elementos de `m` y su promedio general, la suma por columnas y por filas, y el promedio por columnas y por filas.
+
+### Ejercicio 13
+
+Dado el vector `x <- 1:20`:
+
+a. Extraer todos los elementos que sean mayores que 10 y divisibles por 3.
+b. Extraer los elementos que no sean múltiplos de 2 ni de 5.
+c. Contar cuántos valores cumplen con la condición anterior
+
+### Ejercicio 14
+
+**Resolución alternativa de ejercicios anteriores**
+
+a.  ¿Cuál es la función de R que se encarga de sumar los elementos de un arreglo numérico? Utilizarla en el mismo ejemplo presentado en el [Ejercicio 1](#ejercicio-1) y comparar resultados.
+
+b.  En el [Ejercicio 2](#ejercicio-2) escribimos una función llamada `sumar_vectores(u, v)` que toma dos vectores `u` y `v` de la misma dimensión y devuelve su suma. De manera similar, en el [Ejercicio 7](#ejercicio-7) escribimos una función para sumar dos matrices. ¿Cómo podemos obtener el mismo resultado sin tener que crear estas funciones nuevas, sabiendo que en R las funciones operan de forma vectorizada?
+
+c.  ¿Con qué función de R se pueden ordenar de forma ascendente los elementos de un vector numérico? Demostrarlo con los mismos ejemplos del [Ejercicio 3](#ejercicio-3). ¿Se puede aplicar esta función en vectores de tipo carácter?
+
+d.  ¿Con qué funciones de R se pueden encontrar los valores mínimos y máximos de un vector o de una matriz? Las funciones que escribimos en el [Ejercicio 4](#ejercicio-4) y en el [Ejercicio 8a](#ejercicio-8) persiguen este mismo objetivo, pero además devuelven la posición del valor buscado en el arreglo. ¿Cómo se puede hacer esto en R? ¿Se pueden aplicar estas funciones en vectores de tipo carácter?
+
+e.  Utilizando las funciones vectorizadas de R, ¿cómo podemos obtener de manera sencilla el producto escalar entre dos vectores, como en el [Ejercicio 5a](#ejercicio-5)?
+
+f.  ¿Cómo se pueden usar las funciones de R para encontrar el valor mínimo en una fila en particular de una matriz numérica, tal como se planteó en el [Ejercicio 8b](#ejercicio-8) ? Demostrarlo con la matriz que se define a continuación, suponiendo que deseamos encontrar cuál es el mínimo en la fila 2.
+
+    ```{r}
+    A <- matrix(c(5, 8, 2, 7, 3, 1), nrow = 3)
+    ```
+
+g.  Pensar una nueva forma de crear la función `cuadrado_magico()` del [Ejercicio 10](#ejercicio-10) que aproveche la operatoria vectorizada de R para simplificar los cálculos.
+
