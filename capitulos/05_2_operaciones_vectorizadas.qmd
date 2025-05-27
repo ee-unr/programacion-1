@@ -149,7 +149,7 @@ En R, muchas funciones están diseñadas para operar de manera vectorizada. Esto
 
 ```{r}
 v1 <- c(1, 4, 9, 16)
-sqrt(v2)
+sqrt(v1)
 ```
 
 Si tenemos un vector de cadenas de texto, podemos ver cuántos caracteres hay en cada uno:
@@ -431,7 +431,7 @@ v1[c(FALSE, FALSE, TRUE, TRUE, FALSE)]
 # Sabiendo que la siguiente operación devuelve TRUE o FALSE para cada posición 
 # de v1...
 v1 > 10
-# ...podemos usarLA para quedarnos con aquellos elementos de x mayores a 10:
+# ...podemos usarla para quedarnos con aquellos elementos de x mayores a 10:
 v1[v1 > 10]
 ```
 
