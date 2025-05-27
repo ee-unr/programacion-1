@@ -822,9 +822,9 @@ length</code></pre>
 <p>En R, muchas funciones están diseñadas para operar de manera vectorizada. Esto quiere decir que si pasamos como argumento un vector o matriz, R aplica la función matemática a cada uno de sus elementos. Por ejemplo, si tenemos un vector de números, podemos obtener la raíz cuadrada de cada uno con una sola línea:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(v2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(v1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.162278 4.472136</code></pre>
+<pre><code>[1] 1 2 3 4</code></pre>
 </div>
 </div>
 <p>Si tenemos un vector de cadenas de texto, podemos ver cuántos caracteres hay en cada uno:</p>
@@ -1387,7 +1387,7 @@ length</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  TRUE FALSE FALSE FALSE  TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb199"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb199-1"><a href="#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...podemos usarLA para quedarnos con aquellos elementos de x mayores a 10:</span></span>
+<div class="sourceCode cell-code" id="cb199"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb199-1"><a href="#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...podemos usarla para quedarnos con aquellos elementos de x mayores a 10:</span></span>
 <span id="cb199-2"><a href="#cb199-2" aria-hidden="true" tabindex="-1"></a>v1[v1 <span class="sc">&gt;</span> <span class="dv">10</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 10.4 21.7</code></pre>
