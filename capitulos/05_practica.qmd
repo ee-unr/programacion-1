@@ -664,3 +664,117 @@ f.  ¿Cómo se pueden usar las funciones de R para encontrar el valor mínimo en
 
 g.  Pensar una nueva forma de crear la función `cuadrado_magico()` del [Ejercicio 10](#ejercicio-10) que aproveche la operatoria vectorizada de R para simplificar los cálculos.
 
+## Funciones `apply()`, listas y más
+
+### Ejercicio 15
+
+**Comparación entre `for` y `apply`**
+
+Dada la matriz `m` generada con valores aleatorios:
+
+```{r}
+set.seed(34)
+m <- matrix(sample(100, 20), nrow = 4)
+m
+```
+
+calcular la media de cada columna de dos maneras diferentes:
+
+a.  Usando una estructura iterativa `for()`.
+b.  Usando la función `apply()`.
+
+En ambos casos se puede usar la función de R `mean()` o definir una nueva función propia para calcular un promedio.
+
+*Nota:* se usa la función `set.seed()` para determinar una "semilla aleatoria" que asegura que los números generados al azar sean los mismos cada vez que se define la matriz, en cualquier computadora.
+
+### Ejercicio 16
+
+**Preguntas sobre listas en R**
+
+a.  Dados los siguientes objetos, ¿cuál es el valor de `d[[2]]`? Responder sin correr el código. Luego verificar.
+
+    ```{r}
+    #| eval: false
+    a <- c(2, 1, 9)
+    b <- c("X", "Y", "Z")
+    d <- list(b, a)
+    ```
+
+b.  Dados los objetos anteriores, ¿qué sentencia reemplazará la "X" en la lista `d` por el valor "M"? Elegir la respuesta correcta sin correr el código. Luego verificar.
+
+	1. `d[[1]] <- "M"`
+	2. `d[[1]][1] <- "M"`
+	3. `d[[2]][1] <- "M"`
+	4. `d[[1]][2] <- "M"`
+
+c.  Dada la lista: `mi_lista <- list(1:10, "Buenas", TRUE)`, escribir código que permita sumarle un 2 a cada elemento del primer vector dentro de la lista y que cambie el valor `TRUE` por un `FALSE`.
+
+### Ejercicio 17
+
+**Popurrí**
+
+```{r, crear-popurri}
+#| eval: false
+#| echo: false
+
+rm(list = ls())
+set.seed(35)
+cosa1 <- runif(3)
+cosa2 <- c("libro", "pc", "anotador", "celular", "lapicera")
+cosa3 <- matrix(rnorm(30), 10, 3)
+cosa4 <- list(
+  letras = matrix(sample(LETTERS, 18), 3, 6),
+  mediciones = rnorm(10),
+  respuestas = c(T, F, F, T, F, F),
+  numeros = matrix(sample(1000, 30), 10, 3)
+)
+cosa5 <- list(rnorm(5), rnorm(4), rnorm(10), rnorm(3), rnorm(8))
+save(cosa1, cosa2, cosa3, cosa4, cosa5, file = "archivos/unidad5/popurri.RData")
+```
+
+```{r}
+#| echo: false
+load("../archivos/unidad5/popurri.RData")
+```
+
+Cargar en el ambiente el archivo [`popurri.RData`](https://github.com/ee-unr/programacion-1/raw/refs/heads/main/archivos/unidad5/popurri.RData) y resolver las siguientes consignas:
+
+a.  ¿Cuántos objetos están guardados en ese archivo y de qué tipo es cada uno?
+
+b.  Asignar los siguientes nombres a los elementos guardados en el vector `cosa1`: `valorA`, `valorB` y `valorC`.
+
+c.  Acceder al tercer elemento guardado en el vector `cosa1` de dos formas distintas: indexando según su posición y según su nombre.
+
+d.  Acceder al segundo elemento guardado en la lista `cosa4` de tres formas distintas.
+
+e.  Ordenar de menor a mayor los elementos del vector numérico perteneciente a la lista `cosa4`.
+
+f.  Obtener la matriz traspuesta de la matriz que ocupa la cuarta posición en la lista `cosa4`.
+
+g.  Obtener el mínimo valor de la matriz numérica guardada en la lista `cosa4` y el máximo de cada una de sus columnas.
+
+h.  Utilizar la función `seq()` para crear un vector llamado `x` con 9 números equiespaciados entre 1 y 100.
+
+i.  Con los valores del vector `x` crear una matriz de dimensión 3x3 llamada `y`.
+
+j.  Concatenar verticalmente la matriz `numeros` de la lista `cosa4` y la matriz `y` del punto anterior con la función `rbind()` para formar una nueva matriz llamada `z` de dimensión 13x3.
+
+k.  Crear un nuevo vector `w` que contenga primero a todos los elementos del vector `cosa1`, luego todos los del vector `mediciones` de la lista `cosa4` y finalmente otra vez todos los elementos del vector `cosa1`. Eliminar el atributo *names* de este nuevo vector.
+
+l.  Hallar el valor máximo en cada vector numérico de la lista `cosa5` de tres formas distintas: con un `for`, con `lapply()` y con `sapply()`. ¿En qué difieren las formas en las que las últimas dos muestran los resultados?
+
+m.  Ejecutar `sapply(cosa4, max)`. Explicar qué hace esa acción y por qué se obtiene cada resultado.
+
+n.  Ejecutar `lapply(cosa4, sqrt)`. Explicar qué hace esa acción y por qué se obtiene cada resultado. 
+
+o.  Tomar el vector `mediciones` de la lista `cosa4` y ejecutar: `cosa4$mediciones > 0`. ¿Qué se obtiene?
+
+p.  Utilizar el resultado del punto anterior para mostrar únicamente los valores del vector `mediciones` que son mayores a cero.
+
+q.  Generar una matriz de valores lógicos llamada `v` que tenga `TRUE` en las celdas donde el valor absoluto de los valores de `cosa3` son menores a 1 y `FALSE` donde es mayor o igual a 1.
+
+r.  Ejecutar `sum(v)` e interpretar qué representa el valor obtenido. Hacer lo mismo con `apply(v, 1, sum)` y `apply(v, 2, sum)`.
+
+s.  Reemplazar en el vector `w` todos los valores mayores a 500 por el valor -100.
+
+
