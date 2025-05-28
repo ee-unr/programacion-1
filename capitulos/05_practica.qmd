@@ -664,32 +664,24 @@ f.  ¿Cómo se pueden usar las funciones de R para encontrar el valor mínimo en
 
 g.  Pensar una nueva forma de crear la función `cuadrado_magico()` del [Ejercicio 10](#ejercicio-10) que aproveche la operatoria vectorizada de R para simplificar los cálculos.
 
-## Funciones `apply()`, listas y más
+## Listas, funciones `apply()` y más
 
 ### Ejercicio 15
 
-**Comparación entre `for` y `apply`**
+a.  Crear una lista llamada `mi_lista` que contenga los siguientes elementos:
 
-Dada la matriz `m` generada con valores aleatorios:
+    - `numeros`: un vector numérico que contiene los números naturales del 1 al 10
+    - `letras`: un vector caracter que contiene las letras del abecedario en mayúsculas
+    - `matriz`: una matriz 2x2 cuyos elementos son todos cero
+    - `lista_anidada`: una lista con dos elementos:
+        - `valores_logicos`: un vector lógico que almacena los valores `TRUE` y `FALSE`
+        - `mi_texto`: una cadena de texto con el mensaje `"¡Ayuda! Estoy dentro de una lista anidada."`
 
-```{r}
-set.seed(34)
-m <- matrix(sample(100, 20), nrow = 4)
-m
-```
+b.  ¿Cómo accederías al texto dentro de la lista anidada?
 
-calcular la media de cada columna de dos maneras diferentes:
-
-a.  Usando una estructura iterativa `for()`.
-b.  Usando la función `apply()`.
-
-En ambos casos se puede usar la función de R `mean()` o definir una nueva función propia para calcular un promedio.
-
-*Nota:* se usa la función `set.seed()` para determinar una "semilla aleatoria" que asegura que los números generados al azar sean los mismos cada vez que se define la matriz, en cualquier computadora.
+c.  ¿Qué devuelve `length(mi_lista)`? Responder sin correr el código. Luego verificar.
 
 ### Ejercicio 16
-
-**Preguntas sobre listas en R**
 
 a.  Dados los siguientes objetos, ¿cuál es el valor de `d[[2]]`? Responder sin correr el código. Luego verificar.
 
@@ -710,6 +702,59 @@ b.  Dados los objetos anteriores, ¿qué sentencia reemplazará la "X" en la lis
 c.  Dada la lista: `mi_lista <- list(1:10, "Buenas", TRUE)`, escribir código que permita sumarle un 2 a cada elemento del primer vector dentro de la lista y que cambie el valor `TRUE` por un `FALSE`.
 
 ### Ejercicio 17
+
+Modificar la función `cociente()` del [ejercicio 9 de la práctica 3](90_soluciones_03.qmd#ejercicio-9) de modo tal que en lugar de imprimir los resultados y devolver solo el cociente entero, devuelva una lista con los siguientes elementos:
+
+  - `dividendo`: el número original pasado como dividendo  
+  - `divisor`: el número original pasado como divisor  
+  - `cociente`: el cociente entero de la división  
+  - `resto`: el resto de la división  
+  - `es_divisor`: el valor lógico `TRUE` si el divisor es divisor exacto del dividendo (es decir, si el resto es cero), y `FALSE` en caso contrario.
+
+### Ejercicio 18
+
+**Comparación entre `for` y `apply`**
+
+Dada la matriz `m` generada con valores aleatorios:
+
+```{r}
+set.seed(34)
+m <- matrix(sample(100, 20), nrow = 4)
+m
+```
+
+calcular la media de cada columna de dos maneras diferentes:
+
+a.  Usando una estructura iterativa `for()`.
+b.  Usando la función `apply()`.
+
+En ambos casos se puede usar la función de R `mean()` o definir una nueva función propia para calcular un promedio.
+
+*Nota:* se usa la función `set.seed()` para determinar una "semilla aleatoria" que asegura que los números generados al azar sean los mismos cada vez que se define la matriz, en cualquier computadora.
+
+### Ejercicio 19
+
+a.  Crear `A`, una matriz 3x3 que contenga 9 números equiespaciados entre 1 y 100.
+
+b.  Crear `B`, una matriz 6x3 donde el valor de cada fila sea 5 veces el número de fila.
+
+c.  Crear `C`, una matriz 6x2 donde el valor de cada columna sea 4 veces el número de columna.
+
+d.  Crear `AB`, la matriz resultante de la unión de las filas de `A` y `B`.
+
+e.  Crear `ABC`, la matriz resultante de la concatenación lado a lado de `AB` y `C`.
+
+### Ejercicio 20
+
+a.  Crear `stock_frutas`, una lista que almacene el stock disponible de frutas en una verdulería. Debe incluir 10 naranjas, 15 manzanas y 5 peras.
+
+b.  Crear `stock_verduras`, una lista que almacene el stock disponible de verduras en una verdulería. Debe incluir 8 tomates y 12 cebollas.
+
+c. Crear `stock_verduleria`, una lista que agrupe las frutas y las verduras en una sola lista. Debe tener dos elementos: uno llamado `frutas` que contenga `stock_frutas`, y otro llamado `verduras` que contenga `stock_verduras`.
+
+d. Mostrar dos formas distintas para agregar 10 zanahorias al elemento correspondiente de `stock_verduleria`.
+
+### Ejercicio 21
 
 **Popurrí**
 
