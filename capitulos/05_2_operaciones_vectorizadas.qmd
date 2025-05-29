@@ -353,7 +353,7 @@ m1 == 3
 m2 > 0
 ```
 
-Los operadores lógicos que se utilizan para realizar cálculos elemento a elemento con vectores y matrices son `&`, `\` y `!`. Ellos nos permiten crear expresiones aún más complejas:
+Los operadores lógicos que se utilizan para realizar cálculos elemento a elemento con vectores y matrices son `&`, `|` y `!`. Ellos nos permiten crear expresiones aún más complejas:
 
 ```{r}
 v1 < 50 & v2 > 50
