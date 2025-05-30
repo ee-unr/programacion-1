@@ -58,10 +58,10 @@ book:
       chapters:
         - capitulos/05_1_arreglos.qmd
         - capitulos/05_2_operaciones_vectorizadas.qmd
-    #     - capitulos/05_3_listas.qmd
-    #     - capitulos/05_4_varios.qmd
+        - capitulos/05_3_listas.qmd
+        - capitulos/05_4_varios.qmd
         - capitulos/05_practica.qmd
-    #     - capitulos/05_actividad_autoevaluativa.qmd
+        - capitulos/05_actividad_autoevaluativa.qmd
     # - part: capitulos/06.qmd
     #   chapters:
     #     - capitulos/06_1_.qmd

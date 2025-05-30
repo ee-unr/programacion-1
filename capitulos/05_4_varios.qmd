@@ -5,20 +5,217 @@
 # Otras nociones importantes
 
 ::: {.presentacion-capitulo data-latex=""}
-
+A lo largo de esta unidad hemos explorado las principales estructuras de datos que ofrece R, como vectores, matrices y listas, y aprendimos a manipularlas mediante operaciones tanto elementales como vectorizadas. En este último capítulo, reunimos algunas herramientas y conceptos adicionales que complementan y potencian el trabajo con estructuras de datos. Veremos, por un lado, funciones de la familia `apply`, que permiten realizar operaciones repetitivas de forma eficiente. También abordaremos formas de generar secuencias numéricas y de combinar estructuras como vectores, matrices y listas, operaciones fundamentales para construir y transformar datos. Por último, introduciremos los arreglos multidimensionales, una extensión natural de las matrices que permite trabajar con datos en más de dos dimensiones.
 :::
 
 ## Familia de funciones `apply`
 
+Como ya sabemos, una de las fortalezas del lenguaje R es la existencia de funciones que permiten aplicar operaciones de manera vectorizada o sobre estructuras de datos completas, evitando escribir estructuras de repetición explícitas como los bucles *for*. En particular, existe un conjunto de funciones conocidas como **la familia `apply`** que permiten resumir muchas tareas repetitivas con una sintaxis concisa, adaptándose a diferentes estructuras de datos. 
+
+### Función `apply`
+
+Supongamos que queremos encontrar el máximo valor en cada fila de una matriz. Podemos lograrlo de la siguiente forma. Creamos un vector `maximos` con lugar para guardar el máximo de cada fila. Luego, iteramos para recorrer cada fila de la matriz, buscar el máximo y guardarlo en el vector `maximos`:
+
+```{r}
+m <- matrix(c(4,-2, 1, 20, -7, 12, -8, 13, 17), nrow = 3)
+m
+maximos <- numeric(nrow(m))
+for (i in 1:nrow(m)) {
+	maximos[i] <- max(m[i, ])
+}
+maximos
+```
+
+En R existe una forma más práctica y eficiente de conseguir el mismo resultado:
+
+```{r}
+apply(m, 1, max)
+```
+
+La función `apply()` sirve para aplicar una misma operación a cada fila o columna de una matriz. En el ejemplo anterior:
+
+- el primer argumento, `m`, es la matriz a analizar.
+- el segundo argumento, `1`, indica que la operación se realizará fila por fila (para que se haga por columna, debemos indicar `2`)
+- el tercer argumento, `max`, es el nombre de la función  que se le aplica a cada fila.
+
+De manera similar, podemos encontrar el mínimo valor de cada columna:
+
+```{r}
+apply(m, 2, min)
+```
+
+### Funciones `lapply()` y `sapply()`
+
+`lapply(X, FUN)` aplica una función `FUN` a cada elemento de una lista o vector y devuelve siempre una **lista** como resultado:
+
+```{r}
+v <- list(a = 1:5, b = 6:10, c = 11:15)
+```
+
+`sapply()` funciona igual que `lapply()`, pero intenta **simplificar** la salida: si todos los resultados son del mismo tipo y longitud, devuelve un vector o matriz en lugar de una lista:
+
+```{r}
+sapply(v, mean)
+```
+
+Si la simplificación no es posible, el resultado será una lista, igual que con `lapply()`.
+
+En el caso de que la lista tenga elementos de distinto tipo, la función a aplicar debe ser admisible para cada uno de ellos, si no se generará un error:
+
+```{r}
+#| error: true
+mi_lista <- list(
+	w = c(-4.5, 12, 2.71),
+	x = c("hola", "chau"),
+	y = matrix(c(8, 11, 13, 16), nrow = 2),
+	z = TRUE
+)
+
+# Vemos el largo de cada elemento de la lista
+lapply(mi_lista, length)
+sapply(mi_lista, length)
+
+# Vemos la suma de cada elemento de la lista: no se puede con algunos
+lapply(mi_lista, sum)
+sapply(mi_lista, sum)
+```
+
+### Otras funciones
+
+Dentro de la familia `apply` también se encuentran las funciones `mapply()` (versión multivariada de `sapply()`, que aplica una función a varios vectores o listas en paralelo), `rapply()` (aplica una función de forma recursiva sobre listas anidadas), `tapply()` (aplica una función a subconjuntos de datos) y `vapply()` (requiere que especifiquemos el tipo de salida esperado). No nos ocuparemos de usarlas en este curso.
+
+Además de la familia `apply`, R ofrece otras herramientas muy potentes para realizar operaciones repetitivas de forma clara y expresiva. En particular, el ecosistema **tidyverse** introduce funciones como `map()`, `map_dbl()`, `map_df()` y otras variantes, que permiten aplicar funciones sobre listas y otros objetos de manera muy cómoda. Estas funciones combinan la versatilidad de `lapply()` y `sapply()` con una sintaxis más moderna y consistente, y ofrecen un control más explícito sobre los tipos de salida. Además, el *tidyverse* ofrece muchas opciones para realizar tareas repetitivas sobre conjuntos de datos. Si bien no forman parte de la base de R, son ampliamente utilizadas en la práctica y constituyen una alternativa muy recomendable para quienes ya trabajan con herramientas de dicho sistema de paquetes.
+
 
 ## Generación de vectores con secuencias numéricas
 
+A continuación mostramos cómo generar algunos vectores numéricos en R (algunos casos ya los estuvimos usando):
+
+```{r}
+# Enteros de 1 a 5
+1:5
+
+# Números de 1 a 10 cada 2
+seq(1, 10, 2)
+
+# Números de 0 a -1 cada -0.1
+seq(0, -1, -0.1)
+
+# Siete números equiespaciados entre 0 y 1
+seq(0, 1, length.out = 7)
+
+# Repetir el 1 tres veces
+rep(1, 3)
+
+# Repetir (1, 2, 3) tres veces
+rep(1:3, 3)
+
+# Repetir cada número tres veces
+rep(1:3, each = 3)
+```
 
 ## Concatenación de vectores, matrices y listas
 
+Los vectores pueden combinarse entre sí para crear nuevos vectores con `c()`:
 
-## Clasificación de los arreglos (lectura opcional)
+```{r}
+x <- 1:5
+y <- c(10, 90, 87)
+z <- c(x, y, x)
+z
+```
+
+Matrices que tienen la misma cantidad de filas pueden concatenarse una al lado de la otra con `cbind()` (*unir por columnas*):
+
+```{r}
+m1 <- matrix(c(5, 8, 2, 2, 3, 1), nrow = 3)
+m1
+m2 <- matrix(c(0, -1, 3, 1, 2, 4), nrow = 3)
+m2
+m3 <- cbind(m1, m2)
+m3
+```
+
+Matrices que tienen la misma cantidad de columnas pueden concatenarse una debajo de la otra con `rbind()` (*unir por filas*):
+
+```{r}
+m4 <- rbind(m1, m2)
+m4
+```
+
+Estas funciones también permiten unir matrices con vectores:
+
+```{r}
+v <- 1:6
+cbind(m4, v)
+```
+
+También es posible combinar o juntar listas para formar nuevas listas que contengan todos los elementos de las originales. Esto puede resultar útil cuando queremos unificar resultados parciales, construir estructuras complejas a partir de otras más simples, o agregar nuevos elementos a una lista existente. La forma más directa de combinar listas es usando también la función `c()`:
+
+```{r}
+lista1 <- list(a = 1, b = 2)
+lista2 <- list(c = 3, d = 4)
+
+lista_combinada <- c(lista1, lista2)
+lista_combinada
+```
+
+
+
+También es posible anidar listas dentro de otras listas. En el siguiente caso, `lista_anidada` es una lista de longitud 2, donde cada elemento es a su vez una lista:
+
+```{r}
+lista_anidada <- list(lista1, lista2)
+length(lista_anidada)
+lista_anidada
+lista_anidada[[1]]
+```
+
+Por último, si queremos agregar un nuevo elemento a una lista ya existente, podemos hacerlo mediante asignación directa:
+
+```{r}
+lista1$e <- 5
+lista1
+```
+
+o usando la función `append()`:
+
+```{r}
+append(lista2, list(f = 6))
+```
 
 
 ## Arreglos multidimensionales (lectura opcional)
 
+Un **arreglo multidimensional** contiene más de dos dimensiones, es decir, requiere más de dos índices para identificar a cada uno de sus elementos. La representación matemática o visual ya no es tan sencilla como la de los vectores o matrices. Para interpretarlos o saber cuándo usarlos, pensamos que cada una de las dimensiones representa una característica de los elementos.
+
+Por ejemplo, imaginemos que en un local comercial se quiere registrar cuántos clientes se atendieron en cada una de las tres cajas disponibles (primer dimensión del arreglo: caja 1, caja 2 o caja 3), ya sea en el turno mañana o tarde (segunda dimensión: 1 para la mañana o 2 para la tarde) en cada día hábil de una semana (tercera dimensión: 1 lunes, 2 martes, 3 miércoles, 4 jueves o 5 viernes). Si queremos registrar, por ejemplo, que la caja 1 en el turno tarde del día jueves atendió 12 clientes, tenemos que guardar el valor 12 en la posición [1, 2, 4] del arreglo.
+
+El arreglo de 3 dimensiones que permite acomodar toda la información del ejemplo en una sola estructura puede definirse en R así:
+
+```{r}
+clientes <- array(
+  data = 0, 
+  dim = c(3, 2, 5), 
+  dimnames = list(
+    caja = paste0("caja", 1:3), 
+    turno = c("mañana", "tarde"), 
+    dia = c("lun", "mar", "mié", "jue", "vie")
+    )
+  )
+clientes
+```
+
+Luego, si queremos registrar que la caja 1 en el turno tarde del día jueves atendió 12 clientes, hacemos:
+
+```{r}
+clientes[1, 2, 4] <- 12
+clientes
+```
+
+O usamos los nombres, cuyo uso es opcional al crear el arreglo, pero resultan muy útiles:
+
+```{r}
+clientes["caja3", "mañana", "lun"] <- 15
+clientes
+```
