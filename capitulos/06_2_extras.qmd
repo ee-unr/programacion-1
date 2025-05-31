@@ -1,0 +1,216 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Otros aspectos de la creación de un paquete
+
+::: {.presentacion-capitulo data-latex=""}
+En el capítulo anterior vimos los pasos fundamentales para crear un paquete de R. Sin embargo, existen muchos otros aspectos que, si bien no son estrictamente necesarios para que el paquete funcione, contribuyen significativamente a mejorar su **calidad, mantenibilidad, documentación y difusión**. En este capítulo exploraremos algunas de estas prácticas y herramientas complementarias. **La lectura de este capítulo es opcional** y puede abordarse según el interés o el momento del proyecto: no es obligatorio dominar estos elementos para crear un paquete, pero sí es útil conocerlos si se quiere avanzar hacia un desarrollo más profesional, colaborativo o preparado para compartir con otras personas. **Los contenidos de este capítulo no son evaluados en la asignatura.**
+:::
+
+## Gestionar las dependencias
+
+Es muy común que nuestras funciones necesiten hacer uso de otras que pertenecen a otros paquetes. Cuando estamos usando RStudio en nuestro día a día para hacer algún análisis, cargamos esos otros paquetes con `library()`. No obstante, dentro del código de nuestro paquete, **nunca debemos incluir una llamada a `library()`**. En su lugar, necesitamos avisar qué cosas necesita nuestro paquete a través de los campos *Imports*, *Depends* y *Suggests* del archivo `DESCRIPTION`.
+
+Si en `DESCRIPTION` ponemos, por ejemplo:
+
+```         
+Imports:
+    lubridate (>= 1.0.0),
+    purrr
+Depends: 
+    R (>= 4.4)
+Suggests:
+    ggplot2
+```
+
+estamos diciendo que nuestro paquete necesita sí o sí de los paquetes `lubridate` (versión igual o superior a la 1.0.0) y `purrr` (sin restricciones sobre la versión). Además, que sólo se puede usar en versiones de R iguales o superiores a la 4.4 y que podría hacer uso del paquete `ggplot2` para correr ejemplos u otras tareas menos importantes, de modo que dicho paquete no es indispensable.
+
+Los tres tipos de dependencias, entonces, son:
+
+-   **Imports**: lista de otros paquetes de los que el nuestro depende para funcionar. R los instalará automáticamente cuando alguien instale nuestro paquete.
+-   **Suggests**: paquetes no indispensables para usar el nuestro, no se instalan automáticamente.
+-   **Depends**: especifica la versión mínima de R que se necesita para usar el paquete.
+
+No hace falta que editemos `DESCRIPTION` a mano, la función `use_package()` lo hace por nosotros:
+
+```{r, eval=FALSE}
+# Agregar en Imports
+usethis::use_package("purrr")
+# Agregar en Suggests
+usethis::use_package("ggplot2", type = "suggests")
+```
+
+Una vez que hemos agregado los paquetes que necesitamos en `DESCRIPTION`, debemos acceder a sus funciones con el operador `::` cada vez que las necesitemos en nuestro código. Imaginemos que nuestro paquete necesita usar la función `map()` del paquete `purrr`, como parte de una función que estamos desarrollando. Tenemos que invocarla así:
+
+```{r, eval=FALSE}
+mi_funcion <- function() {
+  ...
+  x <- purrr::map(1:10, rnorm, n = 5)
+  ...
+}
+```
+
+Es posible que haya una función de otro paquete que usamos demasiado y nos moleste tener que escribir siempre el formato `nombrepaq::funcion_importada()`. En ese caso podemos agregar el siguiente comentario *roxygen* en cualquier parte de nuestra documentación:
+
+```{r, eval=FALSE}
+#' @importFrom purrr map
+```
+
+y ya la podemos usar sin nombrar al paquete:
+
+```{r, eval=FALSE}
+mi_funcion <- function() {
+  ...
+  x <- map(1:10, rnorm, n = 5)
+  ...
+}
+```
+
+Al usar la etiqueta `@importFrom`, al correr `document()` se modifica el archivo `NAMESPACE` aclarando a qué paquete pertenece la función en cuestión, de manera que R la va a poder encontrar sin problemas cuando la necesite.
+
+También podríamos importar todas las funciones del paquete con `#' @import purrr`. Sin embargo esto es peligroso, ya que no sabemos si en un futuro habrá nuevas funciones en el paquete `purrr` cuyos nombres introduzcan algún tipo de conflicto por ser iguales a los nombres de nuestras funciones o las de otros paquetes que necesitamos usar.
+
+## Escribir un `README`
+
+Un archivo `README` contiene información acerca de otros archivos en una carpeta. Es una forma de documentación de software, usualmente en un archivo de texto plano. En el contexto de un paquete de R, es una muy buena práctica contar con un `README` para describir brevemente por qué y para qué alguien tendría que usarlo, a la vez que indicar cómo conseguirlo o instalarlo.
+
+Un `README` para un paquete de R debería mostrar los siguientes componentes:
+
+1.  Un párrafo para describir el propósito del paquete.
+2.  Instrucciones para su instalación, que se puedan copiar y correr en R.
+3.  Un ejemplo de cómo se usa para resolver algo sencillo.
+4.  Links a otros materiales para mostrar el paquete con más detalle.
+
+Podemos crear este archivo con la función `use_readme_rmd()`. Esto genera un archivo de *Rmarkdown* (similar a un archivo Quarto) con una plantilla para que empecemos a escribir nuestro `README`. En este archivo podemos incluir código de R para mostrar ejemplos del uso del paquete. Cuando terminamos de editarlo, hay que "compilarlo" para obtener otro archivo, llamado `README.md`, que será la cara visible de nuestro paquete. Muchos repositorios muestras su contenido de forma automática.
+
+## Someter el paquete a prueba
+
+Por más de que seamos cuidadosos a la hora de desarrollar nuestro paquete, hay detalles que se nos escapan, y que tarde o temprano podrían generar errores. Por suerte, R tiene diseñado un sistema muy exigente para identificar errores técnicos en el armado y estructura del paquete. Este sistema se conoce como `CMD Check`. Para poder subir un paquete a CRAN, es obligatorio pasar por estos controles sin tener ningún *error*, *nota* o *warning*, los cuales son los tres tipos de resultados que se pueden obtener.
+
+Aunque no queramos compartir el paquete con nadie, es útil pasar por este chequeo para asegurarnos que ande bien. Además, tratar de solucionar los errores encontrados resulta en un gran aprendizaje sobre cuestiones de R o de programación. No hay que esperar a terminar el paquete para correr `CMD Check`, al contrario, se sugiere hacerlo con frecuencia para ir solucionando los problemas desde temprano.
+
+Desde RStudio, los controles se corren con `check()` o con su atajo `ctrl + shift + e`:
+
+```{r, eval=FALSE}
+check()
+```
+
+La salida es bastante larga, pero acá ponemos los resultados finales de la evaluación del paquete:
+
+```
+── R CMD check results ───────────────────── bisiestos 0.0.0.9000 ────
+Duration: 11.3s
+
+❯ checking DESCRIPTION meta-information ... WARNING
+  Non-standard license specification:
+    `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+  Standardizable: FALSE
+
+0 errors ✔ | 1 warning ✖ | 0 notes ✔
+Error: R CMD check found WARNINGs
+Execution halted
+
+Exited with status 1.
+```
+
+## Establecer una licencia de uso
+
+Como pudimos ver recién, el control se quejó porque no establecimos todavía una licencia de uso para el paquete. 
+Incluir una **licencia** en un paquete de R es un paso esencial, ya que define los **términos legales bajo los cuales otras personas pueden usar, modificar, redistribuir o contribuir** al código del paquete. Sin una licencia explícita, el paquete está con "todos los derechos reservados" por defecto, lo que significa que nadie tiene permiso legal para hacer nada con él, ni siquiera usarlo.
+
+En el ecosistema R, las licencias más frecuentes son:
+
+* **GPL (General Public License)**
+
+  * **GPL-2 o GPL-3**: Son licencias **copyleft**, lo que significa que cualquier derivado del código debe mantener la misma licencia. Promueven el software libre.
+  * Muy usadas en R, ya que el propio R está bajo la licencia GPL.
+
+* **MIT**
+
+  * Una licencia más **permisiva**, que permite a otros usar, modificar y redistribuir el software con mínimas restricciones, siempre que mantengan una copia del aviso de licencia.
+  * Muy popular entre quienes quieren fomentar el uso libre sin imponer restricciones adicionales.
+
+* **CC0 (Creative Commons Zero)**
+
+  * Equivale a "renunciar a todos los derechos", colocando el software en el dominio público. Permite reutilización sin condiciones, incluso sin atribución.
+  * Usada en proyectos académicos o educativos que buscan máxima difusión.
+
+Entonces, ¿qué licencia debemos elegir? Depende de nuestros objetivos:
+
+* Si nos interesa que nuestro código sea completamente libre y abierto, pero que las modificaciones también permanezcan abiertas: **GPL-3**.
+* Si preferimos dar libertad de uso sin imponer obligaciones legales sobre el uso o redistribución: **MIT**.
+* Si lo que nos importa es que cualquiera pueda usarlo sin restricciones (incluso sin mencionar al autor): **CC0**.
+
+Para estudiantes o desarrolladores principiantes que crean paquetes con fines didácticos o personales, **MIT** suele ser una excelente opción por su simplicidad y flexibilidad.
+
+Las herramientas que estamos usando facilitan el proceso de indicar la licencia del paquete, que se logra sencillamente con:
+
+```r
+use_mit_license("Marcos Prunello")
+```
+
+```
+✔ Setting active project to "C:\Users\Marcos\Documents\bisiestos".
+✔ Adding "MIT + file LICENSE" to License.
+✔ Writing LICENSE.
+✔ Writing LICENSE.md.
+✔ Adding "^LICENSE\\.md$" to .Rbuildignore.
+```
+
+Esto agrega automáticamente el texto de la licencia en un archivo `LICENSE` y actualiza el campo `License:` del archivo `DESCRIPTION`.
+
+## Agregar *testeos*
+
+En el desarrollo de software, **testeos** (o *tests*) son procedimientos automáticos diseñados para verificar que el código hace lo que se espera. En lugar de comprobar manualmente los resultados, los desarrolladores escriben pequeñas piezas de código que ejecutan funciones específicas con distintos insumos y comparan los resultados obtenidos con los esperados.
+
+Esta práctica permite:
+
+* Detectar errores rápidamente, incluso antes de que el software llegue a los usuarios.
+* Asegurar que los cambios no rompan funcionalidades previas.
+* Facilitar el mantenimiento y evolución del código, ya que permite hacer modificaciones con mayor confianza.
+* Colaborar de forma más segura en proyectos compartidos, al dejar explícitas las condiciones que debe cumplir cada función.
+
+Existen distintos tipos de tests según el nivel de detalle y alcance: tests unitarios (para funciones específicas), tests de integración (para verificar cómo interactúan diferentes partes del código), tests de regresión (para que nuevos cambios no rompan código anterior), entre otros.
+
+En el contexto del desarrollo de paquetes de R, los tests se utilizan principalmente para verificar que las funciones del paquete se comporten correctamente. La herramienta más común en el ecosistema de R es el paquete `testthat`, que permite escribir **tests unitarios** de forma clara y estructurada.
+
+Cuando se desarrolla un paquete, los tests suelen guardarse en una carpeta especial (`tests/testthat/`) y se organizan en archivos que agrupan pruebas para cada función o conjunto de funciones. Una vez escritos, los tests pueden ejecutarse automáticamente al construir el paquete o con funciones específicas como `test()`. Esta automatización ahorra tiempo y reduce la posibilidad de introducir errores sin darse cuenta.
+
+Además, cuando se quiere distribuir el paquete (por ejemplo, en CRAN o GitHub), tener una buena cobertura de tests (porcentaje de código evaluado por tests) es una señal de calidad del código.
+
+
+## Escribir el archivo `NEWS`
+
+Mientras que el `README` apunta a ser leído por nuevos usuarios, el archivo `NEWS` es un archivo para la gente que ya usa el paquete. Se encarga de contar qué tenemos en cada versión nueva del paquete que publicamos: lo nuevo, lo que cambió y lo que se eliminó. Si se trata de cambios impulsados por otras personas, se los menciona para darles crédito. Una buena práctica es ir escribiendo este archivo cada vez que se realiza algo nuevo en el paquete. La función que nos permite crear este archivo automáticamente es `use_news_md()`.
+
+## Escribir viñetas
+
+Las viñetas son un tipo especial de documentación que puede agregarse al paquete para dar más detalles y ejemplos sobre el uso del mismo. Generalmente, son tutoriales que se escriben con el sistema Rmarkdown en archivos de extensión `.Rmd`. Se diferencian de las páginas de ayuda en que su adición es opcional y no sigue una estructura fija, dándole la libertad al autor de enseñar de la forma que más le guste cómo usar su paquete. Se diferencian del archivo `README` porque cubren tópicos más generales, mientras que este sólo presenta una descripción breve del paquete.
+
+Las viñetas suelen combinar texto, código, resultados, figuras, etc. En algunos casos, se convierten en verdaderos materiales de estudio.  Los archivos `.Rmd` que los generan deben colocarse dentro de la carpeta `vignettes`. La función `use_vignette()` se encarga de esto, sólo tenemos que darle como argumento el nombre de la viñeta para que nos genere un esqueleto que sirve de punto de partida.
+
+## Agregar conjuntos de datos
+
+En muchos casos puede ser útil incorporar conjuntos de datos en un paquete, ya sea para que puedan usarse como ejemplos, o porque elegimos crear un paquete como un medio de distribución de datos. La ubicación más común para guardar datos es la carpeta `data`. Todos sus archivos tienen que ser `.Rdata`, cada uno con un único objeto de R, llamado con el mismo nombre del archivo. La función `use_data()` ayuda a crearlos.
+
+## Añadir *badges*
+
+Las insignias o *badges* son unos íconos que señalan distintas características del paquete, como su nivel de desarrollo o maduración, el nivel de cobertura en el testeo, cantidad de descargas, número de versión, resultado de los controles de CRAN, etc. Son visualmente muy atractivas y se colocan con la ayuda de un conjunto de funciones que insertan automáticamente a las insignias en el archivo `README`, como `use_badge()`.
+
+
+## Diseñar un logo
+
+Seguramente has notado la costumbre de que cada paquete de R tenga su logo con forma hexagonal. Se les dice *hexStickers*, porque es usual que se repartan stickers de estos logos en congresos y conferencias, que terminan adornando las notebooks de muchos usuarios. Para terminar de darle identidad a nuestro paquete y hacerlo más vistoso, podemos diseñar un logo.
+
+Por suerte, también hay un paquete que permite hacerlo sin demasiadas complicaciones: el [paquete `HexSticker`](https://github.com/GuangchuangYu/hexSticker). Una vez creado el logo, lo podemos incluir en el archivo `README` con la función `use_logo()`.
+
+## Crear una página web
+
+Todos los pasos anteriores producen como resultado un montón de material muy bueno sobre nuestro paquete: páginas de ayuda, ejemplos, tutoriales, novedades sobre los cambios, logo, insignias, etc. Es más que suficiente como para crear una página web y que el paquete tenga presencia real en la nube. 
+
+También existe un paquete que se encarga de tomar todo el material hecho anteriormente y convertirlo en una página web **automáticamente**. Sumado a que plataformas como *GitHub* nos da lugar para hospedar nuestras páginas de manera libre y gratuita, no hay excusas para no hacerlo. Por supuesto, cuanto más queramos personalizar la web, más vamos a tener trabajar y aprender, pero esto no es necesario, ya que el aspecto logrado por default es muy satisfactorio.
+
+El paquete responsable de esto es `pkgdown` y lo único que hay que hacer es correr [`pkgdown::build_site()`](https://pkgdown.r-lib.org/index.html) desde el directorio de nuestro paquete cada vez que publiquemos una nueva versión.
+

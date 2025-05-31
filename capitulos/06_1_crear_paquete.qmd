@@ -1,0 +1,422 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Creación de paquetes de R
+
+::: {.presentacion-capitulo data-latex=""}
+En este capítulo vamos a ver cómo reunir todo lo que aprendimos hasta acá en la creación de un paquete de R. Crear un paquete nos permite agrupar funciones relacionadas, documentarlas correctamente y facilitar su uso tanto para nosotros mismos como para otras personas. Aunque pueda parecer una tarea avanzada, el proceso básico de creación de paquetes es accesible, especialmente gracias a herramientas como el paquete `usethis`.
+:::
+
+## ¿Por qué y para qué crear un paquete en R?
+
+A lo largo de este curso aprendimos a escribir funciones, organizar nuestro código, documentarlo, manejar estructuras de datos y seguir buenas prácticas de programación. Crear un paquete de R es una excelente manera de integrar todos esos conocimientos en un proyecto concreto. Los paquetes son la forma en que se distribuyen las herramientas en R: cuando usamos funciones como `mean()` o `ggplot()`, en realidad estamos utilizando funciones que vienen en paquetes. Aprender a crear nuestros propios paquetes no solo nos da autonomía como programadores, sino que también nos permite compartir nuestro trabajo con otras personas y empezar a construir herramientas reutilizables, ya sea para nuestros propios proyectos o para otros usuarios.
+
+Incluso si estamos dando nuestros primeros pasos en Estadística o Ciencia de Datos, desarrollar un paquete nos ayuda a pensar en cómo organizar el código para que sea claro, mantenible y reutilizable. También nos da una idea de cómo se construye el ecosistema de R, una comunidad que se apoya fuertemente en la creación colaborativa de software. 
+
+::: {.concepto data-latex=""}
+Un **paquete** en R es una colección de funciones, datos, documentación y archivos auxiliares organizados bajo una estructura estandarizada. Es la unidad básica de distribución de código en R. Cada vez que instalamos paquetes como `dplyr`, `ggplot2` o `writexl`, estamos descargando un conjunto de funciones predefinidas organizadas como un paquete.
+
+Los paquetes pueden ser tan simples como una sola función con su documentación, o tan complejos como librerías completas con cientos de funciones, conjuntos de datos y documentación detallada.
+:::
+
+Crear un paquete tiene muchas ventajas:
+
+* **Organización**: agrupar nuestras funciones y datos de forma clara y modular.
+* **Reutilización**: usar el mismo código en diferentes proyectos sin copiar y pegar.
+* **Colaboración**: compartir nuestro paquete con otras personas para que usen o contribuyan a nuestro trabajo.
+* **Documentación integrada**: incluir explicaciones detalladas sobre cada función, ejemplos y ayudas.
+* **Distribución**: subir nuestro paquete a repositorios públicos para que cualquier usuario de R pueda instalarlo.
+
+Aunque a simple vista pueda parecer una tarea para usuarios avanzados, crear un paquete básico es totalmente accesible para estudiantes que ya tienen nociones de funciones, documentación y buenas prácticas. Aprender esto desde temprano tiene muchos beneficios:
+
+* Nos obliga a **pensar en la estructura** del código.
+* Nos ayuda a **adquirir hábitos de documentación**.
+* Nos introduce a una práctica **profesional y colaborativa**.
+* Nos muestra cómo funciona el **ecosistema del software libre** en R.
+* Y lo más importante: nos muestra que **crear herramientas propias es posible**.
+
+## Pasos para crear un paquete
+
+Vamos a crear un paquete básico en R desde cero. La idea no es cubrir todas las posibilidades que ofrece el sistema de paquetes de R, sino sólo los pasos mínimos necesarios para armar un paquete funcional que contenga funciones propias, documentación, y pueda instalarse y compartirse fácilmente.
+
+### Preparativos
+
+Trabajaremos con herramientas del ecosistema `tidyverse`, en particular con el paquete `usethis`, que simplifica muchas de las tareas involucradas en la creación de paquetes. También vamos a usar `devtools` y `roxygen2` para compilar y documentar nuestro paquete de manera eficiente.
+
+Antes de comenzar, necesitamos tener instalados los siguientes paquetes:
+
+```r
+install.packages(c("usethis", "devtools", "roxygen2", "testthat"))
+```
+
+Por otro lado, quienes utilizan Windows deben instalar el software *Rtools*, que se trata de un conjunto de herramientas para compilar código fuente en Windows.  Los pasos a seguir son:
+
+En sistemas **macOS o Linux**, no se necesita Rtools.
+
+1. Visitar la página oficial de CRAN: [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/).
+2. Elegir la versión de Rtools que **corresponde a la versión de R que tenés instalada**. Por ejemplo, si usás R 4.4, necesitás Rtools 4.4.
+3. Descargar el instalador y seguir las instrucciones. Al instalar, marcar la opción que agrega Rtools al **PATH del sistema**, para que R pueda encontrarlo automáticamente.
+
+### Elegir el nombre
+
+El primer paso para crear un paquete tal vez sea uno de los más complicados: elegir un nombre. Esto puede tener poca importancia si estamos haciendo un paquete de uso personal, pero si pensamos en compartirlo, entonces hay que dedicarle algo de tiempo. Las reglas para elegir un nombre son:
+
+-   Sólo puede contener letras, números o puntos.
+-   Tener al menos dos caracteres.
+-   Empezar con una letra y no terminar con punto.
+
+Algunas sugerencias incluyen elegir un nombre que sea fácil de *googlear* y de recordar, que tenga todas mayúsculas o minúsculas, que tal vez surja de agregarle una *R* a una palabra que existe para generar un nombre único, etc.
+
+Para practicar vamos a crear un paquete con una única función que determina si un año es o no bisiesto, por eso lo vamos a llamar `bisiestos`.
+
+### Estructura del paquete
+
+Crear un paquete no es más que seguir ciertas convenciones para organizar un conjunto de carpetas y archivos, ya que, en definitiva, se trata de crear una carpeta en nuestra computadora que tiene ciertos elementos obligatorios y algunos otros opcionales.
+
+Vamos a cargar el paquete `devtools` que incluye muchos otros paquetes que ayudan a simplificar la tarea de la creación de un nuevo paquete.
+
+```{r, eval=FALSE}
+library(devtools)
+```
+
+La forma más fácil de crear un paquete es ejecutando la función `create_package("ruta\al\paquete")` en cualquier sesión de RStudio que tengamos abierta. Por ejemplo:
+
+```{r, eval=F}
+create_package("C:\Users\Marcos\Documents\bisiestos")
+```
+
+
+```bash         
+✔ Creating C:\Users\Marcos\Documents\bisiestos.
+✔ Setting active project to "C:\Users\Marcos\Documents\bisiestos".
+✔ Creating R/.
+✔ Writing DESCRIPTION.
+Package: bisiestos
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R (parsed):
+    * First Last <first.last@example.com> [aut, cre]
+Description: What the package does (one paragraph).
+License: `use_mit_license()`, `use_gpl3_license()` or friends to
+    pick a license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+✔ Writing NAMESPACE.
+✔ Writing bisiestos.Rproj.
+✔ Adding "^bisiestos\\.Rproj$" to .Rbuildignore.
+✔ Adding ".Rproj.user" to .gitignore.
+✔ Adding "^\\.Rproj\\.user$" to .Rbuildignore.
+✔ Opening C:\Users\Marcos\Documents\bisiestos in new RStudio session.
+✔ Setting active project to "<no active project>".
+```
+
+Lo anterior hace que en la carpeta `"C:\Users\Marcos\Documents\"` se cree un nuevo directorio, `bisiestos`, que no es más que un proyecto de RStudio populado con el conjunto de subcarpetas y archivos que conforman la estructura de un paquete. Además, se abre una nueva instancia de RStudio con el proyecto recién creado, para que podamos ponernos a trabajar en el desarrollo del paquete. Como este es un *RStudio Project* con una misión específica, veremos en esta instancia de RStudio nuevos paneles relacionados con la creación de paquetes, que no aparecían antes (por ejemplo, la pestaña `Build` en el panel de arriba a la derecha).
+
+Podemos ver la existencia de la nueva carpeta `bisiestos` con los archivos recientemente creados en el panel `Files`:
+
+![Resultado de la creación del paquete.](../imagenes/teoria_unidad_6/crear.png){fig-align="center" width="40%"}
+
+Algunos componentes creados en la carpeta del paquete son importantes, mientras que por ahora podemos ignorar a otros. Los importantes son:
+
+-   Archivo `DESCRIPTION`: describe el contenido del paquete y establece cómo el paquete se va a relacionar con otros.
+-   Carpeta `R`: contiene el o los archivos de código de R con las funciones del paquete.
+-   Archivo `NAMESPACE`: declara qué funciones nuestro paquete pone a disposición de los usuarios y de qué funciones de otros paquetes hace uso el nuestro, es decir, organiza las cosas para que R pueda encontrar todo lo que necesita cuando usa nuestro paquete.
+
+Los que podemos ignorar son:
+
+-   `bisiestos.Rproj`: guarda las opciones de configuración elegidas para el proyecto y sirve para abrirlo directamente desde el explorador de archivos de la compu como acceso directo.
+-   `.Rproj.user`: carpeta oculta usada internamente por RStudio para guardar archivos temporarios.
+-   `.gitignore`: archivo oculto que lista todos los archivos de R y RStudio que no deberían ser rastreados por un software llamado *git*, que no utilizaremos.
+
+### Escribir las funciones del paquete
+
+Las funciones del paquete se escriben en scripts `.R` dentro de la carpeta `R/`, una por archivo o agrupadas por tema. Nuestro paquete `bisiestos` tendrá un único script llamado `funciones.R`. Podemos crearlo a mano y guardarlo en la carpeta R, o dejar que todo se haga automáticamente si ejecutamos:
+
+```{r, eval=FALSE}
+library(devtools)
+use_r("funciones")
+```
+
+``` 
+☐ Modify R/funciones.R.
+```
+
+Vamos a agregar el código para la creación de una función llamada `es_bisiesto()` que determina si un año provisto es bisiesto o no. Pegamos lo siguiente en el script y lo guardamos:
+
+```{r, eval=F}
+#' La función es_bisiesto
+#' 
+#' Esta función analiza si el año o los años provistos son bisiestos o no. Los
+#' años bisiestos ocurren cada 4 años, excepto los terminados en 00, los cuales
+#' son bisiestos sólo si son divisibles por 400. Es decir, los años como 1600,
+#' 1700, 1800 son bisiestos si son divisibles por 400. Por ejemplo, el año 1900
+#' no fue bisiesto a pesar de ser divisible por 4, pero el año 2000 sí lo fue
+#' por ser divisible por 400. Entonces, para que un año dado sea bisiesto, se
+#' debe cumplir una de las siguientes condiciones: el año es divisible por 4
+#' pero no divisible por 100, o el año es divisible por 400.
+#'
+#' @param x vector numérico de largo mayor o igual a 1 con los años a evaluar.
+#'   Por default, toma el año actual.
+#'
+#' @return vector lógico de igual largo que `x` y nombrado con los elementos de
+#' `x`, con valor `TRUE` en cada si el correspondiente año indicado en `x` es
+#' bisiesto y `FALSE` en caso contrario.
+#' 
+#' @details Si `x` contiene valores no enteros, se toma su parte entera. Esta
+#'   función sirve para los años antes de Cristo, si se los considera bajo la
+#'   numeración astronómica de los años (incluye un año 0 y luego cuenta en
+#'   negativo, por ejemplo, el año 0 es 1 AC o el año -1 es 2 AC.).
+#'   
+#' @seealso \url{https://es.wikipedia.org/wiki/Año_bisiesto}
+#'
+#' @examples
+#' es_bisiesto(2019)
+#' es_bisiesto(2020)
+#' rtdo <- es_bisiesto(2020:2025)
+#' rtdo
+#' es_bisiesto(0)
+#' es_bisiesto(-1:-5)
+#' 
+#' @export
+#' 
+es_bisiesto <- function(x = as.integer(format(Sys.Date(), "%Y"))) {
+
+	# Chequear argumento
+	stopifnot(is.numeric(x))
+	x <- as.integer(x)
+
+	# Determinar si es bisiesto
+	rtdo <- ((x %% 4 == 0) & (x %% 100 != 0)) | (x %% 400 == 0)
+	names(rtdo) <- x
+
+	# Devolver años bisiestos
+	return(rtdo)
+}
+```
+
+Notemos que antes de la definición de la función hemos incluido la documentación bajo el formato *roxygen*. En la [Unidad 3](@sec-factorial) discutimos por qué es importante documentar nuestras funciones. En el contexto de la creación de un paquete, se vuelve aún más importante porque se trata de la información que permite generar las páginas del menú de *Ayuda*. Volvé a leer la [Unidad 3](@sec-factorial) para repasar cómo generar de forma automática la estructura de la documentación con *roxygen* y para qué se usa cada *tag* o etiqueta.
+
+Hay una etiqueta en la documentación que no habíamos empleado antes: `@export`. Se usa para indicar que esta función tiene que estar disponible cuando alguien cargue el paquete con `library()`. Un paquete guarda funciones para que las aprovechen los usuarios y las mismas deben tener esta etiqueta. No obstante, tal vez estas funciones internamente llaman a otras funciones auxiliares que creemos conveniente diseñar y que no hace falta que estén a disposición de los usuarios. Esas funciones internas no llevan la etiqueta `@export`.
+
+### Probar nuestro código
+
+Seguramente nos interese ir probando nuestras funciones a medida que las estamos desarrollando o cuando creemos que las hemos finalizado. Es decir, nos interesa tenerlas disponibles en nuestro ambiente de trabajo para poder usarlas. Para "cargar" todo el contenido del paquete que estamos desarrollando, `devtools` nos ofrece la función `load_all()`, o su atajo `ctrl + shift + l`. Su efecto es como el de correr `source()` con todos y cada uno de los scripts guardados en la carpeta `R/`, de una forma cuidadosa para que nuestro código funcione y podamos probarlo.
+
+```{r, eval=FALSE}
+load_all()
+```
+
+```         
+ℹ Loading bisiestos
+```
+
+Como resultado, todas las funciones definidas están listas para ser usadas (aunque no las veamos en el *global environment*):
+
+```{r, echo=F}
+es_bisiesto <- function(x = as.integer(format(Sys.Date(), "%Y"))) {
+
+	# Chequear argumento
+	stopifnot(is.numeric(x))
+	x <- as.integer(x)
+
+	# Determinar si es bisiesto
+	rtdo <- ((x %% 4 == 0) & (x %% 100 != 0)) | (x %% 400 == 0)
+	names(rtdo) <- x
+
+	# Devolver años bisiestos
+	return(rtdo)
+}
+```
+
+```{r}
+es_bisiesto(2019)
+es_bisiesto(2020)
+rtdo <- es_bisiesto(2020:2025)
+rtdo
+es_bisiesto(0)
+es_bisiesto(-1:-5)
+```
+
+A medida que el paquete va creciendo, con funciones internas y otras que se exportan, con funciones que se llaman unas a otras, con funciones que dependen de otros paquetes, probar nuestras funciones de esta forma nos da una idea más certera de cómo está quedando todo en el paquete. `load_all()` simula el proceso de construir, instalar y cargar el paquete. Entonces, se puede definir el siguiente flujo de trabajo (*workflow*) para la escritura del código:
+
+![Flujo de trabajo.](../imagenes/teoria_unidad_6/flujo1.png){fig-align="center" width="50%"}
+
+### Generar la documentación
+
+Si bien cuando definimos nuestra función ya escribimos su documentación, la misma tiene que ser procesada para que se generen los archivos que componen al manual de ayuda. Este procesamiento se hace automáticamente, al correr la función `document()` o su atajo `ctrl + shift + d`:
+
+```{r, eval=F}
+document()
+```
+
+```
+ℹ Updating bisiestos documentation
+ℹ Loading bisiestos
+Writing es_bisiesto.Rd
+Writing NAMESPACE
+Documentation completed
+```
+
+Como resultado del proceso anterior, se creó un nuevo subdirectorio, llamado `man`, que contiene un archivo de extensión `.Rd` por cada función que hayamos definido. Dichos archivos tienen la información de la documentación en un formato que permite generar las páginas de ayuda del manual.
+
+Otra consecuencia del proceso anterior es que archivo `NAMESPACE` fue modificado. El mismo es un componente fundamental de un paquete de R. Define qué funciones y objetos del paquete estarán disponibles para los usuarios y qué elementos de otros paquetes se utilizarán internamente. Le permite al sistema controlar el uso de funciones, evitando conflictos con otros paquetes. Este archivo puede crearse y editarse manualmente, pero en la práctica **no es recomendable**. Es mejor dejar que funciones como `document()` lo actualicen automáticamente a partir de la documentación de nuestras funciones, para que todo ande bien. 
+
+En nuestro ejemplo, después de ejecutar `document()`, el archivo `NAMESPACE` luce así:
+
+![Archivo `NAMESPACE`.](../imagenes/teoria_unidad_6/namespace.png){fig-align="center" width="50%"}
+
+### Editar el archivo `DESCRIPTION`
+
+El archivo `DESCRIPTION` es uno de los componentes fundamentales de todo paquete de R. Actúa como una “ficha técnica” del paquete: contiene información básica sobre el mismo, como su nombre, versión, autores, dependencias y más. Esta información no solo permite identificar el paquete, sino que también facilita su instalación, uso y distribución.
+
+A diferencia de un archivo de código, `DESCRIPTION` no contiene funciones ni instrucciones de R, sino una serie de campos escritos en formato "clave-valor", parecidos a un archivo de configuración.
+
+El archivo fue creado automáticamente por cuando ejecutamos al inicio la función `create_package()` y se ve así:
+
+```
+Package: bisiestos
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
+Description: What the package does (one paragraph).
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+```
+
+En este archivo hay algunos campos que tienen que estar presentes de forma obligatoria y otros que son opcionales. Acá mencionamos a los más importantes:
+
+-   **Elementos obligatorios**:
+
+    * **Package**: el nombre del paquete (debe coincidir con el nombre del directorio y estar en minúsculas o minúsculas + mayúsculas, sin espacios).
+    * **Type**: generalmente se indica `Package`, que es el tipo estándar.
+    * **Title**: un título breve y descriptivo (en una línea, sin punto final, *Escrito De Esta Forma*).
+    * **Version**: número de versión del paquete, siguiendo el formato `x.y.z` (por ejemplo, 0.2.1).
+    * **Author**: información sobre quién desarrolló el paquete. Se suele indicar el rol con `[aut]` (autor) y `[cre]` (mantenedor).
+    * **Description**: Un párrafo que describe el propósito y funcionalidad general del paquete. Puede ocupar varias líneas.
+    * **License**: Tipo de licencia que indica los términos de uso del paquete. Por ejemplo, `MIT`, `GPL-3`, `CC0`, etc.
+
+-   **Elementos no obligatorios**:
+
+    -   **Date**: fecha de publicación de esta versión del paquete.
+    -   **Imports**, **Depends**, **Suggests**: ver detalles en la siguiente sección.
+    -   **URL**: dirección de la página web del paquete.
+    -   **BugReports**: dirección donde los usuarios puedan enviar avisos con los problemas que encuentren.
+
+En cuanto a los autores, una misma persona puede cumplir varios roles y puede haber varias personas en el mismo rol. Los roles de uso más común son:
+
+-   Autor (*author*): autor del paquete, se indica con la etiqueta *aut*
+-   Mantenedor (*maintainer*): persona a cargo de arreglar los problemas que puedan surgir en CRAN, recibe notificaciones sobre errores por parte de los usuarios, etc. Sólo puede haber un *maintainer*. Se indica con la etiqueta *cre*.
+-   Contribuyente (*contributor*): alguien que hizo un aporte menor, se indica con *ctb*.
+
+Después de algunos agregados, nuestro DESCRIPTION luce así:
+
+```         
+Package: bisiestos
+Title: Determinación de años bisiestos
+Version: 0.0.0.9000
+Authors@R: 
+    person(
+        given = "Marcos",
+        family = "Prunello",
+        role = c("aut", "cre"),
+        email = "mp@fcecon.com"
+    )
+Description: Este paquete permite determinar si un año es bisiesto o no, 
+      proveyendo una solución definitiva a un problema de tediosa solución.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+```
+
+### Instalación
+
+¡Ya hemos terminado la primera versión de nuestro paquete y estamos en condiciones de instalarlo! Se puede hacer esto de varias formas:
+
+-   Corriendo `install()`
+-   Usando el atajo `ctrl + shift + b`
+-   Haciendo clic en `Install` de la pestaña `Build`.
+
+```{r, eval=FALSE}
+install()
+```
+
+```         
+==> R CMD INSTALL --preclean --no-multiarch --with-keep.source bisiestos
+
+* installing to library ‘/home/marcos/R/x86_64-pc-linux-gnu-library/4.5/_build’
+* installing *source* package ‘bisiestos’ ...
+** this is package ‘bisiestos’ version ‘0.0.0.9000’
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (bisiestos)
+```
+
+Una vez instalado, podemos usarlo como a cualquier otro paquete. En cada sesión de trabajo en la que lo necesitemos, lo cargamos con `library(bisiestos)`:
+
+```{r, eval=FALSE}
+library(bisiestos)
+es_bisiesto(2030)
+```
+
+Además, podemos ir al menú de Ayuda y ver nuestra documentación:
+
+```{r, eval=FALSE}
+?es_bisiesto
+```
+
+![Página de ayuda creada.](../imagenes/teoria_unidad_6/help.png){fig-align="center" width="70%"}
+
+### Distribución
+
+Una vez creado y probado un paquete de R, es natural querer compartirlo con otras personas, ya sea para colaborar, para que lo usen en otros proyectos o simplemente para facilitar su instalación. Existen diversas formas de distribuir un paquete, cada una con sus ventajas y requisitos.
+
+1.  **Publicación en CRAN**. CRAN (Comprehensive R Archive Network) es el repositorio oficial de paquetes de R. Publicar un paquete en CRAN permite que cualquier persona lo instale fácilmente usando, por ejemplo, `install.packages("bisiestos")`. Sin embargo, para subir un paquete a CRAN es necesario cumplir con una serie de requisitos técnicos y de buenas prácticas, como:
+
+    * Tener documentación completa (manuales, `NAMESPACE`, `DESCRIPTION`).
+    * Cumplir con convenciones de estilo y estructura.
+    * Superar una batería de chequeos automáticos en distintos sistemas operativos.
+
+2.  **Compartir el paquete desde GitHub**. [GitHub](https://github.com/) es una plataforma de desarrollo colaborativo que permite almacenar, controlar el desarrollo y compartir código. Publicar un paquete en GitHub es especialmente útil cuando el paquete aún está en desarrollo, cuando queremos colaborar con otras personas o simplemente cuando no deseamos (todavía) subirlo a CRAN.
+
+3. **Compartir un archivo comprimido (`.zip` o `.tar.gz`)**. Otra forma sencilla de distribuir un paquete es generar un archivo comprimido que contenga todos los archivos del paquete, ya sea en formato `.zip` (usado principalmente en Windows) o `.tar.gz` (típico de Linux/macOS). Este archivo puede compartirse por correo electrónico, subirlo a una nube, o alojarse en un sitio web.
+
+En nuestro caso, optaremos por el último camino. Desde la consola de R (estando en el directorio del paquete) ejecutamos:
+
+```r
+library(devtools)
+build()
+```
+
+```
+── R CMD build ───────────────────────────────────────────────────────────────
+✔  checking for file ‘C:\Users\Marcos\Documents\bisiestos’ ...
+─  preparing ‘bisiestos’:
+✔  checking DESCRIPTION meta-information ...
+─  checking for LF line-endings in source and make files and shell scripts
+─  checking for empty or unneeded directories
+─  building ‘bisiestos_0.0.0.9000.tar.gz’
+   
+[1] "C:\Users\Marcos\Documents\bisiestos_0.0.0.9000.tar.gz"
+```
+
+
+Este comando genera un archivo `.tar.gz` (o `.zip` si se configura para Windows) en el directorio padre. Este archivo contiene todo el código y documentación del paquete y puede instalarse sin necesidad de acceso a internet. El archivo comprimido puede ser compartido con cualquier persona y ser instalado con:
+
+```r
+install.packages("bisiestos.tar.gz", repos = NULL, type = "source")
+```

@@ -1,0 +1,10 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Unidad 6. Desarrollo de librerías de software
+
+::: {.presentacion-capitulo data-latex=""}
+En esta última unidad del curso vamos a aprender cómo crear nuestros propios paquetes en R. Un paquete es una forma organizada y reutilizable de agrupar funciones, datos, documentación y otros recursos que desarrollamos. Aprender a crear un paquete no solo es una habilidad técnica muy útil, sino también una excelente oportunidad para integrar muchos de los conceptos vistos a lo largo del curso: estructuras de datos, funciones, documentación, manejo de errores, buenas prácticas de estilo y más. Además, desarrollar paquetes es una práctica habitual en el trabajo académico y profesional de quienes se dedican a la Estadística y a la Ciencia de Datos, y esta unidad busca ofrecer una introducción sencilla y sólida a esa práctica.
+:::
+

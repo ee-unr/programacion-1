@@ -62,11 +62,12 @@ book:
         - capitulos/05_4_varios.qmd
         - capitulos/05_practica.qmd
         - capitulos/05_actividad_autoevaluativa.qmd
-    # - part: capitulos/06.qmd
-    #   chapters:
-    #     - capitulos/06_1_.qmd
-    #     - capitulos/06_practica.qmd
-    #     - capitulos/06_actividad_autoevaluativa.qmd
+    - part: capitulos/06.qmd
+      chapters:
+        - capitulos/06_1_crear_paquete.qmd
+        - capitulos/06_2_extras.qmd
+        # - capitulos/06_practica.qmd
+        # - capitulos/06_actividad_autoevaluativa.qmd
     - part: capitulos/90.qmd
       chapters:
         - capitulos/90_soluciones_01.qmd
