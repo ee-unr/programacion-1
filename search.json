@@ -698,7 +698,7 @@
     "href": "capitulos/01_actividad_autoevaluativa.html#pregunta-4",
     "title": "Actividad de autoevaluación 1",
     "section": "Pregunta 4",
-    "text": "Pregunta 4\nUna inmobiliaria necesita guardar el valor de una operación de venta de un inmueble efectuada durante el corriente año en una variable para realizar operaciones posteriores. Entre los siguientes posibles nombre de variable indique cual sería el más adecuado:\n\n operación_Año2025 Valor-Venta-Inmueble-2025 venta inmueble 2025 valorVentaInmueble2025 VentaOperación ventainmuebleanio2025 venta_inmueble_2025 2025_venta_inmueble\n\n\n\nExplicación\n\nVentaOperación: No es la mejor opción porque incluye un acento (“ó”) en el nombre de la variable, lo que puede generar problemas de codificación en algunos entornos. Además, se recomienda usar guiones bajos para separar palabras en minúsculas y mejorar la legibilidad.\n2025_venta_inmueble: En general no es buena práctica que los nombres de variables comiencen con un número en ningún lenguaje de programación. R y la mayoría de lenguajes no lo permiten, y aunque algunos sí lo hacen, dificulta la lectura y puede causar errores.\nValor-Venta-Inmueble-2025: No se recomienda usar guiones medios en nombres de variables porque este carácter está reservado para la operación de resta. En muchos lenguajes, incluyendo R, provocaría errores de sintaxis. Siempre es mejor usar guiones bajos.\nventa inmueble 2025: Los espacios entre palabras no son válidos en nombres de variables. El sistema interpretaría “venta”, “inmueble” y “2025” como tres variables distintas. Para unir palabras, se usan guiones bajos.\nvalorVentaInmueble2025: Este tipo de escritura se conoce como camelCase, y aunque muchos lo utilizan, en R la convención más clara y extendida es el uso de snake_case (con guiones bajos). Funciona, pero no sigue el estilo típico de R.\noperación_Año2025: Este nombre contiene un acento (“ó”) y la letra “ñ”, lo que puede causar conflictos en algunos entornos. Para evitar errores, es mejor evitar caracteres especiales como estos. Ademas utiliza mayúsculas, lo que puede complicar innecesariamente la escritura del nombre de la variable.\nventainmuebleanio2025: Aunque técnicamente válido, este nombre es largo y poco intuitivo porque carece de separadores entre palabras. Usar guiones bajos mejora significativamente la legibilidad.",
+    "text": "Pregunta 4\nUna inmobiliaria necesita guardar el valor de una operación de venta de un inmueble efectuada durante el corriente año en una variable para realizar operaciones posteriores. Entre los siguientes posibles nombre de variable indique cual sería el más adecuado:\n\n operación_Año2025 VentaOperación 2025_venta_inmueble valorVentaInmueble2025 ventainmuebleanio2025 Valor-Venta-Inmueble-2025 venta_inmueble_2025 venta inmueble 2025\n\n\n\nExplicación\n\nVentaOperación: No es la mejor opción porque incluye un acento (“ó”) en el nombre de la variable, lo que puede generar problemas de codificación en algunos entornos. Además, se recomienda usar guiones bajos para separar palabras en minúsculas y mejorar la legibilidad.\n2025_venta_inmueble: En general no es buena práctica que los nombres de variables comiencen con un número en ningún lenguaje de programación. R y la mayoría de lenguajes no lo permiten, y aunque algunos sí lo hacen, dificulta la lectura y puede causar errores.\nValor-Venta-Inmueble-2025: No se recomienda usar guiones medios en nombres de variables porque este carácter está reservado para la operación de resta. En muchos lenguajes, incluyendo R, provocaría errores de sintaxis. Siempre es mejor usar guiones bajos.\nventa inmueble 2025: Los espacios entre palabras no son válidos en nombres de variables. El sistema interpretaría “venta”, “inmueble” y “2025” como tres variables distintas. Para unir palabras, se usan guiones bajos.\nvalorVentaInmueble2025: Este tipo de escritura se conoce como camelCase, y aunque muchos lo utilizan, en R la convención más clara y extendida es el uso de snake_case (con guiones bajos). Funciona, pero no sigue el estilo típico de R.\noperación_Año2025: Este nombre contiene un acento (“ó”) y la letra “ñ”, lo que puede causar conflictos en algunos entornos. Para evitar errores, es mejor evitar caracteres especiales como estos. Ademas utiliza mayúsculas, lo que puede complicar innecesariamente la escritura del nombre de la variable.\nventainmuebleanio2025: Aunque técnicamente válido, este nombre es largo y poco intuitivo porque carece de separadores entre palabras. Usar guiones bajos mejora significativamente la legibilidad.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Actividad de autoevaluación 1</span>"
@@ -1531,7 +1531,73 @@
     "href": "capitulos/04_actividad_autoevaluativa.html",
     "title": "Actividad de autoevaluación 4",
     "section": "",
-    "text": "El contenido estará disponible a la brevedad.",
+    "text": "Pregunta 1\n¿Qué ventaja tiene usar la terminal frente a una interfaz gráfica?",
+    "crumbs": [
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Actividad de autoevaluación 4</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/04_actividad_autoevaluativa.html#pregunta-1",
+    "href": "capitulos/04_actividad_autoevaluativa.html#pregunta-1",
+    "title": "Actividad de autoevaluación 4",
+    "section": "",
+    "text": "No necesita internet. Es más estética. Permite automatizar tareas y controlar el sistema con mayor precisión. No consume memoria RAM.",
+    "crumbs": [
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Actividad de autoevaluación 4</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/04_actividad_autoevaluativa.html#pregunta-2",
+    "href": "capitulos/04_actividad_autoevaluativa.html#pregunta-2",
+    "title": "Actividad de autoevaluación 4",
+    "section": "Pregunta 2",
+    "text": "Pregunta 2\n¿Qué comando se usa en Windows para ver los archivos en un directorio?\n\n ls dir cd show",
+    "crumbs": [
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Actividad de autoevaluación 4</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/04_actividad_autoevaluativa.html#pregunta-3",
+    "href": "capitulos/04_actividad_autoevaluativa.html#pregunta-3",
+    "title": "Actividad de autoevaluación 4",
+    "section": "Pregunta 3",
+    "text": "Pregunta 3\n¿Cómo podemos ejecutar un programa de R desde la terminal?\n\n Escribiendo runR seguido del nombre del archivo. Usando Rscript archivo.R Abriendo RStudio y pegando el código. Con R CMD START archivo.R",
+    "crumbs": [
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Actividad de autoevaluación 4</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/04_actividad_autoevaluativa.html#pregunta-4",
+    "href": "capitulos/04_actividad_autoevaluativa.html#pregunta-4",
+    "title": "Actividad de autoevaluación 4",
+    "section": "Pregunta 4",
+    "text": "Pregunta 4\nPara que el comando Rscript funcione correctamente en la terminal, ¿qué debemos verificar?\n\n Tener conexión a internet. Que esté agregado al PATH del sistema. Que se haya cerrado RStudio antes. Que el archivo .R tenga más de 10 líneas.",
+    "crumbs": [
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Actividad de autoevaluación 4</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/04_actividad_autoevaluativa.html#pregunta-5",
+    "href": "capitulos/04_actividad_autoevaluativa.html#pregunta-5",
+    "title": "Actividad de autoevaluación 4",
+    "section": "Pregunta 5",
+    "text": "Pregunta 5\n¿Por qué puede ser útil crear scripts interactivos en R?\n\n Porque permiten evitar errores de sintaxis. Porque hacen que el programa se detenga automáticamente. Porque permiten que el usuario ingrese información al momento de ejecutar el script. Porque consumen menos recursos del sistema.",
+    "crumbs": [
+      "Unidad 4. Uso de la terminal",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Actividad de autoevaluación 4</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/04_actividad_autoevaluativa.html#pregunta-6",
+    "href": "capitulos/04_actividad_autoevaluativa.html#pregunta-6",
+    "title": "Actividad de autoevaluación 4",
+    "section": "Pregunta 6",
+    "text": "Pregunta 6\n¿Qué sucede si se ingresa un texto cuando la función scan() dentro del script espera un número?\n\n R lo convierte automáticamente. El programa sigue sin problemas. Puede dar error o producir un NA, y se debe controlar con validaciones. Se reinicia RStudio.",
     "crumbs": [
       "Unidad 4. Uso de la terminal",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>Actividad de autoevaluación 4</span>"
