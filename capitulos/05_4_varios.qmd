@@ -49,13 +49,13 @@ apply(m, 2, min)
 `lapply(X, FUN)` aplica una función `FUN` a cada elemento de una lista o vector y devuelve siempre una **lista** como resultado:
 
 ```{r}
-v <- list(a = 1:5, b = 6:10, c = 11:15)
+lista1 <- list(a = 1:5, b = 6:10, c = 11:15)
 ```
 
 `sapply()` funciona igual que `lapply()`, pero intenta **simplificar** la salida: si todos los resultados son del mismo tipo y longitud, devuelve un vector o matriz en lugar de una lista:
 
 ```{r}
-sapply(v, mean)
+sapply(lista1, mean)
 ```
 
 Si la simplificación no es posible, el resultado será una lista, igual que con `lapply()`.
@@ -64,7 +64,7 @@ En el caso de que la lista tenga elementos de distinto tipo, la función a aplic
 
 ```{r}
 #| error: true
-mi_lista <- list(
+lista2 <- list(
 	w = c(-4.5, 12, 2.71),
 	x = c("hola", "chau"),
 	y = matrix(c(8, 11, 13, 16), nrow = 2),
@@ -72,12 +72,12 @@ mi_lista <- list(
 )
 
 # Vemos el largo de cada elemento de la lista
-lapply(mi_lista, length)
-sapply(mi_lista, length)
+lapply(lista2, length)
+sapply(lista2, length)
 
 # Vemos la suma de cada elemento de la lista: no se puede con algunos
-lapply(mi_lista, sum)
-sapply(mi_lista, sum)
+lapply(lista2, sum)
+sapply(lista2, sum)
 ```
 
 ### Otras funciones
@@ -153,10 +153,10 @@ cbind(m4, v)
 También es posible combinar o juntar listas para formar nuevas listas que contengan todos los elementos de las originales. Esto puede resultar útil cuando queremos unificar resultados parciales, construir estructuras complejas a partir de otras más simples, o agregar nuevos elementos a una lista existente. La forma más directa de combinar listas es usando también la función `c()`:
 
 ```{r}
-lista1 <- list(a = 1, b = 2)
-lista2 <- list(c = 3, d = 4)
+lista3 <- list(a = 1, b = 2)
+lista4 <- list(c = 3, d = 4)
 
-lista_combinada <- c(lista1, lista2)
+lista_combinada <- c(lista3, lista4)
 lista_combinada
 ```
 
@@ -165,7 +165,7 @@ lista_combinada
 También es posible anidar listas dentro de otras listas. En el siguiente caso, `lista_anidada` es una lista de longitud 2, donde cada elemento es a su vez una lista:
 
 ```{r}
-lista_anidada <- list(lista1, lista2)
+lista_anidada <- list(lista3, lista4)
 length(lista_anidada)
 lista_anidada
 lista_anidada[[1]]
@@ -174,14 +174,14 @@ lista_anidada[[1]]
 Por último, si queremos agregar un nuevo elemento a una lista ya existente, podemos hacerlo mediante asignación directa:
 
 ```{r}
-lista1$e <- 5
-lista1
+lista3$e <- 5
+lista3
 ```
 
 o usando la función `append()`:
 
 ```{r}
-append(lista2, list(f = 6))
+append(lista4, list(f = 6))
 ```
 
 

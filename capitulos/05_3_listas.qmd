@@ -10,7 +10,7 @@ editor_options:
 # Listas
 
 ::: {.presentacion-capitulo data-latex=""}
-En este capítulo vamos a introducir una nueva estructura de datos fundamental en R: las **listas**. A diferencia de los vectores y matrices que vimos hasta ahora, las listas permiten almacenar elementos de distinto tipo y estructura dentro de un mismo objeto. Esto las convierte en una herramienta muy flexible para trabajar con datos complejos y variados. Aprenderemos cómo se crean, cómo se accede a sus elementos y cómo se utilizan en distintos contextos de programación y análisis de datos en R.
+En este capítulo vamos a introducir una nueva estructura de datos fundamental en R: las **listas**. A diferencia de los vectores y matrices que vimos hasta ahora, las listas permiten almacenar elementos de distinto tipo y estructura dentro de un mismo objeto. Esto las convierte en una herramienta muy flexible para trabajar con datos complejos y variados. Aprenderemos cómo se crean, cómo se accede a sus elementos y cómo se utilizan en distintos contextos.
 :::
 
 ## ¿Qué es una lista?
@@ -26,7 +26,7 @@ El siguiente diagrama presenta una **lista de R** (recuadro con puntas redondead
 3. Una matriz numérica de dimensión 2x2.
 4. Un valor lógico.
 
-![Ejemplo de una lista.](../imagenes/teoria_unidad_5/estr09.png){width="50%" fig-align="center"}
+![Ejemplo de una lista.](../imagenes/teoria_unidad_5/estr09.png){width="30%" fig-align="center"}
 
 
 La creación de esta lista se realiza mediante la función `list()`, cuyos argumentos son los elementos que queremos guardar en la lista, separados por comas:
@@ -47,7 +47,7 @@ Luego de correr la sentencia anterior, podemos ver que `mi_lista` es un nuevo ob
 
 Usamos dobles corchetes `[[ ]]` para referenciar a cada objeto que forma parte de la lista. Además, si queremos indicar un elemento dentro de un objeto que forma parte de la lista, agregamos otro conjunto de corchetes como hacemos con vectores y matrices. Por ejemplo:
 
-![Indexación de una lista.](../imagenes/teoria_unidad_5/estr10.png){width="50%" fig-align="center"}
+![Indexación de una lista.](../imagenes/teoria_unidad_5/estr10.png){width="30%" fig-align="center"}
 
 ```{r}
 mi_lista[[1]]
@@ -88,13 +88,15 @@ mi_lista[["y"]]
 mi_lista$y
 ```
 
+La última opción hace uso de `$`, el **operador de acceso** de R, que utiliza para acceder a un elemento de una lista (si tiene nombre) o a una columna de un *data.frame*. El operador $ simplifica la extracción de elementos específicos, haciendo que el código sea más legible y eficiente que cuando se emplean corchetes.
+
 ## Listas como resultados de funciones
 
-Una de las aplicaciones más frecuentes y prácticas de las listas en R es su uso como **estructura de salida de funciones**. En la [Unidad 3 sobre funciones](03.qmd) mencionamos que las mismas pueden devolver exactamente un objeto como resultado. Esto puede ser una limitación, ya que en algunos casos tal vez necesitemos devolver varios elementos de distinto tipo^[Si fuesen elementos del mismo tipo, los podríamos devolver dentro de un vector, por ejemplo, las dos soluciones reales distintas de una ecuación cuadrática.].
+Una de las aplicaciones más frecuentes y prácticas de las listas en R es su uso como **estructura de salida de funciones**. En la [Unidad 3 sobre funciones](03_1_crear_funciones.qmd) mencionamos que las mismas pueden devolver exactamente un objeto como resultado. Esto puede ser una limitación, ya que en algunos casos tal vez necesitemos devolver varios elementos de distinto tipo^[Si fuesen elementos del mismo tipo, los podríamos devolver dentro de un vector, por ejemplo, las dos soluciones reales distintas de una ecuación cuadrática.].
 
-Las listas permiten que las funciones devuelvan una **colección de resultados relacionados**, sin perder la flexibilidad de acceder a cada uno por separado, y sin forzar al usuario a usar estructuras más rígidas o artificiales. Gracias a esto, podemos inspeccionar, manipular o extraer partes de un resultado complejo sin necesidad de descomponerlo manualmente. Si escribimos funciones que devuelven más de un resultado (por ejemplo, una media y una desviación estándar), la forma más clara y ordenada de hacerlo es con una lista nombrada:
+Las listas permiten que las funciones devuelvan una **colección de resultados relacionados**, sin perder la flexibilidad de acceder a cada uno por separado, y sin forzar al usuario a usar estructuras más rígidas o artificiales. Gracias a esto, podemos inspeccionar, manipular o extraer partes de un resultado complejo sin necesidad de descomponerlo manualmente. Si escribimos funciones que devuelven más de un resultado (por ejemplo, una media y una desviación estándar), la forma más clara y ordenada de hacerlo es con una lista nombrada.
 
-Para ejemplificar, recordemos el [ejercicio de la práctica 3](90_soluciones_03.qmd#ejercicio-3) que pide escribir una función `triangulos(a, b, c)`. A partir de la longitud de los tres lados de un triángulo `a`, `b` y `d`, esta función lo clasifica con los siguientes resultados posibles: 
+Para ejemplificar, recordemos el [ejercicio de la práctica 3](90_soluciones_03.qmd#ejercicio-3) que pide escribir una función `triangulos(a, b, c)`. A partir de la longitud de los tres lados de un triángulo `a`, `b` y `c`, esta función lo clasifica como "equilátero", "isósceles" o "escaleno", o bien devuelve un texto diciendo que las medidas provistas no son compatibles con la definición de un triángulo: 
 
 ```{r}
 triangulos <- function(a, b, c) {
@@ -126,28 +128,29 @@ triangulos <- function(a, b, c) {
     tipo <- "escaleno"
   }
   return(list(triangulo = tipo, perimetro = perim))
-  # atención con triangulo = tipo: el primero es el nombre que le estamos dando
-  # al elemento de la lista, el segundo es el objeto que guardamos en la lista
 }
 ```
 
-Ejemplos del uso de esta función:
+En la línea final, encontramos `triangulo = tipo`: `tipo` es uno de los elementos que ponemos en la lista y debe ser una variable local en la función; mientras que `triangulo` es un nombre que elegimos para este elemento en la lista definida y puede ser cualquier palabra que deseemos. Lo mismo ocurre con `perimetro = perim`. Veamos ejemplos del uso de esta función:
 
 ```{r}
 # Guardamos el resultado devuelto (una lista) en el objeto resultado
 resultado <- triangulos(2, 3, 4)
-# Miramos el primer elemento de la lista (carácter que indica el tipo de triángulo)
-resultado[[1]]
-resultado$triangulo
-# Miramos el primer elemento de la lista (perímetro)
-resultado[[2]]
-resultado$perimetro
-# Miramos todo junto
+
+# Miramos todo el contenido de la lista
 resultado
-# Otro ejemplo:
-resultado2 <- triangulos(2, 3, 10)
-resultado2[[1]]
-resultado2[[2]]
+
+# Accedemos a sus elementos por nombre con el operador de acceso
+resultado$triangulo
+resultado$perimetro
+
+# Accedemos a sus elementos por nombre con corchetes
+resultado[["triangulo"]]
+resultado[["perimetro"]]
+
+# Accedemos a sus elementos por posición
+resultado[[1]]
+resultado[[2]]
 ```
 
 Muchas funciones del sistema y de paquetes externos devuelven sus resultados en forma de lista, especialmente cuando se necesita devolver **más de un objeto** o cuando los resultados son **complejos o estructurados**.
