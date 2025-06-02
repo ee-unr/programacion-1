@@ -10,8 +10,64 @@ number-sections: false
 
 ## Ejercicio 1
 
-Enunciado Ejercicio 1...
+Crear un paquete de R llamado `paridad` que contenga dos funciones: `numeros_pares()` y `numeros_impares()`. Cada una de ellas toma un vector de números `x` y devuelve un nuevo vector que contiene sólo los números pares o impares, según corresponda. A continuación se presentan ejemplos del comportamiento esperado de las funciones:
+
+```r
+> library(paridad)
+> numeros_pares(c(-1, 4, 4.1, 0, 6))
+[1] 4 0 6
+> numeros_pares(10:15)
+[1] 10 12 14
+> numeros_pares(1)
+numeric(0)
+> numeros_pares(c("hola", "chau"))
+Error in numeros_pares(c("hola", "chau")) : 
+  x debe ser un vector numérico.
+> numeros_impares(c(-1, 4, 4.1, 0, 6))
+[1] -1
+> numeros_impares(10:15)
+[1] 11 13 15
+> numeros_impares(-2)
+numeric(0)
+> numeros_impares(c("hola", "chau"))
+Error in numeros_impares(c("hola", "chau")) : 
+  x debe ser un vector numérico.
+```
+
+Se pueden seguir estos pasos a modo de guía:
+
+a. Abrir RStudio y ejecutar `library(devtools)` en la terminal.
+b. Generar el paquete `paridad` haciendo uso de la función `create_package()`. Especificar adecuadamente el directorio donde estará ubicado el paquete.
+c. Continuar trabajando en el proyecto de RStudio creado en el paso anterior, que se ha abierto automáticamente en una nueva sesión de RStudio. En esta sesión, cargar el paquete `devtools`.
+d. Utilizar la función `use_r()` para agregar automáticamente un archivo `.R` en la carpeta `R/` del paquete.
+d. Escribir en dicho script el código `numeros_pares()` y `numeros_impares()`. 
+e. Cargar todo el contenido del paquete desarrollado utilizando `load_all()` y verificar el correcto funcionamiento de las funciones.
+f. Documentar las funciones usando el sistema `roxygen` y generar la documentación con `document()`.
+g. Completar los campos básicos del archivo `DESCRIPTION`.
+h. Instalar localmente el paquete con `install()`.
+i. Generar un archivo comprimido para distribuir el paquete con `build()`.
+j. Cerrar la sesión de RStudio, abrir una nueva, cargar el paquete con `library()`, probar las funciones y verificar que las páginas de ayuda se vean bien.
 
 ## Ejercicio 2
 
-Enunciado Ejercicio 2...
+Crear un nuevo paquete de R llamado `palabrerio`. que cuente con dos funciones:
+
+1. `termina_en_vocal(palabra)`: recibe una cadena de texto y devuelve `TRUE` si la última letra es una vocal (a, e, i, o, u). Para convertir una palabra en un vector de letras se pueden usar la función de R Base `strsplit()`. Esta función es de uso interno del paquete, no debe ser exportada para los usuarios.
+2. `filtrar_por_vocal(palabras)`: recibe un vector de palabras y usa la función `termina_en_vocal()` para devolver un vector que contiene sólo aquellas que terminan en vocal.
+
+Ejemplo del uso del paquete:
+
+```r
+> library(palabrerio)
+> x <- c("casa", "flor", "pared", "día", "sol")
+> filtrar_por_vocal(x)
+[1] "casa" "día" 
+> filtrar_por_vocal(c("montes", "cuadernos"))
+character(0)
+> filtrar_por_vocal(1:3)
+Error in filtrar_por_vocal(1:3) : palabras debe ser un vector carácter.
+```
+
+## Ejercicio 3
+
+Crear un nuevo paquete llamado `unidad3` para guardar allí al menos 4 de las funciones creadas en los ejercicios de la Práctica 3.

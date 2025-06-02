@@ -152,10 +152,10 @@ Regla clave:<br>
 `r webexercises::unhide()`
 
 ## Pregunta 4
+
 Una inmobiliaria necesita guardar el valor de una operación de venta de un inmueble efectuada durante el corriente año en una variable para realizar operaciones posteriores. Entre los siguientes posibles nombre de variable indique cual sería el más adecuado:
 
 ```{r, include=FALSE}
-# use sample() to randomise the order
 opts_ci <- sample(c(
   answer = "`venta_inmueble_2025`","`VentaOperación`","`2025_venta_inmueble`",
   "`Valor-Venta-Inmueble-2025`", "`venta inmueble 2025`", "`valorVentaInmueble2025`", 

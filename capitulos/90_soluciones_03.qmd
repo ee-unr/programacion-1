@@ -12,11 +12,9 @@ number-sections: false
 1.  Abrir RStudio y crear un nuevo proyecto llamado `unidad3`, para guardar allí todos los archivos que usaremos. Asegurarse de que RStudio esté trabajando con este proyecto abierto.
 2.  Al comenzar a resolver cada ejercicio:
 
-<!-- -->
-
-a.  Eliminar todos los objetos del *Global Environment*, para evitar confusiones con objetos que hayan sido creados para resolver otro problema.
-b.  Crear y guardar en la carpeta del proyecto un nuevo script con el nombre `ejercicio_*.R` para almacenar de manera organizada la solución de cada problema (por ejemplo, `ejercicio_01.R`, `ejercicio_02.R`, etc.)
-c.  A menos que se indique lo contrario, utilizar cada uno de estos scripts para escribir el código que crea la función pedida en el ejercicio y también el código con ejemplos para usarla.
+    a.  Eliminar todos los objetos del *Global Environment*, para evitar confusiones con objetos que hayan sido creados para resolver otro problema.
+    b.  Crear y guardar en la carpeta del proyecto un nuevo script con el nombre `ejercicio_*.R` para almacenar de manera organizada la solución de cada problema (por ejemplo, `ejercicio_01.R`, `ejercicio_02.R`, etc.)
+    c.  A menos que se indique lo contrario, utilizar cada uno de estos scripts para escribir el código que crea la función pedida en el ejercicio y también el código con ejemplos para usarla.
 :::
 
 ## Ejercicio 1

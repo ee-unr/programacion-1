@@ -1,14 +1,8 @@
----
-number-sections: false
----
+# Respuestas a los ejercicios de la Unidad 6
 
-```{=latex}
-\thispagestyle{primerapagina}
-```
+Este repositorio tiene un directorio para cada ejercicio, con los elementos que componen a cada uno de los paquetes que se deben desarrollar.
 
-# Soluciones de la Práctica de la Unidad 6
-
-Los materiales con las soluciones se encuentran [en este repositorio *online*](https://github.com/ee-unr/programacion-1/tree/main/paquetes_unidad_6). El mismo cuenta con un directorio para cada ejercicio, con los elementos que componen a cada uno de los paquetes que se deben desarrollar. Al explorar las soluciones propuestas, se deben tener en cuenta los siguientes comentarios:
+Para tener en cuenta:
 
 - El código de las funciones está en el subdirectorio `R`.
 - La carpeta `man` contiene archivos para la generación de páginas de ayuda, creados automáticamente a partir de la documentación de las funciones (no se edita a mano).

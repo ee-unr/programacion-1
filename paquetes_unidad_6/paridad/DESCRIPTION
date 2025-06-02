@@ -1,0 +1,17 @@
+Package: paridad
+Title: Identificación de números pares o impares en un vector.
+Version: 0.0.0.9000
+Authors@R: 
+    person(
+        given = "Nombre", 
+        family = "Apellido", 
+        email = "first.last@example.com", 
+        role = c("aut", "cre")
+    )
+Description: Se ofrecen dos funciones, una identifica números pares y la otra,
+    números negativos.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2

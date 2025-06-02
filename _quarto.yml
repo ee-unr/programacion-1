@@ -66,8 +66,8 @@ book:
       chapters:
         - capitulos/06_1_crear_paquete.qmd
         - capitulos/06_2_extras.qmd
-        # - capitulos/06_practica.qmd
-        # - capitulos/06_actividad_autoevaluativa.qmd
+        - capitulos/06_practica.qmd
+        - capitulos/06_actividad_autoevaluativa.qmd
     - part: capitulos/90.qmd
       chapters:
         - capitulos/90_soluciones_01.qmd
@@ -75,7 +75,7 @@ book:
         - capitulos/90_soluciones_03.qmd
         - capitulos/90_soluciones_04.qmd
         - capitulos/90_soluciones_05.qmd
-        # - capitulos/90_soluciones_06.qmd
+        - capitulos/90_soluciones_06.qmd
   appendices:
     - capitulos/98_tp.qmd
     - capitulos/99_bibliografia.qmd

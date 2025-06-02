@@ -1,5 +1,5 @@
 ---
-title: "Actividad de autoevaluación 2"
+title: "Actividad de autoevaluación 6"
 number-sections: false
 ---
 
@@ -7,6 +7,56 @@ number-sections: false
 \thispagestyle{primerapagina}
 ```
 
-::: {.en-construccion data-latex=""}
-El contenido estará disponible a la brevedad.
-:::
+```{r, include=FALSE}
+# si no hay un code chunk, webexercises produce error, dejo este invisible
+```
+
+## Pregunta 1
+
+En cada caso, determinar si la afirmación es Verdadera o Falsa.
+
+a.  Escribir "a mano" el conteido del archivo `NAMESPACE` es una práctica recomendada.
+    
+    `r webexercises::longmcq(c("Verdadero", answer = "Falso"))`
+    
+b.  Los archivos `.tar.gz` y `.zip` son formas válidas de distribuir paquetes de R localmente.
+
+    `r webexercises::longmcq(c(answer = "Verdadero", "Falso"))`
+    
+c.  El archivo `README.md` es obligatorio para que un paquete pueda instalarse.
+
+    `r webexercises::longmcq(c("Verdadero", answer = "Falso"))`
+
+a.  Para subir un paquete a CRAN, es obligatorio que tenga una licencia especificada en el campo `License` del archivo `DESCRIPTION`.
+
+    `r webexercises::longmcq(c(answer = "Verdadero", "Falso"))`
+
+## Pregunta 2
+
+Seleccionar la opción correcta.
+
+a.  ¿Cuál de las siguientes etiquetas de roxygen2 hace que una función esté disponible públicamente?
+
+    `r webexercises::longmcq(c("internal", "noexport", answer = "export", "keywords"))`
+    
+b.  ¿Qué función del paquete `devtools` permite cargar un paquete en desarrollo sin instalarlo formalmente?
+
+    `r webexercises::longmcq(c("@install", answer = "@load_all", "@check", "@build"))`
+
+c.  ¿Qué archivo contiene los nombres y versiones mínimas de paquetes requeridos para que nuestro paquete funcione?
+
+    `r webexercises::longmcq(c("NAMESPACE", "README.md", answer = "DESCRIPTION", "NEWS"))`
+
+## Pregunta 3
+
+Completar los campos en blanco con una sola palabra para que la afirmación sea correcta.
+
+a. El archivo `r webexercises::fitb("DESCRIPTION")` contiene metadatos sobre el paquete, como su nombre, versión y autores.
+
+b. El archivo `r webexercises::fitb("NAMESPACE")` indica qué funciones del paquete están disponibles al usuario y qué funciones externas se importan.
+
+c. La etiqueta `r webexercises::fitb("@return")` en `roxygen2` permite describir qué tipo de objeto es devuelto por la función.
+
+d. Los archivos `.zip` y `.tar.gz` son ejemplos de formatos de `r webexercises::fitb("compresión", ignore_case = TRUE)` de archivos, útiles para distribuir paquetes.
+
+e. Para guardar los scripts con el código fuente de las funciones del paquete debemos crear una carpeta llamada `r webexercises::fitb("R")` dentro del directorio del paquete.
