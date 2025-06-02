@@ -707,7 +707,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div class="presentacion-capitulo">
-<p>En este capítulo vamos a introducir una nueva estructura de datos fundamental en R: las <strong>listas</strong>. A diferencia de los vectores y matrices que vimos hasta ahora, las listas permiten almacenar elementos de distinto tipo y estructura dentro de un mismo objeto. Esto las convierte en una herramienta muy flexible para trabajar con datos complejos y variados. Aprenderemos cómo se crean, cómo se accede a sus elementos y cómo se utilizan en distintos contextos de programación y análisis de datos en R.</p>
+<p>En este capítulo vamos a introducir una nueva estructura de datos fundamental en R: las <strong>listas</strong>. A diferencia de los vectores y matrices que vimos hasta ahora, las listas permiten almacenar elementos de distinto tipo y estructura dentro de un mismo objeto. Esto las convierte en una herramienta muy flexible para trabajar con datos complejos y variados. Aprenderemos cómo se crean, cómo se accede a sus elementos y cómo se utilizan en distintos contextos.</p>
 </div>
 <section id="qué-es-una-lista" class="level2" data-number="26.1">
 <h2 data-number="26.1" class="anchored" data-anchor-id="qué-es-una-lista"><span class="header-section-number">26.1</span> ¿Qué es una lista?</h2>
@@ -724,7 +724,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figure class="figure">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../imagenes/teoria_unidad_5/estr09.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Ejemplo de una lista."><img src="../imagenes/teoria_unidad_5/estr09.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Ejemplo de una lista."></a></p>
+<p><a href="../imagenes/teoria_unidad_5/estr09.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Ejemplo de una lista."><img src="../imagenes/teoria_unidad_5/estr09.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%" alt="Ejemplo de una lista."></a></p>
 </figure>
 </div>
 <figcaption>Ejemplo de una lista.</figcaption>
@@ -771,7 +771,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figure class="figure">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../imagenes/teoria_unidad_5/estr10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Indexación de una lista."><img src="../imagenes/teoria_unidad_5/estr10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Indexación de una lista."></a></p>
+<p><a href="../imagenes/teoria_unidad_5/estr10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Indexación de una lista."><img src="../imagenes/teoria_unidad_5/estr10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%" alt="Indexación de una lista."></a></p>
 </figure>
 </div>
 <figcaption>Indexación de una lista.</figcaption>
@@ -883,12 +883,13 @@ $z
 [2,]   11   16</code></pre>
 </div>
 </div>
+<p>La última opción hace uso de <code>$</code>, el <strong>operador de acceso</strong> de R, que utiliza para acceder a un elemento de una lista (si tiene nombre) o a una columna de un <em>data.frame</em>. El operador $ simplifica la extracción de elementos específicos, haciendo que el código sea más legible y eficiente que cuando se emplean corchetes.</p>
 </section>
 <section id="listas-como-resultados-de-funciones" class="level2" data-number="26.2">
 <h2 data-number="26.2" class="anchored" data-anchor-id="listas-como-resultados-de-funciones"><span class="header-section-number">26.2</span> Listas como resultados de funciones</h2>
-<p>Una de las aplicaciones más frecuentes y prácticas de las listas en R es su uso como <strong>estructura de salida de funciones</strong>. En la <a href="../capitulos/03.html">Unidad 3 sobre funciones</a> mencionamos que las mismas pueden devolver exactamente un objeto como resultado. Esto puede ser una limitación, ya que en algunos casos tal vez necesitemos devolver varios elementos de distinto tipo<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<p>Las listas permiten que las funciones devuelvan una <strong>colección de resultados relacionados</strong>, sin perder la flexibilidad de acceder a cada uno por separado, y sin forzar al usuario a usar estructuras más rígidas o artificiales. Gracias a esto, podemos inspeccionar, manipular o extraer partes de un resultado complejo sin necesidad de descomponerlo manualmente. Si escribimos funciones que devuelven más de un resultado (por ejemplo, una media y una desviación estándar), la forma más clara y ordenada de hacerlo es con una lista nombrada:</p>
-<p>Para ejemplificar, recordemos el <a href="../capitulos/90_soluciones_03.html#ejercicio-3">ejercicio de la práctica 3</a> que pide escribir una función <code>triangulos(a, b, c)</code>. A partir de la longitud de los tres lados de un triángulo <code>a</code>, <code>b</code> y <code>d</code>, esta función lo clasifica con los siguientes resultados posibles:</p>
+<p>Una de las aplicaciones más frecuentes y prácticas de las listas en R es su uso como <strong>estructura de salida de funciones</strong>. En la <a href="../capitulos/03_1_crear_funciones.html">Unidad 3 sobre funciones</a> mencionamos que las mismas pueden devolver exactamente un objeto como resultado. Esto puede ser una limitación, ya que en algunos casos tal vez necesitemos devolver varios elementos de distinto tipo<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Las listas permiten que las funciones devuelvan una <strong>colección de resultados relacionados</strong>, sin perder la flexibilidad de acceder a cada uno por separado, y sin forzar al usuario a usar estructuras más rígidas o artificiales. Gracias a esto, podemos inspeccionar, manipular o extraer partes de un resultado complejo sin necesidad de descomponerlo manualmente. Si escribimos funciones que devuelven más de un resultado (por ejemplo, una media y una desviación estándar), la forma más clara y ordenada de hacerlo es con una lista nombrada.</p>
+<p>Para ejemplificar, recordemos el <a href="../capitulos/90_soluciones_03.html#ejercicio-3">ejercicio de la práctica 3</a> que pide escribir una función <code>triangulos(a, b, c)</code>. A partir de la longitud de los tres lados de un triángulo <code>a</code>, <code>b</code> y <code>c</code>, esta función lo clasifica como “equilátero”, “isósceles” o “escaleno”, o bien devuelve un texto diciendo que las medidas provistas no son compatibles con la definición de un triángulo:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>triangulos <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b, c) {</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (a <span class="sc">&gt;</span> b <span class="sc">+</span> c <span class="sc">||</span> b <span class="sc">&gt;</span> a <span class="sc">+</span> c <span class="sc">||</span> c <span class="sc">&gt;</span> a <span class="sc">+</span> b) {</span>
@@ -917,34 +918,15 @@ $z
 <span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    tipo <span class="ot">&lt;-</span> <span class="st">"escaleno"</span></span>
 <span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">triangulo =</span> tipo, <span class="at">perimetro =</span> perim))</span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># atención con triangulo = tipo: el primero es el nombre que le estamos dando</span></span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># al elemento de la lista, el segundo es el objeto que guardamos en la lista</span></span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Ejemplos del uso de esta función:</p>
+<p>En la línea final, encontramos <code>triangulo = tipo</code>: <code>tipo</code> es uno de los elementos que ponemos en la lista y debe ser una variable local en la función; mientras que <code>triangulo</code> es un nombre que elegimos para este elemento en la lista definida y puede ser cualquier palabra que deseemos. Lo mismo ocurre con <code>perimetro = perim</code>. Veamos ejemplos del uso de esta función:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Guardamos el resultado devuelto (una lista) en el objeto resultado</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">triangulos</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Miramos el primer elemento de la lista (carácter que indica el tipo de triángulo)</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>resultado[[<span class="dv">1</span>]]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "escaleno"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>resultado<span class="sc">$</span>triangulo</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "escaleno"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Miramos el primer elemento de la lista (perímetro)</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>resultado[[<span class="dv">2</span>]]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 9</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>resultado<span class="sc">$</span>perimetro</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 9</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Miramos todo junto</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>resultado</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Miramos todo el contenido de la lista</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>resultado</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$triangulo
 [1] "escaleno"
@@ -952,15 +934,32 @@ $z
 $perimetro
 [1] 9</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Otro ejemplo:</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>resultado2 <span class="ot">&lt;-</span> <span class="fu">triangulos</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">10</span>)</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>resultado2[[<span class="dv">1</span>]]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accedemos a sus elementos por nombre con el operador de acceso</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>resultado<span class="sc">$</span>triangulo</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "no es triángulo"</code></pre>
+<pre><code>[1] "escaleno"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>resultado2[[<span class="dv">2</span>]]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>resultado<span class="sc">$</span>perimetro</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0</code></pre>
+<pre><code>[1] 9</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accedemos a sus elementos por nombre con corchetes</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>resultado[[<span class="st">"triangulo"</span>]]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "escaleno"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>resultado[[<span class="st">"perimetro"</span>]]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accedemos a sus elementos por posición</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>resultado[[<span class="dv">1</span>]]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "escaleno"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>resultado[[<span class="dv">2</span>]]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9</code></pre>
 </div>
 </div>
 <p>Muchas funciones del sistema y de paquetes externos devuelven sus resultados en forma de lista, especialmente cuando se necesita devolver <strong>más de un objeto</strong> o cuando los resultados son <strong>complejos o estructurados</strong>.</p>
