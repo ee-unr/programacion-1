@@ -7,6 +7,96 @@ number-sections: false
 \thispagestyle{primerapagina}
 ```
 
-::: {.en-construccion data-latex=""}
-El contenido estará disponible a la brevedad.
-:::
+```{r}
+#| include: false
+# bloqeu para que ande webexercise
+```
+
+
+## Pregunta 1
+
+¿Qué ventaja tiene usar la terminal frente a una interfaz gráfica?
+
+`r webexercises::longmcq(c("No necesita internet.", "Es más estética.", answer = "Permite automatizar tareas y controlar el sistema con mayor precisión.", "No consume memoria RAM."))`
+
+## Pregunta 2
+
+¿Qué comando se usa en Windows para ver los archivos en un directorio?
+
+`r webexercises::longmcq(c(
+  '<code>ls</code>',
+  answer = '<code>dir</code>',
+  '<code>cd</code>',
+  '<code>show</code>'
+))`
+
+## Pregunta 3
+
+¿Cómo podemos ejecutar un programa de R desde la terminal?
+
+`r webexercises::longmcq(c("Escribiendo <code>runR</code> seguido del nombre del archivo.", answer = "Usando <code>Rscript archivo.R</code>", "Abriendo RStudio y pegando el código.", "Con <code>R CMD START archivo.R</code>"))`
+
+## Pregunta 4
+
+Para que el comando `Rscript` funcione correctamente en la terminal, ¿qué debemos verificar?
+
+`r webexercises::longmcq(c("Tener conexión a internet.", answer = "Que esté agregado al <code>PATH</code> del sistema.", "Que se haya cerrado RStudio antes.", "Que el archivo <code>.R</code> tenga más de 10 líneas."))`
+
+## Pregunta 5
+
+¿Por qué puede ser útil crear scripts interactivos en R?
+
+`r webexercises::longmcq(c("Porque permiten evitar errores de sintaxis.", "Porque hacen que el programa se detenga automáticamente.", answer = "Porque permiten que el usuario ingrese información al momento de ejecutar el script.", "Porque consumen menos recursos del sistema."))`
+
+## Pregunta 6
+
+¿Qué sucede si se ingresa un texto cuando la función `scan()` dentro del script espera un número?
+
+`r webexercises::longmcq(c("R lo convierte automáticamente.", "El programa sigue sin problemas.", answer = "Puede dar error o producir un <code>NA</code>, y se debe controlar con validaciones.", "Se reinicia RStudio."))`
+
+```{r}
+#| include: false
+
+# PREGUNTAS OMITIDAS
+# 
+# ## Pregunta 1
+# 
+# ¿Cuál es la diferencia entre terminal, consola, CMD, PowerShell y Bash?
+# 
+# `r webexercises::longmcq(c("Son sinónimos exactos usados en cualquier sistema operativo", "Todos son entornos gráficos para editar código", answer = "Son diferentes interfaces o intérpretes de comandos según el sistema operativo", "Son aplicaciones exclusivas de Linux"))`
+# 
+# ## Pregunta 7
+# 
+# ¿Cuál es la diferencia entre <code>as.integer()</code> y <code>as.numeric()</code> en R?
+# `r webexercises::longmcq(c("No hay diferencia, son equivalentes", answer = "<code>as.integer()</code> convierte a entero, <code>as.numeric()</code> a decimal o entero", "<code>as.numeric()</code> convierte texto en mayúsculas", "<code>as.integer()</code> solo funciona con strings"))`
+# 
+# ## Pregunta 7
+# 
+# ¿Qué hace el siguiente fragmento de código en R?
+# 
+# ```{r, eval=FALSE}
+# cat("Ingresá 5 números:\n")
+# numeros <- scan(file = "stdin", n = 5, quiet = TRUE)
+# promedio <- mean(numeros)
+# mayores <- sum(numeros > promedio)
+
+# `r webexercises::longmcq(c("Genera 5 números aleatorios y calcula su media", answer = "Pide 5 números al usuario, calcula el promedio y cuenta cuántos son mayores que ese promedio", "Carga un archivo con 5 columnas", "Imprime una tabla con los primeros 5 números primos"))`
+
+# ## Pregunta 7
+# 
+# ¿Cuál es la función principal del argumento `file = "stdin"` en `scan()`? ¿Qué pasa si se usa `file = ""` en un script de R ejecutado desde CMD?
+# 
+# `r webexercises::longmcq(c(
+#   '<code>file = "stdin"</code> lee desde un archivo llamado stdin, mientras que <code>file = ""</code> lee desde la consola en CMD.',
+#   answer = '<code>file = "stdin"</code> lee desde la entrada estándar (teclado o redirección), y <code>file = ""</code> falla en CMD a menos que se redirija la entrada.',
+#   'Ambos argumentos <code>stdin</code> y <code>""</code> funcionan igual en CMD, leyendo directamente desde el teclado.',
+#   '<code>file = "stdin"</code> guarda datos en un archivo, mientras que <code>file = ""</code> lee desde la consola solo en RStudio.'
+# ))`
+# 
+
+```
+
+
+
+
+
