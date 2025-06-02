@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Unidad 5. Estructuras de datos – Programación 1</title>
+<title>Soluciones de la Práctica de la Unidad 6 – Programación 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../capitulos/05_1_arreglos.html" rel="next">
-<link href="../capitulos/04_actividad_autoevaluativa.html" rel="prev">
+<link href="../capitulos/98_tp.html" rel="next">
+<link href="../capitulos/90_soluciones_05.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -249,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/05.html">Unidad 5. Estructuras de datos</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/90.html">Soluciones de la Práctica</a></li><li class="breadcrumb-item"><a href="../capitulos/90_soluciones_06.html"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 6</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -475,7 +475,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../capitulos/05.html" class="sidebar-item-text sidebar-link active">
+            <a href="../capitulos/05.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Unidad 5. Estructuras de datos</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -596,7 +596,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/90_soluciones_06.html" class="sidebar-item-text sidebar-link">
+  <a href="../capitulos/90_soluciones_06.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 6</span></span></a>
   </div>
 </li>
@@ -637,9 +637,9 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/90.html">Soluciones de la Práctica</a></li><li class="breadcrumb-item"><a href="../capitulos/90_soluciones_06.html"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 6</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Unidad 5. Estructuras de datos</h1>
+<h1 class="title"><span class="chapter-title">Soluciones de la Práctica de la Unidad 6</span></h1>
 </div>
 
 
@@ -656,9 +656,16 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="presentacion-capitulo">
-<p>Una parte fundamental de la programación consiste en organizar y manipular conjuntos de datos. En esta unidad vamos a introducir las principales estructuras que R utiliza para almacenar y procesar datos, comenzando con aquellas más simples y homogéneas, como los vectores y las matrices, hasta llegar a otras más complejas y heterogéneas. Primero trabajaremos con estas estructuras mediante operaciones explícitas, elemento por elemento, para consolidar la lógica que subyace a su uso. Más adelante, exploraremos las operaciones vectorizadas que R ofrece, las cuales permiten escribir programas más eficientes, legibles y compactos.</p>
-</div>
+<p>Los materiales con las soluciones se encuentran <a href="https://github.com/ee-unr/programacion-1/tree/main/paquetes_unidad_6">en este repositorio <em>online</em></a>. El mismo cuenta con un directorio para cada ejercicio, con los elementos que componen a cada uno de los paquetes que se deben desarrollar. Al explorar las soluciones propuestas, se deben tener en cuenta los siguientes comentarios:</p>
+<ul>
+<li>El código de las funciones está en el subdirectorio <code>R</code>.</li>
+<li>La carpeta <code>man</code> contiene archivos para la generación de páginas de ayuda, creados automáticamente a partir de la documentación de las funciones (no se edita a mano).</li>
+<li>El archivo <code>DESCRIPTION</code> debe ser editado a mano.</li>
+<li>El archivo <code>NAMESPACE</code> no debe ser editado a mano, sino que es modificado automáticamente a partir de la documentación de las funciones.</li>
+<li>Se ha omitido el archivo</li>
+<li>Estos paquetes son extremadamente sencillos y contienen lo mínimo e indispensable para su funcionamiento. Un desarrollo más profesional debe incluir otros aspectos, como los mencionados en el material de lectura opcional.</li>
+<li>En estos directorios no se incluyeron otros archivos que son creados automáticamente por <code>devtools</code> al crear el paquete: el archivo de configuración del proyecto (extensión <code>.Rproj</code>), la carpeta <code>.Rproj.user</code> y los archivos <code>.gitignore</code> y <code>.Rbuildignore</code>. Estos componentes no son de interés para los ejemplos básicos desarrollados.</li>
+</ul>
 
 
 
@@ -1283,13 +1290,13 @@ window.onload = function() {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../capitulos/04_actividad_autoevaluativa.html" class="pagination-link" aria-label="Actividad de autoevaluación 4">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Actividad de autoevaluación 4</span></span>
+      <a href="../capitulos/90_soluciones_05.html" class="pagination-link" aria-label="Soluciones de la Práctica de la Unidad 5">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 5</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../capitulos/05_1_arreglos.html" class="pagination-link" aria-label="Arreglos">
-        <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Arreglos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../capitulos/98_tp.html" class="pagination-link" aria-label="Trabajo Práctico">
+        <span class="nav-page-text">Trabajo Práctico</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1301,7 +1308,7 @@ window.onload = function() {
     </div>   
     <div class="nav-footer-center">
 <p>Developed by Marcos Prunello</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/05.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/05.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/90_soluciones_06.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/90_soluciones_06.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

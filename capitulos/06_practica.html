@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Unidad 5. Estructuras de datos – Programación 1</title>
+<title>Práctica de la Unidad 6 – Programación 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../capitulos/05_1_arreglos.html" rel="next">
-<link href="../capitulos/04_actividad_autoevaluativa.html" rel="prev">
+<link href="../capitulos/06_actividad_autoevaluativa.html" rel="next">
+<link href="../capitulos/06_2_extras.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -249,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/05.html">Unidad 5. Estructuras de datos</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/06.html">Unidad 6. Desarrollo de librerías de software</a></li><li class="breadcrumb-item"><a href="../capitulos/06_practica.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Práctica de la Unidad 6</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -475,7 +510,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../capitulos/05.html" class="sidebar-item-text sidebar-link active">
+            <a href="../capitulos/05.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Unidad 5. Estructuras de datos</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -543,7 +578,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/06_practica.html" class="sidebar-item-text sidebar-link">
+  <a href="../capitulos/06_practica.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Práctica de la Unidad 6</span></span></a>
   </div>
 </li>
@@ -630,16 +665,24 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link active" data-scroll-target="#ejercicio-1">Ejercicio 1</a></li>
+  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2">Ejercicio 2</a></li>
+  <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3">Ejercicio 3</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/06_practica.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/06_practica.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/06.html">Unidad 6. Desarrollo de librerías de software</a></li><li class="breadcrumb-item"><a href="../capitulos/06_practica.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Práctica de la Unidad 6</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Unidad 5. Estructuras de datos</h1>
+<h1 class="title"><span class="chapter-title">Práctica de la Unidad 6</span></h1>
 </div>
 
 
@@ -656,11 +699,66 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="presentacion-capitulo">
-<p>Una parte fundamental de la programación consiste en organizar y manipular conjuntos de datos. En esta unidad vamos a introducir las principales estructuras que R utiliza para almacenar y procesar datos, comenzando con aquellas más simples y homogéneas, como los vectores y las matrices, hasta llegar a otras más complejas y heterogéneas. Primero trabajaremos con estas estructuras mediante operaciones explícitas, elemento por elemento, para consolidar la lógica que subyace a su uso. Más adelante, exploraremos las operaciones vectorizadas que R ofrece, las cuales permiten escribir programas más eficientes, legibles y compactos.</p>
-</div>
+<section id="ejercicio-1" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h2>
+<p>Crear un paquete de R llamado <code>paridad</code> que contenga dos funciones: <code>numeros_pares()</code> y <code>numeros_impares()</code>. Cada una de ellas toma un vector de números <code>x</code> y devuelve un nuevo vector que contiene sólo los números pares o impares, según corresponda. A continuación se presentan ejemplos del comportamiento esperado de las funciones:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(paridad)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">numeros_pares</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">4</span>, <span class="fl">4.1</span>, <span class="dv">0</span>, <span class="dv">6</span>))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">4</span> <span class="dv">0</span> <span class="dv">6</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">numeros_pares</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">10</span> <span class="dv">12</span> <span class="dv">14</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">numeros_pares</span>(<span class="dv">1</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">numeric</span>(<span class="dv">0</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">numeros_pares</span>(<span class="fu">c</span>(<span class="st">"hola"</span>, <span class="st">"chau"</span>))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Error <span class="cf">in</span> <span class="fu">numeros_pares</span>(<span class="fu">c</span>(<span class="st">"hola"</span>, <span class="st">"chau"</span>)) <span class="sc">:</span> </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  x debe ser un vector numérico.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">numeros_impares</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">4</span>, <span class="fl">4.1</span>, <span class="dv">0</span>, <span class="dv">6</span>))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">numeros_impares</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">11</span> <span class="dv">13</span> <span class="dv">15</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">numeros_impares</span>(<span class="sc">-</span><span class="dv">2</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">numeric</span>(<span class="dv">0</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">numeros_impares</span>(<span class="fu">c</span>(<span class="st">"hola"</span>, <span class="st">"chau"</span>))</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Error <span class="cf">in</span> <span class="fu">numeros_impares</span>(<span class="fu">c</span>(<span class="st">"hola"</span>, <span class="st">"chau"</span>)) <span class="sc">:</span> </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  x debe ser un vector numérico.</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Se pueden seguir estos pasos a modo de guía:</p>
+<ol type="a">
+<li>Abrir RStudio y ejecutar <code>library(devtools)</code> en la terminal.</li>
+<li>Generar el paquete <code>paridad</code> haciendo uso de la función <code>create_package()</code>. Especificar adecuadamente el directorio donde estará ubicado el paquete.</li>
+<li>Continuar trabajando en el proyecto de RStudio creado en el paso anterior, que se ha abierto automáticamente en una nueva sesión de RStudio. En esta sesión, cargar el paquete <code>devtools</code>.</li>
+<li>Utilizar la función <code>use_r()</code> para agregar automáticamente un archivo <code>.R</code> en la carpeta <code>R/</code> del paquete.</li>
+<li>Escribir en dicho script el código <code>numeros_pares()</code> y <code>numeros_impares()</code>.</li>
+<li>Cargar todo el contenido del paquete desarrollado utilizando <code>load_all()</code> y verificar el correcto funcionamiento de las funciones.</li>
+<li>Documentar las funciones usando el sistema <code>roxygen</code> y generar la documentación con <code>document()</code>.</li>
+<li>Completar los campos básicos del archivo <code>DESCRIPTION</code>.</li>
+<li>Instalar localmente el paquete con <code>install()</code>.</li>
+<li>Generar un archivo comprimido para distribuir el paquete con <code>build()</code>.</li>
+<li>Cerrar la sesión de RStudio, abrir una nueva, cargar el paquete con <code>library()</code>, probar las funciones y verificar que las páginas de ayuda se vean bien.</li>
+</ol>
+</section>
+<section id="ejercicio-2" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h2>
+<p>Crear un nuevo paquete de R llamado <code>palabrerio</code>. que cuente con dos funciones:</p>
+<ol type="1">
+<li><code>termina_en_vocal(palabra)</code>: recibe una cadena de texto y devuelve <code>TRUE</code> si la última letra es una vocal (a, e, i, o, u). Para convertir una palabra en un vector de letras se pueden usar la función de R Base <code>strsplit()</code>. Esta función es de uso interno del paquete, no debe ser exportada para los usuarios.</li>
+<li><code>filtrar_por_vocal(palabras)</code>: recibe un vector de palabras y usa la función <code>termina_en_vocal()</code> para devolver un vector que contiene sólo aquellas que terminan en vocal.</li>
+</ol>
+<p>Ejemplo del uso del paquete:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(palabrerio)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"casa"</span>, <span class="st">"flor"</span>, <span class="st">"pared"</span>, <span class="st">"día"</span>, <span class="st">"sol"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">filtrar_por_vocal</span>(x)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"casa"</span> <span class="st">"día"</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">filtrar_por_vocal</span>(<span class="fu">c</span>(<span class="st">"montes"</span>, <span class="st">"cuadernos"</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">character</span>(<span class="dv">0</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">filtrar_por_vocal</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>Error <span class="cf">in</span> <span class="fu">filtrar_por_vocal</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) <span class="sc">:</span> palabras debe ser un vector carácter.</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ejercicio-3" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h2>
+<p>Crear un nuevo paquete llamado <code>unidad3</code> para guardar allí al menos 4 de las funciones creadas en los ejercicios de la Práctica 3.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -1283,13 +1381,13 @@ window.onload = function() {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../capitulos/04_actividad_autoevaluativa.html" class="pagination-link" aria-label="Actividad de autoevaluación 4">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Actividad de autoevaluación 4</span></span>
+      <a href="../capitulos/06_2_extras.html" class="pagination-link" aria-label="Otros aspectos de la creación de un paquete">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Otros aspectos de la creación de un paquete</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../capitulos/05_1_arreglos.html" class="pagination-link" aria-label="Arreglos">
-        <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Arreglos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../capitulos/06_actividad_autoevaluativa.html" class="pagination-link" aria-label="Actividad de autoevaluación 6">
+        <span class="nav-page-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Actividad de autoevaluación 6</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1301,7 +1399,7 @@ window.onload = function() {
     </div>   
     <div class="nav-footer-center">
 <p>Developed by Marcos Prunello</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/05.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/05.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/06_practica.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/06_practica.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
