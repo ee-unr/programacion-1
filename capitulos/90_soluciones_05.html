@@ -1683,96 +1683,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="ejercicio-16" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-16">Ejercicio 16</h3>
-<ol type="a">
-<li><div class="cell">
-<div class="sourceCode cell-code" id="cb131"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">34</span>)</span>
-<span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">sample</span>(<span class="dv">100</span>, <span class="dv">20</span>), <span class="at">nrow =</span> <span class="dv">4</span>)</span>
-<span id="cb131-3"><a href="#cb131-3" aria-hidden="true" tabindex="-1"></a>m</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]   93   50   29   80   20
-[2,]   33    8   11   61   99
-[3,]    9   86   48   67  100
-[4,]   10   54   44   43   46</code></pre>
-</div>
-</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear vector para guardar los promedios</span></span>
-<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a>promedios <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">ncol</span>(m))</span>
-<span id="cb133-3"><a href="#cb133-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular iterando a través de las filas</span></span>
-<span id="cb133-4"><a href="#cb133-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(m)) {</span>
-<span id="cb133-5"><a href="#cb133-5" aria-hidden="true" tabindex="-1"></a>  promedios[j] <span class="ot">&lt;-</span> <span class="fu">mean</span>(m[, j])</span>
-<span id="cb133-6"><a href="#cb133-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb133-7"><a href="#cb133-7" aria-hidden="true" tabindex="-1"></a>promedios</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 36.25 49.50 33.00 62.75 66.25</code></pre>
-</div>
-</div></li>
-<li><div class="cell">
-<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(m, <span class="dv">2</span>, mean)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 36.25 49.50 33.00 62.75 66.25</code></pre>
-</div>
-</div></li>
-</ol>
-</section>
-<section id="ejercicio-17" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-17">Ejercicio 17</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Cociente de la división de números naturales</span></span>
-<span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a><span class="co">#' </span></span>
-<span id="cb137-3"><a href="#cb137-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' @description</span></span>
-<span id="cb137-4"><a href="#cb137-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' Calcula el cociente entero y el resto en la división de dos números naturales.</span></span>
-<span id="cb137-5"><a href="#cb137-5" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb137-6"><a href="#cb137-6" aria-hidden="true" tabindex="-1"></a><span class="co">#' @details </span></span>
-<span id="cb137-7"><a href="#cb137-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' La función devuelve una lista con el dividendo, divisor, cociente, resto y </span></span>
-<span id="cb137-8"><a href="#cb137-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' un valor lógico que indica si el divisor es divisor exacto del dividendo.</span></span>
-<span id="cb137-9"><a href="#cb137-9" aria-hidden="true" tabindex="-1"></a><span class="co">#' </span></span>
-<span id="cb137-10"><a href="#cb137-10" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param dividendo,divisor Números naturales.</span></span>
-<span id="cb137-11"><a href="#cb137-11" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb137-12"><a href="#cb137-12" aria-hidden="true" tabindex="-1"></a><span class="co">#' @return Una lista con los valores: dividendo, divisor, cociente, resto, y es_divisor.</span></span>
-<span id="cb137-13"><a href="#cb137-13" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb137-14"><a href="#cb137-14" aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
-<span id="cb137-15"><a href="#cb137-15" aria-hidden="true" tabindex="-1"></a><span class="co">#' cociente(1253, 4)</span></span>
-<span id="cb137-16"><a href="#cb137-16" aria-hidden="true" tabindex="-1"></a><span class="co">#' cociente(3, 4)</span></span>
-<span id="cb137-17"><a href="#cb137-17" aria-hidden="true" tabindex="-1"></a>cociente <span class="ot">&lt;-</span> <span class="cf">function</span>(dividendo, divisor) {</span>
-<span id="cb137-18"><a href="#cb137-18" aria-hidden="true" tabindex="-1"></a>  resto <span class="ot">&lt;-</span> dividendo</span>
-<span id="cb137-19"><a href="#cb137-19" aria-hidden="true" tabindex="-1"></a>  coc <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb137-20"><a href="#cb137-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (resto <span class="sc">&gt;=</span> divisor) {</span>
-<span id="cb137-21"><a href="#cb137-21" aria-hidden="true" tabindex="-1"></a>    coc <span class="ot">&lt;-</span> coc <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb137-22"><a href="#cb137-22" aria-hidden="true" tabindex="-1"></a>    resto <span class="ot">&lt;-</span> resto <span class="sc">-</span> divisor</span>
-<span id="cb137-23"><a href="#cb137-23" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb137-24"><a href="#cb137-24" aria-hidden="true" tabindex="-1"></a>  es_divisor <span class="ot">&lt;-</span> resto <span class="sc">==</span> <span class="dv">0</span></span>
-<span id="cb137-25"><a href="#cb137-25" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb137-26"><a href="#cb137-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(</span>
-<span id="cb137-27"><a href="#cb137-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(</span>
-<span id="cb137-28"><a href="#cb137-28" aria-hidden="true" tabindex="-1"></a>      <span class="at">dividendo =</span> dividendo,</span>
-<span id="cb137-29"><a href="#cb137-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">divisor =</span> divisor,</span>
-<span id="cb137-30"><a href="#cb137-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">cociente =</span> coc,</span>
-<span id="cb137-31"><a href="#cb137-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">resto =</span> resto,</span>
-<span id="cb137-32"><a href="#cb137-32" aria-hidden="true" tabindex="-1"></a>      <span class="at">es_divisor =</span> es_divisor</span>
-<span id="cb137-33"><a href="#cb137-33" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb137-34"><a href="#cb137-34" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb137-35"><a href="#cb137-35" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="ejercicio-18" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-18">Ejercicio 18</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">9</span>)</span>
-<span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"X"</span>, <span class="st">"Y"</span>, <span class="st">"Z"</span>)</span>
-<span id="cb138-3"><a href="#cb138-3" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">list</span>(b, a)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb131"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">9</span>)</span>
+<span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"X"</span>, <span class="st">"Y"</span>, <span class="st">"Z"</span>)</span>
+<span id="cb131-3"><a href="#cb131-3" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">list</span>(b, a)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="a">
 <li><div class="cell">
-<div class="sourceCode cell-code" id="cb139"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a>d[[<span class="dv">2</span>]]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb132"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a>d[[<span class="dv">2</span>]]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2 1 9</code></pre>
 </div>
 </div></li>
 <li><div class="cell">
-<div class="sourceCode cell-code" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a>d[[<span class="dv">1</span>]][<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"M"</span></span>
-<span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a>d</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb134"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a>d[[<span class="dv">1</span>]][<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"M"</span></span>
+<span id="cb134-2"><a href="#cb134-2" aria-hidden="true" tabindex="-1"></a>d</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] "M" "Y" "Z"
@@ -1782,9 +1707,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div></li>
 <li><div class="cell">
-<div class="sourceCode cell-code" id="cb143"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creación de la lista</span></span>
-<span id="cb143-2"><a href="#cb143-2" aria-hidden="true" tabindex="-1"></a>mi_lista <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="st">"Buenas"</span>, <span class="cn">TRUE</span>)</span>
-<span id="cb143-3"><a href="#cb143-3" aria-hidden="true" tabindex="-1"></a>mi_lista</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb136"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creación de la lista</span></span>
+<span id="cb136-2"><a href="#cb136-2" aria-hidden="true" tabindex="-1"></a>mi_lista <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="st">"Buenas"</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb136-3"><a href="#cb136-3" aria-hidden="true" tabindex="-1"></a>mi_lista</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
  [1]  1  2  3  4  5  6  7  8  9 10
@@ -1795,13 +1720,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [[3]]
 [1] TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb145"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="co"># De manera vectorizada le sumamos 2 a cada elemento del vector y lo </span></span>
-<span id="cb145-2"><a href="#cb145-2" aria-hidden="true" tabindex="-1"></a><span class="co"># guardamos en el mismo lugar</span></span>
-<span id="cb145-3"><a href="#cb145-3" aria-hidden="true" tabindex="-1"></a>mi_lista[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> mi_lista[[<span class="dv">1</span>]] <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb145-4"><a href="#cb145-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb145-5"><a href="#cb145-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Cambiar el TRUE por FALSE</span></span>
-<span id="cb145-6"><a href="#cb145-6" aria-hidden="true" tabindex="-1"></a>mi_lista[[<span class="dv">3</span>]] <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb145-7"><a href="#cb145-7" aria-hidden="true" tabindex="-1"></a>mi_lista</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="co"># De manera vectorizada le sumamos 2 a cada elemento del vector y lo </span></span>
+<span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a><span class="co"># guardamos en el mismo lugar</span></span>
+<span id="cb138-3"><a href="#cb138-3" aria-hidden="true" tabindex="-1"></a>mi_lista[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> mi_lista[[<span class="dv">1</span>]] <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb138-4"><a href="#cb138-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb138-5"><a href="#cb138-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Cambiar el TRUE por FALSE</span></span>
+<span id="cb138-6"><a href="#cb138-6" aria-hidden="true" tabindex="-1"></a>mi_lista[[<span class="dv">3</span>]] <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb138-7"><a href="#cb138-7" aria-hidden="true" tabindex="-1"></a>mi_lista</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
  [1]  3  4  5  6  7  8  9 10 11 12
@@ -1811,6 +1736,81 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 [[3]]
 [1] FALSE</code></pre>
+</div>
+</div></li>
+</ol>
+</section>
+<section id="ejercicio-17" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-17">Ejercicio 17</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb140"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Cociente de la división de números naturales</span></span>
+<span id="cb140-2"><a href="#cb140-2" aria-hidden="true" tabindex="-1"></a><span class="co">#' </span></span>
+<span id="cb140-3"><a href="#cb140-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' @description</span></span>
+<span id="cb140-4"><a href="#cb140-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' Calcula el cociente entero y el resto en la división de dos números naturales.</span></span>
+<span id="cb140-5"><a href="#cb140-5" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb140-6"><a href="#cb140-6" aria-hidden="true" tabindex="-1"></a><span class="co">#' @details </span></span>
+<span id="cb140-7"><a href="#cb140-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' La función devuelve una lista con el dividendo, divisor, cociente, resto y </span></span>
+<span id="cb140-8"><a href="#cb140-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' un valor lógico que indica si el divisor es divisor exacto del dividendo.</span></span>
+<span id="cb140-9"><a href="#cb140-9" aria-hidden="true" tabindex="-1"></a><span class="co">#' </span></span>
+<span id="cb140-10"><a href="#cb140-10" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param dividendo,divisor Números naturales.</span></span>
+<span id="cb140-11"><a href="#cb140-11" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb140-12"><a href="#cb140-12" aria-hidden="true" tabindex="-1"></a><span class="co">#' @return Una lista con los valores: dividendo, divisor, cociente, resto, y es_divisor.</span></span>
+<span id="cb140-13"><a href="#cb140-13" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb140-14"><a href="#cb140-14" aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
+<span id="cb140-15"><a href="#cb140-15" aria-hidden="true" tabindex="-1"></a><span class="co">#' cociente(1253, 4)</span></span>
+<span id="cb140-16"><a href="#cb140-16" aria-hidden="true" tabindex="-1"></a><span class="co">#' cociente(3, 4)</span></span>
+<span id="cb140-17"><a href="#cb140-17" aria-hidden="true" tabindex="-1"></a>cociente <span class="ot">&lt;-</span> <span class="cf">function</span>(dividendo, divisor) {</span>
+<span id="cb140-18"><a href="#cb140-18" aria-hidden="true" tabindex="-1"></a>  resto <span class="ot">&lt;-</span> dividendo</span>
+<span id="cb140-19"><a href="#cb140-19" aria-hidden="true" tabindex="-1"></a>  coc <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb140-20"><a href="#cb140-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (resto <span class="sc">&gt;=</span> divisor) {</span>
+<span id="cb140-21"><a href="#cb140-21" aria-hidden="true" tabindex="-1"></a>    coc <span class="ot">&lt;-</span> coc <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb140-22"><a href="#cb140-22" aria-hidden="true" tabindex="-1"></a>    resto <span class="ot">&lt;-</span> resto <span class="sc">-</span> divisor</span>
+<span id="cb140-23"><a href="#cb140-23" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb140-24"><a href="#cb140-24" aria-hidden="true" tabindex="-1"></a>  es_divisor <span class="ot">&lt;-</span> resto <span class="sc">==</span> <span class="dv">0</span></span>
+<span id="cb140-25"><a href="#cb140-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb140-26"><a href="#cb140-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(</span>
+<span id="cb140-27"><a href="#cb140-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(</span>
+<span id="cb140-28"><a href="#cb140-28" aria-hidden="true" tabindex="-1"></a>      <span class="at">dividendo =</span> dividendo,</span>
+<span id="cb140-29"><a href="#cb140-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">divisor =</span> divisor,</span>
+<span id="cb140-30"><a href="#cb140-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">cociente =</span> coc,</span>
+<span id="cb140-31"><a href="#cb140-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">resto =</span> resto,</span>
+<span id="cb140-32"><a href="#cb140-32" aria-hidden="true" tabindex="-1"></a>      <span class="at">es_divisor =</span> es_divisor</span>
+<span id="cb140-33"><a href="#cb140-33" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb140-34"><a href="#cb140-34" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb140-35"><a href="#cb140-35" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="ejercicio-18" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-18">Ejercicio 18</h3>
+<ol type="a">
+<li><div class="cell">
+<div class="sourceCode cell-code" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">34</span>)</span>
+<span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">sample</span>(<span class="dv">100</span>, <span class="dv">20</span>), <span class="at">nrow =</span> <span class="dv">4</span>)</span>
+<span id="cb141-3"><a href="#cb141-3" aria-hidden="true" tabindex="-1"></a>m</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3] [,4] [,5]
+[1,]   93   50   29   80   20
+[2,]   33    8   11   61   99
+[3,]    9   86   48   67  100
+[4,]   10   54   44   43   46</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb143"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear vector para guardar los promedios</span></span>
+<span id="cb143-2"><a href="#cb143-2" aria-hidden="true" tabindex="-1"></a>promedios <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">ncol</span>(m))</span>
+<span id="cb143-3"><a href="#cb143-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular iterando a través de las filas</span></span>
+<span id="cb143-4"><a href="#cb143-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(m)) {</span>
+<span id="cb143-5"><a href="#cb143-5" aria-hidden="true" tabindex="-1"></a>  promedios[j] <span class="ot">&lt;-</span> <span class="fu">mean</span>(m[, j])</span>
+<span id="cb143-6"><a href="#cb143-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb143-7"><a href="#cb143-7" aria-hidden="true" tabindex="-1"></a>promedios</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 36.25 49.50 33.00 62.75 66.25</code></pre>
+</div>
+</div></li>
+<li><div class="cell">
+<div class="sourceCode cell-code" id="cb145"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(m, <span class="dv">2</span>, mean)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 36.25 49.50 33.00 62.75 66.25</code></pre>
 </div>
 </div></li>
 </ol>
