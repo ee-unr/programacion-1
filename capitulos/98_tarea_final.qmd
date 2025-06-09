@@ -1,0 +1,51 @@
+\thispagestyle{primerapagina}
+
+# Tarea Final Individual {.unnumbered}
+
+## Introducción
+
+Hoy en día, (casi) todas las plataformas digitales —redes sociales, correos electrónicos, tiendas online, homebanking, entre otras— requieren que los usuarios se registren mediante un nombre de usuario y una contraseña. Para mantener la seguridad de nuestras cuentas, es fundamental utilizar contraseñas seguras y diferentes en cada sitio, evitando así que la filtración de una de ellas comprometa las demás.
+
+Sin embargo, muchas personas tienden a usar contraseñas simples o repetidas, lo que aumenta el riesgo de ser víctimas de ataques informáticos. Una buena práctica es generar contraseñas personalizadas que resulten fáciles de recordar para el usuario, pero difíciles de adivinar para otros.
+
+En este ejercicio final, vamos a **crear un programa en R que ayude a generar contraseñas seguras** combinando elementos personales. De esta manera, la contraseña tendrá una estructura familiar pero suficientemente variada para mejorar su seguridad. Luego, **exportaremos esta función a un paquete propio** con el objetivo de poder distribuirlo y ayudar a amigos y familiares a crear sus propias contraseñas seguras.
+
+## Objetivo
+
+El objetivo de esta tarea es programar una función donde usemos el nombre y apellido del usuario junto con un número, para crear un nombre de usuario sugerido y una contraseña segura utilizando partes de los datos aportados. El programa deberá imprimir un mensaje avisando que el usuario y la contraseña se creó correctamente, y devolver una lista con ambos elementos.
+
+## Indicaciones para el armado de la función
+
+-   La función `contraseña()` deberá tener como argumentos `nombre`, `apellido` y `codigo` (un número de 2 cifras).
+
+-   Por defecto, la función debe tener el nombre y apellido del estudiante.
+
+-   El nombre de usuario será con el formato `nombre_apellido`, por ejemplo `silvina_perez`.
+
+-   La contraseña estará formada por las 3 primeras letras del apellido, luego por la multiplicación de la cantidad de vocales del nombre por la cantidad de consonantes del apellido, seguido por las primeras 2 letras del nombre y finalizado por la multiplicación del número ingresado por un número al azar del 1 al 10 (utilizar la función `sample()`). En nuestro ejemplo, si ponemos el número 32 y sale como número aleatorio el 4, nos quedaría `per9si128`.
+
+-   Tanto el nombre como la contraseña deben ser letras minúsculas, sin importar lo que ingrese el usuario.
+
+-   La función debe imprimir un mensaje similar al siguiente `¡La contraseña se ha generado correctamente!`.
+
+-   La función debe devolver una lista con `nombre_usuario` y `contraseña`.
+
+-   Pueden utilizar la descomposición algorítmica cuando lo crean necesario.
+
+## Indicaciones para el armado del paquete
+
+Luego de finalizado el armado de la función, deberán exportar `contraseña()` en un paquete llamado `seguridad`. Recomendamos seguir la guía de la [unidad 6 sobre crear cómo paquetes en R](06_1_crear_paquete.qmd). Pero es importante no olvidar algunos puntos:
+
+-   Recordar escribir la documentación de la función en formato `roxygen` y correr `document()`.
+
+-   Completar el archivo `DESCRIPTION`.
+
+-   Tener en cuenta que el programa debe funcionar correctamente cuando se ejecuta desde `install()`.
+
+-   Solo deben exportar la función `contraseña()` con un ejemplo sobre su uso (distinto al por defecto) y mostrar qué es lo que devuelve la función.
+
+## Entrega de la tarea
+
+Se debe entregar el archivo comprimido que se genera cuando se ejecuta la función `build()`.
+
+**Fecha límite de entrega: domingo 22/06 a las 23:59** No se reciben trabajos fuera de este horario límite, sin ningún tipo de excepción.
