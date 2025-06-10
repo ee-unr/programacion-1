@@ -16,7 +16,7 @@ El objetivo de esta tarea es programar una función donde usemos el nombre y ape
 
 ## Indicaciones para el armado de la función
 
--   La función `contraseña()` deberá tener como argumentos `nombre`, `apellido` y `codigo` (un número de 2 cifras).
+-   La función `generar_clave()` deberá tener como argumentos `nombre`, `apellido` y `codigo` (un número de 2 cifras).
 
 -   Por defecto, la función debe tener el nombre y apellido del estudiante.
 
