@@ -77,7 +77,8 @@ book:
         - capitulos/90_soluciones_05.qmd
         - capitulos/90_soluciones_06.qmd
   appendices:
-    - capitulos/98_tp.qmd
+    - capitulos/97_tp.qmd
+    - capitulos/98_tarea.qmd
     - capitulos/99_bibliografia.qmd
 
 lang: es
