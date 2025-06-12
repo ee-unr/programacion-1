@@ -698,7 +698,7 @@
     "href": "capitulos/01_actividad_autoevaluativa.html#pregunta-4",
     "title": "Actividad de autoevaluación 1",
     "section": "Pregunta 4",
-    "text": "Pregunta 4\nUna inmobiliaria necesita guardar el valor de una operación de venta de un inmueble efectuada durante el corriente año en una variable para realizar operaciones posteriores. Entre los siguientes posibles nombre de variable indique cual sería el más adecuado:\n\n 2025_venta_inmueble VentaOperación Valor-Venta-Inmueble-2025 ventainmuebleanio2025 valorVentaInmueble2025 operación_Año2025 venta inmueble 2025 venta_inmueble_2025\n\n\n\nExplicación\n\nVentaOperación: No es la mejor opción porque incluye un acento (“ó”) en el nombre de la variable, lo que puede generar problemas de codificación en algunos entornos. Además, se recomienda usar guiones bajos para separar palabras en minúsculas y mejorar la legibilidad.\n2025_venta_inmueble: En general no es buena práctica que los nombres de variables comiencen con un número en ningún lenguaje de programación. R y la mayoría de lenguajes no lo permiten, y aunque algunos sí lo hacen, dificulta la lectura y puede causar errores.\nValor-Venta-Inmueble-2025: No se recomienda usar guiones medios en nombres de variables porque este carácter está reservado para la operación de resta. En muchos lenguajes, incluyendo R, provocaría errores de sintaxis. Siempre es mejor usar guiones bajos.\nventa inmueble 2025: Los espacios entre palabras no son válidos en nombres de variables. El sistema interpretaría “venta”, “inmueble” y “2025” como tres variables distintas. Para unir palabras, se usan guiones bajos.\nvalorVentaInmueble2025: Este tipo de escritura se conoce como camelCase, y aunque muchos lo utilizan, en R la convención más clara y extendida es el uso de snake_case (con guiones bajos). Funciona, pero no sigue el estilo típico de R.\noperación_Año2025: Este nombre contiene un acento (“ó”) y la letra “ñ”, lo que puede causar conflictos en algunos entornos. Para evitar errores, es mejor evitar caracteres especiales como estos. Ademas utiliza mayúsculas, lo que puede complicar innecesariamente la escritura del nombre de la variable.\nventainmuebleanio2025: Aunque técnicamente válido, este nombre es largo y poco intuitivo porque carece de separadores entre palabras. Usar guiones bajos mejora significativamente la legibilidad.",
+    "text": "Pregunta 4\nUna inmobiliaria necesita guardar el valor de una operación de venta de un inmueble efectuada durante el corriente año en una variable para realizar operaciones posteriores. Entre los siguientes posibles nombre de variable indique cual sería el más adecuado:\n\n 2025_venta_inmueble Valor-Venta-Inmueble-2025 valorVentaInmueble2025 operación_Año2025 ventainmuebleanio2025 venta inmueble 2025 venta_inmueble_2025 VentaOperación\n\n\n\nExplicación\n\nVentaOperación: No es la mejor opción porque incluye un acento (“ó”) en el nombre de la variable, lo que puede generar problemas de codificación en algunos entornos. Además, se recomienda usar guiones bajos para separar palabras en minúsculas y mejorar la legibilidad.\n2025_venta_inmueble: En general no es buena práctica que los nombres de variables comiencen con un número en ningún lenguaje de programación. R y la mayoría de lenguajes no lo permiten, y aunque algunos sí lo hacen, dificulta la lectura y puede causar errores.\nValor-Venta-Inmueble-2025: No se recomienda usar guiones medios en nombres de variables porque este carácter está reservado para la operación de resta. En muchos lenguajes, incluyendo R, provocaría errores de sintaxis. Siempre es mejor usar guiones bajos.\nventa inmueble 2025: Los espacios entre palabras no son válidos en nombres de variables. El sistema interpretaría “venta”, “inmueble” y “2025” como tres variables distintas. Para unir palabras, se usan guiones bajos.\nvalorVentaInmueble2025: Este tipo de escritura se conoce como camelCase, y aunque muchos lo utilizan, en R la convención más clara y extendida es el uso de snake_case (con guiones bajos). Funciona, pero no sigue el estilo típico de R.\noperación_Año2025: Este nombre contiene un acento (“ó”) y la letra “ñ”, lo que puede causar conflictos en algunos entornos. Para evitar errores, es mejor evitar caracteres especiales como estos. Ademas utiliza mayúsculas, lo que puede complicar innecesariamente la escritura del nombre de la variable.\nventainmuebleanio2025: Aunque técnicamente válido, este nombre es largo y poco intuitivo porque carece de separadores entre palabras. Usar guiones bajos mejora significativamente la legibilidad.",
     "crumbs": [
       "Unidad 1. Introducción a la programación con R",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Actividad de autoevaluación 1</span>"
@@ -2723,8 +2723,8 @@
     ]
   },
   {
-    "objectID": "capitulos/98_tp.html",
-    "href": "capitulos/98_tp.html",
+    "objectID": "capitulos/97_tp.html",
+    "href": "capitulos/97_tp.html",
     "title": "Trabajo Práctico",
     "section": "",
     "text": "Introducción\nEl “Juego de la Memoria”, también conocido como “Memotest”, es un clásico juego de mesa que pone a prueba la capacidad de atención y la memoria visual de los participantes. Su dinámica es simple pero atrapante: se colocan fichas o cartas boca abajo, con imágenes ocultas, y los jugadores deben voltearlas de a dos por turno, intentando encontrar pares coincidentes. Si las dos fichas tienen la misma imagen, el jugador las retira del tablero y puede seguir jugando. Si no coinciden, se vuelven a colocar boca abajo, y es turno del siguiente jugador.\nEste juego ha sido disfrutado por generaciones tanto en el ámbito familiar como en actividades educativas, ya que además de ser entretenido, fomenta habilidades cognitivas importantes. En este trabajo práctico, vamos a programar en R una versión digital y simplificada del juego, que se podrá jugar en solitario desde la terminal de la computadora.",
@@ -2734,8 +2734,8 @@
     ]
   },
   {
-    "objectID": "capitulos/98_tp.html#objetivo",
-    "href": "capitulos/98_tp.html#objetivo",
+    "objectID": "capitulos/97_tp.html#objetivo",
+    "href": "capitulos/97_tp.html#objetivo",
     "title": "Trabajo Práctico",
     "section": "Objetivo",
     "text": "Objetivo\nEl objetivo de este trabajo práctico es desarrollar una versión interactiva del Juego de la Memoria en R, que funcione desde la terminal. El programa permitirá jugar con un tablero de fichas ocultas, revelarlas de a pares, y buscar coincidencias hasta completar todos los pares disponibles. El juego debe mostrar el estado del tablero en cada momento, registrar la cantidad de intentos realizados y permitir al jugador reiniciar la partida si lo desea.",
@@ -2745,8 +2745,8 @@
     ]
   },
   {
-    "objectID": "capitulos/98_tp.html#dinámica-del-juego",
-    "href": "capitulos/98_tp.html#dinámica-del-juego",
+    "objectID": "capitulos/97_tp.html#dinámica-del-juego",
+    "href": "capitulos/97_tp.html#dinámica-del-juego",
     "title": "Trabajo Práctico",
     "section": "Dinámica del juego",
     "text": "Dinámica del juego\nPara comprender cómo debe funcionar el programa, deben mirar el video grabado con una demo. El tablero estará compuesto por una cantidad par de fichas organizadas en una grilla rectangular (por ejemplo, 4 filas por 5 columnas). Cada ficha tiene un símbolo, letra o texto oculto, y hay exactamente dos fichas con cada símbolo.\nEn cada turno, el jugador debe ingresar la posición de dos fichas para descubrir. El programa debe mostrar el tablero con las dos fichas seleccionadas visibles. Si las fichas coinciden, permanecen visibles. Si no coinciden, el jugador debe memorizar su ubicación y el programa espera hasta que el jugador le diga que está listo para continuar. El juego continúa hasta que el jugador haya encontrado todos los pares. Al finalizar, se muestra la cantidad de intentos realizados y se ofrece la posibilidad de jugar otra partida.",
@@ -2756,8 +2756,8 @@
     ]
   },
   {
-    "objectID": "capitulos/98_tp.html#la-terminal",
-    "href": "capitulos/98_tp.html#la-terminal",
+    "objectID": "capitulos/97_tp.html#la-terminal",
+    "href": "capitulos/97_tp.html#la-terminal",
     "title": "Trabajo Práctico",
     "section": "La terminal",
     "text": "La terminal\nEl programa es interactivo y requiere que el usuario ingrese datos en tiempo real: configurar el tablero, elegir posiciones del tablero para descubrir, decidir si desea volver a jugar, etc. Por ello, el programa debe ejecutarse desde la terminal de la computadora, donde pueden escribirse comandos y visualizarse respuestas del sistema. Es importante familiarizarse con la Unidad 4 de la asignatura para lograr este funcionamiento del programa.",
@@ -2767,8 +2767,8 @@
     ]
   },
   {
-    "objectID": "capitulos/98_tp.html#materiales-provistos",
-    "href": "capitulos/98_tp.html#materiales-provistos",
+    "objectID": "capitulos/97_tp.html#materiales-provistos",
+    "href": "capitulos/97_tp.html#materiales-provistos",
     "title": "Trabajo Práctico",
     "section": "Materiales provistos",
     "text": "Materiales provistos\nPara realizar este trabajo práctico cuentan con los siguientes archivos de apoyo:\n\nScript jugar.R: archivo principal donde deben escribir su programa. Contiene una plantilla con instrucciones y espacio para agregar los datos del equipo y el código del juego.\nPaquete memoria: este paquete creado por la cátedra ofrece funciones auxiliares que simplifican muchas partes de la solución de este trabajo y serán de extrema utilidad. Se recomienda leer la documentación del paquete con atención y correr los ejemplos. Las funciones disponibles son: nuevo_tablero, validar_fichas, mostrar_tablero, texto_lento, limpiar_consola, leer_eleccion, mostrar_info, posiciones_disponibles y mostrar_pares. En el script jugar.R se incluyen instrucciones de instalación.\n\nInformación importante para usuarios de Windows\nSi usas Windows, para instalar el paquete memoria es necesario tener instalado Rtools, un conjunto de herramientas que permite compilar paquetes de R que contienen código en C/C++ o Fortran. Instrucciones de instalación:\n\nVisitar la página https://cran.r-project.org/bin/windows/Rtools/\nElegir la versión correspondiente para la versión de R que tengan instalada. Por ejemplo, para la versión de R 4.4.1 es necesario descargar Rtools 4.4. Para descubrir la versión de R instalada en su computadora pueden ejecutar R.version.string en la consola.\nDescargar el instalador haciendo click en el link correspondiente. El link se encuentra en la sección Installing RtoolsNN y lleva el nombre RtoolsNN installer. NN hace referencia a la versión de Rtools. En nuestro ejemplo, NN sería 44.\nEjecutar el instalador y seguir las instrucciones. Pueden elegir valores por defecto.\nUna vez instalado, cerrar RStudio y volver a abrirlo para asegurarse que los cambios se apliquen correctamente.\n\nSiguiendo los pasos anteriores, la instalación de memoria debería poder continuar sin inconvenientes.\nInstalación alternativa del paquete memoria\n\nDescargar memoria_0.1.0.tar.gz. Una vez descargado, se recomienda mover el archivo a la misma carpeta donde está el archivo jugar.R.\nEjecutar install.packages(\"ruta/a/memoria_0.1.0.tar.gz\", repos = NULL, type = \"source\"), reemplazando \"ruta/a/memoria_0.1.0.tar.gz\" por la ruta correspondiente.\n\nSi memoria_0.1.0.tar.gz está en la carpeta de su proyecto de R pueden ejecutar install.packages(\"memoria_0.1.0.tar.gz\", repos = NULL, type = \"source\"). Recuerden que al trabajar en un proyecto de R pueden usar rutas relativas.\nCaso contrario, \"ruta/a/memoria_0.1.0.tar.gz\" deberá ser la ruta absoluta a la ubicación del archivo.",
@@ -2778,8 +2778,8 @@
     ]
   },
   {
-    "objectID": "capitulos/98_tp.html#descomposición-algorítmica",
-    "href": "capitulos/98_tp.html#descomposición-algorítmica",
+    "objectID": "capitulos/97_tp.html#descomposición-algorítmica",
+    "href": "capitulos/97_tp.html#descomposición-algorítmica",
     "title": "Trabajo Práctico",
     "section": "Descomposición algorítmica",
     "text": "Descomposición algorítmica\nPara organizar el código de manera clara y modular, se recomienda aplicar el principio de descomposición algorítmica, creando funciones propias para distintas partes del juego. Estas funciones pueden definirse en jugar.R o, mejor aún, en scripts adicionales. El o los nuevos scripts deberán estar guardados en el mismo directorio que jugar.R, desde donde se los debe invocar con la función source(). Desde dicha carpeta, deben abrir la terminal y ejecutar el programa con Rscript jugar.R, sin que se produzcan errores.\nTodas las funciones creadas deben estar documentadas bajo el sistema Roxygen. Algunas podrán tomar argumentos, otras no, y algunas devolverán valores mientras que otras sólo imprimirán mensajes en pantalla. Lo importante es que cada función cumpla una tarea bien definida y facilite la lectura del programa principal.",
@@ -2789,8 +2789,8 @@
     ]
   },
   {
-    "objectID": "capitulos/98_tp.html#otras-indicaciones-y-sugerencias",
-    "href": "capitulos/98_tp.html#otras-indicaciones-y-sugerencias",
+    "objectID": "capitulos/97_tp.html#otras-indicaciones-y-sugerencias",
+    "href": "capitulos/97_tp.html#otras-indicaciones-y-sugerencias",
     "title": "Trabajo Práctico",
     "section": "Otras indicaciones y sugerencias",
     "text": "Otras indicaciones y sugerencias\n\nEs conveniente diseñar el algoritmo antes de programar, es decir, tomarse tiempo para pensar cómo es la lógica de la estructura del juego, qué pequeñas partes se pueden ir programando y probando de a poco, etc.\nNo dejar para último momento. Empezar con inmediatez, ya que no se resuelve de un día para el otro y es posible que necesiten realizar consultas con los docentes. Si dejan para último momento ya no habrá tiempo de organizar consultas, no podrán entregar el trabajo práctico y quedarán libres en la asignatura.\nProbar el programa por partes, para asegurarse que cada cosa que van agregando funcione. Tratar de armar todo y luego evaluar puede hacer muy difícil a la tarea de detectar errores.\nUtilicen comentarios para identificar distintas partes de su programa y para describir qué se prentende realizar en cada sección.\nEl objetivo estará cumplido si logran un programa similar al presentado en la demo. Opcionalmente, pueden incluir otros agregados que les resulte de interés.\nSi no logran programar todo lo pedido, igualmente realicen la entrega de lo que hayan podido hacer y los docentes evaluarán si es suficiente o no para aprobar.\nNo intentar resolver todo de a una vez. Agregar pequeñas partes de a poco. Utilizar la emisión de mensajes temporarios para ir probando el código.",
@@ -2800,8 +2800,8 @@
     ]
   },
   {
-    "objectID": "capitulos/98_tp.html#equipos",
-    "href": "capitulos/98_tp.html#equipos",
+    "objectID": "capitulos/97_tp.html#equipos",
+    "href": "capitulos/97_tp.html#equipos",
     "title": "Trabajo Práctico",
     "section": "Equipos",
     "text": "Equipos\nEl trabajo práctico se resuelve en grupos de exactamente CUATRO integrantes, de cualquier comisión. Hay tiempo hasta el lunes 19/5/25 para informar la composición de cada equipo en este foro de Comunidades. Asimismo, si no tenés equipo o faltan integrantes en tu grupo, hay tiempo hasta esa fecha para comentar la situación en ese mismo foro. El día martes 20/5 se tomarán del foro los nombres de aquellos que hayan manifestado interés de hacer el TP pero no pudieron formar equipo, y entre ellos se crearán al azar nuevos equipos y/o se completarán también al azar los grupos incompletos. El armado de estos equipos será inapelable.\nEl script jugar.R tiene un espacio destinado para escribir los nombres de los integrantes del equipo. Deben colocar allí los nombres de quienes hayan efectivamente participado del trabajo. Comunidades les permite a todos los integrantes de un equipo ver los archivos que se han entregado, de modo que cada estudiante sabe si su nombre figura o no en el script. Si en el mismo falta el nombre de un estudiante y los docentes no son contactados al respecto, se entenderá que dicha persona no realizó el trabajo y quedará libre.",
@@ -2811,8 +2811,8 @@
     ]
   },
   {
-    "objectID": "capitulos/98_tp.html#código-de-conducta",
-    "href": "capitulos/98_tp.html#código-de-conducta",
+    "objectID": "capitulos/97_tp.html#código-de-conducta",
+    "href": "capitulos/97_tp.html#código-de-conducta",
     "title": "Trabajo Práctico",
     "section": "Código de conducta",
     "text": "Código de conducta\n\nLa discusión entre integrantes de distintos grupos está permitida, no así el intercambio de código. Se puede debatir en el foro de Comunidades o en otros medios, pero no publicar partes de código.\nLas entregas son sometidas a un software de detección de plagio, si se detectan similaridades sospechosas en el trabajo de distintos grupos, podrán quedar descalificados.\nCuando se detecta un uso llamativo de herramientas de Inteligencia Artificial o estructuras de programación que no se corresponde con los usos y funciones básicas vistas en este curso introductorio, los estudiantes son convocados por los docentes para defender y explicar su entrega de forma oral y responder preguntas sobre la resolución entregada.",
@@ -2822,8 +2822,8 @@
     ]
   },
   {
-    "objectID": "capitulos/98_tp.html#entrega",
-    "href": "capitulos/98_tp.html#entrega",
+    "objectID": "capitulos/97_tp.html#entrega",
+    "href": "capitulos/97_tp.html#entrega",
     "title": "Trabajo Práctico",
     "section": "Entrega",
     "text": "Entrega\nDeben entregar el archivo jugar.R y cualquier otro script que generen, en la sección destinada para tal fin del aula virtual. Es suficiente con que un integrante del equipo adjunte los archivos. El resto de los integrantes podrá ver la entrega y, más adelante, la devolución y calificación por parte de los docentes.\nFecha límite de entrega: martes 10/06 a las 08:00 No se reciben trabajos fuera de este horario límite, sin ningún tipo de excepción.",
@@ -2833,14 +2833,91 @@
     ]
   },
   {
-    "objectID": "capitulos/98_tp.html#evaluación",
-    "href": "capitulos/98_tp.html#evaluación",
+    "objectID": "capitulos/97_tp.html#evaluación",
+    "href": "capitulos/97_tp.html#evaluación",
     "title": "Trabajo Práctico",
     "section": "Evaluación",
     "text": "Evaluación\nLa evaluación tendrá en cuenta:\n\nSi el programa funciona y permite jugar.\nSi el programa implementa el juego con el comportamiento presentado en la demo.\nSi hay prolijidad, claridad y buen uso de comentarios en el código.\nSi el trabajo muestra ser original y no copia de otros recursos.",
     "crumbs": [
       "Apéndices",
       "Trabajo Práctico"
+    ]
+  },
+  {
+    "objectID": "capitulos/98_tarea.html",
+    "href": "capitulos/98_tarea.html",
+    "title": "Tarea Individual",
+    "section": "",
+    "text": "Introducción\nHoy en día, casi todas las plataformas digitales —redes sociales, correos electrónicos, tiendas online y homebanking, entre otras— requieren que los usuarios se registren mediante un nombre de usuario y una contraseña. Para mantener la seguridad de nuestras cuentas, es fundamental utilizar contraseñas seguras y diferentes en cada sitio, evitando así que la filtración de una de ellas comprometa las demás. Sin embargo, muchas personas tienden a usar contraseñas simples o repetidas, lo que aumenta el riesgo de ser víctimas de ataques informáticos. Una buena práctica es generar contraseñas personalizadas que resulten fáciles de recordar para el usuario, pero difíciles de adivinar para otros.\nEn este ejercicio vamos a crear una función en R que le ayude a las personas a elegir una contraseña, creada siguiendo una regla determinada a partir de la información provista por el usuario y distribuirla mediante la creación de un paquete. Si bien puede ser una muy buena estrategia que cada persona invente para sí mismo una regla para generar contraseñas fáciles de recordar, probablemente no sea lo más seguro utilizar una regla propuesta por un tercero, como se propone en esta tarea. No obstante, será una buena oportunidad para seguir aprendiendo.",
+    "crumbs": [
+      "Apéndices",
+      "Tarea Individual"
+    ]
+  },
+  {
+    "objectID": "capitulos/98_tarea.html#objetivo",
+    "href": "capitulos/98_tarea.html#objetivo",
+    "title": "Tarea Individual",
+    "section": "Objetivo",
+    "text": "Objetivo\nEl objetivo de esta tarea es crear un paquete que contiene una función para crear contraseñas. A partir del nombre y apellido de la persona y un número que ella elija, la función devuelve como sugerencia un nombre de usuario sugerido y una contraseña.\nEl programa deberá imprimir un mensaje avisando que el usuario y la contraseña se creó correctamente, y devolver una lista con ambos elementos.",
+    "crumbs": [
+      "Apéndices",
+      "Tarea Individual"
+    ]
+  },
+  {
+    "objectID": "capitulos/98_tarea.html#indicaciones-para-el-armado-de-la-función",
+    "href": "capitulos/98_tarea.html#indicaciones-para-el-armado-de-la-función",
+    "title": "Tarea Individual",
+    "section": "Indicaciones para el armado de la función",
+    "text": "Indicaciones para el armado de la función\n\nLa función debe llamarse generar_clave() y debe tener tres argumentos de entrada: un nombre, un apellido y un número de dos dígitos.\nLos valores por defecto para los primeros dos argumentos deben ser el primer nombre y el apellido del estudiante. A su vez, el número de dos dígitos no debe tener un valor asignado por defecto.\nLa función tiene que generar un nombre de usuario a partir del nombre y apellido provistos. Por ejemplo, si el nombre es “Silvina” y el apellido es “Perez”, el nombre de usuario a crear debe ser “silvina_perez”.\nLa contraseña sugerida por la función debe estar formada por las 3 primeras letras del apellido, seguidas por los dígitos que resultan de la multiplicación entre la cantidad de vocales del nombre y la cantidad de consonantes del apellido, luego por las primeras 2 letras del nombre y finalmente por los dígitos que resulten de la multiplicación entre el número ingresado por el usuario y un número elegido por la función al azar entre el 1 y el 10\nPor ejemplo, si el nombre es “Silvina” (3 vocales), el apellido es “Perez” (3 consonantes), el dígito elegido es 32 y el número aleatorio resulta ser 4, la contraseña sugerida debe ser: “per9si128”.\nTanto el nombre de usuario como la contraseña sugeridas deben ser letras minúsculas, sin importar lo que ingrese el usuario.\nLa función debe imprimir un mensaje similar al siguiente ¡La contraseña se ha generado correctamente! y devolver una lista con el nombre de usario y la contraseña.\nPueden emplear los principios de la descomposición algorítmica y crear otras funciones auxiliares si lo consideran necesario, pero la función generar_clave() debe ser la única que exporte el paquete.",
+    "crumbs": [
+      "Apéndices",
+      "Tarea Individual"
+    ]
+  },
+  {
+    "objectID": "capitulos/98_tarea.html#indicaciones-para-el-armado-del-paquete",
+    "href": "capitulos/98_tarea.html#indicaciones-para-el-armado-del-paquete",
+    "title": "Tarea Individual",
+    "section": "Indicaciones para el armado del paquete",
+    "text": "Indicaciones para el armado del paquete\n\nEl paquete en el que se incluye la función generar_clave() puede tener cualquier nombre que el estudiante desee, siempre que sea una palabra válida.\nSe deben seguir con atención todos los pasos descriptos en la primera parte de la Unidad 6 sobre crear cómo paquetes en R.\nUna vez finalizado, se debe encapsular el paquete en un archivo comprimido de formato .tar.gz, que se crea automáticamente ejecutando la función build().",
+    "crumbs": [
+      "Apéndices",
+      "Tarea Individual"
+    ]
+  },
+  {
+    "objectID": "capitulos/98_tarea.html#entrega-de-la-tarea",
+    "href": "capitulos/98_tarea.html#entrega-de-la-tarea",
+    "title": "Tarea Individual",
+    "section": "Entrega de la tarea",
+    "text": "Entrega de la tarea\nLa tarea se resuelve de forma individual y es opcional. Se debe entregar el archivo comprimido mediante Comunidades antes del domingo 22/06 a las 23:59, sin ningún tipo de excepción.",
+    "crumbs": [
+      "Apéndices",
+      "Tarea Individual"
+    ]
+  },
+  {
+    "objectID": "capitulos/98_tarea.html#código-de-conducta",
+    "href": "capitulos/98_tarea.html#código-de-conducta",
+    "title": "Tarea Individual",
+    "section": "Código de conducta",
+    "text": "Código de conducta\n\nLa discusión entre estudiantes está permitida, no así el intercambio de código. Se puede debatir en el foro de Comunidades o en otros medios, pero no publicar partes de código.\nLas entregas son sometidas a un software de detección de plagio, si se detectan similaridades sospechosas en el trabajo de distintos estudiantes, podrán quedar descalificados.\nCuando se detecta un uso llamativo de herramientas de Inteligencia Artificial o estructuras de programación que no se corresponde con los usos y funciones básicas vistas en este curso introductorio, los estudiantes son convocados por los docentes para defender y explicar su entrega de forma oral y responder preguntas sobre la resolución entregada.",
+    "crumbs": [
+      "Apéndices",
+      "Tarea Individual"
+    ]
+  },
+  {
+    "objectID": "capitulos/98_tarea.html#evaluación",
+    "href": "capitulos/98_tarea.html#evaluación",
+    "title": "Tarea Individual",
+    "section": "Evaluación",
+    "text": "Evaluación\nLa evaluación tendrá en cuenta:\n\nSi el paquete puede ser instalado sin errores.\nSi la función tiene el comportamiento pretendido.\nSi hay prolijidad, claridad y buen uso de comentarios en el código.\nSi la documentación del paquete está bien realizada.\nSi el trabajo muestra ser original y no copia de otros recursos.",
+    "crumbs": [
+      "Apéndices",
+      "Tarea Individual"
     ]
   },
   {
