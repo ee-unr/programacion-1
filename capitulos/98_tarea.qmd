@@ -1,0 +1,54 @@
+\thispagestyle{primerapagina}
+
+# Tarea Individual {.unnumbered}
+
+## Introducción
+
+Hoy en día, casi todas las plataformas digitales —redes sociales, correos electrónicos, tiendas online y homebanking, entre otras— requieren que los usuarios se registren mediante un nombre de usuario y una contraseña. Para mantener la seguridad de nuestras cuentas, es fundamental utilizar contraseñas seguras y diferentes en cada sitio, evitando así que la filtración de una de ellas comprometa las demás. Sin embargo, muchas personas tienden a usar contraseñas simples o repetidas, lo que aumenta el riesgo de ser víctimas de ataques informáticos. Una buena práctica es generar contraseñas personalizadas que resulten fáciles de recordar para el usuario, pero difíciles de adivinar para otros.
+
+En este ejercicio vamos a **crear una función en R que le ayude a las personas a elegir una contraseña**, creada siguiendo una regla determinada a partir de la información provista por el usuario y distribuirla mediante la **creación de un paquete**. Si bien puede ser una muy buena estrategia que cada persona invente para sí mismo una regla para generar contraseñas fáciles de recordar, probablemente no sea lo más seguro utilizar una regla propuesta por un tercero, como se propone en esta tarea. No obstante, será una buena oportunidad para seguir aprendiendo.
+
+## Objetivo
+
+El objetivo de esta tarea es **crear un paquete que contiene una función para crear contraseñas**. A partir del nombre y apellido de la persona y un número que ella elija, la función devuelve como sugerencia un nombre de usuario sugerido y una contraseña. 
+
+El programa deberá imprimir un mensaje avisando que el usuario y la contraseña se creó correctamente, y devolver una lista con ambos elementos.
+
+## Indicaciones para el armado de la función
+
+- La función debe llamarse `generar_clave()` y debe tener tres argumentos de entrada: un nombre, un apellido y un número de dos dígitos.
+- Los valores por defecto para los primeros dos argumentos deben ser el primer nombre y el apellido del estudiante. A su vez, el número de dos dígitos no debe tener un valor asignado por defecto.
+- La función tiene que generar un nombre de usuario a partir del nombre y apellido provistos. Por ejemplo, si el nombre es "Silvina" y el apellido es "Perez", el nombre de usuario a crear debe ser "silvina_perez".
+- La contraseña sugerida por la función debe estar formada por las 3 primeras letras del apellido, seguidas por los dígitos que resultan de la multiplicación entre la cantidad de vocales del nombre y la cantidad de consonantes del apellido, luego por las primeras 2 letras del nombre y finalmente por los dígitos que resulten de la multiplicación entre el número ingresado por el usuario y un número elegido por la función al azar entre el 1 y el 10
+- Por ejemplo, si el nombre es "Silvina" (3 vocales),  el apellido es "Perez" (3 consonantes), el dígito elegido es 32 y el número aleatorio resulta ser 4, la contraseña sugerida debe ser: "per9si128".
+- Tanto el nombre de usuario como la contraseña sugeridas deben ser letras minúsculas, sin importar lo que ingrese el usuario.
+- La función debe imprimir un mensaje similar al siguiente `¡La contraseña se ha generado correctamente!` y devolver una lista con el nombre de usario y la contraseña.
+- Pueden emplear los principios de la descomposición algorítmica y crear otras funciones auxiliares si lo consideran necesario, pero la función `generar_clave()` debe ser la única que exporte el paquete.
+
+## Indicaciones para el armado del paquete
+
+- El paquete en el que se incluye la función `generar_clave()` puede tener cualquier nombre que el estudiante desee, siempre que sea una palabra válida.
+- Se deben seguir con atención todos los pasos descriptos en la primera parte de la [Unidad 6 sobre crear cómo paquetes en R](06_1_crear_paquete.qmd). 
+- Una vez finalizado, se debe encapsular el paquete en un archivo comprimido de formato `.tar.gz`, que se crea automáticamente ejecutando la función `build()`.
+
+## Entrega de la tarea
+
+La tarea se resuelve de forma individual y es opcional. Se debe entregar el archivo comprimido mediante Comunidades **antes del domingo 22/06 a las 23:59**, sin ningún tipo de excepción.
+
+## Código de conducta
+
+- La discusión entre estudiantes está permitida, no así el intercambio de código. Se puede debatir en el foro de Comunidades o en otros medios, pero no publicar partes de código.
+- Las entregas son sometidas a un software de detección de plagio, si se detectan similaridades sospechosas en el trabajo de distintos estudiantes, podrán quedar descalificados. 
+- Cuando se detecta un uso llamativo de herramientas de Inteligencia Artificial o estructuras de programación que no se corresponde con los usos y funciones básicas vistas en este curso introductorio, los estudiantes son convocados por los docentes para defender y explicar su entrega de forma oral y responder preguntas sobre la resolución entregada.
+
+
+## Evaluación
+
+La evaluación tendrá en cuenta:
+
+- Si el paquete puede ser instalado sin errores.
+- Si la función tiene el comportamiento pretendido.
+- Si hay prolijidad, claridad y buen uso de comentarios en el código.
+- Si la documentación del paquete está bien realizada.
+- Si el trabajo muestra ser original y no copia de otros recursos.
+
