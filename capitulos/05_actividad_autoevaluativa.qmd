@@ -7,6 +7,173 @@ number-sections: false
 \thispagestyle{primerapagina}
 ```
 
-::: {.en-construccion data-latex=""}
-El contenido estará disponible a la brevedad.
-:::
+## Contexto
+
+Se cuenta con los siguientes objetos en el ambiente de trabajo de R:
+
+```{r, eval=FALSE}
+A <- c(1, 2, 3)
+B <- c(9, 2, 7)
+D <- list(A, B)
+E <- matrix(c(1, 1, 1, 2, 2, 2, 3, 0, 3, 7, 8, 9), nrow = 4, byrow = TRUE)
+```
+
+A partir de estos objetos responda las siguientes preguntas:
+
+## Pregunta 1
+
+¿Cuál es la línea de código que se debe correr para obtener un vector donde cada elemento sea igual a la suma de los elementos que se encuentran en la misma posición de los vectores A y B?
+
+`r webexercises::longmcq(c(answer = "A + B", "sum(A, B)", "sum(A) + sum(B)", "matrix(A + B)", "matrix(A, B)", "Los vectores A y B no pueden ser sumados"))`
+
+`r webexercises::hide("Explicación")`
+La suma elemento a elemento entre dos vectores del mismo largo se hace con `A + B`.
+`r webexercises::unhide()`
+
+## Pregunta 2
+
+¿Cuál es el resultado al ejecutar lapply(D, min)?
+
+`r webexercises::longmcq(c("Un vector con los valores 1 y 2", answer = "Una lista con dos elementos: los valores 1 y 2", "El mismo resultado que si aplicáramos sapply(D, min)", "Dos de las respuestas son correctas", "Ninguna de las respuestas es correcta"))`
+
+`r webexercises::hide("Explicación")`
+`lapply` devuelve una lista, no un vector. Por eso la opción correcta es una lista con dos elementos.
+`r webexercises::unhide()`
+
+## Pregunta 3
+
+¿Cuál es el valor almacenado en `Z` luego de ejecutar las siguientes acciones? 
+
+```{r, eval=FALSE}
+Z <- A + B * 2
+
+for (i in 1:length(Z)) {
+  
+     Z[i] <- Z[i]^2 + i
+     
+     }
+
+Z <- Z/2
+Z <- Z[2]
+```
+
+Ingrese un número: `r webexercises::fitb(19)`
+
+`r webexercises::hide("Explicación")`
+
+1. Primero, `B * 2` da: `c(18, 4, 14)`
+
+2. Luego, `A + B*2` da: `c(1+18, 2+4, 3+14)` → `Z = c(19, 6, 17)`
+
+3. En el bucle, se reemplaza cada valor con `Z[i]^2 + i`:
+
+   - `Z[1] = 19^2 + 1 = 361 + 1 = 362`
+   - `Z[2] = 6^2 + 2 = 36 + 2 = 38`
+   - `Z[3] = 17^2 + 3 = 289 + 3 = 292`
+   
+4. Luego `Z <- Z/2`: `Z = c(181, 19, 146)`
+
+5. Finalmente, `Z <- Z[2]` → Resultado: 19
+
+`r webexercises::unhide()`
+
+## Pregunta 4
+
+¿Cuál es el valor obtenido al ejecutar el siguiente programa?
+
+```{r, eval=FALSE}
+names(B) <- c("enero", "febrero", "marzo")
+names(A) <- c("alfa", "beta", "gama")
+B["marzo"] * A["beta"]
+```
+
+Ingrese un número: `r webexercises::fitb(14)`
+
+`r webexercises::hide("Explicación")`
+Se multiplican los valores en las posiciones con nombre "marzo" (7) y "beta" (2): 7 × 2 = 14.
+`r webexercises::unhide()`
+
+## Pregunta 5
+
+¿Cuál es el resultado de ejecutar `rbind(A,B)`?
+
+`r webexercises::longmcq(c(answer = "Una matriz de dos filas y tres columnas", "Una matriz de tres filas y dos columnas", "Una matriz de una fila y seis columnas", "Una matriz de seis filas y una columna"))`
+
+`r webexercises::hide("Explicación")`
+`rbind` une los vectores por filas, dando como resultado 2 filas (A y B) y 3 columnas (sus elementos).
+`r webexercises::unhide()`
+
+## Pregunta 6
+¿Con cuáles líneas de código podrian obtenerse los totales por columna de E? 
+(marcar todas las que considere correctas).
+
+`r webexercises::longmcq(c(
+  "sum(E)",
+  "sum(E, 2)",
+  "apply(E, 1, sum)",
+  answer = "apply(E, 2, sum)",
+  answer = "colSums(E)",
+  answer = "c(sum(E[, 1]), sum(E[, 2]), sum(E[, 3]))",
+  "c(sum(E[1, ]), sum(E[2, ]), sum(E[3, ]))"
+))`
+
+`r webexercises::hide("Explicación")`
+Para obtener totales por **columna**, debemos sumar a lo largo de cada **fila vertical**. Esto se hace indicando el margen 2 (`apply(E, 2, sum)`), o usando funciones especializadas como `colSums`, que está optimizada para este propósito. También puede lograrse sumando manualmente cada columna como en `c(sum(E[, 1]), sum(E[, 2]), sum(E[, 3]))`.
+`r webexercises::unhide()`
+
+## Pregunta 7
+
+¿Qué cantidad de elementos tiene el vector `X <- seq(0,10,2)`?
+
+Ingrese un número: `r webexercises::fitb(6)`
+
+`r webexercises::hide("Explicación")`
+La secuencia va de 0 a 10 en pasos de 2: 0, 2, 4, 6, 8, 10. Total: 6 elementos.
+`r webexercises::unhide()`
+
+
+## Pregunta 8
+
+¿Qué se obtiene al ejecutar `E[E>5]`?
+
+`r webexercises::longmcq(c("Una matriz de elementos lógicos de la misma dimensión que E con TRUE en los elementos que son mayores a 5 y FALSE en el resto.", "Una matriz numérica del mismo tamaño que E con todos elementos 0 salvo aquellos que son mayores a 5.", answer = "Un vector numérico de largo menor o igual a length(E) que contiene todos los valores de E mayores a 5.", "Un vector lógico de largo igual a length(E), con TRUE en los elementos que son mayores a 5 y FALSE en el resto."))`
+
+`r webexercises::hide("Explicación")`
+La expresión `E > 5` genera una matriz lógica con la misma forma que `E`, donde cada posición indica si el valor es mayor a 5. Al usarla dentro de `E[...]`, se extraen solo los elementos que cumplen esa condición, devolviendo un vector con los valores mayores a 5 en forma aplanada.
+`r webexercises::unhide()`
+
+## Pregunta 9
+
+Indique si cada una de las siguientes afirmaciones es VERDADERA o FALSA:
+
+- ¿El resultado de `length(D)` es 2?
+
+`r webexercises::longmcq(c(answer = "Verdadero", "Falso"))`
+
+`r webexercises::hide("Explicación")`
+`length(D)` devuelve 2 porque la lista tiene dos elementos.
+`r webexercises::unhide()`
+
+- ¿Si ejecuto `D[2]` el resultado es la matriz B?
+
+`r webexercises::longmcq(c("Verdadero", answer = "Falso"))`
+
+`r webexercises::hide("Explicación")`
+`D[2]` devuelve una sublista, no el contenido directo de B, por lo que no es la matriz B sino una lista que la contiene.
+`r webexercises::unhide()`
+
+- ¿La forma correcta de invocar al valor 7 que está en la lista D es `D[[2]][3]`?
+
+`r webexercises::longmcq(c(answer = "Verdadero", "Falso"))`
+
+`r webexercises::hide("Explicación")`
+`D[[2]]` accede al segundo elemento de la lista (el vector B), y `[3]` al tercer valor de ese vector.
+`r webexercises::unhide()`
+
+- ¿Si se ejecuta `D[[1]] <- 5`, el primer elemento de la lista D pasa a ser un vector con los valores 5, 2 y 3?
+
+`r webexercises::longmcq(c("Verdadero", answer = "Falso"))`
+
+`r webexercises::hide("Explicación")`
+`D[[1]] <- 5` reemplaza el primer elemento con el valor escalar 5. No se conserva el resto del vector original.
+`r webexercises::unhide()`
