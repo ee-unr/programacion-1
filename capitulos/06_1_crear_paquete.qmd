@@ -5,14 +5,13 @@
 # Creación de paquetes de R
 
 ::: {.presentacion-capitulo data-latex=""}
-En este capítulo vamos a ver cómo reunir todo lo que aprendimos hasta acá en la creación de un paquete de R. Crear un paquete nos permite agrupar funciones relacionadas, documentarlas correctamente y facilitar su uso tanto para nosotros mismos como para otras personas. Aunque pueda parecer una tarea avanzada, el proceso básico de creación de paquetes es accesible, especialmente gracias a herramientas como el paquete `usethis`.
+En este capítulo vamos a ver cómo reunir todo lo que aprendimos hasta acá en la creación de un paquete de R. Crear un paquete nos permite agrupar funciones relacionadas, documentarlas correctamente y facilitar su uso tanto para nosotros mismos como para otras personas.
 :::
 
 ## ¿Por qué y para qué crear un paquete en R?
 
 A lo largo de este curso aprendimos a escribir funciones, organizar nuestro código, documentarlo, manejar estructuras de datos y seguir buenas prácticas de programación. Crear un paquete de R es una excelente manera de integrar todos esos conocimientos en un proyecto concreto. Los paquetes son la forma en que se distribuyen las herramientas en R: cuando usamos funciones como `mean()` o `ggplot()`, en realidad estamos utilizando funciones que vienen en paquetes. Aprender a crear nuestros propios paquetes no solo nos da autonomía como programadores, sino que también nos permite compartir nuestro trabajo con otras personas y empezar a construir herramientas reutilizables, ya sea para nuestros propios proyectos o para otros usuarios.
 
-Incluso si estamos dando nuestros primeros pasos en Estadística o Ciencia de Datos, desarrollar un paquete nos ayuda a pensar en cómo organizar el código para que sea claro, mantenible y reutilizable. También nos da una idea de cómo se construye el ecosistema de R, una comunidad que se apoya fuertemente en la creación colaborativa de software. 
 
 ::: {.concepto data-latex=""}
 Un **paquete** en R es una colección de funciones, datos, documentación y archivos auxiliares organizados bajo una estructura estandarizada. Es la unidad básica de distribución de código en R. Cada vez que instalamos paquetes como `dplyr`, `ggplot2` o `writexl`, estamos descargando un conjunto de funciones predefinidas organizadas como un paquete.
@@ -24,17 +23,16 @@ Crear un paquete tiene muchas ventajas:
 
 * **Organización**: agrupar nuestras funciones y datos de forma clara y modular.
 * **Reutilización**: usar el mismo código en diferentes proyectos sin copiar y pegar.
-* **Colaboración**: compartir nuestro paquete con otras personas para que usen o contribuyan a nuestro trabajo.
-* **Documentación integrada**: incluir explicaciones detalladas sobre cada función, ejemplos y ayudas.
-* **Distribución**: subir nuestro paquete a repositorios públicos para que cualquier usuario de R pueda instalarlo.
+* **Documentación integrada**: incluir explicaciones detalladas sobre cada función, ejemplos y ayuda.
+* **Distribución y colaboración**: subir nuestro paquete a repositorios públicos para que cualquier usuario de R pueda instalarlo, usarlo y realizar contribuciones.
 
-Aunque a simple vista pueda parecer una tarea para usuarios avanzados, crear un paquete básico es totalmente accesible para estudiantes que ya tienen nociones de funciones, documentación y buenas prácticas. Aprender esto desde temprano tiene muchos beneficios:
+Aunque a simple vista pueda parecer una tarea para usuarios avanzados, crear un paquete básico es totalmente accesible para nosotros que estamos dando nuestros primeros pasos en Estadística o Ciencia de Datos, a partir del conocimiento básico ya adquirido sobre funciones, documentación y buenas prácticas. Aprender esto desde temprano tiene muchos beneficios:
 
-* Nos obliga a **pensar en la estructura** del código.
+* Nos obliga a **pensar en la estructura** del código, para que sea claro, fácil de mantener y reutilizable.
 * Nos ayuda a **adquirir hábitos de documentación**.
 * Nos introduce a una práctica **profesional y colaborativa**.
 * Nos muestra cómo funciona el **ecosistema del software libre** en R.
-* Y lo más importante: nos muestra que **crear herramientas propias es posible**.
+* Nos muestra que **crear herramientas propias es posible**.
 
 ## Pasos para crear un paquete
 
@@ -42,21 +40,19 @@ Vamos a crear un paquete básico en R desde cero. La idea no es cubrir todas las
 
 ### Preparativos
 
-Trabajaremos con herramientas del ecosistema `tidyverse`, en particular con el paquete `usethis`, que simplifica muchas de las tareas involucradas en la creación de paquetes. También vamos a usar `devtools` y `roxygen2` para compilar y documentar nuestro paquete de manera eficiente.
-
-Antes de comenzar, necesitamos tener instalados los siguientes paquetes:
+Crear un paquete se vuelve bastante sencillo si utilizamos las herramientas que otros han desarrollado para ayudarnos, como [el paquete `devtools`](https://devtools.r-lib.org/). Por eso, antes de comenzar, necesitamos instalalarlo:
 
 ```r
-install.packages(c("usethis", "devtools", "roxygen2", "testthat"))
+install.packages("devtools")
 ```
 
 Por otro lado, quienes utilizan Windows deben instalar el software *Rtools*, que se trata de un conjunto de herramientas para compilar código fuente en Windows.  Los pasos a seguir son:
 
-En sistemas **macOS o Linux**, no se necesita Rtools.
-
 1. Visitar la página oficial de CRAN: [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/).
 2. Elegir la versión de Rtools que **corresponde a la versión de R que tenés instalada**. Por ejemplo, si usás R 4.4, necesitás Rtools 4.4.
 3. Descargar el instalador y seguir las instrucciones. Al instalar, marcar la opción que agrega Rtools al **PATH del sistema**, para que R pueda encontrarlo automáticamente.
+
+En sistemas **macOS o Linux**, no se necesita Rtools.
 
 ### Elegir el nombre
 
@@ -72,20 +68,19 @@ Para practicar vamos a crear un paquete con una única función que determina si
 
 ### Estructura del paquete
 
-Crear un paquete no es más que seguir ciertas convenciones para organizar un conjunto de carpetas y archivos, ya que, en definitiva, se trata de crear una carpeta en nuestra computadora que tiene ciertos elementos obligatorios y algunos otros opcionales.
+Crear un paquete en R consiste, esencialmente, en organizar un conjunto de carpetas y archivos siguiendo ciertas convenciones. En términos prácticos, no es más que crear una carpeta en nuestra computadora que contenga algunos elementos obligatorios y otros opcionales.
 
-Vamos a cargar el paquete `devtools` que incluye muchos otros paquetes que ayudan a simplificar la tarea de la creación de un nuevo paquete.
+Para simplificar esta tarea, podemos utilizar el paquete `devtools`, que a su vez integra muchas herramientas diseñadas para facilitar el desarrollo de paquetes en R.
 
 ```{r, eval=FALSE}
 library(devtools)
 ```
 
-La forma más fácil de crear un paquete es ejecutando la función `create_package("ruta\al\paquete")` en cualquier sesión de RStudio que tengamos abierta. Por ejemplo:
+La forma más sencilla de crear un nuevo paquete es utilizando la función `create_package()` desde cualquier sesión activa de RStudio. Por ejemplo:
 
-```{r, eval=F}
-create_package("C:\Users\Marcos\Documents\bisiestos")
+```{r, eval=FALSE}
+create_package("C:/Users/Marcos/Documents/bisiestos")
 ```
-
 
 ```bash         
 ✔ Creating C:\Users\Marcos\Documents\bisiestos.
@@ -196,9 +191,9 @@ es_bisiesto <- function(x = as.integer(format(Sys.Date(), "%Y"))) {
 }
 ```
 
-Notemos que antes de la definición de la función hemos incluido la documentación bajo el formato *roxygen*. En la [Unidad 3](@sec-factorial) discutimos por qué es importante documentar nuestras funciones. En el contexto de la creación de un paquete, se vuelve aún más importante porque se trata de la información que permite generar las páginas del menú de *Ayuda*. Volvé a leer la [Unidad 3](@sec-factorial) para repasar cómo generar de forma automática la estructura de la documentación con *roxygen* y para qué se usa cada *tag* o etiqueta.
+Notemos que antes de la definición de la función hemos incluido la documentación bajo el formato *roxygen*. En la [@sec-factorial] discutimos por qué es importante documentar nuestras funciones. En el contexto de la creación de un paquete, se vuelve aún más importante porque se trata de la información que permite generar las páginas del menú de *Ayuda*. Volvé a leer la [@sec-factorial] para repasar cómo generar de forma automática la estructura de la documentación con *roxygen* y para qué se usa cada *tag* o etiqueta.
 
-Hay una etiqueta en la documentación que no habíamos empleado antes: `@export`. Se usa para indicar que esta función tiene que estar disponible cuando alguien cargue el paquete con `library()`. Un paquete guarda funciones para que las aprovechen los usuarios y las mismas deben tener esta etiqueta. No obstante, tal vez estas funciones internamente llaman a otras funciones auxiliares que creemos conveniente diseñar y que no hace falta que estén a disposición de los usuarios. Esas funciones internas no llevan la etiqueta `@export`.
+Una de ellas es muy importante y no la habíamos usado antes: `@export`. Se usa para indicar que esta función tiene que estar disponible cuando alguien cargue el paquete con `library()`. Un paquete guarda funciones para que las aprovechen los usuarios y las mismas deben tener esta etiqueta. No obstante, tal vez estas funciones internamente llaman a otras funciones auxiliares que creemos conveniente diseñar y que no hace falta que estén a disposición de los usuarios. Esas funciones internas no llevan la etiqueta `@export`.
 
 ### Probar nuestro código
 
@@ -304,7 +299,7 @@ En este archivo hay algunos campos que tienen que estar presentes de forma oblig
 -   **Elementos no obligatorios**:
 
     -   **Date**: fecha de publicación de esta versión del paquete.
-    -   **Imports**, **Depends**, **Suggests**: ver detalles en la siguiente sección.
+    -   **Imports**, **Depends**, **Suggests**: gestionan la dependencia de nuestro paquete con respecto a otros o a versiones de R. Leer opcionalmente [@sec-dependencias] para conocer más detalles al respecto.
     -   **URL**: dirección de la página web del paquete.
     -   **BugReports**: dirección donde los usuarios puedan enviar avisos con los problemas que encuentren.
 
@@ -418,5 +413,5 @@ build()
 Este comando genera un archivo `.tar.gz` (o `.zip` si se configura para Windows) en el directorio padre. Este archivo contiene todo el código y documentación del paquete y puede instalarse sin necesidad de acceso a internet. El archivo comprimido puede ser compartido con cualquier persona y ser instalado con:
 
 ```r
-install.packages("bisiestos.tar.gz", repos = NULL, type = "source")
+install.packages("bisiestos_0.0.0.9000.tar.gz", repos = NULL, type = "source")
 ```

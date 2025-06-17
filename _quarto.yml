@@ -68,18 +68,18 @@ book:
         - capitulos/06_2_extras.qmd
         - capitulos/06_practica.qmd
         - capitulos/06_actividad_autoevaluativa.qmd
-    - part: capitulos/90.qmd
+    - part: capitulos/07.qmd
       chapters:
-        - capitulos/90_soluciones_01.qmd
-        - capitulos/90_soluciones_02.qmd
-        - capitulos/90_soluciones_03.qmd
-        - capitulos/90_soluciones_04.qmd
-        - capitulos/90_soluciones_05.qmd
-        - capitulos/90_soluciones_06.qmd
+        - capitulos/07_soluciones_01.qmd
+        - capitulos/07_soluciones_02.qmd
+        - capitulos/07_soluciones_03.qmd
+        - capitulos/07_soluciones_04.qmd
+        - capitulos/07_soluciones_05.qmd
+        - capitulos/07_soluciones_06.qmd
   appendices:
-    - capitulos/97_tp.qmd
-    - capitulos/98_tarea.qmd
-    - capitulos/99_bibliografia.qmd
+    - capitulos/08_tp.qmd
+    - capitulos/08_tarea.qmd
+    - capitulos/08_bibliografia.qmd
 
 lang: es
 

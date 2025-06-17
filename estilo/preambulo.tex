@@ -166,22 +166,23 @@
 
 % los ambientes uses regular mdframedwithfoot variants, might have footnotes
 
+% Ejercicio - DESPRECIADO PORQUE SI ES LARGO SE ROMPE AL ABARCAR MAS PAGINAS
 % Intro capitulo
-\newenvironment{presentacion-capitulo}{
-\vspace{4mm}
-\begin{mdframedwithfootChapterintro}
-\begin{minipage}[t]{0.10\textwidth}
-{$\:$ \\ \setkeys{Gin}{width=2.5em,keepaspectratio}\includegraphics{imagenes/iconos/006-clean-code.png}}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.90\textwidth}
-\setlength{\parskip}{1em}
-\noindent\textbf{\color{oiB}\small{\MakeUppercase{Resumen}}} $\:$ \\ 
-\large
-}{\end{minipage}
-\end{mdframedwithfootChapterintro}
-\vspace{4mm}
-}
+% \newenvironment{presentacion-capitulo}{
+% \vspace{4mm}
+% \begin{mdframedwithfootChapterintro}
+% \begin{minipage}[t]{0.10\textwidth}
+% {$\:$ \\ \setkeys{Gin}{width=2.5em,keepaspectratio}\includegraphics{imagenes/iconos/006-clean-code.png}}
+% \end{minipage}
+% \hfill
+% \begin{minipage}[t]{0.90\textwidth}
+% \setlength{\parskip}{1em}
+% \noindent\textbf{\color{oiB}\small{\MakeUppercase{Resumen}}} $\:$ \\ 
+% \large
+% }{\end{minipage}
+% \end{mdframedwithfootChapterintro}
+% \vspace{4mm}
+% }
 
 % Ejercicio - DESPRECIADO PORQUE SI ES LARGO SE ROMPE AL ABARCAR MAS PAGINAS
 % \newenvironment{ejercicio}{
@@ -219,44 +220,45 @@
 % \vspace{4mm}
 % }
 
+% comentario DESPRECIADO PORQUE SE ROMPE SI ES MAS LARGO DE UNA PAGINA
 % concepto
-\newenvironment{concepto}{
-    \let\oldtextbf\textbf
-    \renewcommand{\textbf}[1]{{\textcolor{oiR}{\oldtextbf{##1}}}}
-\vspace{4mm}
-\begin{mdframedwithfootTipDataPro}
-\begin{minipage}[t]{0.10\textwidth}
-{$\:$ \\ \setkeys{Gin}{width=2.5em,keepaspectratio}\includegraphics{imagenes/iconos/001-anchor.png}}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.90\textwidth}
-%\vspace{-2mm}
-\setlength{\parskip}{1em}
-\noindent\textbf{\color{oiB}\small{\MakeUppercase{Concepto clave}}} $\:$ \\
-\small}{\end{minipage}
-\end{mdframedwithfootTipDataPro}
-\vspace{4mm}
-}
+% \newenvironment{concepto}{
+%     \let\oldtextbf\textbf
+%     \renewcommand{\textbf}[1]{{\textcolor{oiR}{\oldtextbf{##1}}}}
+% \vspace{4mm}
+% \begin{mdframedwithfootTipDataPro}
+% \begin{minipage}[t]{0.10\textwidth}
+% {$\:$ \\ \setkeys{Gin}{width=2.5em,keepaspectratio}\includegraphics{imagenes/iconos/001-anchor.png}}
+% \end{minipage}
+% \hfill
+% \begin{minipage}[t]{0.90\textwidth}
+% %\vspace{-2mm}
+% \setlength{\parskip}{1em}
+% \noindent\textbf{\color{oiB}\small{\MakeUppercase{Concepto clave}}} $\:$ \\
+% \small}{\end{minipage}
+% \end{mdframedwithfootTipDataPro}
+% \vspace{4mm}
+% }
 
-
+% comentario DESPRECIADO PORQUE SE ROMPE SI ES MAS LARGO DE UNA PAGINA
 % info
-\newenvironment{info}{
-    \let\oldtextbf\textbf
-    \renewcommand{\textbf}[1]{{\textcolor{oiR}{\oldtextbf{##1}}}}
-\vspace{4mm}
-\begin{mdframedwithfootTipDataPro}
-\begin{minipage}[t]{0.10\textwidth}
-{$\:$ \\ \setkeys{Gin}{width=2.5em,keepaspectratio}\includegraphics{imagenes/iconos/010-review.png}}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.90\textwidth}
-%\vspace{-2mm}
-\setlength{\parskip}{1em}
-\noindent\textbf{\color{oiB}\small{\MakeUppercase{Info imporante}}} $\:$ \\
-\small}{\end{minipage}
-\end{mdframedwithfootTipDataPro}
-\vspace{4mm}
-}
+% \newenvironment{info}{
+%     \let\oldtextbf\textbf
+%     \renewcommand{\textbf}[1]{{\textcolor{oiR}{\oldtextbf{##1}}}}
+% \vspace{4mm}
+% \begin{mdframedwithfootTipDataPro}
+% \begin{minipage}[t]{0.10\textwidth}
+% {$\:$ \\ \setkeys{Gin}{width=2.5em,keepaspectratio}\includegraphics{imagenes/iconos/010-review.png}}
+% \end{minipage}
+% \hfill
+% \begin{minipage}[t]{0.90\textwidth}
+% %\vspace{-2mm}
+% \setlength{\parskip}{1em}
+% \noindent\textbf{\color{oiB}\small{\MakeUppercase{Info imporante}}} $\:$ \\
+% \small}{\end{minipage}
+% \end{mdframedwithfootTipDataPro}
+% \vspace{4mm}
+% }
 
 
 % comentario DESPRECIADO PORQUE SE ROMPE SI ES MAS LARGO DE UNA PAGINA
@@ -343,6 +345,58 @@
   fonttitle=\sffamily\bfseries,
   coltitle=oiB,
   title=\textbf{\color{oiB}\small{\MakeUppercase{Ejemplo}}} $\:$,
+  title code={
+  \path[fill=oiLGray] (title.south west) rectangle (title.north east);
+  \path[draw=oiB,solid,line width=0.75mm]
+  ([xshift=5mm]title.south west) -- ([xshift=-5mm]title.south east);
+  },
+  boxrule=0pt,frame hidden,
+  borderline west={3pt}{0pt}{oiB},
+  colback=oiLGray,
+  colbacktitle=oiLGray,
+}
+
+\newtcolorbox{info}{
+  breakable,
+  enhanced,
+  fonttitle=\sffamily\bfseries,
+  coltitle=oiB,
+  title=\textbf{\color{oiB}\small{\MakeUppercase{Info Importante}}} $\:$,
+  title code={
+  \path[fill=oiLGray] (title.south west) rectangle (title.north east);
+  \path[draw=oiB,solid,line width=0.75mm]
+  ([xshift=5mm]title.south west) -- ([xshift=-5mm]title.south east);
+  },
+  boxrule=0pt,frame hidden,
+  borderline west={3pt}{0pt}{oiB},
+  colback=oiLGray,
+  colbacktitle=oiLGray,
+}
+
+\newtcolorbox{concepto}{
+  breakable,
+  enhanced,
+  fonttitle=\sffamily\bfseries,
+  coltitle=oiB,
+  title=\textbf{\color{oiB}\small{\MakeUppercase{Concepto Clave}}} $\:$,
+  title code={
+  \path[fill=oiLGray] (title.south west) rectangle (title.north east);
+  \path[draw=oiB,solid,line width=0.75mm]
+  ([xshift=5mm]title.south west) -- ([xshift=-5mm]title.south east);
+  },
+  boxrule=0pt,frame hidden,
+  borderline west={3pt}{0pt}{oiB},
+  colback=oiLGray,
+  colbacktitle=oiLGray,
+}
+
+
+\newtcolorbox{presentacion-capitulo}{
+  breakable,
+  enhanced,
+  fonttitle=\sffamily\bfseries,
+  coltitle=oiB,
+  title=\textbf{\color{oiB}\small{\MakeUppercase{Resumen}}} $\:$,
   title code={
   \path[fill=oiLGray] (title.south west) rectangle (title.north east);
   \path[draw=oiB,solid,line width=0.75mm]

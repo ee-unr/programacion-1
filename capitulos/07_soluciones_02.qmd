@@ -77,7 +77,7 @@ salario <- horas * valor_hora
 if (turno == "N") {
 	salario <- salario + horas * valor_adicional_noche
 }
-if (turno == "DOM") {
+if (dia == "DOM") {
 	salario <- salario + horas * valor_adicional_domingo
 }
 cat("El salario que se debe abonar es", salario)

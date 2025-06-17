@@ -8,7 +8,7 @@
 En el capítulo anterior vimos los pasos fundamentales para crear un paquete de R. Sin embargo, existen muchos otros aspectos que, si bien no son estrictamente necesarios para que el paquete funcione, contribuyen significativamente a mejorar su **calidad, mantenibilidad, documentación y difusión**. En este capítulo exploraremos algunas de estas prácticas y herramientas complementarias. **La lectura de este capítulo es opcional** y puede abordarse según el interés o el momento del proyecto: no es obligatorio dominar estos elementos para crear un paquete, pero sí es útil conocerlos si se quiere avanzar hacia un desarrollo más profesional, colaborativo o preparado para compartir con otras personas. **Los contenidos de este capítulo no son evaluados en la asignatura.**
 :::
 
-## Gestionar las dependencias
+## Gestionar las dependencias {#sec-dependencias}
 
 Es muy común que nuestras funciones necesiten hacer uso de otras que pertenecen a otros paquetes. Cuando estamos usando RStudio en nuestro día a día para hacer algún análisis, cargamos esos otros paquetes con `library()`. No obstante, dentro del código de nuestro paquete, **nunca debemos incluir una llamada a `library()`**. En su lugar, necesitamos avisar qué cosas necesita nuestro paquete a través de los campos *Imports*, *Depends* y *Suggests* del archivo `DESCRIPTION`.
 
