@@ -8,13 +8,19 @@
 
 ## ¡Hola!
 
-Bienvenidos a este curso introductorio de programación para estudiantes de Estadística y Ciencia de Datos. A lo largo de estas páginas, nos embarcaremos en un recorrido que tiene como objetivo fundamental desarrollar habilidades de pensamiento algorítmico y resolución de problemas computacionales. Aprender a programar no es solo escribir código: implica descomponer problemas complejos en partes más pequeñas, identificar patrones, diseñar soluciones y comprender cómo una computadora ejecuta instrucciones paso a paso.  
+Bienvenidos a **Programación 1**, una asignatura introductoria para estudiantes de Estadística y Ciencia de Datos. Este curso tiene como propósito sentar las bases del pensamiento computacional que necesitarán a lo largo de toda la carrera.
 
-En este camino utilizaremos **R**, un lenguaje ampliamente utilizado en Estadística y Ciencia de Datos. Sin embargo, **en este curso no nos enfocaremos en sus poderosas herramientas de modelado, manipulación de datos o visualización**. Aprenderás de eso en otras asignaturas, como en **Laboratorio de Datos 1**. En su lugar, usaremos R como vehículo para aprender los principios esenciales de la programación. Por ejemplo, veremos cómo lograr que la computadora haga una división, cuando en realidad es algo sencillo que R o cualquier otro entorno ya lo sabe hacer. Este enfoque nos permitirá desarrollar habilidades fundamentales: estructurar código de manera ordenada, depurar errores con criterio, organizar proyectos de software y escribir funciones reutilizables. Aprenderemos a pensar como programadores, lo que no solo facilitará el uso posterior de herramientas más avanzadas, sino que también brindará una base sólida para afrontar nuevos lenguajes y paradigmas de programación.
+No se trata de un curso de software para manipular datos, ni de un curso puro de programación o de desarrollo de software en sentido amplio. Nuestro objetivo es más específico: construir los fundamentos de programación que un futuro estadístico o científico de datos necesita para comprender, controlar y diseñar sus propias herramientas computacionales.
 
-La idea es que desarrollemos nuestro pensamiento lógico y algorítmico, mientras nos familiarizamos con el uso de nuestra computadora y archivos, con el objetivo de que salgas listo para seguir profundizando tus conocimientos, por ejemplo, en la asignatura **Programación 2**, donde usarás Python.
+Aprender a programar no es simplemente escribir código. Implica descomponer problemas en partes manejables, formular soluciones de manera precisa, anticipar casos posibles, y entender cómo una computadora ejecuta instrucciones paso a paso. Estas habilidades son centrales para el trabajo con modelos, algoritmos y datos, incluso cuando más adelante utilicen bibliotecas avanzadas que automaticen gran parte del proceso.
 
-¡Comencemos este viaje!
+En este recorrido utilizaremos R, un lenguaje ampliamente adoptado en Estadística y Ciencia de Datos. Sin embargo, no nos concentraremos aquí en sus capacidades de modelado, visualización o manipulación avanzada de datos —temas que abordarán en asignaturas como Laboratorio de Datos 1. En cambio, emplearemos R como entorno para aprender los principios fundamentales de la programación: cómo estructurar un programa, cómo definir funciones, cómo organizar archivos y proyectos, cómo interpretar y corregir errores, y cómo escribir código claro y reproducible.
+
+En otras palabras, este curso apunta a que comprendan qué está ocurriendo “debajo” de las herramientas que usarán más adelante. Queremos que puedan razonar sobre el funcionamiento de un algoritmo, adaptar soluciones a nuevos problemas y adquirir la autonomía necesaria para enfrentar otros lenguajes y tecnologías, como Python en Programación 2.
+
+Al finalizar este curso, no solo habrán aprendido a escribir programas básicos en R, sino que habrán desarrollado una forma de pensar que será transversal a toda su formación como profesionales de los datos.
+
+Comencemos.
 
 ## Estructura del libro
 

@@ -20,10 +20,10 @@ Cada semana durante la extensión del cuatrimestre encontrarás las indicaciones
 
 Como acompañamiento a tu propio avance por la asignatura, cada semana podés asistir a dos clases:
 
-- Una es virtual y se dicta los días lunes de 14:30 a 16:30 para todo el estudiantado. Estas clases tienen el objetivo de presentar los contenidos conceptuales de cada semana, mediante la exposición interactiva del tema a abordar.
+- Una es virtual y se dicta los días lunes de 19:00 a 21:00 para todo el estudiantado. Estas clases tienen el objetivo de presentar los contenidos conceptuales de cada semana, mediante la exposición interactiva del tema a abordar.
 - La otra clase es presencial y se dicta en el Laboratorio de Computación de la Escuela de Estadística, para cada comisión por separado.
 
-Si por alguna razón una clase se suspende (por ejemplo, es feriado), ¡no te preocupes! Todo el material correspondiente a la semana en cuestión estará publicado y podrás resolver tus dudas en las consultas presenciales o virtuales, o en los foros del aula virtual. Tenés que tener en cuenta la semana siguiente no repasaremos el contenido de la semana en la que no tuviste clase, sino que avanzaremos con los temas que tocan esa semana, según el cronograma.
+Si por alguna razón una clase se suspende (por ejemplo, es feriado o los docentes adhieren a alguna medida de fuerza), ¡no te preocupes! Todo el material correspondiente a la semana en cuestión estará publicado y podrás resolver tus dudas en las consultas presenciales o virtuales, o en los foros del aula virtual. Tenés que tener en cuenta la semana siguiente no repasaremos el contenido de la semana en la que no tuviste clase, sino que avanzaremos con los temas que tocan esa semana, según el cronograma.
 
 Información importante para las clases, como enlaces para conectarte o días y horarios de cada comisón, son publicados en el [aula virtual](https://comunidades3.campusvirtualunr.edu.ar/course/view.php?id=4893).
 
@@ -33,30 +33,37 @@ Podés resolver tus dudas recurriendo a estos medios:
 
 - **Foros de consulta en el aula virtual**.
 - **Clases de consulta virtuales**. Los enlaces y horarios se publican en el aula virtual. Si ningún estudiante se conecta, la clase se da por finalizada luego de 10 minutos de espera.
-- **Clases de consulta presenciales en el laboratorio de computación**. Estas clases tendrán una duración determinada. Durante ese tiempo, además de resolver dudas con los docentes, podés recurrir al laboratorio para hacer uso de las computadoras y resolver ejercicios u otros trabajos.
+- **Clases de consulta presenciales en el laboratorio de computación**. Estas clases tendrán una duración de una hora. Durante ese tiempo, además de resolver dudas con los docentes, podés recurrir al laboratorio para hacer uso de las computadoras y resolver ejercicios u otros trabajos.
+
+Además, tené en cuenta lo siguiente:
+
+- No utilizaremos la mensajería privada de Comunidades 3 (aula virtual). 
+- En términos generales, no utilizaremos la comunicación vía correo electrónico, a menos que se trate de algo sensible que deba mantenerse en privado entre el estudiante y los docentes. Por ejemplo, no se responderán emails que soliciten explicación de algún tema o ejercicio, o algo referido la organización de la asignatura, ya que esto se debate en los foros.
+- Revisar siempre la información disponible en el aula virtual y en este libro. La mayoría de las veces, las respuestas a las preguntas ya se encuentran ahí.
 
 ## Cronograma {#sec-cronograma}
 
 Visitá periódicamente este cronograma para autogestionar tu tránsito por los temas y materiales de la asignatura:
 
-| **Semana** | **Inicio / Fin** | **Tópico**         | **Capítulos a leer** | **Ejercicios a resolver** | **Importante**                                                       |
-|:----------:|:----------------:|:------------------:|:--------------------:|:-------------------------:|----------------------------------------------------------------------|
-| 1          | 17/3 al 23/3     | Unidad 1           | 1 a 3                | 1 a 4                     |                                                                      |
-| 2          | 24/3 al 30/3     | Unidad 1           | 4                    | 5 a 9                     | Feriado: lun 24/3                                                    |
-| 3          | 31/3 al 6/4      | Unidades 1 y 2     | 5 a 7                | 10 a 13 (Unidad 1)        | Feriado: mié 2/4                                                     |
-| 4          | 7/4 al 13/4      | Unidad 2           | 10                   | 1 a 6                     |                                                                      |
-| 5          | 14/4 al 20/4     | Unidad 2           | 11 y 12              | 7 a 9                     | Feriados: Jue 17/4 y Vie 18/4                                        |
-| 6          | 21/4 al 27/4     | Unidad 3           | 14                   | 1 a 5                     |                                                                      |
-| 7          | 28/4 al 4/5      | Unidad 3           | 15 y 16              | 6 a 12                    | Feriados: Jue 1/5 y Vie 2/5                                          |
-| 8          | 5/5 al 11/5      | Semana del parcial | Estudio y repaso     | Estudio y repaso          | **Parcial**: jue 8/5 a las 18:00, todas las comisiones juntas     |
-| 9          | 12/5 al 18/5     | Unidad 4           | 19 a 21              | Todos los ejercicios      |                                                                      |
-| 10         | 19/5 al 25/5     | Unidad 5           | 24                   | 1 a 10                    |                                                                      |
-| 11         | 26/5 al 1/6      | Unidad 5           | 25                   | 11 a 14                   |                                               |
-| 12         | 2/6 al 8/6       | Unidad 5           | 26                   | 15 en adelante            |                                                                      |
-| 13         | 9/6 al 15/6      | Recup. / Unidad 6  | A definir            | A definir                 | **Entrega TP**: martes 10/6. **Recup**: jue 12/6 a la tardecita, todas las comisiones juntas      |
-| 14         | 16/6 al 22/6     | Unidad 6           | A definir            | A definir                 | **Entrega tarea promoción**: dom 22/6. Feriados: lun 16/6 y vie 20/6 |
-| 15         | 23/6 al 29/6     | Unidad 6           | A definir            | A definir                 | Vie 27/6: notificación de la condición final en la asignatura        |
+| **Semana** | **Inicio / Fin** | **Tópico**          | **Capítulos a leer** | **Ejercicios a resolver** | **Importante**                                                       |
+|:----------:|:----------------:|:-------------------:|:--------------------:|:-------------------------:|----------------------------------------------------------------------|
+| 1          | 16/3 al 22/3     | Unidad 1            | 1 a 3                | 1 a 4                     |                                                                      |
+| 2          | 23/3 al 29/3     | Unidad 1            | 4                    | 5 a 9                     | Feriados: lun 23 y mar 24                                            |
+| 3          | 30/3 al 5/4      | Unidad 1            | 5 a 7                | 10 a 13                   | Feriados: jue 2 y vie 3                                              |
+| 4          | 6/4 al 12/4      | Unidad 2            | 10 y 11              | 1 a 9                     |                                                                      |
+| 5          | 13/4 al 19/4     | Unidad 3            | 14 y 15              | 1 a 6                     |                                                                      |
+| 6          | 20/4 al 26/4     | Unidad 3            | 16                   | 7 a 12                    | Feriado: vie 1                                                       |
+| 7          | 27/4 al 3/5      | Semana del parcial  | Estudio y repaso     | Estudio y repaso          | **Parcial**: mié 29, 19:00, todas las comisiones juntas              |
+| 8          | 4/5 al 10/5      | Unidad 4            | 19 y 20              | 1 a 6                     | Se publica el TP.                                                    |
+| 9          | 11/5 al 17/5     | Unidad 5 / Recup.   | 24                   | 1 a 6                     | **Recup.**: mié 13, 19:00, todas las comisiones juntas               |
+| 10         | 18/5 al 24/5     | Unidad 5            | 24 (cont.)           | 7 a 10                    | Feriado: lun 25. *Deadline* para informar grupos del TP.             |
+| 11         | 25/5 al 31/5     | Unidad 5            | 25                   | 11 a 14                   |                                                                      |
+| 12         | 1/6 al 7/6       | Unidad 5            | 26 y 27              | 15 a 21                   |                                                                      |
+| 13         | 8/6 al 14/6      | Unidad 6            | 30 y 31              | 1 y 2                     | **Deadline Entrega TP**: lun 8, 8:00.                                |
+| 14         | 15/6 al 21/6     | Unidad 6            | 30 y 31 (cont.)      | 3 y 4                     | Feriado: lun 15                                                      |
+| 15         | 22/6 al 28/6     | Examen de promoción | -                    | -                         | Examen de promoción, individual y presencial (*)                     |
 
+(*) Se espera poder tomar el examen de promoción en cada una de las clases de práctica de esta semana (cada comisión por separado). No obstante, es posible que, por motivos de logística y de coordinación de evaluaciones, se deba recurrir a alguna plan alternativo.
 
 ## Código de conducta
 
@@ -88,6 +95,8 @@ En esta asignatura promovemos un ambiente de respeto, colaboración y aprendizaj
 - Las herramientas de inteligencia artificial (IA) pueden ser útiles en ciertos contextos, pero su uso excesivo o inadecuado puede limitar el aprendizaje real. Es fundamental que los estudiantes realicen el esfuerzo de comprender y desarrollar las soluciones por sí mismos.  
 - Para aprender a programar y desarrollar pensamiento lógico, es necesario escribir código, enfrentar errores y corregirlos. Depender demasiado de la IA puede generar una falsa sensación de dominio sin una comprensión profunda.  
 - En las evaluaciones y entregas, **queda estrictamente prohibido el plagio y todo tipo de copia**, incluyendo el uso de respuestas generadas por IA sin una comprensión real del contenido.  
-- Si se detecta plagio o copia en cualquier instancia de evaluación, o falta de comprensión de las soluciones entregadas, se aplicarán las medidas correspondientes según las normativas de la institución. 
+- Si se detecta plagio o copia en cualquier instancia de evaluación, o falta de comprensión de las soluciones entregadas, se aplicarán las medidas correspondientes según las normativas de la institución.
+- *Sabemos que las herramientas actuales hacen posible obtener soluciones rápidas con muy poco esfuerzo, y que siempre existirá la tentación de utilizarlas como atajo. Incluso con controles y evaluaciones cuidadosas, puede ocurrir que alguien logre aprobar sin haber desarrollado las competencias esperadas. Sin embargo, ese atajo solo ofrece un beneficio inmediato y superficial. A largo plazo, las habilidades que no se construyen —la capacidad de razonar, persistir ante la dificultad, detectar errores y comprender en profundidad— terminan siendo evidentes.*
+- *Este curso no busca únicamente que aprueben una materia, sino que comiencen a formar el criterio, la autonomía y la responsabilidad profesional que caracterizan a un buen estadístico o científico de datos. El aprendizaje genuino requiere esfuerzo, y ese esfuerzo es precisamente lo que construye las capacidades que marcarán la diferencia en el futuro.*
 
-El cumplimiento de estas normas contribuye a un entorno en el que todas las personas puedan participar activamente y aprovechar al máximo la experiencia educativa. Ante cualquier inquietud o situación que afecte la convivencia, se recomienda comunicarlo al equipo docente o a las autoridades institucionales.
+**El cumplimiento de estas normas contribuye a un entorno en el que todas las personas puedan participar activamente y aprovechar al máximo la experiencia educativa. Ante cualquier inquietud o situación que afecte la convivencia, se recomienda comunicarlo al equipo docente o a las autoridades institucionales.**
