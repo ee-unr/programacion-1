@@ -1,12 +1,13 @@
 ---
 title: "Programación"
 subtitle: "Unidad 1 - Capítulo 1"
-author: "Programación 1"
+author: "Programación 1 - LE/LCD - FCEyE - UNR"
 format: 
   revealjs: 
     theme: ../estilo/slides.scss
     transition: fade
     slide-number: true
+embed-resources: true
 ---
 
 # Introducción {background="#5B888C"}
@@ -146,10 +147,6 @@ Un **lenguaje de programación** es:
 - Diseñado para expresar cómputos
 - Que puedan ser ejecutados por equipos electrónicos
 - Un medio de comunicación **humano ↔ máquina**
-
-### Curva de aprendizaje
-
-Con la práctica ganamos facilidad en escribir código, pero el **diseño algorítmico se torna más desafiante** en problemas complejos.
 :::
 
 # R como lenguaje {background="#5B888C"}
