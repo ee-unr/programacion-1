@@ -1,0 +1,351 @@
+---
+title: "Objetos y Ambiente"
+subtitle: "Unidad 1 - Capítulo 3"
+author: "Programación 1 - LE/LCD - FCEyE - UNR"
+format: 
+  revealjs: 
+    theme: ../estilo/slides.scss
+    transition: fade
+    slide-number: true
+    embed-resources: true
+---
+
+# Objetos {background="#5B888C"}
+
+## El problema con los cálculos efímeros
+
+Cuando hacemos cálculos así:
+
+```r
+5 * 6
+```
+
+El resultado existe brevemente y desaparece. Si queremos usarlo de nuevo, tenemos que repetir la operación.
+
+**Necesitamos guardar los resultados.**
+
+## ¿Qué es un objeto?
+
+::: {.concepto data-latex=""}
+Un **objeto** es una estructura capaz de almacenar datos que podemos manipular para resolver un problema. Dependiendo del tipo de objeto, podemos hacer diferentes operaciones con él.
+:::
+
+## Crear objetos con el operador de asignación
+
+Usamos `<-` (operador flecha):
+
+```r
+x <- 5 * 6
+```
+
+Esto crea un objeto `x` que contiene el resultado de `5 * 6` (que es 30).
+
+::: {.small}
+**Atajo de teclado**: `Alt + -` (Alt y guión medio)
+:::
+
+## Usar objetos en nuevos cálculos
+
+Una vez que guardamos un valor:
+
+```r
+x <- 5 * 6
+
+x * 100
+80 - x
+```
+
+Podemos reutilizar `x` tantas veces como necesitemos.
+
+# Vectores Atómicos {background="#5B888C"}
+
+## El tipo de objeto más simple
+
+El **vector atómico** es el tipo de objeto más básico en R.
+
+- Puede guardar uno o varios valores
+- Por ahora veremos vectores con un único valor
+- A veces se los llama también **variables**
+
+## Tipos de vectores atómicos
+
+R tiene seis tipos básicos. Nos enfocamos en cuatro:
+
+1. **Doubles** - números reales (decimales)
+2. **Integers** - números enteros
+3. **Characters** - texto
+4. **Logicals** - verdadero o falso
+
+## Saber el tipo de un objeto
+
+Usamos la función `typeof()`:
+
+```r
+x <- 30
+typeof(x)
+```
+
+Resultado: `"double"`
+
+## Tipo 1: Doubles (números reales)
+
+Almacenan números positivos, negativos, grandes, chicos, con decimales o sin decimales.
+
+```r
+precio <- 19.99
+temperatura <- -5.2
+cantidad <- 100
+
+typeof(precio)
+```
+
+Es el tipo más común para análisis de datos.
+
+## Tipo 2: Integers (números enteros)
+
+Almacenan solo números enteros. R los muestra con una `L`:
+
+```r
+y <- 1L
+typeof(y)
+```
+
+Resultado: `"integer"`
+
+En análisis de datos, los enteros son raros. Lo importante es saber que existen.
+
+## Tipo 3: Characters (texto)
+
+Almacenan texto (cadenas de caracteres). Se escriben **entre comillas**:
+
+```r
+z <- "Hola, ¿cómo estás?"
+nombre <- "María"
+
+typeof(z)
+```
+
+Resultado: `"character"`
+
+**No se puede hacer matemática** con caracteres.
+
+## Tipo 4: Logicals (verdadero/falso)
+
+Almacenan `TRUE` (verdadero) o `FALSE` (falso). **Sin comillas**:
+
+```r
+v <- TRUE
+w <- FALSE
+
+typeof(v)
+```
+
+Resultado: `"logical"`
+
+Los valores lógicos surgen a menudo como resultado de comparaciones.
+
+## Operaciones con distintos tipos
+
+::: {.small}
+Podemos hacer operaciones matemáticas con números:
+
+```r
+x <- 100
+y <- 2
+
+x * 100  # funciona
+x + y    # funciona
+```
+
+Pero no con texto:
+
+```r
+z <- "hola"
+
+x + z    # ERROR: no se puede sumar número + texto
+```
+
+Cada tipo de vector permite distintas operaciones. Por eso existen tipos diferentes.
+:::
+
+## Comprobar el tipo de un objeto
+
+::: {.small}
+Además de `typeof()`, existen funciones que comprueban tipos:
+
+```r
+is.numeric(x)
+is.logical(v)
+is.character(z)
+```
+
+Estas devuelven `TRUE` o `FALSE`.
+:::
+
+# Nombres de Objetos {background="#5B888C"}
+
+## ¿Cómo nombrar objetos?
+
+El nombre de un objeto se llama **identificador**. Sirve para identificarlo y referirse a él.
+
+::: {.small}
+Reglas en R:
+
+- Empezar con letra o punto (no número)
+- Solo letras, números, guiones bajos y puntos
+- No usar palabras reservadas (`if`, `for`, `TRUE`, `FALSE`, etc.)
+:::
+
+## Elegir buenos nombres
+
+::: {.small}
+Nombres representativos facilitan la lectura del código.
+
+| Malo | Bueno |
+|------|-------|
+| `p` | `precio` |
+| `desc` | `descripcion` |
+| `px_m` | `precio_manzana` |
+| `preciomanzana` | `precio_manzana` |
+
+Convención: **snake_case** (palabras separadas por guiones bajos)
+:::
+
+## Mayúsculas y minúsculas
+
+R **distingue entre mayúsculas y minúsculas**:
+
+```r
+precio <- 15
+Precio <- 2
+
+precio + Precio  # son dos objetos distintos
+```
+
+**Evitar** tener objetos que solo difieran en mayúsculas/minúsculas.
+
+# Actualizar Valores {background="#5B888C"}
+
+## Cambiar el valor de un objeto
+
+El valor guardado en un objeto puede cambiar en cualquier momento:
+
+```r
+stock <- 43
+stock <- stock - 10  # nuevamente asignamos a stock
+stock
+```
+
+El valor anterior se **pierde para siempre**.
+
+## Ejemplo: Control de inventario
+
+```r
+stock <- 43
+ventas <- 29
+compras <- 12
+
+stock <- stock - ventas + compras
+stock
+```
+
+El nuevo valor de `stock` es 26.
+
+## Cambiar el tipo de un objeto
+
+R permite cambiar el tipo de un objeto en cualquier momento:
+
+```r
+x <- 100
+typeof(x)  # "double"
+
+x <- "hola"
+typeof(x)  # "character"
+```
+
+R es **dinámico**: no obliga a declarar tipos.
+
+# Ambiente Global {background="#5B888C"}
+
+## ¿Qué es el ambiente?
+
+::: {.concepto data-latex=""}
+Un **environment** (o **ambiente**) es el espacio donde se almacenan los objetos creados durante una sesión de trabajo.
+:::
+
+El ambiente más importante es el **Global Environment** que ves en RStudio.
+
+## Ver los objetos del ambiente
+
+**En RStudio**: pestaña `Environment` en el panel superior derecho.
+
+**En consola**, usar `ls()`:
+
+```r
+ls()
+```
+
+Muestra todos los nombres de los objetos disponibles.
+
+## Usar objetos del ambiente
+
+Solo podemos usar objetos que estén en nuestro ambiente:
+
+```r
+x <- 10
+x * 2  # funciona: x existe
+
+y * 2  # ERROR: y no existe
+```
+
+## Eliminar objetos
+
+Para eliminar un objeto:
+
+```r
+rm(x)
+```
+
+Para eliminar todos:
+
+```r
+rm(list = ls())
+```
+
+O usar el botón de escoba en la pestaña `Environment`.
+
+## Buena práctica: no guardar el ambiente
+
+::: {.small}
+El ambiente desaparece cuando cerrás RStudio.
+
+**Recomendación**: Guardar siempre el código en scripts, no el ambiente.
+
+Configurar: `Tools > Global Options`
+
+- No guardar `.RData` al salir
+- No restaurar `.RData` al abrir
+
+Así cada sesión empieza limpia y reproducible.
+:::
+
+# Resumen {background="#5B888C"}
+
+## Puntos clave
+
+::: {.small}
+
+1. **Objetos** almacenan datos que podemos reutilizar
+2. El **operador `<-`** asigna valores a objetos
+3. **Vectores atómicos** son el tipo más simple: doubles, integers, characters, logicals
+4. `typeof()` te dice qué tipo es un objeto
+5. **Nombres** deben ser representativos (snake_case)
+6. Los valores en objetos pueden cambiar en cualquier momento
+7. El **Global Environment** muestra tus objetos disponibles
+8. **Siempre guardar código en scripts**, no confíes solo en el ambiente
+
+:::
+
+::: {.center}
+**¡Ahora tenemos la base para manejar datos en R!**
+:::

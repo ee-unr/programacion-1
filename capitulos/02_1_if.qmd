@@ -150,3 +150,127 @@ resultado
 
 `resultado` es igual a: `r webexercises::fitb(120)`.
 :::
+
+## Más ejemplos con las estructuras condicionales
+
+### Múltiples else if
+
+Se pueden encadenar tantos bloques `else if` como sea necesario para establecer múltiples evaluaciones lógicas en cascada. Esto es útil cuando tienes varias categorías o intervalos que evaluar:
+
+::: {.ejemplo data-latex=""}
+El siguiente programa evalúa una calificación numérica y asigna una categoría de desempeño:
+
+```{r}
+# Ejemplo 1: nota alta
+nota <- 9
+if (nota < 4) {
+	resultado <- "Insuficiente"
+} else if (nota < 6) {
+	resultado <- "Regular"
+} else if (nota < 8) {
+	resultado <- "Bueno"
+} else if (nota < 10) {
+	resultado <- "Muy Bueno"
+} else {
+	resultado <- "Excelente"
+}
+cat(resultado)
+
+# Ejemplo 2: nota baja
+nota <- 3
+if (nota < 4) {
+	resultado <- "Insuficiente"
+} else if (nota < 6) {
+	resultado <- "Regular"
+} else if (nota < 8) {
+	resultado <- "Bueno"
+} else if (nota < 10) {
+	resultado <- "Muy Bueno"
+} else {
+	resultado <- "Excelente"
+}
+cat(resultado)
+```
+:::
+
+### Ejemplos con operadores lógicos
+
+Los operadores lógicos (`&&`, `||`, `!`) permiten combinar múltiples condiciones en una única evaluación, lo que es especialmente útil para simplificar el código y hacerlo más legible:
+
+::: {.ejemplo data-latex=""}
+El siguiente programa evalúa si una persona puede conducir según su edad y si posee licencia:
+
+```{r}
+edad <- 25
+tiene_licencia <- TRUE
+
+# AND: ambas condiciones deben ser TRUE
+if (edad >= 18 & tiene_licencia) {
+	cat("Podés conducir")
+} else {
+	cat("No podés conducir")
+}
+
+# OR: una de las dos condiciones basta
+edad <- 16
+if (edad >= 18 | tiene_licencia) {
+	cat("Cumplís con algún requisito")
+} else {
+	cat("No cumplís con los requisitos")
+}
+
+# NOT: negación de una condición
+edad <- 25
+if (!(edad < 18)) {
+	cat("Sos mayor de edad")
+} else {
+	cat("Sos menor de edad")
+}
+```
+:::
+
+### Condicionales anidadas
+
+Es posible tener una estructura condicional dentro de otra, anidando niveles de decisión según sea necesario:
+
+::: {.ejemplo data-latex=""}
+El siguiente programa verifica múltiples condiciones de forma anidada para determinar si una persona puede conducir:
+
+```{r}
+edad <- 25
+tiene_licencia <- TRUE
+
+if (edad >= 18) {
+	if (tiene_licencia) {
+		cat("Podés conducir")
+	} else {
+		cat("Necesitás licencia para conducir")
+	}
+} else {
+	cat("No podés conducir: sos menor de edad")
+}
+```
+:::
+
+**Nota:** El anidamiento es una herramienta poderosa, pero puede hacer el código más complejo. En muchos casos, es preferible usar operadores lógicos para simplificar y mejorar la legibilidad:
+
+::: {.comparacion data-latex=""}
+
+**Versión anidada (más difícil de leer):**
+```r
+if (edad >= 18) {
+	if (tiene_licencia) {
+		cat("Podés conducir")
+	}
+}
+```
+
+**Versión simplificada con operadores lógicos (más legible):**
+```r
+if (edad >= 18 && tiene_licencia) {
+	cat("Podés conducir")
+}
+```
+
+Ambas formas son válidas, pero la segunda es más clara y concisa.
+:::

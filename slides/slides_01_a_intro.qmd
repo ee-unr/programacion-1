@@ -1,0 +1,200 @@
+---
+title: "Programación"
+subtitle: "Unidad 1 - Capítulo 1"
+author: "Programación 1 - LE/LCD - FCEyE - UNR"
+format: 
+  revealjs: 
+    theme: ../estilo/slides.scss
+    transition: fade
+    slide-number: true
+embed-resources: true
+---
+
+# Introducción {background="#5B888C"}
+
+## ¿Qué es la programación?
+
+La **programación** es la actividad mediante la cual las *personas* entregan a una *computadora* un conjunto de **instrucciones ordenadas** para que resuelva un **problema**.
+
+::: {.small}
+- Las computadoras están en lavarropas, consolas de juegos, calculadoras, teléfonos, etc.
+- Todas siguen instrucciones programadas por personas
+- Los conjuntos de instrucciones se llaman *programas*
+:::
+
+## Características principales
+
+::: columns
+::: {.column width="50%"}
+
+### Es un proceso creativo
+
+- Un problema puede resolverse de múltiples formas
+- Debemos elegir el camino más adecuado
+- La computadora es literal: hay que ser muy específico
+
+:::
+
+::: {.column width="50%"}
+
+### Requiere un lenguaje de programación
+
+- Idioma artificial que la computadora puede interpretar
+- Tiene reglas que hay que respetar
+- Evita ambigüedades
+
+:::
+:::
+
+## ¿Por qué programación en Estadística y Ciencia de Datos?
+
+::: {.small}
+La labor de profesionales en datos requiere:
+
+- Recolección y depuración de datos
+- Aplicación de metodologías de análisis
+- Visualización de información
+- Comunicación de resultados
+- Despliegue y puesta en producción de modelos
+
+> **La programación es una herramienta fundamental** para dominar todas estas etapas.
+:::
+
+# Etapas en la Programación {background="#5B888C"}
+
+## Dos etapas clave
+
+```
+Problema → Diseño algorítmico → Codificación → Solución
+```
+
+::: {.small}
+Todo problema computacional requiere:
+
+1. **Diseño algorítmico**: Pensar qué pasos seguir
+2. **Codificación**: Traducir esos pasos a código
+:::
+
+
+# Etapa 1: Diseño Algorítmico {background="#5B888C"}
+
+
+## Concepto: Algoritmo
+
+::: {.concepto data-latex=""}
+Un **algoritmo** es una estrategia consistente de un conjunto **ordenado de pasos** que nos lleva a la **solución de un problema** o alcance de un objetivo.
+:::
+
+<br>
+
+### Ejemplos cotidianos:
+
+- Preparar el desayuno
+- Sacar a pasear la mascota
+- Poner una película en streaming
+
+## Algoritmos en programación
+
+::: {.small}
+En la vida cotidiana hacemos algoritmos sin pensar, pero cuando programamos debemos:
+
+✓ Pensar uno por uno todos los pasos  
+✓ Asegurarnos de que son ordenados  
+✓ Verificar que lleven a la solución  
+✓ Escribir en borrador los pasos  
+✓ Hacer diagramas si es necesario
+:::
+
+## Dificultad según el problema
+
+::: columns
+::: {.column width="50%"}
+
+### Problemas simples
+
+- El diseño algorítmico es fácil
+- La codificación puede ser difícil (si hay que aprender el lenguaje)
+
+:::
+
+::: {.column width="50%"}
+
+### Problemas complejos
+
+- El diseño algorítmico es desafiante
+- La codificación puede volverse más sencilla con práctica
+- Requiere pensamiento abstracto
+
+:::
+:::
+
+# Etapa 2: Codificación {background="#5B888C"}
+
+## ¿Qué es la codificación?
+
+::: {.small}
+Una vez diseñado el algoritmo, hay que comunicárselo a la computadora.
+
+> Debemos **traducir el algoritmo a un lenguaje de programación** que la máquina pueda entender.
+:::
+
+## Lenguaje de programación
+
+::: {.small}
+Un **lenguaje de programación** es:
+
+- Un idioma artificial
+- Diseñado para expresar cómputos
+- Que puedan ser ejecutados por equipos electrónicos
+- Un medio de comunicación **humano ↔ máquina**
+:::
+
+# R como lenguaje {background="#5B888C"}
+
+## ¿Qué es R?
+
+**R** es un lenguaje de programación y entorno de software diseñado específicamente para:
+
+- Análisis estadístico
+- Visualización de datos
+- Investigación científica
+
+
+## ¿Por qué R es popular?
+
+::: columns
+::: {.column width="50%"}
+
+### Ventajas
+
+✓ Código abierto  
+✓ Comunidad activa  
+✓ Actualizaciones constantes  
+✓ Miles de paquetes adicionales
+
+:::
+
+::: {.column width="50%"}
+
+### Características principales
+
+✓ **Flexible**: permite crear soluciones personalizadas  
+✓ **Completo**: lenguaje de programación real  
+✓ **Potente**: para análisis complejos  
+✓ Fue pensado para profesionales **sin formación previa en programación**
+
+:::
+:::
+
+# Filosofía de este curso {background="#5B888C"}
+
+## Esta materia no es...
+
+- Un curso de herramientas específicas de análisis de datos en R (como manipulación de datos, visualización, modelización).
+- Un curso formal de programación.
+
+### Nuestro enfoque
+
+::: {.small}
+Esta asignatura se enfoca en **fundamentos generales de programación**, usando uno de los entornos más populares e el análisis de datos (R), para ganar familiaridad con la computadora, obtener autonomía para manejar herramientas informáticas y desarrollar un pensamiento algorítmico que nos permita generar soluciones propias a distintos problemas.
+:::
