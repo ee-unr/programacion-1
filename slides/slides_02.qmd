@@ -1,0 +1,701 @@
+---
+title: "Estructuras de Control"
+subtitle: "Unidad 2 - Capítulos 10 y 11"
+author: "Programación 1 - LE/LCD - FCEyE - UNR"
+format: 
+  revealjs: 
+    theme: ../estilo/slides.scss
+    transition: fade
+    slide-number: true
+    embed-resources: true
+    code-line-numbers: false
+---
+
+# Estructuras de Control {background="#5B888C"}
+
+## ¿Qué es una estructura de control?
+
+Los programas ejecutan instrucciones de forma secuencial, una tras otra. Pero a veces necesitamos:
+
+- Elegir entre diferentes opciones
+- Repetir acciones múltiples veces
+- Saltar instrucciones bajo ciertas condiciones
+
+**Las estructuras de control** alteran el orden de ejecución.
+
+## Dos tipos de estructuras
+
+**Condicionales**:
+
+- `if` - si se cumple una condición
+- `if-else` - si no, hacer otra cosa
+- `if-else if-else` - múltiples opciones
+
+**Iterativas**:
+
+- `for` - repetir un número fijo de veces
+- `while` - repetir mientras se cumpla una condición
+
+# Condicionales Simples {background="#5B888C"}
+
+## Estructura if simple
+
+::: {.small}
+Ejecuta un bloque de código **solo si se cumple una condición**:
+
+```r
+if (condición) {
+  hacer esto
+}
+```
+
+- `if` = palabra clave
+- `condición` = pregunta que da TRUE o FALSE
+- Entre llaves: código que se ejecuta si es TRUE
+:::
+
+## Ejemplo: Mayoría de edad
+
+```r
+edad <- 27
+
+if (edad >= 18) {
+  cat("Podés votar")
+}
+```
+
+**Si `edad >= 18` es TRUE**, se ejecuta el `cat()`.
+
+**Si es FALSE**, no pasa nada.
+
+## Otro ejemplo: no se cumple la condición
+
+```r
+edad <- 15
+
+if (edad >= 18) {
+  cat("Podés votar")
+}
+
+# No se imprime nada porque edad >= 18 es FALSE
+```
+
+## Buenas prácticas: indentación
+
+Aunque no es obligatorio, usá indentación para claridad:
+
+```r
+if (edad >= 18) {
+  # Este código está dentro del if
+  cat("Podés votar")
+  
+  # Más código aquí si quieras
+  mensaje <- "Bienvenido al votante"
+  print(mensaje)
+}
+```
+
+La indentación ayuda a leer dónde empieza y termina el bloque.
+
+# Condicionales Dobles {background="#5B888C"}
+
+## Estructura if-else
+
+A veces queremos hacer algo **si se cumple la condición** y **algo diferente si no**:
+
+```r
+if (condición) {
+  hacer esto
+} else {
+  hacer otra cosa
+}
+```
+
+## Ejemplo: Votación
+
+```r
+edad <- 15
+
+if (edad >= 18) {
+  cat("Podés votar")
+} else {
+  cat("No podés votar aún")
+}
+```
+
+El mensaje depende de la condición.
+
+## Otro ejemplo: Mayor vs Menor
+
+```r
+edad <- 27
+
+if (edad >= 18) {
+  cat("Edad =", edad, "años: podés votar")
+} else {
+  cat("Edad =", edad, "años: no podés votar aún")
+}
+```
+
+## Estructura clara
+
+::: {.small}
+Importante: la palabra `else` debe estar en la misma línea que la llave de cierre `}`:
+
+```r
+# Correcto:
+if (edad >= 18) {
+  cat("Podés votar")
+} else {
+  cat("No podés votar aún")
+}
+
+# Incorrecto (da error):
+if (edad >= 18) {
+  cat("Podés votar")
+}
+else {
+  cat("No podés votar aún")
+}
+```
+:::
+
+# Condicionales Múltiples {background="#5B888C"}
+
+## Estructura if-else if-else
+
+Para **más de dos opciones**, usamos `else if`:
+
+```r
+if (condición_1) {
+  hacer esto
+} else if (condición_2) {
+  hacer otra cosa
+} else {
+  hacer algo más
+}
+```
+
+Podés tener múltiples `else if` encadenados.
+
+## Flujo de ejecución
+
+1. Se evalúa `condición_1`
+2. Si es TRUE → ejecuta primer bloque, **termina**
+3. Si es FALSE → evalúa `condición_2`
+4. Si es TRUE → ejecuta segundo bloque, **termina**
+5. Si es FALSE → ejecuta bloque `else` final
+
+**Solo se ejecuta UNO de los bloques.**
+
+## Ejemplo: Sistema de votación
+
+```r
+edad <- 27
+
+if (edad < 18) {
+  cat("No podés votar")
+} else if (edad >= 70) {
+  cat("Votación opcional")
+} else {
+  cat("Votación obligatoria")
+}
+```
+
+## Ejemplo con tres personas
+
+```r
+# Persona A: 27 años
+edad <- 27
+if (edad < 18) {
+  cat("No podés votar")
+} else if (edad >= 70) {
+  cat("Votación opcional")
+} else {
+  cat("Votación obligatoria")
+}
+
+# Persona B: 15 años
+edad <- 15
+if (edad < 18) {
+  cat("No podés votar")
+} else if (edad >= 70) {
+  cat("Votación opcional")
+} else {
+  cat("Votación obligatoria")
+}
+
+# Persona C: 81 años
+edad <- 81
+if (edad < 18) {
+  cat("No podés votar")
+} else if (edad >= 70) {
+  cat("Votación opcional")
+} else {
+  cat("Votación obligatoria")
+}
+```
+
+## Múltiples else if
+
+Podés encadenar tantos como necesites:
+
+```r
+if (nota < 4) {
+  resultado <- "Insuficiente"
+} else if (nota < 6) {
+  resultado <- "Regular"
+} else if (nota < 8) {
+  resultado <- "Bueno"
+} else if (nota < 10) {
+  resultado <- "Muy Bueno"
+} else {
+  resultado <- "Excelente"
+}
+
+cat(resultado)
+```
+
+## Ejemplos con operadores lógicos
+
+```r
+edad <- 25
+
+# AND: ambas deben ser TRUE
+if (edad >= 18 & edad < 65) {
+  cat("Edad laboral")
+}
+
+# OR: una de las dos basta
+if (edad < 18 || edad > 65) {
+  cat("Fuera del rango laboral típico")
+}
+
+# NOT: negación
+if (!(edad < 18)) {
+  cat("Sos mayor de edad")
+}
+```
+
+# Condicionales Anidadas {background="#5B888C"}
+
+## Estructuras dentro de estructuras
+
+Podés tener una estructura condicional dentro de otra:
+
+```r
+edad <- 25
+tiene_licencia <- TRUE
+
+if (edad >= 18) {
+  if (tiene_licencia) {
+    cat("Podés conducir")
+  } else {
+    cat("Necesitás licencia para conducir")
+  }
+} else {
+  cat("No podés conducir: sos menor de edad")
+}
+```
+
+## Cuando usar anidamiento
+
+::: {.small}
+El anidamiento es útil, pero puede hacerse complejo. A veces es mejor usar operadores lógicos.
+
+**Anidado:**
+```r
+if (edad >= 18) {
+  if (tiene_licencia) {
+    cat("Podés conducir")
+  }
+}
+```
+
+**Mejor (más legible):**
+```r
+if (edad >= 18 && tiene_licencia) {
+  cat("Podés conducir")
+}
+```
+:::
+
+# Resumen {background="#5B888C"}
+
+## Puntos clave
+
+::: {.small}
+
+1. **`if`** - ejecuta código si se cumple una condición
+2. **`if-else`** - dos opciones: si se cumple o no
+3. **`if-else if-else`** - múltiples opciones encadenadas
+4. **Solo un bloque** se ejecuta de una estructura condicional
+5. Usá **operadores de comparación**: `==`, `!=`, `<`, `>`, `<=`, `>=`
+6. Podés **combinar condiciones** con `&&` (AND), `||` (OR), `!` (NOT)
+7. Mantené **buena indentación** para legibilidad
+8. Podés **anidar** estructuras cuando sea necesario
+
+:::
+
+::: {.center}
+**¡Ahora tus programas pueden tomar decisiones!**
+:::
+
+
+# Estructuras Iterativas {background="#5B888C"}
+
+## ¿Por qué repetir código?
+
+- A menudo necesitamos ejecutar el mismo bloque de código **varias veces**.
+- Para esto usamos "bucles" o "loops", que automatizan la repetición.
+
+## Dos tipos de bucles
+
+**`for`** 
+
+- cuando sabés **cuántas veces** repetir
+- Número de iteraciones es fijo
+- Usás una **variable de iteración**
+
+**`while`** 
+
+- cuando **no sabés cuántas veces** repetir
+- Repetís mientras se cumpla una condición
+- La condición se evalúa en cada iteración
+
+# Bucles FOR {background="#5B888C"}
+
+## Estructura for
+
+```r
+for (variable in conjunto) {
+  hacer esto
+}
+```
+
+::: {.small}
+- `variable` = cambia en cada iteración (índice de iteración)
+- `conjunto` = los valores que recorrerá la variable
+- El código entre llaves se ejecuta una vez por cada elemento
+:::
+
+## Ejemplo simple
+
+```r
+for (palabra in c("Hola", "cómo", "estás")) {
+  print(palabra)
+}
+```
+
+**Resultado:**
+```
+[1] "Hola"
+[1] "cómo"
+[1] "estás"
+```
+
+## Cómo funciona
+
+::: {.small}
+1. **Primera iteración**: `palabra` vale `"Hola"` → se ejecuta `print(palabra)`
+2. **Segunda iteración**: `palabra` vale `"cómo"` → se ejecuta `print(palabra)`
+3. **Tercera iteración**: `palabra` vale `"estás"` → se ejecuta `print(palabra)`
+4. **Se acabó**: no hay más elementos, el bucle termina
+:::
+
+## Con números
+
+Es muy común usar números:
+
+```r
+for (i in c(1, 2, 3, 4, 5)) {
+  print(i)
+}
+```
+
+O con el atajo `:` para secuencias:
+
+```r
+for (i in 1:5) {
+  print(i)
+}
+```
+
+Ambos producen el mismo resultado.
+
+## Usar la variable en cálculos
+
+```r
+for (i in 1:5) {
+  resultado <- i * 2
+  print(resultado)
+}
+```
+
+**Resultado:** Se imprimen 2, 4, 6, 8, 10
+
+## Ejemplo: Tabla de multiplicar
+
+```r
+for (i in 0:10) {
+  resultado <- 8 * i
+  cat("8 x", i, "=", resultado, "\n")
+}
+```
+
+Notá el `\n` para saltos de línea.
+
+## Nombre de la variable
+
+La variable puede tener cualquier nombre:
+
+```r
+# Tradicional:
+for (i in 1:5) {
+  print(i)
+}
+
+# También válido:
+for (n in 1:5) {
+  print(n)
+}
+
+# "Cualquier cosa":
+for (guau in 1:5) {
+  print(guau)
+}
+```
+
+## Potencia: Calcular 2^5
+
+Sin bucle (repetitivo):
+```r
+x <- 2
+resultado <- 1
+resultado <- resultado * x
+resultado <- resultado * x
+resultado <- resultado * x
+resultado <- resultado * x
+resultado <- resultado * x
+print(resultado)
+```
+
+Con bucle:
+```r
+x <- 2
+resultado <- 1
+for (i in 1:5) {
+  resultado <- resultado * x
+}
+print(resultado)
+```
+
+## Bucles anidados
+
+Podés poner un `for` dentro de otro:
+
+```r
+for (i in 1:3) {
+  for (j in 1:2) {
+    suma <- i + j
+    cat("i =", i, "| j =", j, "| suma =", suma, "\n")
+  }
+}
+```
+
+Se generan todas las **combinaciones** de `i` y `j`.
+
+# Bucles WHILE {background="#5B888C"}
+
+## Estructura while
+
+```r
+while (condición) {
+  hacer esto
+}
+```
+
+::: {.small}
+- `condición` = se evalúa antes de cada iteración
+- Si es TRUE → ejecuta el bloque
+- Si es FALSE → sale del bucle
+- Repetir **mientras** se cumpla la condición
+:::
+
+## Ejemplo: Contar hacia atrás
+
+```r
+y <- 5
+
+while (y > 0) {
+  print(y)
+  y <- y - 1
+}
+```
+
+**Resultado:** Se imprimen 5, 4, 3, 2, 1
+
+## Ejemplo: Contar hacia atrás - v2
+
+```r
+y <- 5
+
+while (y > 0) {
+  y <- y - 1
+  print(y)
+}
+```
+
+**¿Cuál es la diferencia?** 
+
+## ¡Importante!: La evaluación es al INICIO
+
+- La condición se evalúa **antes** de cada iteración.
+- Si se la condición se convierte en FALSE "durante" la ejecución, el bloque se completa una última vez antes de salir.
+- Si la condición es FALSE desde el inicio, el bloque no se ejecuta ni una sola vez:
+
+```r
+y <- -5
+
+while (y > 0) {
+  print(y)
+  y <- y - 1
+}
+
+# No se imprime nada (la condición es FALSE desde el inicio)
+```
+
+## Ejemplo: División sucesiva
+
+Este programa divide un número por 2 mientras que el resultado sea mayor o igual a 1 (es decir, hasta encontrar un valor menor que 1)
+
+```r
+x <- 100
+
+while (x >= 1) {
+  x <- x / 2
+  print(x)
+}
+```
+
+Se imprime: 50, 25, 12.5, 6.25, 3.125, 1.5625, 0.78125
+
+## Ejemplo: Sumar hasta superar un límite
+
+```r
+suma <- 0
+nro <- 1
+
+while (suma < 100) {
+  suma <- suma + nro
+  nro <- nro + 1
+}
+
+cat("Se sumaron los primeros", nro - 1, "números")
+cat("La suma es:", suma)
+```
+
+¿Por qué usamos `nro - 1`?
+
+## ⚠️ Bucles infinitos
+
+**CUIDADO**: Si la condición nunca es FALSE, el bucle nunca termina:
+
+```r
+# BUCLE INFINITO - ¡NO EJECUTES!
+var <- 9
+while (var < 10) {
+  var <- var - 1
+  cat("No puedo parar!!!")
+}
+```
+
+Si te atrapás en uno, presioná **Ctrl + C** en la consola.
+
+Asegurate de que la condición **eventualmente sea FALSE**:
+
+
+# Salpicón de ejemplos {background="#5B888C"}
+
+## Bucles anidados for-while
+
+Podés mezclar ambos tipos:
+
+```r
+for (i in 1:3) {
+  print(i)
+  
+  y <- 5
+  while (y > 0) {
+    print(paste("  ", y))
+    y <- y - 1
+  }
+}
+```
+
+Ejecuta el `while` tres veces (una por cada iteración del `for`).
+
+## Múltiples for anidados
+
+```r
+for (i in 1:3) {
+    for (j in 1:2) {
+        suma <- i + j
+        cat("| i vale", i, "| j vale", j, "| La suma es igual a", suma, "|\n")  
+    }
+}
+```
+
+Genera todas las combinaciones.
+
+
+
+## Contar múltiplos
+
+¿Cuántos múltiplos de 8 menores a 150 hay?
+
+```r
+# cada nro es múltiplo de sí mismo, así que el primero es el mismo 8
+multiplo <- 8
+# contamos que ya tenemos identificado al primer múltiplo
+conteo <- 1
+# encontramos los siguientes múltiplos sumando de a 8
+while (multiplo < 150) {
+    print(multiplo)
+    multiplo <- multiplo + 8
+    conteo <- conteo + 1
+}
+cat("Hay", conteo - 1, "múltiplos de 8 menores a 150")
+```
+
+## Tabla de multiplicar
+
+```r
+numero <- 7
+
+for (i in 1:10) {
+  resultado <- numero * i
+  cat(numero, "x", i, "=", resultado, "\n")
+}
+```
+
+# Resumen {background="#5B888C"}
+
+## Puntos clave
+
+::: {.small}
+
+1. **`for`** - repetir un **número fijo** de veces
+2. **`while`** - repetir **mientras se cumpla una condición**
+3. La **variable de iteración** cambia en cada ciclo del `for`
+4. En `while`, la condición se evalúa **al inicio** de cada iteración
+5. Podés **anidar** bucles (for dentro de for, for dentro de while, etc.)
+6. **¡Cuidado!** Los bucles `while` pueden ser infinitos si la condición nunca es FALSE
+7. Usá **indentación** para claridad
+8. Podés combinar bucles con estructuras condicionales para lógica compleja
+
+:::
+
+::: {.center}
+**¡Ahora tus programas pueden repetir tareas automáticamente!**
+:::
