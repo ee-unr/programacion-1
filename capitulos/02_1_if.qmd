@@ -254,9 +254,8 @@ if (edad >= 18) {
 
 **Nota:** El anidamiento es una herramienta poderosa, pero puede hacer el código más complejo. En muchos casos, es preferible usar operadores lógicos para simplificar y mejorar la legibilidad:
 
-::: {.comparacion data-latex=""}
+*Versión anidada (más difícil de leer):*
 
-**Versión anidada (más difícil de leer):**
 ```r
 if (edad >= 18) {
 	if (tiene_licencia) {
@@ -265,7 +264,7 @@ if (edad >= 18) {
 }
 ```
 
-**Versión simplificada con operadores lógicos (más legible):**
+*Versión simplificada con operadores lógicos (más legible):*
 ```r
 if (edad >= 18 && tiene_licencia) {
 	cat("Podés conducir")
@@ -273,4 +272,3 @@ if (edad >= 18 && tiene_licencia) {
 ```
 
 Ambas formas son válidas, pero la segunda es más clara y concisa.
-:::
