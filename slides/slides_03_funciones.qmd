@@ -1,0 +1,481 @@
+---
+title: "Funciones y Alcance de Variables"
+subtitle: "Unidad 3 - Capítulos 14 y 15"
+author: "Programación 1 - LE/LCD - FCEyE - UNR"
+format: 
+  revealjs: 
+    theme: ../estilo/slides.scss
+    transition: fade
+    slide-number: true
+    embed-resources: true
+    code-line-numbers: false
+---
+
+# Funciones {background="#5B888C"}
+
+## Descomposición algorítmica
+
+- Consiste en dividir un problema complejo en partes más pequeñas y manejables.
+
+::: {.small}
+
+**Beneficios:**
+
+- Mejor legibilidad del código (más corto, más claro)
+- Facilidad de mantenimiento (cambios en un solo lugar)
+- Reducción de errores (no hay copiar y pegar manual)
+- Mayor reutilización (usarla en diferentes proyectos)
+
+:::
+
+## Concepto: Función
+
+::: {.concepto data-latex=""}
+Una **función** es un bloque de código reutilizable que realiza una tarea específica. 
+
+Toma **argumentos de entrada**, ejecuta instrucciones y puede devolver un **resultado**.
+:::
+
+# Definición de Funciones {background="#5B888C"}
+
+## Estructura general
+
+```r
+nombre <- function(argumentos) {
+  cuerpo
+}
+```
+
+Tres componentes:
+
+1. **Nombre**: descripción clara del propósito
+2. **Palabra clave `function`**: indica que estamos definiendo una función
+3. **Argumentos** (parámetros): información de entrada
+4. **Cuerpo**: instrucciones entre llaves
+
+## Ejemplo 1: función matemática
+
+- En cierta forma, una función en R es como una función matemática.
+- Tomemos por ejemplo: $f(x, y) = x^2 + 3y$.
+- Si queremos saber cuál es el valor numérico de la función $f$ cuando $x$ toma el valor $4$ e $y$ toma el valor $5$, reemplazamos y obtenemos: 
+
+$$f(4, 5) = 4^2 + 3 \times 5 = 31$$
+
+## Ejemplo 1: definir la función en R
+
+Definamos $f(x, y) = x^2 + 3y$ en R como una función:
+
+```r
+f <- function(x, y) {
+  resultado <- x^2 + 3 * y
+  return(resultado)
+}
+```
+
+Después de ejecutar esto, `f` es un objeto en tu ambiente.
+
+## Ejemplo 1: usar la función
+
+Una vez definida, podés invocarla:
+
+```r
+f(4, 5)
+f(6, -5)
+f(0, 0)
+```
+
+## Terminología
+
+- **Parámetros formales o ficticios**: símbolos en la definición (`x`, `y`)
+  - Expresan de forma general qué hace la función
+
+- **Parámetros actuales o reales**: valores específicos al invocar (`4`, `5`)
+  - Establecen correspondencia: `x=4`, `y=5`
+
+## Formas equivalentes de invocar
+
+```r
+# Sin nombrar (por posición)
+f(4, 5)
+
+# Nombrando
+f(x = 4, y = 5)
+
+# Nombrando (orden distinto)
+f(y = 5, x = 4)
+```
+
+Todas producen el mismo resultado.
+
+## Orden importa SIN nombres
+
+```r
+# Posición 1 = x, Posición 2 = y
+f(4, 5)    # x=4, y=5 → resultado 31
+
+# Posición 1 = x, Posición 2 = y
+f(5, 4)    # x=5, y=4 → resultado 37
+```
+
+Si usás nombres, el orden no importa.
+
+## Errores comunes
+
+```r
+# Error: falta argumento obligatorio (y)
+f(4)
+
+# Error: demasiados argumentos
+f(4, 5, 6)
+
+# Error: argumento sin nombrar
+f(z = 10)  # z no existe en la función
+```
+
+# Función return() {background="#5B888C"}
+
+## ¿Qué devuelve una función?
+
+`return()` indica qué valor devuelve la función:
+
+```r
+f <- function(x, y) {
+  resultado <- x^2 + 3 * y
+  return(resultado)  # Devuelve 'resultado'
+}
+
+valor <- f(2, 3)  # valor recibe lo que return devuelve
+```
+
+## return() en condicionales
+
+Podés tener múltiples `return()`, sólo uno se ejecuta:
+
+```r
+maximo <- function(num1, num2) {
+  if (num1 > num2) {
+    return(num1)
+  } else {
+    return(num2)
+  }
+}
+
+maximo(10, 5)   # Devuelve 10
+maximo(3, 8)    # Devuelve 8
+```
+
+## return() es opcional
+
+Si no escribís `return()`, se devuelve la última expresión:
+
+```r
+# Con return()
+sumar1 <- function(x, y) {
+  resultado <- x + y
+  return(resultado)
+}
+
+# Sin return() (equivalente)
+sumar2 <- function(x, y) {
+  x + y
+}
+
+sumar1(4, 5)  # 9
+sumar2(4, 5)  # 9
+```
+
+**Consejo**: usar `return()` para mayor claridad.
+
+# Argumentos por Defecto {background="#5B888C"}
+
+## Asignar valores por defecto
+
+Podés dar un valor por defecto a un argumento:
+
+```r
+nueva_f <- function(x, y = 100) {
+  resultado <- x^2 + 3 * y
+  return(resultado)
+}
+```
+
+Si no le pasás un valor a `y`, usa 100 automáticamente.
+
+```r
+# Sin especificar y (usa 100)
+nueva_f(4)         # x^2 + 3*100 = 316
+
+# Especificando y
+nueva_f(4, 5)      # x^2 + 3*5 = 31
+
+# Con nombres
+nueva_f(x = 2, y = 10)  # 4 + 30 = 34
+```
+
+## Argumentos obligatorios vs opcionales
+
+```r
+mi_fun <- function(requerido, opcional = 50) {
+  # requerido DEBE proporcionarse
+  # opcional es OPCIONAL (default 50)
+}
+
+mi_fun(10)              # OK: requerido=10, opcional=50
+mi_fun(10, 20)          # OK: requerido=10, opcional=20
+mi_fun(opcional = 30)   # ERROR: falta requerido
+```
+
+# Organizar el Código {background="#5B888C"}
+
+## Dónde escribir funciones
+
+**Proyectos pequeños**: funciones al inicio del script
+
+```r
+# ===== DEFINICIÓN DE FUNCIONES =====
+f <- function(x, y) {
+  resultado <- x^2 + 3 * y
+  return(resultado)
+}
+
+maximo <- function(num1, num2) {
+  if (num1 > num2) {
+    return(num1)
+  } else {
+    return(num2)
+  }
+}
+
+# ===== PROGRAMA =====
+rtdo1 <- f(2, 5)
+rtdo2 <- f(3, 10)
+rtdo3 <- maximo(rtdo1, rtdo2) + 20
+cat("El resultado es", rtdo3)
+```
+
+## Proyectos grandes: source()
+
+Crea un archivo `funciones.R` con tus funciones:
+
+```r
+# funciones.R
+fact <- function(n) {
+  resultado <- 1
+  if (n > 0) {
+    for (i in 1:n) {
+      resultado <- resultado * i
+    }
+  }
+  return(resultado)
+}
+```
+
+## Proyectos grandes: source()
+
+Luego en tu script principal:
+
+```r
+source("funciones.R")
+
+for (j in 1:10) {
+  cat("Factorial de", j, "=", fact(j), "\n")
+}
+```
+
+`source()` ejecuta el archivo y tus funciones están disponibles.
+
+# Alcance de Variables {background="#5B888C"}
+
+## Dos ambientes
+
+::: {.small}
+
+**Global Environment**: donde trabajas normalmente
+
+```r
+x <- 10     # Variable global
+y <- 20     # Variable global
+```
+
+**Ambiente local de una función**: existe solo dentro de ella
+
+```r
+mi_fun <- function(a) {
+  b <- a * 2  # Variable local
+  return(b)
+}
+```
+
+:::
+
+## Variables globales vs locales
+
+- **Variables globales**: definidas en Global Environment, existen durante toda la sesión
+- **Variables locales**: definidas dentro de una función, existen solo durante su ejecución
+
+## Variables locales desaparecen
+
+```r
+f1 <- function(x) {
+  a <- x - 10
+  b <- x + 10
+  return(a + b)
+}
+
+z <- f1(50)
+z                # 80
+
+z + a            # ERROR: 'a' no existe (era local)
+```
+
+`a` era local a `f1`, desapareció cuando terminó.
+
+## Variables globales SÍ son accesibles
+
+Dentro de una función podés usar variables globales:
+
+```r
+f2 <- function(x) {
+  a <- x * y      # usa 'y' global
+  return(a)
+}
+
+y <- 20
+f2(2)            # 40
+
+y <- 18
+f2(2)            # 36
+```
+
+Pero esto no es recomendable...
+
+## ¿Es buena práctica usar globales?
+
+**NO es recomendable** usar variables globales dentro de funciones:
+
+- En el ejemplo anterior, `f2` depende de `y` global, lo que hace que su comportamiento sea impredecible.
+- Si alguien cambia `y` global, `f2` devuelve resultados distintos sin que lo esperes.
+- Es mejor que las funciones solo usen sus argumentos o variables locales para ser más predecibles y seguras.
+
+## Búsqueda de variables
+
+Cuando una función usa una variable:
+
+1. ¿Existe en el ambiente local?
+   - Sí → la usa
+   - No → continúa
+2. ¿Existe en el ambiente global?
+   - Sí → la usa
+   - No → ERROR
+
+
+# Pasaje de Parámetros {background="#5B888C"}
+
+## Pasaje por valor
+
+En R, el pasaje es **por valor**:
+
+1. Se evalúan los argumentos actuales
+2. Se **copian** en los argumentos formales
+3. Los cambios en la función NO afectan los originales
+
+## Ejemplo: pasaje por valor
+
+```r
+fun <- function(x, y) {
+  x <- x + 1
+  y <- y * 2
+  return(x + y)
+}
+
+a <- 3
+b <- 5
+d <- fun(a, b)
+
+cat(a, b, d)     # 3 5 14
+cat(x, y)        # ERROR: x, y no existen
+```
+
+Los valores de `a` y `b` NO cambian (fueron copiados), a pesar de que cambian los valores de `x` e `y` dentro de la función.
+
+## ¿Por qué es importante?
+
+::: {.small}
+
+**Ventaja**: la función no tiene "efectos secundarios"
+
+- No modifica variables globales
+- Es predecible y segura
+- La misma entrada siempre da la misma salida (siempre que no dependa de variables globales).
+
+:::
+
+# Name Masking {background="#5B888C"}
+
+## Mismo nombre en distintos ambientes
+
+Podés usar el mismo nombre para variable global y local:
+
+```r
+f3 <- function(x) {
+  a <- x - 10
+  b <- x + 10
+  cat("Dentro de f3, a =", a, "\n")
+  return(a + b)
+}
+
+a <- 70
+z <- f3(50)
+cat("En el programa, a =", a, "\n")
+```
+
+**Resultado:**
+```
+Dentro de f3, a = 40
+En el programa, a = 70
+```
+
+R **prioriza la variable local**.
+
+## Name masking: la variable local gana
+
+::: {.small}
+
+Dentro de la función, `a` local "enmascara" a `a` global:
+
+```r
+a <- 100      # Global
+
+mi_fun <- function() {
+  a <- 5      # Local
+  return(a)   # Devuelve 5 (usa local)
+}
+
+mi_fun()      # 5
+a             # 100 (global no cambió)
+```
+
+:::
+
+# Resumen {background="#5B888C"}
+
+## Puntos clave
+
+::: {.small}
+
+1. **Funciones** permiten descomponer problemas complejos
+2. **Definición**: `nombre <- function(argumentos) { cuerpo }`
+3. **`return()`** indica qué devuelve la función
+4. Podés asignar **valores por defecto** a argumentos
+5. **Pasaje por valor**: cambios en función NO afectan globales
+6. **Ambiente local**: existe solo durante ejecución de función
+7. **Variables locales** desaparecen después de la función
+8. Podés usar **variables globales** dentro de funciones (pero mejor no)
+9. **Name masking**: variable local "enmascara" global con mismo nombre
+10. **Buena práctica**: que las funciones solo usen sus argumentos, no globales
+
+:::
+
+::: {.center}
+**¡Las funciones son la base de código organizado y reutilizable!**
+:::

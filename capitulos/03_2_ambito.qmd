@@ -160,7 +160,7 @@ rm(list = ls())
 f3 <- function(x) {
 	a <- x - 10
 	b <- x + 10
-	cat("Acá, dentro de la f3, el valor de a es", a)
+	cat("Acá, dentro de la f3, el valor de a es", a, "\n")
 	return(a + b)
 }
 
@@ -171,7 +171,7 @@ f3 <- function(x) {
 a <- 70
 z <- f3(50)
 z
-cat("Acá, en el programa principal, el valor de a es", a)
+cat("Acá, en el programa principal, el valor de a es", a, "\n")
 a + z
 ```
 
