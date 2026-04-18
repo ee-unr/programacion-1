@@ -1,0 +1,371 @@
+---
+title: "Mejorando Funciones: NULL, Errores y Documentación"
+subtitle: "Unidad 3 - Capítulo 16"
+author: "Programación 1 - LE/LCD - FCEyE - UNR"
+format: 
+  revealjs: 
+    theme: ../estilo/slides.scss
+    transition: fade
+    slide-number: true
+    embed-resources: true
+    code-line-numbers: false
+---
+
+# El Objeto NULL {background="#5B888C"}
+
+## ¿Qué es NULL?
+
+`NULL` representa la **ausencia total de un objeto** o valor.
+
+::: {.small}
+
+- No pertenece a ningún tipo básico (no es numérico, lógico ni carácter)
+- Es un objeto en sí mismo
+- Se usa para indicar que algo no existe o está vacío
+- Lo devuelven muchas funciones cuando no hay resultado válido
+
+:::
+
+## Ejemplo: función que devuelve NULL
+
+```r
+perimetro_cuadrado <- function(lado) {
+  if (lado > 0) {
+    return(lado * 4)
+  } else {
+    return(NULL)  # Sin sentido calcular con lado negativo
+  }
+}
+
+perimetro_cuadrado(10)   # 40
+perimetro_cuadrado(-2)   # NULL
+```
+
+## Comprobar si es NULL
+
+```r
+x <- perimetro_cuadrado(-2)
+
+typeof(x)      # "NULL"
+is.null(x)     # TRUE
+is.numeric(x)  # FALSE
+```
+
+## Otros valores especiales
+
+Existen otros valores para información ausente:
+
+| Valor | Significado | Ejemplo |
+|-------|-------------|---------|
+| `NULL` | Ausencia total | Sin resultado |
+| `NA` | Not Available | Dato faltante |
+| `NaN` | Not a Number | `0/0`, `log(-1)` |
+
+No confundir entre ellos.
+
+# Manejo de Errores {background="#5B888C"}
+
+## ¿Por qué manejar errores?
+
+Las funciones pueden recibir argumentos inválidos. Es mejor:
+
+- Detectar el problema
+- Informar claramente al usuario
+- Detener la ejecución si es grave
+
+## Funciones para manejar errores
+
+::: {.small}
+
+- **`stop()`**: error crítico, detiene la ejecución
+- **`warning()`**: advertencia, la función continúa
+- **`message()`**: información, sin detener
+
+Comunican problemas al usuario de forma clara.
+
+:::
+
+# Función stop() {background="#5B888C"}
+
+## Detener por error crítico
+
+`stop()` interrumpe inmediatamente y muestra un mensaje de error:
+
+```r
+saludar <- function(nombre) {
+  if (!is.character(nombre)) {
+    stop("Debe proveer una cadena de texto.")
+  }
+  cat("¡Hola, ", nombre, "!", sep = "")
+}
+
+saludar("Eli")    # Funciona
+saludar(100)      # ERROR
+```
+
+## Flujo con stop()
+
+```r
+verificar_edad <- function(edad) {
+  if (edad < 0) {
+    stop("La edad no puede ser negativa.")
+  }
+  # Código siguiente solo se ejecuta si edad >= 0
+  cat("Edad válida:", edad)
+}
+
+verificar_edad(25)   # OK
+verificar_edad(-5)   # ERROR, se detiene
+```
+
+# Función warning() {background="#5B888C"}
+
+## Advertencia no fatal
+
+`warning()` muestra una advertencia pero **continúa** la ejecución:
+
+```r
+division <- function(a, b) {
+  if (b == 0) {
+    warning("El divisor es 0. Resultado indefinido.")
+  }
+  return(a / b)
+}
+
+division(10, 2)    # 5 (sin problemas)
+division(10, 0)    # Inf (con advertencia)
+```
+
+## Diferencia con stop()
+
+```r
+# Con stop() (crítico):
+resultado <- division_con_stop(10, 0)  # ERROR, se detiene
+
+# Con warning() (advertencia):
+resultado <- division_con_warning(10, 0)  # Inf (continúa)
+```
+
+`warning()` es para situaciones potencialmente problemáticas pero no fatales.
+
+# Función message() {background="#5B888C"}
+
+## Informar al usuario
+
+`message()` comunica algo sin ser un error ni advertencia:
+
+```r
+cuadrado <- function(x) {
+  if (!is.numeric(x)) {
+    stop("x debe ser numérico.")
+  }
+  
+  message("Calculando...")
+  resultado <- x^2
+  message("¡Listo!")
+  
+  return(resultado)
+}
+
+cuadrado(4)   # Muestra mensajes informativos
+```
+
+## ¿Cuándo se ejecutan los mensajes?
+
+```r
+procesar <- function(valor) {
+  message("Inicio del procesamiento")
+  
+  if (valor < 0) {
+    stop("Valor negativo, deteniendo.")
+  }
+  
+  message("Procesamiento en curso...")
+  resultado <- valor * 2
+  
+  return(resultado)
+}
+
+procesar(-5)   # Solo ve "Inicio", luego ERROR
+procesar(5)    # Ve ambos mensajes
+```
+
+# Buenas Prácticas {background="#5B888C"}
+
+## Validar argumentos
+
+Verificá argumentos ANTES de usarlos:
+
+```r
+# Malo: no valida
+dividir_malo <- function(a, b) {
+  return(a / b)  # Si b=0, resultado Inf
+}
+
+# Bueno: valida primero
+dividir_bueno <- function(a, b) {
+  if (b == 0) {
+    stop("El divisor no puede ser 0.")
+  }
+  return(a / b)
+}
+```
+
+## Mensajes informativos
+
+Sé claro sobre qué salió mal y cómo corregirlo:
+
+```r
+# Malo:
+if (!is.numeric(x)) {
+  stop("Error")  # ¿Qué error?
+}
+
+# Bueno:
+if (!is.numeric(x)) {
+  stop("'x' debe ser un número. Recibiste: ", class(x))
+}
+```
+
+## Usá el nivel adecuado
+
+::: {.small}
+
+- **`stop()`** para errores que impiden continuar
+- **`warning()`** para situaciones sospechosas pero funcionales
+- **`message()`** para información útil
+
+```r
+fun <- function(x) {
+  if (is.null(x)) {
+    stop("x no puede ser NULL.")  # Crítico
+  }
+  if (x < 0) {
+    warning("x es negativo.")     # Sospechoso
+  }
+  message("Procesando...")         # Informativo
+  return(x * 2)
+}
+```
+
+:::
+
+# Documentación con Roxygen {background="#5B888C"}
+
+## ¿Por qué documentar?
+
+Otras personas (y vos en el futuro) necesitan entender:
+
+- Qué hace la función
+- Qué argumentos acepta
+- Qué devuelve
+- Cómo usarla
+
+La documentación es **fundamental**.
+
+## Sistema Roxygen
+
+Roxygen es un estándar para documentar funciones en R:
+
+- Comentarios especiales con formato `#'`
+- Etiquetas especiales con `@`
+- RStudio genera documentación automáticamente
+
+## Generar el esqueleto
+
+Dentro de tu función en RStudio:
+
+1. Posicioná el cursor en el cuerpo de la función
+2. Menú `Code > Insert Roxygen Skeleton`
+
+Se agrega automáticamente una plantilla.
+
+## Estructura de Roxygen
+
+```r
+#' Cálculo de factoriales
+#' 
+#' @description
+#' Calcula el factorial de números enteros no negativos.
+#'
+#' @param n Número entero no negativo.
+#'
+#' @return El factorial de n.
+#'
+#' @examples
+#' fact(5)
+#' fact(0)
+#' 
+fact <- function(n) {
+  if (n < 0 || n != floor(n)) {
+    stop("n debe ser entero no negativo.")
+  }
+  resultado <- 1
+  if (n > 0) {
+    for (i in 1:n) {
+      resultado <- resultado * i
+    }
+  }
+  return(resultado)
+}
+```
+
+## Etiquetas principales
+
+| Etiqueta | Qué va ahí |
+|----------|-----------|
+| `@description` | Qué hace la función |
+| `@param` | Un parámetro (una línea por parámetro) |
+| `@return` | Qué devuelve la función |
+| `@details` | Detalles adicionales importantes |
+| `@examples` | Ejemplos de uso |
+
+## Ejemplo completo
+
+```r
+#' Raíz cuadrada validada
+#' 
+#' @description
+#' Calcula la raíz cuadrada de un número validando entrada.
+#'
+#' @details 
+#' Lanza error si el número es negativo.
+#' 
+#' @param x Número para el cual calcular raíz cuadrada.
+#'
+#' @return La raíz cuadrada de x (numérico).
+#'
+#' @examples
+#' raiz_validada(9)   # 3
+#' raiz_validada(2)   # 1.414...
+#' 
+raiz_validada <- function(x) {
+  if (!is.numeric(x)) {
+    stop("x debe ser numérico.")
+  }
+  if (x < 0) {
+    stop("x debe ser no negativo.")
+  }
+  return(sqrt(x))
+}
+```
+
+
+# Resumen {background="#5B888C"}
+
+## Puntos clave
+
+::: {.small}
+
+1. **`NULL`** representa ausencia total, distinto de `NA` y `NaN`
+2. **`stop()`** interrumpe por error crítico
+3. **`warning()`** advierte pero continúa
+4. **`message()`** informa sin errores
+5. **Validá argumentos** antes de usarlos
+6. **Sé claro** en mensajes de error: qué pasó y cómo corregir
+7. **Roxygen** documenta funciones automáticamente
+8. Etiquetas `@description`, `@param`, `@return`, `@examples`
+9. **Documentá mientras escribís**, no después
+10. Una buena función es clara, segura y bien documentada
+
+:::
