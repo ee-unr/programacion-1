@@ -1,0 +1,16 @@
+Package: farkle
+Type: Package
+Title: Funciones Auxiliares para el Juego Farkle
+Version: 0.1.0
+Authors@R: 
+    person(
+        given = "Cátedra", 
+        family = "Programación 1",
+        email = "catedra@sinemail.com", 
+        role = c("aut", "cre", "cph")
+        )
+Description: Este paquete ofrece funciones muy útiles para poder implementar el Juego Farkle en R. Se recomienda leer con atención la documentación y probar los ejemplos.
+License: GPL-2
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
