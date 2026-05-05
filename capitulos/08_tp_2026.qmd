@@ -1,3 +1,9 @@
+```{=latex}
+\thispagestyle{primerapagina}
+```
+
+# Trabajo Práctico {.unnumbered}
+
 ## Introducción
 
 En este trabajo práctico vamos a implementar un juego de dados llamado **"Farkle"**, que pertenece a la familia de juegos de azar y estrategia, similar al también conocido *"Generala"*. En este tipo de juegos, los jugadores lanzan una cierta cantidad de dados en cada turno, obteniendo puntajes según combinaciones específicas, y deben decidir estratégicamente si se detienen para asegurar sus puntos o siguen tirando para alcanzar un puntaje mayor, a riesgo de perder lo que ya tienen acumulado.
@@ -128,7 +134,9 @@ Para realizar este trabajo práctico cuentan con los siguientes archivos de apoy
 
   a. funciones dedicadas para el juego (`tirar_dados`, `mostrar_dados`, `contar_dados`); 
   b. funciones de impresión y estilo (`limpiar_consola`, `titulo`, `texto_lento`); y 
-  c. funciones de lectura (`leer_palabra`, `leer_opciones`, `pausa`). En el script `jugar.R` se incluyen instrucciones de instalación.
+  c. funciones de lectura (`leer_palabra`, `leer_opciones`, `pausa`). 
+  
+En el script `jugar.R` se incluyen instrucciones de instalación.
 
 ## Descomposición algorítmica
 
