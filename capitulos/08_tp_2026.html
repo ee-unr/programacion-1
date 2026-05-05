@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>30&nbsp; Creación de paquetes de R – Programación 1</title>
+<title>Apéndice A — Introducción – Programación 1</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -68,8 +33,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../capitulos/06_2_extras.html" rel="next">
-<link href="../capitulos/06.html" rel="prev">
+<link href="../capitulos/08_bibliografia.html" rel="next">
+<link href="../capitulos/07_soluciones_06.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -84,9 +49,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-2dd4a3f7701144ec9472fe597ad12a48.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-bf67f19d0783a141c2ddde0a526f571c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-2dd4a3f7701144ec9472fe597ad12a48.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -290,7 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/06.html">Unidad 6. Desarrollo de librerías de software</a></li><li class="breadcrumb-item"><a href="../capitulos/06_1_crear_paquete.html"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Creación de paquetes de R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/08_tp_2026.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../capitulos/08_tp_2026.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Introducción</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -572,7 +534,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/06_1_crear_paquete.html" class="sidebar-item-text sidebar-link active">
+  <a href="../capitulos/06_1_crear_paquete.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Creación de paquetes de R</span></span></a>
   </div>
 </li>
@@ -654,7 +616,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulos/08_tp_2026.html" class="sidebar-item-text sidebar-link">
+  <a href="../capitulos/08_tp_2026.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
@@ -676,29 +638,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#por-qué-y-para-qué-crear-un-paquete-en-r" id="toc-por-qué-y-para-qué-crear-un-paquete-en-r" class="nav-link active" data-scroll-target="#por-qué-y-para-qué-crear-un-paquete-en-r"><span class="header-section-number">30.1</span> ¿Por qué y para qué crear un paquete en R?</a></li>
-  <li><a href="#pasos-para-crear-un-paquete" id="toc-pasos-para-crear-un-paquete" class="nav-link" data-scroll-target="#pasos-para-crear-un-paquete"><span class="header-section-number">30.2</span> Pasos para crear un paquete</a>
-  <ul class="collapse">
-  <li><a href="#preparativos" id="toc-preparativos" class="nav-link" data-scroll-target="#preparativos"><span class="header-section-number">30.2.1</span> Preparativos</a></li>
-  <li><a href="#elegir-el-nombre" id="toc-elegir-el-nombre" class="nav-link" data-scroll-target="#elegir-el-nombre"><span class="header-section-number">30.2.2</span> Elegir el nombre</a></li>
-  <li><a href="#estructura-del-paquete" id="toc-estructura-del-paquete" class="nav-link" data-scroll-target="#estructura-del-paquete"><span class="header-section-number">30.2.3</span> Estructura del paquete</a></li>
-  <li><a href="#escribir-las-funciones-del-paquete" id="toc-escribir-las-funciones-del-paquete" class="nav-link" data-scroll-target="#escribir-las-funciones-del-paquete"><span class="header-section-number">30.2.4</span> Escribir las funciones del paquete</a></li>
-  <li><a href="#probar-nuestro-código" id="toc-probar-nuestro-código" class="nav-link" data-scroll-target="#probar-nuestro-código"><span class="header-section-number">30.2.5</span> Probar nuestro código</a></li>
-  <li><a href="#generar-la-documentación" id="toc-generar-la-documentación" class="nav-link" data-scroll-target="#generar-la-documentación"><span class="header-section-number">30.2.6</span> Generar la documentación</a></li>
-  <li><a href="#editar-el-archivo-description" id="toc-editar-el-archivo-description" class="nav-link" data-scroll-target="#editar-el-archivo-description"><span class="header-section-number">30.2.7</span> Editar el archivo <code>DESCRIPTION</code></a></li>
-  <li><a href="#instalación" id="toc-instalación" class="nav-link" data-scroll-target="#instalación"><span class="header-section-number">30.2.8</span> Instalación</a></li>
-  <li><a href="#distribución" id="toc-distribución" class="nav-link" data-scroll-target="#distribución"><span class="header-section-number">30.2.9</span> Distribución</a></li>
-  </ul></li>
+  <li><a href="#objetivo" id="toc-objetivo" class="nav-link active" data-scroll-target="#objetivo"><span class="header-section-number">A.1</span> Objetivo</a></li>
+  <li><a href="#dinámica-del-juego" id="toc-dinámica-del-juego" class="nav-link" data-scroll-target="#dinámica-del-juego"><span class="header-section-number">A.2</span> Dinámica del juego</a></li>
+  <li><a href="#la-terminal" id="toc-la-terminal" class="nav-link" data-scroll-target="#la-terminal"><span class="header-section-number">A.3</span> La terminal</a></li>
+  <li><a href="#materiales-provistos" id="toc-materiales-provistos" class="nav-link" data-scroll-target="#materiales-provistos"><span class="header-section-number">A.4</span> Materiales provistos</a></li>
+  <li><a href="#descomposición-algorítmica" id="toc-descomposición-algorítmica" class="nav-link" data-scroll-target="#descomposición-algorítmica"><span class="header-section-number">A.5</span> Descomposición algorítmica</a></li>
+  <li><a href="#otras-indicaciones-y-sugerencias" id="toc-otras-indicaciones-y-sugerencias" class="nav-link" data-scroll-target="#otras-indicaciones-y-sugerencias"><span class="header-section-number">A.6</span> Otras indicaciones y sugerencias</a></li>
+  <li><a href="#equipos" id="toc-equipos" class="nav-link" data-scroll-target="#equipos"><span class="header-section-number">A.7</span> Equipos</a></li>
+  <li><a href="#código-de-conducta" id="toc-código-de-conducta" class="nav-link" data-scroll-target="#código-de-conducta"><span class="header-section-number">A.8</span> Código de conducta</a></li>
+  <li><a href="#entrega" id="toc-entrega" class="nav-link" data-scroll-target="#entrega"><span class="header-section-number">A.9</span> Entrega</a></li>
+  <li><a href="#evaluación" id="toc-evaluación" class="nav-link" data-scroll-target="#evaluación"><span class="header-section-number">A.10</span> Evaluación</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/06_1_crear_paquete.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar sobre problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/06_1_crear_paquete.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/08_tp_2026.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar sobre problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/08_tp_2026.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/06.html">Unidad 6. Desarrollo de librerías de software</a></li><li class="breadcrumb-item"><a href="../capitulos/06_1_crear_paquete.html"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Creación de paquetes de R</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/08_tp_2026.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../capitulos/08_tp_2026.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Introducción</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Creación de paquetes de R</span></h1>
+<h1 class="title">Apéndice A — Introducción</h1>
 </div>
 
 
@@ -715,388 +674,166 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="presentacion-capitulo">
-<p>En este capítulo vamos a ver cómo reunir todo lo que aprendimos hasta acá en la creación de un paquete de R. Crear un paquete nos permite agrupar funciones relacionadas, documentarlas correctamente y facilitar su uso tanto para nosotros mismos como para otras personas.</p>
-</div>
-<section id="por-qué-y-para-qué-crear-un-paquete-en-r" class="level2" data-number="30.1">
-<h2 data-number="30.1" class="anchored" data-anchor-id="por-qué-y-para-qué-crear-un-paquete-en-r"><span class="header-section-number">30.1</span> ¿Por qué y para qué crear un paquete en R?</h2>
-<p>A lo largo de este curso aprendimos a escribir funciones, organizar nuestro código, documentarlo, manejar estructuras de datos y seguir buenas prácticas de programación. Crear un paquete de R es una excelente manera de integrar todos esos conocimientos en un proyecto concreto. Los paquetes son la forma en que se distribuyen las herramientas en R: cuando usamos funciones como <code>mean()</code> o <code>ggplot()</code>, en realidad estamos utilizando funciones que vienen en paquetes. Aprender a crear nuestros propios paquetes no solo nos da autonomía como programadores, sino que también nos permite compartir nuestro trabajo con otras personas y empezar a construir herramientas reutilizables, ya sea para nuestros propios proyectos o para otros usuarios.</p>
-<div class="concepto">
-<p>Un <strong>paquete</strong> en R es una colección de funciones, datos, documentación y archivos auxiliares organizados bajo una estructura estandarizada. Es la unidad básica de distribución de código en R. Cada vez que instalamos paquetes como <code>dplyr</code>, <code>ggplot2</code> o <code>writexl</code>, estamos descargando un conjunto de funciones predefinidas organizadas como un paquete.</p>
-<p>Los paquetes pueden ser tan simples como una sola función con su documentación, o tan complejos como librerías completas con cientos de funciones, conjuntos de datos y documentación detallada.</p>
-</div>
-<p>Crear un paquete tiene muchas ventajas:</p>
+<p>En este trabajo práctico vamos a implementar un juego de dados llamado <strong>“Farkle”</strong>, que pertenece a la familia de juegos de azar y estrategia, similar al también conocido <em>“Generala”</em>. En este tipo de juegos, los jugadores lanzan una cierta cantidad de dados en cada turno, obteniendo puntajes según combinaciones específicas, y deben decidir estratégicamente si se detienen para asegurar sus puntos o siguen tirando para alcanzar un puntaje mayor, a riesgo de perder lo que ya tienen acumulado.</p>
+<p>La dinámica combina elementos de probabilidad, toma de decisiones y gestión del riesgo: avanzar puede permitir sumar más puntos, pero también implica la posibilidad de perder lo que ya tienen acumulado.</p>
+<p>En esta oportunidad, desarrollaremos en R una versión simplificada del Farkle, que se podrá jugar desde la terminal entre dos jugadores.</p>
+<section id="objetivo" class="level2" data-number="A.1">
+<h2 data-number="A.1" class="anchored" data-anchor-id="objetivo"><span class="header-section-number">A.1</span> Objetivo</h2>
+<p>El objetivo de este trabajo consiste en desarrollar un programa interactivo en R que simule una partida de Farkle entre dos jugadores:</p>
+<p>El programa deberá contemplar las siguientes funcionalidades:</p>
 <ul>
-<li><strong>Organización</strong>: agrupar nuestras funciones y datos de forma clara y modular.</li>
-<li><strong>Reutilización</strong>: usar el mismo código en diferentes proyectos sin copiar y pegar.</li>
-<li><strong>Documentación integrada</strong>: incluir explicaciones detalladas sobre cada función, ejemplos y ayuda.</li>
-<li><strong>Distribución y colaboración</strong>: subir nuestro paquete a repositorios públicos para que cualquier usuario de R pueda instalarlo, usarlo y realizar contribuciones.</li>
-</ul>
-<p>Aunque a simple vista pueda parecer una tarea para usuarios avanzados, crear un paquete básico es totalmente accesible para nosotros que estamos dando nuestros primeros pasos en Estadística o Ciencia de Datos, a partir del conocimiento básico ya adquirido sobre funciones, documentación y buenas prácticas. Aprender esto desde temprano tiene muchos beneficios:</p>
-<ul>
-<li>Nos obliga a <strong>pensar en la estructura</strong> del código, para que sea claro, fácil de mantener y reutilizable.</li>
-<li>Nos ayuda a <strong>adquirir hábitos de documentación</strong>.</li>
-<li>Nos introduce a una práctica <strong>profesional y colaborativa</strong>.</li>
-<li>Nos muestra cómo funciona el <strong>ecosistema del software libre</strong> en R.</li>
-<li>Nos muestra que <strong>crear herramientas propias es posible</strong>.</li>
+<li>Permitir que dos jugadores se alternen turnos.</li>
+<li>Simular lanzamientos de dados y calcular el puntaje obtenido en cada tirada.</li>
+<li>Permitir que el jugador decida si desea continuar tirando o detenerse.</li>
+<li>Implementar correctamente las reglas de acumulación y pérdida de puntos.</li>
+<li>Finalizar el juego cuando uno de los jugadores alcance un puntaje objetivo (1000 puntos)</li>
 </ul>
 </section>
-<section id="pasos-para-crear-un-paquete" class="level2" data-number="30.2">
-<h2 data-number="30.2" class="anchored" data-anchor-id="pasos-para-crear-un-paquete"><span class="header-section-number">30.2</span> Pasos para crear un paquete</h2>
-<p>Vamos a crear un paquete básico en R desde cero. La idea no es cubrir todas las posibilidades que ofrece el sistema de paquetes de R, sino sólo los pasos mínimos necesarios para armar un paquete funcional que contenga funciones propias, documentación, y pueda instalarse y compartirse fácilmente.</p>
-<section id="preparativos" class="level3" data-number="30.2.1">
-<h3 data-number="30.2.1" class="anchored" data-anchor-id="preparativos"><span class="header-section-number">30.2.1</span> Preparativos</h3>
-<p>Crear un paquete se vuelve bastante sencillo si utilizamos las herramientas que otros han desarrollado para ayudarnos, como <a href="https://devtools.r-lib.org/">el paquete <code>devtools</code></a>. Por eso, antes de comenzar, necesitamos instalalarlo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Por otro lado, quienes utilizan Windows deben instalar el software <em>Rtools</em>, que se trata de un conjunto de herramientas para compilar código fuente en Windows. Los pasos a seguir son:</p>
+<section id="dinámica-del-juego" class="level2" data-number="A.2">
+<h2 data-number="A.2" class="anchored" data-anchor-id="dinámica-del-juego"><span class="header-section-number">A.2</span> Dinámica del juego</h2>
+<p>La partida se desarrolla a lo largo de múltiples rondas. En cada ronda, los jugadores participan por turnos respetando un orden. En su turno, el jugador puede lanzar los dados una o más veces, dependiendo del resultado de cada tirada. Todos los jugadores comienzan tirando cinco dados.</p>
+<p>El resultado de una tirada se determina a partir de las siguientes convenciones:</p>
+<ul>
+<li>Cada dado que muestra un 1 suma 100 puntos.</li>
+<li>Cada dado que muestra un 5 suma 50 puntos.</li>
+<li>Los dados que resultan en 1 o 5 se retiran y no se vuelven a lanzar en la siguiente tirada.</li>
+</ul>
+<p>El puntaje obtenido en una tirada se suma al puntaje acumulado del turno.</p>
+<p><em>Acumulación de puntajes</em></p>
+<p>Durante el juego se manejan tres niveles de puntaje:</p>
+<ul>
+<li><strong>Puntaje de la tirada:</strong> puntos obtenidos en una tirada individual. <strong>Puntaje del turno</strong>: suma de los puntos obtenidos en todas las tiradas de ese turno.</li>
+<li><strong>Puntaje total del jugador:</strong> suma de los puntos acumulados a lo largo de todos los turnos.</li>
+</ul>
+<p>El puntaje del turno se suma al puntaje total del jugador únicamente si el turno finaliza de manera válida (es decir, sin perder).</p>
+<p><em>Continuación del turno</em></p>
+<p>Luego de cada tirada pueden ocurrir dos situaciones:</p>
 <ol type="1">
-<li>Visitar la página oficial de CRAN: <a href="https://cran.r-project.org/bin/windows/Rtools/">https://cran.r-project.org/bin/windows/Rtools/</a>.</li>
-<li>Elegir la versión de Rtools que <strong>corresponde a la versión de R que tenés instalada</strong>. Por ejemplo, si usás R 4.4, necesitás Rtools 4.4.</li>
-<li>Descargar el instalador y seguir las instrucciones. Al instalar, marcar la opción que agrega Rtools al <strong>PATH del sistema</strong>, para que R pueda encontrarlo automáticamente.</li>
+<li><strong>La tirada produce al menos un 1 o un 5</strong>:</li>
 </ol>
-<p>En sistemas <strong>macOS o Linux</strong>, no se necesita Rtools.</p>
-</section>
-<section id="elegir-el-nombre" class="level3" data-number="30.2.2">
-<h3 data-number="30.2.2" class="anchored" data-anchor-id="elegir-el-nombre"><span class="header-section-number">30.2.2</span> Elegir el nombre</h3>
-<p>El primer paso para crear un paquete tal vez sea uno de los más complicados: elegir un nombre. Esto puede tener poca importancia si estamos haciendo un paquete de uso personal, pero si pensamos en compartirlo, entonces hay que dedicarle algo de tiempo. Las reglas para elegir un nombre son:</p>
+<p>El jugador acumula los puntos correspondientes y puede decidir:</p>
 <ul>
-<li>Sólo puede contener letras, números o puntos.</li>
-<li>Tener al menos dos caracteres.</li>
-<li>Empezar con una letra y no terminar con punto.</li>
+<li><p>Continuar tirando con los dados restantes, o</p></li>
+<li><p>Detenerse y conservar los puntos acumulados en ese turno.</p></li>
 </ul>
-<p>Algunas sugerencias incluyen elegir un nombre que sea fácil de <em>googlear</em> y de recordar, que tenga todas mayúsculas o minúsculas, que tal vez surja de agregarle una <em>R</em> a una palabra que existe para generar un nombre único, etc.</p>
-<p>Para practicar vamos a crear un paquete con una única función que determina si un año es o no bisiesto, por eso lo vamos a llamar <code>bisiestos</code>.</p>
-</section>
-<section id="estructura-del-paquete" class="level3" data-number="30.2.3">
-<h3 data-number="30.2.3" class="anchored" data-anchor-id="estructura-del-paquete"><span class="header-section-number">30.2.3</span> Estructura del paquete</h3>
-<p>Crear un paquete en R consiste, esencialmente, en organizar un conjunto de carpetas y archivos siguiendo ciertas convenciones. En términos prácticos, no es más que crear una carpeta en nuestra computadora que contenga algunos elementos obligatorios y otros opcionales.</p>
-<p>Para simplificar esta tarea, podemos utilizar el paquete <code>devtools</code>, que a su vez integra muchas herramientas diseñadas para facilitar el desarrollo de paquetes en R.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>La forma más sencilla de crear un nuevo paquete es utilizando la función <code>create_package()</code> desde cualquier sesión activa de RStudio. Por ejemplo:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_package</span>(<span class="st">"C:/Users/Marcos/Documents/bisiestos"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">✔</span> Creating C:<span class="dt">\U</span>sers<span class="dt">\M</span>arcos<span class="dt">\D</span>ocuments<span class="dt">\b</span>isiestos.</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">✔</span> Setting active project to <span class="st">"C:\Users\Marcos\Documents\bisiestos"</span>.</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">✔</span> Creating R/.</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">✔</span> Writing DESCRIPTION.</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Package:</span> bisiestos</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Title:</span> What the Package Does <span class="er">(</span><span class="ex">One</span> Line, Title Case<span class="kw">)</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Version:</span> 0.0.0.9000</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Authors@R</span> <span class="er">(</span><span class="ex">parsed</span><span class="kw">)</span><span class="bu">:</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">*</span> First Last <span class="op">&lt;</span>first.last@example.com<span class="op">&gt;</span> [aut, cre]</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ex">Description:</span> What the package does <span class="er">(</span><span class="ex">one</span> paragraph<span class="kw">)</span><span class="bu">.</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="ex">License:</span> <span class="kw">`</span><span class="fu">use_mit_license()</span><span class="kw">`</span>, <span class="kw">`</span><span class="fu">use_gpl3_license()</span><span class="kw">`</span> or friends to</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">pick</span> a license</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="ex">Encoding:</span> UTF-8</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="ex">Roxygen:</span> list<span class="er">(</span><span class="ex">markdown</span> = TRUE<span class="kw">)</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="ex">RoxygenNote:</span> 7.3.2</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="ex">✔</span> Writing NAMESPACE.</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="ex">✔</span> Writing bisiestos.Rproj.</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="ex">✔</span> Adding <span class="st">"^bisiestos</span><span class="dt">\\</span><span class="st">.Rproj$"</span> to .Rbuildignore.</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="ex">✔</span> Adding <span class="st">".Rproj.user"</span> to .gitignore.</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="ex">✔</span> Adding <span class="st">"^</span><span class="dt">\\</span><span class="st">.Rproj</span><span class="dt">\\</span><span class="st">.user$"</span> to .Rbuildignore.</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="ex">✔</span> Opening C:<span class="dt">\U</span>sers<span class="dt">\M</span>arcos<span class="dt">\D</span>ocuments<span class="dt">\b</span>isiestos in new RStudio session.</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="ex">✔</span> Setting active project to <span class="st">"&lt;no active project&gt;"</span>.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Lo anterior hace que en la carpeta <code>"C:\Users\Marcos\Documents\"</code> se cree un nuevo directorio, <code>bisiestos</code>, que no es más que un proyecto de RStudio populado con el conjunto de subcarpetas y archivos que conforman la estructura de un paquete. Además, se abre una nueva instancia de RStudio con el proyecto recién creado, para que podamos ponernos a trabajar en el desarrollo del paquete. Como este es un <em>RStudio Project</em> con una misión específica, veremos en esta instancia de RStudio nuevos paneles relacionados con la creación de paquetes, que no aparecían antes (por ejemplo, la pestaña <code>Build</code> en el panel de arriba a la derecha).</p>
-<p>Podemos ver la existencia de la nueva carpeta <code>bisiestos</code> con los archivos recientemente creados en el panel <code>Files</code>:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../imagenes/teoria_unidad_6/crear.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Resultado de la creación del paquete."><img src="../imagenes/teoria_unidad_6/crear.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="Resultado de la creación del paquete."></a></p>
-</figure>
-</div>
-<figcaption>Resultado de la creación del paquete.</figcaption>
-</figure>
-</div>
-<p>Algunos componentes creados en la carpeta del paquete son importantes, mientras que por ahora podemos ignorar a otros. Los importantes son:</p>
+<ol start="2" type="1">
+<li><strong>La tirada no produce ningún 1 ni 5</strong></li>
+</ol>
 <ul>
-<li>Archivo <code>DESCRIPTION</code>: describe el contenido del paquete y establece cómo el paquete se va a relacionar con otros.</li>
-<li>Carpeta <code>R</code>: contiene el o los archivos de código de R con las funciones del paquete.</li>
-<li>Archivo <code>NAMESPACE</code>: declara qué funciones nuestro paquete pone a disposición de los usuarios y de qué funciones de otros paquetes hace uso el nuestro, es decir, organiza las cosas para que R pueda encontrar todo lo que necesita cuando usa nuestro paquete.</li>
+<li>El turno termina automáticamente y el jugador pierde todos los puntos acumulados en ese turno.</li>
 </ul>
-<p>Los que podemos ignorar son:</p>
-<ul>
-<li><code>bisiestos.Rproj</code>: guarda las opciones de configuración elegidas para el proyecto y sirve para abrirlo directamente desde el explorador de archivos de la compu como acceso directo.</li>
-<li><code>.Rproj.user</code>: carpeta oculta usada internamente por RStudio para guardar archivos temporarios.</li>
-<li><code>.gitignore</code>: archivo oculto que lista todos los archivos de R y RStudio que no deberían ser rastreados por un software llamado <em>git</em>, que no utilizaremos.</li>
-</ul>
-</section>
-<section id="escribir-las-funciones-del-paquete" class="level3" data-number="30.2.4">
-<h3 data-number="30.2.4" class="anchored" data-anchor-id="escribir-las-funciones-del-paquete"><span class="header-section-number">30.2.4</span> Escribir las funciones del paquete</h3>
-<p>Las funciones del paquete se escriben en scripts <code>.R</code> dentro de la carpeta <code>R/</code>, una por archivo o agrupadas por tema. Nuestro paquete <code>bisiestos</code> tendrá un único script llamado <code>funciones.R</code>. Podemos crearlo a mano y guardarlo en la carpeta R, o dejar que todo se haga automáticamente si ejecutamos:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">use_r</span>(<span class="st">"funciones"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<pre><code>☐ Modify R/funciones.R.</code></pre>
-<p>Vamos a agregar el código para la creación de una función llamada <code>es_bisiesto()</code> que determina si un año provisto es bisiesto o no. Pegamos lo siguiente en el script y lo guardamos:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' La función es_bisiesto</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#' </span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' Esta función analiza si el año o los años provistos son bisiestos o no. Los</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' años bisiestos ocurren cada 4 años, excepto los terminados en 00, los cuales</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#' son bisiestos sólo si son divisibles por 400. Es decir, los años como 1600,</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#' 1700, 1800 son bisiestos si son divisibles por 400. Por ejemplo, el año 1900</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' no fue bisiesto a pesar de ser divisible por 4, pero el año 2000 sí lo fue</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' por ser divisible por 400. Entonces, para que un año dado sea bisiesto, se</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#' debe cumplir una de las siguientes condiciones: el año es divisible por 4</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#' pero no divisible por 100, o el año es divisible por 400.</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param x vector numérico de largo mayor o igual a 1 con los años a evaluar.</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">#'   Por default, toma el año actual.</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">#' @return vector lógico de igual largo que `x` y nombrado con los elementos de</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">#' `x`, con valor `TRUE` en cada si el correspondiente año indicado en `x` es</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co">#' bisiesto y `FALSE` en caso contrario.</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">#' </span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co">#' @details Si `x` contiene valores no enteros, se toma su parte entera. Esta</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co">#'   función sirve para los años antes de Cristo, si se los considera bajo la</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co">#'   numeración astronómica de los años (incluye un año 0 y luego cuenta en</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co">#'   negativo, por ejemplo, el año 0 es 1 AC o el año -1 es 2 AC.).</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co">#'   </span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="co">#' @seealso \url{https://es.wikipedia.org/wiki/Año_bisiesto}</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="co">#' es_bisiesto(2019)</span></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co">#' es_bisiesto(2020)</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co">#' rtdo &lt;- es_bisiesto(2020:2025)</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="co">#' rtdo</span></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co">#' es_bisiesto(0)</span></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="co">#' es_bisiesto(-1:-5)</span></span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="co">#' </span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="co">#' @export</span></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="co">#' </span></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>es_bisiesto <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x =</span> <span class="fu">as.integer</span>(<span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">"%Y"</span>))) {</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Chequear argumento</span></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stopifnot</span>(<span class="fu">is.numeric</span>(x))</span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(x)</span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Determinar si es bisiesto</span></span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>    rtdo <span class="ot">&lt;-</span> ((x <span class="sc">%%</span> <span class="dv">4</span> <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">&amp;</span> (x <span class="sc">%%</span> <span class="dv">100</span> <span class="sc">!=</span> <span class="dv">0</span>)) <span class="sc">|</span> (x <span class="sc">%%</span> <span class="dv">400</span> <span class="sc">==</span> <span class="dv">0</span>)</span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">names</span>(rtdo) <span class="ot">&lt;-</span> x</span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Devolver años bisiestos</span></span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(rtdo)</span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Notemos que antes de la definición de la función hemos incluido la documentación bajo el formato <em>roxygen</em>. En la <a href="03_3_varios.html#sec-factorial" class="quarto-xref"><span>Sección 16.3</span></a> discutimos por qué es importante documentar nuestras funciones. En el contexto de la creación de un paquete, se vuelve aún más importante porque se trata de la información que permite generar las páginas del menú de <em>Ayuda</em>. Volvé a leer la <a href="03_3_varios.html#sec-factorial" class="quarto-xref"><span>Sección 16.3</span></a> para repasar cómo generar de forma automática la estructura de la documentación con <em>roxygen</em> y para qué se usa cada <em>tag</em> o etiqueta.</p>
-<p>Una de ellas es muy importante y no la habíamos usado antes: <code>@export</code>. Se usa para indicar que esta función tiene que estar disponible cuando alguien cargue el paquete con <code>library()</code>. Un paquete guarda funciones para que las aprovechen los usuarios y las mismas deben tener esta etiqueta. No obstante, tal vez estas funciones internamente llaman a otras funciones auxiliares que creemos conveniente diseñar y que no hace falta que estén a disposición de los usuarios. Esas funciones internas no llevan la etiqueta <code>@export</code>.</p>
-</section>
-<section id="probar-nuestro-código" class="level3" data-number="30.2.5">
-<h3 data-number="30.2.5" class="anchored" data-anchor-id="probar-nuestro-código"><span class="header-section-number">30.2.5</span> Probar nuestro código</h3>
-<p>Seguramente nos interese ir probando nuestras funciones a medida que las estamos desarrollando o cuando creemos que las hemos finalizado. Es decir, nos interesa tenerlas disponibles en nuestro ambiente de trabajo para poder usarlas. Para “cargar” todo el contenido del paquete que estamos desarrollando, <code>devtools</code> nos ofrece la función <code>load_all()</code>, o su atajo <code>ctrl + shift + l</code>. Su efecto es como el de correr <code>source()</code> con todos y cada uno de los scripts guardados en la carpeta <code>R/</code>, de una forma cuidadosa para que nuestro código funcione y podamos probarlo.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load_all</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<pre><code>ℹ Loading bisiestos</code></pre>
-<p>Como resultado, todas las funciones definidas están listas para ser usadas (aunque no las veamos en el <em>global environment</em>):</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">es_bisiesto</span>(<span class="dv">2019</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> 2019 
-FALSE </code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">es_bisiesto</span>(<span class="dv">2020</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2020 
-TRUE </code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>rtdo <span class="ot">&lt;-</span> <span class="fu">es_bisiesto</span>(<span class="dv">2020</span><span class="sc">:</span><span class="dv">2025</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>rtdo</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> 2020  2021  2022  2023  2024  2025 
- TRUE FALSE FALSE FALSE  TRUE FALSE </code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">es_bisiesto</span>(<span class="dv">0</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   0 
-TRUE </code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">es_bisiesto</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">:-</span><span class="dv">5</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   -1    -2    -3    -4    -5 
-FALSE FALSE FALSE  TRUE FALSE </code></pre>
-</div>
-</div>
-<p>A medida que el paquete va creciendo, con funciones internas y otras que se exportan, con funciones que se llaman unas a otras, con funciones que dependen de otros paquetes, probar nuestras funciones de esta forma nos da una idea más certera de cómo está quedando todo en el paquete. <code>load_all()</code> simula el proceso de construir, instalar y cargar el paquete. Entonces, se puede definir el siguiente flujo de trabajo (<em>workflow</em>) para la escritura del código:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../imagenes/teoria_unidad_6/flujo1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Flujo de trabajo."><img src="../imagenes/teoria_unidad_6/flujo1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Flujo de trabajo."></a></p>
-</figure>
-</div>
-<figcaption>Flujo de trabajo.</figcaption>
-</figure>
-</div>
-</section>
-<section id="generar-la-documentación" class="level3" data-number="30.2.6">
-<h3 data-number="30.2.6" class="anchored" data-anchor-id="generar-la-documentación"><span class="header-section-number">30.2.6</span> Generar la documentación</h3>
-<p>Si bien cuando definimos nuestra función ya escribimos su documentación, la misma tiene que ser procesada para que se generen los archivos que componen al manual de ayuda. Este procesamiento se hace automáticamente, al correr la función <code>document()</code> o su atajo <code>ctrl + shift + d</code>:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">document</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<pre><code>ℹ Updating bisiestos documentation
-ℹ Loading bisiestos
-Writing es_bisiesto.Rd
-Writing NAMESPACE
-Documentation completed</code></pre>
-<p>Como resultado del proceso anterior, se creó un nuevo subdirectorio, llamado <code>man</code>, que contiene un archivo de extensión <code>.Rd</code> por cada función que hayamos definido. Dichos archivos tienen la información de la documentación en un formato que permite generar las páginas de ayuda del manual.</p>
-<p>Otra consecuencia del proceso anterior es que archivo <code>NAMESPACE</code> fue modificado. El mismo es un componente fundamental de un paquete de R. Define qué funciones y objetos del paquete estarán disponibles para los usuarios y qué elementos de otros paquetes se utilizarán internamente. Le permite al sistema controlar el uso de funciones, evitando conflictos con otros paquetes. Este archivo puede crearse y editarse manualmente, pero en la práctica <strong>no es recomendable</strong>. Es mejor dejar que funciones como <code>document()</code> lo actualicen automáticamente a partir de la documentación de nuestras funciones, para que todo ande bien.</p>
-<p>En nuestro ejemplo, después de ejecutar <code>document()</code>, el archivo <code>NAMESPACE</code> luce así:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../imagenes/teoria_unidad_6/namespace.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Archivo NAMESPACE."><img src="../imagenes/teoria_unidad_6/namespace.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Archivo NAMESPACE."></a></p>
-</figure>
-</div>
-<figcaption>Archivo <code>NAMESPACE</code>.</figcaption>
-</figure>
-</div>
-</section>
-<section id="editar-el-archivo-description" class="level3" data-number="30.2.7">
-<h3 data-number="30.2.7" class="anchored" data-anchor-id="editar-el-archivo-description"><span class="header-section-number">30.2.7</span> Editar el archivo <code>DESCRIPTION</code></h3>
-<p>El archivo <code>DESCRIPTION</code> es uno de los componentes fundamentales de todo paquete de R. Actúa como una “ficha técnica” del paquete: contiene información básica sobre el mismo, como su nombre, versión, autores, dependencias y más. Esta información no solo permite identificar el paquete, sino que también facilita su instalación, uso y distribución.</p>
-<p>A diferencia de un archivo de código, <code>DESCRIPTION</code> no contiene funciones ni instrucciones de R, sino una serie de campos escritos en formato “clave-valor”, parecidos a un archivo de configuración.</p>
-<p>El archivo fue creado automáticamente por cuando ejecutamos al inicio la función <code>create_package()</code> y se ve así:</p>
-<pre><code>Package: bisiestos
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2</code></pre>
-<p>En este archivo hay algunos campos que tienen que estar presentes de forma obligatoria y otros que son opcionales. Acá mencionamos a los más importantes:</p>
-<ul>
-<li><p><strong>Elementos obligatorios</strong>:</p>
-<ul>
-<li><strong>Package</strong>: el nombre del paquete (debe coincidir con el nombre del directorio y estar en minúsculas o minúsculas + mayúsculas, sin espacios).</li>
-<li><strong>Type</strong>: generalmente se indica <code>Package</code>, que es el tipo estándar.</li>
-<li><strong>Title</strong>: un título breve y descriptivo (en una línea, sin punto final, <em>Escrito De Esta Forma</em>).</li>
-<li><strong>Version</strong>: número de versión del paquete, siguiendo el formato <code>x.y.z</code> (por ejemplo, 0.2.1).</li>
-<li><strong>Author</strong>: información sobre quién desarrolló el paquete. Se suele indicar el rol con <code>[aut]</code> (autor) y <code>[cre]</code> (mantenedor).</li>
-<li><strong>Description</strong>: Un párrafo que describe el propósito y funcionalidad general del paquete. Puede ocupar varias líneas.</li>
-<li><strong>License</strong>: Tipo de licencia que indica los términos de uso del paquete. Por ejemplo, <code>MIT</code>, <code>GPL-3</code>, <code>CC0</code>, etc.</li>
-</ul></li>
-<li><p><strong>Elementos no obligatorios</strong>:</p>
-<ul>
-<li><strong>Date</strong>: fecha de publicación de esta versión del paquete.</li>
-<li><strong>Imports</strong>, <strong>Depends</strong>, <strong>Suggests</strong>: gestionan la dependencia de nuestro paquete con respecto a otros o a versiones de R. Leer opcionalmente <a href="06_2_extras.html#sec-dependencias" class="quarto-xref"><span>Sección 31.1</span></a> para conocer más detalles al respecto.</li>
-<li><strong>URL</strong>: dirección de la página web del paquete.</li>
-<li><strong>BugReports</strong>: dirección donde los usuarios puedan enviar avisos con los problemas que encuentren.</li>
-</ul></li>
-</ul>
-<p>En cuanto a los autores, una misma persona puede cumplir varios roles y puede haber varias personas en el mismo rol. Los roles de uso más común son:</p>
-<ul>
-<li>Autor (<em>author</em>): autor del paquete, se indica con la etiqueta <em>aut</em></li>
-<li>Mantenedor (<em>maintainer</em>): persona a cargo de arreglar los problemas que puedan surgir en CRAN, recibe notificaciones sobre errores por parte de los usuarios, etc. Sólo puede haber un <em>maintainer</em>. Se indica con la etiqueta <em>cre</em>.</li>
-<li>Contribuyente (<em>contributor</em>): alguien que hizo un aporte menor, se indica con <em>ctb</em>.</li>
-</ul>
-<p>Después de algunos agregados, nuestro DESCRIPTION luce así:</p>
-<pre><code>Package: bisiestos
-Title: Determinación de años bisiestos
-Version: 0.0.0.9000
-Authors@R: 
-    person(
-        given = "Marcos",
-        family = "Prunello",
-        role = c("aut", "cre"),
-        email = "mp@fcecon.com"
-    )
-Description: Este paquete permite determinar si un año es bisiesto o no, 
-      proveyendo una solución definitiva a un problema de tediosa solución.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2</code></pre>
-</section>
-<section id="instalación" class="level3" data-number="30.2.8">
-<h3 data-number="30.2.8" class="anchored" data-anchor-id="instalación"><span class="header-section-number">30.2.8</span> Instalación</h3>
-<p>¡Ya hemos terminado la primera versión de nuestro paquete y estamos en condiciones de instalarlo! Se puede hacer esto de varias formas:</p>
-<ul>
-<li>Corriendo <code>install()</code></li>
-<li>Usando el atajo <code>ctrl + shift + b</code></li>
-<li>Haciendo clic en <code>Install</code> de la pestaña <code>Build</code>.</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<pre><code>==&gt; R CMD INSTALL --preclean --no-multiarch --with-keep.source bisiestos
-
-* installing to library ‘/home/marcos/R/x86_64-pc-linux-gnu-library/4.5/_build’
-* installing *source* package ‘bisiestos’ ...
-** this is package ‘bisiestos’ version ‘0.0.0.9000’
-** using staged installation
-** R
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
-** building package indices
-** testing if installed package can be loaded from temporary location
-** testing if installed package can be loaded from final location
-** testing if installed package keeps a record of temporary installation path
-* DONE (bisiestos)</code></pre>
-<p>Una vez instalado, podemos usarlo como a cualquier otro paquete. En cada sesión de trabajo en la que lo necesitemos, lo cargamos con <code>library(bisiestos)</code>:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bisiestos)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">es_bisiesto</span>(<span class="dv">2030</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Además, podemos ir al menú de Ayuda y ver nuestra documentación:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>?es_bisiesto</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../imagenes/teoria_unidad_6/help.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Página de ayuda creada."><img src="../imagenes/teoria_unidad_6/help.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Página de ayuda creada."></a></p>
-</figure>
-</div>
-<figcaption>Página de ayuda creada.</figcaption>
-</figure>
-</div>
-</section>
-<section id="distribución" class="level3" data-number="30.2.9">
-<h3 data-number="30.2.9" class="anchored" data-anchor-id="distribución"><span class="header-section-number">30.2.9</span> Distribución</h3>
-<p>Una vez creado y probado un paquete de R, es natural querer compartirlo con otras personas, ya sea para colaborar, para que lo usen en otros proyectos o simplemente para facilitar su instalación. Existen diversas formas de distribuir un paquete, cada una con sus ventajas y requisitos.</p>
+<p>Si durante su turno el jugador logra que todos los dados hayan sido retirados (es decir, en la última tirada todos los dados resultaron ser 1 o 5), entonces el jugador puede:</p>
 <ol type="1">
-<li><p><strong>Publicación en CRAN</strong>. CRAN (Comprehensive R Archive Network) es el repositorio oficial de paquetes de R. Publicar un paquete en CRAN permite que cualquier persona lo instale fácilmente usando, por ejemplo, <code>install.packages("bisiestos")</code>. Sin embargo, para subir un paquete a CRAN es necesario cumplir con una serie de requisitos técnicos y de buenas prácticas, como:</p>
-<ul>
-<li>Tener documentación completa (manuales, <code>NAMESPACE</code>, <code>DESCRIPTION</code>).</li>
-<li>Cumplir con convenciones de estilo y estructura.</li>
-<li>Superar una batería de chequeos automáticos en distintos sistemas operativos.</li>
-</ul></li>
-<li><p><strong>Compartir el paquete desde GitHub</strong>. <a href="https://github.com/">GitHub</a> es una plataforma de desarrollo colaborativo que permite almacenar, controlar el desarrollo y compartir código. Publicar un paquete en GitHub es especialmente útil cuando el paquete aún está en desarrollo, cuando queremos colaborar con otras personas o simplemente cuando no deseamos (todavía) subirlo a CRAN.</p></li>
-<li><p><strong>Compartir un archivo comprimido (<code>.zip</code> o <code>.tar.gz</code>)</strong>. Otra forma sencilla de distribuir un paquete es generar un archivo comprimido que contenga todos los archivos del paquete, ya sea en formato <code>.zip</code> (usado principalmente en Windows) o <code>.tar.gz</code> (típico de Linux/macOS). Este archivo puede compartirse por correo electrónico, subirlo a una nube, o alojarse en un sitio web.</p></li>
+<li><p>Retirarse con los puntos acumulados en el turno.</p></li>
+<li><p>Mantener el puntaje acumulado del turno y volver a tirar con cinco dados.</p></li>
 </ol>
-<p>En nuestro caso, optaremos por el último camino. Desde la consola de R (estando en el directorio del paquete) ejecutamos:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">build</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>── R CMD build ───────────────────────────────────────────────────────────────
-✔  checking for file ‘C:\Users\Marcos\Documents\bisiestos’ ...
-─  preparing ‘bisiestos’:
-✔  checking DESCRIPTION meta-information ...
-─  checking for LF line-endings in source and make files and shell scripts
-─  checking for empty or unneeded directories
-─  building ‘bisiestos_0.0.0.9000.tar.gz’
-   
-[1] "C:\Users\Marcos\Documents\bisiestos_0.0.0.9000.tar.gz"</code></pre>
-<p>Este comando genera un archivo <code>.tar.gz</code> (o <code>.zip</code> si se configura para Windows) en el directorio padre. Este archivo contiene todo el código y documentación del paquete y puede instalarse sin necesidad de acceso a internet. El archivo comprimido puede ser compartido con cualquier persona y ser instalado con:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"bisiestos_0.0.0.9000.tar.gz"</span>, <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-
-
+<p>Un jugador gana la partida si alcanza el puntaje objetivo (1000 puntos) de manera <strong>exacta antes que el otro</strong>. En el caso de que ambos jugadores alcancen el puntaje objetivo en la misma ronda se considera empate.</p>
+<p>Si al finalizar un turno el puntaje total del jugador supera el puntaje objetivo, entonces:</p>
+<ul>
+<li><p>El jugador pierde todos los puntos acumulados en ese turno</p>
+<p>Por ejemplo: Si un jugador tiene 950 puntos y durante su turno acumula 100 puntos adicionales, alcanzando 1050, entonces no suma puntos y permanece en 950.</p></li>
+</ul>
+<p><strong>Ejemplos:</strong></p>
+<p><em>Turno con acumulación y decisión de detenerse</em></p>
+<p>Un jugador comienza su turno con 5 dados.</p>
+<ul>
+<li><p>Primera tirada: <strong>1, 2, 5, 3, 6</strong></p>
+<ul>
+<li><p>Puntaje de la tirada: 100 (por el 1) + 50 (por el 5) = 150 puntos</p></li>
+<li><p>Dados restantes: 3 (se retiran el 1 y el 5)</p></li>
+</ul></li>
+<li><p>Segunda tirada (con 3 dados): <strong>2, 5, 4</strong></p>
+<ul>
+<li><p>Puntaje de la tirada: 50</p></li>
+<li><p>Puntaje acumulado del turno: 150 + 50 = 200 puntos</p></li>
+<li><p>Dados restantes: 2</p></li>
+</ul></li>
+</ul>
+<p>El jugador decide detenerse.</p>
+<p>Resultado: suma 200 puntos a su puntaje total.</p>
+<p><em>Ejemplo con pérdida del turno</em></p>
+<p>Un jugador comienza su turno.</p>
+<ul>
+<li><p>Primera tirada: <strong>1, 5, 2, 3, 4</strong></p>
+<ul>
+<li><p>Puntaje: 150</p></li>
+<li><p>Dados restantes: 3</p></li>
+</ul></li>
+<li><p>Segunda tirada: <strong>2, 1, 6</strong></p>
+<ul>
+<li><p>Puntaje: 150 + 100 = 250</p></li>
+<li><p>Dados restantes: 2</p></li>
+</ul></li>
+<li><p>Tercera tirada: <strong>3, 2</strong></p>
+<ul>
+<li>No aparece ningún 1 ni 5</li>
+</ul></li>
+</ul>
+<p>Resultado: el jugador pierde los 250 puntos del turno y no suma nada.</p>
 </section>
+<section id="la-terminal" class="level2" data-number="A.3">
+<h2 data-number="A.3" class="anchored" data-anchor-id="la-terminal"><span class="header-section-number">A.3</span> La terminal</h2>
+<p>El programa es interactivo y requiere que el usuario ingrese datos en tiempo real: ingresar nombres de los jugadores, decidir si desea seguir jugando, etc. Por ello, el programa debe ejecutarse desde la <strong>terminal</strong> de la computadora, donde pueden escribirse comandos y visualizarse respuestas del sistema. Es importante familiarizarse con la <a href="https://ee-unr.github.io/programacion-1/capitulos/04.html">Unidad 4</a> de la asignatura para lograr este funcionamiento del programa.</p>
+</section>
+<section id="materiales-provistos" class="level2" data-number="A.4">
+<h2 data-number="A.4" class="anchored" data-anchor-id="materiales-provistos"><span class="header-section-number">A.4</span> Materiales provistos</h2>
+<p>Para realizar este trabajo práctico cuentan con los siguientes archivos de apoyo:</p>
+<ul>
+<li><p><strong>Script <code>jugar.R</code></strong>: archivo principal donde deben escribir su programa. Contiene una plantilla con instrucciones y espacio para agregar los datos del equipo y el código del juego.</p></li>
+<li><p><strong>Paquete <code>farkle</code></strong>: este paquete creado por la cátedra ofrece funciones auxiliares que simplifican muchas partes de la solución de este trabajo y serán de extrema utilidad. Se recomienda leer la documentación del paquete con atención y correr los ejemplos. Las funciones disponibles se agrupan en:</p>
+<ol type="a">
+<li>funciones dedicadas para el juego (<code>tirar_dados</code>, <code>mostrar_dados</code>, <code>contar_dados</code>);</li>
+<li>funciones de impresión y estilo (<code>limpiar_consola</code>, <code>titulo</code>, <code>texto_lento</code>); y</li>
+<li>funciones de lectura (<code>leer_palabra</code>, <code>leer_opciones</code>, <code>pausa</code>). En el script <code>jugar.R</code> se incluyen instrucciones de instalación.</li>
+</ol></li>
+</ul>
+</section>
+<section id="descomposición-algorítmica" class="level2" data-number="A.5">
+<h2 data-number="A.5" class="anchored" data-anchor-id="descomposición-algorítmica"><span class="header-section-number">A.5</span> Descomposición algorítmica</h2>
+<p>Para organizar el código de manera clara y modular, se recomienda aplicar el principio de descomposición algorítmica, creando funciones propias para distintas partes del juego. Estas funciones pueden definirse en <code>jugar.R</code> o, mejor aún, en scripts adicionales. El o los nuevos scripts deberán estar guardados en el mismo directorio que <code>jugar.R</code>, desde donde se los debe invocar con la función <code>source()</code>. Desde dicha carpeta, deben abrir la terminal y ejecutar el programa con <code>Rscript jugar.R</code>, sin que se produzcan errores.</p>
+<p>Todas las funciones creadas deben estar documentadas bajo el sistema <strong>Roxygen</strong>. Algunas podrán tomar argumentos, otras no, y algunas devolverán valores mientras que otras sólo imprimirán mensajes en pantalla. Lo importante es que cada función cumpla una tarea bien definida y facilite la lectura del programa principal.</p>
+</section>
+<section id="otras-indicaciones-y-sugerencias" class="level2" data-number="A.6">
+<h2 data-number="A.6" class="anchored" data-anchor-id="otras-indicaciones-y-sugerencias"><span class="header-section-number">A.6</span> Otras indicaciones y sugerencias</h2>
+<ul>
+<li>Es conveniente diseñar el algoritmo antes de programar, es decir, tomarse tiempo para pensar cómo es la lógica de la estructura del juego, qué pequeñas partes se pueden ir programando y probando de a poco, etc.</li>
+<li>No dejar para último momento. Empezar con inmediatez, ya que no se resuelve de un día para el otro y es posible que necesiten realizar consultas con los docentes. Si dejan para último momento ya no habrá tiempo de organizar consultas, no podrán entregar el trabajo práctico y quedarán libres en la asignatura.</li>
+<li>Probar el programa por partes, para asegurarse que cada cosa que van agregando funcione. Tratar de armar todo y luego evaluar puede hacer muy difícil a la tarea de detectar errores.</li>
+<li>Utilicen comentarios para identificar distintas partes de su programa y para describir qué se prentende realizar en cada sección.</li>
+<li>El objetivo estará cumplido si logran un programa similar al presentado en la <em>demo</em> (sesión virtual que quedará grabada en la cual los docentes demostrarán la dinámica del juego y el funcionamiento del programa). Opcionalmente, pueden incluir otros agregados que les resulte de interés.</li>
+<li>Si no logran programar todo lo pedido, igualmente realicen la entrega de lo que hayan podido hacer y los docentes evaluarán si es suficiente o no para aprobar.</li>
+<li>No intentar resolver todo de a una vez. Agregar pequeñas partes de a poco. Utilizar la emisión de mensajes temporarios para ir probando el código.</li>
+</ul>
+</section>
+<section id="equipos" class="level2" data-number="A.7">
+<h2 data-number="A.7" class="anchored" data-anchor-id="equipos"><span class="header-section-number">A.7</span> Equipos</h2>
+<p>El trabajo práctico se resuelve en grupos de <strong>exactamente CUATRO integrantes</strong>, de cualquier comisión. Hay tiempo hasta el <strong>lunes 18/5/26</strong> para informar la composición de cada equipo en <a href="https://comunidades3.campusvirtualunr.edu.ar/mod/forum/view.php?id=168293">este foro</a> de Comunidades. Pasada esa fecha, se formarán al azar equipos con todos aquellos inscriptos en Guaraní que no se hayan anotado previamente y se informará en el foro. El armado de estos equipos será inapelable.</p>
+<p>El script <code>jugar.R</code> tiene un espacio destinado para escribir los nombres de los integrantes del equipo. Deben colocar allí los nombres de quienes hayan efectivamente participado del trabajo. Comunidades les permite a todos los integrantes de un equipo ver los archivos que se han entregado, de modo que cada estudiante sabe si su nombre figura o no en el script. Si en el mismo falta el nombre de un estudiante y los docentes no son contactados al respecto, se entenderá que dicha persona no realizó el trabajo y quedará libre.</p>
+</section>
+<section id="código-de-conducta" class="level2" data-number="A.8">
+<h2 data-number="A.8" class="anchored" data-anchor-id="código-de-conducta"><span class="header-section-number">A.8</span> Código de conducta</h2>
+<ul>
+<li>La discusión entre integrantes de distintos grupos está permitida, no así el intercambio de código. Se puede debatir en el foro de Comunidades o en otros medios, pero no publicar partes de código.</li>
+<li>Las entregas son sometidas a un software de detección de plagio, si se detectan similaridades sospechosas en el trabajo de distintos grupos, podrán quedar descalificados.</li>
+<li>Cuando se detecta un uso llamativo de herramientas de Inteligencia Artificial o estructuras de programación que no se corresponde con los usos y funciones básicas vistas en este curso introductorio, los estudiantes son convocados por los docentes para defender y explicar su entrega de forma oral y responder preguntas sobre la resolución entregada, con el objetivo de confirmar la autoría y el entendimiento de la solución entregada.</li>
+</ul>
+</section>
+<section id="entrega" class="level2" data-number="A.9">
+<h2 data-number="A.9" class="anchored" data-anchor-id="entrega"><span class="header-section-number">A.9</span> Entrega</h2>
+<p>Deben entregar el archivo <code>jugar.R</code> y cualquier otro script que generen, en la sección que estará destinada para tal fin del aula virtual. Es suficiente con que un integrante del equipo adjunte los archivos. El resto de los integrantes podrá ver la entrega y, más adelante, la devolución y calificación por parte de los docentes.</p>
+<p><strong>Fecha límite de entrega: lunes 08/06 a las 08:00</strong> No se reciben trabajos fuera de este horario límite, sin ningún tipo de excepción.</p>
+</section>
+<section id="evaluación" class="level2" data-number="A.10">
+<h2 data-number="A.10" class="anchored" data-anchor-id="evaluación"><span class="header-section-number">A.10</span> Evaluación</h2>
+<p>La evaluación tendrá en cuenta:</p>
+<ul>
+<li>Si el programa funciona y permite jugar.</li>
+<li>Si el programa implementa el juego con el comportamiento presentado en la demo.</li>
+<li>Si hay prolijidad, claridad y buen uso de comentarios en el código.</li>
+<li>Si el trabajo muestra ser original y no copia de otros recursos.</li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1721,13 +1458,13 @@ window.onload = function() {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../capitulos/06.html" class="pagination-link" aria-label="Unidad 6. Desarrollo de librerías de software">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Unidad 6. Desarrollo de librerías de software</span>
+      <a href="../capitulos/07_soluciones_06.html" class="pagination-link" aria-label="Soluciones de la Práctica de la Unidad 6">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Soluciones de la Práctica de la Unidad 6</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../capitulos/06_2_extras.html" class="pagination-link" aria-label="Otros aspectos de la creación de un paquete">
-        <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Otros aspectos de la creación de un paquete</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../capitulos/08_bibliografia.html" class="pagination-link" aria-label="Bibliografía">
+        <span class="nav-page-text">Bibliografía</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1739,44 +1476,12 @@ window.onload = function() {
     </div>   
     <div class="nav-footer-center">
 <p>Developed by Marcos Prunello</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/06_1_crear_paquete.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar sobre problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/06_1_crear_paquete.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/08_tp_2026.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar sobre problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/08_tp_2026.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
