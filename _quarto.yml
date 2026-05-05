@@ -76,7 +76,7 @@ book:
         - capitulos/07_soluciones_05.qmd
         - capitulos/07_soluciones_06.qmd
   appendices:
-    # - capitulos/08_tp.qmd
+    - capitulos/08_tp_2026.qmd
     # - capitulos/08_tarea.qmd
     - capitulos/08_bibliografia.qmd
 

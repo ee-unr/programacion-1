@@ -1,0 +1,174 @@
+## Introducción
+
+En este trabajo práctico vamos a implementar un juego de dados llamado **"Farkle"**, que pertenece a la familia de juegos de azar y estrategia, similar al también conocido *"Generala"*. En este tipo de juegos, los jugadores lanzan una cierta cantidad de dados en cada turno, obteniendo puntajes según combinaciones específicas, y deben decidir estratégicamente si se detienen para asegurar sus puntos o siguen tirando para alcanzar un puntaje mayor, a riesgo de perder lo que ya tienen acumulado.
+
+La dinámica combina elementos de probabilidad, toma de decisiones y gestión del riesgo: avanzar puede permitir sumar más puntos, pero también implica la posibilidad de perder lo que ya tienen acumulado.
+
+En esta oportunidad, desarrollaremos en R una versión simplificada del Farkle, que se podrá jugar desde la terminal entre dos jugadores.
+
+## Objetivo
+
+El objetivo de este trabajo consiste en desarrollar un programa interactivo en R que simule una partida de Farkle entre dos jugadores:
+
+El programa deberá contemplar las siguientes funcionalidades:
+
+- Permitir que dos jugadores se alternen turnos.
+- Simular lanzamientos de dados y calcular el puntaje obtenido en cada tirada.
+- Permitir que el jugador decida si desea continuar tirando o detenerse.
+- Implementar correctamente las reglas de acumulación y pérdida de puntos.
+- Finalizar el juego cuando uno de los jugadores alcance un puntaje objetivo (1000 puntos)
+
+## Dinámica del juego
+
+La partida se desarrolla a lo largo de múltiples rondas. En cada ronda, los jugadores participan por turnos respetando un orden. En su turno, el jugador puede lanzar los dados una o más veces, dependiendo del resultado de cada tirada. Todos los jugadores comienzan tirando cinco dados.
+
+El resultado de una tirada se determina a partir de las siguientes convenciones:
+
+- Cada dado que muestra un 1 suma 100 puntos.
+- Cada dado que muestra un 5 suma 50 puntos.
+- Los dados que resultan en 1 o 5 se retiran y no se vuelven a lanzar en la siguiente tirada.
+
+El puntaje obtenido en una tirada se suma al puntaje acumulado del turno.
+
+*Acumulación de puntajes*
+
+Durante el juego se manejan tres niveles de puntaje:
+
+- **Puntaje de la tirada:** puntos obtenidos en una tirada individual. **Puntaje del turno**: suma de los puntos obtenidos en todas las tiradas de ese turno.
+- **Puntaje total del jugador:** suma de los puntos acumulados a lo largo de todos los turnos.
+
+El puntaje del turno se suma al puntaje total del jugador únicamente si el turno finaliza de manera válida (es decir, sin perder).
+
+*Continuación del turno*
+
+Luego de cada tirada pueden ocurrir dos situaciones:
+
+1.  **La tirada produce al menos un 1 o un 5**:
+
+El jugador acumula los puntos correspondientes y puede decidir:
+
+- Continuar tirando con los dados restantes, o
+
+- Detenerse y conservar los puntos acumulados en ese turno.
+
+2.  **La tirada no produce ningún 1 ni 5**
+
+- El turno termina automáticamente y el jugador pierde todos los puntos acumulados en ese turno.
+
+Si durante su turno el jugador logra que todos los dados hayan sido retirados (es decir, en la última tirada todos los dados resultaron ser 1 o 5), entonces el jugador puede:
+
+1.  Retirarse con los puntos acumulados en el turno.
+
+2.  Mantener el puntaje acumulado del turno y volver a tirar con cinco dados.
+
+Un jugador gana la partida si alcanza el puntaje objetivo (1000 puntos) de manera **exacta antes que el otro**. En el caso de que ambos jugadores alcancen el puntaje objetivo en la misma ronda se considera empate.
+
+Si al finalizar un turno el puntaje total del jugador supera el puntaje objetivo, entonces:
+
+- El jugador pierde todos los puntos acumulados en ese turno
+
+  Por ejemplo: Si un jugador tiene 950 puntos y durante su turno acumula 100 puntos adicionales, alcanzando 1050, entonces no suma puntos y permanece en 950.
+
+**Ejemplos:**
+
+*Turno con acumulación y decisión de detenerse*
+
+Un jugador comienza su turno con 5 dados.
+
+- Primera tirada: **1, 2, 5, 3, 6**
+
+  - Puntaje de la tirada: 100 (por el 1) + 50 (por el 5) = 150 puntos
+
+  - Dados restantes: 3 (se retiran el 1 y el 5)
+
+- Segunda tirada (con 3 dados): **2, 5, 4**
+
+  - Puntaje de la tirada: 50
+
+  - Puntaje acumulado del turno: 150 + 50 = 200 puntos
+
+  - Dados restantes: 2
+
+El jugador decide detenerse.
+
+Resultado: suma 200 puntos a su puntaje total.
+
+*Ejemplo con pérdida del turno*
+
+Un jugador comienza su turno.
+
+- Primera tirada: **1, 5, 2, 3, 4**
+
+  - Puntaje: 150
+
+  - Dados restantes: 3
+
+- Segunda tirada: **2, 1, 6**
+
+  - Puntaje: 150 + 100 = 250
+
+  - Dados restantes: 2
+
+- Tercera tirada: **3, 2**
+
+  - No aparece ningún 1 ni 5
+
+Resultado: el jugador pierde los 250 puntos del turno y no suma nada.
+
+## La terminal
+
+El programa es interactivo y requiere que el usuario ingrese datos en tiempo real: ingresar nombres de los jugadores, decidir si desea seguir jugando, etc. Por ello, el programa debe ejecutarse desde la **terminal** de la computadora, donde pueden escribirse comandos y visualizarse respuestas del sistema. Es importante familiarizarse con la [Unidad 4](https://ee-unr.github.io/programacion-1/capitulos/04.html) de la asignatura para lograr este funcionamiento del programa.
+
+## Materiales provistos
+
+Para realizar este trabajo práctico cuentan con los siguientes archivos de apoyo:
+
+- **Script `jugar.R`**: archivo principal donde deben escribir su programa. Contiene una plantilla con instrucciones y espacio para agregar los datos del equipo y el código del juego.
+- **Paquete `farkle`**: este paquete creado por la cátedra ofrece funciones auxiliares que simplifican muchas partes de la solución de este trabajo y serán de extrema utilidad. Se recomienda leer la documentación del paquete con atención y correr los ejemplos. Las funciones disponibles se agrupan en: 
+
+  a. funciones dedicadas para el juego (`tirar_dados`, `mostrar_dados`, `contar_dados`); 
+  b. funciones de impresión y estilo (`limpiar_consola`, `titulo`, `texto_lento`); y 
+  c. funciones de lectura (`leer_palabra`, `leer_opciones`, `pausa`). En el script `jugar.R` se incluyen instrucciones de instalación.
+
+## Descomposición algorítmica
+
+Para organizar el código de manera clara y modular, se recomienda aplicar el principio de descomposición algorítmica, creando funciones propias para distintas partes del juego. Estas funciones pueden definirse en `jugar.R` o, mejor aún, en scripts adicionales. El o los nuevos scripts deberán estar guardados en el mismo directorio que `jugar.R`, desde donde se los debe invocar con la función `source()`. Desde dicha carpeta, deben abrir la terminal y ejecutar el programa con `Rscript jugar.R`, sin que se produzcan errores.
+
+Todas las funciones creadas deben estar documentadas bajo el sistema **Roxygen**. Algunas podrán tomar argumentos, otras no, y algunas devolverán valores mientras que otras sólo imprimirán mensajes en pantalla. Lo importante es que cada función cumpla una tarea bien definida y facilite la lectura del programa principal.
+
+## Otras indicaciones y sugerencias
+
+- Es conveniente diseñar el algoritmo antes de programar, es decir, tomarse tiempo para pensar cómo es la lógica de la estructura del juego, qué pequeñas partes se pueden ir programando y probando de a poco, etc.
+- No dejar para último momento. Empezar con inmediatez, ya que no se resuelve de un día para el otro y es posible que necesiten realizar consultas con los docentes. Si dejan para último momento ya no habrá tiempo de organizar consultas, no podrán entregar el trabajo práctico y quedarán libres en la asignatura.
+- Probar el programa por partes, para asegurarse que cada cosa que van agregando funcione. Tratar de armar todo y luego evaluar puede hacer muy difícil a la tarea de detectar errores.
+- Utilicen comentarios para identificar distintas partes de su programa y para describir qué se prentende realizar en cada sección.
+- El objetivo estará cumplido si logran un programa similar al presentado en la *demo* (sesión virtual que quedará grabada en la cual los docentes demostrarán la dinámica del juego y el funcionamiento del programa). Opcionalmente, pueden incluir otros agregados que les resulte de interés.
+- Si no logran programar todo lo pedido, igualmente realicen la entrega de lo que hayan podido hacer y los docentes evaluarán si es suficiente o no para aprobar.
+- No intentar resolver todo de a una vez. Agregar pequeñas partes de a poco. Utilizar la emisión de mensajes temporarios para ir probando el código.
+
+## Equipos
+
+El trabajo práctico se resuelve en grupos de **exactamente CUATRO integrantes**, de cualquier comisión. Hay tiempo hasta el **lunes 18/5/26** para informar la composición de cada equipo en [este foro](https://comunidades3.campusvirtualunr.edu.ar/mod/forum/view.php?id=168293) de Comunidades. Pasada esa fecha, se formarán al azar equipos con todos aquellos inscriptos en Guaraní que no se hayan anotado previamente y se informará en el foro. El armado de estos equipos será inapelable.
+
+El script `jugar.R` tiene un espacio destinado para escribir los nombres de los integrantes del equipo. Deben colocar allí los nombres de quienes hayan efectivamente participado del trabajo. Comunidades les permite a todos los integrantes de un equipo ver los archivos que se han entregado, de modo que cada estudiante sabe si su nombre figura o no en el script. Si en el mismo falta el nombre de un estudiante y los docentes no son contactados al respecto, se entenderá que dicha persona no realizó el trabajo y quedará libre.
+
+## Código de conducta
+
+- La discusión entre integrantes de distintos grupos está permitida, no así el intercambio de código. Se puede debatir en el foro de Comunidades o en otros medios, pero no publicar partes de código.
+- Las entregas son sometidas a un software de detección de plagio, si se detectan similaridades sospechosas en el trabajo de distintos grupos, podrán quedar descalificados.
+- Cuando se detecta un uso llamativo de herramientas de Inteligencia Artificial o estructuras de programación que no se corresponde con los usos y funciones básicas vistas en este curso introductorio, los estudiantes son convocados por los docentes para defender y explicar su entrega de forma oral y responder preguntas sobre la resolución entregada, con el objetivo de confirmar la autoría y el entendimiento de la solución entregada.
+
+## Entrega
+
+Deben entregar el archivo `jugar.R` y cualquier otro script que generen, en la sección que estará destinada para tal fin del aula virtual. Es suficiente con que un integrante del equipo adjunte los archivos. El resto de los integrantes podrá ver la entrega y, más adelante, la devolución y calificación por parte de los docentes.
+
+**Fecha límite de entrega: lunes 08/06 a las 08:00** No se reciben trabajos fuera de este horario límite, sin ningún tipo de excepción.
+
+## Evaluación
+
+La evaluación tendrá en cuenta:
+
+- Si el programa funciona y permite jugar.
+- Si el programa implementa el juego con el comportamiento presentado en la demo.
+- Si hay prolijidad, claridad y buen uso de comentarios en el código.
+- Si el trabajo muestra ser original y no copia de otros recursos.
