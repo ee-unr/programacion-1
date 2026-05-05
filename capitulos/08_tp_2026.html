@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Apéndice A — Introducción – Programación 1</title>
+<title>Trabajo Práctico – Programación 1</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -252,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/08_tp_2026.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../capitulos/08_tp_2026.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Introducción</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/08_tp_2026.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../capitulos/08_tp_2026.html">Trabajo Práctico</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -617,7 +617,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/08_tp_2026.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+ <span class="menu-text">Trabajo Práctico</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -638,16 +638,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#objetivo" id="toc-objetivo" class="nav-link active" data-scroll-target="#objetivo"><span class="header-section-number">A.1</span> Objetivo</a></li>
-  <li><a href="#dinámica-del-juego" id="toc-dinámica-del-juego" class="nav-link" data-scroll-target="#dinámica-del-juego"><span class="header-section-number">A.2</span> Dinámica del juego</a></li>
-  <li><a href="#la-terminal" id="toc-la-terminal" class="nav-link" data-scroll-target="#la-terminal"><span class="header-section-number">A.3</span> La terminal</a></li>
-  <li><a href="#materiales-provistos" id="toc-materiales-provistos" class="nav-link" data-scroll-target="#materiales-provistos"><span class="header-section-number">A.4</span> Materiales provistos</a></li>
-  <li><a href="#descomposición-algorítmica" id="toc-descomposición-algorítmica" class="nav-link" data-scroll-target="#descomposición-algorítmica"><span class="header-section-number">A.5</span> Descomposición algorítmica</a></li>
-  <li><a href="#otras-indicaciones-y-sugerencias" id="toc-otras-indicaciones-y-sugerencias" class="nav-link" data-scroll-target="#otras-indicaciones-y-sugerencias"><span class="header-section-number">A.6</span> Otras indicaciones y sugerencias</a></li>
-  <li><a href="#equipos" id="toc-equipos" class="nav-link" data-scroll-target="#equipos"><span class="header-section-number">A.7</span> Equipos</a></li>
-  <li><a href="#código-de-conducta" id="toc-código-de-conducta" class="nav-link" data-scroll-target="#código-de-conducta"><span class="header-section-number">A.8</span> Código de conducta</a></li>
-  <li><a href="#entrega" id="toc-entrega" class="nav-link" data-scroll-target="#entrega"><span class="header-section-number">A.9</span> Entrega</a></li>
-  <li><a href="#evaluación" id="toc-evaluación" class="nav-link" data-scroll-target="#evaluación"><span class="header-section-number">A.10</span> Evaluación</a></li>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo">Objetivo</a></li>
+  <li><a href="#dinámica-del-juego" id="toc-dinámica-del-juego" class="nav-link" data-scroll-target="#dinámica-del-juego">Dinámica del juego</a>
+  <ul class="collapse">
+  <li><a href="#acumulación-de-puntajes" id="toc-acumulación-de-puntajes" class="nav-link" data-scroll-target="#acumulación-de-puntajes">Acumulación de puntajes</a></li>
+  <li><a href="#continuación-del-turno" id="toc-continuación-del-turno" class="nav-link" data-scroll-target="#continuación-del-turno">Continuación del turno</a></li>
+  <li><a href="#fin-del-juego" id="toc-fin-del-juego" class="nav-link" data-scroll-target="#fin-del-juego">Fin del juego</a></li>
+  <li><a href="#ejemplos" id="toc-ejemplos" class="nav-link" data-scroll-target="#ejemplos">Ejemplos</a></li>
+  </ul></li>
+  <li><a href="#la-terminal" id="toc-la-terminal" class="nav-link" data-scroll-target="#la-terminal">La terminal</a></li>
+  <li><a href="#materiales-provistos" id="toc-materiales-provistos" class="nav-link" data-scroll-target="#materiales-provistos">Materiales provistos</a></li>
+  <li><a href="#descomposición-algorítmica" id="toc-descomposición-algorítmica" class="nav-link" data-scroll-target="#descomposición-algorítmica">Descomposición algorítmica</a></li>
+  <li><a href="#otras-indicaciones-y-sugerencias" id="toc-otras-indicaciones-y-sugerencias" class="nav-link" data-scroll-target="#otras-indicaciones-y-sugerencias">Otras indicaciones y sugerencias</a></li>
+  <li><a href="#equipos" id="toc-equipos" class="nav-link" data-scroll-target="#equipos">Equipos</a></li>
+  <li><a href="#código-de-conducta" id="toc-código-de-conducta" class="nav-link" data-scroll-target="#código-de-conducta">Código de conducta</a></li>
+  <li><a href="#entrega" id="toc-entrega" class="nav-link" data-scroll-target="#entrega">Entrega</a></li>
+  <li><a href="#evaluación" id="toc-evaluación" class="nav-link" data-scroll-target="#evaluación">Evaluación</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/08_tp_2026.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar sobre problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/08_tp_2026.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
     </div>
@@ -655,9 +662,9 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/08_tp_2026.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../capitulos/08_tp_2026.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Introducción</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/08_tp_2026.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../capitulos/08_tp_2026.html">Trabajo Práctico</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Apéndice A — Introducción</h1>
+<h1 class="title">Trabajo Práctico</h1>
 </div>
 
 
@@ -674,11 +681,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introducción" class="level2">
+<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
 <p>En este trabajo práctico vamos a implementar un juego de dados llamado <strong>“Farkle”</strong>, que pertenece a la familia de juegos de azar y estrategia, similar al también conocido <em>“Generala”</em>. En este tipo de juegos, los jugadores lanzan una cierta cantidad de dados en cada turno, obteniendo puntajes según combinaciones específicas, y deben decidir estratégicamente si se detienen para asegurar sus puntos o siguen tirando para alcanzar un puntaje mayor, a riesgo de perder lo que ya tienen acumulado.</p>
 <p>La dinámica combina elementos de probabilidad, toma de decisiones y gestión del riesgo: avanzar puede permitir sumar más puntos, pero también implica la posibilidad de perder lo que ya tienen acumulado.</p>
 <p>En esta oportunidad, desarrollaremos en R una versión simplificada del Farkle, que se podrá jugar desde la terminal entre dos jugadores.</p>
-<section id="objetivo" class="level2" data-number="A.1">
-<h2 data-number="A.1" class="anchored" data-anchor-id="objetivo"><span class="header-section-number">A.1</span> Objetivo</h2>
+</section>
+<section id="objetivo" class="level2">
+<h2 class="anchored" data-anchor-id="objetivo">Objetivo</h2>
 <p>El objetivo de este trabajo consiste en desarrollar un programa interactivo en R que simule una partida de Farkle entre dos jugadores:</p>
 <p>El programa deberá contemplar las siguientes funcionalidades:</p>
 <ul>
@@ -689,94 +699,102 @@ ul.task-list li input[type="checkbox"] {
 <li>Finalizar el juego cuando uno de los jugadores alcance un puntaje objetivo (1000 puntos)</li>
 </ul>
 </section>
-<section id="dinámica-del-juego" class="level2" data-number="A.2">
-<h2 data-number="A.2" class="anchored" data-anchor-id="dinámica-del-juego"><span class="header-section-number">A.2</span> Dinámica del juego</h2>
-<p>La partida se desarrolla a lo largo de múltiples rondas. En cada ronda, los jugadores participan por turnos respetando un orden. En su turno, el jugador puede lanzar los dados una o más veces, dependiendo del resultado de cada tirada. Todos los jugadores comienzan tirando cinco dados.</p>
-<p>El resultado de una tirada se determina a partir de las siguientes convenciones:</p>
+<section id="dinámica-del-juego" class="level2">
+<h2 class="anchored" data-anchor-id="dinámica-del-juego">Dinámica del juego</h2>
+<p>La partida se desarrolla a lo largo de múltiples <strong>rondas</strong>. <strong>En cada ronda</strong>, los jugadores participan por <strong>turnos</strong> respetando un orden. <strong>En su turno</strong>, el jugador puede <strong>lanzar los dados una o más veces</strong>, dependiendo del resultado de cada tirada. Todos los jugadores comienzan tirando cinco dados.</p>
+<p>El <strong>resultado de una tirada</strong> se determina a partir de las siguientes convenciones:</p>
 <ul>
 <li>Cada dado que muestra un 1 suma 100 puntos.</li>
 <li>Cada dado que muestra un 5 suma 50 puntos.</li>
 <li>Los dados que resultan en 1 o 5 se retiran y no se vuelven a lanzar en la siguiente tirada.</li>
 </ul>
 <p>El puntaje obtenido en una tirada se suma al puntaje acumulado del turno.</p>
-<p><em>Acumulación de puntajes</em></p>
+<section id="acumulación-de-puntajes" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="acumulación-de-puntajes">Acumulación de puntajes</h3>
 <p>Durante el juego se manejan tres niveles de puntaje:</p>
 <ul>
-<li><strong>Puntaje de la tirada:</strong> puntos obtenidos en una tirada individual. <strong>Puntaje del turno</strong>: suma de los puntos obtenidos en todas las tiradas de ese turno.</li>
+<li><strong>Puntaje de la tirada:</strong> puntos obtenidos en una tirada individual.</li>
+<li><strong>Puntaje del turno</strong>: suma de los puntos obtenidos en todas las tiradas de ese turno.</li>
 <li><strong>Puntaje total del jugador:</strong> suma de los puntos acumulados a lo largo de todos los turnos.</li>
 </ul>
 <p>El puntaje del turno se suma al puntaje total del jugador únicamente si el turno finaliza de manera válida (es decir, sin perder).</p>
-<p><em>Continuación del turno</em></p>
+</section>
+<section id="continuación-del-turno" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="continuación-del-turno">Continuación del turno</h3>
 <p>Luego de cada tirada pueden ocurrir dos situaciones:</p>
 <ol type="1">
-<li><strong>La tirada produce al menos un 1 o un 5</strong>:</li>
+<li><strong>La tirada produce al menos un 1 o un 5</strong>. El jugador acumula los puntos correspondientes y puede decidir:</li>
 </ol>
-<p>El jugador acumula los puntos correspondientes y puede decidir:</p>
 <ul>
-<li><p>Continuar tirando con los dados restantes, o</p></li>
-<li><p>Detenerse y conservar los puntos acumulados en ese turno.</p></li>
+<li>Continuar tirando con los dados restantes, o</li>
+<li>Detenerse y conservar los puntos acumulados en ese turno.</li>
 </ul>
 <ol start="2" type="1">
-<li><strong>La tirada no produce ningún 1 ni 5</strong></li>
+<li><strong>La tirada no produce ningún 1 ni 5</strong>. El turno termina automáticamente y el jugador pierde todos los puntos acumulados en ese turno.</li>
 </ol>
-<ul>
-<li>El turno termina automáticamente y el jugador pierde todos los puntos acumulados en ese turno.</li>
-</ul>
 <p>Si durante su turno el jugador logra que todos los dados hayan sido retirados (es decir, en la última tirada todos los dados resultaron ser 1 o 5), entonces el jugador puede:</p>
 <ol type="1">
-<li><p>Retirarse con los puntos acumulados en el turno.</p></li>
-<li><p>Mantener el puntaje acumulado del turno y volver a tirar con cinco dados.</p></li>
+<li>Retirarse con los puntos acumulados en el turno.</li>
+<li>Mantener el puntaje acumulado del turno y volver a tirar con cinco dados.</li>
 </ol>
+</section>
+<section id="fin-del-juego" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="fin-del-juego">Fin del juego</h3>
 <p>Un jugador gana la partida si alcanza el puntaje objetivo (1000 puntos) de manera <strong>exacta antes que el otro</strong>. En el caso de que ambos jugadores alcancen el puntaje objetivo en la misma ronda se considera empate.</p>
-<p>Si al finalizar un turno el puntaje total del jugador supera el puntaje objetivo, entonces:</p>
+<p>Si al finalizar un turno el puntaje total del jugador supera el puntaje objetivo, entonces el jugador pierde todos los puntos acumulados en ese turno. Por ejemplo: Si un jugador tiene 950 puntos y durante su turno acumula 100 puntos adicionales, alcanzando 1050, entonces no suma puntos y permanece en 950.</p>
+</section>
+<section id="ejemplos" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ejemplos">Ejemplos</h3>
 <ul>
-<li><p>El jugador pierde todos los puntos acumulados en ese turno</p>
-<p>Por ejemplo: Si un jugador tiene 950 puntos y durante su turno acumula 100 puntos adicionales, alcanzando 1050, entonces no suma puntos y permanece en 950.</p></li>
-</ul>
-<p><strong>Ejemplos:</strong></p>
-<p><em>Turno con acumulación y decisión de detenerse</em></p>
-<p>Un jugador comienza su turno con 5 dados.</p>
+<li><p><strong>Turno con acumulación y decisión de detenerse</strong></p>
 <ul>
+<li><p>Un jugador comienza su turno con 5 dados.</p></li>
 <li><p>Primera tirada: <strong>1, 2, 5, 3, 6</strong></p>
 <ul>
-<li><p>Puntaje de la tirada: 100 (por el 1) + 50 (por el 5) = 150 puntos</p></li>
-<li><p>Dados restantes: 3 (se retiran el 1 y el 5)</p></li>
+<li>Puntaje de la tirada: 100 (por el 1) + 50 (por el 5) = 150 puntos</li>
+<li>Dados restantes: 3 (se retiran el 1 y el 5)</li>
+<li>El jugador decide realizar una nueva tirada.</li>
 </ul></li>
 <li><p>Segunda tirada (con 3 dados): <strong>2, 5, 4</strong></p>
 <ul>
-<li><p>Puntaje de la tirada: 50</p></li>
-<li><p>Puntaje acumulado del turno: 150 + 50 = 200 puntos</p></li>
-<li><p>Dados restantes: 2</p></li>
+<li>Puntaje de la tirada: 50</li>
+<li>Puntaje acumulado del turno: 150 + 50 = 200 puntos</li>
+<li>Dados restantes: 2</li>
+<li>El jugador decide detenerse.</li>
 </ul></li>
-</ul>
-<p>El jugador decide detenerse.</p>
-<p>Resultado: suma 200 puntos a su puntaje total.</p>
-<p><em>Ejemplo con pérdida del turno</em></p>
-<p>Un jugador comienza su turno.</p>
+<li><p>Resultado: suma 200 puntos a su puntaje total.</p></li>
+</ul></li>
+<li><p><strong>Ejemplo con pérdida del turno</strong></p>
 <ul>
+<li><p>Un jugador comienza su turno.</p></li>
 <li><p>Primera tirada: <strong>1, 5, 2, 3, 4</strong></p>
 <ul>
-<li><p>Puntaje: 150</p></li>
-<li><p>Dados restantes: 3</p></li>
+<li>Puntaje: 150</li>
+<li>Dados restantes: 3</li>
+<li>El jugador decide realizar una nueva tirada.</li>
 </ul></li>
 <li><p>Segunda tirada: <strong>2, 1, 6</strong></p>
 <ul>
-<li><p>Puntaje: 150 + 100 = 250</p></li>
-<li><p>Dados restantes: 2</p></li>
+<li>Puntaje: 150 + 100 = 250</li>
+<li>Dados restantes: 2</li>
+<li>El jugador decide realizar una nueva tirada.</li>
 </ul></li>
 <li><p>Tercera tirada: <strong>3, 2</strong></p>
 <ul>
 <li>No aparece ningún 1 ni 5</li>
+<li>Termina el turno.</li>
+</ul></li>
+<li><p>Resultado: el jugador pierde los 250 puntos del turno y no suma nada.</p></li>
 </ul></li>
 </ul>
-<p>Resultado: el jugador pierde los 250 puntos del turno y no suma nada.</p>
 </section>
-<section id="la-terminal" class="level2" data-number="A.3">
-<h2 data-number="A.3" class="anchored" data-anchor-id="la-terminal"><span class="header-section-number">A.3</span> La terminal</h2>
+</section>
+<section id="la-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="la-terminal">La terminal</h2>
 <p>El programa es interactivo y requiere que el usuario ingrese datos en tiempo real: ingresar nombres de los jugadores, decidir si desea seguir jugando, etc. Por ello, el programa debe ejecutarse desde la <strong>terminal</strong> de la computadora, donde pueden escribirse comandos y visualizarse respuestas del sistema. Es importante familiarizarse con la <a href="https://ee-unr.github.io/programacion-1/capitulos/04.html">Unidad 4</a> de la asignatura para lograr este funcionamiento del programa.</p>
 </section>
-<section id="materiales-provistos" class="level2" data-number="A.4">
-<h2 data-number="A.4" class="anchored" data-anchor-id="materiales-provistos"><span class="header-section-number">A.4</span> Materiales provistos</h2>
+<section id="materiales-provistos" class="level2">
+<h2 class="anchored" data-anchor-id="materiales-provistos">Materiales provistos</h2>
 <p>Para realizar este trabajo práctico cuentan con los siguientes archivos de apoyo:</p>
 <ul>
 <li><p><strong>Script <code>jugar.R</code></strong>: archivo principal donde deben escribir su programa. Contiene una plantilla con instrucciones y espacio para agregar los datos del equipo y el código del juego.</p></li>
@@ -784,17 +802,18 @@ ul.task-list li input[type="checkbox"] {
 <ol type="a">
 <li>funciones dedicadas para el juego (<code>tirar_dados</code>, <code>mostrar_dados</code>, <code>contar_dados</code>);</li>
 <li>funciones de impresión y estilo (<code>limpiar_consola</code>, <code>titulo</code>, <code>texto_lento</code>); y</li>
-<li>funciones de lectura (<code>leer_palabra</code>, <code>leer_opciones</code>, <code>pausa</code>). En el script <code>jugar.R</code> se incluyen instrucciones de instalación.</li>
+<li>funciones de lectura (<code>leer_palabra</code>, <code>leer_opciones</code>, <code>pausa</code>).</li>
 </ol></li>
 </ul>
+<p>En el script <code>jugar.R</code> se incluyen instrucciones de instalación.</p>
 </section>
-<section id="descomposición-algorítmica" class="level2" data-number="A.5">
-<h2 data-number="A.5" class="anchored" data-anchor-id="descomposición-algorítmica"><span class="header-section-number">A.5</span> Descomposición algorítmica</h2>
+<section id="descomposición-algorítmica" class="level2">
+<h2 class="anchored" data-anchor-id="descomposición-algorítmica">Descomposición algorítmica</h2>
 <p>Para organizar el código de manera clara y modular, se recomienda aplicar el principio de descomposición algorítmica, creando funciones propias para distintas partes del juego. Estas funciones pueden definirse en <code>jugar.R</code> o, mejor aún, en scripts adicionales. El o los nuevos scripts deberán estar guardados en el mismo directorio que <code>jugar.R</code>, desde donde se los debe invocar con la función <code>source()</code>. Desde dicha carpeta, deben abrir la terminal y ejecutar el programa con <code>Rscript jugar.R</code>, sin que se produzcan errores.</p>
 <p>Todas las funciones creadas deben estar documentadas bajo el sistema <strong>Roxygen</strong>. Algunas podrán tomar argumentos, otras no, y algunas devolverán valores mientras que otras sólo imprimirán mensajes en pantalla. Lo importante es que cada función cumpla una tarea bien definida y facilite la lectura del programa principal.</p>
 </section>
-<section id="otras-indicaciones-y-sugerencias" class="level2" data-number="A.6">
-<h2 data-number="A.6" class="anchored" data-anchor-id="otras-indicaciones-y-sugerencias"><span class="header-section-number">A.6</span> Otras indicaciones y sugerencias</h2>
+<section id="otras-indicaciones-y-sugerencias" class="level2">
+<h2 class="anchored" data-anchor-id="otras-indicaciones-y-sugerencias">Otras indicaciones y sugerencias</h2>
 <ul>
 <li>Es conveniente diseñar el algoritmo antes de programar, es decir, tomarse tiempo para pensar cómo es la lógica de la estructura del juego, qué pequeñas partes se pueden ir programando y probando de a poco, etc.</li>
 <li>No dejar para último momento. Empezar con inmediatez, ya que no se resuelve de un día para el otro y es posible que necesiten realizar consultas con los docentes. Si dejan para último momento ya no habrá tiempo de organizar consultas, no podrán entregar el trabajo práctico y quedarán libres en la asignatura.</li>
@@ -805,26 +824,26 @@ ul.task-list li input[type="checkbox"] {
 <li>No intentar resolver todo de a una vez. Agregar pequeñas partes de a poco. Utilizar la emisión de mensajes temporarios para ir probando el código.</li>
 </ul>
 </section>
-<section id="equipos" class="level2" data-number="A.7">
-<h2 data-number="A.7" class="anchored" data-anchor-id="equipos"><span class="header-section-number">A.7</span> Equipos</h2>
+<section id="equipos" class="level2">
+<h2 class="anchored" data-anchor-id="equipos">Equipos</h2>
 <p>El trabajo práctico se resuelve en grupos de <strong>exactamente CUATRO integrantes</strong>, de cualquier comisión. Hay tiempo hasta el <strong>lunes 18/5/26</strong> para informar la composición de cada equipo en <a href="https://comunidades3.campusvirtualunr.edu.ar/mod/forum/view.php?id=168293">este foro</a> de Comunidades. Pasada esa fecha, se formarán al azar equipos con todos aquellos inscriptos en Guaraní que no se hayan anotado previamente y se informará en el foro. El armado de estos equipos será inapelable.</p>
 <p>El script <code>jugar.R</code> tiene un espacio destinado para escribir los nombres de los integrantes del equipo. Deben colocar allí los nombres de quienes hayan efectivamente participado del trabajo. Comunidades les permite a todos los integrantes de un equipo ver los archivos que se han entregado, de modo que cada estudiante sabe si su nombre figura o no en el script. Si en el mismo falta el nombre de un estudiante y los docentes no son contactados al respecto, se entenderá que dicha persona no realizó el trabajo y quedará libre.</p>
 </section>
-<section id="código-de-conducta" class="level2" data-number="A.8">
-<h2 data-number="A.8" class="anchored" data-anchor-id="código-de-conducta"><span class="header-section-number">A.8</span> Código de conducta</h2>
+<section id="código-de-conducta" class="level2">
+<h2 class="anchored" data-anchor-id="código-de-conducta">Código de conducta</h2>
 <ul>
 <li>La discusión entre integrantes de distintos grupos está permitida, no así el intercambio de código. Se puede debatir en el foro de Comunidades o en otros medios, pero no publicar partes de código.</li>
 <li>Las entregas son sometidas a un software de detección de plagio, si se detectan similaridades sospechosas en el trabajo de distintos grupos, podrán quedar descalificados.</li>
 <li>Cuando se detecta un uso llamativo de herramientas de Inteligencia Artificial o estructuras de programación que no se corresponde con los usos y funciones básicas vistas en este curso introductorio, los estudiantes son convocados por los docentes para defender y explicar su entrega de forma oral y responder preguntas sobre la resolución entregada, con el objetivo de confirmar la autoría y el entendimiento de la solución entregada.</li>
 </ul>
 </section>
-<section id="entrega" class="level2" data-number="A.9">
-<h2 data-number="A.9" class="anchored" data-anchor-id="entrega"><span class="header-section-number">A.9</span> Entrega</h2>
+<section id="entrega" class="level2">
+<h2 class="anchored" data-anchor-id="entrega">Entrega</h2>
 <p>Deben entregar el archivo <code>jugar.R</code> y cualquier otro script que generen, en la sección que estará destinada para tal fin del aula virtual. Es suficiente con que un integrante del equipo adjunte los archivos. El resto de los integrantes podrá ver la entrega y, más adelante, la devolución y calificación por parte de los docentes.</p>
 <p><strong>Fecha límite de entrega: lunes 08/06 a las 08:00</strong> No se reciben trabajos fuera de este horario límite, sin ningún tipo de excepción.</p>
 </section>
-<section id="evaluación" class="level2" data-number="A.10">
-<h2 data-number="A.10" class="anchored" data-anchor-id="evaluación"><span class="header-section-number">A.10</span> Evaluación</h2>
+<section id="evaluación" class="level2">
+<h2 class="anchored" data-anchor-id="evaluación">Evaluación</h2>
 <p>La evaluación tendrá en cuenta:</p>
 <ul>
 <li>Si el programa funciona y permite jugar.</li>
