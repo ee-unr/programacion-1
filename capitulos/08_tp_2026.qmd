@@ -26,9 +26,9 @@ El programa deberá contemplar las siguientes funcionalidades:
 
 ## Dinámica del juego
 
-La partida se desarrolla a lo largo de múltiples rondas. En cada ronda, los jugadores participan por turnos respetando un orden. En su turno, el jugador puede lanzar los dados una o más veces, dependiendo del resultado de cada tirada. Todos los jugadores comienzan tirando cinco dados.
+La partida se desarrolla a lo largo de múltiples **rondas**. **En cada ronda**, los jugadores participan por **turnos** respetando un orden. **En su turno**, el jugador puede **lanzar los dados una o más veces**, dependiendo del resultado de cada tirada. Todos los jugadores comienzan tirando cinco dados.
 
-El resultado de una tirada se determina a partir de las siguientes convenciones:
+El **resultado de una tirada** se determina a partir de las siguientes convenciones:
 
 - Cada dado que muestra un 1 suma 100 puntos.
 - Cada dado que muestra un 5 suma 50 puntos.
@@ -36,90 +36,81 @@ El resultado de una tirada se determina a partir de las siguientes convenciones:
 
 El puntaje obtenido en una tirada se suma al puntaje acumulado del turno.
 
-*Acumulación de puntajes*
+### Acumulación de puntajes {.unnumbered}
 
 Durante el juego se manejan tres niveles de puntaje:
 
-- **Puntaje de la tirada:** puntos obtenidos en una tirada individual. **Puntaje del turno**: suma de los puntos obtenidos en todas las tiradas de ese turno.
+- **Puntaje de la tirada:** puntos obtenidos en una tirada individual. 
+- **Puntaje del turno**: suma de los puntos obtenidos en todas las tiradas de ese turno.
 - **Puntaje total del jugador:** suma de los puntos acumulados a lo largo de todos los turnos.
 
 El puntaje del turno se suma al puntaje total del jugador únicamente si el turno finaliza de manera válida (es decir, sin perder).
 
-*Continuación del turno*
+### Continuación del turno {.unnumbered}
 
 Luego de cada tirada pueden ocurrir dos situaciones:
 
-1.  **La tirada produce al menos un 1 o un 5**:
+1.  **La tirada produce al menos un 1 o un 5**. El jugador acumula los puntos correspondientes y puede decidir:
 
-El jugador acumula los puntos correspondientes y puede decidir:
+  - Continuar tirando con los dados restantes, o
+  - Detenerse y conservar los puntos acumulados en ese turno.
 
-- Continuar tirando con los dados restantes, o
-
-- Detenerse y conservar los puntos acumulados en ese turno.
-
-2.  **La tirada no produce ningún 1 ni 5**
-
-- El turno termina automáticamente y el jugador pierde todos los puntos acumulados en ese turno.
+2.  **La tirada no produce ningún 1 ni 5**. El turno termina automáticamente y el jugador pierde todos los puntos acumulados en ese turno.
 
 Si durante su turno el jugador logra que todos los dados hayan sido retirados (es decir, en la última tirada todos los dados resultaron ser 1 o 5), entonces el jugador puede:
 
 1.  Retirarse con los puntos acumulados en el turno.
-
 2.  Mantener el puntaje acumulado del turno y volver a tirar con cinco dados.
+
+### Fin del juego  {.unnumbered}
 
 Un jugador gana la partida si alcanza el puntaje objetivo (1000 puntos) de manera **exacta antes que el otro**. En el caso de que ambos jugadores alcancen el puntaje objetivo en la misma ronda se considera empate.
 
-Si al finalizar un turno el puntaje total del jugador supera el puntaje objetivo, entonces:
+Si al finalizar un turno el puntaje total del jugador supera el puntaje objetivo, entonces el jugador pierde todos los puntos acumulados en ese turno. Por ejemplo: Si un jugador tiene 950 puntos y durante su turno acumula 100 puntos adicionales, alcanzando 1050, entonces no suma puntos y permanece en 950.
 
-- El jugador pierde todos los puntos acumulados en ese turno
+### Ejemplos {.unnumbered}
 
-  Por ejemplo: Si un jugador tiene 950 puntos y durante su turno acumula 100 puntos adicionales, alcanzando 1050, entonces no suma puntos y permanece en 950.
+- **Turno con acumulación y decisión de detenerse**
+  
+  - Un jugador comienza su turno con 5 dados.
+  
+  - Primera tirada: **1, 2, 5, 3, 6**
+  
+    - Puntaje de la tirada: 100 (por el 1) + 50 (por el 5) = 150 puntos
+    - Dados restantes: 3 (se retiran el 1 y el 5)
+    - El jugador decide realizar una nueva tirada.
+  
+  - Segunda tirada (con 3 dados): **2, 5, 4**
+  
+    - Puntaje de la tirada: 50
+    - Puntaje acumulado del turno: 150 + 50 = 200 puntos
+    - Dados restantes: 2
+    - El jugador decide detenerse.
+  
+  - Resultado: suma 200 puntos a su puntaje total.
 
-**Ejemplos:**
-
-*Turno con acumulación y decisión de detenerse*
-
-Un jugador comienza su turno con 5 dados.
-
-- Primera tirada: **1, 2, 5, 3, 6**
-
-  - Puntaje de la tirada: 100 (por el 1) + 50 (por el 5) = 150 puntos
-
-  - Dados restantes: 3 (se retiran el 1 y el 5)
-
-- Segunda tirada (con 3 dados): **2, 5, 4**
-
-  - Puntaje de la tirada: 50
-
-  - Puntaje acumulado del turno: 150 + 50 = 200 puntos
-
-  - Dados restantes: 2
-
-El jugador decide detenerse.
-
-Resultado: suma 200 puntos a su puntaje total.
-
-*Ejemplo con pérdida del turno*
-
-Un jugador comienza su turno.
-
-- Primera tirada: **1, 5, 2, 3, 4**
-
-  - Puntaje: 150
-
-  - Dados restantes: 3
-
-- Segunda tirada: **2, 1, 6**
-
-  - Puntaje: 150 + 100 = 250
-
-  - Dados restantes: 2
-
-- Tercera tirada: **3, 2**
-
-  - No aparece ningún 1 ni 5
-
-Resultado: el jugador pierde los 250 puntos del turno y no suma nada.
+- **Ejemplo con pérdida del turno**
+  
+  - Un jugador comienza su turno.
+  
+  - Primera tirada: **1, 5, 2, 3, 4**
+  
+    - Puntaje: 150
+    - Dados restantes: 3
+    - El jugador decide realizar una nueva tirada.
+  
+  - Segunda tirada: **2, 1, 6**
+  
+    - Puntaje: 150 + 100 = 250
+    - Dados restantes: 2
+    - El jugador decide realizar una nueva tirada.
+  
+  - Tercera tirada: **3, 2**
+  
+    - No aparece ningún 1 ni 5
+    - Termina el turno.
+  
+  - Resultado: el jugador pierde los 250 puntos del turno y no suma nada.
 
 ## La terminal
 
