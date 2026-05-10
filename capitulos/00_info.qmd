@@ -55,7 +55,7 @@ Visitá periódicamente este cronograma para autogestionar tu tránsito por los 
 | 6          | 20/4 al 26/4     | Unidad 3            | 16                   | 7 a 12                    | Feriado: vie 1                                                       |
 | 7          | 27/4 al 3/5      | Repaso para el parcial | Estudio y repaso  | Estudio y repaso          | Teoría (lunes): Unidad 4. Prácticas: repaso para el examen.          |
 | 8          | 4/5 al 10/5      | Parcial / Unidad 4  | 19 y 20              | 1 a 6                     | **Parcial**: lun 4, 21:00, todas las comisiones juntas. No hay clases de práctica. Se publica el TP.  |
-| 9          | 11/5 al 17/5     | Unidad 5 / Recup.   | 24                   | 1 a 6                     | **Recup.**: mar 12, 08:00, todas las comisiones juntas               |
+| 9          | 11/5 al 17/5     | Unidad 5 / Recup.   | 24                   | 1 a 6                     | **Recup.**: lun 11, 21:00, todas las comisiones juntas. Aula D.               |
 | 10         | 18/5 al 24/5     | Unidad 5            | 24 (cont.)           | 7 a 10                    | Feriado: lun 25. *Deadline* para informar grupos del TP.             |
 | 11         | 25/5 al 31/5     | Unidad 5            | 25                   | 11 a 14                   |                                                                      |
 | 12         | 1/6 al 7/6       | Unidad 5            | 26 y 27              | 15 a 21                   |                                                                      |
