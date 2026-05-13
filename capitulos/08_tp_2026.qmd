@@ -147,7 +147,7 @@ Todas las funciones creadas deben estar documentadas bajo el sistema **Roxygen**
 
 ## Equipos
 
-El trabajo práctico se resuelve en grupos de **exactamente CUATRO integrantes**, de cualquier comisión. Hay tiempo hasta el **lunes 18/5/26** para informar la composición de cada equipo en [este foro](https://comunidades3.campusvirtualunr.edu.ar/mod/forum/view.php?id=168293) de Comunidades. Pasada esa fecha, se formarán al azar equipos con todos aquellos inscriptos en Guaraní que no se hayan anotado previamente y se informará en el foro. El armado de estos equipos será inapelable.
+El trabajo práctico se resuelve en grupos de **exactamente CUATRO integrantes**, de cualquier comisión. Hay tiempo hasta el **lunes 18/5/26** para informar la composición de cada equipo en [este foro](https://comunidades3.campusvirtualunr.edu.ar/mod/forum/view.php?id=169319) de Comunidades. Pasada esa fecha, se formarán al azar equipos con todos aquellos inscriptos en Guaraní que no se hayan anotado previamente y se informará en el foro. El armado de estos equipos será inapelable.
 
 El script `jugar.R` tiene un espacio destinado para escribir los nombres de los integrantes del equipo. Deben colocar allí los nombres de quienes hayan efectivamente participado del trabajo. Comunidades les permite a todos los integrantes de un equipo ver los archivos que se han entregado, de modo que cada estudiante sabe si su nombre figura o no en el script. Si en el mismo falta el nombre de un estudiante y los docentes no son contactados al respecto, se entenderá que dicha persona no realizó el trabajo y quedará libre.
 
