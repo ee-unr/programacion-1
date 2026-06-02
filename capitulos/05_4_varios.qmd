@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 ```{=latex}
 \thispagestyle{primerapagina}
 ```
@@ -50,6 +55,7 @@ apply(m, 2, min)
 
 ```{r}
 lista1 <- list(a = 1:5, b = 6:10, c = 11:15)
+lapply(lista1, mean)
 ```
 
 `sapply()` funciona igual que `lapply()`, pero intenta **simplificar** la salida: si todos los resultados son del mismo tipo y longitud, devuelve un vector o matriz en lugar de una lista:
