@@ -81,9 +81,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-23ad4296717aa47a9fde54e455f4e216.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-3a22187dd97d5875748843c929790911.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-23ad4296717aa47a9fde54e455f4e216.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d778007692c8bf31920d7a2da8b0bfd0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e041b3549ea5f6ad63ac2602be1664db.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-d778007692c8bf31920d7a2da8b0bfd0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -676,6 +676,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link active" data-scroll-target="#ejercicio-1">Ejercicio 1</a></li>
   <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2">Ejercicio 2</a></li>
   <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3">Ejercicio 3</a></li>
+  <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4">Ejercicio 4</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ee-unr/programacion-1/edit/main/capitulos/06_practica.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/ee-unr/programacion-1/issues/new" class="toc-action"><i class="bi empty"></i>Informar sobre problema</a></li><li><a href="https://github.com/ee-unr/programacion-1/blob/main/capitulos/06_practica.qmd" class="toc-action"><i class="bi empty"></i>Ver el código</a></li></ul></div></nav>
     </div>
@@ -759,6 +760,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="ejercicio-3" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h2>
 <p>Crear un nuevo paquete llamado <code>unidad3</code> para guardar allí al menos 4 de las funciones creadas en los ejercicios de la Práctica 3.</p>
+</section>
+<section id="ejercicio-4" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-4">Ejercicio 4</h2>
+<p>Hoy en día, casi todas las plataformas digitales —redes sociales, correos electrónicos, tiendas online y homebanking, entre otras— requieren que los usuarios se registren mediante un nombre de usuario y una contraseña. Para mantener la seguridad de nuestras cuentas, es fundamental utilizar contraseñas seguras y diferentes en cada sitio, evitando así que la filtración de una de ellas comprometa las demás. Sin embargo, muchas personas tienden a usar contraseñas simples o repetidas, lo que aumenta el riesgo de ser víctimas de ataques informáticos. Una buena práctica es generar contraseñas personalizadas que resulten fáciles de recordar para el usuario, pero difíciles de adivinar para otros.</p>
+<p>En este ejercicio vamos a <strong>crear una función en R que le ayude a las personas a elegir una contraseña</strong>, siguiendo una regla determinada a partir de la información provista por el usuario, y distribuirla mediante la <strong>creación de un paquete</strong>. Si bien puede ser una muy buena estrategia que cada persona invente para sí mismo una regla para generar contraseñas fáciles de recordar, probablemente no sea lo más seguro utilizar una regla propuesta por un tercero, como se propone en esta tarea. No obstante, será una buena oportunidad para seguir aprendiendo.</p>
+<ul>
+<li>El paquete se llama <code>seguridad</code>.</li>
+<li>La función que exporta el paquete debe llamarse <code>generar_clave()</code> y debe tener tres argumentos de entrada: un número de dos dígitos, un nombre y un apellido.</li>
+<li>El número de dos dígitos no debe tener un valor asignado por defecto.</li>
+<li>Los valores por defecto para los otros dos argumentos deben ser el primer nombre y el apellido del estudiante.</li>
+<li>La función tiene que generar un nombre de usuario a partir del nombre y apellido provistos. Por ejemplo, si el nombre es “Silvina” y el apellido es “Perez”, el nombre de usuario a crear debe ser “silvina_perez”.</li>
+<li>La contraseña sugerida por la función debe estar formada por las 3 primeras letras del apellido, seguidas por los dígitos que resultan de la multiplicación entre la cantidad de vocales del nombre y la cantidad de consonantes del apellido, luego por las primeras 2 letras del nombre y finalmente por los dígitos que resulten de la multiplicación entre el número ingresado por el usuario y un número elegido por la función al azar entre el 1 y el 10</li>
+<li>Por ejemplo, si el nombre es “Silvina” (3 vocales), el apellido es “Perez” (3 consonantes), el dígito elegido es 32 y el número aleatorio resulta ser 4, la contraseña sugerida debe ser: “per9si128”.</li>
+<li>Tanto el nombre de usuario como la contraseña sugeridas deben ser letras minúsculas, sin importar lo que ingrese el usuario.</li>
+<li>La función debe imprimir un mensaje similar al siguiente <code>¡La contraseña se ha generado correctamente!</code> y devolver una lista con el nombre de usario y la contraseña.</li>
+<li>Pueden emplear los principios de la descomposición algorítmica y crear otras funciones auxiliares si lo consideran necesario, pero la función <code>generar_clave()</code> debe ser la única que exporte el paquete.</li>
+<li>Una vez finalizado, se debe encapsular el paquete en un archivo comprimido de formato <code>.tar.gz</code>, que se crea automáticamente ejecutando la función <code>build()</code>.</li>
+</ul>
 
 
 </section>
