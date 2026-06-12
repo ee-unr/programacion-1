@@ -1,0 +1,10 @@
+Package: seguridad
+Title: Sugerencias para nombres de usuario y contraseñas
+Version: 0.0.0.9000
+Authors@R: 
+    person("Julian", "L'heureux", , "lheureuxjulian@gmail.com", role = c("aut", "cre"))
+Description: Paquete que contiene una función para crear un usuario y contraseña a partir de los datos ingresados.
+License: `use_mit_license()`, `use_gpl3_license()`
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.0.0
